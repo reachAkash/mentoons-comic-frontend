@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       } container flex items-center justify-between text-black bg-[#f0ebe5] py-6 transition-all duration-1000 ease-in-out z-50`}
     >
       <div className="w-[50%] lg:w-[70%] flex items-center justify-between gap-4 lg:gap-8">
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-3xl font-extrabold">
           COMICS<span className="text-primary">.</span>
         </h2>
         <ul className="hidden md:flex w-full items-center justify-evenly gap-2 text-lg">
