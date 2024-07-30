@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body,:root{
+html,
+body,
+:root {
   height: 100%;
   font-family: "Montserrat", "Open Sans", "Roboto", sans-serif;
 }
@@ -73,7 +75,91 @@ html,body,:root{
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* custom classes */
+
+.marquee {
+  width: 100%;
+  height: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  background: #d71515;
+  z-index: 9999;
+  -webkit-transition: all linear .3s;
+  -o-transition: all linear .3s;
+  transition: all linear .3s;
+}
+
+.marquee1 {
+  -webkit-animation: marquee-boxes 60s linear infinite;
+  animation: marquee-boxes 60s linear infinite;
+  left: 0%;
+}
+
+.marquee2 {
+  left: 100%;
+}
+
+.marquee1,
+.marquee2 {
+  position: absolute;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.text {
+  padding: 0 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  white-space: nowrap;
+  font-family: cb;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: white;
+}
+
+@keyframes marquee-boxes {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  100% {
+    transform: translate(-100%, 0)
+  }
+}
+
+.lineBefore::before {
+  content: "";
+  width: 4.5rem;
+  height: 2px;
+  margin-right: 0.7rem;
+  margin-bottom: 0.6rem;
+  background-color: #d71515;
+  display: inline-block;
 }
