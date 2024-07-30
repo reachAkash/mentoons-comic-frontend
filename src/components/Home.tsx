@@ -11,7 +11,6 @@ import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { TiTick } from "react-icons/ti";
 import CompanySlider from "./CompanySlider";
-import TotalUser from "./utils/TotalUser";
 
 const Home: React.FC = () => {
   return (
