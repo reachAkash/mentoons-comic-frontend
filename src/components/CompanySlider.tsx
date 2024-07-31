@@ -8,8 +8,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import React from "react";
 
-const CompanySlider = () => {
+const CompanySlider: React.FC = () => {
   return (
     <Swiper
       // install Swiper modules

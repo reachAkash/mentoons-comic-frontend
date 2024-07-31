@@ -9,7 +9,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 
-const Team = () => {
+const Team: React.FC = () => {
   return (
     <div className="container flex flex-col bg-primary text-white py-10 space-y-7">
       <div className="border-b-[1px] border-slate-300    py-12 space-y-7">

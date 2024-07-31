@@ -5,7 +5,7 @@ import Popular3 from "@/assets/imgs/popular3.png";
 import Popular4 from "@/assets/imgs/popular4.png";
 import { CiSearch } from "react-icons/ci";
 
-const Search = () => {
+const Search: React.FC = () => {
   const popularComics = [Popular1, Popular2, Popular3, Popular4];
 
   return (

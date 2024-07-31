@@ -1,3 +1,4 @@
+import React from "react";
 import AboutComic from "@/assets/imgs/aboutComic.png";
 import { TiTick } from "react-icons/ti";
 import CompanySlider from "./CompanySlider";

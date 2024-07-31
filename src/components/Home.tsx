@@ -13,6 +13,7 @@ import NewComics from "./NewComics";
 import PopularComics from "./Popular";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
+import Pricing from "./Pricing";
 
 const Home: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Home: React.FC = () => {
       <PopularComics />
       <Team />
       <Testimonials />
+      <Pricing />
     </div>
   );
 };
