@@ -1,3 +1,4 @@
+import React from "react";
 import Wordbreak from "./Wordbreak";
 import NewComic1 from "@/assets/imgs/comic1.png";
 import NewComic2 from "@/assets/imgs/comic2.png";
@@ -38,8 +39,8 @@ const NewComics: React.FC = () => {
                   250.6K Reviews
                 </p>
               </div>
-              <div className="border-2 border-primary p-3 rounded-full">
-                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 transition-all duration-300 ease-in-out" />
+              <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">
+                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 group-hover:text-white transition-all duration-300 ease-in-out" />
               </div>
             </div>
           </div>
@@ -64,8 +65,8 @@ const NewComics: React.FC = () => {
                   250.6K Reviews
                 </p>
               </div>
-              <div className="border-2 border-primary p-3 rounded-full">
-                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 transition-all duration-300 ease-in-out" />
+              <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">
+                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 group-hover:text-white transition-all duration-300 ease-in-out" />
               </div>
             </div>
           </div>
@@ -90,8 +91,8 @@ const NewComics: React.FC = () => {
                   250.6K Reviews
                 </p>
               </div>
-              <div className="border-2 border-primary p-3 rounded-full">
-                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 transition-all duration-300 ease-in-out" />
+              <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">
+                <MdOutlineArrowOutward className="text-2xl text-primary group-hover:rotate-45 group-hover:text-white transition-all duration-300 ease-in-out" />
               </div>
             </div>
           </div>

@@ -14,6 +14,8 @@ import PopularComics from "./Popular";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
 import Pricing from "./Pricing";
+import Blogs from "./Blogs";
+import Footer from "./Footer";
 
 const Home: React.FC = () => {
   return (
@@ -25,6 +27,8 @@ const Home: React.FC = () => {
       <Team />
       <Testimonials />
       <Pricing />
+      <Blogs />
+      <Footer />
     </div>
   );
 };

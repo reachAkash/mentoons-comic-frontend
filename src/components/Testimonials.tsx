@@ -6,7 +6,7 @@ const Testimonials: React.FC = () => {
   return (
     <div className="container flex items-center justify-between bg-[#f0ebe5] py-20">
       <div className="w-[45%] space-y-4">
-        <div className="text-primary lineBefore text-2xl">User Reviews</div>
+        <div className="text-primary lineBefore text-3xl">User Reviews</div>
         <div className="font-extrabold text-6xl">
           Reviews From <Wordbreak /> Comic Fans.
         </div>

@@ -178,3 +178,8 @@ body,
 .noScrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.airplane-image {
+  filter: hue-rotate(180deg) brightness(0) invert(1) sepia(1) saturate(1000%)
+    hue-rotate(180deg);
+}

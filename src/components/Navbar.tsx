@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Sidebar, { MiniSidebar } from "./Sidebar";
 import { FaBookmark } from "react-icons/fa6";
@@ -28,7 +29,7 @@ const Navbar: React.FC = () => {
     <div
       className={`sticky top-0 ${
         showShadow && "shadow"
-      } container flex items-center justify-between text-black bg-[#f0ebe5] py-6 transition-all duration-1000 ease-in-out z-50`}
+      } container flex items-center justify-between text-black bg-[#f0ebe5] py-4 transition-all duration-1000 ease-in-out z-50`}
     >
       <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
         <Link to="/">

@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Wordbreak from "./Wordbreak";
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
+import React from "react";
 
 const TestimonialsSlider: React.FC = () => {
   return (

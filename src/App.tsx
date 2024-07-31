@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
-// import SlidingText from "./components/SlidingText";
+import SlidingText from "./components/SlidingText";
 import ProgressScroller from "./components/ProgressScroller";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      {/* <SlidingText /> */}
+      <SlidingText />
       <ProgressScroller />
     </>
   );

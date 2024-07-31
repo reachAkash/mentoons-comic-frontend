@@ -12,11 +12,11 @@ import { FaYoutube } from "react-icons/fa";
 const Team: React.FC = () => {
   return (
     <div className="container flex flex-col bg-primary text-white py-10 space-y-7">
-      <div className="border-b-[1px] border-slate-300    py-12 space-y-7">
+      <div className="border-b-[1px] border-slate-300 py-12 space-y-7">
         <div className="text-start space-y-4">
-          <div className=" text-3xl whitelineBefore">New Comics</div>
+          <div className=" text-3xl whitelineBefore uppercase">Our Team </div>
           <div className="text-7xl w-full font-extrabold leading-[1.10]">
-            Enjoy Newest <Wordbreak /> Comic Books.
+            Meet With Our <Wordbreak /> Comic Artist.
           </div>
         </div>
         <div className="flex items-center justify-between">
