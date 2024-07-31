@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -104,9 +106,9 @@ body,
   bottom: 0;
   background: #d71515;
   z-index: 40;
-  -webkit-transition: all linear .3s;
-  -o-transition: all linear .3s;
-  transition: all linear .3s;
+  -webkit-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+  transition: all linear 0.3s;
 }
 
 .marquee1 {
@@ -146,11 +148,11 @@ body,
 
 @keyframes marquee-boxes {
   0% {
-    transform: translate(0, 0)
+    transform: translate(0, 0);
   }
 
   100% {
-    transform: translate(-100%, 0)
+    transform: translate(-100%, 0);
   }
 }
 
@@ -164,6 +166,15 @@ body,
   display: inline-block;
 }
 
+.whitelineBefore::before {
+  content: "";
+  width: 4.5rem;
+  height: 2px;
+  margin-right: 0.7rem;
+  margin-bottom: 0.6rem;
+  background-color: white;
+  display: inline-block;
+}
 .noScrollbar::-webkit-scrollbar {
   display: none;
 }

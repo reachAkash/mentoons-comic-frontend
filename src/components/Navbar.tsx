@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar, { MiniSidebar } from "./Sidebar";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -30,30 +30,32 @@ const Navbar: React.FC = () => {
         showShadow && "shadow"
       } container flex items-center justify-between text-black bg-[#f0ebe5] py-6 transition-all duration-1000 ease-in-out z-50`}
     >
-      <div className="w-[50%] lg:w-[70%] flex items-center justify-between gap-4 lg:gap-8">
-        <h2 className="text-3xl font-extrabold">
-          COMICS<span className="text-primary">.</span>
-        </h2>
+      <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
+        <Link to="/">
+          <h2 className="text-3xl font-extrabold cursor-pointer">
+            MENTOONS COMICS<span className="text-primary">.</span>
+          </h2>
+        </Link>
         <ul className="hidden md:flex w-full items-center justify-evenly gap-2 text-lg">
-          <li className="hover:text-red-500 cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
+          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
             Home
           </li>
-          <li className="hover:text-red-500 cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
+          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
             About
           </li>
-          <li className="hover:text-red-500 cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
+          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
             Comics
           </li>
-          <li className="hover:text-red-500 cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
+          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
             Blog
           </li>
-          <li className="hover:text-red-500 cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
+          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
             Contact
           </li>
         </ul>
       </div>
-      <div className="w-[35%] lg:w-[30%] flex items-center md:justify-center justify-end gap-2 lg:gap-8">
-        <div className="hidden md:flex items-center justify-between gap-3 bg-white rounded-full pl-6">
+      <div className="w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8">
+        <div className="hidden custom:flex items-center justify-between gap-3 bg-white rounded-full pl-6">
           <Link to="/wishlist">
             <FaBookmark className="text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out" />
           </Link>
@@ -65,11 +67,12 @@ const Navbar: React.FC = () => {
               </span>
             </div>
           </Link>
-          <button className="w-full text-base lg:text-lg py-2 px-6 font-medium rounded-full bg-[#333333] text-white hover:bg-primary transition-all duration-300 ease-in-out">
+          <button className="w-full text-base lg:text-lg py-3 px-6 font-medium rounded-full bg-[#333333] text-white hover:bg-primary transition-all duration-300 ease-in-out">
             Free Comics
           </button>
         </div>
-        <Sidebar />
+        <Sidebar className="hidden md:block" />
+        <MiniSidebar className="block md:hidden" />
       </div>
     </div>
   );
