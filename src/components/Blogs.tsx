@@ -63,7 +63,7 @@ const Blogs: React.FC = () => {
             <div>
               <img
                 className="w-full grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
-                src={Blog1}
+                src={Blog2}
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ const Blogs: React.FC = () => {
             <div>
               <img
                 className="w-full grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
-                src={Blog1}
+                src={Blog3}
               />
             </div>
           </div>
