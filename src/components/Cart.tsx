@@ -1,19 +1,17 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 import Comic1 from "@/assets/imgs/comic1.jpg";
 import Comic2 from "@/assets/imgs/comic2.jpg";
 import Comic3 from "@/assets/imgs/comic6.jpg";
 import Comic4 from "@/assets/imgs/comic4.jpg";
+import { FaRegEdit } from "react-icons/fa";
 
 const Cart: React.FC = () => {
   const cartData = [
     { name: "Electronic Gadgets & kids", image: Comic1 },
     { name: "How to handle relationships", image: Comic2 },
     { name: "One way trip", image: Comic3 },
-    { name: "Choose Wisely", image: Comic4 },
-    { name: "Choose Wisely", image: Comic4 },
-    { name: "Choose Wisely", image: Comic4 },
     { name: "Choose Wisely", image: Comic4 },
   ];
   // const cartData: string[] = [];
@@ -28,7 +26,7 @@ const Cart: React.FC = () => {
           Checkout Your <Wordbreak /> Comic Books.
         </div>
       </div>
-      <div className="relative flex flex-wrap items-center justify-between gap-x-8 gap-y-12">
+      <div className="relative border-b border-black pb-14 flex flex-col justify-between w-full gap-20">
         {cartData.length <= 0 ? (
           <div className="absolute left-[50%] top-[80%] translate-x-[-50%] translate-y-[0%] text-center space-y-4">
             <div className="text-4xl font-semibold">No Comics Found! 🥺</div>
@@ -40,26 +38,69 @@ const Cart: React.FC = () => {
             </button>
           </div>
         ) : (
-          cartData?.map((item) => {
+          cartData?.map((item, idx) => {
             return (
-              <div className="space-y-4">
-                <div className="relative">
-                  <img
-                    className="w-[17rem]"
-                    src={item?.image}
-                    alt="comic image"
-                  />
-                  <div className="absolute top-[-1.5rem] left-4 bg-red-500 rounded-full p-3 border-4 border-white">
-                    <MdDelete className="text-2xl text-white" />
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex w-[25%] items-center justify-between gap-8">
+                  <div className="text-6xl text-red-500">0{idx + 1}</div>
+                  <div>
+                    <img
+                      className="w-[15rem] rounded-md"
+                      src={item?.image}
+                      alt="comic image"
+                    />
                   </div>
                 </div>
-                <div className="text-center text-xl font-semibold">
-                  {item?.name}
+                <div className="w-[30%] space-y-6">
+                  <div className="text-xl font-medium text-gray-400">
+                    Comic Name
+                  </div>
+                  <div className="text-4xl tracking-wide">{item?.name}</div>
+                </div>
+                <div className="w-[15%] space-y-6">
+                  <div className="text-xl font-medium text-gray-400">
+                    Quantity
+                  </div>
+                  <input
+                    className="w-[7rem] bg-gray-100 px-2 py-4 rounded-sm outline-none border-none"
+                    type="number"
+                  />
+                </div>
+                <div className="w-[15%] space-y-6">
+                  <div className="text-xl font-medium text-gray-400">Price</div>
+                  <div className="text-3xl font-semibold">$132.6</div>
+                </div>
+                <div className="w-[10%] space-y-6">
+                  <div className="text-xl font-medium text-gray-400">
+                    Action
+                  </div>
+                  <div className="flex items-center justify-start gap-2">
+                    <div className="bg-red-500 rounded-full p-2">
+                      <MdDelete className="text-2xl text-white cursor-pointer" />
+                    </div>
+                    <div className="bg-red-500 rounded-full p-2">
+                      <FaRegEdit className="text-xl text-white cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[10%] space-y-6">
+                  <div className="text-xl font-medium text-gray-400">
+                    Subtotal
+                  </div>
+                  <div className="text-3xl font-semibold">$132.5</div>
                 </div>
               </div>
             );
           })
         )}
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="text-primary cursor-pointer font-semibold text-xl underline">
+          Apply Coupon Code
+        </div>
+        <div className="text-white cursor-pointer hover:bg-white hover:text-primary border border-primary px-5 py-3 rounded-full bg-primary">
+          Pay $362
+        </div>
       </div>
     </div>
   );

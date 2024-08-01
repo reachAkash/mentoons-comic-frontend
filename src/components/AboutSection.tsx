@@ -1,5 +1,5 @@
 import React from "react";
-import AboutComic from "@/assets/imgs/aboutComic.png";
+import TeamImage from "@/assets/imgs/team Illustration.jpg";
 import { TiTick } from "react-icons/ti";
 import CompanySlider from "./CompanySlider";
 import Wordbreak from "./Wordbreak";
@@ -17,8 +17,8 @@ const AboutSection: React.FC = () => {
     <div id="about" className="container py-6 bg-[#59B2DC]">
       <div className="flex items-center justify-between">
         <div className="relative w-[50%]">
-          <img className="rounded-full w-[80%]" src={AboutComic} />
-          <div className="absolute top-0 left-0 bg-white rounded-full h-[10rem] w-[10rem]">
+          <img className="rounded-full w-[80%]" src={TeamImage} />
+          <div className="absolute top-[-3rem] left-12 bg-white rounded-full h-[10rem] w-[10rem]">
             <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full text-gray-500 font-medium tracking-wider text-center">
               <span className="text-primary text-4xl font-extrabold">4K </span>{" "}
               <Wordbreak /> Users

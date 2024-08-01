@@ -46,9 +46,12 @@ const Navbar: React.FC = () => {
           Workshops
         </li>
       </ul>
-      <div className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary">
+      <Link
+        to="/"
+        className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary"
+      >
         <img className="w-32 cursor-pointer" src={Logo} />
-      </div>
+      </Link>
       <div className="w-[40%] pl-8 flex items-center justify-between">
         <ul className="w-[35%] flex items-center justify-between">
           <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">

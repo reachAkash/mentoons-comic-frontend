@@ -1,9 +1,9 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import Team1 from "@/assets/imgs/team1.png";
-import Team2 from "@/assets/imgs/team2.png";
-import Team3 from "@/assets/imgs/team3.png";
-import Team4 from "@/assets/imgs/team4.png";
+import Team1 from "@/assets/imgs/dhanasekar Illustration.jpg";
+import Team2 from "@/assets/imgs/Dhinesh Illustration.jpg";
+import Team3 from "@/assets/imgs/sankar Illustration.jpg";
+import Team4 from "@/assets/imgs/ajay Illustration.jpg";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
@@ -24,18 +24,18 @@ const Team: React.FC = () => {
             Meet With Our <Wordbreak /> Comic Artist.
           </div>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-20">
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team1}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Akash</div>
-              <div className="text-base">Web Developer</div>
+              <div className="font-semibold text-2xl">Dhanashankar</div>
+              <div className="text-base">Sketch Artist</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
                 <FaTwitter className="cursor-pointer text-[#d71515]" />
@@ -47,14 +47,14 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team2}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Akash</div>
-              <div className="text-base">Web Developer</div>
+              <div className="font-semibold text-2xl">Dhinesh</div>
+              <div className="text-base">Graphics Designer</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
                 <FaTwitter className="cursor-pointer text-[#d71515]" />
@@ -66,14 +66,14 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team3}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Akash</div>
-              <div className="text-base">Web Developer</div>
+              <div className="font-semibold text-2xl">Shankar</div>
+              <div className="text-base">Illustrator</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
                 <FaTwitter className="cursor-pointer text-[#d71515]" />
@@ -85,14 +85,14 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team4}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Akash</div>
-              <div className="text-base">Web Developer</div>
+              <div className="font-semibold text-2xl">Ajay</div>
+              <div className="text-base">Animator / Video Editor</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
                 <FaTwitter className="cursor-pointer text-[#d71515]" />
