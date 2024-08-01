@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 import CompanySlider from "./CompanySlider";
 import Wordbreak from "./Wordbreak";
 import { FaRegCirclePlay } from "react-icons/fa6";
-import { MiniTestimonailsSlider } from "./TestimonialsSlider";
+import { MiniTestimonailsSlider } from "./Sliders";
 
 const AboutSection: React.FC = () => {
   const data: string[] = [

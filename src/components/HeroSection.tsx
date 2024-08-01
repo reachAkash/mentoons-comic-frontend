@@ -7,14 +7,15 @@ import { FaRegStarHalfStroke } from "react-icons/fa6";
 import User1 from "@/assets/imgs/user1.png";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
+import { ComicSlider } from "./Sliders";
 
 const HeroSection: React.FC = () => {
   return (
     <div
       id="home"
-      className="container flex-1 flex items-center justify-between pb-10"
+      className="container flex items-center justify-between pb-10"
     >
-      <div className="space-y-6">
+      <div className="w-[50%] space-y-6">
         <h1 className="text-red-500 text-3xl">The Ultimate</h1>
         <div className="font-bold text-8xl tracking-wide leading-[1.10]">
           Mentoons <Wordbreak /> Comics.
@@ -57,13 +58,9 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex-1 relative flex items-center justify-end">
+      <div className="w-[50%] relative flex items-center justify-center">
         {/* <img className='h-[74vh] w-[65%] absolute top-0 right-0' src={comic1} alt='comic image' /> */}
-        <img
-          className="hidden md:block h-[80vh] w-[75%] relative top-6"
-          src={comic2}
-          alt="comic image 2"
-        />
+        <ComicSlider />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import TestimonialsSlider from "./TestimonialsSlider";
+import TestimonialsSlider from "./Sliders";
 
 const Testimonials: React.FC = () => {
   return (

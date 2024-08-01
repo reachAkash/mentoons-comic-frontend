@@ -20,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <Sheet>
       <SheetTrigger>
-        <RxHamburgerMenu className={`${className} text-black text-3xl`} />
+        <RxHamburgerMenu className={`${className} text-white text-3xl`} />
       </SheetTrigger>
       <SheetContent className="bg-[#F0EBE5] z-50">
         <Search />
@@ -33,7 +33,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <RxHamburgerMenu className={`${className} text-black text-3xl`} />
+        <RxHamburgerMenu className={`${className} text-white text-3xl`} />
       </SheetTrigger>
       <SheetContent
         side={"top"}

@@ -1,8 +1,8 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import NewComic1 from "@/assets/imgs/comic1.png";
-import NewComic2 from "@/assets/imgs/comic2.png";
-import NewComic3 from "@/assets/imgs/comic3.png";
+import NewComic1 from "@/assets/imgs/comic1.jpg";
+import NewComic2 from "@/assets/imgs/comic2.jpg";
+import NewComic4 from "@/assets/imgs/comic4.jpg";
 import { FaRegEye } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
@@ -31,12 +31,12 @@ const NewComics: React.FC = () => {
             </div>
             <div className="flex items-center justify-between text-black">
               <div className="space-y-1">
-                <h2 className="font-bold text-3xl tracking-wide">
-                  Super Knight
+                <h2 className="font-bold text-2xl italic tracking-wide">
+                  Electronic Gadgets and Kids
                 </h2>
                 <p className="flex items-center gap-2 text-medium text-gray-500 text-xl">
                   <FaRegEye />
-                  250.6K Reviews
+                  250.6K Views
                 </p>
               </div>
               <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">
@@ -57,12 +57,12 @@ const NewComics: React.FC = () => {
             </div>
             <div className="flex items-center justify-between text-black">
               <div className="space-y-1">
-                <h2 className="font-bold text-3xl tracking-wide">
-                  Super Knight
+                <h2 className="font-bold text-2xl italic tracking-wide">
+                  How to handle relationships
                 </h2>
                 <p className="flex items-center gap-2 text-medium text-gray-500 text-xl">
                   <FaRegEye />
-                  250.6K Reviews
+                  250.6K Views
                 </p>
               </div>
               <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">
@@ -74,7 +74,7 @@ const NewComics: React.FC = () => {
             <div className="relative">
               <img
                 className="group-hover:grayscale transition-all duration-500 ease-in-out"
-                src={NewComic3}
+                src={NewComic4}
                 alt="new comics"
               />
               <div className="absolute hidden group-hover:block p-3 bg-primary rounded-full top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition-all duration-300 ease-in-out">
@@ -83,12 +83,12 @@ const NewComics: React.FC = () => {
             </div>
             <div className="flex items-center justify-between text-black">
               <div className="space-y-1">
-                <h2 className="font-bold text-3xl tracking-wide">
-                  Super Knight
+                <h2 className="font-bold text-2xl italic tracking-wide">
+                  Choose Wisely
                 </h2>
                 <p className="flex items-center gap-2 text-medium text-gray-500 text-xl">
                   <FaRegEye />
-                  250.6K Reviews
+                  250.6K Views
                 </p>
               </div>
               <div className="border-2 group-hover:bg-primary border-primary p-3 rounded-full">

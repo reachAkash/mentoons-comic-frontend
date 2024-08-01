@@ -183,3 +183,11 @@ body,
   filter: hue-rotate(180deg) brightness(0) invert(1) sepia(1) saturate(1000%)
     hue-rotate(180deg);
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  color: orange;
+  border-radius: 9999px;
+  padding: 2rem;
+}
