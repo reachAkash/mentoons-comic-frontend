@@ -21,7 +21,7 @@ const NewComics: React.FC = () => {
           <div className="bg-white shadow-sm relative top-[4rem] rounded-xl cursor-pointer group px-4 py-3 space-y-3">
             <div className="relative">
               <img
-                className="group-hover:grayscale transition-all duration-500 ease-in-out"
+                className="group-hover:grayscale transition-all duration-500 ease-in-out h-[30rem] w-full"
                 src={NewComic1}
                 alt="new comics"
               />
@@ -47,7 +47,7 @@ const NewComics: React.FC = () => {
           <div className="bg-white shadow-sm rounded-xl cursor-pointer group px-4 py-3 space-y-3">
             <div className="relative">
               <img
-                className="group-hover:grayscale transition-all duration-500 ease-in-out"
+                className="group-hover:grayscale transition-all duration-500 ease-in-out h-[30rem] w-full"
                 src={NewComic2}
                 alt="new comics"
               />
@@ -73,7 +73,7 @@ const NewComics: React.FC = () => {
           <div className="bg-white shadow-sm relative top-[4rem] rounded-xl cursor-pointer group px-6 py-4 space-y-3">
             <div className="relative">
               <img
-                className="group-hover:grayscale transition-all duration-500 ease-in-out"
+                className="group-hover:grayscale transition-all duration-500 ease-in-out h-[30rem] w-full"
                 src={NewComic4}
                 alt="new comics"
               />
