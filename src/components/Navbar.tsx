@@ -29,30 +29,40 @@ const Navbar: React.FC = () => {
     <div
       className={`sticky top-0 ${
         showShadow && "shadow"
-      } container flex items-center justify-between text-black bg-[#f0ebe5] py-4 transition-all duration-1000 ease-in-out z-50`}
+      } container flex items-center justify-between text-black bg-primary py-4 transition-all duration-1000 ease-in-out z-50`}
     >
       <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
         <Link to="/">
-          <h2 className="text-3xl font-extrabold cursor-pointer">
-            MENTOONS COMICS<span className="text-primary">.</span>
+          <h2 className="text-3xl font-extrabold text-white cursor-pointer">
+            MENTOONS COMICS<span className="text-red-500">.</span>
           </h2>
         </Link>
-        <ul className="hidden md:flex w-full items-center justify-evenly gap-2 text-lg">
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Home
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            About
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Comics
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Blog
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Contact
-          </li>
+        <ul className="hidden md:flex w-full items-center justify-evenly gap-2 text-lg text-white">
+          <Link to="#home">
+            <li className="hover:text-red-500 uppercase cursor-pointer font-semibold transition-all duration-300 ease-in-out">
+              Home
+            </li>
+          </Link>
+          <Link to="#about">
+            <li className="hover:text-red-500 uppercase cursor-pointer font-semibold transition-all duration-300 ease-in-out">
+              About
+            </li>
+          </Link>
+          <Link to="#new-comics">
+            <li className="hover:text-red-500 uppercase cursor-pointer font-semibold transition-all duration-300 ease-in-out">
+              Comics
+            </li>
+          </Link>
+          <Link to="#blog">
+            <li className="hover:text-red-500 uppercase cursor-pointer font-semibold transition-all duration-300 ease-in-out">
+              Blog
+            </li>
+          </Link>
+          <Link to="/contact">
+            <li className="hover:text-red-500 uppercase cursor-pointer font-semibold transition-all duration-300 ease-in-out">
+              Contact
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8">
@@ -63,12 +73,12 @@ const Navbar: React.FC = () => {
           <Link to="/cart">
             <div className="relative group">
               <IoCart className="text-2xl cursor-pointer text-gray-500 group-hover:text-black transition-all duration-300 ease-in-out" />
-              <span className="absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-primary rounded-full px-[6px]">
+              <span className="absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-red-500 rounded-full px-[6px]">
                 2
               </span>
             </div>
           </Link>
-          <button className="w-full text-base lg:text-lg py-3 px-6 font-medium rounded-full bg-[#333333] text-white hover:bg-primary transition-all duration-300 ease-in-out">
+          <button className="w-full text-base lg:text-lg py-3 px-6 font-medium rounded-full bg-[#333333] text-white hover:bg-red-500 transition-all duration-300 ease-in-out">
             Free Comics
           </button>
         </div>

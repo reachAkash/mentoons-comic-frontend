@@ -36,37 +36,37 @@ const CompanySlider: React.FC = () => {
     >
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand1} />
+          <img className="rounded-full mx-auto company-image" src={Brand1} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand2} />
+          <img className="rounded-full mx-auto company-image" src={Brand2} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand3} />
+          <img className="rounded-full mx-auto company-image" src={Brand3} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand1} />
+          <img className="rounded-full mx-auto company-image" src={Brand1} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand2} />
+          <img className="rounded-full mx-auto company-image" src={Brand2} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand3} />
+          <img className="rounded-full mx-auto company-image" src={Brand3} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className=" text-center rounded-2xl text-white py-8 px-4 space-y-4">
-          <img className="rounded-full mx-auto" src={Brand1} />
+          <img className="rounded-full mx-auto company-image" src={Brand1} />
         </div>
       </SwiperSlide>
     </Swiper>

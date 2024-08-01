@@ -12,6 +12,8 @@ import "swiper/css/scrollbar";
 import Wordbreak from "./Wordbreak";
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import React from "react";
+import TestimonialImg2 from "@/assets/imgs/testimonials2.jpg";
+import TestimonialImg4 from "@/assets/imgs/testemonials4.jpg";
 
 const TestimonialsSlider: React.FC = () => {
   return (
@@ -102,6 +104,95 @@ const TestimonialsSlider: React.FC = () => {
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User1} />
             Akash Gupta
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  );
+};
+
+export const MiniTestimonailsSlider: React.FC = () => {
+  return (
+    <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, A11y, Autoplay]}
+      spaceBetween={50}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
+      loop={true} // Enable infinite looping
+      className="py-10 w-full"
+      breakpoints={{
+        // Up to 767px (mobile size)
+        0: {
+          slidesPerView: 1, // Show only 1 card on mobile
+        },
+        // Above 1024px (desktop size)
+        1024: {
+          slidesPerView: 3, // Show 3 cards on desktop (default)
+        },
+      }}
+    >
+      <SwiperSlide>
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+          <div className="flex items-center justify-center gap-6 font-semibold text-xl">
+            <img
+              className="w-14 rounded-full flex-shrink-0"
+              src={TestimonialImg2}
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="text-2xl text-extrabold">Srishti</div>
+            <div className="text-sm">
+              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
+              elit.
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+          <div className="flex items-center justify-center gap-6 font-semibold text-xl">
+            <img
+              className="w-14 rounded-full flex-shrink-0"
+              src={TestimonialImg4}
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="text-2xl text-extrabold">Akash</div>
+            <div className="text-sm">
+              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
+              elit.
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+          <div className="flex items-center justify-center gap-6 font-semibold text-xl">
+            <img className="w-14 rounded-full flex-shrink-0" src={User3} />
+          </div>
+          <div className="space-y-2">
+            <div className="text-2xl text-extrabold">Aman</div>
+            <div className="text-sm">
+              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
+              elit.
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+          <div className="flex items-center justify-center gap-6 font-semibold text-xl">
+            <img
+              className="w-14 rounded-full flex-shrink-0"
+              src={TestimonialImg4}
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="text-2xl text-extrabold">Akash</div>
+            <div className="text-sm">
+              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
+              elit.
+            </div>
           </div>
         </div>
       </SwiperSlide>

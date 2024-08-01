@@ -132,7 +132,7 @@ const Blogs: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primary w-fit mx-auto text-white hover:bg-white hover:text-primary px-6 py-4 rounded-full font-medium cursor-pointer">
+      <div className="bg-primary w-fit mx-auto text-white hover:bg-white hover:text-primary px-6 py-4 rounded-full font-medium cursor-pointer transition-all duration-300 ease-in-out">
         Browse More
       </div>
     </div>

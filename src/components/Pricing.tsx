@@ -16,16 +16,16 @@ const Pricing: React.FC = () => {
   ];
 
   return (
-    <div className="container bg-[#ECE7E1] py-10 space-y-10">
+    <div className="container bg-green-500 py-10 space-y-10">
       <div className="space-y-4">
-        <div className="text-primary lineBefore text-3xl">Price Plan</div>
-        <div className="font-extrabold text-6xl leading-[1.15]">
+        <div className="text-[#d71515] lineBefore text-3xl">Price Plan</div>
+        <div className="font-extrabold text-white text-6xl leading-[1.15]">
           Read Comics <Wordbreak /> Everyday.
         </div>
       </div>
       <div className="space-y-4">
         <div className="flex bg-white items-center justify-between">
-          <div className="bg-white text-center w-full space-y-4 py-6 px-6">
+          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
             <div className="text-center">
               <div className="text-2xl font-semibold">Starter</div>
               <div className="text-gray-500 text-lg">Per Month</div>
@@ -48,7 +48,7 @@ const Pricing: React.FC = () => {
               Free Account
             </button>
           </div>
-          <div className="bg-white text-center w-full space-y-4 py-6 px-6">
+          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
             <div className="text-center">
               <div className="text-2xl font-semibold">Basic</div>
               <div className="text-gray-500 text-lg">Per Month</div>
@@ -71,7 +71,7 @@ const Pricing: React.FC = () => {
               Free Account
             </button>
           </div>
-          <div className="bg-primary relative bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6">
+          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary relative bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6">
             <div className="">
               <div className="text-2xl font-semibold">Recommended</div>
               <div className="text-white text-lg">Per Month</div>
@@ -94,7 +94,7 @@ const Pricing: React.FC = () => {
               Free Account
             </button>
           </div>
-          <div className="bg-white text-center w-full space-y-4 py-6 px-6">
+          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
             <div className="text-center">
               <div className="text-2xl font-semibold">Superstars</div>
               <div className="text-gray-500 text-lg">Per Month</div>

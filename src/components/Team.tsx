@@ -11,10 +11,15 @@ import { FaYoutube } from "react-icons/fa";
 
 const Team: React.FC = () => {
   return (
-    <div className="container flex flex-col bg-primary text-white py-10 space-y-7">
+    <div
+      id="team"
+      className="container flex flex-col bg-primary text-white py-10 space-y-7"
+    >
       <div className="border-b-[1px] border-slate-300 py-12 space-y-7">
         <div className="text-start space-y-4">
-          <div className=" text-3xl whitelineBefore uppercase">Our Team </div>
+          <div className=" text-3xl lineBefore uppercase text-[#d71515]">
+            Our Team{" "}
+          </div>
           <div className="text-7xl w-full font-extrabold leading-[1.10]">
             Meet With Our <Wordbreak /> Comic Artist.
           </div>
@@ -31,11 +36,11 @@ const Team: React.FC = () => {
             <div>
               <div className="font-semibold text-2xl">Akash</div>
               <div className="text-base">Web Developer</div>
-              <div className="invisible group-hover:visible flex items-center justify-center gap-4 ">
-                <FaFacebookSquare className="cursor-pointer" />
-                <FaTwitter className="cursor-pointer" />
-                <FaLinkedin className="cursor-pointer" />
-                <FaYoutube className="cursor-pointer" />
+              <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+                <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+                <FaTwitter className="cursor-pointer text-[#d71515]" />
+                <FaLinkedin className="cursor-pointer text-[#d71515]" />
+                <FaYoutube className="cursor-pointer text-[#d71515]" />
               </div>
             </div>
           </div>
@@ -50,11 +55,11 @@ const Team: React.FC = () => {
             <div>
               <div className="font-semibold text-2xl">Akash</div>
               <div className="text-base">Web Developer</div>
-              <div className="invisible group-hover:visible flex items-center justify-center gap-4 ">
-                <FaFacebookSquare className="cursor-pointer" />
-                <FaTwitter className="cursor-pointer" />
-                <FaLinkedin className="cursor-pointer" />
-                <FaYoutube className="cursor-pointer" />
+              <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+                <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+                <FaTwitter className="cursor-pointer text-[#d71515]" />
+                <FaLinkedin className="cursor-pointer text-[#d71515]" />
+                <FaYoutube className="cursor-pointer text-[#d71515]" />
               </div>
             </div>
           </div>
@@ -69,11 +74,11 @@ const Team: React.FC = () => {
             <div>
               <div className="font-semibold text-2xl">Akash</div>
               <div className="text-base">Web Developer</div>
-              <div className="invisible group-hover:visible flex items-center justify-center gap-4 ">
-                <FaFacebookSquare className="cursor-pointer" />
-                <FaTwitter className="cursor-pointer" />
-                <FaLinkedin className="cursor-pointer" />
-                <FaYoutube className="cursor-pointer" />
+              <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+                <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+                <FaTwitter className="cursor-pointer text-[#d71515]" />
+                <FaLinkedin className="cursor-pointer text-[#d71515]" />
+                <FaYoutube className="cursor-pointer text-[#d71515]" />
               </div>
             </div>
           </div>
@@ -88,11 +93,11 @@ const Team: React.FC = () => {
             <div>
               <div className="font-semibold text-2xl">Akash</div>
               <div className="text-base">Web Developer</div>
-              <div className="invisible group-hover:visible flex items-center justify-center gap-4 ">
-                <FaFacebookSquare className="cursor-pointer" />
-                <FaTwitter className="cursor-pointer" />
-                <FaLinkedin className="cursor-pointer" />
-                <FaYoutube className="cursor-pointer" />
+              <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+                <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+                <FaTwitter className="cursor-pointer text-[#d71515]" />
+                <FaLinkedin className="cursor-pointer text-[#d71515]" />
+                <FaYoutube className="cursor-pointer text-[#d71515]" />
               </div>
             </div>
           </div>
