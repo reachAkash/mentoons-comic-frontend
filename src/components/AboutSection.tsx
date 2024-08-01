@@ -1,7 +1,6 @@
 import React from "react";
 import TeamImage from "@/assets/imgs/team Illustration.jpg";
 import { TiTick } from "react-icons/ti";
-import CompanySlider from "./CompanySlider";
 import Wordbreak from "./Wordbreak";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { MiniTestimonailsSlider } from "./Sliders";

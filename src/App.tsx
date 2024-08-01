@@ -15,7 +15,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      {/* <SlidingText /> */}
+      <SlidingText />
       <ProgressScroller />
     </>
   );

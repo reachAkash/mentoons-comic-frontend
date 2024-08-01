@@ -1,6 +1,6 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import Comic1 from "@/assets/imgs/comic1.jpg";
 import Comic2 from "@/assets/imgs/comic2.jpg";
 import Comic3 from "@/assets/imgs/comic6.jpg";

@@ -1,6 +1,4 @@
 import { FaRegCirclePlay } from "react-icons/fa6";
-// import comic1 from '@/assets/imgs/banner1.png'
-import comic2 from "@/assets/imgs/banner2.png";
 import Wordbreak from "./Wordbreak";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
