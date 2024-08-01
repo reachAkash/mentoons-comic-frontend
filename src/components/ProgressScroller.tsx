@@ -42,7 +42,7 @@ const ProgressScroller: React.FC = () => {
     <>
       {isVisible && (
         <div
-          className="w-fit rounded-full fixed right-4 bottom-20 bg-white p-4 cursor-pointer"
+          className="w-fit border border-black rounded-full fixed right-4 bottom-20 bg-white p-4 cursor-pointer"
           onClick={() => scrollToTop(1000)}
         >
           <FaArrowUpLong className="text-primary" />

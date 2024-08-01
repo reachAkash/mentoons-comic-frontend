@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       id="home"
-      className="container flex items-center justify-between pb-10"
+      className="container flex items-center justify-between pb-14"
     >
       <div className="w-[50%] space-y-6">
         <h1 className="text-red-500 text-3xl">The Ultimate</h1>

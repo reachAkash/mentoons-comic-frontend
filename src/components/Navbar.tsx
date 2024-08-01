@@ -33,14 +33,17 @@ const Navbar: React.FC = () => {
       } container flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-50`}
     >
       <ul className="w-[35%] flex items-center justify-between">
-        <li className="text-xl text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
-          Home
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Comics
         </li>
-        <li className="text-xl text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
           Latest
         </li>
-        <li className="text-xl text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
-          About
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Audio Comics
+        </li>
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Workshops
         </li>
       </ul>
       <div className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary">
@@ -48,10 +51,10 @@ const Navbar: React.FC = () => {
       </div>
       <div className="w-[40%] pl-8 flex items-center justify-between">
         <ul className="w-[35%] flex items-center justify-between">
-          <li className="text-xl text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
-            Workshops
+          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+            About
           </li>
-          <li className="text-xl text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
             Contact
           </li>
         </ul>
