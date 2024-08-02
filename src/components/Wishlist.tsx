@@ -1,10 +1,10 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
 import { MdDelete } from "react-icons/md";
-import Comic1 from "@/assets/imgs/comic1.jpg";
-import Comic2 from "@/assets/imgs/comic2.jpg";
-import Comic3 from "@/assets/imgs/comic6.jpg";
-import Comic4 from "@/assets/imgs/comic4.jpg";
+// import Comic1 from "@/assets/imgs/comic1.jpg";
+// import Comic2 from "@/assets/imgs/comic2.jpg";
+// import Comic3 from "@/assets/imgs/comic6.jpg";
+// import Comic4 from "@/assets/imgs/comic4.jpg";
 import { useSelector } from "react-redux";
 import { RootState, store } from "@/redux/store";
 
@@ -23,7 +23,7 @@ const Wishlist: React.FC = () => {
   console.log(wishlistData);
 
   return (
-    <div className="container py-10 space-y-20">
+    <div className="container py-10 pb-24 space-y-20">
       <div className="text-start pb-7 space-y-4 border-b border-black">
         <div className=" text-3xl lineBefore uppercase text-[#d71515]">
           Wishlist{" "}
@@ -32,7 +32,7 @@ const Wishlist: React.FC = () => {
           Your Favourite <Wordbreak /> Comic Books.
         </div>
       </div>
-      <div className="relative flex flex-wrap items-center justify-between gap-x-8 gap-y-12">
+      <div className="relative flex flex-wrap items-center justify-start gap-x-8 gap-y-12">
         {wishlistData.length <= 0 ? (
           <div className="absolute left-[50%] top-[80%] translate-x-[-50%] translate-y-[0%] text-center space-y-4">
             <div className="text-4xl font-semibold">No Comics Found! 🥺</div>
