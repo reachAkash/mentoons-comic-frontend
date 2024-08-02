@@ -6,6 +6,7 @@ import price2 from "@/assets/imgs/price2.png";
 import price3 from "@/assets/imgs/price3.png";
 import price4 from "@/assets/imgs/price4.png";
 import { TiTick } from "react-icons/ti";
+import { v4 as uuidv4 } from "uuid";
 
 const Pricing: React.FC = () => {
   const data = [
@@ -37,7 +38,7 @@ const Pricing: React.FC = () => {
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
-                  <div className="flex items-center gap-2">
+                  <div key={uuidv4()} className="flex items-center gap-2">
                     <TiTick className="text-primary text-2xl" />
                     {item}
                   </div>
@@ -60,7 +61,7 @@ const Pricing: React.FC = () => {
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
-                  <div className="flex items-center gap-2">
+                  <div key={uuidv4()} className="flex items-center gap-2">
                     <TiTick className="text-primary text-2xl" />
                     {item}
                   </div>
@@ -83,7 +84,7 @@ const Pricing: React.FC = () => {
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
-                  <div className="flex items-center gap-2">
+                  <div key={uuidv4()} className="flex items-center gap-2">
                     <TiTick className="text-white text-2xl" />
                     {item}
                   </div>
@@ -106,7 +107,7 @@ const Pricing: React.FC = () => {
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
-                  <div className="flex items-center gap-2">
+                  <div key={uuidv4()} className="flex items-center gap-2">
                     <TiTick className="text-primary text-2xl" />
                     {item}
                   </div>

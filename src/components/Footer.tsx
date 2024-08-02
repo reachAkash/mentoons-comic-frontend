@@ -5,6 +5,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
+import { v4 as uuidv4 } from "uuid";
 
 const Footer: React.FC = () => {
   const quickLinks = ["Home page", "About Us", "Our Team", "Blog", "Contact"];
@@ -32,7 +33,10 @@ const Footer: React.FC = () => {
           <div className="text-center space-y-1">
             {quickLinks?.map((item: string) => {
               return (
-                <div className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out">
+                <div
+                  key={uuidv4()}
+                  className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out"
+                >
                   {item}
                 </div>
               );
@@ -44,7 +48,10 @@ const Footer: React.FC = () => {
           <div className="text-center space-y-1">
             {quickLinks?.map((item: string) => {
               return (
-                <div className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out">
+                <div
+                  key={uuidv4()}
+                  className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out"
+                >
                   {item}
                 </div>
               );
@@ -56,7 +63,10 @@ const Footer: React.FC = () => {
           <div className="text-center space-y-1">
             {quickLinks?.map((item: string) => {
               return (
-                <div className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out">
+                <div
+                  key={uuidv4()}
+                  className="hover:text-gray-200 cursor-pointer relative hover:scale-[0.98] transition-all duration-300 ease-in-out"
+                >
                   {item}
                 </div>
               );
@@ -69,7 +79,7 @@ const Footer: React.FC = () => {
           </h2>
           <div className="flex  items-center justify-center gap-3 text-center space-y-1">
             {socialLinks?.map((Item: any) => {
-              return <Item className="text-xl" />;
+              return <Item key={uuidv4()} className="text-xl" />;
             })}
           </div>
         </div>
