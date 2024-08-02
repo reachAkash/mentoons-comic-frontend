@@ -40,10 +40,9 @@ export const comicsSlice = createSlice({
       }
     },
     removeFromCartReducer: (state, action) => {
-      const newCart = state.cart.filter((item) => {
+      state.cart = state.cart.filter((item) => {
         return item.image != action.payload;
       });
-      state.cart = newCart;
     },
     addToWishlistReducer: (state, action) => {
       const isPresent = state.cart.find((item) => {
@@ -55,8 +54,8 @@ export const comicsSlice = createSlice({
       }
     },
     removeFromWishlistReducer: (state, action) => {
-      state.wishlist.filter((item) => {
-        return item.image != action.payload.image;
+      state.wishlist = state.wishlist.filter((item) => {
+        return item.image != action.payload;
       });
     },
     updateComicQuantityReducer: (

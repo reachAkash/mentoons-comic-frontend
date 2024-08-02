@@ -5,11 +5,13 @@ import { MdDelete } from "react-icons/md";
 // import Comic2 from "@/assets/imgs/comic2.jpg";
 // import Comic3 from "@/assets/imgs/comic6.jpg";
 // import Comic4 from "@/assets/imgs/comic4.jpg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { v4 } from "uuid";
+import { removeFromWishlistReducer } from "@/redux/comicSlice";
 
 const Wishlist: React.FC = () => {
+  const dispatch = useDispatch();
   const wishlistData = useSelector((store: RootState) => store.comics.wishlist);
   // const wishlistData = [
   //   { name: "Electronic Gadgets & kids", image: Comic1 },
@@ -21,7 +23,9 @@ const Wishlist: React.FC = () => {
   //   { name: "Choose Wisely", image: Comic4 },
   // ];
 
-  console.log(wishlistData);
+  const removeComic = (image: string) => {
+    dispatch(removeFromWishlistReducer(image));
+  };
 
   return (
     <div className="container py-20 pb-24 space-y-20">
@@ -54,7 +58,10 @@ const Wishlist: React.FC = () => {
                     src={item?.image}
                     alt="comic image"
                   />
-                  <div className="absolute top-[-1.5rem] left-4 bg-red-500 rounded-full p-3 border-4 border-white">
+                  <div
+                    onClick={() => removeComic(item?.image)}
+                    className="absolute top-[-1.5rem] left-4 bg-red-500 rounded-full p-3 border-4 border-white"
+                  >
                     <MdDelete className="text-2xl text-white" />
                   </div>
                 </div>
