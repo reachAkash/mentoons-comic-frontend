@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Wordbreak from "./Wordbreak";
 import { MdDelete } from "react-icons/md";
-import Comic1 from "@/assets/imgs/comic1.jpg";
-import Comic2 from "@/assets/imgs/comic2.jpg";
-import Comic3 from "@/assets/imgs/comic6.jpg";
-import Comic4 from "@/assets/imgs/comic4.jpg";
+// import Comic1 from "@/assets/imgs/comic1.jpg";
+// import Comic2 from "@/assets/imgs/comic2.jpg";
+// import Comic3 from "@/assets/imgs/comic6.jpg";
+// import Comic4 from "@/assets/imgs/comic4.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { v4 as uuidv4 } from "uuid";
