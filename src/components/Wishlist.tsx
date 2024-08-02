@@ -6,7 +6,8 @@ import { MdDelete } from "react-icons/md";
 // import Comic3 from "@/assets/imgs/comic6.jpg";
 // import Comic4 from "@/assets/imgs/comic4.jpg";
 import { useSelector } from "react-redux";
-import { RootState, store } from "@/redux/store";
+import { RootState } from "@/redux/store";
+import { v4 } from "uuid";
 
 const Wishlist: React.FC = () => {
   const wishlistData = useSelector((store: RootState) => store.comics.wishlist);
@@ -23,7 +24,7 @@ const Wishlist: React.FC = () => {
   console.log(wishlistData);
 
   return (
-    <div className="container py-10 pb-24 space-y-20">
+    <div className="container py-20 pb-24 space-y-20">
       <div className="text-start pb-7 space-y-4 border-b border-black">
         <div className=" text-3xl lineBefore uppercase text-[#d71515]">
           Wishlist{" "}
@@ -46,7 +47,7 @@ const Wishlist: React.FC = () => {
         ) : (
           wishlistData?.map((item) => {
             return (
-              <div className="space-y-4">
+              <div key={v4()} className="space-y-4">
                 <div className="relative">
                   <img
                     className="w-[17rem]"

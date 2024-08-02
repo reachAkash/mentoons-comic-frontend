@@ -9,6 +9,12 @@ import { FaCartShopping } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { addToCartReducer, addToWishlistReducer } from "@/redux/comicSlice";
 import { v4 as uuidv4 } from "uuid";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const NewComics: React.FC = () => {
   const dispatch = useDispatch();
@@ -56,7 +62,7 @@ const NewComics: React.FC = () => {
                 key={uuidv4()}
                 className={`bg-white shadow-sm relative ${
                   idx != 1 ? "top-[4rem]" : "top-[1.5rem]"
-                } rounded-xl cursor-pointer group px-4 py-3 space-y-3`}
+                } rounded-xl group px-4 py-3 space-y-3`}
               >
                 <div className="relative">
                   <img
@@ -64,11 +70,28 @@ const NewComics: React.FC = () => {
                     src={item?.image}
                     alt="new comics"
                   />
-                  <div className="absolute hidden group-hover:block p-4 bg-primary rounded-full top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                    <FaHeart
-                      onClick={() => addToWishlist(item.image)}
-                      className="text-2xl text-white active:text-red-500"
-                    />
+                  {/* <div
+                    onClick={() => addToWishlist(item.image)}
+                    className="absolute hidden group-hover:block cursor-pointer p-4 bg-primary rounded-full top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+                  >
+                    <FaHeart className="text-2xl text-white active:text-red-500" />
+                  </div> */}
+                  <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <div
+                            onClick={() => addToWishlist(item.image)}
+                            className=" hidden group-hover:block cursor-pointer p-4 bg-primary rounded-full"
+                          >
+                            <FaHeart className="text-2xl text-white active:text-red-500" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-[#59B2DC] text-white">
+                          <p className="font-semibold">Add to Wishlist</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-black">
@@ -81,11 +104,22 @@ const NewComics: React.FC = () => {
                       250.6K Views
                     </p>
                   </div>
-                  <div className="border-2 group-hover:bg-primary active:scale-95 border-primary p-3 rounded-full">
-                    <FaCartShopping
-                      onClick={() => addToCart(item.image)}
-                      className="text-2xl text-primary group-hover:text-white transition-all duration-300 ease-in-out"
-                    />
+                  <div>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <div
+                            onClick={() => addToCart(item.image)}
+                            className="border-2 cursor-pointer group-hover:bg-primary active:scale-95 border-primary p-3 rounded-full"
+                          >
+                            <FaCartShopping className="text-2xl text-primary group-hover:text-white transition-all duration-300 ease-in-out" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-[#59B2DC] text-white">
+                          <p className="font-semibold">Add to library</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </div>
                 </div>
               </div>

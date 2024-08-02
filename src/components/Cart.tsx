@@ -1,23 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import Wordbreak from "./Wordbreak";
 import { MdDelete } from "react-icons/md";
 import Comic1 from "@/assets/imgs/comic1.jpg";
 import Comic2 from "@/assets/imgs/comic2.jpg";
 import Comic3 from "@/assets/imgs/comic6.jpg";
 import Comic4 from "@/assets/imgs/comic4.jpg";
-import { FaRegEdit } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { v4 as uuidv4 } from "uuid";
+import {
+  removeFromCartReducer,
+  updateComicQuantityReducer,
+} from "@/redux/comicSlice";
 
 const Cart: React.FC = () => {
-  const cartData = [
-    { name: "Electronic Gadgets & kids", image: Comic1 },
-    { name: "How to handle relationships", image: Comic2 },
-    { name: "One way trip", image: Comic3 },
-    { name: "Choose Wisely", image: Comic4 },
-  ];
+  const dispatch = useDispatch();
+  const cartData = useSelector((store: RootState) => store.comics.cart);
+  // const cartData = [
+  //   { name: "Electronic Gadgets & kids", image: Comic1 },
+  //   { name: "How to handle relationships", image: Comic2 },
+  //   { name: "One way trip", image: Comic3 },
+  //   { name: "Choose Wisely", image: Comic4 },
+  // ];
   // const cartData: string[] = [];
 
+  const updateQuantity = (e: any, img: string) => {
+    const val = Number(e.target.value);
+    dispatch(updateComicQuantityReducer({ image: img, quantity: val }));
+  };
+
+  const removeComic = (image: string) => {
+    dispatch(removeFromCartReducer(image));
+  };
   return (
-    <div className="container py-10 space-y-20">
+    <div className="container py-20 space-y-20">
       <div className="text-start pb-7 space-y-4 border-b border-black">
         <div className=" text-3xl lineBefore uppercase text-[#d71515]">
           Your Cart{" "}
@@ -26,7 +42,11 @@ const Cart: React.FC = () => {
           Checkout Your <Wordbreak /> Comic Books.
         </div>
       </div>
-      <div className="relative border-b border-black pb-14 flex flex-col justify-between w-full gap-20">
+      <div
+        className={`relative ${
+          cartData.length > 0 && "border-b border-black"
+        } pb-14 flex flex-col justify-between w-full gap-20`}
+      >
         {cartData.length <= 0 ? (
           <div className="absolute left-[50%] top-[80%] translate-x-[-50%] translate-y-[0%] text-center space-y-4">
             <div className="text-4xl font-semibold">No Comics Found! 🥺</div>
@@ -40,7 +60,10 @@ const Cart: React.FC = () => {
         ) : (
           cartData?.map((item, idx) => {
             return (
-              <div className="flex items-start justify-between gap-4">
+              <div
+                key={uuidv4()}
+                className="flex items-start justify-between gap-4"
+              >
                 <div className="flex w-[25%] items-center justify-between gap-8">
                   <div className="text-6xl text-red-500">0{idx + 1}</div>
                   <div>
@@ -62,24 +85,26 @@ const Cart: React.FC = () => {
                     Quantity
                   </div>
                   <input
+                    value={item?.quantity}
+                    onChange={(e) => updateQuantity(e, item?.image)}
                     className="w-[7rem] bg-gray-100 px-2 py-4 rounded-sm outline-none border-none"
                     type="number"
                   />
                 </div>
                 <div className="w-[15%] space-y-6">
                   <div className="text-xl font-medium text-gray-400">Price</div>
-                  <div className="text-3xl font-semibold">$132.6</div>
+                  <div className="text-3xl font-semibold">Rs. {item.price}</div>
                 </div>
                 <div className="w-[10%] space-y-6">
                   <div className="text-xl font-medium text-gray-400">
                     Action
                   </div>
                   <div className="flex items-center justify-start gap-2">
-                    <div className="bg-red-500 rounded-full p-2">
+                    <div
+                      onClick={() => removeComic(item?.image)}
+                      className="bg-red-500 rounded-full p-2"
+                    >
                       <MdDelete className="text-2xl text-white cursor-pointer" />
-                    </div>
-                    <div className="bg-red-500 rounded-full p-2">
-                      <FaRegEdit className="text-xl text-white cursor-pointer" />
                     </div>
                   </div>
                 </div>
@@ -87,21 +112,25 @@ const Cart: React.FC = () => {
                   <div className="text-xl font-medium text-gray-400">
                     Subtotal
                   </div>
-                  <div className="text-3xl font-semibold">$132.5</div>
+                  <div className="text-3xl font-semibold">
+                    Rs. {item?.price}
+                  </div>
                 </div>
               </div>
             );
           })
         )}
       </div>
-      <div className="flex items-center justify-between">
-        <div className="text-primary cursor-pointer font-semibold text-xl underline">
-          Apply Coupon Code
+      {cartData.length > 0 && (
+        <div className="flex items-center justify-between">
+          <div className="text-primary cursor-pointer font-semibold text-xl underline">
+            Apply Coupon Code
+          </div>
+          <div className="text-white cursor-pointer hover:bg-white hover:text-primary border border-primary px-5 py-3 rounded-full bg-primary">
+            Pay $362
+          </div>
         </div>
-        <div className="text-white cursor-pointer hover:bg-white hover:text-primary border border-primary px-5 py-3 rounded-full bg-primary">
-          Pay $362
-        </div>
-      </div>
+      )}
     </div>
   );
 };

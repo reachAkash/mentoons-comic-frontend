@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CartItemsPrototype {
   image: string;
@@ -27,30 +27,60 @@ export const comicsSlice = createSlice({
   initialState,
   reducers: {
     addToCartReducer: (state, action) => {
-      state.cart.push(action.payload);
+      const isPresent = state.cart.find((item) => {
+        return item.image == action.payload.image;
+      });
+      if (!isPresent) {
+        action.payload.quantity = 1;
+        action.payload.price = 10;
+        state.cart.push(action.payload);
+      } else {
+        isPresent.quantity += 1;
+        isPresent.price = isPresent.quantity * 10;
+      }
     },
     removeFromCartReducer: (state, action) => {
-      state.cart.filter((item) => {
-        return item.image != action.payload.image;
+      const newCart = state.cart.filter((item) => {
+        return item.image != action.payload;
       });
+      state.cart = newCart;
     },
     addToWishlistReducer: (state, action) => {
-      state.wishlist.push(action.payload);
+      const isPresent = state.cart.find((item) => {
+        return item.image == action.payload.image;
+      });
+      console.log(isPresent);
+      if (!isPresent) {
+        state.wishlist.push(action.payload);
+      }
     },
     removeFromWishlistReducer: (state, action) => {
       state.wishlist.filter((item) => {
         return item.image != action.payload.image;
       });
     },
+    updateComicQuantityReducer: (
+      state,
+      action: PayloadAction<{ image: string; quantity: number }>
+    ) => {
+      const { image, quantity } = action.payload;
+      const item = state.cart.find((item) => {
+        return item.image == image;
+      });
+      if (item) {
+        item.quantity = quantity;
+        item.price = quantity * 10;
+      }
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
 export const {
   addToCartReducer,
   removeFromCartReducer,
   addToWishlistReducer,
   removeFromWishlistReducer,
+  updateComicQuantityReducer,
 } = comicsSlice.actions;
 
 export default comicsSlice.reducer;
