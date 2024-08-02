@@ -5,6 +5,7 @@ import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Logo from "@/assets/imgs/logo.png";
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar: React.FC = () => {
   const [showShadow, setShowShadow] = useState<boolean>(false);
@@ -32,8 +33,8 @@ const Navbar: React.FC = () => {
         showShadow && "shadow"
       } container flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-50`}
     >
-      <ul className="w-[35%] flex items-center justify-between">
-        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+      <ul className="flex items-center justify-between">
+        {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
           Comics
         </li>
         <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
@@ -44,7 +45,8 @@ const Navbar: React.FC = () => {
         </li>
         <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
           Workshops
-        </li>
+        </li> */}
+        <DropdownMenu />
       </ul>
       <Link
         to="/"
@@ -54,10 +56,10 @@ const Navbar: React.FC = () => {
       </Link>
       <div className="w-[40%] pl-8 flex items-center justify-between">
         <ul className="w-[35%] flex items-center justify-between">
-          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-6 transition-all ease-in-out duration-300 cursor-pointer">
             About
           </li>
-          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-6 transition-all ease-in-out duration-300 cursor-pointer">
             Contact
           </li>
         </ul>
