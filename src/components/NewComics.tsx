@@ -55,7 +55,7 @@ const NewComics: React.FC = () => {
             Enjoy Newest <Wordbreak /> Comic Books.
           </div>
         </div>
-        <div className="flex flex-wrap flex-row space-y-8 items-center justify-between gap-6">
+        <div className="flex flex-wrap flex-row lg:space-y-8 items-center justify-between gap-6">
           {comicData?.map((item, idx) => {
             return (
               <div
