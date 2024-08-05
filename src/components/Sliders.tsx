@@ -3,14 +3,20 @@ import User1 from "@/assets/imgs/user1.png";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaQuoteLeft } from "react-icons/fa";
+import { FaFacebookSquare, FaQuoteLeft } from "react-icons/fa";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Wordbreak from "./Wordbreak";
-import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
+import {
+  FaLinkedin,
+  FaRegStarHalfStroke,
+  FaStar,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 import React from "react";
 import TestimonialImg2 from "@/assets/imgs/testimonials2.jpg";
 import TestimonialImg4 from "@/assets/imgs/testemonials4.jpg";
@@ -23,6 +29,10 @@ import Comic6 from "@/assets/imgs/comic6.jpg";
 import Comic7 from "@/assets/imgs/comic7.jpg";
 import Comic8 from "@/assets/imgs/comic8.jpg";
 import Comic9 from "@/assets/imgs/comic9.jpg";
+import Team1 from "@/assets/imgs/dhanasekar Illustration.jpg";
+import Team2 from "@/assets/imgs/Dhinesh Illustration.jpg";
+import Team3 from "@/assets/imgs/sankar Illustration.jpg";
+import Team4 from "@/assets/imgs/ajay Illustration.jpg";
 
 const TestimonialsSlider: React.FC = () => {
   return (
@@ -269,6 +279,114 @@ export const ComicSlider: React.FC = () => {
       <SwiperSlide>
         <div className="flex items-center justify-center">
           <img className="w-[30rem] lg:w-[22rem]" src={Comic9} />
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  );
+};
+
+export const TeamSlider: React.FC = () => {
+  return (
+    <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, A11y, Autoplay]}
+      spaceBetween={50}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
+      loop={true} // Enable infinite looping
+      navigation={false}
+      className="w-full"
+      breakpoints={{
+        // Up to 767px (mobile size)
+        0: {
+          slidesPerView: 3, // Show only 1 card on mobile
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      }}
+    >
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Team1}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Dhanashekar</div>
+            <div className="text-base">Sketch Artist</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Team2}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Dhinesh</div>
+            <div className="text-base">Graphic Designer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Team3}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Ajay</div>
+            <div className="text-base">Video Editor</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Team4}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Sankar</div>
+            <div className="text-base">Illustrator</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
         </div>
       </SwiperSlide>
     </Swiper>
