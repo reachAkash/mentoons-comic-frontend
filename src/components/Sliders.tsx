@@ -29,10 +29,16 @@ import Comic6 from "@/assets/imgs/comic6.jpg";
 import Comic7 from "@/assets/imgs/comic7.jpg";
 import Comic8 from "@/assets/imgs/comic8.jpg";
 import Comic9 from "@/assets/imgs/comic9.jpg";
-import Team1 from "@/assets/imgs/dhanasekar Illustration.jpg";
-import Team2 from "@/assets/imgs/Dhinesh Illustration.jpg";
-import Team3 from "@/assets/imgs/sankar Illustration.jpg";
-import Team4 from "@/assets/imgs/ajay Illustration.jpg";
+import Dhanashekar from "@/assets/imgs/dhanasekar Illustration.jpg";
+import Dhinesh from "@/assets/imgs/Dhinesh Illustration.jpg";
+import Sankar from "@/assets/imgs/sankar Illustration.jpg";
+import Ajay from "@/assets/imgs/ajay Illustration.jpg";
+import Aleeshya from "@/assets/imgs/Aleeshya Illustration.jpg";
+import Thameem from "@/assets/imgs/Thameem Illustration.jpg";
+import Akash from "@/assets/imgs/Akash Illustration.jpg";
+import Lincy from "@/assets/imgs/Lincy Illustration.jpg";
+import Anam from "@/assets/imgs/Anam Illustration.jpg";
+import Sir from "@/assets/imgs/sir Illustration.jpg";
 
 const TestimonialsSlider: React.FC = () => {
   return (
@@ -302,7 +308,11 @@ export const TeamSlider: React.FC = () => {
       breakpoints={{
         // Up to 767px (mobile size)
         0: {
-          slidesPerView: 3, // Show only 1 card on mobile
+          slidesPerView: 2, // Show only 1 card on mobile
+        },
+        // From to 767px (mobile size)
+        767: {
+          slidesPerView: 3,
         },
         1024: {
           slidesPerView: 4,
@@ -314,7 +324,49 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Team1}
+              src={Sir}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Mentor Mahesh</div>
+            <div className="text-base">Founder</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Akash}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Akash</div>
+            <div className="text-base">Web Developer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Dhanashekar}
               alt=""
             />
           </div>
@@ -335,7 +387,7 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Team2}
+              src={Dhinesh}
               alt=""
             />
           </div>
@@ -356,13 +408,13 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Team3}
+              src={Sankar}
               alt=""
             />
           </div>
           <div>
-            <div className="font-semibold text-xl">Ajay</div>
-            <div className="text-base">Video Editor</div>
+            <div className="font-semibold text-xl">Sankar</div>
+            <div className="text-base">Illustrator</div>
             <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
               <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
               <FaTwitter className="cursor-pointer text-[#d71515]" />
@@ -377,13 +429,76 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Team4}
+              src={Anam}
               alt=""
             />
           </div>
           <div>
-            <div className="font-semibold text-xl">Sankar</div>
-            <div className="text-base">Illustrator</div>
+            <div className="font-semibold text-xl">Anam Fathima</div>
+            <div className="text-base">Content Writer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Lincy}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Joice Lincy</div>
+            <div className="text-base">Digital Marketing</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Aleeshya}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Aleeshya</div>
+            <div className="text-base">Web Developer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Thameem}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Thameem</div>
+            <div className="text-base">Web Developer</div>
             <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
               <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
               <FaTwitter className="cursor-pointer text-[#d71515]" />

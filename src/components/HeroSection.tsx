@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       id="home"
-      className="container flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-20 py-0 lg:pb-14"
+      className="container flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
     >
       <div className=" w-full lg:w-[50%] space-y-6">
         <h1 className="text-red-500 text-4xl lg:text-3xl ">The Ultimate</h1>
