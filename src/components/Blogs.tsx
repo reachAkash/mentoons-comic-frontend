@@ -1,8 +1,8 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-import Blog1 from "@/assets/imgs/blog1.png";
-import Blog2 from "@/assets/imgs/blog2.png";
-import Blog3 from "@/assets/imgs/blog3.png";
+import Blog1 from "@/assets/imgs/comic1.jpg";
+import Blog2 from "@/assets/imgs/comic2.jpg";
+import Blog3 from "@/assets/imgs/comic3.jpg";
 import { AiFillLike } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { IoIosShareAlt } from "react-icons/io";
@@ -21,11 +21,11 @@ const Blogs: React.FC = () => {
       </div>
       <div className="space-y-7">
         <div className="flex border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-[44%] flex items-center gap-8 justify-between">
+          <div className="w-[44%] flex items-center gap-8">
             <div className="text-7xl text-primary mr-4">01</div>
             <div>
               <img
-                className="w-full grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
+                className="w-full h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
                 src={Blog1}
               />
             </div>
@@ -58,11 +58,11 @@ const Blogs: React.FC = () => {
           </div>
         </div>
         <div className="flex border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-[45%] flex items-center gap-8 justify-between">
+          <div className="w-[45%] flex items-center gap-8">
             <div className="text-7xl text-primary">02</div>
             <div>
               <img
-                className="w-full grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
+                className="w-full h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
                 src={Blog2}
               />
             </div>
@@ -95,11 +95,11 @@ const Blogs: React.FC = () => {
           </div>
         </div>
         <div className="flex border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-[45%] flex items-center gap-8 justify-between">
+          <div className="w-[45%] flex items-center gap-8">
             <div className="text-7xl text-primary hollow-text">03</div>
             <div>
               <img
-                className="w-full grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
+                className="w-full h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
                 src={Blog3}
               />
             </div>

@@ -120,10 +120,10 @@ const Pricing: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-between">
-          <div className="text-primary underline font-medium text-lg">
+          <div className="text-red-500 underline font-medium text-lg">
             Ask Any Question
           </div>
-          <div className="flex items-center justify-center text-gray-500 gap-2">
+          <div className="flex items-center justify-center text-gray-200 gap-2">
             <FaLock /> All Payments Are Highly Secured.
           </div>
         </div>

@@ -11,14 +11,14 @@ const HeroSection: React.FC = () => {
   return (
     <div
       id="home"
-      className="container flex items-center justify-between pb-14"
+      className="container flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-20 py-0 lg:pb-14"
     >
-      <div className="w-[50%] space-y-6">
-        <h1 className="text-red-500 text-3xl">The Ultimate</h1>
+      <div className=" w-full lg:w-[50%] space-y-6">
+        <h1 className="text-red-500 text-4xl lg:text-3xl ">The Ultimate</h1>
         <div className="font-bold text-8xl tracking-wide leading-[1.10]">
           Mentoons <Wordbreak /> Comics.
         </div>
-        <div className="w-fit flex items-center justify-between gap-4">
+        <div className="mx-auto lg:mx-0 w-fit flex items-center justify-between gap-4">
           <button className="bg-red-500 text-white rounded-full px-4 py-2 text-xl">
             Read Now
           </button>
@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
             <FaRegCirclePlay className="text-red-500 text-5xl" />
           </div>
         </div>
-        <div className="flex items-center justify-start gap-0">
+        <div className="flex text-center w-full lg:w-fit items-center justify-center lg:justify-start gap-0">
           <div className="flex items-center justify-between w-fit">
             <img
               className="rounded-full w-14 border-4 border-white"
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-[50%] relative flex items-center justify-center">
+      <div className="w-full lg:w-[50%] relative flex items-center justify-center">
         {/* <img className='h-[74vh] w-[65%] absolute top-0 right-0' src={comic1} alt='comic image' /> */}
         <ComicSlider />
       </div>

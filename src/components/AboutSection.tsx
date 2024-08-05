@@ -13,9 +13,9 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <div id="about" className="container py-6 bg-[#59B2DC]">
-      <div className="flex items-center justify-between">
-        <div className="relative w-[50%]">
+    <div id="about" className="container py-20 bg-[#59B2DC]">
+      <div className="flex flex-col lg:flex-row space-y-10   items-center justify-between">
+        <div className="relative w-full text-center lg:w-[50%]">
           <img className="rounded-full w-[80%]" src={TeamImage} />
           <div className="absolute top-[-3rem] left-12 bg-white rounded-full h-[10rem] w-[10rem]">
             <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full text-gray-500 font-medium tracking-wider text-center">
@@ -30,21 +30,23 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="space-y-5 w-[50%] text-white">
-          <div className="text-red-500 text-3xl lineBefore">About Us</div>
+        <div className="space-y-5 w-full lg:w-[50%] text-center lg:text-start text-white">
+          <div className="text-red-500 text-4xl  lg:text-3xl lineBefore">
+            About Us
+          </div>
           <h2 className="text-7xl w-full font-semibold leading-[1.10]">
             Digital Books <Wordbreak /> Arts <Wordbreak /> Company.
           </h2>
-          <p className=" text-lg">
+          <p className="text-lg">
             Lorem ipsum dolor sit amet, consectetur <Wordbreak /> adipisicing
             elit. Dolore molestiae eius <Wordbreak /> accusamus fuga a tenetur.
           </p>
-          <div className="space-y-2">
+          <div className="space-y-2 flex flex-col w-full m-auto text-center lg:text-start">
             {data?.map((item, idx) => {
               return (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 text-black font-bold"
+                  className="flex items-center m-auto lg:m-0 gap-2 text-black font-bold"
                 >
                   <TiTick className="text-red-500 text-2xl" />
                   {item}
@@ -52,7 +54,7 @@ const AboutSection: React.FC = () => {
               );
             })}
           </div>
-          <div className="w-fit flex items-center justify-between gap-4">
+          <div className="w-fit mx-auto flex items-center justify-between gap-4">
             <div>
               <FaRegCirclePlay className="text-red-500 text-6xl cursor-pointer" />
             </div>

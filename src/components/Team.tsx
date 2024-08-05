@@ -28,13 +28,13 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team1}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Dhanashankar</div>
+              <div className="font-semibold text-2xl">Dhanashekar</div>
               <div className="text-base">Sketch Artist</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
@@ -47,7 +47,7 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team2}
                 alt=""
               />
@@ -66,13 +66,13 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team3}
                 alt=""
               />
             </div>
             <div>
-              <div className="font-semibold text-2xl">Shankar</div>
+              <div className="font-semibold text-2xl">Sankar</div>
               <div className="text-base">Illustrator</div>
               <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
                 <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
@@ -85,7 +85,7 @@ const Team: React.FC = () => {
           <div className="text-center space-y-1 group">
             <div className="overflow-hidden relative rounded-full">
               <img
-                className="rounded-full border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+                className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                 src={Team4}
                 alt=""
               />

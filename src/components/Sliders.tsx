@@ -132,7 +132,7 @@ export const MiniTestimonailsSlider: React.FC = () => {
       breakpoints={{
         // Up to 767px (mobile size)
         0: {
-          slidesPerView: 1, // Show only 1 card on mobile
+          slidesPerView: 2, // Show only 1 card on mobile
         },
         // Above 1024px (desktop size)
         1024: {
@@ -218,7 +218,7 @@ export const ComicSlider: React.FC = () => {
       autoplay={{ delay: 2000, disableOnInteraction: false }}
       loop={true} // Enable infinite looping
       navigation={true}
-      className="py-10 w-[80%]"
+      className="py-10 w-full lg:w-[80%]"
       breakpoints={{
         // Up to 767px (mobile size)
         0: {
@@ -228,47 +228,47 @@ export const ComicSlider: React.FC = () => {
     >
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic1} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic1} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic2} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic2} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic3} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic3} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic4} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic4} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic5} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic5} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic6} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic6} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic7} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic7} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic8} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic8} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex items-center justify-center">
-          <img className="w-[22rem]" src={Comic9} />
+          <img className="w-[30rem] lg:w-[22rem]" src={Comic9} />
         </div>
       </SwiperSlide>
     </Swiper>
