@@ -33,13 +33,13 @@ const Wishlist: React.FC = () => {
         <div className=" text-3xl lineBefore uppercase text-[#d71515]">
           Wishlist{" "}
         </div>
-        <div className="text-7xl w-full font-extrabold leading-[1.10]">
+        <div className="text-4xl md:text-7xl w-full font-extrabold leading-[1.10]">
           Your Favourite <Wordbreak /> Comic Books.
         </div>
       </div>
       <div className="relative flex flex-wrap items-center justify-start gap-x-8 gap-y-12">
         {wishlistData.length <= 0 ? (
-          <div className="absolute left-[50%] top-[80%] translate-x-[-50%] translate-y-[0%] text-center space-y-4">
+          <div className="lg:absolute lg:left-[50%] lg:top-[80%] lg:translate-x-[-50%] lg:translate-y-[0%] text-center space-y-4">
             <div className="text-4xl font-semibold">No Comics Found! 🥺</div>
             <div className="text-gray-500 text-lg">
               Try adding some comics in wishlist

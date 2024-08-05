@@ -7,7 +7,7 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import Search from "./Search";
@@ -30,6 +30,8 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
 };
 
 export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
+  const navigate = useNavigate();
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -39,22 +41,55 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
         side={"top"}
         className="bg-[#F0EBE5] z-50 text-center space-y-4 py-[4rem]"
       >
-        <ul className=" w-full space-y-3">
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Home
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            About
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Comics
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Blog
-          </li>
-          <li className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out">
-            Contact
-          </li>
+        <ul className=" w-full py-2 space-y-3">
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Home
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/comics")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Comics
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/latest")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Latest
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/audio-comics")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Audio Comics
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/workshops")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Workshops
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/about")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              About
+            </li>
+          </SheetClose>
         </ul>
         <div className="w-full flex items-center justify-center gap-4">
           <SheetClose asChild>

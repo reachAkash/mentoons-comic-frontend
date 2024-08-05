@@ -33,12 +33,12 @@ const Cart: React.FC = () => {
     dispatch(removeFromCartReducer(image));
   };
   return (
-    <div className="container py-20 space-y-20">
+    <div className="container py-10 lg:py-20 space-y-10 lg:space-y-20">
       <div className="text-start pb-7 space-y-4 border-b border-black">
         <div className=" text-3xl lineBefore uppercase text-[#d71515]">
           Your Cart{" "}
         </div>
-        <div className="text-7xl w-full font-extrabold leading-[1.10]">
+        <div className="text-5xl lg:text-7xl w-full font-extrabold leading-[1.10]">
           Checkout Your <Wordbreak /> Comic Books.
         </div>
       </div>
@@ -48,8 +48,10 @@ const Cart: React.FC = () => {
         } pb-14 flex flex-col justify-between w-full gap-20`}
       >
         {cartData.length <= 0 ? (
-          <div className="absolute left-[50%] top-[80%] translate-x-[-50%] translate-y-[0%] text-center space-y-4">
-            <div className="text-4xl font-semibold">No Comics Found! 🥺</div>
+          <div className="lg:absolute lg:left-[50%] top-[10%] lg:top-[80%] lg:translate-x-[-50%] lg:translate-y-[0%] text-center space-y-4">
+            <div className="text-4xl text-center lg:text-4xl font-semibold">
+              No Comics Found! 🥺
+            </div>
             <div className="text-gray-500 text-lg">
               Try adding some comics in wishlist
             </div>
