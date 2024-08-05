@@ -10,7 +10,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Blogs: React.FC = () => {
   return (
-    <div className="container bg-home py-20 space-y-7">
+    <div className="container hidden bg-home py-20 space-y-7">
       <div className="space-y-3 border-b-[1px] pb-8 border-gray-500">
         <div className=" text-3xl text-primary lineBefore uppercase">
           Blogs{" "}

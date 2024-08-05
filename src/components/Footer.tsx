@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <div className="container bg-black space-y-4 py-6">
+    <div className="container hidden bg-black space-y-4 py-6">
       <div className="flex items-center justify-between text-white border-b border-gray-400 py-10">
         <div className="flex flex-col">
           <div className="text-3xl font-extrabold cursor-pointer">

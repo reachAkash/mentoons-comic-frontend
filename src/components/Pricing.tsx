@@ -134,8 +134,6 @@
 
 // export default Pricing;
 
-import React from "react";
-
 const Pricing = () => {
   return <div>Pricing</div>;
 };

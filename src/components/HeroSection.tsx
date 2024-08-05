@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
     >
       <div className=" w-full lg:w-[50%] space-y-6">
         <h1 className="text-red-500 text-4xl lg:text-3xl ">The Ultimate</h1>
-        <div className="font-bold text-8xl tracking-wide leading-[1.10]">
+        <div className="font-bold text-6xl lg:text-8xl tracking-wide leading-[1.10]">
           Mentoons <Wordbreak /> Comics.
         </div>
         <div className="mx-auto lg:mx-0 w-fit flex items-center justify-between gap-4">
