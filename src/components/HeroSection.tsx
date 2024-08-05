@@ -6,14 +6,23 @@ import User1 from "@/assets/imgs/user1.png";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { ComicSlider } from "./Sliders";
+import { motion } from "framer-motion";
 
 const HeroSection: React.FC = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 4 }}
       id="home"
       className="container flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
     >
-      <div className=" w-full lg:w-[50%] space-y-6">
+      <motion.div
+        initial={{ x: -50 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 2 }}
+        className=" w-full lg:w-[50%] space-y-6"
+      >
         <h1 className="text-red-500 text-4xl lg:text-3xl ">The Ultimate</h1>
         <div className="font-bold text-6xl lg:text-8xl tracking-wide leading-[1.10]">
           Mentoons <Wordbreak /> Comics.
@@ -55,12 +64,17 @@ const HeroSection: React.FC = () => {
             <div className="text-gray-500">(405k Reviews)</div>
           </div>
         </div>
-      </div>
-      <div className="w-full lg:w-[50%] relative flex items-center justify-center">
+      </motion.div>
+      <motion.div
+        initial={{ x: 50 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 2 }}
+        className="w-full lg:w-[50%] relative flex items-center justify-center"
+      >
         {/* <img className='h-[74vh] w-[65%] absolute top-0 right-0' src={comic1} alt='comic image' /> */}
         <ComicSlider />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

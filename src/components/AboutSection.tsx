@@ -4,6 +4,7 @@ import { TiTick } from "react-icons/ti";
 import Wordbreak from "./Wordbreak";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { MiniTestimonailsSlider } from "./Sliders";
+import { motion } from "framer-motion";
 
 const AboutSection: React.FC = () => {
   const data: string[] = [
@@ -16,29 +17,50 @@ const AboutSection: React.FC = () => {
     <div id="about" className="container py-20 bg-[#59B2DC]">
       <div className="flex flex-col lg:flex-row space-y-10   items-center justify-between">
         <div className="relative w-full flex items-center justify-center lg:w-[50%]">
-          <img className="rounded-full w-[80%]" src={TeamImage} />
-          <div className="absolute top-[-2rem] left-0 lg:top-[-3rem] lg:left-12 bg-white rounded-full h-[6rem] w-[6rem] lg:h-[10rem] lg:w-[10rem]">
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+            className="rounded-full w-[80%]"
+            src={TeamImage}
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+            className="absolute top-[-2rem] left-0 lg:top-[-3rem] lg:left-12 bg-white rounded-full h-[6rem] w-[6rem] lg:h-[10rem] lg:w-[10rem]"
+          >
             <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full text-gray-500 font-medium tracking-wider text-center">
               <span className="text-primary text-2xl lg:text-4xl font-extrabold">
                 4K{" "}
               </span>{" "}
               <Wordbreak /> Users
             </div>
-          </div>
-          <div className="absolute bottom-0 left-0 bg-primary text-white rounded-full h-[8em] w-[8rem] lg:h-[13rem] lg:w-[13rem]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+            className="absolute bottom-0 left-0 bg-primary text-white rounded-full h-[8em] w-[8rem] lg:h-[13rem] lg:w-[13rem]"
+          >
             <div className="w-full absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full font-medium tracking-wider text-center px-4">
               <span className="text-2xl lg:text-5xl font-extrabold">20+ </span>{" "}
               <Wordbreak /> Years of comic journey
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="space-y-5 w-full lg:w-[50%] text-center lg:text-start text-white">
-          <div className="text-red-500 text-4xl  lg:text-3xl lineBefore">
+          <motion.div
+            initial={{ y: -50 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 2 }}
+            className="text-red-500 text-4xl  lg:text-3xl lineBefore"
+          >
             About Us
-          </div>
-          <h2 className="text-5xl lg:text-7xl w-full font-semibold leading-[1.10]">
+          </motion.div>
+          <motion.h2 className="text-5xl lg:text-7xl w-full font-semibold leading-[1.10]">
             Digital Books <Wordbreak /> Arts <Wordbreak /> Company.
-          </h2>
+          </motion.h2>
           <p className="text-lg">
             Lorem ipsum dolor sit amet, consectetur <Wordbreak /> adipisicing
             elit. Dolore molestiae eius <Wordbreak /> accusamus fuga a tenetur.
