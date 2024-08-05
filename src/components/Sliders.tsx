@@ -387,6 +387,27 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Ajay}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Ajay</div>
+            <div className="text-base">Video Editor</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="text-center space-y-1 group">
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
               src={Dhinesh}
               alt=""
             />
