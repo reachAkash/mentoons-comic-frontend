@@ -47,26 +47,26 @@ const NewComics: React.FC = () => {
   };
 
   return (
-    <div className="bg-primary text-white pt-20">
-      <div className="container space-y-10">
+    <div className="bg-primary text-white pt-20 pb-14 lg:pb-0">
+      <div className="container space-y-12">
         <div className="text-center space-y-4">
           <div className="text-[#d71515] text-3xl lineBefore">New Comics</div>
           <div className="text-7xl w-full font-extrabold leading-[1.10]">
             Enjoy Newest <Wordbreak /> Comic Books.
           </div>
         </div>
-        <div className="flex items-center justify-between gap-6">
+        <div className="flex flex-wrap flex-row space-y-8 items-center justify-between gap-6">
           {comicData?.map((item, idx) => {
             return (
               <div
                 key={uuidv4()}
-                className={`bg-white shadow-sm relative ${
-                  idx != 1 ? "top-[4rem]" : "top-[1.5rem]"
+                className={`bg-white m-auto shadow-sm w-[20rem] md:w-[45%] lg:w-[30%] relative ${
+                  idx != 1 ? "lg:top-[5rem]" : "lg:top-[1.5rem]"
                 } rounded-xl group px-4 py-3 space-y-3`}
               >
                 <div className="relative">
                   <img
-                    className="group-hover:grayscale transition-all duration-500 ease-in-out h-[30rem] w-full"
+                    className="group-hover:grayscale transition-all duration-500 ease-in-out h-[20rem] md:h-[30rem] w-full"
                     src={item?.image}
                     alt="new comics"
                   />

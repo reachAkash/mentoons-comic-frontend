@@ -6,76 +6,76 @@ const SlidingText: React.FC = () => {
   return (
     <div className="marquee">
       <span className="marquee1">
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
-        <Link to="/contact">
+        <Link to="/comic-workshop">
           <span className="text cursor-pointer">
-            Comic Making Contest
+            Comic making Workshop
             <img className="w-[15%]" src={Star} alt="star" />
           </span>
         </Link>
         <span className="marquee2">
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
-          <Link to="/contact">
+          <Link to="/comic-workshop">
             <span className="text cursor-pointer">
-              Comic Making Contest
+              Comic making Workshop
               <img className="w-[15%]" src={Star} alt="star" />
             </span>
           </Link>
