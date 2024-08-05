@@ -13,7 +13,7 @@ const Team: React.FC = () => {
           <div className=" text-3xl lineBefore uppercase text-[#d71515]">
             Our Team{" "}
           </div>
-          <div className="text-7xl w-full font-extrabold leading-[1.10]">
+          <div className="text-5xl text-center lg:text-7xl w-full font-extrabold tracking-wide leading-[1.10]">
             Meet With Our <Wordbreak /> Comic Artist.
           </div>
         </div>

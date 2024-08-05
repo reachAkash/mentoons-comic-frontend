@@ -142,7 +142,11 @@ export const MiniTestimonailsSlider: React.FC = () => {
       breakpoints={{
         // Up to 767px (mobile size)
         0: {
-          slidesPerView: 2, // Show only 1 card on mobile
+          slidesPerView: 1, // Show only 1 card on mobile
+        },
+        // From 767 px (tablet size)
+        767: {
+          slidesPerView: 2,
         },
         // Above 1024px (desktop size)
         1024: {

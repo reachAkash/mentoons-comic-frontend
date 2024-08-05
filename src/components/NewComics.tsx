@@ -51,7 +51,7 @@ const NewComics: React.FC = () => {
       <div className="container space-y-12">
         <div className="text-center space-y-4">
           <div className="text-[#d71515] text-3xl lineBefore">New Comics</div>
-          <div className="text-7xl w-full font-extrabold leading-[1.10]">
+          <div className="text-4xl lg:text-7xl w-full font-extrabold leading-[1.10]">
             Enjoy Newest <Wordbreak /> Comic Books.
           </div>
         </div>

@@ -15,17 +15,19 @@ const AboutSection: React.FC = () => {
   return (
     <div id="about" className="container py-20 bg-[#59B2DC]">
       <div className="flex flex-col lg:flex-row space-y-10   items-center justify-between">
-        <div className="relative w-full text-center lg:w-[50%]">
+        <div className="relative w-full flex items-center justify-center lg:w-[50%]">
           <img className="rounded-full w-[80%]" src={TeamImage} />
-          <div className="absolute top-[-3rem] left-12 bg-white rounded-full h-[10rem] w-[10rem]">
+          <div className="absolute top-[-2rem] left-0 lg:top-[-3rem] lg:left-12 bg-white rounded-full h-[6rem] w-[6rem] lg:h-[10rem] lg:w-[10rem]">
             <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full text-gray-500 font-medium tracking-wider text-center">
-              <span className="text-primary text-4xl font-extrabold">4K </span>{" "}
+              <span className="text-primary text-2xl lg:text-4xl font-extrabold">
+                4K{" "}
+              </span>{" "}
               <Wordbreak /> Users
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 bg-primary text-white rounded-full h-[13rem] w-[13rem]">
+          <div className="absolute bottom-0 left-0 bg-primary text-white rounded-full h-[8em] w-[8rem] lg:h-[13rem] lg:w-[13rem]">
             <div className="w-full absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  rounded-full font-medium tracking-wider text-center px-4">
-              <span className=" text-5xl font-extrabold">20+ </span>{" "}
+              <span className="text-2xl lg:text-5xl font-extrabold">20+ </span>{" "}
               <Wordbreak /> Years of comic journey
             </div>
           </div>
@@ -34,7 +36,7 @@ const AboutSection: React.FC = () => {
           <div className="text-red-500 text-4xl  lg:text-3xl lineBefore">
             About Us
           </div>
-          <h2 className="text-7xl w-full font-semibold leading-[1.10]">
+          <h2 className="text-5xl lg:text-7xl w-full font-semibold leading-[1.10]">
             Digital Books <Wordbreak /> Arts <Wordbreak /> Company.
           </h2>
           <p className="text-lg">
@@ -54,7 +56,7 @@ const AboutSection: React.FC = () => {
               );
             })}
           </div>
-          <div className="w-fit mx-auto flex items-center justify-between gap-4">
+          <div className="w-fit mx-auto lg:mx-0  flex items-center justify-between gap-4">
             <div>
               <FaRegCirclePlay className="text-red-500 text-6xl cursor-pointer" />
             </div>
