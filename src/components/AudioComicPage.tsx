@@ -2,7 +2,6 @@
 import React from "react";
 // import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { Button } from "./ui/button";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
