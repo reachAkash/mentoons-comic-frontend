@@ -8,8 +8,9 @@ import Comic4 from "@/assets/imgs/comic4.jpg";
 import Comic5 from "@/assets/imgs/comic5.jpg";
 import Comic6 from "@/assets/imgs/comic2.jpg";
 import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
 
-const PopularComics: React.FC = () => {
+const AudioComics: React.FC = () => {
   const navigate = useNavigate();
   const arr = [
     {
@@ -82,7 +83,8 @@ const PopularComics: React.FC = () => {
         {arr?.map((item) => {
           return (
             <div
-              onClick={() => navigate(`/audio-comic?${item.name}`)}
+              key={v4()}
+              onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
               className="bg-white shadow-lg group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3"
             >
               <div className="overflow-hidden rounded-2xl">
@@ -112,4 +114,4 @@ const PopularComics: React.FC = () => {
   );
 };
 
-export default PopularComics;
+export default AudioComics;

@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Notfound from "@/assets/imgs/notfound.png";
+import Logo from "@/assets/imgs/logo.png";
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="w-screen h-[90vh] flex flex-col items-center justify-center space-y-4">
-      <img className="w-[20rem]" src={Notfound} alt="Not Found" />
+      <img className="w-[20rem]" src={Logo} alt="Not Found" />
       <div className="font-semibold text-4xl">Page Not Found!</div>
       <button
         onClick={() => navigate("/")}

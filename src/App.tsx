@@ -7,6 +7,7 @@ import SlidingText from "./components/SlidingText";
 import ProgressScroller from "./components/ProgressScroller";
 import ComicWorkshop from "./components/ComicWorkshop";
 import NotFound from "./components/NotFound";
+import AudioComicPage from "./components/AudioComicPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
-        {/* <Route path="/audio-comic?:" element={<Cart />} /> */}
+        <Route path="/audio-comic" element={<AudioComicPage />} />
         <Route path="/comic-workshop" element={<ComicWorkshop />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
