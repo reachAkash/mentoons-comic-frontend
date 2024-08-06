@@ -98,7 +98,7 @@ const AudioComics: React.FC = () => {
                 <div className="text-xl font-semibold tracking-wide">
                   {item?.name}
                 </div>
-                <div className="text-gray-400 text-sm tracking-wide">
+                <div className="text-black text-sm tracking-wide">
                   {item?.description}
                 </div>
               </div>
