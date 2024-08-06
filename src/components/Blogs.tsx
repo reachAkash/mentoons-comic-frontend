@@ -12,7 +12,7 @@ const Blogs: React.FC = () => {
   return (
     <div className="container bg-home py-20 space-y-7">
       <div className="space-y-3 border-b-[1px] pb-8 border-gray-500">
-        <div className=" text-3xl text-primary lineBefore uppercase">
+        <div className=" text-3xl text-red-500 lineBefore uppercase">
           Blogs{" "}
         </div>
         <div className="text-7xl w-full font-extrabold leading-[1.10]">
@@ -21,7 +21,7 @@ const Blogs: React.FC = () => {
       </div>
       <div className="space-y-7">
         <div className="flex flex-col lg:flex-row border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-full lg:w-[44%] flex items-center gap-2 lg:gap-8">
+          <div className="w-full lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
             <div className="text-7xl text-primary mr-4">01</div>
             <div>
               <img
@@ -58,7 +58,7 @@ const Blogs: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-full flex-row-reverse lg:w-[44%] flex items-center gap-2 lg:gap-8">
+          <div className="w-full flex-row-reverse lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
             <div className="text-7xl text-primary mr-4">02</div>
             <div>
               <img
@@ -95,7 +95,7 @@ const Blogs: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row border-b border-gray-400 py-6 items-center justify-between">
-          <div className="w-full lg:w-[44%] flex items-center gap-2 lg:gap-8">
+          <div className="w-full lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
             <div className="text-7xl text-primary mr-4">03</div>
             <div>
               <img
