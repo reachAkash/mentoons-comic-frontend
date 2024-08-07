@@ -178,6 +178,26 @@ body,
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #969696;
+}
+
 .airplane-image,
 .company-image {
   filter: hue-rotate(180deg) brightness(0) invert(1) sepia(1) saturate(1000%)
@@ -193,10 +213,12 @@ body,
 }
 
 /* navbar dropdown */
+/*
  {
-  /* outline: none;
+   outline: none;
   width: 32rem;
   display: flex;
   justify-content: space-between;
-  align-items: center; */
+  align-items: center; 
 }
+*/
