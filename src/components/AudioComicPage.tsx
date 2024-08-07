@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { IoShareSocial } from "react-icons/io5";
-import { BsEmojiAstonished } from "react-icons/bs";
 import { TbExchange } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
