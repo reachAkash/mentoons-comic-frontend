@@ -39,6 +39,7 @@ const NewComics: React.FC = () => {
     });
     dispatch(addToWishlistReducer(item));
   };
+
   const addToCart = (image: string) => {
     const item = comicData?.find((comic) => {
       return comic.image == image;

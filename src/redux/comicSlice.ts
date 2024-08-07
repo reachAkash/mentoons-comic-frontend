@@ -9,7 +9,7 @@ export interface Comic {
   category: string;
 }
 interface CartItemsPrototype {
-  image: string;
+  thumbnail: string;
   name: string;
   price: number;
   quantity: number;
@@ -33,7 +33,7 @@ const initialState: InitialStatePrototype = {
     // GroupSmall = (Age 6-12) GroupMedium = (Age 13-19) GroupLarge = (Age 20+) GroupXLarge = (Elders)
     {
       name: "Bet Your Life",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:17",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-09.jpg",
@@ -43,7 +43,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "The Cell Life of Soniya",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:31",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-12.jpg",
@@ -53,7 +53,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Choose Wisely",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:27",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-08.jpg",
@@ -63,7 +63,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Come out of Gaming",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:51",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-05.jpg",
@@ -73,7 +73,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Comic on Divorce",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:04",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-07.jpg",
@@ -83,7 +83,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Don't Fade Away",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:54",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-04.jpg",
@@ -93,7 +93,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Hungry for Likes Not Life",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:10",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-15.jpg",
@@ -103,7 +103,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "One Way Trip",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:09",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-22.jpg",
@@ -113,7 +113,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Rishi and Rohit",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:20",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-16.jpg",
@@ -123,7 +123,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Rohan and the Puppies",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:09",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-17.jpg",
@@ -133,7 +133,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "Tanya's Downfall",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:53",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-06.jpg",
@@ -143,7 +143,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "How Teenagers Lose Their Jobs Part-1",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:13",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-23.jpg",
@@ -153,7 +153,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "How Teenagers Lose Their Jobs Part-2",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:58",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
@@ -163,7 +163,7 @@ const initialState: InitialStatePrototype = {
     },
     {
       name: "How Teenagers Lose Their Jobs Part-2",
-      desc: "Type '{ name: string; desc: string; }' is missing the following properties from type 'Comic': duration, thumbnail, videoLink, category",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:58",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
@@ -179,13 +179,14 @@ export const comicsSlice = createSlice({
   initialState,
   reducers: {
     addToCartReducer: (state, action) => {
-      const isPresent = state.cart.find((item) => {
-        return item.image == action.payload.image;
-      });
+      const currComic = action.payload;
+      const isPresent = state.cart.find(
+        (item) => item.thumbnail === currComic.thumbnail
+      );
+
       if (!isPresent) {
-        action.payload.quantity = 1;
-        action.payload.price = 10;
-        state.cart.push(action.payload);
+        const newComic = { ...currComic, quantity: 1, price: 10 };
+        state.cart.push(newComic);
       } else {
         isPresent.quantity += 1;
         isPresent.price = isPresent.quantity * 10;
@@ -193,12 +194,12 @@ export const comicsSlice = createSlice({
     },
     removeFromCartReducer: (state, action) => {
       state.cart = state.cart.filter((item) => {
-        return item.image != action.payload;
+        return item.thumbnail != action.payload;
       });
     },
     addToWishlistReducer: (state, action) => {
       const isPresent = state.cart.find((item) => {
-        return item.image == action.payload.image;
+        return item.thumbnail == action.payload.thumbnail;
       });
       console.log(isPresent);
       if (!isPresent) {
@@ -216,7 +217,7 @@ export const comicsSlice = createSlice({
     ) => {
       const { image, quantity } = action.payload;
       const item = state.cart.find((item) => {
-        return item.image == image;
+        return item.thumbnail == image;
       });
       if (item) {
         item.quantity = quantity;

@@ -44,6 +44,7 @@ const AudioComicPage: React.FC = () => {
 
   // handlers
   const handleComic = (name: string) => {
+    if (name === comicName) return;
     navigate("/audio-comic?comic=" + name);
   };
 
@@ -64,8 +65,6 @@ const AudioComicPage: React.FC = () => {
     });
     setCurrentComic(data);
   };
-
-  console.log(currentComic);
 
   const comicsToDisplay =
     searchedComics.length > 0 ? searchedComics : comicData;

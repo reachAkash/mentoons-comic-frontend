@@ -9,10 +9,12 @@ import ComicWorkshop from "./components/ComicWorkshop";
 import NotFound from "./components/NotFound";
 import AudioComicPage from "./components/AudioComicPage";
 import ComicsPage from "./components/ComicsPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,10 +1,6 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
 import { MdDelete } from "react-icons/md";
-// import Comic1 from "@/assets/imgs/comic1.jpg";
-// import Comic2 from "@/assets/imgs/comic2.jpg";
-// import Comic3 from "@/assets/imgs/comic6.jpg";
-// import Comic4 from "@/assets/imgs/comic4.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { v4 } from "uuid";
@@ -13,15 +9,6 @@ import { removeFromWishlistReducer } from "@/redux/comicSlice";
 const Wishlist: React.FC = () => {
   const dispatch = useDispatch();
   const wishlistData = useSelector((store: RootState) => store.comics.wishlist);
-  // const wishlistData = [
-  //   { name: "Electronic Gadgets & kids", image: Comic1 },
-  //   { name: "How to handle relationships", image: Comic2 },
-  //   { name: "One way trip", image: Comic3 },
-  //   { name: "Choose Wisely", image: Comic4 },
-  //   { name: "Choose Wisely", image: Comic4 },
-  //   { name: "Choose Wisely", image: Comic4 },
-  //   { name: "Choose Wisely", image: Comic4 },
-  // ];
 
   const removeComic = (image: string) => {
     dispatch(removeFromWishlistReducer(image));
