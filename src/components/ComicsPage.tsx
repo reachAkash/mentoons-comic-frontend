@@ -5,6 +5,7 @@ import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
+import { IoFilterSharp } from "react-icons/io5";
 
 const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -20,8 +21,22 @@ const ComicsPage: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div>Filter</div>
+    <div className="container py-10 space-y-8">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 text-white py-3 px-4 bg-blue-500">
+          <div className="text-3xl font-semibold px-4 py-2 hover:bg-blue-200  rounded-md  ">
+            Audio Comics
+          </div>
+          <div className="text-3xl font-semibold px-4 py-2 hover:bg-blue-200 rounded-md ">
+            Comics
+          </div>
+        </div>
+        <div className="flex items-center gap-2 bg-primary text-white px-3 py-1 rounded-md">
+          <div className="flex items-center gap-2">
+            Filter <IoFilterSharp className="text-2xl" />
+          </div>
+        </div>
+      </div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {comicsData?.map((item: Comic) => {
           return (
