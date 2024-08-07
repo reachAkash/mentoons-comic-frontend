@@ -1,12 +1,6 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
 import { FaCirclePlay } from "react-icons/fa6";
-import Comic1 from "@/assets/imgs/comic6.jpg";
-import Comic2 from "@/assets/imgs/comic7.jpg";
-import Comic3 from "@/assets/imgs/comic8.jpg";
-import Comic4 from "@/assets/imgs/comic4.jpg";
-import Comic5 from "@/assets/imgs/comic5.jpg";
-import Comic6 from "@/assets/imgs/comic2.jpg";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import { useSelector } from "react-redux";
