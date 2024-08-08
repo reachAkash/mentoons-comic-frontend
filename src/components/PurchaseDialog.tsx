@@ -12,11 +12,12 @@ import {
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useRef } from "react";
 import Wordbreak from "./Wordbreak";
+import { Comic } from "@/redux/comicSlice";
 
-export interface PurchaseDialogProps {
-  name: string | null;
+export interface currentComicProps {
+  currData: Comic | undefined;
 }
-const PurchaseDialog: React.FC<PurchaseDialogProps> = ({ name }) => {
+const PurchaseDialog: React.FC<currentComicProps> = ({ currData }) => {
   console.log(name);
   const ref = useRef<any>();
   useEffect(() => {
@@ -31,18 +32,35 @@ const PurchaseDialog: React.FC<PurchaseDialogProps> = ({ name }) => {
         <Button variant="outline" className="invisible" ref={ref}></Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <AlertDialogHeader>
+        <AlertDialogHeader className="space-y-4">
           <AlertDialogTitle className="text-center">
-            Continue watching <Wordbreak /> {name}
+            Continue watching <Wordbreak />{" "}
+            <span className="text-primary">{currData?.name}</span>
           </AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            <div className="flex items-start justify-between gap-4">
+              <div className="w-[30%]">
+                <img
+                  className="w-[15rem] rounded-lg"
+                  src={currData?.thumbnail}
+                  alt={currData?.name}
+                />
+              </div>
+              <div className="w-[70%] text-center space-y-3">
+                <div className="text-start">{currData?.desc}</div>
+                <div>
+                  <div className="font-semibold text-black text-xl">
+                    Buy Comic
+                  </div>
+                  <div className="text-sm font-thin">Rs. 10</div>
+                </div>
+              </div>
+            </div>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogAction className="text-white">Purchase</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

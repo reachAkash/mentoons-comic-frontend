@@ -167,7 +167,7 @@ const AudioComicPage: React.FC = () => {
           </div>
         </div>
       </div>
-      {showPurchaseDialog && <PurchaseDialog name={comicName} />}
+      {showPurchaseDialog && <PurchaseDialog currData={currentComic} />}
     </>
   );
 };
