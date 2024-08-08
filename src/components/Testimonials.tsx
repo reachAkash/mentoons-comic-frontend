@@ -7,8 +7,8 @@ const Testimonials: React.FC = () => {
     <div className="container flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] py-20">
       <div className="w-full lg:w-[45%] space-y-4">
         <div className="text-red-500 lineBefore text-3xl">User Reviews</div>
-        <div className="font-extrabold text-5xl lg:text-6xl">
-          Reviews From <Wordbreak /> Comic Fans.
+        <div className="font-extrabold text-4xl lg:text-6xl">
+          What Readers Say About Mentoons Comics
         </div>
         <div className="text-gray-500 text-lg tracking-wide">
           Lorem ipsum dolor sit amet, consectetur <Wordbreak /> adipisicing

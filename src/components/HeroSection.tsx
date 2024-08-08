@@ -7,8 +7,10 @@ import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { ComicSlider } from "./Sliders";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0.5 }}
@@ -23,16 +25,20 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 2 }}
         className=" w-full lg:w-[50%] space-y-6"
       >
-        <h1 className="text-red-500 text-4xl lg:text-3xl ">The Ultimate</h1>
-        <div className="font-bold text-6xl lg:text-8xl tracking-wide leading-[1.10]">
-          Mentoons <Wordbreak /> Comics.
+        <h1 className="text-red-500 text-4xl lg:text-3xl ">Mentoons Comics</h1>
+        <div className="font-bold text-2xl lg:text-4xl tracking-wide leading-tight lg:leading-snug">
+          Welcome to a world of <Wordbreak /> meaningful stories and valuable{" "}
+          <Wordbreak /> life lessons
         </div>
         <div className="mx-auto lg:mx-0 w-fit flex items-center justify-between gap-4">
-          <button className="bg-red-500 text-white rounded-full px-4 py-2 text-xl">
-            Read Now
+          <button
+            onClick={() => navigate("/comics-list")}
+            className="bg-red-500 text-white rounded-full px-4 py-2 text-xl"
+          >
+            Browse Our Collection
           </button>
-          <div>
-            <FaRegCirclePlay className="text-red-500 text-5xl" />
+          <div onClick={() => navigate("/comics-list")}>
+            <FaRegCirclePlay className="text-red-500 text-5xl cursor-pointer" />
           </div>
         </div>
         <div className="flex text-center w-full lg:w-fit items-center justify-center lg:justify-start gap-0">

@@ -13,12 +13,17 @@ import { Button } from "@/components/ui/button";
 import React, { useEffect, useRef } from "react";
 import Wordbreak from "./Wordbreak";
 import { Comic } from "@/redux/comicSlice";
+import { useNavigate } from "react-router-dom";
 
 export interface currentComicProps {
   currData: Comic | undefined;
+  setHasPurchased: Function;
 }
-const PurchaseDialog: React.FC<currentComicProps> = ({ currData }) => {
-  console.log(name);
+const PurchaseDialog: React.FC<currentComicProps> = ({
+  currData,
+  setHasPurchased,
+}) => {
+  const navigate = useNavigate();
   const ref = useRef<any>();
   useEffect(() => {
     if (ref.current) {
@@ -59,8 +64,15 @@ const PurchaseDialog: React.FC<currentComicProps> = ({ currData }) => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction className="text-white">Purchase</AlertDialogAction>
+          <AlertDialogCancel onClick={() => navigate("/comics-list")}>
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction
+            onClick={() => setHasPurchased(true)}
+            className="text-white"
+          >
+            Purchase
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

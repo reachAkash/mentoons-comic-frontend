@@ -9,7 +9,9 @@ import { Comic } from "@/redux/comicSlice";
 
 const AudioComics: React.FC = () => {
   const navigate = useNavigate();
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const comicsData = useSelector((store: RootState) =>
+    store.comics.comics.slice(0, 6)
+  );
   // const arr = [
   //   {
   //     name: "Come Out Of Gaming",

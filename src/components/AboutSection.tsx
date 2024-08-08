@@ -6,11 +6,28 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 import { MiniTestimonailsSlider } from "./Sliders";
 import { motion } from "framer-motion";
 
+export interface AboutFeatures {
+  title: string;
+  desc: string;
+}
 const AboutSection: React.FC = () => {
-  const data: string[] = [
-    " We Offer Unique Comic Books & Arts",
-    "Get Collection Of Creative Series",
-    "Watch Cartoon And Kid Animation",
+  const data: AboutFeatures[] = [
+    {
+      title: "Engaging Learning:",
+      desc: "Complex topics presented in an easy-to-understand format.",
+    },
+    {
+      title: "Understanding Puberty:",
+      desc: "Navigate the changes of growing up with relatable characters.",
+    },
+    {
+      title: "Relatable Scenarios:",
+      desc: "Real-life situations that resonate with young readers",
+    },
+    {
+      title: "Family Bonding:",
+      desc: "Perfect for shared reading experiences between parents and children.",
+    },
   ];
 
   return (
@@ -58,22 +75,25 @@ const AboutSection: React.FC = () => {
           >
             About Us
           </motion.div>
-          <motion.h2 className="text-5xl lg:text-7xl w-full font-semibold leading-[1.10]">
-            Digital Books <Wordbreak /> Arts <Wordbreak /> Company.
+          <motion.h2 className="text-2xl lg:text-4xl w-full font-semibold leading-[1.10]">
+            Our comics and stories are designed to help children and teenagers
+            navigate important life topics with ease and enjoyment.
           </motion.h2>
-          <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur <Wordbreak /> adipisicing
-            elit. Dolore molestiae eius <Wordbreak /> accusamus fuga a tenetur.
+          <p className="font-semibold text-lg text-red-500">
+            Why Our Comics Matter
           </p>
           <div className="space-y-2 flex flex-col w-full m-auto text-center lg:text-start">
             {data?.map((item, idx) => {
               return (
                 <div
                   key={idx}
-                  className="flex items-center m-auto lg:m-0 gap-2 text-black font-bold"
+                  className="m-auto lg:m-0 gap-2 text-gray-800 font-bold"
                 >
-                  <TiTick className="text-red-500 text-2xl" />
-                  {item}
+                  <span className="font-semibold text-primary">{idx}.</span>{" "}
+                  <span className="underline">{item.title}</span> <br />
+                  <span className="pl-0 lg:pl-5  text-white font-thin">
+                    {item.desc}
+                  </span>
                 </div>
               );
             })}

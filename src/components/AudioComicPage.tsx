@@ -1,5 +1,5 @@
 // import { RootState } from "@/redux/store";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
@@ -24,7 +24,9 @@ const AudioComicPage: React.FC = () => {
   const [currentComic, setCurrentComic] = useState<Comic>();
   const [factNm, setFactNm] = useState<number>(0);
   const [input, setInput] = useState<string>("");
+  const videoRef = useRef<any>();
   const comicName = data.get("comic");
+  const [hasPurchased, setHasPurchased] = useState<boolean>(false);
   const funFacts: string[] = [
     "A group of flamingos is called a 'flamboyance.'",
     "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
@@ -46,6 +48,15 @@ const AudioComicPage: React.FC = () => {
   const handleShowPurchase = () => {
     setShowPurchaseDialog(true);
   };
+
+  const handleCheckPurchased = () => {
+    if (hasPurchased) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+  };
+
   // handlers
   const handleComic = (name: string) => {
     if (name === comicName) return;
@@ -53,7 +64,9 @@ const AudioComicPage: React.FC = () => {
   };
 
   const handleRandomFact = () => {
-    setFactNm(Math.floor(Math.random() * comicData.length));
+    const val = Math.floor(Math.random() * funFacts.length);
+    console.log(val);
+    setFactNm(val);
   };
 
   const handleFilterComics = (value: string) => {
@@ -79,24 +92,33 @@ const AudioComicPage: React.FC = () => {
   }, [comicName]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const key = setTimeout(() => {
       handleShowPurchase();
-    }, 0);
-  }, []);
+      handleCheckPurchased();
+    }, 10000);
+    return () => {
+      clearTimeout(key);
+    };
+  }, [comicName]);
+
+  useEffect(() => {
+    handleCheckPurchased();
+  }, [hasPurchased]);
   // const comic = useSelector((store:RootState)=>store.comics.cart)
   return (
     <>
-      <div className="container py-16 pb-40 space-y-10">
+      <div className="container py-16 pb-20 space-y-10">
         <div className="flex items-start justify-between">
           <div className="w-[60%] space-y-6">
             <video
+              ref={videoRef}
               className="rounded-lg"
               src={currentComic?.videoLink}
               width="700"
               height="400"
               loop
               autoPlay
-              controls
+              controls={hasPurchased ? true : false}
             ></video>
             <div className="space-y-2">
               <div className="border w-fit px-2 py-1 rounded-md text-sm border-green-300 text-green-400 bg-green-100 font-semibold">
@@ -167,7 +189,12 @@ const AudioComicPage: React.FC = () => {
           </div>
         </div>
       </div>
-      {showPurchaseDialog && <PurchaseDialog currData={currentComic} />}
+      {showPurchaseDialog && (
+        <PurchaseDialog
+          setHasPurchased={setHasPurchased}
+          currData={currentComic}
+        />
+      )}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { addToCartReducer, Comic } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
-import React from "react";
+import React, { useState } from "react";
 import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import { IoFilterSharp } from "react-icons/io5";
 const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [activeComic, setActiveComic] = useState<string>("");
   const comicsData = useSelector((store: RootState) => store.comics.comics);
 
   const addToCart = (image: string) => {
@@ -20,19 +21,36 @@ const ComicsPage: React.FC = () => {
     dispatch(addToCartReducer(item));
   };
 
+  const handleChangeComic = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget.innerText == activeComic) return;
+    setActiveComic(e.currentTarget.innerText);
+  };
+
+  console.log(activeComic);
+
   return (
     <div className="container py-10 space-y-8">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4 text-white py-3 px-4 bg-blue-500">
-          <div className="text-3xl font-semibold px-4 py-2 hover:bg-blue-200  rounded-md  ">
+        <div className="flex items-center gap-1 text-black py-1 px-2 bg-white shadow-lg rounded-md  ">
+          <div
+            onClick={(e) => handleChangeComic(e)}
+            className={`text-xl font-semibold cursor-pointer px-4 py-2 ${
+              activeComic === "Audio Comics" && "bg-blue-500 text-white"
+            }  rounded-md`}
+          >
             Audio Comics
           </div>
-          <div className="text-3xl font-semibold px-4 py-2 hover:bg-blue-200 rounded-md ">
+          <div
+            onClick={(e) => handleChangeComic(e)}
+            className={`text-xl font-semibold cursor-pointer ${
+              activeComic === "Comics" && "bg-blue-500 text-white"
+            } px-4 py-2 rounded-md`}
+          >
             Comics
           </div>
         </div>
-        <div className="flex items-center gap-2 bg-primary text-white px-3 py-1 rounded-md">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 bg-primary text-white px-3 py-1 rounded-full">
+          <div className="text-lg flex items-center gap-2">
             Filter <IoFilterSharp className="text-2xl" />
           </div>
         </div>

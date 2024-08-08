@@ -65,10 +65,9 @@ const TestimonialsSlider: React.FC = () => {
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
-            <div className="">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit. <Wordbreak /> Nemo assumenda porro quae quos. Lorem, ipsum
-              dolor.
+            <div className="h-[5rem]">
+              These comics have helped my child understand difficult topics in a
+              fun way!
             </div>
             <div className="flex items-center justify-between w-fit text-xl">
               <FaStar className="text-yellow-500 text-xl" />
@@ -79,8 +78,7 @@ const TestimonialsSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
-            <img className="w-16 rounded-full" src={User2} />
-            Akash Gupta
+            <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </div>
       </SwiperSlide>
@@ -89,10 +87,8 @@ const TestimonialsSlider: React.FC = () => {
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
-            <div className="">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit. <Wordbreak /> Nemo assumenda porro quae quos. Lorem, ipsum
-              dolor.
+            <div className="h-[5rem]">
+              I love how the stories teach me about friendship and growing up.
             </div>
             <div className="flex items-center justify-between w-fit text-xl">
               <FaStar className="text-yellow-500 text-xl" />
@@ -103,8 +99,7 @@ const TestimonialsSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
-            <img className="w-16 rounded-full" src={User3} />
-            Akash Gupta
+            <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
           </div>
         </div>
       </SwiperSlide>
@@ -113,10 +108,9 @@ const TestimonialsSlider: React.FC = () => {
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
-            <div className="">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit. <Wordbreak /> Nemo assumenda porro quae quos. Lorem, ipsum
-              dolor.
+            <div className="h-[5rem]">
+              These comics have helped my child understand difficult topics in a
+              fun way!
             </div>
             <div className="flex items-center justify-between w-fit text-xl">
               <FaStar className="text-yellow-500 text-xl" />
@@ -127,8 +121,7 @@ const TestimonialsSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
-            <img className="w-16 rounded-full" src={User1} />
-            Akash Gupta
+            <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </div>
       </SwiperSlide>
@@ -169,10 +162,10 @@ export const MiniTestimonailsSlider: React.FC = () => {
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Srishti</div>
+            <div className="text-2xl text-extrabold">Parent</div>
             <div className="text-sm">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit.
+              These comics have helped my child understand difficult topics in a
+              fun way!
             </div>
           </div>
         </div>
@@ -186,10 +179,9 @@ export const MiniTestimonailsSlider: React.FC = () => {
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Akash</div>
+            <div className="text-2xl text-extrabold">Sachin</div>
             <div className="text-sm">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit.
+              I love how the stories teach me about friendship and growing up.
             </div>
           </div>
         </div>
@@ -197,13 +189,16 @@ export const MiniTestimonailsSlider: React.FC = () => {
       <SwiperSlide>
         <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
-            <img className="w-14 rounded-full flex-shrink-0" src={User3} />
+            <img
+              className="w-14 rounded-full flex-shrink-0"
+              src={TestimonialImg2}
+            />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Aman</div>
+            <div className="text-2xl text-extrabold">Parent</div>
             <div className="text-sm">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit.
+              These comics have helped my child understand difficult topics in a
+              fun way!
             </div>
           </div>
         </div>
@@ -217,10 +212,9 @@ export const MiniTestimonailsSlider: React.FC = () => {
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Akash</div>
+            <div className="text-2xl text-extrabold">Sachin</div>
             <div className="text-sm">
-              Lorem ipsum dolor sit amet, <Wordbreak /> consectetur adipisicing
-              elit.
+              I love how the stories teach me about friendship and growing up.
             </div>
           </div>
         </div>
