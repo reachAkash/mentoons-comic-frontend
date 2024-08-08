@@ -71,12 +71,6 @@ const NewComics: React.FC = () => {
                     src={item?.image}
                     alt="new comics"
                   />
-                  {/* <div
-                    onClick={() => addToWishlist(item.image)}
-                    className="absolute hidden group-hover:block cursor-pointer p-4 bg-primary rounded-full top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-                  >
-                    <FaHeart className="text-2xl text-white active:text-red-500" />
-                  </div> */}
                   <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                     <TooltipProvider>
                       <Tooltip>
@@ -111,9 +105,9 @@ const NewComics: React.FC = () => {
                         <TooltipTrigger>
                           <div
                             onClick={() => addToCart(item.image)}
-                            className="border-2 cursor-pointer group-hover:bg-primary active:scale-95 border-primary p-3 rounded-full"
+                            className="border-2 cursor-pointer hover:rotate-[360deg] transition-all duration-1000 ease-in-out bg-primary active:scale-95 p-3 rounded-full"
                           >
-                            <FaCartShopping className="text-2xl text-primary group-hover:text-white transition-all duration-300 ease-in-out" />
+                            <FaCartShopping className="text-2xl text-white transition-all duration-300 ease-in-out" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent className="bg-[#59B2DC] text-white">

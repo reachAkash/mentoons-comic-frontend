@@ -25,7 +25,7 @@ function App() {
         <Route path="/comics-list" element={<ComicsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <SlidingText />
+      {/* <SlidingText /> */}
       <ProgressScroller />
     </>
   );
