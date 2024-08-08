@@ -58,7 +58,7 @@ const initialState: InitialStatePrototype = {
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-08.jpg",
       videoLink:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CHOOSE_WISLEY_3.mp4",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CHOOSE_WISELY.mp4",
       category: "groupMedium",
     },
     {
@@ -158,7 +158,7 @@ const initialState: InitialStatePrototype = {
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
       videoLink:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/SANA_AUDIO_COMIC.mp4",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/Sana+Comic+Interview.mp4",
       category: "groupLarge",
     },
     {
@@ -176,7 +176,7 @@ const initialState: InitialStatePrototype = {
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:16",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-01.png",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/COMIC_ON_HONESTY.mp4",
       category: "groupSmall",
@@ -186,7 +186,7 @@ const initialState: InitialStatePrototype = {
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:44",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1.png",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/GREETING_COMIC.mp4",
       category: "groupSmall",
