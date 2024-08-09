@@ -8,7 +8,6 @@ import {
   Command,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
@@ -19,6 +18,7 @@ import {
 } from "@/components/ui/popover";
 import { useDispatch } from "react-redux";
 import { updateSelectedFilterReducer } from "@/redux/comicSlice";
+import { useQuery } from "./AudioComicPage";
 
 export interface AgeGroupPrototype {
   value: string;
@@ -45,9 +45,21 @@ const AgeGroup = [
 ];
 
 const FilterComics = () => {
+  const data = useQuery();
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const dispatch = useDispatch();
+  const queryParams = data.get("filter");
+  const updateFilters = () => {
+    dispatch(updateSelectedFilterReducer(queryParams));
+  };
+
+  React.useEffect(() => {
+    if (queryParams) {
+      updateFilters();
+      setValue("");
+    }
+  }, [queryParams]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

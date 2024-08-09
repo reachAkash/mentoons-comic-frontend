@@ -42,15 +42,19 @@ const DropdownMenu = () => {
           <MenubarSub>
             <MenubarSubTrigger>Age Groups</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem onClick={() => navigate("/comics-list?filter=6-12")}>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=groupSmall")}
+              >
                 6 - 12
               </MenubarItem>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=13-19")}
+                onClick={() => navigate("/comics-list?filter=groupMedium")}
               >
                 13 - 19
               </MenubarItem>
-              <MenubarItem onClick={() => navigate("/comics-list?filter=20+")}>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=groupLarge")}
+              >
                 20 +{" "}
               </MenubarItem>
             </MenubarSubContent>
@@ -59,17 +63,17 @@ const DropdownMenu = () => {
             <MenubarSubTrigger>Elders</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=parents")}
+                onClick={() => navigate("/comics-list?filter=groupXLarge")}
               >
                 Parents
               </MenubarItem>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=guardians")}
+                onClick={() => navigate("/comics-list?filter=groupXLarge")}
               >
                 Guardians
               </MenubarItem>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=carers")}
+                onClick={() => navigate("/comics-list?filter=groupXLarge")}
               >
                 Carers
               </MenubarItem>

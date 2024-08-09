@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       <div
         className={`sticky top-0 ${
           showShadow && "shadow"
-        } container hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-50`}
+        } container hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999999]`}
       >
         <ul className="flex items-center justify-between">
           {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">

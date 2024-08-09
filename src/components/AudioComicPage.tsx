@@ -11,7 +11,7 @@ import { RootState } from "@/redux/store";
 import { Comic } from "@/redux/comicSlice";
 import PurchaseDialog from "./PurchaseDialog";
 
-const useQuery = () => {
+export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
