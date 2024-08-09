@@ -107,9 +107,9 @@ const AudioComicPage: React.FC = () => {
   // const comic = useSelector((store:RootState)=>store.comics.cart)
   return (
     <>
-      <div className="container py-16 pb-20 space-y-10">
-        <div className="flex items-start justify-between">
-          <div className="w-[60%] space-y-6">
+      <div className="container relative py-16 pb-20 space-y-10">
+        <div className="relative flex flex-col md:flex-row  items-start justify-between space-y-8 md:space-y-0">
+          <div className="w-full md:w-[60%] space-y-6">
             <video
               ref={videoRef}
               className="rounded-lg"
@@ -133,7 +133,7 @@ const AudioComicPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="w-[40%] group px-6 pt-4 pb-10 space-y-8 rounded-md bg-white text-black shadow-xl">
+          <div className="w-full md:w-[40%]  group px-6 pt-4 pb-10 space-y-8 rounded-md bg-white text-black shadow-xl">
             <div className="space-y-1">
               <div className="font-semibold text-lg">Other Comics</div>
               <div className="text-gray-400">{comicData.length} Comics</div>
@@ -170,13 +170,13 @@ const AudioComicPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="bg-primary pb-6 rounded-md">
+        <div className="bg-primary pb-6 rounded-md space-y-6">
           <div className="flex items-center gap-2 text-3xl text-black w-fit px-4 py-3 shadow-2xl font-semibold bg-white rounded-b-lg rounded-s-none">
             Fun Fact
           </div>
           <div className="flex items-center justify-between px-12">
             <div className="text-white text-2xl space-y-5">
-              <div>{funFacts[factNm]}</div>
+              <div className="text-sm md:text-base">{funFacts[factNm]}</div>
               <div
                 onClick={handleRandomFact}
                 className="flex items-center gap-2 bg-white hover:bg-black hover:text-white cursor-pointer shadow-xl w-fit text-black text-sm px-4 py-2 rounded-md"
@@ -186,7 +186,9 @@ const AudioComicPage: React.FC = () => {
               </div>
             </div>
             {/* <BsEmojiAstonished className="flex-shrink-0 text-[10rem] text-white" /> */}
-            <div className="flex-shrink-0 text-[10rem] text-white">🫨</div>
+            {/* <div className="hidden md:flex flex-shrink-0 text-[10rem] text-white">
+              🫨
+            </div> */}
           </div>
         </div>
       </div>
