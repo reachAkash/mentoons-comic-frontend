@@ -27,14 +27,14 @@ const ComicsPage: React.FC = () => {
     setActiveComic(e.currentTarget.innerText);
   };
 
-  console.log(activeComic);
-
   return (
     <div className="container py-10 space-y-8">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-100 shadow-sm rounded-md  ">
+        <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-50 shadow-sm rounded-md  ">
           <div
-            onClick={(e) => handleChangeComic(e)}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+              handleChangeComic(e)
+            }
             className={cn(
               ` cursor-pointer text-gray-400 px-2 py-1 ${
                 activeComic === "Audio Comics" && "bg-white text-black"
@@ -44,7 +44,9 @@ const ComicsPage: React.FC = () => {
             Audio Comics
           </div>
           <div
-            onClick={(e) => handleChangeComic(e)}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+              handleChangeComic(e)
+            }
             className={cn(
               ` cursor-pointer text-gray-400 ${
                 activeComic === "Comics" && "bg-white text-black"

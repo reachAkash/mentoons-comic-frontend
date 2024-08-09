@@ -24,13 +24,14 @@ export interface InitialStatePrototype {
   cart: CartItemsPrototype[];
   wishlist: WishlistItemsPrototype[];
   comics: Comic[];
+  selectedFilter: string;
 }
 
 const initialState: InitialStatePrototype = {
   cart: [],
   wishlist: [],
   comics: [
-    // GroupSmall = (Age 6-12) GroupMedium = (Age 13-19) GroupLarge = (Age 20+) GroupXLarge = (Elders)
+    // GroupSmall = (Age 6-12) GroupMedium = (Age 13-19) GroupLarge = (Age 20+) GroupXLarge = (Age Parents & Elders).
     {
       name: "Bet Your Life",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
@@ -252,6 +253,7 @@ const initialState: InitialStatePrototype = {
       category: "groupMedium",
     },
   ],
+  selectedFilter: "",
 };
 
 export const comicsSlice = createSlice({
@@ -305,6 +307,9 @@ export const comicsSlice = createSlice({
         item.price = quantity * 10;
       }
     },
+    updateSelectedFilterReducer: (state, action) => {
+      state.selectedFilter = action.payload;
+    },
   },
 });
 
@@ -314,6 +319,7 @@ export const {
   addToWishlistReducer,
   removeFromWishlistReducer,
   updateComicQuantityReducer,
+  updateSelectedFilterReducer,
 } = comicsSlice.actions;
 
 export default comicsSlice.reducer;

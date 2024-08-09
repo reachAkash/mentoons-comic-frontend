@@ -17,33 +17,33 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useDispatch, useSelector } from "react-redux";
+import { updateSelectedFilterReducer } from "@/redux/comicSlice";
+import { RootState } from "@/redux/store";
 
 const frameworks = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: "groupSmall",
+    label: "Age 6 - 12",
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: "groupMedium",
+    label: "Age 13- 19",
   },
   {
-    value: "nuxt.js",
-    label: "Nuxt.js",
+    value: "groupLarge",
+    label: "20+",
   },
   {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
+    value: "groupXLarge",
+    label: "Parents / Elders",
   },
 ];
 
 const FilterComics = () => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
+  const dispatch = useDispatch();
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -73,6 +73,7 @@ const FilterComics = () => {
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
                     setOpen(false);
+                    dispatch(updateSelectedFilterReducer(currentValue));
                   }}
                 >
                   {framework.label}
