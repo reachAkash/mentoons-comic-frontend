@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               About
             </li>
             <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-6 transition-all ease-in-out duration-300 cursor-pointer">
-              Contact
+              Contest
             </li>
           </ul>
           <div className="hidden custom:flex items-center justify-between gap-3 bg-white rounded-full py-3 px-6">

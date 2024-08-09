@@ -8,8 +8,10 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { useNavigate } from "react-router-dom";
 
 const DropdownMenu = () => {
+  const navigate = useNavigate();
   return (
     <Menubar className="w-[32rem] flex items-center justify-between bg-primary border-none text-white text-base">
       <MenubarMenu>
@@ -17,8 +19,14 @@ const DropdownMenu = () => {
           Comics
         </MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>Morals</MenubarItem>
-          <MenubarItem>Character</MenubarItem>
+          <MenubarItem onClick={() => navigate("/comics-list?filter=morals")}>
+            Morals
+          </MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/comics-list?filter=character")}
+          >
+            Character
+          </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
@@ -34,17 +42,37 @@ const DropdownMenu = () => {
           <MenubarSub>
             <MenubarSubTrigger>Age Groups</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>6 - 12</MenubarItem>
-              <MenubarItem>13 - 19</MenubarItem>
-              <MenubarItem>20 + </MenubarItem>
+              <MenubarItem onClick={() => navigate("/comics-list?filter=6-12")}>
+                6 - 12
+              </MenubarItem>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=13-19")}
+              >
+                13 - 19
+              </MenubarItem>
+              <MenubarItem onClick={() => navigate("/comics-list?filter=20+")}>
+                20 +{" "}
+              </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSub>
             <MenubarSubTrigger>Elders</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>Parents</MenubarItem>
-              <MenubarItem>Guardians</MenubarItem>
-              <MenubarItem>Carers</MenubarItem>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=parents")}
+              >
+                Parents
+              </MenubarItem>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=guardians")}
+              >
+                Guardians
+              </MenubarItem>
+              <MenubarItem
+                onClick={() => navigate("/comics-list?filter=carers")}
+              >
+                Carers
+              </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
         </MenubarContent>
