@@ -12,7 +12,15 @@ const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [activeComic, setActiveComic] = useState<string>("Audio Comics");
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const comicState = useSelector((store: RootState) => store.comics);
+  const comicsData = comicState.comics;
+  const selectedFilter = comicState.selectedFilter;
+  const filteredComics = comicsData?.filter((item: Comic) => {
+    return item.category == selectedFilter;
+  });
+  console.log(selectedFilter);
+  console.log(filteredComics);
+  const comicsToShow = selectedFilter ? filteredComics : comicsData;
 
   const addToCart = (image: string) => {
     const item = comicsData?.find((comic: Comic) => {
@@ -59,7 +67,7 @@ const ComicsPage: React.FC = () => {
         <FilterComics />
       </div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-        {comicsData?.map((item: Comic) => {
+        {comicsToShow?.map((item: Comic) => {
           return (
             <div
               key={v4()}

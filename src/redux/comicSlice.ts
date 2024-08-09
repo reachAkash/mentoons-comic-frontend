@@ -308,6 +308,7 @@ export const comicsSlice = createSlice({
       }
     },
     updateSelectedFilterReducer: (state, action) => {
+      console.log(action.payload);
       state.selectedFilter = action.payload;
     },
   },
