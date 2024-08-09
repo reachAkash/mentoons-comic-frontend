@@ -10,7 +10,7 @@ const Search: React.FC = () => {
   const comicsData = useSelector((store: RootState) => store.comics.comics);
   const popularComics = comicsData.slice(0, 4);
   return (
-    <div className="py-10 space-y-8">
+    <div className="py-10 space-y-6">
       <div className="bg-white flex items-center justify-between rounded-md py-1 px-3">
         <input
           className="bg-transparent w-full h-12 outline-none border-none"
