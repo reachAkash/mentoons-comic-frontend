@@ -42,7 +42,7 @@ const ComicWorkshop: React.FC = () => {
         })}
       </div>
       {/* images data */}
-      <div className="flex items-center justify-around gap-8">
+      {/* <div className="flex items-center justify-around gap-8">
         {workshopImgs?.map((item) => {
           return (
             <div className="">
@@ -51,9 +51,9 @@ const ComicWorkshop: React.FC = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
       {/* advance image data */}
-      {/* <div className="w-full flex flex-col gap-10">
+      <div className="w-full flex flex-col gap-10">
         {workshopImgs?.map((item, idx) => {
           return (
             <div
@@ -97,7 +97,7 @@ const ComicWorkshop: React.FC = () => {
             </div>
           );
         })}
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -21,7 +21,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/audio-comic" element={<AudioComicPage />} />
-        <Route path="/comic-workshop" element={<ComicWorkshop />} />
+        <Route path="/workshops" element={<ComicWorkshop />} />
         <Route path="/comics-list" element={<ComicsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

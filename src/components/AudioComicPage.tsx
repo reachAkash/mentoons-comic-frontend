@@ -149,6 +149,16 @@ const AudioComicPage: React.FC = () => {
                   placeholder="Search Comics..."
                 />
               </div>
+              {searchedComics.length == 0 && (
+                <div className="gap-4">
+                  <span className="text-xs text-red-500">
+                    No comics found!{" "}
+                  </span>
+                  <span className="text-xs text-green-400">
+                    Explore other comics!
+                  </span>
+                </div>
+              )}
             </div>
             <div className="overflow-hidden group-hover:overflow-y-scroll pr-[1rem] h-[20rem] transition-all ease-in-out duration-300">
               {comicsToDisplay?.map((item: Comic) => {

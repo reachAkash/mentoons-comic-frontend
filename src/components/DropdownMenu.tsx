@@ -82,7 +82,10 @@ const DropdownMenu = () => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger
+          onClick={() => navigate("/workshops")}
+          className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base"
+        >
           Workshops
         </MenubarTrigger>
         <MenubarContent>

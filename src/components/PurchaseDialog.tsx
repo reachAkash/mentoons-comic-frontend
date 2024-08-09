@@ -65,7 +65,7 @@ const PurchaseDialog: React.FC<currentComicProps> = ({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={() => navigate("/comics-list")}>
-            Cancel
+            Bookmark
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={() => setHasPurchased(true)}
