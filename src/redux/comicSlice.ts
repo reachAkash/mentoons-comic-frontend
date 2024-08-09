@@ -260,6 +260,7 @@ export const comicsSlice = createSlice({
   reducers: {
     addToCartReducer: (state, action) => {
       const currComic = action.payload;
+      console.log(currComic);
       const isPresent = state.cart.find(
         (item) => item.thumbnail === currComic.thumbnail
       );

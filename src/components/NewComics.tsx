@@ -20,29 +20,29 @@ const NewComics: React.FC = () => {
   const dispatch = useDispatch();
   const comicData = [
     {
-      image: "https://i.postimg.cc/CxyN5F56/comic1.jpg",
+      thumbnail: "https://i.postimg.cc/CxyN5F56/comic1.jpg",
       name: "Electronic Gadgets and Kids",
     },
     {
-      image: "https://i.postimg.cc/W4TwmXMG/comic2.jpg",
+      thumbnail: "https://i.postimg.cc/W4TwmXMG/comic2.jpg",
       name: "How to handle relationships",
     },
     {
-      image: "https://i.postimg.cc/Nj1xrWrG/comic4.jpg",
+      thumbnail: "https://i.postimg.cc/Nj1xrWrG/comic4.jpg",
       name: "Choose Wisely",
     },
   ];
 
   const addToWishlist = (image: string) => {
     const item = comicData?.find((comic) => {
-      return comic.image == image;
+      return comic.thumbnail == image;
     });
     dispatch(addToWishlistReducer(item));
   };
 
   const addToCart = (image: string) => {
     const item = comicData?.find((comic) => {
-      return comic.image == image;
+      return comic.thumbnail == image;
     });
     dispatch(addToCartReducer(item));
   };
@@ -68,7 +68,7 @@ const NewComics: React.FC = () => {
                 <div className="relative">
                   <img
                     className="group-hover:grayscale transition-all duration-500 ease-in-out h-[20rem] md:h-[30rem] w-full"
-                    src={item?.image}
+                    src={item?.thumbnail}
                     alt="new comics"
                   />
                   <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
@@ -76,7 +76,7 @@ const NewComics: React.FC = () => {
                       <Tooltip>
                         <TooltipTrigger>
                           <div
-                            onClick={() => addToWishlist(item.image)}
+                            onClick={() => addToWishlist(item.thumbnail)}
                             className=" hidden group-hover:block cursor-pointer p-4 bg-primary rounded-full"
                           >
                             <FaHeart className="text-2xl text-white active:text-red-500" />
@@ -104,7 +104,7 @@ const NewComics: React.FC = () => {
                       <Tooltip>
                         <TooltipTrigger>
                           <div
-                            onClick={() => addToCart(item.image)}
+                            onClick={() => addToCart(item.thumbnail)}
                             className="border-2 cursor-pointer hover:rotate-[360deg] transition-all duration-1000 ease-in-out bg-primary active:scale-95 p-3 rounded-full"
                           >
                             <FaCartShopping className="text-2xl text-white transition-all duration-300 ease-in-out" />

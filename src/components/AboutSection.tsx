@@ -81,7 +81,7 @@ const AboutSection: React.FC = () => {
           <p className="font-semibold text-lg text-red-500">
             Why Our Comics Matter
           </p>
-          <div className="space-y-2 flex flex-col w-full m-auto text-center lg:text-start">
+          <div className="space-y-3 flex flex-col w-full m-auto text-center lg:text-start">
             {data?.map((item, idx) => {
               return (
                 <div
