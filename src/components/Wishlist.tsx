@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { v4 } from "uuid";
 import { removeFromWishlistReducer } from "@/redux/comicSlice";
+import { useNavigate } from "react-router-dom";
 
 const Wishlist: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const wishlistData = useSelector((store: RootState) => store.comics.wishlist);
 
   const removeComic = (image: string) => {
@@ -31,7 +33,10 @@ const Wishlist: React.FC = () => {
             <div className="text-gray-500 text-lg">
               Try adding some comics in wishlist
             </div>
-            <button className="bg-primary hover:scale-105 active:scale-95 transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-full">
+            <button
+              onClick={() => navigate("/comics-list")}
+              className="bg-primary hover:scale-105 active:scale-95 transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-full"
+            >
               View Comics
             </button>
           </div>
@@ -42,11 +47,11 @@ const Wishlist: React.FC = () => {
                 <div className="relative">
                   <img
                     className="w-[17rem]"
-                    src={item?.image}
+                    src={item?.thumbnail}
                     alt="comic image"
                   />
                   <div
-                    onClick={() => removeComic(item?.image)}
+                    onClick={() => removeComic(item?.thumbnail)}
                     className="absolute top-[-1.5rem] left-4 bg-red-500 rounded-full p-3 border-4 border-white"
                   >
                     <MdDelete className="text-2xl text-white" />

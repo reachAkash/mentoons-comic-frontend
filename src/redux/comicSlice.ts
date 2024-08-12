@@ -15,14 +15,9 @@ interface CartItemsPrototype {
   quantity: number;
 }
 
-interface WishlistItemsPrototype {
-  image: string;
-  name: string;
-}
-
 export interface InitialStatePrototype {
   cart: CartItemsPrototype[];
-  wishlist: WishlistItemsPrototype[];
+  wishlist: Comic[];
   comics: Comic[];
   selectedFilter: string;
 }
@@ -281,17 +276,26 @@ export const comicsSlice = createSlice({
       });
     },
     addToWishlistReducer: (state, action) => {
-      const isPresent = state.cart.find((item) => {
+      console.log(action.payload);
+      const isPresent = state.wishlist.find((item) => {
         return item.thumbnail == action.payload.thumbnail;
       });
-      console.log(isPresent);
       if (!isPresent) {
-        state.wishlist.push(action.payload);
+        console.log("in if");
+        const comic = state.comics.find((item) => {
+          return item.thumbnail == action.payload;
+        });
+        console.log(comic);
+        if (comic) {
+          state.wishlist.push(comic);
+        }
+      } else {
+        console.log("in else");
       }
     },
     removeFromWishlistReducer: (state, action) => {
       state.wishlist = state.wishlist.filter((item) => {
-        return item.image != action.payload;
+        return item.thumbnail != action.payload;
       });
     },
     updateComicQuantityReducer: (

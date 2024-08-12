@@ -33,6 +33,8 @@ const PurchaseDialog: React.FC<currentComicProps> = ({
     }
   }, []);
 
+  console.log(currData);
+
   return (
     <AlertDialog>
       <AlertDialogTrigger ref={ref} asChild>
