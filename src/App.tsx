@@ -10,6 +10,7 @@ import NotFound from "./components/NotFound";
 import AudioComicPage from "./components/AudioComicPage";
 import ComicsPage from "./components/ComicsPage";
 import ScrollToTop from "./components/ScrollToTop";
+import { Toaster } from "@/components/ui/sonner";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <SlidingText />
+      <Toaster />
       <ProgressScroller />
     </>
   );

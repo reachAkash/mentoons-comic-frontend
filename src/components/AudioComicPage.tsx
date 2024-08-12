@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Comic } from "@/redux/comicSlice";
 import PurchaseDialog from "./PurchaseDialog";
+import { toast } from "sonner";
 
 export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -45,6 +46,8 @@ const AudioComicPage: React.FC = () => {
     "Koalas sleep up to 22 hours a day.",
   ];
 
+  // handlers
+
   const handleShowPurchase = () => {
     setShowPurchaseDialog(true);
   };
@@ -57,7 +60,6 @@ const AudioComicPage: React.FC = () => {
     }
   };
 
-  // handlers
   const handleComic = (name: string) => {
     if (name === comicName) return;
     navigate("/audio-comic?comic=" + name);
@@ -81,6 +83,23 @@ const AudioComicPage: React.FC = () => {
       return item.name == comicName;
     });
     setCurrentComic(data);
+  };
+
+  const handleShare = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(
+      () => {
+        toast("Link copied to clipboard", {
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        });
+      },
+      (err) => {
+        console.error("Failed to copy URL: ", err);
+      }
+    );
   };
 
   const comicsToDisplay =
@@ -128,7 +147,10 @@ const AudioComicPage: React.FC = () => {
               <div className="text-3xl font-semibold tracking-wide">
                 {comicName}
               </div>
-              <div className="flex items-center gap-2 border border-black w-fit px-4 py-1 rounded-full bg-black text-white hover:bg-white hover:text-black cursor-pointer transition-all ease-in-out duration-300">
+              <div
+                onClick={handleShare}
+                className="flex items-center gap-2 border border-black w-fit px-4 py-1 rounded-full bg-black text-white hover:bg-white hover:text-black cursor-pointer transition-all ease-in-out duration-300"
+              >
                 <IoShareSocial /> Share
               </div>
             </div>
@@ -149,7 +171,7 @@ const AudioComicPage: React.FC = () => {
                   placeholder="Search Comics..."
                 />
               </div>
-              {searchedComics.length == 0 && (
+              {input && searchedComics.length == 0 && (
                 <div className="gap-4">
                   <span className="text-xs text-red-500">
                     No comics found!{" "}

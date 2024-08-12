@@ -12,8 +12,9 @@ import {
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useRef } from "react";
 import Wordbreak from "./Wordbreak";
-import { Comic } from "@/redux/comicSlice";
+import { addToWishlistReducer, Comic } from "@/redux/comicSlice";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export interface currentComicProps {
   currData: Comic | undefined;
@@ -24,6 +25,7 @@ const PurchaseDialog: React.FC<currentComicProps> = ({
   setHasPurchased,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const ref = useRef<any>();
   useEffect(() => {
     if (ref.current) {
@@ -64,7 +66,12 @@ const PurchaseDialog: React.FC<currentComicProps> = ({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={() => navigate("/comics-list")}>
+          <AlertDialogCancel
+            onClick={() => {
+              navigate("/comics-list");
+              dispatch(addToWishlistReducer(currData?.thumbnail));
+            }}
+          >
             Bookmark
           </AlertDialogCancel>
           <AlertDialogAction
