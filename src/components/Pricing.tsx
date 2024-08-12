@@ -46,7 +46,7 @@ const Pricing: React.FC = () => {
               })}
             </div>
             <button className="bg-gray-700 font-semibold text-white px-9 py-3 rounded-full w-fit">
-              Free Account
+              Subscribe
             </button>
           </div>
           <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
@@ -57,7 +57,7 @@ const Pricing: React.FC = () => {
             <div className="m-auto">
               <img className="m-auto" src={price2} />
             </div>
-            <div className="text-center font-bold text-4xl">$5.99</div>
+            <div className="text-center font-bold text-4xl">Rs. 10.99</div>
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
@@ -69,7 +69,7 @@ const Pricing: React.FC = () => {
               })}
             </div>
             <button className="bg-gray-700 font-semibold text-white px-9 py-3 rounded-full w-fit">
-              Free Account
+              Subscribe
             </button>
           </div>
           <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary lg:relative lg:bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6">
@@ -80,7 +80,7 @@ const Pricing: React.FC = () => {
             <div className="">
               <img className="mx-auto airplane-image" src={price3} />
             </div>
-            <div className="text-center font-bold text-4xl">$19.9</div>
+            <div className="text-center font-bold text-4xl">Rs. 19.99</div>
             <div className="space-y-2">
               {data?.map((item: string) => {
                 return (
@@ -92,10 +92,10 @@ const Pricing: React.FC = () => {
               })}
             </div>
             <button className="bg-white font-semibold text-primary px-9 py-3 rounded-full w-fit">
-              Free Account
+              Subscribe
             </button>
           </div>
-          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
+          {/* <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
             <div className="text-center">
               <div className="text-2xl font-semibold">Superstars</div>
               <div className="text-gray-500 text-lg">Per Month</div>
@@ -115,9 +115,9 @@ const Pricing: React.FC = () => {
               })}
             </div>
             <button className="bg-gray-700 font-semibold text-white px-9 py-3 rounded-full w-fit">
-              Free Account
+              Subscribe
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col space-y-2 lg:space-y-0 md:flex-row items-center  justify-between">
           <div className="text-red-500 underline font-medium text-lg">

@@ -67,7 +67,7 @@ const HeroSection: React.FC = () => {
               <FaStar className="text-yellow-500 text-xl" />
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
-            <div className="text-gray-500">(405k Reviews)</div>
+            <div className="text-gray-500">(5k Reviews)</div>
           </div>
         </div>
       </motion.div>
