@@ -4,7 +4,6 @@ import { FaLock } from "react-icons/fa";
 import price1 from "@/assets/imgs/price1.png";
 import price2 from "@/assets/imgs/price2.png";
 import price3 from "@/assets/imgs/price3.png";
-import price4 from "@/assets/imgs/price4.png";
 import { TiTick } from "react-icons/ti";
 import { v4 as uuidv4 } from "uuid";
 
