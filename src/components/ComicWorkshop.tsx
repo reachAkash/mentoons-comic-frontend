@@ -22,7 +22,26 @@ const ComicWorkshop: React.FC = () => {
     "Biography",
   ];
 
-  const workshopImgs = [WorkshopImg1, WorkshopImg2, WorkshopImg3, WorkshopImg4];
+  const workshopImgs = [
+    {
+      name: "Family Camp",
+      img: WorkshopImg1,
+      video:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
+    },
+    {
+      name: "Kids Camp",
+      img: WorkshopImg2,
+      video:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
+    },
+    {
+      name: "Teen Camp",
+      img: WorkshopImg2,
+      video:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
+    },
+  ];
   const handlePlayVideo = (idx: number) => {
     setPlayVideo({ play: true, index: idx });
   };
@@ -65,7 +84,7 @@ const ComicWorkshop: React.FC = () => {
                 {playVideo.play && idx === playVideo.index ? (
                   <video
                     className="rounded-lg w-[25rem] h-[32rem]"
-                    src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/How+to+make+your+Own+Comic+Workshop+Trailer_01.mp4"
+                    src={item.video}
                     loop
                     autoPlay
                     controls
@@ -75,13 +94,13 @@ const ComicWorkshop: React.FC = () => {
                   <img
                     onClick={() => handlePlayVideo(idx)}
                     className="w-[25rem] h-[32rem] rounded-3xl"
-                    src={item}
+                    src={item.img}
                   />
                 )}
               </div>
               <div className="w-[60%] space-y-4">
                 <div className="font-semibold text-4xl leading-snug tracking-wide">
-                  Workshop Week 1 Details
+                  {item.name}
                 </div>
                 <div className="text-gray-500 text-xl font-semibold">
                   Contents :
