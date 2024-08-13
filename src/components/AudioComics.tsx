@@ -9,9 +9,9 @@ import { Comic } from "@/redux/comicSlice";
 
 const AudioComics: React.FC = () => {
   const navigate = useNavigate();
-  const comicsData = useSelector((store: RootState) =>
-    store.comics.comics.slice(0, 6)
-  );
+  const comicsData = useSelector((store: RootState) => store.comics.comics);
+
+  const comics = comicsData.slice(0, 6);
   // const arr = [
   //   {
   //     name: "Come Out Of Gaming",
@@ -80,7 +80,7 @@ const AudioComics: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-        {comicsData?.map((item: Comic) => {
+        {comics?.map((item: Comic) => {
           return (
             <div
               key={v4()}

@@ -22,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       <SheetTrigger>
         <RxHamburgerMenu className={`${className} text-white text-3xl`} />
       </SheetTrigger>
-      <SheetContent className="bg-[#F0EBE5] z-50">
+      <SheetContent className="bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar">
         <Search />
       </SheetContent>
     </Sheet>
