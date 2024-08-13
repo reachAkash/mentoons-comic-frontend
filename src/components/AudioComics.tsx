@@ -6,6 +6,7 @@ import { v4 } from "uuid";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Comic } from "@/redux/comicSlice";
+import { motion } from "framer-motion";
 
 const AudioComics: React.FC = () => {
   const navigate = useNavigate();
@@ -82,7 +83,10 @@ const AudioComics: React.FC = () => {
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {comics?.map((item: Comic) => {
           return (
-            <div
+            <motion.div
+              initial={{ scale: 1.3 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
               key={v4()}
               onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
               className="bg-white shadow-lg group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3"
@@ -106,7 +110,7 @@ const AudioComics: React.FC = () => {
                 Play Sample{" "}
                 <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" />
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

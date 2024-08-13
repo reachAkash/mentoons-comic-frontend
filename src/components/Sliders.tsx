@@ -37,6 +37,7 @@ import Akash from "@/assets/imgs/Akash Illustration.jpg";
 import Lincy from "@/assets/imgs/Lincy Illustration.jpg";
 import Anam from "@/assets/imgs/Anam Illustration.jpg";
 import Sir from "@/assets/imgs/sir Illustration.jpg";
+import { motion } from "framer-motion";
 
 const TestimonialsSlider: React.FC = () => {
   return (
@@ -312,7 +313,12 @@ export const TeamSlider: React.FC = () => {
       }}
     >
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -330,10 +336,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -351,10 +362,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -372,10 +388,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -393,10 +414,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -414,10 +440,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -435,10 +466,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -456,10 +492,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -477,10 +518,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -498,10 +544,15 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="text-center space-y-1 group">
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
@@ -519,7 +570,7 @@ export const TeamSlider: React.FC = () => {
               <FaYoutube className="cursor-pointer text-[#d71515]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
     </Swiper>
   );

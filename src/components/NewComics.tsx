@@ -15,6 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
 
 const NewComics: React.FC = () => {
   const dispatch = useDispatch();
@@ -51,15 +52,30 @@ const NewComics: React.FC = () => {
     <div className="bg-primary text-white pt-20 pb-14 lg:pb-0">
       <div className="container space-y-12">
         <div className="text-center space-y-4">
-          <div className="text-[#d71515] text-3xl lineBefore">New Comics</div>
-          <div className="text-4xl lg:text-7xl w-full font-extrabold leading-[1.10]">
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-[#d71515] text-3xl lineBefore"
+          >
+            New Comics
+          </motion.div>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+            className="text-4xl lg:text-7xl w-full font-extrabold leading-[1.10]"
+          >
             Enjoy Newest <Wordbreak /> Comic Books.
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-wrap flex-row lg:space-y-8 items-center justify-between gap-6">
           {comicData?.map((item, idx) => {
             return (
-              <div
+              <motion.div
+                initial={{ rotate: 0 }}
+                whileInView={{ rotate: 360 }}
+                transition={{ duration: 0.5, delay: idx / 5 }}
                 key={uuidv4()}
                 className={`bg-white m-auto shadow-sm w-[20rem] md:w-[45%] lg:w-[30%] relative ${
                   idx != 1 ? "lg:top-[5rem]" : "lg:top-[1.5rem]"
@@ -117,7 +133,7 @@ const NewComics: React.FC = () => {
                     </TooltipProvider>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
           {/* hardcode comics */}

@@ -6,6 +6,7 @@ import price2 from "@/assets/imgs/price2.png";
 import price3 from "@/assets/imgs/price3.png";
 import { TiTick } from "react-icons/ti";
 import { v4 as uuidv4 } from "uuid";
+import { motion } from "framer-motion";
 
 const Pricing: React.FC = () => {
   const data = [
@@ -25,7 +26,12 @@ const Pricing: React.FC = () => {
       </div>
       <div className="space-y-4">
         <div className="flex flex-col lg:flex-row bg-white items-center justify-between">
-          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
+          <motion.div
+            initial={{ scale: 1.3 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
+          >
             <div className="text-center">
               <div className="text-2xl font-semibold">Starter</div>
               <div className="text-gray-500 text-lg">Per Month</div>
@@ -47,8 +53,13 @@ const Pricing: React.FC = () => {
             <button className="bg-gray-700 font-semibold text-white px-9 py-3 rounded-full w-fit">
               Subscribe
             </button>
-          </div>
-          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 1.3 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
+          >
             <div className="text-center">
               <div className="text-2xl font-semibold">Basic</div>
               <div className="text-gray-500 text-lg">Per Month</div>
@@ -70,8 +81,13 @@ const Pricing: React.FC = () => {
             <button className="bg-gray-700 font-semibold text-white px-9 py-3 rounded-full w-fit">
               Subscribe
             </button>
-          </div>
-          <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary lg:relative lg:bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 1.2 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary lg:relative lg:bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6"
+          >
             <div className="">
               <div className="text-2xl font-semibold">Recommended</div>
               <div className="text-white text-lg">Per Month</div>
@@ -93,7 +109,7 @@ const Pricing: React.FC = () => {
             <button className="bg-white font-semibold text-primary px-9 py-3 rounded-full w-fit">
               Subscribe
             </button>
-          </div>
+          </motion.div>
           {/* <div className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6">
             <div className="text-center">
               <div className="text-2xl font-semibold">Superstars</div>
