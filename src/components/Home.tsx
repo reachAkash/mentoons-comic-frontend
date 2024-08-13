@@ -17,8 +17,6 @@ const Home: React.FC = () => {
     (store: RootState) => store.comics.currentHoverComic
   );
 
-  console.log(hoverComicCard);
-
   return (
     <>
       <HeroSection />

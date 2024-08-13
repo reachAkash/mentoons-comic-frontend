@@ -1,13 +1,13 @@
 import { RootState } from "@/redux/store";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { SheetClose } from "./ui/sheet";
 import { v4 } from "uuid";
 import { Button } from "./ui/button";
-import { updateCurrentHoverComicReducer } from "@/redux/comicSlice";
-
+import { Comic, updateCurrentHoverComicReducer } from "@/redux/comicSlice";
+import { motion } from "framer-motion";
 export interface ShowButtonInterface {
   index: number | null;
   show: boolean;
@@ -16,24 +16,53 @@ const Search: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const [input, setInput] = useState<string>("");
   const popularComics = comicsData.slice(0, 12);
   const [showButton, setShowButton] = useState<ShowButtonInterface>({
     index: null,
     show: false,
   });
+  const [searchedComics, setSearchedComics] = useState<Comic[]>([]);
+  const handleFilterComics = (value: string) => {
+    const items = comicsData?.filter((item) => {
+      return item.name.toLowerCase().includes(value.toLowerCase());
+    });
+    setSearchedComics(items);
+  };
+
+  const comicsToDisplay =
+    searchedComics.length > 0 ? searchedComics : popularComics;
+
+  useEffect(() => {
+    return () => {
+      dispatch(updateCurrentHoverComicReducer(null));
+    };
+  }, []);
+
   return (
     <div className="py-10 pb-0 space-y-6">
       <div className="bg-white flex items-center justify-between rounded-md py-1 px-3">
         <input
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+            handleFilterComics(e.target.value);
+          }}
           className="bg-transparent w-full h-12 outline-none border-none"
           placeholder="Search by Comic Name"
         />
         <CiSearch className="text-2xl" />
       </div>
+      {input && searchedComics.length == 0 && (
+        <div className="gap-4">
+          <span className="text-sm text-red-500">No comics found! </span>
+          <span className="text-sm text-green-400">Explore other comics!</span>
+        </div>
+      )}
       <div className="grid w-full place-items-center md:grid-cols-2 gap-6">
-        {popularComics?.map((item, index) => {
+        {comicsToDisplay?.map((item, index) => {
           return (
-            <div
+            <motion.div
               key={v4()}
               onMouseEnter={() => {
                 setShowButton({ index, show: true });
@@ -66,7 +95,7 @@ const Search: React.FC = () => {
                   </Button>
                 </SheetClose>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>
