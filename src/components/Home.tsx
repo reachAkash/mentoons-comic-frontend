@@ -8,13 +8,16 @@ import Blogs from "./Blogs";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import { lazy } from "react";
-import { ComicCard } from "./HoverCardComic";
+import ComicCard from "./HoverCardComic";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 const Team = lazy(() => import("./Team"));
 const Home: React.FC = () => {
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
-  const comic = comicsData.slice(0, 1)[0];
+  const hoverComicCard = useSelector(
+    (store: RootState) => store.comics.currentHoverComic
+  );
+
+  console.log(hoverComicCard);
 
   return (
     <>
@@ -27,7 +30,7 @@ const Home: React.FC = () => {
       <Pricing />
       <Blogs />
       <Footer />
-      <ComicCard item={comic} />
+      {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
     </>
   );
 };

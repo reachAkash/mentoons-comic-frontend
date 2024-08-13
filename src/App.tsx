@@ -11,6 +11,7 @@ import AudioComicPage from "./components/AudioComicPage";
 import ComicsPage from "./components/ComicsPage";
 import ScrollToTop from "./components/ScrollToTop";
 import { Toaster } from "@/components/ui/sonner";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/audio-comic" element={<AudioComicPage />} />
         <Route path="/workshops" element={<ComicWorkshop />} />
         <Route path="/comics-list" element={<ComicsPage />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <SlidingText />
