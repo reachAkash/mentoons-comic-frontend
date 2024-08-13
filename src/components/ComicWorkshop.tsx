@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import WorkshopImg1 from "@/assets/imgs/comic workshop week 1.jpg";
 import WorkshopImg2 from "@/assets/imgs/comic workshop week 2.jpg";
 import WorkshopImg3 from "@/assets/imgs/comic workshop week 3.jpg";
-import WorkshopImg4 from "@/assets/imgs/comic workshop week 4.jpg";
 
 const ComicWorkshop: React.FC = () => {
   const [playVideo, setPlayVideo] = useState<{ index: number; play: boolean }>({
@@ -37,7 +36,7 @@ const ComicWorkshop: React.FC = () => {
     },
     {
       name: "Teen Camp",
-      img: WorkshopImg2,
+      img: WorkshopImg3,
       video:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
     },
