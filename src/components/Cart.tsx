@@ -14,7 +14,7 @@ const Cart: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((store: RootState) => store.comics.cart);
-
+  const totalPrice = cartData.reduce((acc, curr) => curr.price + acc, 0);
   const updateQuantity = (e: any, img: string) => {
     const val = Number(e.target.value);
     dispatch(updateComicQuantityReducer({ image: img, quantity: val }));
@@ -119,12 +119,9 @@ const Cart: React.FC = () => {
         )}
       </div>
       {cartData.length > 0 && (
-        <div className="flex items-center justify-between">
-          <div className="text-primary cursor-pointer font-semibold text-xl underline">
-            Apply Coupon Code
-          </div>
+        <div className="flex items-center justify-end">
           <div className="text-white cursor-pointer hover:bg-white hover:text-primary border border-primary px-5 py-3 rounded-full bg-primary">
-            Pay $362
+            Pay Rs. {totalPrice}
           </div>
         </div>
       )}

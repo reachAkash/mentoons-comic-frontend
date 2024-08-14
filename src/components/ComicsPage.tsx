@@ -95,7 +95,10 @@ const ComicsPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between border-t border-gray-200 pt-2">
-                  <div className="text-end flex items-center justify-end gap-2 group-hover:text-red-500 group-hover:underline text-xl cursor-pointer">
+                  <div
+                    onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
+                    className="text-end flex items-center justify-end gap-2 group-hover:text-red-500 group-hover:underline text-xl cursor-pointer"
+                  >
                     Play Sample{" "}
                     <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" />
                   </div>
