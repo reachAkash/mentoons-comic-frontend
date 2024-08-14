@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WorkshopImg1 from "@/assets/imgs/Kids_camp 2.jpg";
 import WorkshopImg2 from "@/assets/imgs/Teen_camp 2.jpg";
 import WorkshopImg3 from "@/assets/imgs/Family_camp 2.jpg";
+import { motion } from "framer-motion";
 
 const ComicWorkshop: React.FC = () => {
   const [playVideo, setPlayVideo] = useState<{ index: number; play: boolean }>({
@@ -48,15 +49,25 @@ const ComicWorkshop: React.FC = () => {
 
   return (
     <div className="container flex flex-col items-center justify-start py-20 pb-28 space-y-10">
-      <div className="font-semibold text-5xl tracking-wide">
+      <motion.div
+        initial={{ y: 50, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="font-semibold text-5xl tracking-wide"
+      >
         Workshops in Mentoons
-      </div>
+      </motion.div>
       <div className="flex flex-wrap items-center justify-start gap-x-1 gap-y-3 lg:gap-0 md:justify-between w-full">
         {workshopGenres?.map((item: string) => {
           return (
-            <button className="bg-green-400 text-white hover:text-green-500 px-3 py-1 rounded-full font-semibold border hover:bg-white transition-all ease-in-out duration-300">
+            <motion.button
+              initial={{ y: 50, opacity: 0.2 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="bg-green-400 text-white hover:text-green-500 px-3 py-1 rounded-full font-semibold border hover:bg-white transition-all ease-in-out duration-300"
+            >
               {item}
-            </button>
+            </motion.button>
           );
         })}
       </div>
