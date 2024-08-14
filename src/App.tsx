@@ -11,7 +11,7 @@ import AudioComicPage from "./components/AudioComicPage";
 import ComicsPage from "./components/ComicsPage";
 import ScrollToTop from "./components/ScrollToTop";
 import { Toaster } from "@/components/ui/sonner";
-import Search, { SearchPage } from "./components/Search";
+import { SearchPage } from "./components/Search";
 
 function App() {
   return (
