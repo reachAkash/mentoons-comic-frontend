@@ -11,6 +11,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import Search from "./Search";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 interface SidebarProps {
   className: string;
@@ -31,6 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
 
 export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
   const navigate = useNavigate();
+  const cartItems = useSelector((store: RootState) => store.comics.cart);
 
   return (
     <Sheet>
@@ -52,7 +55,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/comics")}
+              onClick={() => navigate("/comics-list")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Comics
@@ -68,7 +71,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/audio-comics")}
+              onClick={() => navigate("/comics-list")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Audio Comics
@@ -87,7 +90,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
               onClick={() => navigate("/about")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
-              About
+              Contest
             </li>
           </SheetClose>
         </ul>
@@ -102,7 +105,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
               <div className="relative group">
                 <IoCart className="text-2xl cursor-pointer text-gray-500 group-hover:text-black transition-all duration-300 ease-in-out" />
                 <span className="absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-primary rounded-full px-[6px]">
-                  2
+                  {cartItems.length}
                 </span>
               </div>
             </Link>
