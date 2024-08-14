@@ -5,6 +5,7 @@ import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Logo from "@/assets/imgs/logo.png";
+import LogoMini from "@/assets/imgs/logo mini.png";
 import DropdownMenu from "./DropdownMenu";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
@@ -95,7 +96,7 @@ const Navbar: React.FC = () => {
         <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
           <Link to="/">
             <h2 className="text-xl font-extrabold cursor-pointer">
-              <img className="w-32 cursor-pointer" src={Logo} />
+              <img className="w-32 cursor-pointer" src={LogoMini} />
             </h2>
           </Link>
         </div>
