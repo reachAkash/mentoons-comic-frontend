@@ -4,6 +4,7 @@ import Wordbreak from "./Wordbreak";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { MiniTestimonailsSlider } from "./Sliders";
 import { motion } from "framer-motion";
+import WhyMentoons from "./WhyMentoons";
 
 export interface AboutFeatures {
   title: string;
@@ -107,12 +108,7 @@ const AboutSection: React.FC = () => {
               );
             })}
           </div>
-          <div className="w-fit mx-auto lg:mx-0  flex items-center justify-between gap-4">
-            <div>
-              <FaRegCirclePlay className="text-red-500 text-6xl cursor-pointer" />
-            </div>
-            <button className="text-red-500 text-3xl">Why Mentoons</button>
-          </div>
+          <WhyMentoons />
         </motion.div>
       </div>
       <MiniTestimonailsSlider />
