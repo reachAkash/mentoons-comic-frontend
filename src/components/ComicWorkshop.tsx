@@ -23,12 +23,6 @@ const ComicWorkshop: React.FC = () => {
 
   const workshopImgs = [
     {
-      name: "Family Camp",
-      img: WorkshopImg1,
-      video:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
-    },
-    {
       name: "Kids Camp",
       img: WorkshopImg2,
       video:
@@ -39,6 +33,12 @@ const ComicWorkshop: React.FC = () => {
       img: WorkshopImg3,
       video:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
+    },
+    {
+      name: "Family Camp",
+      img: WorkshopImg1,
+      video:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
     },
   ];
   const handlePlayVideo = (idx: number) => {

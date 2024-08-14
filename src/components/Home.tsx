@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       <Testimonials />
       <Pricing />
       <Blogs />
-      <Footer />
+      {/* <Footer /> */}
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
     </>
   );

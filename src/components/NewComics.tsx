@@ -73,9 +73,9 @@ const NewComics: React.FC = () => {
           {comicData?.map((item, idx) => {
             return (
               <motion.div
-                initial={{ rotate: 0 }}
-                whileInView={{ rotate: 360 }}
-                transition={{ duration: 0.5, delay: idx / 5 }}
+                initial={{ opacity: 0.2 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
                 key={uuidv4()}
                 className={`bg-white m-auto shadow-sm w-[20rem] md:w-[45%] lg:w-[30%] relative ${
                   idx != 1 ? "lg:top-[5rem]" : "lg:top-[1.5rem]"

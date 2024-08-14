@@ -32,17 +32,22 @@ const AboutSection: React.FC = () => {
   return (
     <div id="about" className="container py-20 bg-[#59B2DC]">
       <div className="flex flex-col lg:flex-row space-y-10   items-center justify-between">
-        <div className="relative w-full flex items-center justify-center lg:w-[50%]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative w-full flex items-center justify-center lg:w-[50%]"
+        >
           <motion.img
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 3 }}
             className="rounded-full w-[80%]"
             src={TeamImage}
           />
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 3 }}
             className="absolute top-[-2rem] left-0 lg:top-[-3rem] lg:left-12 bg-white rounded-full h-[6rem] w-[6rem] lg:h-[10rem] lg:w-[10rem]"
           >
@@ -55,7 +60,7 @@ const AboutSection: React.FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 3 }}
             className="absolute bottom-0 left-0 bg-primary text-white rounded-full h-[8em] w-[8rem] lg:h-[13rem] lg:w-[13rem]"
           >
@@ -64,8 +69,13 @@ const AboutSection: React.FC = () => {
               <Wordbreak /> Years of comic journey
             </div>
           </motion.div>
-        </div>
-        <div className="space-y-5 w-full lg:w-[50%] text-center lg:text-start text-white">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="space-y-5 w-full lg:w-[50%] text-center lg:text-start text-white"
+        >
           <motion.div
             initial={{ y: -50 }}
             animate={{ y: 0 }}
@@ -103,7 +113,7 @@ const AboutSection: React.FC = () => {
             </div>
             <button className="text-red-500 text-3xl">Why Mentoons</button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <MiniTestimonailsSlider />
     </div>

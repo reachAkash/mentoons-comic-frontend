@@ -72,19 +72,34 @@ const AudioComics: React.FC = () => {
 
   return (
     <div className="container bg-[#f0ebe5] space-y-5 py-14 lg:py-28">
-      <div className="space-y-5 pb-8 text-center lg:text-start">
-        <div className=" text-3xl text-red-500 lineBefore uppercase">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="space-y-5 pb-8 text-center lg:text-start"
+      >
+        <motion.div
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 1.5 }}
+          className=" text-3xl text-red-500 lineBefore uppercase"
+        >
           Audio Comics{" "}
-        </div>
-        <div className="text-5xl lg:text-7xl text-black w-full font-extrabold leading-[1.10]">
+        </motion.div>
+        <motion.div
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="text-5xl lg:text-7xl text-black w-full font-extrabold leading-[1.10]"
+        >
           Our Top Trendy <Wordbreak /> Fun Audio Comic
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {comics?.map((item: Comic) => {
           return (
             <motion.div
-              initial={{ scale: 1.3 }}
+              initial={{ scale: 1.2 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.3 }}
               key={v4()}

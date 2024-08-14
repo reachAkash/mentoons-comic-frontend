@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
         <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
           <Link to="/">
             <h2 className="text-xl font-extrabold cursor-pointer">
-              MENTOONS COMICS<span className="text-white">.</span>
+              <img className="w-32 cursor-pointer" src={Logo} />
             </h2>
           </Link>
         </div>

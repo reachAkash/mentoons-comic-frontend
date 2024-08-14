@@ -14,14 +14,14 @@ const HeroSection: React.FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0.5 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 4 }}
       id="home"
       className="container flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
     >
       <motion.div
         initial={{ x: -50 }}
-        animate={{ x: 0 }}
+        whileInView={{ x: 0 }}
         transition={{ duration: 2 }}
         className=" w-full lg:w-[50%] space-y-6"
       >
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
       </motion.div>
       <motion.div
         initial={{ x: 50 }}
-        animate={{ x: 0 }}
+        whileInView={{ x: 0 }}
         transition={{ duration: 2 }}
         className="w-full lg:w-[50%] relative flex items-center justify-center"
       >
