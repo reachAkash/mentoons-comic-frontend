@@ -19,17 +19,30 @@ const Pricing: React.FC = () => {
   return (
     <div className="container bg-green-500 py-10 space-y-10">
       <div className="space-y-4">
-        <div className="text-[#d71515] lineBefore text-4xl ">Price Plan</div>
-        <div className="font-extrabold text-white text-5xl lg:text-6xl leading-[1.15]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="text-[#d71515] lineBefore text-4xl "
+        >
+          Price Plan
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="font-extrabold text-white text-5xl lg:text-6xl leading-[1.15]"
+        >
           Read Comics <Wordbreak /> Everyday.
-        </div>
+        </motion.div>
       </div>
       <div className="space-y-4">
         <div className="flex flex-col lg:flex-row bg-white items-center justify-between">
           <motion.div
             initial={{ scale: 1.3 }}
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
           >
             <div className="text-center">
@@ -57,7 +70,8 @@ const Pricing: React.FC = () => {
           <motion.div
             initial={{ scale: 1.3 }}
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
           >
             <div className="text-center">
@@ -83,9 +97,10 @@ const Pricing: React.FC = () => {
             </button>
           </motion.div>
           <motion.div
-            initial={{ scale: 1.2 }}
+            initial={{ scale: 1.3 }}
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary lg:relative lg:bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6"
           >
             <div className="">

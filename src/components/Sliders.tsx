@@ -60,7 +60,12 @@ const TestimonialsSlider: React.FC = () => {
       }}
     >
       <SwiperSlide>
-        <div className="rounded-2xl bg-white py-4 px-6 space-y-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+        >
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
@@ -79,10 +84,15 @@ const TestimonialsSlider: React.FC = () => {
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl bg-white py-4 px-6 space-y-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+        >
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
@@ -100,10 +110,15 @@ const TestimonialsSlider: React.FC = () => {
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl bg-white py-4 px-6 space-y-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+        >
           <div className="space-y-5 border-b border-gray-500 py-4">
             <FaQuoteLeft className="text-primary text-3xl" />
             <div className="text-lg">2 Minutes Ago</div>
@@ -122,7 +137,7 @@ const TestimonialsSlider: React.FC = () => {
           <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
-        </div>
+        </motion.div>
       </SwiperSlide>
     </Swiper>
   );

@@ -7,18 +7,24 @@ import { AiFillLike } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { IoIosShareAlt } from "react-icons/io";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Blogs: React.FC = () => {
   return (
     <div className="container bg-home py-20 space-y-7">
-      <div className="space-y-3 border-b-[1px] pb-8 border-gray-500">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        className="space-y-3 border-b-[1px] pb-8 border-gray-500"
+      >
         <div className=" text-3xl text-red-500 lineBefore uppercase">
           Blogs{" "}
         </div>
         <div className="text-7xl w-full font-extrabold leading-[1.10]">
           Our Top Trendy <Wordbreak /> Comic News.
         </div>
-      </div>
+      </motion.div>
       <div className="space-y-7">
         <div className="flex flex-col lg:flex-row border-b border-gray-400 py-6 items-center justify-between">
           <div className="w-full lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
@@ -132,9 +138,9 @@ const Blogs: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primary w-fit mx-auto text-white hover:bg-white hover:text-primary px-6 py-4 rounded-full font-medium cursor-pointer transition-all duration-300 ease-in-out">
+      {/* <div className="bg-primary w-fit mx-auto text-white hover:bg-white hover:text-primary px-6 py-4 rounded-full font-medium cursor-pointer transition-all duration-300 ease-in-out">
         Browse More
-      </div>
+      </div> */}
     </div>
   );
 };
