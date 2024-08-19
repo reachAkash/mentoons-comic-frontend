@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 const DropdownMenu = () => {
   const navigate = useNavigate();
   return (
-    <Menubar className="w-[32rem] flex items-center justify-between bg-primary border-none text-white text-base">
+    <Menubar className="w-[31rem] flex items-center justify-between bg-primary border-none text-white text-base">
       <MenubarMenu>
         <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
           Comics
@@ -84,7 +84,7 @@ const DropdownMenu = () => {
       <MenubarMenu>
         <MenubarTrigger
           onClick={() => navigate("/workshops")}
-          className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base"
+          className="cursor-pointer invisible 2xl:visible hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base"
         >
           Workshops
         </MenubarTrigger>
