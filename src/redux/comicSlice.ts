@@ -4,6 +4,7 @@ export interface Comic {
   name: string;
   desc: string;
   duration: string;
+  mini_thumbnail: string;
   thumbnail: string;
   videoLink: string;
   category: string;
@@ -32,6 +33,8 @@ const initialState: InitialStatePrototype = {
       name: "Bet Your Life",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:17",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-09.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-09.jpg",
       videoLink:
@@ -42,6 +45,8 @@ const initialState: InitialStatePrototype = {
       name: "The Cell Life of Soniya",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:31",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-12.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-12.jpg",
       videoLink:
@@ -52,6 +57,8 @@ const initialState: InitialStatePrototype = {
       name: "Choose Wisely",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:27",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-08.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-08.jpg",
       videoLink:
@@ -62,6 +69,8 @@ const initialState: InitialStatePrototype = {
       name: "Come out of Gaming",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:51",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-05.jpg",
       videoLink:
@@ -72,6 +81,8 @@ const initialState: InitialStatePrototype = {
       name: "Comic on Divorce",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:04",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-07.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-07.jpg",
       videoLink:
@@ -82,8 +93,10 @@ const initialState: InitialStatePrototype = {
       name: "Don't Fade Away",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:54",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-04.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-05.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/DONT_FADE_AWAY_02.mp4",
       category: "groupMedium",
@@ -92,6 +105,8 @@ const initialState: InitialStatePrototype = {
       name: "Hungry for Likes Not Life",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:10",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-15.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-15.jpg",
       videoLink:
@@ -102,6 +117,8 @@ const initialState: InitialStatePrototype = {
       name: "One Way Trip",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:09",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-22.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-22.jpg",
       videoLink:
@@ -112,6 +129,8 @@ const initialState: InitialStatePrototype = {
       name: "Rishi and Rohit",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:20",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-16.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-16.jpg",
       videoLink:
@@ -122,6 +141,8 @@ const initialState: InitialStatePrototype = {
       name: "Rohan and the Puppies",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:09",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-17.jpg",
       videoLink:
@@ -132,6 +153,8 @@ const initialState: InitialStatePrototype = {
       name: "Tanya's Downfall",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:53",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-06.jpg",
       videoLink:
@@ -142,6 +165,8 @@ const initialState: InitialStatePrototype = {
       name: "How Teenagers Lose Their Jobs Part-1",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:13",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-23.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-23.jpg",
       videoLink:
@@ -152,6 +177,8 @@ const initialState: InitialStatePrototype = {
       name: "How Teenagers Lose Their Jobs Part-2",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:58",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
       videoLink:
@@ -162,6 +189,8 @@ const initialState: InitialStatePrototype = {
       name: "I can Manage (Time Management)",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:29",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-02.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-02.jpg",
       videoLink:
@@ -172,6 +201,8 @@ const initialState: InitialStatePrototype = {
       name: "Comic on Honesty",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:16",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-01.png",
       videoLink:
@@ -182,6 +213,8 @@ const initialState: InitialStatePrototype = {
       name: "Greeting Comic",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:44",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1.png",
       videoLink:
@@ -192,6 +225,8 @@ const initialState: InitialStatePrototype = {
       name: "Live and Let Live",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:02",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-21.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-21.jpg",
       videoLink:
@@ -202,6 +237,8 @@ const initialState: InitialStatePrototype = {
       name: "Say Sorry",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:08",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-10.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-10.jpg",
       videoLink:
@@ -212,6 +249,8 @@ const initialState: InitialStatePrototype = {
       name: "Supriya's Time Management",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:47",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-01.jpg",
       videoLink:
@@ -222,6 +261,8 @@ const initialState: InitialStatePrototype = {
       name: "Do You Know",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "3:44",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-20.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-20.jpg",
       videoLink:
@@ -232,6 +273,8 @@ const initialState: InitialStatePrototype = {
       name: "Electronic Gadgets And Kids",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:21",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-13.jpg",
       videoLink:
@@ -242,6 +285,8 @@ const initialState: InitialStatePrototype = {
       name: "How to Handle Relationships",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:21",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-14.jpg",
       thumbnail:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-14.jpg",
       videoLink:
