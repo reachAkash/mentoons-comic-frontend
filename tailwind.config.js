@@ -39,6 +39,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         primary: "#EC9600",
         home: "#f0ebe5",
+        "custom-gray": "rgba(219,219,219,1)",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
