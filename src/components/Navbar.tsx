@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
         >
           <img className="w-32 cursor-pointer" src={Logo} />
         </Link>
-        <div className="w-[40%] pl-8 flex items-center justify-between">
+        <div className="w-[40%] pl-4 flex items-center justify-between">
           <ul className="w-[35%] flex items-center justify-between">
             <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-6 transition-all ease-in-out duration-300 cursor-pointer">
               About
