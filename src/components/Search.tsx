@@ -114,7 +114,6 @@ const Search: React.FC = () => {
 
 export const SearchPage: React.FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const comicsData = useSelector((store: RootState) => store.comics.comics);
   const [input, setInput] = useState<string>("");
   const popularComics = comicsData.slice(0, 12);
