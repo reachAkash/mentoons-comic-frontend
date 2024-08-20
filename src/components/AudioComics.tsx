@@ -73,15 +73,15 @@ const AudioComics: React.FC = () => {
   return (
     <div className="container bg-[#f0ebe5] space-y-5 py-14 lg:py-28">
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0.5 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
         className="space-y-5 pb-8 text-center lg:text-start"
       >
         <motion.div
-          initial={{ y: 50 }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 1.5 }}
+          initial={{ opacity: 0.5 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2 }}
           className=" text-3xl text-red-500 lineBefore uppercase"
         >
           Audio Comics{" "}
@@ -99,9 +99,9 @@ const AudioComics: React.FC = () => {
         {comics?.map((item: Comic) => {
           return (
             <motion.div
-              initial={{ scale: 1.2 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0.5 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
               key={v4()}
               onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
               className="bg-white shadow-lg group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3"

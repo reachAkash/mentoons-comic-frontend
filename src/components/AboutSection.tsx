@@ -77,8 +77,8 @@ const AboutSection: React.FC = () => {
           className="space-y-5 w-full lg:w-[50%] text-center lg:text-start text-white"
         >
           <motion.div
-            initial={{ y: -50 }}
-            animate={{ y: 0 }}
+            initial={{ opacity: 0.5 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
             className="text-red-500 text-4xl  lg:text-3xl lineBefore"
           >

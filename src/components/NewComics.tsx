@@ -53,16 +53,16 @@ const NewComics: React.FC = () => {
       <div className="container space-y-12">
         <div className="text-center space-y-4">
           <motion.div
-            initial={{ y: 50 }}
-            whileInView={{ y: 0 }}
+            initial={{ opacity: 0.5 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="text-[#d71515] text-3xl lineBefore"
           >
             New Comics
           </motion.div>
           <motion.div
-            initial={{ y: 50 }}
-            whileInView={{ y: 0 }}
+            initial={{ opacity: 0.5 }}
+            whileInView={{ opacity: 0.5 }}
             transition={{ delay: 0.1, duration: 0.3 }}
             className="text-4xl lg:text-7xl w-full font-extrabold leading-[1.10]"
           >

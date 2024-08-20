@@ -13,8 +13,15 @@ import ScrollToTop from "./components/ScrollToTop";
 import { SearchPage } from "./components/Search";
 import SlidingText from "./components/SlidingText";
 import Wishlist from "./components/Wishlist";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import ComicCard from "./components/HoverCardComic";
 
 function App() {
+  const hoverComicCard = useSelector(
+    (store: RootState) => store.comics.currentHoverComic
+  );
+
   return (
     <>
       <ScrollToTop />
@@ -32,6 +39,7 @@ function App() {
       </Routes>
       <SlidingText />
       <Toaster />
+      {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
       <ProgressScroller />
     </>
   );

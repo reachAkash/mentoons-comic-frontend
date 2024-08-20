@@ -4,6 +4,7 @@ export interface Comic {
   name: string;
   desc: string;
   duration: string;
+  mini_thumbnail: string;
   thumbnail: string;
   videoLink: string;
   category: string;
@@ -32,8 +33,10 @@ const initialState: InitialStatePrototype = {
       name: "Bet Your Life",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:17",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-09.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-09.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+37.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/BET_YOUR_LIFE.mp4",
       category: "groupMedium",
@@ -42,8 +45,10 @@ const initialState: InitialStatePrototype = {
       name: "The Cell Life of Soniya",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:31",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-12.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-12.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+27.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CELL_LIFE_OF_SONIYA_02.mp4",
       category: "groupMedium",
@@ -52,8 +57,10 @@ const initialState: InitialStatePrototype = {
       name: "Choose Wisely",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:27",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-08.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-08.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+33.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CHOOSE_WISELY.mp4",
       category: "groupMedium",
@@ -62,8 +69,10 @@ const initialState: InitialStatePrototype = {
       name: "Come out of Gaming",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:51",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-05.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+36.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/COME_OUT_OF_GAMING_02.mp4",
       category: "groupMedium",
@@ -72,8 +81,10 @@ const initialState: InitialStatePrototype = {
       name: "Comic on Divorce",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:04",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-07.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-07.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+1+4.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/COMIC_ON_DIVORCE_01.mp4",
       category: "groupMedium",
@@ -82,8 +93,10 @@ const initialState: InitialStatePrototype = {
       name: "Don't Fade Away",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:54",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-04.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+35.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/DONT_FADE_AWAY_02.mp4",
       category: "groupMedium",
@@ -92,8 +105,10 @@ const initialState: InitialStatePrototype = {
       name: "Hungry for Likes Not Life",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:10",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-15.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-15.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+34.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/HUNGRY_FOR_LIKES_NOT_LIFE_01.mp4",
       category: "groupMedium",
@@ -102,8 +117,10 @@ const initialState: InitialStatePrototype = {
       name: "One Way Trip",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "4:09",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-22.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-22.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+38.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/ONE-WAY-TRIP_1.mp4",
       category: "groupMedium",
@@ -112,8 +129,10 @@ const initialState: InitialStatePrototype = {
       name: "Rishi and Rohit",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:20",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-16.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-16.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+29.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/RISHI+AND+ROHIT.mp4",
       category: "groupMedium",
@@ -122,8 +141,10 @@ const initialState: InitialStatePrototype = {
       name: "Rohan and the Puppies",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:09",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-17.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+28.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/Rohan+and+the+Puppies_01.mp4",
       category: "groupMedium",
@@ -132,8 +153,10 @@ const initialState: InitialStatePrototype = {
       name: "Tanya's Downfall",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:53",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-06.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+26.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/TANYA_DOWN-FALL_02.mp4",
       category: "groupMedium",
@@ -142,8 +165,10 @@ const initialState: InitialStatePrototype = {
       name: "How Teenagers Lose Their Jobs Part-1",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:13",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-23.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-23.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+1+3.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/SANKAR_INTERVIEW.mp4",
       category: "groupLarge",
@@ -152,8 +177,10 @@ const initialState: InitialStatePrototype = {
       name: "How Teenagers Lose Their Jobs Part-2",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:58",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-24.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+19.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/Sana+Comic+Interview.mp4",
       category: "groupLarge",
@@ -162,8 +189,10 @@ const initialState: InitialStatePrototype = {
       name: "I can Manage (Time Management)",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:29",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-02.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-02.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+24.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Asha+%26+Simran-+Time+management+(6-12)_1.mp4",
       category: "groupSmall",
@@ -172,8 +201,10 @@ const initialState: InitialStatePrototype = {
       name: "Comic on Honesty",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:16",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-01.png",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+40.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/COMIC_ON_HONESTY.mp4",
       category: "groupSmall",
@@ -182,8 +213,10 @@ const initialState: InitialStatePrototype = {
       name: "Greeting Comic",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "1:44",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/comic_4.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1.png",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+39.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/GREETING_COMIC.mp4",
       category: "groupSmall",
@@ -192,8 +225,10 @@ const initialState: InitialStatePrototype = {
       name: "Live and Let Live",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:02",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-21.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-21.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+23.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SAY+SORRY+COMIC.mp4",
       category: "groupSmall",
@@ -202,18 +237,22 @@ const initialState: InitialStatePrototype = {
       name: "Say Sorry",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "2:08",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-10.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-10.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+20.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SAY+SORRY+COMIC.mp4",
       category: "groupSmall",
     },
     {
-      name: "Supriya's Time Management",
+      name: "My Daily Routine",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "0:47",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-01.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+25.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SUPRIYA_TIME_MANAGEMENT_1.mp4",
       category: "groupSmall",
@@ -222,8 +261,10 @@ const initialState: InitialStatePrototype = {
       name: "Do You Know",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "3:44",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-20.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-20.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+31.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/BOOK+3+DO+YOU+KNOW_FINAL.mp4",
       category: "groupMedium",
@@ -232,8 +273,10 @@ const initialState: InitialStatePrototype = {
       name: "Electronic Gadgets And Kids",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:21",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-13.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+32.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/BOOK_02_GADGETS_AND_KIDS_01.mp4",
       category: "groupMedium",
@@ -242,11 +285,37 @@ const initialState: InitialStatePrototype = {
       name: "How to Handle Relationships",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
       duration: "5:21",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-14.jpg",
       thumbnail:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/1-14.jpg",
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+30.jpg",
       videoLink:
         "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/HOW+TO+HANDLE+RELATIONSHIP.mp4",
       category: "groupMedium",
+    },
+    // {
+    //   name: "Think Before You Act",
+    //   desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    //   duration: "5:21",
+    //   mini_thumbnail:
+    //     "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-14.jpg",
+    //   thumbnail:
+    //     "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+21.jpg",
+    //   videoLink:
+    //     "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/HOW+TO+HANDLE+RELATIONSHIP.mp4",
+    //   category: "groupMedium",
+    // },
+    {
+      name: "Listen To Me",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+      duration: "2:12",
+      mini_thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-19.jpg",
+      thumbnail:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+22.jpg",
+      videoLink:
+        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Comic+on+Listen+to+me_01.mp4",
+      category: "groupSmall",
     },
   ],
   selectedFilter: "",

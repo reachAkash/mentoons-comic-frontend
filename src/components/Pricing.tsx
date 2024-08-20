@@ -39,8 +39,8 @@ const Pricing: React.FC = () => {
       <div className="space-y-4">
         <div className="flex flex-col lg:flex-row bg-white items-center justify-between">
           <motion.div
-            initial={{ scale: 1.3 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0.5 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
@@ -68,8 +68,8 @@ const Pricing: React.FC = () => {
             </button>
           </motion.div>
           <motion.div
-            initial={{ scale: 1.3 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0.5 }}
+            whileInView={{ opacity: 0.5 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-white text-center w-full space-y-4 py-6 px-6"
@@ -97,8 +97,8 @@ const Pricing: React.FC = () => {
             </button>
           </motion.div>
           <motion.div
-            initial={{ scale: 1.3 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0.5 }}
+            whileInView={{ opacity: 0.5 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
             className="hover:scale-105 transition-all duration-700 ease-in-out bg-primary lg:relative lg:bottom-[2rem] rounded-md text-white text-center w-full space-y-4 py-6 px-6"
