@@ -15,7 +15,7 @@ const DropdownMenu = () => {
   return (
     <Menubar className="w-[31rem] flex items-center justify-between bg-primary border-none text-white text-base">
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base'>
           Comics
         </MenubarTrigger>
         <MenubarContent>
@@ -30,12 +30,12 @@ const DropdownMenu = () => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base'>
           Latest
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base'>
           Audio Comics
         </MenubarTrigger>
         <MenubarContent>
