@@ -42,7 +42,7 @@ const Search: React.FC = () => {
 
   return (
     <div className="py-10 pb-0 space-y-6">
-      <div className="bg-white flex items-center justify-between rounded-md py-1 px-3">
+      <div className="bg-gray-50 flex items-center justify-between rounded-md py-1 px-3">
         <input
           value={input}
           onChange={(e) => {
