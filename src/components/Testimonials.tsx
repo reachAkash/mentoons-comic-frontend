@@ -7,8 +7,8 @@ const Testimonials: React.FC = () => {
   return (
     <div className="container flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] py-20">
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
         className="w-full lg:w-[45%] space-y-4"
       >

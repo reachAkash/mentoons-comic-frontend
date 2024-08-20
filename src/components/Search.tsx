@@ -12,6 +12,7 @@ export interface ShowButtonInterface {
   index: number | null;
   show: boolean;
 }
+
 const Search: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const Search: React.FC = () => {
 
   return (
     <div className="py-10 pb-0 space-y-6">
-      <div className="bg-white flex items-center justify-between rounded-md py-1 px-3">
+      <div className="bg-gray-50 flex items-center justify-between rounded-md py-1 px-3">
         <input
           value={input}
           onChange={(e) => {
@@ -81,7 +82,7 @@ const Search: React.FC = () => {
                     index === showButton?.index && "grayscale-[80%]"
                   } w-full md:w-[15rem] md:h-[14rem] duration-700`}
                   key={index}
-                  src={item.thumbnail}
+                  src={item.mini_thumbnail}
                 />
               </SheetClose>
               {index === showButton?.index && showButton.show === true && (
@@ -179,7 +180,7 @@ export const SearchPage: React.FC = () => {
                   index === showButton?.index && "grayscale-[80%]"
                 } w-full md:w-[15rem] md:h-[14rem] duration-700`}
                 key={index}
-                src={item.thumbnail}
+                src={item.mini_thumbnail}
               />
               {index === showButton?.index && showButton.show === true && (
                 <Button
@@ -202,4 +203,5 @@ export const SearchPage: React.FC = () => {
     </div>
   );
 };
+
 export default Search;
