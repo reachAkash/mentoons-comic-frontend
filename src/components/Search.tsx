@@ -114,7 +114,6 @@ const Search: React.FC = () => {
 
 export const SearchPage: React.FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const comicsData = useSelector((store: RootState) => store.comics.comics);
   const [input, setInput] = useState<string>("");
   const popularComics = comicsData.slice(0, 12);
@@ -133,15 +132,9 @@ export const SearchPage: React.FC = () => {
   const comicsToDisplay =
     searchedComics.length > 0 ? searchedComics : popularComics;
 
-  useEffect(() => {
-    return () => {
-      dispatch(updateCurrentHoverComicReducer(null));
-    };
-  }, []);
-
   return (
-    <div className="py-10 pb-0 space-y-6">
-      <div className="bg-white flex items-center justify-between rounded-md py-1 px-3">
+    <div className="container bg-[#019ab6] py-12 pb-24 space-y-6">
+      <div className="bg-gray-50 flex items-center justify-between rounded-md py-1 px-3">
         <input
           value={input}
           onChange={(e) => {
@@ -159,18 +152,16 @@ export const SearchPage: React.FC = () => {
           <span className="text-sm text-green-400">Explore other comics!</span>
         </div>
       )}
-      <div className="grid w-full place-items-center md:grid-cols-2 gap-6">
+      <div className="grid w-full place-items-center grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
         {comicsToDisplay?.map((item, index) => {
           return (
             <motion.div
               key={v4()}
               onMouseEnter={() => {
                 setShowButton({ index, show: true });
-                dispatch(updateCurrentHoverComicReducer(item));
               }}
               onMouseLeave={() => {
                 setShowButton({ index: null, show: false });
-                dispatch(updateCurrentHoverComicReducer(null));
               }}
               className="relative flex flex-col items-center justify-center transition-all ease-in-out"
             >
@@ -178,14 +169,14 @@ export const SearchPage: React.FC = () => {
                 onClick={() => navigate("/audio-comic?comic=" + item.name)}
                 className={`cursor-pointer ${
                   index === showButton?.index && "grayscale-[80%]"
-                } w-full md:w-[15rem] md:h-[14rem] duration-700`}
+                } w-[20rem] md:w-[25rem] md:h-[20rem] duration-700 rounded-md`}
                 key={index}
-                src={item.mini_thumbnail}
+                src={item.thumbnail}
               />
               {index === showButton?.index && showButton.show === true && (
                 <Button
                   onClick={() => navigate("/audio-comic?comic=" + item.name)}
-                  className="absolute left-0 font-semibold bottom-0 w-full bg-primary text-white hover:text-primary hover:bg-white duration-500 z-[50]"
+                  className="absolute left-0 font-semibold bottom-0 w-full bg-primary text-white hover:text-primary hover:bg-white duration-500 z-10"
                 >
                   View Sample
                 </Button>
