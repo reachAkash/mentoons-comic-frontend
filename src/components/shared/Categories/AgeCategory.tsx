@@ -16,8 +16,7 @@ const AgeCategory = () => {
               />
             </div>
             <div className='text-sm  py-2'>
-              Tiny Explorers Gazette: Discovering the Wonders of the World for
-              Little Ones (Ages {age.minAge}
+              {age.description} (Ages {age.minAge}
               {age.minAge === 20 ? age.maxAge : `-${age.maxAge}`})
             </div>
           </div>

@@ -103,7 +103,8 @@ body,
   overflow: hidden;
   position: fixed;
   bottom: 0;
-  background: #d71515;
+  /* background: #d71515; */
+  background: #ec9600;
   z-index: 40;
   -webkit-transition: all linear 0.3s;
   -o-transition: all linear 0.3s;

@@ -94,7 +94,7 @@ const PodcastCardExp = ({
     };
   }, [setCurrentlyPlaying]);
   return (
-    <div className='relative  w-full border border-black-100/10 rounded-3xl backdrop-blur-3xl overflow-hidden p-6 transition-all text-black  hover:scale-105  duration-300'>
+    <div className='relative  w-full border border-zinc-600/20 rounded-3xl backdrop-blur-3xl overflow-hidden p-4 transition-all text-black  hover:scale-105  duration-300'>
       <div className=' absolute h-full w-full top-0 left-0 bg-[#ffffff76] opacity-0  transition-all duration-300 hover:opacity-100 hover:backdrop-blur-3xl '>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   text-sm font-semibold text-center flex gap-4 items-center justify-center '>
           <button
@@ -127,7 +127,24 @@ const PodcastCardExp = ({
           )}
         </div>
       </div>
-      <div className='text-xl font-bold text-black mb-4 line-clamp-1 flex items-center justify-between '>
+      <div className='h-48 overflow-hidden rounded-[12px] mb-3 '>
+        <img
+          src={podcast.thumbnail}
+          alt='Podcast thumbnail'
+          className='w-full object-cover'
+        />
+      </div>
+      <div className=' flex gap-3 items-center  text-xs mb-2'>
+        <div className='w-6 rounded-full bg-red-600'>
+          <img
+            src='/assets/images/author.jpg'
+            alt='Author image'
+            className='rounded-full'
+          />
+        </div>
+        <span>{podcast.author}</span>
+      </div>
+      <div className='text-2xl font-bold text-black mb-1 line-clamp-1 flex items-center justify-between '>
         <span className='truncate '>{podcast.topic}</span>
         {currentlyPlaying === audioRef.current && isPlaying && (
           <span
@@ -141,22 +158,7 @@ const PodcastCardExp = ({
         )}
       </div>
 
-      <p className='text-sm text-black mb-2 line-clamp-3'>
-        {podcast.description}
-      </p>
-      <div className=' flex gap-3 items-center  text-xs mb-6'>
-        <div className='w-8 rounded-full bg-red-600'>
-          <img src='/assets/author.jpg' alt='' />
-        </div>
-        <span>{podcast.author}</span>
-      </div>
-      <div className='h-48 overflow-hidden rounded-[12px] '>
-        <img
-          src={podcast.thumbnail}
-          alt='Podcast thumbnail'
-          className='w-full object-cover'
-        />
-      </div>
+      <p className='text-sm text-black m line-clamp-3'>{podcast.description}</p>
     </div>
   );
 };
