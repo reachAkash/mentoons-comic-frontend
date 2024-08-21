@@ -47,26 +47,10 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
         <ul className=" w-full py-2 space-y-3">
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/")}
-              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
-            >
-              Home
-            </li>
-          </SheetClose>
-          <SheetClose asChild>
-            <li
               onClick={() => navigate("/comics-list")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Comics
-            </li>
-          </SheetClose>
-          <SheetClose asChild>
-            <li
-              onClick={() => navigate("/latest")}
-              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
-            >
-              Latest
             </li>
           </SheetClose>
           <SheetClose asChild>
@@ -79,6 +63,14 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
+              onClick={() => navigate("/mentoons-podcast")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Podcasts
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
               onClick={() => navigate("/workshops")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
@@ -87,10 +79,18 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/about")}
+              onClick={() => navigate("/mentoons-store")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
-              Contest
+              Mentoons Store
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/contests")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Contests
             </li>
           </SheetClose>
         </ul>
