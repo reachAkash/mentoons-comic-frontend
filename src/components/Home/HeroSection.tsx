@@ -7,8 +7,7 @@ type HomeProps = {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const HeroSection: React.FC<HomeProps> = ({ setModalOpen }) => {
-  const placeholders = [
+  export const placeholders = [
     "Search for Comics...",
     "Search for Audio Comics...",
     "Search for Podcast...",
@@ -18,12 +17,17 @@ const HeroSection: React.FC<HomeProps> = ({ setModalOpen }) => {
     "Search for Workshops...",
   ];
 
+const HeroSection: React.FC<HomeProps> = ({ setModalOpen }) => {
+    const [input, setInput] = useState<string>("");
+
   return (
     <div className="relative h-[100vh] lg:h-[100vh] py-10 bg-hero-image bg-bottom lg:bg-center bg-contain lg:bg-cover bg-no-repeat">
       <div className='flex flex-col items-center lg:items-start lg:flex-row lg:h-full'>
         <div className='text-center lg:text-left w-full lg:w-2/4 flex flex-col items-center lg:items-start gap-7 lg:pl-10 lg:relative lg:top-1/2 lg:-translate-y-1/2 pb-10 lg:pb-0 relative'>
           <div className="flex items-center justify-center w-full lg:w-auto">
-            <SearchBar placeholders={placeholders} />
+            <SearchBar input={input}
+              setInput={setInput}
+              placeholders={placeholders} />
           </div>
           <h1 className='text-4xl sm:text-6xl lg:text-6xl text-black lg:text-white lg:whitespace-nowrap relative'>
             <div className='hidden lg:block lg:absolute lg:top-[-160px] lg:left-[153px] w-[15rem] sm:w-[21rem] z-[-1]'>
