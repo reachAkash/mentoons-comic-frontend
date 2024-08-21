@@ -4,17 +4,20 @@ import {
   updateSelectedFilterReducer,
 } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
-import FilterComics from "./FilterComics";
+import FilterComics from "../components/FilterComics";
 import { cn } from "@/lib/utils";
+import { useQuery } from "./AudioComicPage";
 
 const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const queryParams = useQuery();
+  const currentComicFormat = queryParams.get("comic");
   const [activeComic, setActiveComic] = useState<string>("Audio Comics");
   const comicState = useSelector((store: RootState) => store.comics);
   const comicsData = comicState.comics;
@@ -32,12 +35,20 @@ const ComicsPage: React.FC = () => {
     dispatch(addToCartReducer(item));
   };
 
-  console.log(selectedFilter);
-
   const handleChangeComic = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.innerText == activeComic) return;
     setActiveComic(e.currentTarget.innerText);
   };
+
+  const updateCurrentComicFormat = () => {
+    if (currentComicFormat) {
+      setActiveComic(currentComicFormat);
+    }
+  };
+
+  useEffect(() => {
+    updateCurrentComicFormat();
+  }, [currentComicFormat]);
 
   return (
     <div className="container py-10 space-y-8">
