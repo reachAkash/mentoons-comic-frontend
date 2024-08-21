@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Heading from '../common/Heading';
 import { Fade } from 'react-awesome-reveal';
 
@@ -6,6 +7,7 @@ type CardData = {
   title: string;
   description: string;
   btnTxt: string;
+  link:string
 };
 
 const HowToUse: React.FC = () => {
@@ -15,6 +17,7 @@ const HowToUse: React.FC = () => {
       title: 'Create an Account',
       description: 'Quick and easy sign-up to access all features.',
       btnTxt: 'Sign Up',
+      link:'#',
     },
     {
       imgUrl: '/plan.jpg',
@@ -22,12 +25,14 @@ const HowToUse: React.FC = () => {
       description:
         'Select the subscription that best fits your needs.',
       btnTxt: 'Check plans',
+      link:'/website-plans',
     },
     {
       imgUrl: '/explore.jpg',
       title: 'Explore and Enjoy',
       description: 'Start exploring all the content and activities available.',
-      btnTxt: 'Explore more',
+      btnTxt: 'Check F.A.Q',
+      link:'/faq',
     },
   ];
 
@@ -44,9 +49,7 @@ const HowToUse: React.FC = () => {
         {cardsData.map((card, index) => (
           <Fade key={index} direction="up" triggerOnce>
             <div className="w-full max-w-xs bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-105 duration-300 pt-8">
-              <a href="#">
-                <img className="w-full h-56 object-cover" src={card.imgUrl} alt={card.title} />
-              </a>
+                <img className="w-full h-56 object-cover" src={card.imgUrl} alt={card.title} />           
               <div className="p-6 flex flex-col h-full justify-between">
                 <div>
                   <a href="#">
@@ -58,8 +61,7 @@ const HowToUse: React.FC = () => {
                     {card.description}
                   </p>
                 </div>
-                <a
-                  href="#"
+                <Link to={card.link}
                   className="mt-auto inline-flex items-center px-4 py-2 text-lg font-semibold text-center text-white bg-men-blue rounded-lg shadow-lg hover:bg-men-dark-blue focus:ring-4 focus:outline-none focus:ring-men-blue"
                 >
                   {card.btnTxt}
@@ -78,7 +80,7 @@ const HowToUse: React.FC = () => {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </Fade>

@@ -26,7 +26,7 @@ const HeroSection: React.FC<HomeProps> = ({ setModalOpen }) => {
             <SearchBar placeholders={placeholders} />
           </div>
           <h1 className='text-4xl sm:text-6xl lg:text-6xl text-black lg:text-white lg:whitespace-nowrap relative'>
-            <div className='hidden lg:block lg:absolute lg:top-[-160px] lg:left-[153px] w-[15rem] sm:w-[21rem]'>
+            <div className='hidden lg:block lg:absolute lg:top-[-160px] lg:left-[153px] w-[15rem] sm:w-[21rem] z-[-1]'>
               <AnimatedArtwork animationData={plane} />
             </div>
             <span className='text-men-blue font-bold text-6xl lg:text-7xl'>Mentoons,</span><br /> 
@@ -42,7 +42,7 @@ const HeroSection: React.FC<HomeProps> = ({ setModalOpen }) => {
             <span className='text-black lg:text-white text-lg sm:text-2xl font-semibold'>Watch videos</span>
           </div>
         </div>
-        <div className='absolute bottom-[-6rem] right-[-3rem] w-[15rem] h-[15rem] lg:bottom-[-10rem] lg:right-10 lg:w-[20rem] lg:h-[20rem] z-10'>
+        <div className='absolute bottom-[-6rem] right-[-3rem] w-[15rem] lg:bottom-[-13rem] lg:right-10 lg:w-[25rem] lg:h-[25rem] z-10'>
           <img src="/crafted.png" alt="crafted by psychologist" className='w-full h-full object-contain ' />
         </div>
       </div>

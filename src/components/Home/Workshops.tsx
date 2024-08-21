@@ -83,6 +83,7 @@ const Workshops = () => {
     return (
         <div className='w-full h-full py-10 relative'>
             <Heading heading='Workshops' />
+            <div className='h-[3rem]'></div>
             <div className='h-[10rem] w-[20rem] absolute right-0 top-20 hidden lg:block'>
                 <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
             </div>

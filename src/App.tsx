@@ -17,6 +17,8 @@ import { SearchPage } from "./components/Search";
 import SlidingText from "./components/SlidingText";
 import Wishlist from "./components/Wishlist";
 import WebHome from "./pages/WebHome";
+import FAQ from "./components/common/FAQ";
+import Plans from "./components/common/Plans";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -38,6 +40,8 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/mentoons-podcast" element={<PodCast />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/website-plans" element={<Plans />} />
       </Routes>
       <SlidingText />
       <Toaster />

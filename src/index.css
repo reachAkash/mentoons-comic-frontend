@@ -3,12 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.cdnfonts.com/css/futura-std-4");
 
 html,
 body,
 :root {
   height: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Futura Std", sans-serif !important;
 }
 
 .container {
