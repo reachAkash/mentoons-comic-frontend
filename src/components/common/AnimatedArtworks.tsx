@@ -12,7 +12,7 @@ const AnimatedArtwork: React.FC<animateData> = ({animationData}) => {
         autoplay
         loop
         src={animationData}
-        style={{ height: '20rem', width: '20rem' }}
+        style={{ height: '20rem', width: '20rem',position:'static' }}
       />
     </div>
   );

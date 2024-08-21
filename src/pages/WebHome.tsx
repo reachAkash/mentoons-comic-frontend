@@ -8,6 +8,7 @@ import InsideMentoons from '../components/Home/InsideMentoons';
 import CallToAction from '../components/Home/CallToAction';
 // import GoToTop from '../components/common/GoToTop';
 import { CiPause1, CiPlay1 } from 'react-icons/ci';
+import JoinAcademy from '@/components/Home/JoinAcademy';
 
 type videoData = {
   id: string;
@@ -59,6 +60,7 @@ const WebHome: React.FC = () => {
       <Workshops />
       <InsideMentoons />
       <CallToAction />
+      <JoinAcademy/>
       {/* <GoToTop /> */}
 
       <button

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import Heading from '../common/Heading';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../../styles/insidementoons.css'
+import '../../styles/insidementoons.css';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Fade } from 'react-awesome-reveal';
 
@@ -46,6 +46,26 @@ const InsideMentoons: React.FC = () => {
       subtitle: 'Founder',
     },
     {
+      imageSrc: '/team-08.jpg',
+      title: 'Dinesh Kumar.G',
+      subtitle: 'Graphic Designer',
+    },
+    {
+      imageSrc: '/team-05.jpg',
+      title: 'Sankar P.Krishan',
+      subtitle: 'Illustrator',
+    },
+    {
+      imageSrc: '/team-06.jpg',
+      title: 'Ajay',
+      subtitle: 'Video Editor',
+    },
+    {
+      imageSrc: '/team-07.jpg',
+      title: 'Danasekar',
+      subtitle: 'Sketch Artist',
+    },
+    {
       imageSrc: 'Akash.png',
       title: 'Akash Gupta',
       subtitle: 'Fullstack Developer',
@@ -60,7 +80,6 @@ const InsideMentoons: React.FC = () => {
       title: 'Ankur Dutta',
       subtitle: 'Fullstack Developer',
     },
-  
   ];
 
   return (
@@ -82,18 +101,21 @@ const InsideMentoons: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="relative flex justify-center items-center mt-10 m-auto px-10 py-3 bg-white w-full lg:w-[90%] rounded-lg">
+      <div className="relative flex justify-center items-center mt-10 m-auto px-10 py-3 bg-white w-full lg:w-[90%] rounded-lg shadow-lg">
         <Slider {...settings} className="w-full max-w-screen-2xl">
           {slideData.map((slide, index) => (
             <Fade key={index} delay={200} triggerOnce>
               <div className="relative p-4 flex justify-center">
                 <div
-                  className="w-[15rem] h-[15rem] rounded-full overflow-hidden border-8 border-[#ec9600] bg-cover bg-center"
-                  style={{ backgroundImage: `url(${slide.imageSrc})` }}
+                  className="w-[15rem] h-[15rem] rounded-full border-8 border-[#ec9600] bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${slide.imageSrc})`,
+                    boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
+                  }}
                 />
                 <div className="absolute bottom-5 left-1/2 bg-[#ec9600] p-4 rounded-lg shadow-lg text-center">
-                  <h2 className="text-xl font-bold text-[#fff] whitespace-nowrap">{slide.title}</h2>
-                  <p className="text-white whitespace-nowrap">{slide.subtitle}</p>
+                  <h2 className="text-sm lg:text-lg font-bold text-[#fff] whitespace-nowrap">{slide.title}</h2>
+                  <p className="text-white text-xs lg:text-md whitespace-nowrap">{slide.subtitle}</p>
                 </div>
               </div>
             </Fade>

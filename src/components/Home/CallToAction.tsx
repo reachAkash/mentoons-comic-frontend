@@ -17,11 +17,9 @@ const CallToAction: React.FC = () => {
                     <h1 className="text-2xl font-extrabold text-[#ff3c00] md:text-3xl">"Let’s Revive"</h1>
                     <h2 className="text-xl font-bold md:text-2xl">OUR MEET UP GROUP</h2>
                     <p className="text-lg text-[#1da7fe] md:text-xl">Revival of Ancient Values, Respect, Care and Relationships.</p>
-                    <ul className="text-justify mt-4">
-                        <li className="mb-2">In this modern age, it's easy to lose sight of the values that once guided our interactions and relationships.</li>
-                        <li className="mb-2">But embracing core values is crucial for fostering a harmonious society and establishing deeper connections with others.</li>
-                        <li className="mb-2">Engage in real life, Encourage creativity and instigate change!</li>
-                    </ul>
+                    <p className="text-justify mt-4 font-medium">
+                        In the heart of the city, there's a unique gathering called <span className="font-bold">"Let's Revive"</span> that brings people together to celebrate and bring back ancient values, especially the respect for elders. This group meets regularly in the local community center, where members of all ages share stories, learn from each other, and engage activities that highlight the wisdom and traditions of the past. Through discussions, workshops, and cultural events,<span className="font-bold">"Let's Revive"</span> fosters a sense of community and connection, reminding everyone of the importance of honoring those who have paved the way for us. It's a wonderful opportunity for people to connect with their roots, learn valuable lessons from the elderly, and ensure that these age-old values continue to enrich our lives today.
+                    </p>
                     <h2 className="mt-4 text-xl font-bold md:text-2xl">JOIN US</h2>
                 </div>
                 <CTAForm />
@@ -31,3 +29,6 @@ const CallToAction: React.FC = () => {
 };
 
 export default CallToAction;
+
+
+
