@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { SearchPage } from "./components/Search";
 import SlidingText from "./components/SlidingText";
 import Wishlist from "./components/Wishlist";
+import WebHome from "./pages/WebHome";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -27,15 +28,16 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/wishlist' element={<Wishlist />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/audio-comic' element={<AudioComicPage />} />
-        <Route path='/workshops' element={<ComicWorkshop />} />
-        <Route path='/comics-list' element={<ComicsPage />} />
-        <Route path='/search' element={<SearchPage />} />
-        <Route path='/mentoons-podcast' element={<PodCast />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path="/" element={<WebHome />} />
+        <Route path="/mentoons-comics" element={<Home />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/audio-comic" element={<AudioComicPage />} />
+        <Route path="/workshops" element={<ComicWorkshop />} />
+        <Route path="/comics-list" element={<ComicsPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/mentoons-podcast" element={<PodCast />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <SlidingText />
       <Toaster />

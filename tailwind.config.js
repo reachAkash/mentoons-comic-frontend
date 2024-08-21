@@ -32,6 +32,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        "men-blue": "#003366",
+        "light-blue": "#59b2dc",
+        "light-cyan": "#0081a7",
+        mustard: "#ec9600",
+        "light-yellow": "#fdfcdc",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -64,6 +69,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      backgroundImage: {
+        "hero-image": "url('/public/caro3.png')",
+      },
+      boxShadow: {
+        "custom-light":
+          "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+        "roundedSlider-shadow": "0 0 7px #666",
+        "custom-complex":
+          "0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)",
       },
       borderRadius: {
         lg: "var(--radius)",
