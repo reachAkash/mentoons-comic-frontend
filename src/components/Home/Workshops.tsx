@@ -1,7 +1,5 @@
 import Heading from '../common/Heading';
 import { Fade } from 'react-awesome-reveal';
-import AnimatedArtwork from '../common/AnimatedArtworks';
-import flowers from '../../animation/flowers.json'
 import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
 
