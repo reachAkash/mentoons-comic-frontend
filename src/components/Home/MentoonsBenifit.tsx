@@ -3,8 +3,8 @@ import Heading from "../common/Heading";
 import { Fade, Zoom } from "react-awesome-reveal";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import AnimatedArtwork from "../common/AnimatedArtworks";
-import car from "../../animation/car.json";
+// import AnimatedArtwork from "../common/AnimatedArtworks";
+// import car from "../../animation/car.json";
 import "../../styles/slider.css";
 
 type SliderImages = {
@@ -39,7 +39,7 @@ const MentoonsBenifit: React.FC = () => {
   ];
 
   return (
-    <div className="h-fit w-full lg:h-screen py-16 bg-light-yellow relative">
+    <div className="h-full w-full lg:h-screen py-16 bg-light-yellow relative pb-20">
       <Fade direction="up" triggerOnce>
         <Heading heading="Mentoons Benefits" />
       </Fade>
@@ -67,21 +67,13 @@ const MentoonsBenifit: React.FC = () => {
           </Fade>
 
           <Fade delay={100} direction="up" triggerOnce>
-            <p className="text-justify lg:text-center text-2xl">
-              We believe in transforming children's lives by changing
-              maladaptive behavior, enhancing self-awareness, and taking a
-              stance against social media addiction. Our evidence-based
-              methodology combines concepts of social human development and
-              learning through engaging, fun elements like cartoons, games,
-              books, and videos. Through our in-depth workshops, we provide
-              resources that foster social interactions, healthy reactions, and
-              forming lasting friendships. We're here to support children,
-              teenagers, and adults as they navigate life's challenges.
+            <p className="text-left lg:text-center text-2xl">
+              We believe in transforming children's lives by changing maladaptive behavior, enhancing self-awareness, and taking a stance against social media addiction. Our evidence-based methodology combines concepts of social human development and learning through engaging, fun elements like cartoons, games, books, and videos. Through our in-depth workshops, we provide resources that foster social interactions, healthy reactions, and forming lasting friendships. We're here to support children, teenagers, and adults as they navigate life's challenges.
             </p>
-          </Fade>
-          <div className="absolute bottom-0 h-[10rem] w-[20rem] hidden lg:block">
+          {/* <div className="h-[10rem] w-[20rem] hidden lg:block">
             <AnimatedArtwork animationData={car} />
-          </div>
+          </div> */}
+          </Fade>
         </div>
       </div>
     </div>

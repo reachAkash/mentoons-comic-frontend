@@ -344,3 +344,13 @@ body,
   background-color: #d12881;
   padding: 0.5rem 3rem;
 }
+.search-input::placeholder {
+  color:#1a1919a2; 
+  opacity: 1; 
+  font-size: 1rem;
+}
+
+
+.search-input:focus::placeholder {
+  color:#1a1919a2; 
+}

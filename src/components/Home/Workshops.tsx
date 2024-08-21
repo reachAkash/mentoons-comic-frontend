@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 type CampDetails = {
     id: number;
     imgUrl: string;
+    CornerImgUrl:string;
     title: string;
     description: string[];
     ageGroup: string;
@@ -19,6 +20,7 @@ const Workshops = () => {
         {
             id: 1,
             imgUrl: '/Kids_camp.jpg',
+            CornerImgUrl: '/Buddy camp.png',
             title: 'Kids Camp',
             description: [
                 "Break free from the grip of social media through our holistic laughter workshops...",
@@ -31,6 +33,7 @@ const Workshops = () => {
         {
             id: 2,
             imgUrl: '/Teen_camp.jpg',
+            CornerImgUrl: '/Teen camp .png',
             title: 'Teen Camp',
             description: [
                 "Our workshops offer a multitude of benefits...",
@@ -44,6 +47,7 @@ const Workshops = () => {
         {
             id: 3,
             imgUrl: '/Family_camp.jpg',
+            CornerImgUrl: '/Family camp.png',
             title: 'Family Camp',
             description: [
                 "Art Workshops for Reducing Negative Moods...",
@@ -56,6 +60,7 @@ const Workshops = () => {
         {
             id: 4,
             imgUrl: '/Family_camp.jpg',
+            CornerImgUrl: '/Family camp.png',
             title: '20+ Camp',
             description: [
                 "Art Workshops for Reducing Negative Moods...",
@@ -80,9 +85,9 @@ const Workshops = () => {
     return (
         <div className='w-full h-full py-10 relative'>
             <Heading heading='Workshops' />
-            <div className='h-[10rem] w-[20rem] absolute right-0 top-[-0rem] hidden lg:block'>
-            <AnimatedArtwork animationData={flowers}/>
-          </div>
+            <div className='h-[10rem] w-[20rem] absolute right-0 top-20 hidden lg:block'>
+                <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
+            </div>
             <div className='w-4/5 m-auto relative'>
                 <div className='flex flex-col lg:flex-row mb-10 lg:mb-0 gap-4 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[-4rem]'>
                     {campDetails.map(camp => (
@@ -120,7 +125,7 @@ const Workshops = () => {
                                     </button>
                                     {showDescription && (
                                         <Fade>
-                                            <ul className='text-lg mt-2 list-disc list-inside text-justify px-5 py-2'>
+                                            <ul className='text-lg mt-2 list-disc list-inside text-left px-5 py-2'>
                                                 {selectedCamp.description.map((point, index) => (
                                                     <li key={index}>{point}</li>
                                                 ))}
@@ -137,7 +142,7 @@ const Workshops = () => {
                                     </button>
                                     {showAgeGroup && (
                                         <Fade>
-                                            <p className='text-lg mt-2'>{selectedCamp.ageGroup}</p>
+                                            <p className='text-lg mt-2 text-left'>{selectedCamp.ageGroup}</p>
                                         </Fade>
                                     )}
                                 </div>
@@ -150,7 +155,7 @@ const Workshops = () => {
                                     </button>
                                     {showTimetable && (
                                         <Fade>
-                                            <p className='text-lg mt-2'>{selectedCamp.timetable}</p>
+                                            <p className='text-lg mt-2 text-left'>{selectedCamp.timetable}</p>
                                         </Fade>
                                     )}
                                 </div>
