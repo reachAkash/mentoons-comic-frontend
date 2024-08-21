@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { FaPlay } from 'react-icons/fa';
 import AnimatedArtwork from '../common/AnimatedArtworks';
 import plane from '../../animation/plane.json';
