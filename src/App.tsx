@@ -14,7 +14,6 @@ import PodCast from "./components/PodCast";
 import ProgressScroller from "./components/ProgressScroller";
 import ScrollToTop from "./components/ScrollToTop";
 import { SearchPage } from "./components/Search";
-import PodcastCardExp from "./components/shared/PodcastSection/PodcastCardExp";
 import SlidingText from "./components/SlidingText";
 import Wishlist from "./components/Wishlist";
 
