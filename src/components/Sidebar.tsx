@@ -10,7 +10,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
-import Search from "./Search";
+import Search from "../pages/SearchPage";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
@@ -38,7 +38,9 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <RxHamburgerMenu className={`${className} text-white text-3xl`} />
+        <RxHamburgerMenu
+          className={`${className} text-white text-3xl cursor-pointer`}
+        />
       </SheetTrigger>
       <SheetContent
         side={"top"}
@@ -47,15 +49,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
         <ul className=" w-full py-2 space-y-3">
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/")}
-              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
-            >
-              Home
-            </li>
-          </SheetClose>
-          <SheetClose asChild>
-            <li
-              onClick={() => navigate("/comics-list")}
+              onClick={() => navigate("/mentoons-comics")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Comics
@@ -63,18 +57,18 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/latest")}
+              onClick={() => navigate("/comics-list?comic=Audio Comics")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
-              Latest
+              Audio Comics
             </li>
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/comics-list")}
+              onClick={() => navigate("/mentoons-podcast")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
-              Audio Comics
+              Podcasts
             </li>
           </SheetClose>
           <SheetClose asChild>
@@ -87,10 +81,18 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/about")}
+              onClick={() => navigate("/mentoons-store")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
-              Contest
+              Mentoons Store
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
+              onClick={() => navigate("/contests")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Contests
             </li>
           </SheetClose>
         </ul>
@@ -110,7 +112,11 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
               </div>
             </Link>
           </SheetClose>
-          <CiSearch className="text-2xl" />
+          <SheetClose asChild>
+            <Link to="/search">
+              <CiSearch className="text-2xl cursor-pointer" />
+            </Link>
+          </SheetClose>
         </div>
       </SheetContent>
     </Sheet>
