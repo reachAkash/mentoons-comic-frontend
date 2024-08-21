@@ -107,6 +107,7 @@ const Workshops = () => {
                                 backgroundImage: `url(${selectedCamp.imgUrl})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
+                                boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
                             }}
                         >
                         </div>
