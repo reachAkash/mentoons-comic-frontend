@@ -223,3 +223,124 @@ body,
   align-items: center; 
 }
 */
+
+/* Ankur CSS */
+
+.playBtn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #003366;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+  min-height: 3rem;
+  padding: 1rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.playBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.playBtn:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.playBtn:hover,
+.playBtn:focus {
+  background-color: #003366;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.playBtn:hover {
+  transform: translateY(-1px);
+}
+
+.playBtn:active {
+  background-color: #003366;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+/* search placeholder animations */
+@keyframes scrollPlaceholder {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-placeholder {
+  animation: scrollPlaceholder 0.5s ease-out;
+}
+
+/* additional styles */
+.flex-important {
+  display: flex !important;
+}
+.inline-important {
+  display: inline-block !important;
+}
+
+/* input styles */
+.cta-input {
+  border: solid 1px #cecece;
+  font-size: 17px;
+  outline: 0;
+  box-shadow: none;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 15px;
+  box-shadow: 6px 6px 0px rgba(103, 102, 102, 0.2);
+}
+.cta-button {
+  font-family: "Alegreya sans", serif;
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.6px;
+  outline: none;
+  border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+  border: solid 7px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-weight: 700;
+  background-color: #d12881;
+  padding: 0.5rem 3rem;
+}
