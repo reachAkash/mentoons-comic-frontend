@@ -10,7 +10,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
-import Search from "./Search";
+import Search from "../pages/SearchPage";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 

@@ -9,7 +9,7 @@ import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
-import FilterComics from "./FilterComics";
+import FilterComics from "../components/FilterComics";
 import { cn } from "@/lib/utils";
 import { useQuery } from "./AudioComicPage";
 
