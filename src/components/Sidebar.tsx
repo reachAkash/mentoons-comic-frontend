@@ -38,7 +38,9 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <RxHamburgerMenu className={`${className} text-white text-3xl`} />
+        <RxHamburgerMenu
+          className={`${className} text-white text-3xl cursor-pointer`}
+        />
       </SheetTrigger>
       <SheetContent
         side={"top"}
@@ -47,7 +49,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
         <ul className=" w-full py-2 space-y-3">
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/comics-list")}
+              onClick={() => navigate("/mentoons-comics")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Comics
@@ -55,7 +57,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/comics-list")}
+              onClick={() => navigate("/comics-list?comic=Audio Comics")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Audio Comics
@@ -110,7 +112,11 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
               </div>
             </Link>
           </SheetClose>
-          <CiSearch className="text-2xl" />
+          <SheetClose asChild>
+            <Link to="/search">
+              <CiSearch className="text-2xl cursor-pointer" />
+            </Link>
+          </SheetClose>
         </div>
       </SheetContent>
     </Sheet>
