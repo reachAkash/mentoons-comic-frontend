@@ -231,24 +231,30 @@ export const AGE_CATEGORY = [
     minAge: 2,
     maxAge: 5,
     ageCategoryBannerImgSrc: "/assets/images/age_2-5.jpg",
+    description:
+      "Tiny Explorers Gazette: Discoverying the Wonder of The World for Little Ones",
   },
   {
     id: 17,
     minAge: 6,
     maxAge: 12,
     ageCategoryBannerImgSrc: "/assets/images/age_6-12.jpg",
+    description:
+      "Junior Discoverers Chornicles: Unraveling the Marvels of Knowledge for Young Minds",
   },
   {
     id: 18,
     minAge: 13,
     maxAge: 19,
     ageCategoryBannerImgSrc: "/assets/images/age_13-19.jpg",
+    description: "Youth Horizan: Breaking News and Trend for Teens. ",
   },
   {
     id: 19,
     minAge: 20,
     maxAge: "+",
     ageCategoryBannerImgSrc: "/assets/images/age_20+.jpg",
+    description: "Beyond Boundaries: News for the Grown-Up Generation.",
   },
 ];
 

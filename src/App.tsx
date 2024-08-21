@@ -1,21 +1,22 @@
 import { Toaster } from "@/components/ui/sonner";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import AudioComicPage from "./components/AudioComicPage";
 import Cart from "./components/Cart";
 import ComicsPage from "./components/ComicsPage";
 import ComicWorkshop from "./components/ComicWorkshop";
 import Home from "./components/Home";
+import ComicCard from "./components/HoverCardComic";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import PodCast from "./components/PodCast";
 import ProgressScroller from "./components/ProgressScroller";
 import ScrollToTop from "./components/ScrollToTop";
 import { SearchPage } from "./components/Search";
+import PodcastCardExp from "./components/shared/PodcastSection/PodcastCardExp";
 import SlidingText from "./components/SlidingText";
 import Wishlist from "./components/Wishlist";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
-import ComicCard from "./components/HoverCardComic";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -40,6 +41,7 @@ function App() {
       <SlidingText />
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
+
       <ProgressScroller />
     </>
   );
