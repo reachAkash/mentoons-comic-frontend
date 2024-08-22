@@ -25,15 +25,17 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 2 }}
         className=" w-full lg:w-[50%] space-y-6"
       >
-        <h1 className="text-white text-5xl lg:text-4xl ">Mentoons Comics</h1>
-        <div className="font-bold text-white text-2xl lg:text-4xl tracking-wide leading-tight lg:leading-snug">
+        <h1 className="text-men-blue font-bold text-6xl lg:text-7xl ">
+          Mentoons Comics
+        </h1>
+        <div className=" text-white text-lg sm:text-2xl md:text-3xl tracking-wide leading-tight lg:leading-snug">
           Welcome to a world of <Wordbreak /> meaningful stories and valuable{" "}
           <Wordbreak /> life lessons
         </div>
         <div className="mx-auto lg:mx-0 w-fit flex items-center justify-between gap-4">
           <button
             onClick={() => navigate("/comics-list")}
-            className="bg-red-500 border-white  border-2 text-white rounded-full px-4 py-2 text-xl"
+            className="bg-red-500 hover:bg-white hover:text-red-500 border-white  border-2 text-white rounded-full px-4 py-2 text-xl transition-all ease-in-out duration-300"
           >
             Browse Our Collection
           </button>
