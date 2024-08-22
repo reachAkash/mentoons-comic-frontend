@@ -4,13 +4,12 @@ import WorkshopImg2 from "@/assets/imgs/Teen_camp 2.jpg";
 import WorkshopImg3 from "@/assets/imgs/Family_camp 2.jpg";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { NavLink } from "react-router-dom";
 
 const ComicWorkshop: React.FC = () => {
-  const [playVideo, setPlayVideo] = useState<{ index: number; play: boolean }>({
-    index: 0,
-    play: false,
-  });
+  // const [playVideo, setPlayVideo] = useState<{ index: number; play: boolean }>({
+  //   index: 0,
+  //   play: false,
+  // });
 
   const video1Ref = useRef<HTMLVideoElement>(null);
 
@@ -34,11 +33,11 @@ const ComicWorkshop: React.FC = () => {
   //   }
   // };
 
-  const handleStopRef = () => {
-    if (video1Ref.current) {
-      video1Ref.current.pause();
-    }
-  };
+  // const handleStopRef = () => {
+  //   if (video1Ref.current) {
+  //     video1Ref.current.pause();
+  //   }
+  // };
 
   const workshopData = [
     {
@@ -128,9 +127,9 @@ const ComicWorkshop: React.FC = () => {
     },
   ];
 
-  const handlePlayVideo = (idx: number) => {
-    setPlayVideo({ play: true, index: idx });
-  };
+  // const handlePlayVideo = (idx: number) => {
+  //   setPlayVideo({ play: true, index: idx });
+  // };
 
   const handleWorkshop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.innerText == activeWorkshop) return;

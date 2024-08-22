@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowUpLong } from "react-icons/fa6";
+// import { FaArrowUpLong } from "react-icons/fa6";
 
 const ProgressScroller: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
