@@ -26,7 +26,7 @@ const Blogs: React.FC = () => {
       <div className="space-y-7">
         <div className="flex flex-col lg:flex-row border-men-blue py-6 items-center justify-between">
           <div className="w-full lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
-            <div className="text-7xl text-primary mr-4">01</div>
+            <div className="text-7xl text-[darkred] mr-4">01</div>
             <div>
               <img
                 className="w-full h-[20rem] lg:h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
@@ -37,15 +37,15 @@ const Blogs: React.FC = () => {
           <div className="w-full lg:w-[50%] py-10">
             <div className="space-y-6">
               <div className="w-full flex items-center text-white justify-start gap-8 lg:gap-4">
-                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-[darkred] cursor-pointer">
                   <AiFillLike className="cursor-pointer text-2xl" />
                   140k
                 </div>
-                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-[darkred] cursor-pointer">
                   <FaComment className="cursor-pointer text-2xl " />
                   890
                 </div>
-                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-[darkred] cursor-pointer">
                   <IoIosShareAlt className="cursor-pointer text-2xl " />
                   3.5k
                 </div>
@@ -63,7 +63,7 @@ const Blogs: React.FC = () => {
         </div>
         <div className="flex flex-col lg:flex-row border-men-blue py-6 items-center justify-between">
           <div className="w-full flex-row-reverse lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
-            <div className="text-7xl text-primary mr-4">02</div>
+            <div className="text-7xl text-[darkred] mr-4">02</div>
             <div>
               <img
                 className="w-full h-[20rem] lg:h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
@@ -100,7 +100,7 @@ const Blogs: React.FC = () => {
         </div>
         <div className="flex flex-col lg:flex-row py-6 items-center justify-between">
           <div className="w-full lg:w-[44%] flex items-center justify-between gap-2 lg:gap-8">
-            <div className="text-7xl text-primary mr-4">03</div>
+            <div className="text-7xl text-[darkred] mr-4">03</div>
             <div>
               <img
                 className="w-full h-[20rem] lg:h-[30rem] grayscale hover:grayscale-0 rounded-md transition-all duration-300 ease-in-out"
@@ -111,15 +111,15 @@ const Blogs: React.FC = () => {
           <div className="w-full text-white lg:w-[50%] py-10">
             <div className="space-y-6">
               <div className="w-full flex items-center justify-start gap-8 lg:gap-4">
-                <div className="flex items-center gap-2 hover:text-primary cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
                   <AiFillLike className="cursor-pointer text-2xl" />
                   140k
                 </div>
-                <div className="flex items-center gap-2 hover:text-primary cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
                   <FaComment className="cursor-pointer text-2xl" />
                   890
                 </div>
-                <div className="flex items-center gap-2 hover:text-primary cursor-pointer">
+                <div className="flex items-center gap-2 hover:text-men-blue cursor-pointer">
                   <IoIosShareAlt className="cursor-pointer text-2xl" />
                   3.5k
                 </div>

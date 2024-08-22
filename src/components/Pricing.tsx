@@ -23,7 +23,7 @@ const Pricing: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5 }}
-          className="text-[#d71515] lineBefore text-4xl "
+          className="text-white lineBefore text-4xl"
         >
           Price Plan
         </motion.div>

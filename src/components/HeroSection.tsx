@@ -8,6 +8,7 @@ import User3 from "@/assets/imgs/user3.png";
 import { ComicSlider } from "./Sliders";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import cloudImg from "/cloud.png";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const HeroSection: React.FC = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="home"
-      className="container bg-[#f9462e] flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
+      className="container relative bg-[#FD571D] flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
     >
       <motion.div
         initial={{ opacity: 0.5 }}
@@ -82,6 +83,9 @@ const HeroSection: React.FC = () => {
         {/* <img className='h-[74vh] w-[65%] absolute top-0 right-0' src={comic1} alt='comic image' /> */}
         <ComicSlider />
       </motion.div>
+      <div className="absolute left-0 bottom-0 z-20">
+        <img className="w-full" src={cloudImg} alt="cloud image" />
+      </div>
     </motion.div>
   );
 };

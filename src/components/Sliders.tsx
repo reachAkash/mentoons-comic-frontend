@@ -221,7 +221,7 @@ export const MiniTestimonailsSlider: React.FC = () => {
           </div>
           <div className="space-y-2">
             <div className="text-2xl text-amber-500 text-extrabold">Parent</div>
-            <div className="text-sm text-amber-600">
+            <div className="text-sm text-amber-800">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -256,7 +256,7 @@ export const MiniTestimonailsSlider: React.FC = () => {
             <div className="text-2xl text-purple-500 text-extrabold">
               Parent
             </div>
-            <div className="text-sm text-purple-600">
+            <div className="text-sm text-purple-900">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
