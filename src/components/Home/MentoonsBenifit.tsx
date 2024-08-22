@@ -37,14 +37,14 @@ const MentoonsBenifit: React.FC = () => {
   ];
 
   return (
-    <div className="h-full w-full lg:h-screen py-16 bg-light-yellow relative pb-20">
+    <div className="h-full w-full lg:h-screen py-8 bg-light-yellow relative">
       <Fade direction="up" triggerOnce>
         <Heading heading="Mentoons Benefits" />
       </Fade>
 
       <div className="flex flex-col lg:flex-row lg:gap-10 items-center ">
         <div className="w-full lg:w-1/3 flex flex-col mb-10 relative">
-        <img src="/clouds.png" alt="clouds asset" className="absolute top-0 left-[7rem] h-[80%] w-full object-contain"/>
+          <img src="/clouds.png" alt="clouds asset" className="absolute top-0 left-[7rem] h-[80%] w-full object-contain" />
 
           <Zoom triggerOnce>
             <Slider {...sliderSettings}>
