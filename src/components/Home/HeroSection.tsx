@@ -45,7 +45,7 @@ const HeroSection: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
           </div>
         </div>
       </div>
-      <div className='bg-hero-image lg:bg-center bg-contain lg:bg-cover bg-no-repeat h-[32vh] lg:h-[100vh] relative'>
+      <div className='bg-hero-image lg:bg-center bg-contain md:bg-cover lg:bg-cover bg-no-repeat h-[32vh] lg:h-[100vh] relative mb-0 md:mb-8 lg:mb-0 '>
         <div className='absolute top-[-1rem] left-0 lg:left-[2rem] w-[15rem] h-[15rem] lg:w-[20rem] lg:h-[20rem]'>
           <img src="/crafted.png" alt="crafted by psychologist" className='w-full h-full object-contain' />
         </div>

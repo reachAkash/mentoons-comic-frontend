@@ -92,11 +92,15 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
       <Heading heading="Inside Mentoons" />
       <div className="flex justify-center">
         <div className="flex flex-col lg:flex-row items-center lg:items-start px-10 max-w-screen-2xl w-full gap-10">
-          <video
-            src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
-            className="w-full lg:w-1/2 h-auto object-cover rounded-xl shadow-custom-complex"
-            controls
-          />
+          <div className="aspect-w-16 aspect-h-9 w-full lg:w-1/2">
+            <video
+              src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
+              className="w-full h-full object-cover rounded-xl shadow-custom-complex"
+              controls
+              poster="/team.png"
+            />
+          </div>
+
           <div className="lg:w-1/2 p-4 lg:mt-[3rem]">
             <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">Meet Us</h1>
             <p className="text-lg lg:text-xl text-[#333333] font-semibold">
