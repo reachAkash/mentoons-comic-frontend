@@ -65,10 +65,10 @@ const WebHome: React.FC = () => {
 
       <button
         onClick={handleMuteToggle}
-        className='fixed top-[7rem] right-4 bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black'
+        className='fixed top-[6rem] right-2 bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black'
         aria-label="Toggle mute"
       >
-        {isMuted ? <figure className='h-16 w-16'><img src='/assets/images/play.png' className='h-full w-full object-contain' /></figure> : <figure className='h-16 w-16'><img src='/assets/images/pause.png' className='h-full w-full object-contain' /></figure> }
+        {isMuted ? <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/play.png' className='h-full w-full object-contain' /></figure> : <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/pause.png' className='h-full w-full object-contain' /></figure> }
       </button>
     </div>
   );

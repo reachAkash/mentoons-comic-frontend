@@ -47,7 +47,7 @@ const InsideMentoons: React.FC = () => {
     },
     {
       imageSrc: '/team-08.jpg',
-      title: 'Dinesh Kumar.G',
+      title: 'Dhinesh Kumar.G',
       subtitle: 'Graphic Designer',
     },
     {
@@ -62,7 +62,7 @@ const InsideMentoons: React.FC = () => {
     },
     {
       imageSrc: '/team-07.jpg',
-      title: 'Danasekar',
+      title: 'Dhanasekar',
       subtitle: 'Sketch Artist',
     },
     {
@@ -114,7 +114,7 @@ const InsideMentoons: React.FC = () => {
                   }}
                 />
                 <div className="absolute bottom-5 left-1/2 bg-[#ec9600] p-4 rounded-lg shadow-lg text-center">
-                  <h2 className="text-sm lg:text-lg font-bold text-[#fff] whitespace-nowrap">{slide.title}</h2>
+                  <h2 className="text-sm lg:text-lg font-semibold text-[#fff] whitespace-nowrap">{slide.title}</h2>
                   <p className="text-white text-xs lg:text-md whitespace-nowrap">{slide.subtitle}</p>
                 </div>
               </div>

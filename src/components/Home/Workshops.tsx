@@ -6,9 +6,9 @@ import { IoIosArrowDown } from "react-icons/io";
 type CampDetails = {
     id: number;
     imgUrl: string;
-    CornerImgUrl:string;
+    CornerImgUrl: string;
     title: string;
-    description: string[];
+    description: string;
     ageGroup: string;
     timetable: string;
 };
@@ -20,11 +20,7 @@ const Workshops = () => {
             imgUrl: '/Kids_camp.jpg',
             CornerImgUrl: '/Buddy camp.png',
             title: 'Kids Camp',
-            description: [
-                "Break free from the grip of social media through our holistic laughter workshops...",
-                "Gaming De-Addiction: Overcome gaming addiction with Hasyaras's therapeutic laughter sessions...",
-                "Cell Phone de-addiction for teenagers: Reclaim real connections beyond screens through our engaging laughter therapy...",
-            ],
+            description: "Interactive Friendship Workshop for Children (Ages 6-12). Social Skills Development & Moral Values Education. Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills. Our interactive program focuses on teaching kids about moral values and how to start conversations with confidence.",
             ageGroup: "6-12 years",
             timetable: "Monday - Friday, 9 AM - 12 PM",
         },
@@ -33,12 +29,7 @@ const Workshops = () => {
             imgUrl: '/Teen_camp.jpg',
             CornerImgUrl: '/Teen camp .png',
             title: 'Teen Camp',
-            description: [
-                "Our workshops offer a multitude of benefits...",
-                "Ditch the Screens: Escape from the addictive cycle of social media...",
-                "Improve Communication Skills: Boost your personal and professional interactions...",
-                "Enhance Creative Thinking: Unlock your creative potential...",
-            ],
+            description: "Teen Camp: Identity Workshop For Teenagers (13-19 Years). Substance De-Addiction, Scrolling De-Addiction & Hormonal Changes. Help your teenager navigate the challenges of adolescence with our comprehensive Teen Camp workshop. Designed for young people aged 13-19, our program addresses crucial topics that impact today's youth.",
             ageGroup: "13-18 years",
             timetable: "Monday - Friday, 1 PM - 4 PM",
         },
@@ -47,26 +38,9 @@ const Workshops = () => {
             imgUrl: '/Family_camp.jpg',
             CornerImgUrl: '/Family camp.png',
             title: 'Family Camp',
-            description: [
-                "Art Workshops for Reducing Negative Moods...",
-                "Social Media De-Addiction...",
-                "Gaming De-Addiction...",
-            ],
+            description: "Family Camp is designed to strengthen family bonds through engaging activities and workshops. Our program includes art workshops, social media de-addiction, and gaming de-addiction for all family members.",
             ageGroup: "All ages",
             timetable: "Saturday - Sunday, 10 AM - 2 PM",
-        },
-        {
-            id: 4,
-            imgUrl: '/Family_camp.jpg',
-            CornerImgUrl: '/Family camp.png',
-            title: '20+ Camp',
-            description: [
-                "Art Workshops for Reducing Negative Moods...",
-                "Social Media De-Addiction...",
-                "Gaming De-Addiction...",
-            ],
-            ageGroup: "20+ years",
-            timetable: "Monday - Friday, 3 PM - 6 PM",
         },
     ];
 
@@ -74,10 +48,16 @@ const Workshops = () => {
     const [showDescription, setShowDescription] = useState(false);
     const [showAgeGroup, setShowAgeGroup] = useState(false);
     const [showTimetable, setShowTimetable] = useState(false);
+    const [readMore, setReadMore] = useState(false);
 
     const handleCampClick = (id: number) => {
         const camp = campDetails.find(camp => camp.id === id);
         setSelectedCamp(camp || null);
+        setReadMore(false);  // Reset read more state when changing camps
+    };
+
+    const toggleReadMore = () => {
+        setReadMore(prev => !prev);
     };
 
     return (
@@ -125,11 +105,14 @@ const Workshops = () => {
                                     </button>
                                     {showDescription && (
                                         <Fade>
-                                            <ul className='text-lg mt-2 list-disc list-inside text-left px-5 py-2'>
-                                                {selectedCamp.description.map((point, index) => (
-                                                    <li key={index}>{point}</li>
-                                                ))}
-                                            </ul>
+                                            <p className='text-lg mt-2 text-center lg:text-left px-5 py-2'>
+                                                {readMore ? selectedCamp.description : `${selectedCamp.description.slice(0, 100)}`}
+                                                {selectedCamp.description.length > 100 && (
+                                                    <button onClick={toggleReadMore} className='text-men-blue ml-2'>
+                                                        {readMore ? 'Read Less' : 'Read More'}
+                                                    </button>
+                                                )}
+                                            </p>
                                         </Fade>
                                     )}
                                 </div>
@@ -138,11 +121,11 @@ const Workshops = () => {
                                         onClick={() => setShowAgeGroup(prev => !prev)}
                                         className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5'
                                     >
-                                         <span>Age group</span><span><IoIosArrowDown/></span>
+                                        <span>Age group</span><span><IoIosArrowDown/></span>
                                     </button>
                                     {showAgeGroup && (
                                         <Fade>
-                                            <p className='text-lg mt-2 text-left'>{selectedCamp.ageGroup}</p>
+                                            <p className='text-lg mt-2 ml-3 text-left'>{selectedCamp.ageGroup}</p>
                                         </Fade>
                                     )}
                                 </div>
@@ -155,7 +138,7 @@ const Workshops = () => {
                                     </button>
                                     {showTimetable && (
                                         <Fade>
-                                            <p className='text-lg mt-2 text-left'>{selectedCamp.timetable}</p>
+                                            <p className='text-lg mt-2 ml-3 text-left'>{selectedCamp.timetable}</p>
                                         </Fade>
                                     )}
                                 </div>
