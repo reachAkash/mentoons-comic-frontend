@@ -10,12 +10,13 @@ type videoData = {
 };
 
 type VideoModalProps = {
+    type:string;
     videos: videoData[];
     isOpen: boolean;
     onClose: () => void;
 }
 
-const VideoModal : React.FC<VideoModalProps> = ({ videos, isOpen, onClose }) => {
+const VideoModal : React.FC<VideoModalProps> = ({ videos, isOpen, onClose,type }) => {
     const [selectedVideo, setSelectedVideo] = useState<videoData | null>(null);
 
     const handleVideoSelect = (video : videoData) => {
@@ -39,7 +40,7 @@ const VideoModal : React.FC<VideoModalProps> = ({ videos, isOpen, onClose }) => 
                 {selectedVideo ? (
                     <div className="video-player">
                         <button className="back-btn" onClick={handleBackToList}>Back to list</button>
-                        <h3>Playing: {selectedVideo.title}'s story with mentoons</h3>
+                        <h3 className='my-5 lg:my-0'>Playing:{type === "HERO" ? `${selectedVideo.title}'s story with mentoons`:`${selectedVideo.title}`}</h3>
                         <div className="video-wrapper">
                             <video
                                 src={selectedVideo.url}
@@ -51,7 +52,7 @@ const VideoModal : React.FC<VideoModalProps> = ({ videos, isOpen, onClose }) => 
                     </div>
                 ) : (
                     <>
-                        <h2 className="modal-title">How Mentoons works</h2>
+                        <h2 className="modal-title">{type === 'HERO' ? 'How Mentoons works' : 'Inside Mentoons'}</h2>
                         <div className="video-list">
                             {videos.map((video) => (
                                 <div
@@ -75,7 +76,7 @@ const VideoModal : React.FC<VideoModalProps> = ({ videos, isOpen, onClose }) => 
                                             <FaPlay />
                                         </div>
                                     </div>
-                                    <div className="video-title">How mentoons changed {video.title}'s life</div>
+                                    <div className="video-title">{ type === "HERO" ? `How mentoons changed ${video.title}'s life` : `${video.title}`}</div>
                                 </div>
                             ))}
                         </div>

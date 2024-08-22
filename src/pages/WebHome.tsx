@@ -19,6 +19,7 @@ type videoData = {
 
 const WebHome: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [videoType,setVideoType] = useState<string>('')
   const [isMuted, setIsMuted] = useState<boolean>(() => {
     const storedMuteState = localStorage.getItem('isMuted');
     return storedMuteState ? JSON.parse(storedMuteState) : false;
@@ -31,6 +32,12 @@ const WebHome: React.FC = () => {
     { id: '3', title: 'Rajesh', thumbnail: '/rajesh.jpg', url: 'https://mentoons-website.s3.ap-northeast-1.amazonaws.com/Flat+Image+Stories+for+Mentoons/Rajesh+K+42+Years+old+(IT+Manager)/Rajesh+K+42+Years+old+(IT+Manager).mp4' },
     { id: '4', title: 'Samantha', thumbnail: '/samantha.jpg', url: 'https://mentoons-website.s3.ap-northeast-1.amazonaws.com/Flat+Image+Stories+for+Mentoons/Samantha%2C+35+Years%2C+Elementary+School+Teacher(1)/Samantha%2C+35+Years%2C+Elementary+School+Teacher(1).mp4' },
     { id: '5', title: 'Sarah', thumbnail: '/sarah.jpg', url: 'https://mentoons-website.s3.ap-northeast-1.amazonaws.com/Flat+Image+Stories+for+Mentoons/Sarah%2C+35+Years%2C+Elementary+School+Teacher(1)/Sarah%2C+35+Years%2C+Elementary+School+Teacher(1).mp4' },
+  ];
+
+  const InsideMentoonsVideos: videoData[] = [
+    { id: '1', title: "Career Fraudstar's Trailer", thumbnail: '/career.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4" },
+    { id: '2', title: 'Stop Swiping Lyriics', thumbnail: '/swiping.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4" },
+    { id: '3', title: 'Team Celebration', thumbnail: '/life-mentoons.png', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4" },
   ];
 
 
@@ -53,12 +60,12 @@ const WebHome: React.FC = () => {
 
   return (
     <div className='h-full w-full overflow-hidden'>
-      <VideoModal videos={videos} isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-      <HeroSection setModalOpen={setModalOpen} />
+      <VideoModal videos={videoType === 'HERO' ? videos : InsideMentoonsVideos} isOpen={modalOpen} onClose={() => setModalOpen(false)} type={videoType}/>
+      <HeroSection setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <HowToUse />
       <MentoonsBenifit />
       <Workshops />
-      <InsideMentoons />
+      <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType}/>
       <CallToAction />
       <JoinAcademy />
       {/* <GoToTop /> */}

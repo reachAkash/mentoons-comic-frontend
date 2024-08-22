@@ -2,6 +2,8 @@ import Heading from '../common/Heading';
 import { Fade } from 'react-awesome-reveal';
 import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa6';
 
 type CampDetails = {
     id: number;
@@ -14,6 +16,8 @@ type CampDetails = {
 };
 
 const Workshops = () => {
+    const navigate = useNavigate();
+
     const campDetails: CampDetails[] = [
         {
             id: 1,
@@ -53,18 +57,22 @@ const Workshops = () => {
     const handleCampClick = (id: number) => {
         const camp = campDetails.find(camp => camp.id === id);
         setSelectedCamp(camp || null);
-        setReadMore(false);  // Reset read more state when changing camps
+        setReadMore(false);
     };
 
     const toggleReadMore = () => {
         setReadMore(prev => !prev);
     };
 
+    const handleImageClick = () => {
+        navigate('/workshops');
+    };
+
     return (
         <div className='w-full h-full py-10 relative'>
             <Heading heading='Workshops' />
             <div className='h-[3rem]'></div>
-            <div className='h-[10rem] w-[20rem] absolute right-0 top-20 hidden lg:block'>
+            <div className='h-[10rem] w-[20rem] absolute right-0 top-28 hidden lg:block'>
                 <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
             </div>
             <div className='w-4/5 m-auto relative'>
@@ -73,7 +81,7 @@ const Workshops = () => {
                         <button
                             key={camp.id}
                             onClick={() => handleCampClick(camp.id)}
-                            className='bg-men-blue text-white p-2 lg:p-5 font-bold rounded-lg lg:rounded-none lg:rounded-t-2xl'
+                            className='bg-men-blue text-white p-2 lg:p-5 font-bold rounded-lg lg:rounded-none lg:rounded-t-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-men-light-blue hover:shadow-lg'
                         >
                             {camp.title}
                         </button>
@@ -83,14 +91,18 @@ const Workshops = () => {
                 {selectedCamp && (
                     <div className='text-center bg-light-yellow flex flex-col lg:flex-row items-center justify-center gap-6 py-10 px-4 w-full rounded-xl'>
                         <div
-                            className='w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white'
+                            className='w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl'
                             style={{
                                 backgroundImage: `url(${selectedCamp.imgUrl})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
                             }}
+                            onClick={handleImageClick}
                         >
+                            <div className='absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 h-[4rem] flex items-center justify-center transition-all duration-300 ease-in-out'>
+                                <span className='text-white text-lg font-bold flex items-center gap-3'><FaEye />View More</span>
+                            </div>
                         </div>
                         <div className='w-3/4'>
                             <h2 className='text-5xl font-extrabold mt-4 text-men-blue'>{selectedCamp.title}</h2>
@@ -99,9 +111,9 @@ const Workshops = () => {
                                 <div>
                                     <button
                                         onClick={() => setShowDescription(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5'
+                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
                                     >
-                                        <span>Description</span><span><IoIosArrowDown/></span>
+                                        <span>Description</span><span><IoIosArrowDown /></span>
                                     </button>
                                     {showDescription && (
                                         <Fade>
@@ -119,9 +131,9 @@ const Workshops = () => {
                                 <div>
                                     <button
                                         onClick={() => setShowAgeGroup(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5'
+                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
                                     >
-                                        <span>Age group</span><span><IoIosArrowDown/></span>
+                                        <span>Age group</span><span><IoIosArrowDown /></span>
                                     </button>
                                     {showAgeGroup && (
                                         <Fade>
@@ -132,9 +144,9 @@ const Workshops = () => {
                                 <div>
                                     <button
                                         onClick={() => setShowTimetable(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5'
+                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
                                     >
-                                        <span>Time Table</span><span><IoIosArrowDown/></span>
+                                        <span>Time Table</span><span><IoIosArrowDown /></span>
                                     </button>
                                     {showTimetable && (
                                         <Fade>

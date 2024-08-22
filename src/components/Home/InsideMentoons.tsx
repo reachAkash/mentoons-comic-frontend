@@ -6,14 +6,19 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/insidementoons.css';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Fade } from 'react-awesome-reveal';
+import { FaPlay } from 'react-icons/fa6';
 
 interface SlideData {
   imageSrc: string;
   title: string;
   subtitle: string;
 }
+type HomeProps = {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setVideoType: React.Dispatch<React.SetStateAction<string>>;
+};
 
-const InsideMentoons: React.FC = () => {
+const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -92,12 +97,22 @@ const InsideMentoons: React.FC = () => {
             className="w-full lg:w-1/2 h-auto object-cover rounded-xl shadow-custom-complex"
             controls
           />
-          <div className="lg:w-1/2 p-4 lg:mt-[5rem]">
+          <div className="lg:w-1/2 p-4 lg:mt-[3rem]">
             <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">Meet Us</h1>
             <p className="text-lg lg:text-xl text-[#333333] font-semibold">
               Mentoons is a result of the creative amalgamation of a diverse team coming together - our founder, talented developers, creative illustrators,
               skillful graphic designers, adept content writers, melodious music producer, and experienced psychologists.
             </p>
+            <div className='flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10'
+              onClick={() => {
+                setModalOpen(true)
+                setVideoType('INSIDE_MENTOONS')
+              }}>
+              <button className='playBtn flex items-center justify-center bg-men-blue text-white p-3 rounded-full'>
+                <FaPlay className='shadow-xl' />
+              </button>
+              <span className='text-black lg:text-black text-lg sm:text-2xl font-semibold'>Life inside Mentoons</span>
+            </div>
           </div>
         </div>
       </div>
