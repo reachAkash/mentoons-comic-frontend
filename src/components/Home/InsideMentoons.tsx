@@ -6,14 +6,19 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/insidementoons.css';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Fade } from 'react-awesome-reveal';
+import { FaPlay } from 'react-icons/fa6';
 
 interface SlideData {
   imageSrc: string;
   title: string;
   subtitle: string;
 }
+type HomeProps = {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setVideoType: React.Dispatch<React.SetStateAction<string>>;
+};
 
-const InsideMentoons: React.FC = () => {
+const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -47,7 +52,7 @@ const InsideMentoons: React.FC = () => {
     },
     {
       imageSrc: '/team-08.jpg',
-      title: 'Dinesh Kumar.G',
+      title: 'Dhinesh Kumar.G',
       subtitle: 'Graphic Designer',
     },
     {
@@ -62,7 +67,7 @@ const InsideMentoons: React.FC = () => {
     },
     {
       imageSrc: '/team-07.jpg',
-      title: 'Danasekar',
+      title: 'Dhanasekar',
       subtitle: 'Sketch Artist',
     },
     {
@@ -87,17 +92,31 @@ const InsideMentoons: React.FC = () => {
       <Heading heading="Inside Mentoons" />
       <div className="flex justify-center">
         <div className="flex flex-col lg:flex-row items-center lg:items-start px-10 max-w-screen-2xl w-full gap-10">
-          <video
-            src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
-            className="w-full lg:w-1/2 h-auto object-cover rounded-xl shadow-custom-complex"
-            controls
-          />
-          <div className="lg:w-1/2 p-4 lg:mt-[5rem]">
+          <div className="aspect-w-16 aspect-h-9 w-full lg:w-1/2">
+            <video
+              src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
+              className="w-full h-full object-cover rounded-xl shadow-custom-complex"
+              controls
+              poster="/team.png"
+            />
+          </div>
+
+          <div className="lg:w-1/2 p-4 lg:mt-[3rem]">
             <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">Meet Us</h1>
             <p className="text-lg lg:text-xl text-[#333333] font-semibold">
               Mentoons is a result of the creative amalgamation of a diverse team coming together - our founder, talented developers, creative illustrators,
               skillful graphic designers, adept content writers, melodious music producer, and experienced psychologists.
             </p>
+            <div className='flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10'
+              onClick={() => {
+                setModalOpen(true)
+                setVideoType('INSIDE_MENTOONS')
+              }}>
+              <button className='playBtn flex items-center justify-center bg-men-blue text-white p-3 rounded-full'>
+                <FaPlay className='shadow-xl' />
+              </button>
+              <span className='text-black lg:text-black text-lg sm:text-2xl font-semibold'>Life inside Mentoons</span>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +133,7 @@ const InsideMentoons: React.FC = () => {
                   }}
                 />
                 <div className="absolute bottom-5 left-1/2 bg-[#ec9600] p-4 rounded-lg shadow-lg text-center">
-                  <h2 className="text-sm lg:text-lg font-bold text-[#fff] whitespace-nowrap">{slide.title}</h2>
+                  <h2 className="text-sm lg:text-lg font-semibold text-[#fff] whitespace-nowrap">{slide.title}</h2>
                   <p className="text-white text-xs lg:text-md whitespace-nowrap">{slide.subtitle}</p>
                 </div>
               </div>

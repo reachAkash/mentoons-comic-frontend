@@ -34,9 +34,8 @@ const Navbar: React.FC = () => {
     <>
       {/* for desktop & big devices */}
       <div
-        className={`sticky top-0 ${
-          showShadow && "shadow-xl"
-        } container hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999]`}
+        className={`sticky top-0 ${showShadow && "shadow-xl"
+          } container hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999]`}
       >
         <ul className="flex items-center justify-between">
           {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
@@ -90,9 +89,8 @@ const Navbar: React.FC = () => {
 
       {/* for small devices */}
       <div
-        className={`sticky top-0 ${
-          showShadow && "shadow"
-        } container flex lg:hidden items-center justify-between text-black bg-primary py-6 transition-all duration-1000 ease-in-out z-50`}
+        className={`sticky top-0 ${showShadow && "shadow"
+          } container flex lg:hidden items-center justify-between text-black bg-primary py-6 transition-all duration-1000 ease-in-out z-50`}
       >
         <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
           <Link to="/">
