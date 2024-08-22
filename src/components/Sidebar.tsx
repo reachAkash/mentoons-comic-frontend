@@ -10,7 +10,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
-import Search from "../pages/SearchPage";
+import SearchSidebar from "../components/SearchSidebar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
         <RxHamburgerMenu className={`${className} text-white text-3xl`} />
       </SheetTrigger>
       <SheetContent className="bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar">
-        <Search />
+        <SearchSidebar />
       </SheetContent>
     </Sheet>
   );
