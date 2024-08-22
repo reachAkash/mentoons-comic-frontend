@@ -2,6 +2,8 @@ import Heading from "../common/Heading";
 import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa6';
 
 type CampDetails = {
   id: number;

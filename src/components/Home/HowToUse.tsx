@@ -7,7 +7,7 @@ type CardData = {
   title: string;
   description: string;
   btnTxt: string;
-  link:string
+  link: string
 };
 
 const HowToUse: React.FC = () => {
@@ -17,7 +17,7 @@ const HowToUse: React.FC = () => {
       title: 'Create an Account',
       description: 'Quick and easy sign-up to access all features.',
       btnTxt: 'Sign Up',
-      link:'#',
+      link: '#',
     },
     {
       imgUrl: '/plan.jpg',
@@ -25,14 +25,14 @@ const HowToUse: React.FC = () => {
       description:
         'Select the subscription that best fits your needs.',
       btnTxt: 'Check plans',
-      link:'/website-plans',
+      link: '/website-plans',
     },
     {
       imgUrl: '/explore.jpg',
       title: 'Explore and Enjoy',
       description: 'Start exploring all the content and activities available.',
       btnTxt: 'Check F.A.Q',
-      link:'/faq',
+      link: '/faq',
     },
   ];
 
@@ -40,16 +40,16 @@ const HowToUse: React.FC = () => {
     <div className='h-full w-full py-16 bg-light-blue relative'>
       <Heading heading='Getting Started' />
       <div className='h-[6rem] w-[6rem] absolute top-[2rem] left-[2rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:left-[15rem]'>
-        <img src="/handprints.png" alt="icons" className='h-full w-full'/>
+        <img src="/handprints.png" alt="icons" className='h-full w-full' />
       </div>
       <div className='h-[6rem] w-[6rem] absolute top-[2rem] right-[2rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:right-[15rem]'>
-        <img src="/handprints2.png" alt="icons" className='h-full w-full'/>
+        <img src="/handprints2.png" alt="icons" className='h-full w-full' />
       </div>
       <div className='flex flex-col lg:flex-row items-center justify-center gap-10 px-4 lg:px-20'>
         {cardsData.map((card, index) => (
           <Fade key={index} direction="up" triggerOnce>
             <div className="w-full max-w-xs bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-105 duration-300 pt-8">
-                <img className="w-full h-56 object-cover" src={card.imgUrl} alt={card.title} />           
+              <img className="w-full h-56 object-cover" src={card.imgUrl} alt={card.title} />
               <div className="p-6 flex flex-col h-full justify-between">
                 <div>
                   <a href="#">

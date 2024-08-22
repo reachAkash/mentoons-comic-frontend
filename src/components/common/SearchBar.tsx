@@ -47,7 +47,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onChange={(e) => setInput(e.target.value)}
           type="text"
           placeholder={placeholder}
-          className={`w-full py-3 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          className={` w-full py-3 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
             animate ? "scroll-placeholder" : ""
           }`}
         />
