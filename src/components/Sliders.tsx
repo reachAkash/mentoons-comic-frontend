@@ -2,7 +2,7 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaFacebookSquare, FaQuoteLeft } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -58,12 +58,18 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+          className="rounded-2xl bg-amber-200 py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-gray-500 py-4">
-            <FaQuoteLeft className="text-primary text-3xl" />
-            <div className="text-lg">2 Minutes Ago</div>
-            <div className="h-[5rem]">
+          <div className="space-y-5 border-b border-amber-500  py-4">
+            <div className=" w-full flex items-start justify-start">
+              <img
+                src="/assets/images/quotation-mark.svg"
+                alt="quotation mark icon"
+                className="w-6"
+              />
+            </div>
+            <div className="text-lg text-amber-400">2 Minutes Ago</div>
+            <div className="h-[5rem] text-amber-600 font-semibold">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -75,7 +81,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start text-amber-600 gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </motion.div>
@@ -85,12 +91,18 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+          className="rounded-2xl bg-rose-200 py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-gray-500 py-4">
-            <FaQuoteLeft className="text-primary text-3xl" />
-            <div className="text-lg">2 Minutes Ago</div>
-            <div className="h-[5rem]">
+          <div className="space-y-5 border-b border-rose-500 py-4">
+            <div className=" w-full flex items-start justify-start">
+              <img
+                src="/assets/images/quotation-mark.svg"
+                alt="quotation mark icon"
+                className="w-6"
+              />
+            </div>
+            <div className="text-lg text-rose-400">2 Minutes Ago</div>
+            <div className="h-[5rem] text-rose-600 font-semibold">
               I love how the stories teach me about friendship and growing up.
             </div>
             <div className="flex items-center justify-between w-fit text-xl">
@@ -101,7 +113,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start text-rose-600 gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
           </div>
         </motion.div>
@@ -111,12 +123,50 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-white py-4 px-6 space-y-6"
+          className="rounded-2xl bg-purple-200 py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-gray-500 py-4">
-            <FaQuoteLeft className="text-primary text-3xl" />
-            <div className="text-lg">2 Minutes Ago</div>
-            <div className="h-[5rem]">
+          <div className="space-y-5 border-b border-purple-500 py-4">
+            <div className=" w-full flex items-start justify-start">
+              <img
+                src="/assets/images/quotation-mark.svg"
+                alt="quotation mark icon"
+                className="w-6"
+              />
+            </div>
+            <div className="text-lg text-purple-400">2 Minutes Ago</div>
+            <div className="h-[5rem] text-purple-600 font-semibold">
+              I love how the stories teach me about friendship and growing up.
+            </div>
+            <div className="flex items-center justify-between w-fit text-xl">
+              <FaStar className="text-yellow-500 text-xl" />
+              <FaStar className="text-yellow-500 text-xl" />
+              <FaStar className="text-yellow-500 text-xl" />
+              <FaStar className="text-yellow-500 text-xl" />
+              <FaRegStarHalfStroke className="text-yellow-500" />
+            </div>
+          </div>
+          <div className="flex items-center justify-start text-purple-600 gap-6 font-semibold text-xl">
+            <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="rounded-2xl bg-lime-200 py-4 px-6 space-y-6"
+        >
+          <div className="space-y-5 border-b border-lime-500  py-4">
+            <div className=" w-full flex items-start justify-start">
+              <img
+                src="/assets/images/quotation-mark.svg"
+                alt="quotation mark icon"
+                className="w-6"
+              />
+            </div>
+            <div className="text-lg text-lime-400">2 Minutes Ago</div>
+            <div className="h-[5rem] text-lime-600 font-semibold">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -128,7 +178,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start text-lime-600 gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </motion.div>
@@ -162,16 +212,16 @@ export const MiniTestimonailsSlider: React.FC = () => {
       }}
     >
       <SwiperSlide>
-        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl bg-amber-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-14 rounded-full flex-shrink-0"
+              className="w-16 rounded-full flex-shrink-0"
               src={TestimonialImg2}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Parent</div>
-            <div className="text-sm">
+            <div className="text-2xl text-amber-500 text-extrabold">Parent</div>
+            <div className="text-sm text-amber-800">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -179,32 +229,34 @@ export const MiniTestimonailsSlider: React.FC = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl bg-rose-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-14 rounded-full flex-shrink-0"
+              className="w-16 rounded-full flex-shrink-0"
               src={TestimonialImg4}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Sachin</div>
-            <div className="text-sm">
+            <div className="text-2xl text-rose-500 text-extrabold">Sachin</div>
+            <div className="text-sm text-rose-600 font-semibold">
               I love how the stories teach me about friendship and growing up.
             </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl bg-purple-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-14 rounded-full flex-shrink-0"
+              className="w-16 rounded-full flex-shrink-0"
               src={TestimonialImg2}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Parent</div>
-            <div className="text-sm">
+            <div className="text-2xl text-purple-500 text-extrabold">
+              Parent
+            </div>
+            <div className="text-sm text-purple-900">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -212,16 +264,16 @@ export const MiniTestimonailsSlider: React.FC = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl bg-lime-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-14 rounded-full flex-shrink-0"
+              className="w-16 rounded-full flex-shrink-0"
               src={TestimonialImg4}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-extrabold">Sachin</div>
-            <div className="text-sm">
+            <div className="text-2xl text-lime-500 text-extrabold">Sachin</div>
+            <div className="text-sm text-lime-600 font-semibold">
               I love how the stories teach me about friendship and growing up.
             </div>
           </div>
