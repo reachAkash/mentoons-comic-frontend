@@ -28,7 +28,7 @@ const HeroSection: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
               <AnimatedArtwork animationData={plane} />
             </div>
             <span className='text-men-blue font-bold text-6xl lg:text-8xl'>Mentoons,</span><br />
-            <span className=''>welcomes you</span>
+            <span className=''>welcome&apos;s you</span>
           </h1>
           <p className='text-lg sm:text-xl md:text-2xl text-black lg:text-white px-8 lg:px-0 text-left ml-0'>
             Welcome to Mentoons! Dive into a world where cartoons and stories pave the way for learning and growth. At Mentoons, we blend fun with education, offering a unique platform where children and teenagers can enjoy illustrated moral stories, engage with family-oriented comics, and participate in interactive activities designed to foster development and understanding.

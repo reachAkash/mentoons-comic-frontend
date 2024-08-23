@@ -71,7 +71,7 @@ const MentoonsBenifit: React.FC = () => {
 
           <Fade delay={100} direction="up" triggerOnce>
             <p className="text-left lg:text-center text-2xl">
-              We believe in transforming children's lives by changing maladaptive behavior, enhancing self-awareness, and taking a stance against social media addiction. Our evidence-based methodology combines concepts of social human development and learning through engaging, fun elements like cartoons, games, books, and videos. Through our in-depth workshops, we provide resources that foster social interactions, healthy reactions, and forming lasting friendships. We're here to support children, teenagers, and adults as they navigate life's challenges.
+              We believe in transforming children&apos;s lives by changing maladaptive behavior, enhancing self-awareness, and taking a stance against social media addiction. Our evidence-based methodology combines concepts of social human development and learning through engaging, fun elements like cartoons, games, books, and videos. Through our in-depth workshops, we provide resources that foster social interactions, healthy reactions, and forming lasting friendships. We're here to support children, teenagers, and adults as they navigate life's challenges.
             </p>
           </Fade>
         </div>

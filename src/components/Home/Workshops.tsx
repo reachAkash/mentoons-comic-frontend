@@ -113,7 +113,7 @@ const Workshops = () => {
                                         onClick={() => setShowDescription(prev => !prev)}
                                         className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
                                     >
-                                        <span>Description</span><span><IoIosArrowDown /></span>
+                                        <span>Description&apos;s</span><span><IoIosArrowDown /></span>
                                     </button>
                                     {showDescription && (
                                         <Fade>
