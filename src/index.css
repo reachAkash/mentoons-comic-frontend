@@ -344,9 +344,9 @@ body {
   background-color: #d12881;
   padding: 0.5rem 3rem;
 }
-@media(max-width:768px){
+@media (max-width: 768px) {
   .cta-button {
-  margin:0rem 1rem;
+    margin: 0rem 1rem;
   }
 }
 .search-input::placeholder {
@@ -357,4 +357,16 @@ body {
 
 .search-input:focus::placeholder {
   color: #1a1919a2;
+}
+.clip-path-custom {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 20%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
 }
