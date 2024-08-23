@@ -2,7 +2,7 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaFacebookSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaQuoteLeft } from "react-icons/fa";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -31,6 +31,12 @@ import Dhanashekar from "@/assets/imgs/dhanasekar Illustration.jpg";
 import Dhinesh from "@/assets/imgs/Dhinesh Illustration.jpg";
 import Sankar from "@/assets/imgs/sankar Illustration.jpg";
 import Ajay from "@/assets/imgs/ajay Illustration.jpg";
+import Aleeshya from "@/assets/imgs/Aleeshya Illustration.jpg";
+import Thameem from "@/assets/imgs/Thameem Illustration.jpg";
+import Akash from "@/assets/imgs/Akash Illustration.jpg";
+import Lincy from "@/assets/imgs/Lincy Illustration.jpg";
+import Anam from "@/assets/imgs/Anam Illustration.jpg";
+import Sir from "@/assets/imgs/sir Illustration.jpg";
 import { motion } from "framer-motion";
 
 const TestimonialsSlider: React.FC = () => {
@@ -58,18 +64,12 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-amber-200 py-4 px-6 space-y-6"
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-amber-500  py-4">
-            <div className=" w-full flex items-start justify-start">
-              <img
-                src="/assets/images/quotation-mark.svg"
-                alt="quotation mark icon"
-                className="w-6"
-              />
-            </div>
-            <div className="text-lg text-amber-400">2 Minutes Ago</div>
-            <div className="h-[5rem] text-amber-600 font-semibold">
+          <div className="space-y-5 border-b border-gray-500 py-4">
+            <FaQuoteLeft className="text-primary text-3xl" />
+            <div className="text-lg">2 Minutes Ago</div>
+            <div className="h-[5rem]">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -81,7 +81,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start text-amber-600 gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </motion.div>
@@ -91,18 +91,12 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-rose-200 py-4 px-6 space-y-6"
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-rose-500 py-4">
-            <div className=" w-full flex items-start justify-start">
-              <img
-                src="/assets/images/quotation-mark.svg"
-                alt="quotation mark icon"
-                className="w-6"
-              />
-            </div>
-            <div className="text-lg text-rose-400">2 Minutes Ago</div>
-            <div className="h-[5rem] text-rose-600 font-semibold">
+          <div className="space-y-5 border-b border-gray-500 py-4">
+            <FaQuoteLeft className="text-primary text-3xl" />
+            <div className="text-lg">2 Minutes Ago</div>
+            <div className="h-[5rem]">
               I love how the stories teach me about friendship and growing up.
             </div>
             <div className="flex items-center justify-between w-fit text-xl">
@@ -113,7 +107,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start text-rose-600 gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
           </div>
         </motion.div>
@@ -123,50 +117,12 @@ const TestimonialsSlider: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-purple-200 py-4 px-6 space-y-6"
+          className="rounded-2xl bg-white py-4 px-6 space-y-6"
         >
-          <div className="space-y-5 border-b border-purple-500 py-4">
-            <div className=" w-full flex items-start justify-start">
-              <img
-                src="/assets/images/quotation-mark.svg"
-                alt="quotation mark icon"
-                className="w-6"
-              />
-            </div>
-            <div className="text-lg text-purple-400">2 Minutes Ago</div>
-            <div className="h-[5rem] text-purple-600 font-semibold">
-              I love how the stories teach me about friendship and growing up.
-            </div>
-            <div className="flex items-center justify-between w-fit text-xl">
-              <FaStar className="text-yellow-500 text-xl" />
-              <FaStar className="text-yellow-500 text-xl" />
-              <FaStar className="text-yellow-500 text-xl" />
-              <FaStar className="text-yellow-500 text-xl" />
-              <FaRegStarHalfStroke className="text-yellow-500" />
-            </div>
-          </div>
-          <div className="flex items-center justify-start text-purple-600 gap-6 font-semibold text-xl">
-            <img className="w-16 rounded-full" src={User3} />- Dhruv, Age 12
-          </div>
-        </motion.div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="rounded-2xl bg-lime-200 py-4 px-6 space-y-6"
-        >
-          <div className="space-y-5 border-b border-lime-500  py-4">
-            <div className=" w-full flex items-start justify-start">
-              <img
-                src="/assets/images/quotation-mark.svg"
-                alt="quotation mark icon"
-                className="w-6"
-              />
-            </div>
-            <div className="text-lg text-lime-400">2 Minutes Ago</div>
-            <div className="h-[5rem] text-lime-600 font-semibold">
+          <div className="space-y-5 border-b border-gray-500 py-4">
+            <FaQuoteLeft className="text-primary text-3xl" />
+            <div className="text-lg">2 Minutes Ago</div>
+            <div className="h-[5rem]">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -178,7 +134,7 @@ const TestimonialsSlider: React.FC = () => {
               <FaRegStarHalfStroke className="text-yellow-500" />
             </div>
           </div>
-          <div className="flex items-center justify-start text-lime-600 gap-6 font-semibold text-xl">
+          <div className="flex items-center justify-start gap-6 font-semibold text-xl">
             <img className="w-16 rounded-full" src={User2} />- Parent
           </div>
         </motion.div>
@@ -212,16 +168,16 @@ export const MiniTestimonailsSlider: React.FC = () => {
       }}
     >
       <SwiperSlide>
-        <div className="rounded-2xl bg-amber-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-16 rounded-full flex-shrink-0"
+              className="w-14 rounded-full flex-shrink-0"
               src={TestimonialImg2}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-amber-500 text-extrabold">Parent</div>
-            <div className="text-sm text-amber-800">
+            <div className="text-2xl text-extrabold">Parent</div>
+            <div className="text-sm">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -229,34 +185,32 @@ export const MiniTestimonailsSlider: React.FC = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl bg-rose-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-16 rounded-full flex-shrink-0"
+              className="w-14 rounded-full flex-shrink-0"
               src={TestimonialImg4}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-rose-500 text-extrabold">Sachin</div>
-            <div className="text-sm text-rose-600 font-semibold">
+            <div className="text-2xl text-extrabold">Sachin</div>
+            <div className="text-sm">
               I love how the stories teach me about friendship and growing up.
             </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl bg-purple-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-16 rounded-full flex-shrink-0"
+              className="w-14 rounded-full flex-shrink-0"
               src={TestimonialImg2}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-purple-500 text-extrabold">
-              Parent
-            </div>
-            <div className="text-sm text-purple-900">
+            <div className="text-2xl text-extrabold">Parent</div>
+            <div className="text-sm">
               These comics have helped my child understand difficult topics in a
               fun way!
             </div>
@@ -264,16 +218,16 @@ export const MiniTestimonailsSlider: React.FC = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="rounded-2xl bg-lime-200 shadow-xl flex items-center pb-4 px-4 space-y-6 gap-4">
+        <div className="rounded-2xl shadow-sm flex items-center bg-white pb-4 px-4 space-y-6 gap-4">
           <div className="flex items-center justify-center gap-6 font-semibold text-xl">
             <img
-              className="w-16 rounded-full flex-shrink-0"
+              className="w-14 rounded-full flex-shrink-0"
               src={TestimonialImg4}
             />
           </div>
           <div className="space-y-2">
-            <div className="text-2xl text-lime-500 text-extrabold">Sachin</div>
-            <div className="text-sm text-lime-600 font-semibold">
+            <div className="text-2xl text-extrabold">Sachin</div>
+            <div className="text-sm">
               I love how the stories teach me about friendship and growing up.
             </div>
           </div>
@@ -355,7 +309,7 @@ export const TeamSlider: React.FC = () => {
       // install Swiper modules
       modules={[Navigation, Pagination, A11y, Autoplay]}
       spaceBetween={50}
-      autoplay={{ delay: 500, disableOnInteraction: false }}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
       loop={true} // Enable infinite looping
       navigation={false}
       className="w-full"
@@ -373,6 +327,84 @@ export const TeamSlider: React.FC = () => {
         },
       }}
     >
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Sir}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Mentor Mahesh</div>
+            <div className="text-base">Founder</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Akash}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Akash</div>
+            <div className="text-base">Web Developer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Dhanashekar}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Dhanashekar</div>
+            <div className="text-base">Sketch Artist</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
       <SwiperSlide>
         <motion.div
           initial={{ scale: 0.6 }}
@@ -435,13 +467,13 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Dhanashekar}
+              src={Sankar}
               alt=""
             />
           </div>
           <div>
-            <div className="font-semibold text-xl">Dhanashekar</div>
-            <div className="text-base">Sketch Artist</div>
+            <div className="font-semibold text-xl">Sankar</div>
+            <div className="text-base">Illustrator</div>
             <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
               <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
               <FaTwitter className="cursor-pointer text-[#d71515]" />
@@ -461,13 +493,91 @@ export const TeamSlider: React.FC = () => {
           <div className="overflow-hidden relative rounded-full">
             <img
               className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
-              src={Sankar}
+              src={Anam}
               alt=""
             />
           </div>
           <div>
-            <div className="font-semibold text-xl">Sankar</div>
-            <div className="text-base">Illustrator</div>
+            <div className="font-semibold text-xl">Anam Fathima</div>
+            <div className="text-base">Content Writer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Lincy}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Joice Lincy</div>
+            <div className="text-base">Digital Marketing</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Aleeshya}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Aleeshya</div>
+            <div className="text-base">Web Developer</div>
+            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
+              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
+              <FaTwitter className="cursor-pointer text-[#d71515]" />
+              <FaLinkedin className="cursor-pointer text-[#d71515]" />
+              <FaYoutube className="cursor-pointer text-[#d71515]" />
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div
+          initial={{ scale: 0.6 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center space-y-1 group"
+        >
+          <div className="overflow-hidden relative rounded-full">
+            <img
+              className="rounded-full w-[40rem] border-4 border-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+              src={Thameem}
+              alt=""
+            />
+          </div>
+          <div>
+            <div className="font-semibold text-xl">Thameem</div>
+            <div className="text-base">Web Developer</div>
             <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
               <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
               <FaTwitter className="cursor-pointer text-[#d71515]" />

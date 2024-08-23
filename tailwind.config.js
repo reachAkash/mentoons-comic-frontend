@@ -31,6 +31,9 @@ module.exports = {
       "3xl": "1920px",
     },
     extend: {
+      fontFamily:{
+        montserrat:'Montserrat'
+      },
       colors: {
         "men-blue": "#003366",
         "light-blue": "#59b2dc",

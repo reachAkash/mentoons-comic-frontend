@@ -14,7 +14,7 @@ export const PODCAST_DETAILS = [
     id: 1,
     topic: "Coping with Loss",
     description:
-      "Coping with Lose, is a podcast for teens, offering support and guidance on coping with grief and loss. Through real stories and expert advice, we help you heal and understand your emotions.",
+      "Coping with Loss, is a podcast for teens, offering support and guidance on coping with grief and loss. Through real stories and expert advice, we help you heal and understand your emotions.",
     audioPodcastSampleSrc: "/assets/audios/coping-with-loss.mp3",
     audioPodcastSrc: "/assets/audios/coping-with-loss.mp3",
     thumbnail: "/assets/images/coping-with-loss.jpg",
@@ -30,7 +30,7 @@ export const PODCAST_DETAILS = [
       "Cell-Aid dives into the evolving role of cell phones in our lives, comparing their impact to that of yesterday's television. Explore how these devices shape culture, communication, and daily life.",
     audioPodcastSampleSrc: "/assets/audios/Cell_Aid.mp3",
     audioPodcastSrc: "/assets/audios/Cell_Aid.mp3",
-    thumbnail: "/assets/images/cell-aid.jpg",
+    thumbnail: "/assets/images/cell-aid.png",
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
@@ -96,7 +96,7 @@ export const PODCAST_DETAILS = [
       "Entertainment Addiction explores how excessive media consumption affects your life. Learn strategies to balance entertainment with healthy habits and regain control.",
     audioPodcastSampleSrc: "/assets/audios/entertainment-addiction.mp3",
     audioPodcastSrc: "/assets/audios/entertainment-addiction-orignal.mp3",
-    thumbnail: "/assets/images/entertainment-addiction.jpg",
+    thumbnail: "/assets/images/Entertainment_Addiction_ 2.jpg",
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
@@ -136,7 +136,7 @@ export const PODCAST_DETAILS = [
     audioPodcastSampleSrc: "/assets/audios/teen-problem.mp3",
     audioPodcastSrc:
       "/assets/audios/teen-emotion-behavioural-problem-orignal.mp3",
-    thumbnail: "/assets/images/teen-emotion-behavioural-problem.jpg",
+    thumbnail: "/assets/images/Teen_emotion_&_behaviour_problems_ 2.jpg",
     categroy: "",
     age: "6-12",
     author: "Mentor Mahesh",
@@ -178,7 +178,7 @@ export const PODCAST_DETAILS = [
       "Parents should avoid comparing siblings, belittling their children's abilities, or labeling them as accidents. Negative phrases like expressing disbelief, blaming, or discouraging independence can harm the parent-child relationship and hinder a child's emotional well-being. Encouraging open communication, promoting self-expression, and understanding the root cause of behavior are essential for fostering a healthy parent-child dynamic.",
     audioPodcastSampleSrc: "/assets/audios/phrases-sentence.mp3",
     audioPodcastSrc: "/assets/audios/phrases-sentences-orignal.mp3",
-    thumbnail: "/assets/images/phrases-sentence.jpg",
+    thumbnail: "/assets/images/Phrases_and_sentences_parents.jpg",
     categroy: "",
     age: "6-12",
     author: "Mentor Mahesh",
@@ -191,7 +191,7 @@ export const PODCAST_DETAILS = [
       "Someone who we look up to, who is an inspiration is a role model. The person serves as an example for influencing others. A role model helps to shape our behaviour, how we make decisions in our life, how we manage our relationships.",
     audioPodcastSampleSrc: "/assets/audios/role-model.mp3",
     audioPodcastSrc: "/assets/audios/role-model-orignal.mp3",
-    thumbnail: "/assets/images/role-model.jpg",
+    thumbnail: "/assets/images/Role_Model_For_Kids_.jpg",
     categroy: "",
     age: "2-6",
     author: "Mentor Mahesh",
@@ -204,7 +204,7 @@ export const PODCAST_DETAILS = [
       "Parents, seeking connection, unintentionally embarrass kids with public displays of affection, slang misuse, and interrogating friends, hindering the very bonds they seek. Overprotectiveness stifles exploration, and sharing family struggles, though vital, becomes grating when theatrically dramatized.",
     audioPodcastSampleSrc: "/assets/audios/thing-parents-do.mp3",
     audioPodcastSrc: "/assets/audios/things-parents-do-orignal.mp3",
-    thumbnail: "/assets/images/annoying-parent.jpg",
+    thumbnail: "/assets/images/Things_parents_do_that_annoy_kids 2.jpg",
     categroy: "",
     age: "2-6",
     author: "Mentor Mahesh",
@@ -217,7 +217,7 @@ export const PODCAST_DETAILS = [
       "Technology has become an inseparable part of life, especially for kids. Even kids of five years of age, know how to operate a phone, play games, watch videos on Youtube.  Especially because of covid, where everything is online, kids are exposed to these gadgets at a very small age. Not only engaged, but they also become addicted to it.  Having online classes, not going to play, not interacting with other kids face-to-face has increased now.",
     audioPodcastSampleSrc: "/assets/audios/electronic-gadgets.mp3",
     audioPodcastSrc: "/assets/audios/electronic-gadgets-orignal.mp3",
-    thumbnail: "/assets/images/electronic-gadgets.jpg",
+    thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
     categroy: "",
     age: "2-6",
     author: "Mentor Mahesh",
@@ -297,5 +297,38 @@ export const RIGHT_NAVLINKS = [
   {
     id: 29,
     label: "Sign up",
+  },
+];
+
+export const WORKSHOP = [
+  {
+    id: 30,
+    label: "Teen Camp",
+    imageURL: "/assets/images/teen-camp.png",
+  },
+  {
+    id: 31,
+    label: "Buddy Camp",
+    imageURL: "/assets/images/buddy-camp.png",
+  },
+  {
+    id: 32,
+    label: "Family Camp",
+    imageURL: "/assets/images/family-camp.png",
+  },
+];
+
+export const SHEET_FILTER = [
+  {
+    id: 33,
+    label: "Comic",
+  },
+  {
+    id: 34,
+    label: "Podcast",
+  },
+  {
+    id: 35,
+    label: "Workshop",
   },
 ];

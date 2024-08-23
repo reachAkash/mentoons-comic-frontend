@@ -105,7 +105,7 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
             <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">Meet Us</h1>
             <p className="text-lg lg:text-xl text-[#333333] font-semibold">
               Mentoons is a result of the creative amalgamation of a diverse team coming together - our founder, talented developers, creative illustrators,
-              skillful graphic designers, adept content writers, melodious music producer, and experienced psychologists.
+              skillful graphic designers, adept content writer&apos;s, melodious music producer, and experienced psychologists.
             </p>
             <div className='flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10'
               onClick={() => {

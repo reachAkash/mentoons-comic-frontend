@@ -99,9 +99,9 @@ const PodcastCardExp = ({
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   text-sm font-semibold text-center flex gap-4 items-center justify-center '>
           <button
             onClick={handleSamplePlay}
-            className=' bg-amber-500  rounded-full px-4 py-2 text-white  flex gap-2 items-center justify-center whitespace-nowrap'
+            className=' bg-rose-600  rounded-full px-4 py-2 text-white  flex gap-2 items-center justify-center whitespace-nowrap'
           >
-            Play Now
+            {isPlaying ? "Pause" : "Play Now"}
             {currentlyPlaying === audioRef.current && isPlaying ? (
               <FaCirclePause />
             ) : (
