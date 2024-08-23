@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import CategoryCard from "@/components/shared/Categories/CategoryCard";
 import HeroSectionPodcast from "@/components/shared/HeroSectionPodcast";
 import HomeSection from "@/components/shared/hompage/HomeSection";
 import PodcastSection from "@/components/shared/PodcastSection/PodcastSection";
@@ -14,7 +15,7 @@ const PodCast = () => {
       {/* <Category />
       <AgeCategory /> */}
       {/* PODCAST LIST */}
-      {/* <CategoryCard /> */}
+      <CategoryCard />
       <PodcastSection />
       {/* Stats section */}
       {/* <StatisticsSection /> */}
