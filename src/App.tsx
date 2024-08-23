@@ -19,6 +19,7 @@ import Wishlist from "./pages/Wishlist";
 import WebHome from "./pages/WebHome";
 import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
+import Footer from "./components/Footer";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -35,7 +36,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/audio-comic" element={<AudioComicPage />} />
-        <Route path="/workshops" element={<Workshops />} />
+        <Route path="/mentoons-workshops" element={<Workshops />} />
         <Route path="/comics-list" element={<ComicsPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/mentoons-podcast" element={<PodCast />} />
@@ -43,11 +44,11 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/website-plans" element={<Plans />} />
       </Routes>
-      <SlidingText />
+      {/* <SlidingText /> */}
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-
       <ProgressScroller />
+      <Footer />
     </>
   );
 }
