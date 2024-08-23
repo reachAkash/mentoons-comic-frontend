@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div>
             <div className="space-y-2">
-              <div className="space-y-2">
+              <div className="">
                 <div className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
                   FAQ's
                 </div>
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
           {/* third div */}
           <div>
             <div className="space-y-2">
-              <div className="space-y-2">
+              <div className="">
                 <div
                   onClick={() => setShowInside((prev) => !prev)}
                   className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"

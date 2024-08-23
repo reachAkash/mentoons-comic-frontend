@@ -24,7 +24,7 @@ const ComicWorkshop: React.FC = () => {
 
   const workshopData: WorkshopItems[] = [
     {
-      name: "Kids Camp",
+      name: "Buddy Camp",
       img: WorkshopImg1,
       desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
       video:
