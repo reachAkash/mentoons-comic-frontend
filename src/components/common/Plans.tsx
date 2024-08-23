@@ -61,7 +61,7 @@ const Plans = () => {
             <div className="absolute h-[36.5rem] w-full top-0 bg-gradient-to-r from-indigo-600 to-violet-600 -z-10"></div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-12 text-center">
-                    <h2 className="font-manrope text-5xl font-bold text-white mb-4">Suitable pricing plans</h2>
+                    <h2 className="font-manrope text-5xl font-bold text-white mb-4">Suitable Pricing Plans</h2>
                     <p className="text-gray-300 text-xl leading-6">7 Days free trial. No credit card required.</p>
                 </div>
                 <div className="space-y-8 lg:grid lg:grid-cols-3 lg:gap-6 xl:gap-8 lg:space-y-0 lg:items-center">

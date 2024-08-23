@@ -19,6 +19,7 @@ import Wishlist from "./pages/Wishlist";
 import WebHome from "./pages/WebHome";
 import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
+import Footer from "./components/Footer";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -44,6 +45,7 @@ function App() {
         <Route path="/website-plans" element={<Plans />} />
       </Routes>
       <SlidingText />
+      <Footer/>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
 

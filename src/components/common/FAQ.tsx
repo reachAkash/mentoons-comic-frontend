@@ -47,7 +47,7 @@ const FAQ = () => {
                                     FAQs
                                 </h6>
                                 <h2 className="text-4xl text-center font-bold text-gray-900 leading-[3.25rem] mb-5 lg:text-left">
-                                    Looking for answers?
+                                    Looking for answer&apos;s?
                                 </h2>
                             </div>
                             <div className="accordion-group">
