@@ -71,7 +71,7 @@ const AudioComics: React.FC = () => {
   // ];
 
   return (
-    <div className="container bg-[#f0ebe5] space-y-5 py-14 lg:py-28">
+    <div className="container bg-[#62f262] space-y-5 py-14 lg:py-28">
       <motion.div
         initial={{ opacity: 0.5 }}
         whileInView={{ opacity: 1 }}
@@ -90,7 +90,7 @@ const AudioComics: React.FC = () => {
           initial={{ y: 50 }}
           whileInView={{ y: 0 }}
           transition={{ duration: 1.5 }}
-          className="text-5xl lg:text-7xl text-black w-full font-extrabold leading-[1.10]"
+          className="text-5xl lg:text-7xl text-white w-full font-extrabold leading-[1.10]"
         >
           Our Top Trendy <Wordbreak /> Fun Audio Comic
         </motion.div>

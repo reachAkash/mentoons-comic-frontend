@@ -93,7 +93,7 @@ const Workshops = () => {
                         <div
                             className='w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl'
                             style={{
-                                backgroundImage: `url(${selectedCamp.imgUrl})`,
+                                backgroundImage: url(${selectedCamp.imgUrl}),
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
@@ -118,7 +118,7 @@ const Workshops = () => {
                                     {showDescription && (
                                         <Fade>
                                             <p className='text-lg mt-2 text-center lg:text-left px-5 py-2'>
-                                                {readMore ? selectedCamp.description : `${selectedCamp.description.slice(0, 100)}`}
+                                                {readMore ? selectedCamp.description : ${selectedCamp.description.slice(0, 100)}}
                                                 {selectedCamp.description.length > 100 && (
                                                     <button onClick={toggleReadMore} className='text-men-blue ml-2'>
                                                         {readMore ? 'Read Less' : 'Read More'}
