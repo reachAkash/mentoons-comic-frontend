@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import AudioComicPage from "./pages/AudioComicPage";
 import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
-import Workshops from "./components/Workshops";
+import Workshops from "./components/WorkshopsPage";
 import ComicsHome from "./components/ComicsHome";
 import ComicCard from "./components/HoverCardComic";
 import Navbar from "./components/Navbar";
