@@ -17,12 +17,13 @@ type videoData = {
 
 const WebHome: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [videoType,setVideoType] = useState<string>('')
+  const [videoType, setVideoType] = useState<string>('');
   const [isMuted, setIsMuted] = useState<boolean>(() => {
     const storedMuteState = localStorage.getItem('isMuted');
     return storedMuteState ? JSON.parse(storedMuteState) : false;
   });
   const [audio] = useState(new Audio('/audio.mp3'));
+  const [currentDate, setCurrentDate] = useState<string>(new Date().toLocaleDateString());
 
   const videos: videoData[] = [
     { id: '1', title: 'Olivia', thumbnail: '/olivia.jpg', url: 'https://mentoons-website.s3.ap-northeast-1.amazonaws.com/Flat+Image+Stories+for+Mentoons/Olivia%2C+28+Years%2C+Psychologist(2)/Olivia%2C+28+Years%2C+Psychologist(2).mp4' },
@@ -38,10 +39,14 @@ const WebHome: React.FC = () => {
     { id: '3', title: 'Team Celebration', thumbnail: '/life-mentoons.png', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4" },
   ];
 
-
   useEffect(() => {
     audio.volume = isMuted ? 0 : 1;
   }, [isMuted, audio]);
+
+  useEffect(() => {
+    const date = new Date().toLocaleDateString();
+    setCurrentDate(date);
+  }, []);
 
   const handleMuteToggle = () => {
     if (audio.paused) {
@@ -58,24 +63,31 @@ const WebHome: React.FC = () => {
 
   return (
     <div className='h-full w-full overflow-hidden'>
-      <VideoModal videos={videoType === 'HERO' ? videos : InsideMentoonsVideos} isOpen={modalOpen} onClose={() => setModalOpen(false)} type={videoType}/>
-      <HeroSection setModalOpen={setModalOpen} setVideoType={setVideoType} />
+      <VideoModal videos={videoType === 'HERO' ? videos : InsideMentoonsVideos} isOpen={modalOpen} onClose={() => setModalOpen(false)} type={videoType} />
+      <HeroSection />
       {/* <HowToUse /> */}
-      <ExploreMentoons/>
+      <ExploreMentoons />
       <MentoonsBenifit />
       <Workshops />
-      <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType}/>
+      <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <CallToAction />
       <JoinAcademy />
       {/* <GoToTop /> */}
 
-      <button
-        onClick={handleMuteToggle}
-        className='fixed top-[6rem] right-2 bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black'
-        aria-label="Toggle mute"
-      >
-        {isMuted ? <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/play.png' className='h-full w-full object-contain' /></figure> : <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/pause.png' className='h-full w-full object-contain' /></figure> }
-      </button>
+      <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
+        <button
+          onClick={handleMuteToggle}
+          className='bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black'
+          aria-label="Toggle mute"
+        >
+          {isMuted ? 
+            <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/play.png' className='h-full w-full object-contain' /></figure> 
+            : 
+            <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/pause.png' className='h-full w-full object-contain' /></figure>
+          }
+        </button>
+        <span className='mt-2 text-sm text-black'>{currentDate}</span>
+      </div>
     </div>
   );
 }

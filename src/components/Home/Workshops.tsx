@@ -23,7 +23,7 @@ const Workshops = () => {
       id: 1,
       imgUrl: "/Kids_camp.jpg",
       CornerImgUrl: "/Buddy camp.png",
-      title: "Kids Camp",
+      title: "Buddy Camp",
       description:
         "Interactive Friendship Workshop for Children (Ages 6-12). Social Skills Development & Moral Values Education. Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills. Our interactive program focuses on teaching kids about moral values and how to start conversations with confidence.",
       ageGroup: "6-12 years",

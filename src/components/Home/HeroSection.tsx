@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
   };
 console.log(isMobile , 'pppoo')
   return (
-    <section className="relative bg-white dark:bg-gray-900">
+    <section className="relative bg-white dark:bg-gray-900 h-full">
       <div className="relative w-full h-full">
         {!isVideoPlaying ? (
           <div className="relative w-full h-full">
@@ -132,7 +132,8 @@ console.log(isMobile , 'pppoo')
               Your browser does not support the video tag.
             </video>
             <button
-              className="absolute top-[6rem] left-4 text-white text-2xl z-50"
+              className="absolute top-[6rem] left-4 text-black
+               text-2xl z-50"
               onClick={closeModal}
             >
               <FaArrowLeft />
