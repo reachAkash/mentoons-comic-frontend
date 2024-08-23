@@ -1,166 +1,194 @@
-import Heading from '../common/Heading';
-import { Fade } from 'react-awesome-reveal';
-import { useState } from 'react';
+import Heading from "../common/Heading";
+import { Fade } from "react-awesome-reveal";
+import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
-import { FaEye } from 'react-icons/fa6';
+import { useNavigate } from "react-router-dom";
+import { FaEye } from "react-icons/fa6";
 
 type CampDetails = {
-    id: number;
-    imgUrl: string;
-    CornerImgUrl: string;
-    title: string;
-    description: string;
-    ageGroup: string;
-    timetable: string;
+  id: number;
+  imgUrl: string;
+  CornerImgUrl: string;
+  title: string;
+  description: string;
+  ageGroup: string;
+  timetable: string;
 };
 
 const Workshops = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const campDetails: CampDetails[] = [
-        {
-            id: 1,
-            imgUrl: '/Kids_camp.jpg',
-            CornerImgUrl: '/Buddy camp.png',
-            title: 'Kids Camp',
-            description: "Interactive Friendship Workshop for Children (Ages 6-12). Social Skills Development & Moral Values Education. Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills. Our interactive program focuses on teaching kids about moral values and how to start conversations with confidence.",
-            ageGroup: "6-12 years",
-            timetable: "Monday - Friday, 9 AM - 12 PM",
-        },
-        {
-            id: 2,
-            imgUrl: '/Teen_camp.jpg',
-            CornerImgUrl: '/Teen camp .png',
-            title: 'Teen Camp',
-            description: "Teen Camp: Identity Workshop For Teenagers (13-19 Years). Substance De-Addiction, Scrolling De-Addiction & Hormonal Changes. Help your teenager navigate the challenges of adolescence with our comprehensive Teen Camp workshop. Designed for young people aged 13-19, our program addresses crucial topics that impact today's youth.",
-            ageGroup: "13-18 years",
-            timetable: "Monday - Friday, 1 PM - 4 PM",
-        },
-        {
-            id: 3,
-            imgUrl: '/Family_camp.jpg',
-            CornerImgUrl: '/Family camp.png',
-            title: 'Family Camp',
-            description: "Family Camp is designed to strengthen family bonds through engaging activities and workshops. Our program includes art workshops, social media de-addiction, and gaming de-addiction for all family members.",
-            ageGroup: "All ages",
-            timetable: "Saturday - Sunday, 10 AM - 2 PM",
-        },
-    ];
+  const campDetails: CampDetails[] = [
+    {
+      id: 1,
+      imgUrl: "/Kids_camp.jpg",
+      CornerImgUrl: "/Buddy camp.png",
+      title: "Kids Camp",
+      description:
+        "Interactive Friendship Workshop for Children (Ages 6-12). Social Skills Development & Moral Values Education. Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills. Our interactive program focuses on teaching kids about moral values and how to start conversations with confidence.",
+      ageGroup: "6-12 years",
+      timetable: "Monday - Friday, 9 AM - 12 PM",
+    },
+    {
+      id: 2,
+      imgUrl: "/Teen_camp.jpg",
+      CornerImgUrl: "/Teen camp .png",
+      title: "Teen Camp",
+      description:
+        "Teen Camp: Identity Workshop For Teenagers (13-19 Years). Substance De-Addiction, Scrolling De-Addiction & Hormonal Changes. Help your teenager navigate the challenges of adolescence with our comprehensive Teen Camp workshop. Designed for young people aged 13-19, our program addresses crucial topics that impact today's youth.",
+      ageGroup: "13-18 years",
+      timetable: "Monday - Friday, 1 PM - 4 PM",
+    },
+    {
+      id: 3,
+      imgUrl: "/Family_camp.jpg",
+      CornerImgUrl: "/Family camp.png",
+      title: "Family Camp",
+      description:
+        "Family Camp is designed to strengthen family bonds through engaging activities and workshops. Our program includes art workshops, social media de-addiction, and gaming de-addiction for all family members.",
+      ageGroup: "All ages",
+      timetable: "Saturday - Sunday, 10 AM - 2 PM",
+    },
+  ];
 
-    const [selectedCamp, setSelectedCamp] = useState<CampDetails | null>(campDetails[0]);
-    const [showDescription, setShowDescription] = useState(false);
-    const [showAgeGroup, setShowAgeGroup] = useState(false);
-    const [showTimetable, setShowTimetable] = useState(false);
-    const [readMore, setReadMore] = useState(false);
+  const [selectedCamp, setSelectedCamp] = useState<CampDetails | null>(
+    campDetails[0]
+  );
+  const [showDescription, setShowDescription] = useState(false);
+  const [showAgeGroup, setShowAgeGroup] = useState(false);
+  const [showTimetable, setShowTimetable] = useState(false);
+  const [readMore, setReadMore] = useState(false);
 
-    const handleCampClick = (id: number) => {
-        const camp = campDetails.find(camp => camp.id === id);
-        setSelectedCamp(camp || null);
-        setReadMore(false);
-    };
+  const handleCampClick = (id: number) => {
+    const camp = campDetails.find((camp) => camp.id === id);
+    setSelectedCamp(camp || null);
+    setReadMore(false);
+  };
 
-    const toggleReadMore = () => {
-        setReadMore(prev => !prev);
-    };
+  const toggleReadMore = () => {
+    setReadMore((prev) => !prev);
+  };
 
-    const handleImageClick = () => {
-        navigate('/workshops');
-    };
+  const handleImageClick = () => {
+    navigate("/workshops");
+  };
 
-    return (
-        <div className='w-full h-full py-10 relative'>
-            <Heading heading='Workshops' />
-            <div className='h-[3rem]'></div>
-            <div className='h-[10rem] w-[20rem] absolute right-0 top-28 hidden lg:block'>
-                <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
-            </div>
-            <div className='w-4/5 m-auto relative'>
-                <div className='flex flex-col lg:flex-row mb-10 lg:mb-0 gap-4 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[-4rem]'>
-                    {campDetails.map(camp => (
-                        <button
-                            key={camp.id}
-                            onClick={() => handleCampClick(camp.id)}
-                            className='bg-men-blue text-white p-2 lg:p-5 font-bold rounded-lg lg:rounded-none lg:rounded-t-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-men-light-blue hover:shadow-lg'
-                        >
-                            {camp.title}
-                        </button>
-                    ))}
-                </div>
-
-                {selectedCamp && (
-                    <div className='text-center bg-light-yellow flex flex-col lg:flex-row items-center justify-center gap-6 py-10 px-4 w-full rounded-xl'>
-                        <div
-                            className='w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl'
-                            style={{
-                                backgroundImage: url(${selectedCamp.imgUrl}),
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
-                            }}
-                            onClick={handleImageClick}
-                        >
-                            <div className='absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 h-[4rem] flex items-center justify-center transition-all duration-300 ease-in-out'>
-                                <span className='text-white text-lg font-bold flex items-center gap-3'><FaEye />View More</span>
-                            </div>
-                        </div>
-                        <div className='w-3/4'>
-                            <h2 className='text-5xl font-extrabold mt-4 text-men-blue'>{selectedCamp.title}</h2>
-
-                            <div className='mt-4 flex flex-col gap-5'>
-                                <div>
-                                    <button
-                                        onClick={() => setShowDescription(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
-                                    >
-                                        <span>Description&apos;s</span><span><IoIosArrowDown /></span>
-                                    </button>
-                                    {showDescription && (
-                                        <Fade>
-                                            <p className='text-lg mt-2 text-center lg:text-left px-5 py-2'>
-                                                {readMore ? selectedCamp.description : ${selectedCamp.description.slice(0, 100)}}
-                                                {selectedCamp.description.length > 100 && (
-                                                    <button onClick={toggleReadMore} className='text-men-blue ml-2'>
-                                                        {readMore ? 'Read Less' : 'Read More'}
-                                                    </button>
-                                                )}
-                                            </p>
-                                        </Fade>
-                                    )}
-                                </div>
-                                <div>
-                                    <button
-                                        onClick={() => setShowAgeGroup(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
-                                    >
-                                        <span>Age group</span><span><IoIosArrowDown /></span>
-                                    </button>
-                                    {showAgeGroup && (
-                                        <Fade>
-                                            <p className='text-lg mt-2 ml-3 text-left'>{selectedCamp.ageGroup}</p>
-                                        </Fade>
-                                    )}
-                                </div>
-                                <div>
-                                    <button
-                                        onClick={() => setShowTimetable(prev => !prev)}
-                                        className='bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg'
-                                    >
-                                        <span>Time Table</span><span><IoIosArrowDown /></span>
-                                    </button>
-                                    {showTimetable && (
-                                        <Fade>
-                                            <p className='text-lg mt-2 ml-3 text-left'>{selectedCamp.timetable}</p>
-                                        </Fade>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
+  return (
+    <div className="w-full h-full py-10 relative">
+      <Heading heading="Workshops" />
+      <div className="h-[3rem]"></div>
+      <div className="h-[10rem] w-[20rem] absolute right-0 top-28 hidden lg:block">
+        <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
+      </div>
+      <div className="w-4/5 m-auto relative">
+        <div className="flex flex-col lg:flex-row mb-10 lg:mb-0 gap-4 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[-4rem]">
+          {campDetails.map((camp) => (
+            <button
+              key={camp.id}
+              onClick={() => handleCampClick(camp.id)}
+              className="bg-men-blue text-white p-2 lg:p-5 font-bold rounded-lg lg:rounded-none lg:rounded-t-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-men-light-blue hover:shadow-lg"
+            >
+              {camp.title}
+            </button>
+          ))}
         </div>
-    );
+
+        {selectedCamp && (
+          <div className="text-center bg-light-yellow flex flex-col lg:flex-row items-center justify-center gap-6 py-10 px-4 w-full rounded-xl">
+            <div
+              className="w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+              style={{
+                backgroundImage: `url(${selectedCamp.imgUrl})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                boxShadow: "6px 6px 0px rgba(103, 102, 102, 0.2)",
+              }}
+              onClick={handleImageClick}
+            >
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 h-[4rem] flex items-center justify-center transition-all duration-300 ease-in-out">
+                <span className="text-white text-lg font-bold flex items-center gap-3">
+                  <FaEye />
+                  View More
+                </span>
+              </div>
+            </div>
+            <div className="w-3/4">
+              <h2 className="text-5xl font-extrabold mt-4 text-men-blue">
+                {selectedCamp.title}
+              </h2>
+
+              <div className="mt-4 flex flex-col gap-5">
+                <div>
+                  <button
+                    onClick={() => setShowDescription((prev) => !prev)}
+                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
+                  >
+                    <span>Description&apos;s</span>
+                    <span>
+                      <IoIosArrowDown />
+                    </span>
+                  </button>
+                  {showDescription && (
+                    <Fade>
+                      <p className="text-lg mt-2 text-center lg:text-left px-5 py-2">
+                        {readMore
+                          ? selectedCamp.description
+                          : `${selectedCamp.description.slice(0, 100)}`}
+                        {selectedCamp.description.length > 100 && (
+                          <button
+                            onClick={toggleReadMore}
+                            className="text-men-blue ml-2"
+                          >
+                            {readMore ? "Read Less" : "Read More"}
+                          </button>
+                        )}
+                      </p>
+                    </Fade>
+                  )}
+                </div>
+                <div>
+                  <button
+                    onClick={() => setShowAgeGroup((prev) => !prev)}
+                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
+                  >
+                    <span>Age group</span>
+                    <span>
+                      <IoIosArrowDown />
+                    </span>
+                  </button>
+                  {showAgeGroup && (
+                    <Fade>
+                      <p className="text-lg mt-2 ml-3 text-left">
+                        {selectedCamp.ageGroup}
+                      </p>
+                    </Fade>
+                  )}
+                </div>
+                <div>
+                  <button
+                    onClick={() => setShowTimetable((prev) => !prev)}
+                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
+                  >
+                    <span>Time Table</span>
+                    <span>
+                      <IoIosArrowDown />
+                    </span>
+                  </button>
+                  {showTimetable && (
+                    <Fade>
+                      <p className="text-lg mt-2 ml-3 text-left">
+                        {selectedCamp.timetable}
+                      </p>
+                    </Fade>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Workshops;
