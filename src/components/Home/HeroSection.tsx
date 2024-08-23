@@ -1,56 +1,146 @@
-import React, { useState } from 'react';
-import { FaPlay } from 'react-icons/fa';
-import AnimatedArtwork from '../common/AnimatedArtworks';
-import plane from '../../animation/plane.json';
-import SearchBar from '../common/SearchBar';
-import { placeholders } from '@/constant/websiteConstants';
+import React, { useState, useRef } from 'react';
+import { BsArrowsFullscreen } from 'react-icons/bs';
+import { FaPlay, FaArrowLeft } from 'react-icons/fa';
+import { MdOutlineWatchLater } from 'react-icons/md';
+import {isMobile} from 'react-device-detect'
 
-type HomeProps = {
-  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setVideoType: React.Dispatch<React.SetStateAction<string>>;
-};
+const HeroSection: React.FC = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
-const HeroSection: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
-  const [input, setInput] = useState<string>("");
+  const handlePlayClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setIsVideoPlaying(true);
+  };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsVideoPlaying(false);
+  };
+console.log(isMobile , 'pppoo')
   return (
-    <div className="h-full w-full flex flex-col-reverse lg:flex-col pb-10 lg:pb-0 overflow-hidden relative">
-      <div className="w-[80%] lg:max-w-[30rem] m-auto lg:m-0 lg:absolute top-20 left-1/2 transform -translate-x-1/2 z-10 hidden lg:flex">
-        <SearchBar input={input} setInput={setInput} placeholders={placeholders} />
-      </div>
-      <div className='flex flex-col items-center lg:items-start lg:flex-row lg:h-full lg:absolute lg:top-[20.5rem] left-[2rem] z-10 px-2 lg:px-20'>
-        <div className='text-center lg:text-left w-full lg:w-3/5 flex flex-col items-left gap-5 '>
-          <div className="flex items-center w-[80%] lg:max-w-[30rem] m-auto lg:m-0 lg:hidden">
-            <SearchBar input={input} setInput={setInput} placeholders={placeholders} />
-          </div>
-          <h1 className='text-6xl text-black lg:text-white text-center lg:text-left '>
-            <div className='hidden lg:block lg:absolute lg:top-[-160px] lg:left-[153px] w-[15rem] sm:w-[21rem] z-[-1]'>
-              <AnimatedArtwork animationData={plane} />
-            </div>
-            <span className='text-men-blue font-bold text-6xl lg:text-8xl'>Mentoons,</span><br />
-            <span className=''>welcome&apos;s you</span>
-          </h1>
-          <p className='text-lg sm:text-xl md:text-2xl text-black lg:text-white px-8 lg:px-0 text-left ml-0'>
-            Welcome to Mentoons! Dive into a world where cartoons and stories pave the way for learning and growth. At Mentoons, we blend fun with education, offering a unique platform where children and teenagers can enjoy illustrated moral stories, engage with family-oriented comics, and participate in interactive activities designed to foster development and understanding.
-          </p>
-          <div className='flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10'
-            onClick={() => {
-              setModalOpen(true)
-              setVideoType('HERO')
-            }}>
-            <button className='playBtn flex items-center justify-center bg-men-blue text-white p-3 rounded-full'>
-              <FaPlay className='shadow-xl' />
+    <section className="relative bg-white dark:bg-gray-900">
+      <div className="relative w-full h-full">
+        {!isVideoPlaying ? (
+          <div className="relative w-full h-full">
+            <figure className='h-1/2 w-full'>
+              <img
+                src="/file.png"
+                alt="Video Thumbnail"
+                className="w-full h-full object-contain"
+              />
+            </figure>
+            <button
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10"
+              onClick={handlePlayClick}
+            >
+              <FaPlay className="text-white text-6xl" />
             </button>
-            <span className='text-black lg:text-white text-lg sm:text-2xl font-semibold'>Watch videos</span>
+            <div className="absolute inset-0 bg-black bg-opacity-50 z-5" />
+          </div>
+        ) : (
+          <div className="relative w-full h-screen">
+            <video
+              className="w-full object-cover"
+              controls
+              autoPlay
+            >
+              <source
+                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/What+is+Mentoons.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
+      </div>
+
+      {!isVideoPlaying &&(
+        <div className="bg-[#000000] py-5 lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex flex-col lg:flex-row lg:bg-transparent justify-between lg:w-full">
+          <div className="text-left p-8 flex flex-col gap-4 font-montserrat lg:items-start">
+            <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Comics &#9679; Podcasts &#9679; Workshops</p>
+            <h2 className="text-white text-3xl lg:font-bold">
+              Welcome to Mentoons! Dive<br /> into a world where cartoons<br /> and stories pave the way for<br /> learning and growth.
+            </h2>
+            <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Carefully crafted by Psychologists</p>
+          </div>
+          <div className="flex items-center justify-around px-10 lg:flex-col-reverse">
+            <button 
+              className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+              onClick={openModal}
+            >
+              <BsArrowsFullscreen className="text-white text-3xl" />
+              <span className="text-white text-sm">Cinema Mode</span>
+            </button>
+            <button 
+              className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <MdOutlineWatchLater className="text-white text-3xl" />
+              <span className="text-white text-sm">Watch Later</span>
+            </button>
           </div>
         </div>
-      </div>
-      <div className='bg-hero-image lg:bg-center bg-contain md:bg-cover lg:bg-cover bg-no-repeat h-[32vh] lg:h-[100vh] relative mb-0 md:mb-8 lg:mb-0 '>
-        <div className='absolute top-[-1rem] left-0 lg:left-[2rem] w-[15rem] h-[15rem] lg:w-[20rem] lg:h-[20rem]'>
-          <img src="/crafted.png" alt="crafted by psychologist" className='w-full h-full object-contain' />
+      )}
+      {
+        isMobile && (
+          <div className="bg-[#000000] py-5 lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex flex-col lg:flex-row lg:bg-transparent justify-between lg:w-full">
+            <div className="text-left p-8 flex flex-col gap-4 font-montserrat lg:items-start">
+              <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Comics &#9679; Podcasts &#9679; Workshops</p>
+              <h2 className="text-white text-3xl lg:font-bold">
+                Welcome to Mentoons! Dive<br /> into a world where cartoons<br /> and stories pave the way for<br /> learning and growth.
+              </h2>
+              <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Carefully crafted by Psychologists</p>
+            </div>
+            <div className="flex items-center justify-around px-10 lg:flex-col-reverse">
+              <button 
+                className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+                onClick={openModal}
+              >
+                <BsArrowsFullscreen className="text-white text-3xl" />
+                <span className="text-white text-sm">Cinema Mode</span>
+              </button>
+              <button 
+                className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <MdOutlineWatchLater className="text-white text-3xl" />
+                <span className="text-white text-sm">Watch Later</span>
+              </button>
+            </div>
+          </div>
+        )
+      }
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+          <div className="relative w-full h-full" ref={modalRef}>
+            <video
+              className="w-full h-full object-cover"
+              controls
+              autoPlay
+            >
+              <source
+                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/What+is+Mentoons.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <button
+              className="absolute top-[6rem] left-4 text-white text-2xl z-50"
+              onClick={closeModal}
+            >
+              <FaArrowLeft />
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </section>
   );
 };
 

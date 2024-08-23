@@ -44,7 +44,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/website-plans" element={<Plans />} />
       </Routes>
-      <SlidingText />
+      {/* <SlidingText /> */}
       <Footer/>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}

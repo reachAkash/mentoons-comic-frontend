@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/Home/HeroSection';
-import HowToUse from '../components/Home/HowToUse';
 import MentoonsBenifit from '../components/Home/MentoonsBenifit';
 import Workshops from '../components/Home/Workshops';
 import VideoModal from '../components/videoModal';
 import InsideMentoons from '../components/Home/InsideMentoons';
 import CallToAction from '../components/Home/CallToAction';
-// import GoToTop from '../components/common/GoToTop';
 import JoinAcademy from '@/components/Home/JoinAcademy';
+import ExploreMentoons from '@/components/Home/ExploreMentoons';
 
 type videoData = {
   id: string;
@@ -61,7 +60,8 @@ const WebHome: React.FC = () => {
     <div className='h-full w-full overflow-hidden'>
       <VideoModal videos={videoType === 'HERO' ? videos : InsideMentoonsVideos} isOpen={modalOpen} onClose={() => setModalOpen(false)} type={videoType}/>
       <HeroSection setModalOpen={setModalOpen} setVideoType={setVideoType} />
-      <HowToUse />
+      {/* <HowToUse /> */}
+      <ExploreMentoons/>
       <MentoonsBenifit />
       <Workshops />
       <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType}/>
