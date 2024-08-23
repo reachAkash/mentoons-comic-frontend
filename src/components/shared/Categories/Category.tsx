@@ -1,4 +1,4 @@
-import { CATEGORIES } from "../../constant";
+import { CATEGORIES } from "../../../constant";
 const Category = () => {
   return (
     <section className=' p-4 md:py-6 md:px-12'>
