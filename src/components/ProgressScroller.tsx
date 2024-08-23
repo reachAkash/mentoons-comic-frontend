@@ -1,51 +1,121 @@
+// import React, { useState, useEffect } from "react";
+// import PencilUp from "@/assets/imgs/PencilUp.png";
+// import PencilDown from "@/assets/imgs/PencilDown.png";
+
+// const ProgressScroller: React.FC = () => {
+//   const [isVisible, setIsVisible] = useState(false);
+//   const [scrollPercentage, setScrollPercentage] = useState(0);
+
+//   const handleScroll = () => {
+//     const scrollTop = window.scrollY;
+//     const docHeight =
+//       document.documentElement.scrollHeight - window.innerHeight;
+
+//     // Calculate the percentage of the page that has been scrolled
+//     const scrolledPercentage = (scrollTop / docHeight) * 100;
+
+//     // Update the scroll percentage state
+//     setScrollPercentage(scrolledPercentage);
+
+//     // Show button when the user has scrolled down, hide it when at the top
+//     if (scrollTop > 0) {
+//       setIsVisible(true);
+//     } else {
+//       setIsVisible(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <>
+//       {isVisible && (
+//         <div
+//           className="w-fit rounded-full fixed right-0 p-4 cursor-pointer z-[9999]"
+//           style={{
+//             top: `${scrollPercentage}%`,
+//             transform: "translateY(-50%)", // Center the image vertically at each percentage
+//             transition: "top 0.2s ease-out",
+//           }}
+//           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+//         >
+//           <img className="w-20" src="/Pencile up.png" alt="pencil up" />
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default ProgressScroller;
+
 import React, { useState, useEffect } from "react";
-// import { FaArrowUpLong } from "react-icons/fa6";
+import PencilUp from "@/assets/imgs/PencilUp.png";
+import PencilDown from "@/assets/imgs/PencilDown.png";
 
 const ProgressScroller: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [isScrollingDown, setIsScrollingDown] = useState(true); // Track scroll direction
+  const [lastScrollTop, setLastScrollTop] = useState(0); // Store last scroll position
 
   const handleScroll = () => {
-    // Check if the page has been scrolled more than 100px
-    if (window.scrollY > 100) {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    // Calculate the percentage of the page that has been scrolled
+    const scrolledPercentage = (scrollTop / docHeight) * 100;
+
+    // Determine the scroll direction
+    if (scrollTop > lastScrollTop) {
+      setIsScrollingDown(true);
+    } else {
+      setIsScrollingDown(false);
+    }
+
+    // Update last scroll position
+    setLastScrollTop(scrollTop);
+
+    // Update the scroll percentage state
+    setScrollPercentage(scrolledPercentage);
+
+    // Show button when the user has scrolled down, hide it when at the top
+    if (scrollTop > 0) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  // function to scroll to top
-  const scrollToTop = (duration = 1000) => {
-    const start = window.scrollY;
-    const startTime = performance.now();
-
-    const scroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      window.scrollTo(0, start * (1 - progress));
-      if (elapsed < duration) {
-        requestAnimationFrame(scroll);
-      }
-    };
-
-    requestAnimationFrame(scroll);
-  };
+  }, [lastScrollTop]); // Add lastScrollTop to the dependency array
 
   return (
     <>
       {isVisible && (
         <div
-          className="w-fit rounded-full fixed right-4 bottom-16  p-4 cursor-pointer z-[9999]"
-          onClick={() => scrollToTop(1000)}
+          className="w-fit rounded-full fixed right-0 p-4 cursor-pointer z-[9999]"
+          style={{
+            top: `${scrollPercentage}%`,
+            transform: "translateY(-50%)", // Center the image vertically at each percentage
+            transition: "top 0.2s ease-out",
+          }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <img className="w-20" src="/Pencile up.png" alt="pencil up" />
+          <img
+            className="w-20"
+            src={isScrollingDown ? PencilDown : PencilUp} // Switch between pencil down/up
+            alt={isScrollingDown ? "pencil down" : "pencil up"}
+          />
         </div>
       )}
     </>

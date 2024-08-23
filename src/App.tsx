@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import AudioComicPage from "./pages/AudioComicPage";
 import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
-import Workshops from "./components/Workshops";
+import Workshops from "./components/WorkshopsPage";
 import ComicsHome from "./components/ComicsHome";
 import ComicCard from "./components/HoverCardComic";
 import Navbar from "./components/Navbar";
@@ -35,7 +35,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/audio-comic" element={<AudioComicPage />} />
-        <Route path="/workshops" element={<Workshops />} />
+        <Route path="/mentoons-workshops" element={<Workshops />} />
         <Route path="/comics-list" element={<ComicsPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/mentoons-podcast" element={<PodCast />} />
@@ -47,8 +47,8 @@ function App() {
       <Footer/>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-
       <ProgressScroller />
+      <Footer />
     </>
   );
 }
