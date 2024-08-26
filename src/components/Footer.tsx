@@ -41,10 +41,15 @@ const Footer: React.FC = () => {
 
   return (
     <div className="text-white text-center">
-      <img src="/FooterBg.png" alt="footer image" />
-      <div className="container bg-[#FF7D00] w-full h-fit space-y-5 pb-10">
+      <img className="hidden md:block" src="/FooterBg.png" alt="footer image" />
+      <img
+        className="block md:hidden"
+        src="/footerMobileVersion.png"
+        alt="footer image"
+      />
+      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5 pb-10">
         {/* top section */}
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
           <div>
             <Link to="/">
               <img className="w-60" src={Logo} alt="mentoons logo" />
@@ -71,18 +76,18 @@ const Footer: React.FC = () => {
               <div className="px-4 cursor-pointer font-semibold">Workshop</div>
             </Link>
           </div>
-          <div className="bg-[#662d0a94] uppercase font-semibold hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+          <div className="w-full lg:w-fit bg-[#662d0a94] uppercase font-semibold hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
             Contact Us
           </div>
         </div>
         {/* middle section */}
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-between space-y-2">
           {/* first div */}
-          <div className="space-y-2">
-            <div className="">
+          <div className="space-y-2 w-full md:w-fit">
+            <div className="w-full">
               <div
                 onClick={() => setShowEvents((prev) => !prev)}
-                className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
               >
                 Upcoming Events
               </div>
@@ -98,18 +103,18 @@ const Footer: React.FC = () => {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
+                  <div className="text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
                     <img className="w-16" src="/Family camp.png" alt="" />
                   </div>
                   <div>
                     <div className="">15 September, 2024</div>
-                    <div className="text-lg font-semibold tracking-wide">
+                    <div className="text-base md:text-lg font-semibold tracking-wide">
                       Introducing Mentoons
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className=" text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
+                  <div className=" text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
                     <img className="w-16" src="/Family camp.png" alt="" />
                   </div>
                   <div>
@@ -121,146 +126,142 @@ const Footer: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+            <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
               Upcoming Meet
             </div>
-            <div className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+            <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
               Upcoming Webinars
             </div>
           </div>
           {/* second div */}
-          <div>
-            <div className="space-y-2">
+          <div className="space-y-2 w-full md:w-fit">
+            <div className="w-full">
+              <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+                FAQ's
+              </div>
+            </div>
+            <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+              Free Download
+            </div>
+            <div
+              onClick={() => setshowWorkshop((prev) => !prev)}
+              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+            >
+              Workshops
+            </div>
+            {/* children div */}
+            <div
+              className={`transition-all ease-in-out duration-500 flex items-center overflow-hidden ${
+                showWorkshop
+                  ? "max-h-0 opacity-0"
+                  : "max-h-[500px] opacity-100 mt-2"
+              }`}
+              style={{
+                visibility: showWorkshop ? "hidden" : "visible",
+              }}
+            >
               <div className="">
-                <div className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
-                  FAQ's
-                </div>
+                <img
+                  className="w-20 rounded-full"
+                  src="/Buddy camp.png"
+                  alt="comic image"
+                />
               </div>
-              <div className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
-                Free Download
+              <div>
+                <img
+                  className="w-20 rounded-full"
+                  src="/Teen camp .png"
+                  alt="comic image"
+                />
               </div>
-              <div
-                onClick={() => setshowWorkshop((prev) => !prev)}
-                className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-              >
-                Workshops
-              </div>
-              {/* children div */}
-              <div
-                className={`transition-all ease-in-out duration-500 flex items-center overflow-hidden ${
-                  showWorkshop
-                    ? "max-h-0 opacity-0"
-                    : "max-h-[500px] opacity-100 mt-2"
-                }`}
-                style={{
-                  visibility: showWorkshop ? "hidden" : "visible",
-                }}
-              >
-                <div className="">
-                  <img
-                    className="w-20 rounded-full"
-                    src="/Buddy camp.png"
-                    alt="comic image"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-20 rounded-full"
-                    src="/Teen camp .png"
-                    alt="comic image"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-20 rounded-full"
-                    src="/Family camp.png"
-                    alt="comic image"
-                  />
-                </div>
+              <div>
+                <img
+                  className="w-20 rounded-full"
+                  src="/Family camp.png"
+                  alt="comic image"
+                />
               </div>
             </div>
           </div>
           {/* third div */}
-          <div>
-            <div className="space-y-2">
-              <div className="">
-                <div
-                  onClick={() => setShowInside((prev) => !prev)}
-                  className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-                >
-                  Inside Mentoons
-                </div>
-                {/* children div */}
-                <div
-                  className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
-                    showInside
-                      ? "max-h-0 opacity-0"
-                      : "max-h-[500px] opacity-100 mt-2"
-                  }`}
-                  style={{
-                    visibility: showInside ? "hidden" : "visible",
-                  }}
-                >
-                  <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                    <img
-                      className="w-12 rounded-full"
-                      src={GroupImg1}
-                      alt="group image 1"
-                    />
-                  </div>
-                  <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                    <img
-                      className="w-12 rounded-full"
-                      src={GroupImg2}
-                      alt="group image 1"
-                    />
-                  </div>
-                  <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                    <img
-                      className="w-12 rounded-full"
-                      src={GroupImg3}
-                      alt="group image 1"
-                    />
-                  </div>
-                  <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                    <img
-                      className="w-12 rounded-full"
-                      src={GroupImg4}
-                      alt="group image 1"
-                    />
-                  </div>
-                </div>
-              </div>
+          <div className="space-y-2 w-full md:w-fit">
+            <div className="">
               <div
-                onClick={() => setShowShop((prev) => !prev)}
-                className="w-full uppercase text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+                onClick={() => setShowInside((prev) => !prev)}
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
               >
-                Shop
+                Inside Mentoons
               </div>
+              {/* children div */}
               <div
-                className={`transition-all ease-in-out duration-500 overflow-hidden ${
-                  showShop
+                className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
+                  showInside
                     ? "max-h-0 opacity-0"
                     : "max-h-[500px] opacity-100 mt-2"
                 }`}
                 style={{
-                  visibility: showShop ? "hidden" : "visible",
+                  visibility: showInside ? "hidden" : "visible",
                 }}
               >
-                {comicData?.map((item: string) => {
-                  return <div className="font-semibold text-lg">- {item}</div>;
-                })}
+                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                  <img
+                    className="w-12 rounded-full"
+                    src={GroupImg1}
+                    alt="group image 1"
+                  />
+                </div>
+                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                  <img
+                    className="w-12 rounded-full"
+                    src={GroupImg2}
+                    alt="group image 1"
+                  />
+                </div>
+                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                  <img
+                    className="w-12 rounded-full"
+                    src={GroupImg3}
+                    alt="group image 1"
+                  />
+                </div>
+                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                  <img
+                    className="w-12 rounded-full"
+                    src={GroupImg4}
+                    alt="group image 1"
+                  />
+                </div>
               </div>
+            </div>
+            <div
+              onClick={() => setShowShop((prev) => !prev)}
+              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+            >
+              Shop
+            </div>
+            <div
+              className={`transition-all ease-in-out duration-500 overflow-hidden ${
+                showShop
+                  ? "max-h-0 opacity-0"
+                  : "max-h-[500px] opacity-100 mt-2"
+              }`}
+              style={{
+                visibility: showShop ? "hidden" : "visible",
+              }}
+            >
+              {comicData?.map((item: string) => {
+                return <div className="font-semibold text-lg">- {item}</div>;
+              })}
             </div>
           </div>
           {/* fourth div */}
-          <div className="space-y-2">
+          <div className="space-y-2 w-full md:w-fit">
             <div className="bg-white w-full h-[10rem]">Akash</div>
             <div className="flex items-center justify-start tracking-wide font-medium text-lg">
               <MdLocationOn />
               Domlur, Bangalore
             </div>
-            <div className="flex items-center justify-between gap-1">
+            <div className="flex items-center justify-center md:justify-between gap-4 md:gap-1">
               {contactIcons?.map((item) => {
                 return (
                   <div className="bg-white p-2 rounded-full">
@@ -272,9 +273,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         {/* bottom section */}
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between pb-10">
           <Link to="/privacy-policy">
-            <div className="font-semibold text-lg tracking-wide">
+            <div className="font-semibold text-base md:text-lg tracking-wide">
               Privacy policy , Terms & conditions
             </div>
           </Link>
