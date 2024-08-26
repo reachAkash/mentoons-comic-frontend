@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Heading from "../common/Heading";
 import { FaEye } from "react-icons/fa";
+import { Fade } from 'react-awesome-reveal';
 
 type CardData = {
   imgUrl: string;
