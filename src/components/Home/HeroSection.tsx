@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
           <div className="relative w-full h-full">
             <figure className='h-1/2 w-full'>
               <img
-                src="/file.png"
+                src="/caro3.png"
                 alt="Video Thumbnail"
                 className="w-full h-full object-contain"
               />
@@ -60,12 +60,12 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className={`bg-[#000000] py-5 lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${isVideoPlaying ? 'flex-col-reverse' : 'flex-col-reverse lg:flex-row'} lg:bg-transparent justify-between lg:w-full`}>
-        <div className={`text-left p-8 flex flex-col gap-4 font-montserrat lg:items-start ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
-          <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Comics &#9679; Podcasts &#9679; Workshops</p>
-          <h2 className="text-white text-3xl lg:font-bold">
+        <div className={`text-left w-full p-8 flex flex-col gap-4 font-montserrat lg:items-start ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
+          <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Carefully crafted by Psychologists</p>
+          <h2 className="text-white text-2xl lg:text-3xl lg:font-bold">
              Dive into a world where cartoons<br /> and stories pave the way for<br /> learning and growth.
           </h2>
-          <p className="text-[#fff] text-sm lg:text-md lg:font-bold">Carefully crafted by Psychologists</p>
+          <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Comics &#9679; Podcasts &#9679; Workshops</p>
         </div>
         <div className={`flex items-center justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
           <button 

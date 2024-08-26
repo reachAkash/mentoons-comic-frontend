@@ -57,24 +57,9 @@ const WebHome: React.FC = () => {
   ];
 
   const InsideMentoonsVideos: videoData[] = [
-    {
-      id: "1",
-      title: "Career Fraudstar Trailer",
-      thumbnail: "/career.jpg",
-      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4",
-    },
-    {
-      id: "2",
-      title: "Stop Swiping video song",
-      thumbnail: "/swiping.jpg",
-      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4",
-    },
-    {
-      id: "3",
-      title: "Team Celebration",
-      thumbnail: "/life-mentoons.png",
-      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4",
-    },
+    { id: '1', title: "Career Fraudstar's Trailer", thumbnail: '/career.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4" },
+    { id: '2', title: 'Stop Swiping video song', thumbnail: '/swiping.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4" },
+    { id: '3', title: 'Team Celebration', thumbnail: '/life-mentoons.png', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4" },
   ];
 
   useEffect(() => {
@@ -110,7 +95,8 @@ const WebHome: React.FC = () => {
       <Workshops />
       <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <CallToAction />
-      <div className="fixed top-[6rem] right-2 flex flex-col items-center">
+      <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
+
         <button
           onClick={handleMuteToggle}
           className="bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black"

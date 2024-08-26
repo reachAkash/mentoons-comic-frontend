@@ -70,7 +70,7 @@ const Workshops = () => {
   };
 
   const handleImageClick = () => {
-    navigate("/workshops");
+    navigate("/mentoons-workshops");
   };
 
   return (
