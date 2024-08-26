@@ -23,7 +23,6 @@ const WebHome: React.FC = () => {
     return storedMuteState ? JSON.parse(storedMuteState) : false;
   });
   const [audio] = useState(new Audio('/audio.mp3'));
-  const [currentDate, setCurrentDate] = useState<string>(new Date().toLocaleDateString());
 
   const videos: videoData[] = [
     { id: '1', title: 'Olivia', thumbnail: '/olivia.jpg', url: 'https://mentoons-website.s3.ap-northeast-1.amazonaws.com/Flat+Image+Stories+for+Mentoons/Olivia%2C+28+Years%2C+Psychologist(2)/Olivia%2C+28+Years%2C+Psychologist(2).mp4' },
@@ -34,8 +33,8 @@ const WebHome: React.FC = () => {
   ];
 
   const InsideMentoonsVideos: videoData[] = [
-    { id: '1', title: "Career Fraudstar's Trailer", thumbnail: '/career.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4" },
-    { id: '2', title: 'Stop Swiping Lyriics', thumbnail: '/swiping.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4" },
+    { id: '1', title: "Career Fraudstar Trailer", thumbnail: '/career.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4" },
+    { id: '2', title: 'Stop Swiping video song', thumbnail: '/swiping.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4" },
     { id: '3', title: 'Team Celebration', thumbnail: '/life-mentoons.png', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4" },
   ];
 
@@ -43,10 +42,7 @@ const WebHome: React.FC = () => {
     audio.volume = isMuted ? 0 : 1;
   }, [isMuted, audio]);
 
-  useEffect(() => {
-    const date = new Date().toLocaleDateString();
-    setCurrentDate(date);
-  }, []);
+ 
 
   const handleMuteToggle = () => {
     if (audio.paused) {
@@ -65,14 +61,12 @@ const WebHome: React.FC = () => {
     <div className='h-full w-full overflow-hidden'>
       <VideoModal videos={videoType === 'HERO' ? videos : InsideMentoonsVideos} isOpen={modalOpen} onClose={() => setModalOpen(false)} type={videoType} />
       <HeroSection />
-      {/* <HowToUse /> */}
       <ExploreMentoons />
       <MentoonsBenifit />
       <Workshops />
       <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <CallToAction />
       <JoinAcademy />
-      {/* <GoToTop /> */}
 
       <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
         <button
@@ -86,7 +80,6 @@ const WebHome: React.FC = () => {
             <figure className='h-8 lg:h-16 w-8 lg:w-16'><img src='/assets/images/pause.png' className='h-full w-full object-contain' /></figure>
           }
         </button>
-        <span className='mt-2 text-sm text-black'>{currentDate}</span>
       </div>
     </div>
   );

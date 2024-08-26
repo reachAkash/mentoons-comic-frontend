@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { FaEye } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa";
 
 type CampDetails = {
   id: number;
@@ -77,8 +77,15 @@ const Workshops = () => {
     <div className="w-full h-full py-10 relative">
       <Heading heading="Workshops" />
       <div className="h-[3rem]"></div>
-      <div className="h-[10rem] w-[20rem] absolute right-0 top-28 hidden lg:block">
-        <img src={selectedCamp?.CornerImgUrl} alt="Corner" />
+      <div
+        className="h-[10rem] w-[20rem] absolute right-0 top-28 hidden lg:block transition-all duration-500"
+        style={{ opacity: selectedCamp ? 1 : 0 }} 
+      >
+        <img
+          src={selectedCamp?.CornerImgUrl}
+          alt="Corner"
+          className="transition-opacity duration-500"
+        />
       </div>
       <div className="w-4/5 m-auto relative">
         <div className="flex flex-col lg:flex-row mb-10 lg:mb-0 gap-4 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[-4rem]">
@@ -129,7 +136,7 @@ const Workshops = () => {
                     </span>
                   </button>
                   {showDescription && (
-                    <Fade>
+                    <Fade duration={300} delay={100}>
                       <p className="text-lg mt-2 text-center lg:text-left px-5 py-2">
                         {readMore
                           ? selectedCamp.description
@@ -157,7 +164,7 @@ const Workshops = () => {
                     </span>
                   </button>
                   {showAgeGroup && (
-                    <Fade>
+                    <Fade duration={300} delay={100}>
                       <p className="text-lg mt-2 ml-3 text-left">
                         {selectedCamp.ageGroup}
                       </p>
@@ -175,7 +182,7 @@ const Workshops = () => {
                     </span>
                   </button>
                   {showTimetable && (
-                    <Fade>
+                    <Fade duration={300} delay={100}>
                       <p className="text-lg mt-2 ml-3 text-left">
                         {selectedCamp.timetable}
                       </p>

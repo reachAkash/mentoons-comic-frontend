@@ -7,4 +7,8 @@ export const placeholders = [
     "Search for 13-14 years...",
     "Search for Workshops...",
   ];
-  
+  export const date = new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  }).format(new Date());
