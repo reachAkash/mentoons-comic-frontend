@@ -72,7 +72,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/workshops")}
+              onClick={() => navigate("/mentoons-workshops")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Workshops
