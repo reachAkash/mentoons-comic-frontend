@@ -51,6 +51,11 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
       subtitle: 'Founder',
     },
     {
+      imageSrc: '/joice.jpg',
+      title: 'Joice Lincy',
+      subtitle: 'Digital Marketing',
+    },
+    {
       imageSrc: '/team-08.jpg',
       title: 'Dhinesh Kumar.G',
       subtitle: 'Graphic Designer',
@@ -97,7 +102,7 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
               src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
               className="w-full h-full object-cover rounded-xl shadow-custom-complex"
               controls
-              poster="/team.png"
+              poster="/team-men.png"
             />
           </div>
 

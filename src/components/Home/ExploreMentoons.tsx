@@ -54,8 +54,8 @@ const ExploreMentoons: React.FC = () => {
                 {cardsData.map((item, index) => (
                     <Fade
                         key={index}
-                        duration={1000}
-                        delay={index * 200}
+                        duration={400}
+                        delay={index * 100}
                         direction="up"
                     >
                         <div

@@ -5,7 +5,6 @@ import Workshops from '../components/Home/Workshops';
 import VideoModal from '../components/videoModal';
 import InsideMentoons from '../components/Home/InsideMentoons';
 import CallToAction from '../components/Home/CallToAction';
-import JoinAcademy from '@/components/Home/JoinAcademy';
 import ExploreMentoons from '@/components/Home/ExploreMentoons';
 
 type videoData = {
@@ -66,7 +65,6 @@ const WebHome: React.FC = () => {
       <Workshops />
       <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <CallToAction />
-      <JoinAcademy />
 
       <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
         <button
