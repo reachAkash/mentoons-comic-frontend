@@ -31,7 +31,7 @@ const ExploreMentoons: React.FC = () => {
             imgUrl: '/Workshops_.jpg',
             title: 'Workshops',
             description: 'Enhance your skills with interactive workshops. Learn from experts and grow your abilities.',
-            link: '/workshops',
+            link: '/mentoons-workshops',
         },
     ];
 
