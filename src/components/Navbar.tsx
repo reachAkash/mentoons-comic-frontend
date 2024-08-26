@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 import Sidebar, { MiniSidebar } from "./Sidebar";
+import { date } from "@/constant/websiteConstants";
 
 const Navbar: React.FC = () => {
   const [showShadow, setShowShadow] = useState<boolean>(false);
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
       {/* for desktop & big devices */}
       <div
         className={`sticky top-0 ${showShadow && "shadow-xl"
-          } container hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999]`}
+          } hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999] px-5`}
       >
         <ul className="flex items-center justify-between">
           {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
@@ -68,6 +69,11 @@ const Navbar: React.FC = () => {
                 Mentoons Store
               </Link>
             </li>
+            <li className="text-white flex items-center py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm">
+              <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
+                {date}
+              </span>
+            </li> 
           </ul>
           <div className="hidden custom:flex items-center justify-between gap-3 bg-white rounded-full py-3 px-6">
             <Link to="/wishlist">

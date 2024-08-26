@@ -23,7 +23,7 @@ const DropdownMenu = () => {
       </MenubarMenu>
 
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
           Audio Comics
         </MenubarTrigger>
         <MenubarContent>
@@ -80,6 +80,25 @@ const DropdownMenu = () => {
           <MenubarItem>How to draw characters (6 - 12)</MenubarItem>
           <MenubarItem>How to make your own comic (13 - 15)</MenubarItem>
         </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger
+          className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap"
+        >
+          Contact Us
+        </MenubarTrigger>
+        <MenubarContent>
+      <MenubarItem>
+        <a href="tel:+919036033300" className="text-primary hover:text-gray-400 transition-colors duration-300">
+          Call Us : +91 90360 33300
+        </a>
+      </MenubarItem>
+      <MenubarItem>
+        <a href="mailto:www.mentormahesh.com" className="text-primary hover:text-gray-400 transition-colors duration-300">
+          Email Us : www.mentormahesh.com
+        </a>
+      </MenubarItem>
+    </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <div className="invisible">Akash</div>
