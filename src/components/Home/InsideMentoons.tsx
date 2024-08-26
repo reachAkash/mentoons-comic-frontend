@@ -1,12 +1,12 @@
-import React from 'react';
-import Slider from 'react-slick';
-import Heading from '../common/Heading';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import '../../styles/insidementoons.css';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { Fade } from 'react-awesome-reveal';
-import { FaPlay } from 'react-icons/fa6';
+import React from "react";
+import Slider from "react-slick";
+import Heading from "../common/Heading";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../../styles/insidementoons.css";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Fade } from "react-awesome-reveal";
+import { FaPlay } from "react-icons/fa6";
 
 interface SlideData {
   imageSrc: string;
@@ -18,7 +18,10 @@ type HomeProps = {
   setVideoType: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => {
+const InsideMentoons: React.FC<HomeProps> = ({
+  setModalOpen,
+  setVideoType,
+}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -26,8 +29,12 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <MdKeyboardArrowLeft className="slick-prev absolute top-1/2 left-3 transform -translate-y-1/2 text-5xl text-[#333333] rounded-full p-2 shadow-lg cursor-pointer z-30" />,
-    nextArrow: <MdKeyboardArrowRight className="slick-next absolute top-1/2 right-3 transform -translate-y-1/2 text-5xl text-[#333333] rounded-full p-2 shadow-lg cursor-pointer z-30" />,
+    prevArrow: (
+      <MdKeyboardArrowLeft className="slick-prev absolute top-1/2 left-3 transform -translate-y-1/2 text-5xl text-[#333333] rounded-full p-2 shadow-lg cursor-pointer z-30" />
+    ),
+    nextArrow: (
+      <MdKeyboardArrowRight className="slick-next absolute top-1/2 right-3 transform -translate-y-1/2 text-5xl text-[#333333] rounded-full p-2 shadow-lg cursor-pointer z-30" />
+    ),
     responsive: [
       {
         breakpoint: 1024,
@@ -46,44 +53,44 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
 
   const slideData: SlideData[] = [
     {
-      imageSrc: '/team-01.jpg',
-      title: 'Mentor Mahesh',
-      subtitle: 'Founder',
+      imageSrc: "/team-01.jpg",
+      title: "Mentor Mahesh",
+      subtitle: "Founder",
     },
     {
-      imageSrc: '/team-08.jpg',
-      title: 'Dhinesh Kumar.G',
-      subtitle: 'Graphic Designer',
+      imageSrc: "/team-08.jpg",
+      title: "Dhinesh Kumar.G",
+      subtitle: "Graphic Designer",
     },
     {
-      imageSrc: '/team-05.jpg',
-      title: 'Sankar P.Krishan',
-      subtitle: 'Illustrator',
+      imageSrc: "/team-05.jpg",
+      title: "Sankar P.Krishan",
+      subtitle: "Illustrator",
     },
     {
-      imageSrc: '/team-06.jpg',
-      title: 'Ajay',
-      subtitle: 'Video Editor',
+      imageSrc: "/team-06.jpg",
+      title: "Ajay",
+      subtitle: "Video Editor",
     },
     {
-      imageSrc: '/team-07.jpg',
-      title: 'Dhanasekar',
-      subtitle: 'Sketch Artist',
+      imageSrc: "/team-07.jpg",
+      title: "Dhanasekar",
+      subtitle: "Sketch Artist",
     },
     {
-      imageSrc: 'Akash.png',
-      title: 'Akash Gupta',
-      subtitle: 'Fullstack Developer',
+      imageSrc: "Akash.png",
+      title: "Akash Gupta",
+      subtitle: "Fullstack Developer",
     },
     {
-      imageSrc: 'Dheeraj.png',
-      title: 'Dheeraj Sharma',
-      subtitle: 'Fullstack Developer',
+      imageSrc: "Dheeraj.png",
+      title: "Dheeraj Sharma",
+      subtitle: "Fullstack Developer",
     },
     {
-      imageSrc: '/Ankur.png',
-      title: 'Ankur Dutta',
-      subtitle: 'Fullstack Developer',
+      imageSrc: "/Ankur.png",
+      title: "Ankur Dutta",
+      subtitle: "Fullstack Developer",
     },
   ];
 
@@ -102,20 +109,29 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
           </div>
 
           <div className="lg:w-1/2 p-4 lg:mt-[3rem]">
-            <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">Meet Us</h1>
+            <h1 className="text-2xl lg:text-3xl font-extrabold mb-4 text-[#333333]">
+              Meet Us
+            </h1>
             <p className="text-lg lg:text-xl text-[#333333] font-semibold">
-              Mentoons is a result of the creative amalgamation of a diverse team coming together - our founder, talented developers, creative illustrators,
-              skillful graphic designers, adept content writer&apos;s, melodious music producer, and experienced psychologists.
+              Mentoons is a result of the creative amalgamation of a diverse
+              team coming together - our founder, talented developers, creative
+              illustrators, skillful graphic designers, adept content
+              writer&apos;s, melodious music producer, and experienced
+              psychologists.
             </p>
-            <div className='flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10'
+            <div
+              className="flex items-center justify-center lg:justify-start gap-4 cursor-pointer ml-0 lg:ml-12 mt-10"
               onClick={() => {
-                setModalOpen(true)
-                setVideoType('INSIDE_MENTOONS')
-              }}>
-              <button className='playBtn flex items-center justify-center bg-men-blue text-white p-3 rounded-full'>
-                <FaPlay className='shadow-xl' />
+                setModalOpen(true);
+                setVideoType("INSIDE_MENTOONS");
+              }}
+            >
+              <button className="playBtn flex items-center justify-center bg-men-blue text-white p-3 rounded-full">
+                <FaPlay className="shadow-xl" />
               </button>
-              <span className='text-black lg:text-black text-lg sm:text-2xl font-semibold'>Life inside Mentoons</span>
+              <span className="text-black lg:text-black text-lg sm:text-2xl font-semibold">
+                Life inside Mentoons
+              </span>
             </div>
           </div>
         </div>
@@ -129,12 +145,16 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
                   className="w-[15rem] h-[15rem] rounded-full border-8 border-[#ec9600] bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${slide.imageSrc})`,
-                    boxShadow: '6px 6px 0px rgba(103, 102, 102, 0.2)',
+                    boxShadow: "6px 6px 0px rgba(103, 102, 102, 0.2)",
                   }}
                 />
                 <div className="absolute bottom-5 left-1/2 bg-[#ec9600] p-4 rounded-lg shadow-lg text-center">
-                  <h2 className="text-sm lg:text-lg font-semibold text-[#fff] whitespace-nowrap">{slide.title}</h2>
-                  <p className="text-white text-xs lg:text-md whitespace-nowrap">{slide.subtitle}</p>
+                  <h2 className="text-sm lg:text-lg font-semibold text-[#fff] whitespace-nowrap">
+                    {slide.title}
+                  </h2>
+                  <p className="text-white text-xs lg:text-md whitespace-nowrap">
+                    {slide.subtitle}
+                  </p>
                 </div>
               </div>
             </Fade>
@@ -143,6 +163,6 @@ const InsideMentoons: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) => 
       </div>
     </div>
   );
-}
+};
 
 export default InsideMentoons;

@@ -8,7 +8,6 @@ import User3 from "@/assets/imgs/user3.png";
 import { ComicSlider } from "./Sliders";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import cloudImg from "/cloud.png";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -80,12 +79,8 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 2 }}
         className="w-full lg:w-[50%] relative flex items-center justify-center"
       >
-        {/* <img className='h-[74vh] w-[65%] absolute top-0 right-0' src={comic1} alt='comic image' /> */}
         <ComicSlider />
       </motion.div>
-      <div className="absolute left-0 bottom-0 z-20">
-        <img className="w-full" src={cloudImg} alt="cloud image" />
-      </div>
     </motion.div>
   );
 };
