@@ -12,7 +12,7 @@ const CallToAction: React.FC = () => {
                 backgroundAttachment: 'fixed',
             }}
         >
-            <div className="bg-white rounded-2xl max-w-[40rem] max-h-[90rem] lg:max-h-[64rem] w-full lg:w-3/4 ml-auto p-6 md:p-10 shadow-custom-light">
+            <div className="bg-white rounded-2xl max-w-[40rem] max-h-[90rem] lg:max-h-[69rem] w-full lg:w-3/4 ml-auto p-6 md:p-10 shadow-custom-light">
                 <div className="text-center flex flex-col gap-5">
                     <h1 className="text-2xl font-extrabold text-[#ff3c00] md:text-3xl">"Let’s Revive"</h1>
                     <h2 className="text-xl font-bold md:text-2xl">OUR MEET UP GROUP</h2>
