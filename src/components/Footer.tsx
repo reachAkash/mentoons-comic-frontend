@@ -12,6 +12,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
+import MapComponent from "./MapComponent";
 
 const Footer: React.FC = () => {
   const [showEvents, setShowEvents] = useState<boolean>(false);
@@ -256,7 +257,7 @@ const Footer: React.FC = () => {
           </div>
           {/* fourth div */}
           <div className="space-y-2 w-full md:w-fit">
-            <div className="bg-white w-full h-[10rem]">Akash</div>
+            <MapComponent />
             <div className="flex items-center justify-start tracking-wide font-medium text-lg">
               <MdLocationOn />
               Domlur, Bangalore
