@@ -59,12 +59,12 @@ const ExploreMentoons: React.FC = () => {
                         direction="up"
                     >
                         <div
-                            className={flex flex-col lg:flex-row ${index % 2 === 0 ? 'lg:flex-row ' : 'lg:flex-row-reverse lg:text-right'} mb-8}
+                            className={`flex flex-col lg:flex-row ${index % 2 === 0 ? 'lg:flex-row ' : 'lg:flex-row-reverse lg:text-right'} mb-8`}
                         >
                             <div
                                 className="w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
                                 style={{
-                                    backgroundImage: url(${item.imgUrl}),
+                                    backgroundImage: `url(${item.imgUrl})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                     boxShadow: "6px 6px 0px rgba(103, 102, 102, 0.2)",
