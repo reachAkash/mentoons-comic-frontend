@@ -24,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       <SheetTrigger>
         <RxHamburgerMenu className={`${className} text-white text-3xl`} />
       </SheetTrigger>
-      <SheetContent className='bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar'>
+      <SheetContent className="bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar">
         <Search />
       </SheetContent>
     </Sheet>
@@ -42,75 +42,71 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
       </SheetTrigger>
       <SheetContent
         side={"top"}
-        className='bg-[#F0EBE5] z-50 text-center space-y-4 pt-[6rem] pb-[2rem]'
+        className="bg-[#F0EBE5] z-50 text-center space-y-4 pt-[6rem] pb-[2rem]"
       >
-        <ul className=' w-full py-2 space-y-3'>
+        <ul className=" w-full py-2 space-y-3">
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
-            >
-              Home
-            </li>
-          </SheetClose>
-          <SheetClose asChild>
-            <li
-              onClick={() => navigate("/comics-list")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
+              onClick={() => navigate("/mentoons-comics")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Comics
             </li>
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/latest")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
-            >
-              Latest
-            </li>
-          </SheetClose>
-          <SheetClose asChild>
-            <li
               onClick={() => navigate("/comics-list")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Audio Comics
             </li>
           </SheetClose>
           <SheetClose asChild>
             <li
+              onClick={() => navigate("/mentoons-podcast")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
+            >
+              Podcasts
+            </li>
+          </SheetClose>
+          <SheetClose asChild>
+            <li
               onClick={() => navigate("/workshops")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Workshops
             </li>
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/about")}
-              className='hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out'
+              onClick={() => navigate("/contests")}
+              className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Contest
             </li>
           </SheetClose>
         </ul>
-        <div className='w-full flex items-center justify-center gap-4'>
+        <div className="w-full flex items-center justify-center gap-4">
           <SheetClose asChild>
-            <Link to='/wishlist'>
-              <FaBookmark className='text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out' />
+            <Link to="/wishlist">
+              <FaBookmark className="text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out" />
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link to='/cart'>
-              <div className='relative group'>
-                <IoCart className='text-2xl cursor-pointer text-gray-500 group-hover:text-black transition-all duration-300 ease-in-out' />
-                <span className='absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-primary rounded-full px-[6px]'>
+            <Link to="/cart">
+              <div className="relative group">
+                <IoCart className="text-2xl cursor-pointer text-gray-500 group-hover:text-black transition-all duration-300 ease-in-out" />
+                <span className="absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-primary rounded-full px-[6px]">
                   {cartItems.length}
                 </span>
               </div>
             </Link>
           </SheetClose>
-          <CiSearch className='text-2xl' />
+          <SheetClose asChild>
+            <Link to="/search">
+              <CiSearch className="text-2xl" />
+            </Link>
+          </SheetClose>
         </div>
       </SheetContent>
     </Sheet>
