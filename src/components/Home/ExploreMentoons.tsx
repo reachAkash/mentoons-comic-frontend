@@ -17,19 +17,22 @@ const ExploreMentoons: React.FC = () => {
     {
       imgUrl: "/create.jpg",
       title: "Comics",
-      description: "Quick and easy sign-up to access all features.",
+      description:
+        "Dive into a world of vibrant stories and characters. Create, share, and explore unique comics.",
       link: "/mentoons-comics",
     },
     {
       imgUrl: "/plan.jpg",
       title: "Podcasts",
-      description: "Select the subscription that best fits your needs.",
+      description:
+        "Tune into engaging conversations and stories. Discover a variety of podcasts for every interest.",
       link: "/mentoons-podcast",
     },
     {
       imgUrl: "/explore.jpg",
       title: "Workshops",
-      description: "Start exploring all the content and activities available.",
+      description:
+        "Enhance your skills with interactive workshops. Learn from experts and grow your abilities.",
       link: "/workshops",
     },
   ];

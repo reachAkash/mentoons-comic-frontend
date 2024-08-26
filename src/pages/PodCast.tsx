@@ -22,9 +22,6 @@ const PodCast = () => {
 
       <Testimonial />
       {/* <FrequentlyAskeQuestion /> */}
-
-      {/* FOOTER Section */}
-      <Footer />
     </>
   );
 };
