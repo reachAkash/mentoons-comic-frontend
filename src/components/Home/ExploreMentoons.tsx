@@ -1,18 +1,17 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Heading from '../common/Heading';
-import { FaEye } from 'react-icons/fa';
-import { Fade } from 'react-awesome-reveal';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Heading from "../common/Heading";
+import { FaEye } from "react-icons/fa";
 
 type CardData = {
-    imgUrl: string;
-    title: string;
-    description: string;
-    link: string;
+  imgUrl: string;
+  title: string;
+  description: string;
+  link: string;
 };
 
 const ExploreMentoons: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
     const cardsData: CardData[] = [
         {
@@ -41,15 +40,15 @@ const ExploreMentoons: React.FC = () => {
         }
     };
 
-    return (
-        <div className="h-full w-full py-16 bg-light-blue relative">
-            <Heading heading="Explore Mentoons" />
-            <div className="h-[6rem] w-[6rem] absolute top-[2rem] left-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:left-[15rem]">
-                <img src="/handprints.png" alt="icons" className="h-full w-full" />
-            </div>
-            <div className="h-[6rem] w-[6rem] absolute top-[2rem] right-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:right-[15rem]">
-                <img src="/handprints2.png" alt="icons" className="h-full w-full" />
-            </div>
+  return (
+    <div className="h-full w-full py-16 bg-light-blue relative">
+      <Heading heading="Explore Mentoons" />
+      <div className="h-[6rem] w-[6rem] absolute top-[2rem] left-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:left-[15rem]">
+        <img src="/handprints.png" alt="icons" className="h-full w-full" />
+      </div>
+      <div className="h-[6rem] w-[6rem] absolute top-[2rem] right-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:right-[15rem]">
+        <img src="/handprints2.png" alt="icons" className="h-full w-full" />
+      </div>
             <div className="w-4/5 mx-auto flex flex-col items-center">
                 {cardsData.map((item, index) => (
                     <Fade

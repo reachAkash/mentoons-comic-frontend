@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import CategoryCard from "@/components/shared/Categories/CategoryCard";
 import HeroSectionPodcast from "@/components/shared/HeroSectionPodcast";
 import HomeSection from "@/components/shared/hompage/HomeSection";
@@ -22,9 +21,6 @@ const PodCast = () => {
 
       <Testimonial />
       {/* <FrequentlyAskeQuestion /> */}
-
-      {/* FOOTER Section */}
-      <Footer />
     </>
   );
 };
