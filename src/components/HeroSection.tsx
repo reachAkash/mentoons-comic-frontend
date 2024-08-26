@@ -8,7 +8,6 @@ import User3 from "@/assets/imgs/user3.png";
 import { ComicSlider } from "./Sliders";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import cloudImg from "/cloud.png";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
