@@ -65,7 +65,6 @@ const WebHome: React.FC = () => {
       <Workshops />
       <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
       <CallToAction />
-
       <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
         <button
           onClick={handleMuteToggle}

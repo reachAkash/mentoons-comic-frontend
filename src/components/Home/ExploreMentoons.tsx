@@ -16,27 +16,27 @@ const ExploreMentoons: React.FC = () => {
 
     const cardsData: CardData[] = [
         {
-            imgUrl: '/create.jpg',
+            imgUrl: '/Comics_.jpg',
             title: 'Comics',
-            description: 'Quick and easy sign-up to access all features.',
+            description: 'Dive into a world of vibrant stories and characters. Create, share, and explore unique comics.',
             link: '/mentoons-comics',
         },
         {
-            imgUrl: '/plan.jpg',
+            imgUrl: '/Podcast_.jpg',
             title: 'Podcasts',
-            description: 'Select the subscription that best fits your needs.',
+            description: 'Tune into engaging conversations and stories. Discover a variety of podcasts for every interest.',
             link: '/mentoons-podcast',
         },
         {
-            imgUrl: '/explore.jpg',
+            imgUrl: '/Workshops_.jpg',
             title: 'Workshops',
-            description: 'Start exploring all the content and activities available.',
+            description: 'Enhance your skills with interactive workshops. Learn from experts and grow your abilities.',
             link: '/workshops',
         },
     ];
 
     const handleImageClick = (link: string) => {
-        if (link) {                                               
+        if (link) {
             navigate(link);
         }
     };
@@ -50,7 +50,7 @@ const ExploreMentoons: React.FC = () => {
             <div className="h-[6rem] w-[6rem] absolute top-[2rem] right-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:right-[15rem]">
                 <img src="/handprints2.png" alt="icons" className="h-full w-full" />
             </div>
-            <div className='w-4/5 m-auto'>
+            <div className="w-4/5 mx-auto flex flex-col items-center">
                 {cardsData.map((item, index) => (
                     <Fade
                         key={index}
@@ -59,7 +59,7 @@ const ExploreMentoons: React.FC = () => {
                         direction="up"
                     >
                         <div
-                            className={`flex flex-col lg:flex-row ${index % 2 === 0 ? 'lg:flex-row ' : 'lg:flex-row-reverse lg:text-right'} mb-8`}
+                            className={`flex flex-col items-center text-center lg:flex-row ${index % 2 === 0 ? 'lg:text-left' : 'lg:flex-row-reverse lg:text-right'} mb-8`}
                         >
                             <div
                                 className="w-[15rem] h-[15rem] rounded-full overflow-hidden border-4 border-white relative cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
@@ -74,7 +74,7 @@ const ExploreMentoons: React.FC = () => {
                                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 h-[4rem] flex items-center justify-center transition-all duration-300 ease-in-out">
                                     <span className="text-white text-lg font-bold flex items-center gap-3">
                                         <FaEye />
-                                         View {item.title}
+                                        View {item.title}
                                     </span>
                                 </div>
                             </div>
