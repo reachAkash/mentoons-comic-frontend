@@ -20,6 +20,7 @@ import Plans from "./components/common/Plans";
 import Footer from "./components/Footer";
 import AudioComicPage from "./pages/AudioComicPage";
 
+
 function App() {
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic

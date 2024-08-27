@@ -139,10 +139,8 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="w-full">
-              <div
-                onClick={() => navigate("/faq")}
-                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-              >
+
+              <div onClick={()=>navigate('/faq')} className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
                 FAQ's
               </div>
             </div>

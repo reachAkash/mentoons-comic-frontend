@@ -14,23 +14,23 @@ const HowToUse: React.FC = () => {
   const cardsData: CardData[] = [
     {
       imgUrl: '/create.jpg',
-      title: 'Create an Account',
-      description: 'Quick and easy sign-up to access all features.',
+      title: 'Join Us',
+      description: 'Sign up and browse through our interactive sessions, books, games, and videos.',
       btnTxt: 'Sign Up',
       link: '#',
     },
     {
       imgUrl: '/plan.jpg',
-      title: 'Choose Your Plan',
+      title: 'Engage',
       description:
-        'Select the subscription that best fits your needs.',
+        'Participate in workshops that teach important life skills, from making friends to enhancing self-awareness.',
       btnTxt: 'Check plans',
       link: '/website-plans',
     },
     {
       imgUrl: '/explore.jpg',
-      title: 'Explore and Enjoy',
-      description: 'Start exploring all the content and activities available.',
+      title: 'Transform',
+      description: " Watch your child's behaviors and social interactions improve, reducing their screen dependency over time." ,
       btnTxt: 'Check F.A.Q',
       link: '/faq',
     },

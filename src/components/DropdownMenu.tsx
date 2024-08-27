@@ -94,8 +94,8 @@ const DropdownMenu = () => {
             <a href="tel:+919036033300">Call Us : +91 90360 33300</a>
           </MenubarItem>
           <MenubarItem>
-            <a href="mailto:www.mentormahesh.com">
-              Email Us : www.mentormahesh.com
+            <a href="mailto: mahesh@activelisteners.in">
+              Email Us : mahesh@activelisteners.in
             </a>
           </MenubarItem>
         </MenubarContent>

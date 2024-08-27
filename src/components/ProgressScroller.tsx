@@ -48,7 +48,7 @@ const ProgressScroller: React.FC = () => {
     <>
       {isVisible && (
         <div
-          className="w-fit rounded-full fixed right-0 p-4 cursor-pointer z-[9999]"
+          className="w-fit rounded-full fixed right-0 p-1 cursor-pointer"
           style={{
             top: `${scrollPercentage}%`,
             transform: "translateY(-50%)", // Center the image vertically at each percentage
@@ -56,11 +56,13 @@ const ProgressScroller: React.FC = () => {
           }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
+          <figure className="h-14 w-14 lg:h-24 lg:w-24">
           <img
-            className="w-7 lg:w-10"
+            className="w-full h-full object-contain"
             src={isScrollingDown ? PencilDown : PencilUp} // Switch between pencil down/up
             alt={isScrollingDown ? "pencil down" : "pencil up"}
           />
+          </figure>
         </div>
       )}
     </>
