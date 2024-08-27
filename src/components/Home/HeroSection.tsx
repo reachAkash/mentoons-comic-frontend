@@ -24,33 +24,34 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative bg-white dark:bg-gray-900 h-full">
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full lg:h-screen bg-[#e9dc78]">
         {!isVideoPlaying ? (
-          <div className="relative w-full h-full">
-            <figure className='h-1/2 w-full'>
+          <div className="relative w-full h-full flex justify-center items-center">
+            <figure className="w-full h-full relative">
               <img
-                src="/caro3.png"
+                src="/hero-thumb.png"
                 alt="Video Thumbnail"
                 className="w-full h-full object-contain"
               />
+              <button
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10"
+                onClick={handlePlayClick}
+              >
+                <FaPlay className="text-white text-6xl" />
+              </button>
+              <div className="absolute inset-0 bg-black bg-opacity-50 z-5" />
+              <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-black z-5" />
             </figure>
-            <button
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10"
-              onClick={handlePlayClick}
-            >
-              <FaPlay className="text-white text-6xl" />
-            </button>
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-5" />
           </div>
         ) : (
           <div className="relative w-full h-full lg:h-screen">
             <video
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
               controls
               autoPlay
             >
               <source
-                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/What+is+Mentoons.mp4"
+                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Mentor+genie+animation.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -60,22 +61,33 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className={`bg-[#000000] py-5 lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${isVideoPlaying ? 'flex-col-reverse' : 'flex-col-reverse lg:flex-row'} lg:bg-transparent justify-between lg:w-full`}>
-        <div className={`text-left w-full p-8 flex flex-col gap-4 font-montserrat lg:items-start ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
+        <div className={`text-left w-full lg:w-[40%] p-8 flex flex-col gap-4 font-montserrat ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
           <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Carefully crafted by Psychologists</p>
-          <h2 className="text-white text-2xl lg:text-3xl lg:font-bold">
-             Dive into a world where cartoons<br /> and stories pave the way for<br /> learning and growth.
+          <p className="text-[#fff] text-2xl lg:text-3xl lg:font-bold">
+            <span className="text-primary animate-glow">Comics</span> &#9679; <span className="text-primary animate-glow">Podcasts</span> &#9679; <span className="text-primary animate-glow">Workshops</span>
+          </p>
+          <h2 className="text-white text-md lg:text-xl lg:font-bold">
+            Engaging Mentoring for Your Child, Made Fun and Effective. Give your child the gift of growth with Mentoons. A unique platform that combines enriching mentorship with the captivating power of cartoons.
           </h2>
-          <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Comics &#9679; Podcasts &#9679; Workshops</p>
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <span className="text-white text-lg lg:text-2xl whitespace-nowrap font-semibold">Start today and see the difference.</span>
+            <button
+              type="button"
+              className="whitespace-nowrap text-white bg-primary hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900"
+            >
+              Join Now
+            </button>
+          </div>
         </div>
         <div className={`flex items-center justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
-          <button 
+          <button
             className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
             onClick={openModal}
           >
             <BsArrowsFullscreen className="text-white text-3xl" />
             <span className="text-white text-sm">Cinema Mode</span>
           </button>
-          <button 
+          <button
             className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
             onClick={(e) => e.stopPropagation()}
           >
@@ -94,14 +106,13 @@ const HeroSection: React.FC = () => {
               autoPlay
             >
               <source
-                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/What+is+Mentoons.mp4"
+                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Mentor+genie+animation.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
             <button
-              className="absolute top-[8rem] lg:top-[6rem] left-4 text-white lg:text-black
-               text-2xl z-50"
+              className="absolute top-[2rem] lg:top-[6rem] left-4 text-white lg:text-black text-2xl z-50"
               onClick={closeModal}
             >
               <FaArrowLeft />
