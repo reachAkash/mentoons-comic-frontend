@@ -4,7 +4,7 @@ import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
 import GroupImg4 from "@/assets/imgs/groupImg4.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { ImLinkedin } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -15,6 +15,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate()
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
   const [showInside, setShowInside] = useState<boolean>(false);
@@ -137,7 +138,7 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="w-full">
-              <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+              <div onClick={()=>navigate('/faq')} className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
                 FAQ's
               </div>
             </div>

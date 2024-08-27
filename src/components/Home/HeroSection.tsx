@@ -29,9 +29,9 @@ const HeroSection: React.FC = () => {
           <div className="relative w-full h-full flex justify-center items-center">
             <figure className="w-full h-full relative">
               <img
-                src="/hero-thumb.png"
+                src="/hero-thumb3.png"
                 alt="Video Thumbnail"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
               <button
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10"
@@ -39,8 +39,7 @@ const HeroSection: React.FC = () => {
               >
                 <FaPlay className="text-white text-6xl" />
               </button>
-              <div className="absolute inset-0 bg-black bg-opacity-50 z-5" />
-              <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-black z-5" />
+              <div className="absolute inset-0 bg-black bg-opacity-20 z-5  lg:block" />
             </figure>
           </div>
         ) : (
@@ -60,8 +59,8 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      <div className={`bg-[#000000] py-5 lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${isVideoPlaying ? 'flex-col-reverse' : 'flex-col-reverse lg:flex-row'} lg:bg-transparent justify-between lg:w-full`}>
-        <div className={`text-left w-full lg:w-[40%] p-8 flex flex-col gap-4 font-montserrat ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
+      <div className={`bg-[#000000] lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${isVideoPlaying ? 'flex-col-reverse' : 'flex-col-reverse lg:flex-row'} lg:bg-transparent justify-between lg:w-full lg:relative`}>
+        <div className={`lg:hidden text-left w-full lg:w-[40%] p-8 flex flex-col gap-4 font-montserrat ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
           <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Carefully crafted by Psychologists</p>
           <p className="text-[#fff] text-2xl lg:text-3xl lg:font-bold">
             <span className="text-primary animate-glow">Comics</span> &#9679; <span className="text-primary animate-glow">Podcasts</span> &#9679; <span className="text-primary animate-glow">Workshops</span>
@@ -79,7 +78,7 @@ const HeroSection: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className={`flex items-center justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
+        <div className={`flex items-center justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'} lg:absolute lg:bottom-32 right-0`}>
           <button
             className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
             onClick={openModal}
