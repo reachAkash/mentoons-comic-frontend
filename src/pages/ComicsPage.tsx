@@ -34,7 +34,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
 
   return (
     <div className="container py-10 space-y-8">
-      <div className="space-y-3">
+      <div className="space-y-7">
         <div className="flex items-center justify-between">
           {/* <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-50 shadow-sm rounded-md  ">
           <div
@@ -65,24 +65,40 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
           {/* <div className="border-2 border-green-500 text-gray-600 bg-green-200 rounded-md px-4 py-2 font-semibold">
           Audio Comics
         </div> */}
-          <div className="border-2 border-green-500 text-gray-600 bg-green-200 rounded-md px-4 py-2 font-semibold">
-            {page}
+          <div className="text-3xl text-red-500 lineBefore uppercase">
+            {page}{" "}
           </div>
           <FilterComics />
         </div>
         {page == "Audio Comics" ? (
-          <div className="font-medium text-3xl">
-            Experience the magic of storytelling like never before! Our audio
-            comics bring illustrations to life with professional voice acting,
-            sound effects, and music, creating an immersive experience that
-            enhances listening skills and imagination.
+          <div className="font-medium text-3xl space-y-3">
+            <h1 className="font-extrabold text-3xl lg:text-7xl">
+              Experience the magic of{" "}
+              <span className="text-primary block tracking-widest">
+                storytelling{" "}
+              </span>{" "}
+              like never before!
+            </h1>
+            <p>
+              Our audio comics bring illustrations to life with professional
+              voice acting, sound effects, and music, creating an immersive
+              experience that enhances listening skills and imagination.
+            </p>
           </div>
         ) : (
           <div className="font-medium text-3xl">
-            Dive into colorful worlds and exciting stories that teach valuable
-            lessons while entertaining young readers. Our diverse range of
-            comics covers various subjects, from history and science to social
-            skills and personal growth.
+            <h1 className="font-extrabold text-3xl lg:text-7xl">
+              Dive into colorful worlds and{" "}
+              <span className="text-primary block tracking-widest">
+                exciting stories{" "}
+              </span>{" "}
+              that teach valuable lessons
+            </h1>
+            <p>
+              while entertaining young readers. Our diverse range of comics
+              covers various subjects, from history and science to social skills
+              and personal growth.
+            </p>
           </div>
         )}
       </div>

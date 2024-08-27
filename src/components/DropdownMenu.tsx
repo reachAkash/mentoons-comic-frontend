@@ -34,21 +34,21 @@ const DropdownMenu = () => {
                   navigate("/mentoons-comics/audio-comics?filter=groupSmall")
                 }
               >
-                6 - 12
+                Age 6 - 12
               </MenubarItem>
               <MenubarItem
                 onClick={() =>
                   navigate("/mentoons-comics/audio-comics?filter=groupMedium")
                 }
               >
-                13 - 19
+                Age 13 - 19
               </MenubarItem>
               <MenubarItem
                 onClick={() =>
                   navigate("/mentoons-comics/audio-comics?filter=groupLarge")
                 }
               >
-                20 +{" "}
+                Age 20 +{" "}
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
@@ -71,17 +71,17 @@ const DropdownMenu = () => {
           <MenubarItem
             onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
           >
-            Buddy Camp (6 - 12)
+            Buddy Camp (Age 6 - 12)
           </MenubarItem>
           <MenubarItem
             onClick={() => navigate("/mentoons-workshops?workshop=teen")}
           >
-            Teen Camp (13 - 15)
+            Teen Camp (Age 13 - 15)
           </MenubarItem>
           <MenubarItem
             onClick={() => navigate("/mentoons-workshops?workshop=family")}
           >
-            Family Camp (20+)
+            Family Camp (Age 20+)
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>

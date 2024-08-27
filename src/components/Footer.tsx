@@ -13,6 +13,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
+import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -138,7 +139,10 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="w-full">
-              <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+              <div
+                onClick={() => navigate("/faq")}
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+              >
                 FAQ's
               </div>
             </div>
@@ -202,12 +206,16 @@ const Footer: React.FC = () => {
           {/* third div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="">
-              <div
-                onClick={() => setShowInside((prev) => !prev)}
-                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-              >
-                Inside Mentoons
-              </div>
+              <Link to="#insideMentoons">
+                <div
+                  onClick={() => {
+                    setShowInside((prev) => !prev);
+                  }}
+                  className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+                >
+                  Inside Mentoons
+                </div>
+              </Link>
               {/* children div */}
               <div
                 className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
@@ -219,34 +227,98 @@ const Footer: React.FC = () => {
                   visibility: showInside ? "hidden" : "visible",
                 }}
               >
-                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg1}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg2}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg3}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg4}
-                    alt="group image 1"
-                  />
-                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg1}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg1}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg2}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg2}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg3}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg3}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg4}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg4}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
             <div

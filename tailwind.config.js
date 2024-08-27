@@ -31,8 +31,8 @@ module.exports = {
       "3xl": "1920px",
     },
     extend: {
-      fontFamily:{
-        montserrat:'Montserrat'
+      fontFamily: {
+        montserrat: "Montserrat",
       },
       colors: {
         "men-blue": "#003366",
@@ -83,6 +83,9 @@ module.exports = {
         "roundedSlider-shadow": "0 0 7px #666",
         "custom-complex":
           "0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      },
+      fontFamily: {
+        comic: " Comic Neue, cursive",
       },
       borderRadius: {
         lg: "var(--radius)",

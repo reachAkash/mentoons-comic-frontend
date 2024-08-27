@@ -114,7 +114,7 @@ const AudioComicPage: React.FC = () => {
     const key = setTimeout(() => {
       handleShowPurchase();
       handleCheckPurchased();
-    }, 3000);
+    }, 30000);
     return () => {
       clearTimeout(key);
     };
