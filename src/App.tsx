@@ -19,7 +19,6 @@ import WebHome from "./pages/WebHome";
 import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
 import Footer from "./components/Footer";
-import SlidingText from "./components/SlidingText";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -44,7 +43,6 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/website-plans" element={<Plans />} />
       </Routes>
-      <SlidingText />
       <Footer />
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
