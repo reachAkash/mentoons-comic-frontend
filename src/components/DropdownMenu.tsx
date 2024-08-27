@@ -82,23 +82,19 @@ const DropdownMenu = () => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger
-          className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap"
-        >
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
           Contact Us
         </MenubarTrigger>
         <MenubarContent>
-      <MenubarItem>
-        <a href="tel:+919036033300" className="text-primary hover:text-gray-400 transition-colors duration-300">
-          Call Us : +91 90360 33300
-        </a>
-      </MenubarItem>
-      <MenubarItem>
-        <a href="mailto:www.mentormahesh.com" className="text-primary hover:text-gray-400 transition-colors duration-300">
-          Email Us : www.mentormahesh.com
-        </a>
-      </MenubarItem>
-    </MenubarContent>
+          <MenubarItem>
+            <a href="tel:+919036033300">Call Us : +91 90360 33300</a>
+          </MenubarItem>
+          <MenubarItem>
+            <a href="mailto:www.mentormahesh.com">
+              Email Us : www.mentormahesh.com
+            </a>
+          </MenubarItem>
+        </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <div className="invisible">Akash</div>

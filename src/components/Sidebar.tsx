@@ -13,6 +13,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Search from "./Search";
+import { date } from "@/constant/websiteConstants";
 
 interface SidebarProps {
   className: string;
@@ -71,7 +72,7 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
           </SheetClose>
           <SheetClose asChild>
             <li
-              onClick={() => navigate("/workshops")}
+              onClick={() => navigate("/mentoons-workshops")}
               className="hover:text-red-500 uppercase cursor-pointer font-semibold text-gray-500 transition-all duration-300 ease-in-out"
             >
               Workshops
@@ -85,6 +86,11 @@ export const MiniSidebar: React.FC<SidebarProps> = ({ className }) => {
               Contest
             </li>
           </SheetClose>
+          <li className="text-white flex items-center justify-center rounded-sm">
+            <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
+              {date}
+            </span>
+          </li>
         </ul>
         <div className="w-full flex items-center justify-center gap-4">
           <SheetClose asChild>
