@@ -21,7 +21,6 @@ const DropdownMenu = () => {
           </MenubarTrigger>
         </Link>
       </MenubarMenu>
-
       <MenubarMenu>
         <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
           Audio Comics
@@ -31,54 +30,59 @@ const DropdownMenu = () => {
             <MenubarSubTrigger>Age Groups</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupSmall")}
+                onClick={() =>
+                  navigate("/mentoons-comics/audio-comics?filter=groupSmall")
+                }
               >
-                6 - 12
+                Age 6 - 12
               </MenubarItem>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupMedium")}
+                onClick={() =>
+                  navigate("/mentoons-comics/audio-comics?filter=groupMedium")
+                }
               >
-                13 - 19
+                Age 13 - 19
               </MenubarItem>
               <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupLarge")}
+                onClick={() =>
+                  navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+                }
               >
-                20 +{" "}
+                Age 20 +{" "}
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSub>
-            <MenubarSubTrigger>Elders</MenubarSubTrigger>
-            <MenubarSubContent>
-              <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupXLarge")}
-              >
-                Parents
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupXLarge")}
-              >
-                Guardians
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => navigate("/comics-list?filter=groupXLarge")}
-              >
-                Carers
-              </MenubarItem>
-            </MenubarSubContent>
+            <MenubarItem
+              onClick={() =>
+                navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+              }
+            >
+              Family
+            </MenubarItem>
           </MenubarSub>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger
-          onClick={() => navigate("/mentoons-workshops")}
-          className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base"
-        >
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
           Workshops
         </MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>How to draw characters (6 - 12)</MenubarItem>
-          <MenubarItem>How to make your own comic (13 - 15)</MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+          >
+            Buddy Camp (Age 6 - 12)
+          </MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+          >
+            Teen Camp (Age 13 - 15)
+          </MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=family")}
+          >
+            Family Camp (Age 20+)
+          </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>

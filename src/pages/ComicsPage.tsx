@@ -4,21 +4,16 @@ import {
   updateSelectedFilterReducer,
 } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import FilterComics from "../components/FilterComics";
-import { cn } from "@/lib/utils";
-import { useQuery } from "./AudioComicPage";
 
-const ComicsPage: React.FC = () => {
+const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const queryParams = useQuery();
-  const currentComicFormat = queryParams.get("comic");
-  const [activeComic, setActiveComic] = useState<string>("Audio Comics");
   const comicState = useSelector((store: RootState) => store.comics);
   const comicsData = comicState.comics;
   const selectedFilter = comicState.selectedFilter;
@@ -26,6 +21,8 @@ const ComicsPage: React.FC = () => {
     return item.category == selectedFilter;
   });
   const comicsToShow = selectedFilter ? filteredComics : comicsData;
+
+  console.log(page);
 
   const addToCart = (image: string) => {
     const item = comicsData?.find((comic: Comic) => {
@@ -35,25 +32,11 @@ const ComicsPage: React.FC = () => {
     dispatch(addToCartReducer(item));
   };
 
-  const handleChangeComic = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.currentTarget.innerText == activeComic) return;
-    setActiveComic(e.currentTarget.innerText);
-  };
-
-  const updateCurrentComicFormat = () => {
-    if (currentComicFormat) {
-      setActiveComic(currentComicFormat);
-    }
-  };
-
-  useEffect(() => {
-    updateCurrentComicFormat();
-  }, [currentComicFormat]);
-
   return (
     <div className="container py-10 space-y-8">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-50 shadow-sm rounded-md  ">
+      <div className="space-y-7">
+        <div className="flex items-center justify-between">
+          {/* <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-50 shadow-sm rounded-md  ">
           <div
             onClick={(e: React.MouseEvent<HTMLDivElement>) =>
               handleChangeComic(e)
@@ -78,8 +61,46 @@ const ComicsPage: React.FC = () => {
           >
             Comics
           </div>
+        </div> */}
+          {/* <div className="border-2 border-green-500 text-gray-600 bg-green-200 rounded-md px-4 py-2 font-semibold">
+          Audio Comics
+        </div> */}
+          <div className="text-3xl text-red-500 lineBefore uppercase">
+            {page}{" "}
+          </div>
+          <FilterComics />
         </div>
-        <FilterComics />
+        {page == "Audio Comics" ? (
+          <div className="font-medium text-3xl space-y-3">
+            <h1 className="font-extrabold text-3xl lg:text-7xl">
+              Experience the magic of{" "}
+              <span className="text-primary block tracking-widest">
+                storytelling{" "}
+              </span>{" "}
+              like never before!
+            </h1>
+            <p>
+              Our audio comics bring illustrations to life with professional
+              voice acting, sound effects, and music, creating an immersive
+              experience that enhances listening skills and imagination.
+            </p>
+          </div>
+        ) : (
+          <div className="font-medium text-3xl">
+            <h1 className="font-extrabold text-3xl lg:text-7xl">
+              Dive into colorful worlds and{" "}
+              <span className="text-primary block tracking-widest">
+                exciting stories{" "}
+              </span>{" "}
+              that teach valuable lessons
+            </h1>
+            <p>
+              while entertaining young readers. Our diverse range of comics
+              covers various subjects, from history and science to social skills
+              and personal growth.
+            </p>
+          </div>
+        )}
       </div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {comicsToShow.length > 0 ? (
@@ -91,7 +112,9 @@ const ComicsPage: React.FC = () => {
               >
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
+                    onClick={() =>
+                      navigate(`/mentoons-comics/audio-comics/${item.name}`)
+                    }
                     className="w-full h-[23rem] lg:h-[16rem] rounded-2xl group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
                     src={item?.thumbnail}
                     alt="comic image"

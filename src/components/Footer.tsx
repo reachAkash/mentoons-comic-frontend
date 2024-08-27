@@ -13,9 +13,10 @@ import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
+import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 
 const Footer: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
   const [showInside, setShowInside] = useState<boolean>(false);
@@ -49,7 +50,7 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
-      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5 pb-10">
+      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
           <div>
@@ -98,7 +99,7 @@ const Footer: React.FC = () => {
                 className={`transition-all ease-in-out duration-500 overflow-hidden ${
                   showEvents
                     ? "max-h-0 opacity-0"
-                    : "max-h-[500px] opacity-100 mt-2"
+                    : "max-h-[500px] opacity-100 mt-2 space-y-2"
                 }`}
                 style={{
                   visibility: showEvents ? "hidden" : "visible",
@@ -138,6 +139,7 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="w-full">
+
               <div onClick={()=>navigate('/faq')} className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
                 FAQ's
               </div>
@@ -156,44 +158,62 @@ const Footer: React.FC = () => {
               className={`transition-all ease-in-out duration-500 flex items-center overflow-hidden ${
                 showWorkshop
                   ? "max-h-0 opacity-0"
-                  : "max-h-[500px] opacity-100 mt-2"
+                  : "max-h-[500px] opacity-100 mt-2 space-x-4"
               }`}
               style={{
                 visibility: showWorkshop ? "hidden" : "visible",
               }}
             >
-              <div className="">
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
                   className="w-20 rounded-full"
                   src="/Buddy camp.png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Buddy Camp
+                </div>
               </div>
-              <div>
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() => navigate("/mentoons-workshops?workshop=teen")}
                   className="w-20 rounded-full"
                   src="/Teen camp .png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Teen Camp
+                </div>
               </div>
-              <div>
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() =>
+                    navigate("/mentoons-workshops?workshop=family")
+                  }
                   className="w-20 rounded-full"
                   src="/Family camp.png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Family Camp
+                </div>
               </div>
             </div>
           </div>
           {/* third div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="">
-              <div
-                onClick={() => setShowInside((prev) => !prev)}
-                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-              >
-                Inside Mentoons
-              </div>
+              <Link to="#insideMentoons">
+                <div
+                  onClick={() => {
+                    setShowInside((prev) => !prev);
+                  }}
+                  className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+                >
+                  Inside Mentoons
+                </div>
+              </Link>
               {/* children div */}
               <div
                 className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
@@ -205,34 +225,98 @@ const Footer: React.FC = () => {
                   visibility: showInside ? "hidden" : "visible",
                 }}
               >
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg1}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg2}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg3}
-                    alt="group image 1"
-                  />
-                </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
-                  <img
-                    className="w-12 rounded-full"
-                    src={GroupImg4}
-                    alt="group image 1"
-                  />
-                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg1}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg1}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg2}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg2}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg3}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg3}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                      <img
+                        className="w-12 rounded-full"
+                        src={GroupImg4}
+                        alt="group image 1"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
+                    <div className="flex flex-col items-center justify-center px-4 py-4">
+                      <img
+                        className="w-full rounded-md md:w-[80%]"
+                        src={GroupImg4}
+                        alt="group image 1"
+                      />
+                      <div className="font-semibold text-black text-2xl">
+                        Independence Day
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
             <div
@@ -252,7 +336,16 @@ const Footer: React.FC = () => {
               }}
             >
               {comicData?.map((item: string) => {
-                return <div className="font-semibold text-lg">- {item}</div>;
+                return (
+                  <div
+                    onClick={() =>
+                      navigate("/mentoons-comics/audio-comics/" + item)
+                    }
+                    className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
+                  >
+                    - {item}
+                  </div>
+                );
               })}
             </div>
           </div>

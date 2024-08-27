@@ -11,13 +11,14 @@ import { RootState } from "@/redux/store";
 import { Comic } from "@/redux/comicSlice";
 import PurchaseDialog from "../components/PurchaseDialog";
 import { toast } from "sonner";
+import { useParams } from "react-router-dom";
 
 export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
 const AudioComicPage: React.FC = () => {
-  const data = useQuery();
+  const { comic } = useParams();
   const [showPurchaseDialog, setShowPurchaseDialog] = useState<boolean>(false);
   const navigate = useNavigate();
   const comicData = useSelector((store: RootState) => store.comics.comics);
@@ -26,7 +27,6 @@ const AudioComicPage: React.FC = () => {
   const [factNm, setFactNm] = useState<number>(0);
   const [input, setInput] = useState<string>("");
   const videoRef = useRef<any>();
-  const comicName = data.get("comic");
   const [hasPurchased, setHasPurchased] = useState<boolean>(false);
   const funFacts: string[] = [
     "A group of flamingos is called a 'flamboyance.'",
@@ -61,8 +61,8 @@ const AudioComicPage: React.FC = () => {
   };
 
   const handleComic = (name: string) => {
-    if (name === comicName) return;
-    navigate("/audio-comic?comic=" + name);
+    if (name === comic) return;
+    navigate("/mentoons-comics/audio-comics/" + name);
   };
 
   const handleRandomFact = () => {
@@ -80,7 +80,7 @@ const AudioComicPage: React.FC = () => {
 
   const handleFindComic = () => {
     const data = comicData?.find((item: Comic) => {
-      return item.name == comicName;
+      return item.name == comic;
     });
     setCurrentComic(data);
   };
@@ -108,17 +108,17 @@ const AudioComicPage: React.FC = () => {
   useEffect(() => {
     handleRandomFact();
     handleFindComic();
-  }, [comicName]);
+  }, [comic]);
 
   useEffect(() => {
     const key = setTimeout(() => {
       handleShowPurchase();
       handleCheckPurchased();
-    }, 10000);
+    }, 30000);
     return () => {
       clearTimeout(key);
     };
-  }, [comicName]);
+  }, [comic]);
 
   useEffect(() => {
     handleCheckPurchased();
@@ -145,7 +145,7 @@ const AudioComicPage: React.FC = () => {
                 Audio Comic
               </div>
               <div className="text-3xl font-semibold tracking-wide">
-                {comicName}
+                {comic}
               </div>
               <div
                 onClick={handleShare}
