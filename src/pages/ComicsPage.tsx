@@ -96,7 +96,9 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
               >
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
+                    onClick={() =>
+                      navigate(`/mentoons-comics/audio-comics/${item.name}`)
+                    }
                     className="w-full h-[23rem] lg:h-[16rem] rounded-2xl group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
                     src={item?.thumbnail}
                     alt="comic image"

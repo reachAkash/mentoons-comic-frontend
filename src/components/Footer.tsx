@@ -4,7 +4,7 @@ import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
 import GroupImg4 from "@/assets/imgs/groupImg4.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { ImLinkedin } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -15,6 +15,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
   const [showInside, setShowInside] = useState<boolean>(false);
@@ -48,7 +49,7 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
-      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5 pb-10">
+      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
           <div>
@@ -97,7 +98,7 @@ const Footer: React.FC = () => {
                 className={`transition-all ease-in-out duration-500 overflow-hidden ${
                   showEvents
                     ? "max-h-0 opacity-0"
-                    : "max-h-[500px] opacity-100 mt-2"
+                    : "max-h-[500px] opacity-100 mt-2 space-y-2"
                 }`}
                 style={{
                   visibility: showEvents ? "hidden" : "visible",
@@ -155,32 +156,46 @@ const Footer: React.FC = () => {
               className={`transition-all ease-in-out duration-500 flex items-center overflow-hidden ${
                 showWorkshop
                   ? "max-h-0 opacity-0"
-                  : "max-h-[500px] opacity-100 mt-2"
+                  : "max-h-[500px] opacity-100 mt-2 space-x-4"
               }`}
               style={{
                 visibility: showWorkshop ? "hidden" : "visible",
               }}
             >
-              <div className="">
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
                   className="w-20 rounded-full"
                   src="/Buddy camp.png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Buddy Camp
+                </div>
               </div>
-              <div>
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() => navigate("/mentoons-workshops?workshop=teen")}
                   className="w-20 rounded-full"
                   src="/Teen camp .png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Teen Camp
+                </div>
               </div>
-              <div>
+              <div className="group cursor-pointer">
                 <img
+                  onClick={() =>
+                    navigate("/mentoons-workshops?workshop=family")
+                  }
                   className="w-20 rounded-full"
                   src="/Family camp.png"
                   alt="comic image"
                 />
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
+                  Family Camp
+                </div>
               </div>
             </div>
           </div>
@@ -204,28 +219,28 @@ const Footer: React.FC = () => {
                   visibility: showInside ? "hidden" : "visible",
                 }}
               >
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
                   <img
                     className="w-12 rounded-full"
                     src={GroupImg1}
                     alt="group image 1"
                   />
                 </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
                   <img
                     className="w-12 rounded-full"
                     src={GroupImg2}
                     alt="group image 1"
                   />
                 </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
                   <img
                     className="w-12 rounded-full"
                     src={GroupImg3}
                     alt="group image 1"
                   />
                 </div>
-                <div className="w-fit rounded-full flex items-center border-4 border-white gap-2">
+                <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
                   <img
                     className="w-12 rounded-full"
                     src={GroupImg4}
@@ -251,7 +266,16 @@ const Footer: React.FC = () => {
               }}
             >
               {comicData?.map((item: string) => {
-                return <div className="font-semibold text-lg">- {item}</div>;
+                return (
+                  <div
+                    onClick={() =>
+                      navigate("/mentoons-comics/audio-comics/" + item)
+                    }
+                    className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
+                  >
+                    - {item}
+                  </div>
+                );
               })}
             </div>
           </div>

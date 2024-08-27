@@ -70,7 +70,7 @@ const PurchaseDialog: React.FC<currentComicProps> = ({
         <AlertDialogFooter>
           <AlertDialogCancel
             onClick={() => {
-              navigate("/comics-list");
+              navigate("/mentoons-comics/comics-list");
               dispatch(addToWishlistReducer(currData?.thumbnail));
             }}
           >
