@@ -77,8 +77,21 @@ const DropdownMenu = () => {
           Workshops
         </MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>How to draw characters (6 - 12)</MenubarItem>
-          <MenubarItem>How to make your own comic (13 - 15)</MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+          >
+            Buddy Camp (6 - 12)
+          </MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+          >
+            Teen Camp (13 - 15)
+          </MenubarItem>
+          <MenubarItem
+            onClick={() => navigate("/mentoons-workshops?workshop=family")}
+          >
+            Family Camp (20+)
+          </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>

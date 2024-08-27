@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import WorkshopImg1 from "@/assets/imgs/Kids_camp 2.jpg";
 import WorkshopImg2 from "@/assets/imgs/Teen_camp 2.jpg";
 import WorkshopImg3 from "@/assets/imgs/Family_camp 2.jpg";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useQuery } from "@/pages/AudioComicPage";
 
 export interface WorkshopItems {
   name: string;
@@ -16,6 +17,11 @@ export interface WorkshopItems {
 }
 
 const ComicWorkshop: React.FC = () => {
+  const query = useQuery();
+  const workshop = query.get("workshop");
+  const buddyRef = useRef<HTMLDivElement>(null);
+  const teenRef = useRef<HTMLDivElement>(null);
+  const familyRef = useRef<HTMLDivElement>(null);
   const workshopGenres: string[] = [
     "Age 6-12",
     "Age 13-19",
@@ -110,6 +116,27 @@ const ComicWorkshop: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const scrollToWorkshop = (workshopType: string) => {
+      const targetElement = document.getElementById(workshopType);
+      if (targetElement) {
+        const offset = 100;
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    if (workshop) {
+      scrollToWorkshop(workshop);
+    }
+  }, [workshop]);
+
   return (
     <div className="container bg-[#00B0A5] flex flex-col items-center justify-start py-20 pb-28 space-y-10">
       <motion.div
@@ -123,22 +150,27 @@ const ComicWorkshop: React.FC = () => {
       <div className="flex items-center justify-center gap-2 lg:gap-8  w-full">
         {workshopGenres?.map((item: string) => {
           return (
-            <motion.button
+            <motion.div
               initial={{ y: 20, opacity: 0.2 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
               className="bg-[#007770] text-white hover:text-[#007770] px-1 md:px-3 py-1 rounded-full font-semibold hover:bg-white transition-all ease-in-out duration-300"
             >
               {item}
-            </motion.button>
+            </motion.div>
           );
         })}
       </div>
       <div className="w-full flex flex-col gap-10 space-y-10 md:space-y-16">
-        {workshopData?.map((item: WorkshopItems, idx) => {
-          // rendering HOC Component
-          return <WorkshopHOC item={item} idx={idx} />;
-        })}
+        <div ref={buddyRef} id="buddy">
+          <WorkshopHOC item={workshopData[0]} idx={0} />
+        </div>
+        <div ref={teenRef} id="teen">
+          <WorkshopHOC item={workshopData[1]} idx={1} />
+        </div>
+        <div ref={familyRef} id="family">
+          <WorkshopHOC item={workshopData[2]} idx={2} />
+        </div>
       </div>
     </div>
   );
