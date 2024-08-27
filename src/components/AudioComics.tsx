@@ -11,64 +11,7 @@ import { motion } from "framer-motion";
 const AudioComics: React.FC = () => {
   const navigate = useNavigate();
   const comicsData = useSelector((store: RootState) => store.comics.comics);
-
   const comics = comicsData.slice(0, 6);
-  // const arr = [
-  //   {
-  //     name: "Come Out Of Gaming",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic1,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/COME_OUT_OF_GAMING_02.mp4",
-  //     category: "13-19",
-  //   },
-  //   {
-  //     name: "Bet Your Life",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic2,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/BET_YOUR_LIFE.mp4",
-  //     category: "13-19",
-  //   },
-  //   {
-  //     name: "Hungry For Likes, Not Life",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic3,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/HUNGRY_FOR_LIKES_NOT_LIFE_01.mp4",
-  //     category: "13-19",
-  //   },
-  //   {
-  //     name: "How To Handle Relationships",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic6,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/HOW+TO+HANDLE+RELATIONSHIP.mp4",
-  //     category: "Book",
-  //   },
-  //   {
-  //     name: "Don't Fade Away",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic5,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/DONT_FADE_AWAY_02.mp4",
-  //     category: "13-19",
-  //   },
-  //   {
-  //     name: "Choose Wisely",
-  //     description:
-  //       "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-  //     thumbnail: Comic4,
-  //     videoLink:
-  //       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CHOOSE_WISLEY_3.mp4",
-  //     category: "13-19",
-  //   },
-  // ];
 
   return (
     <div className="container bg-[#62f262] space-y-5 py-14 lg:py-28">
@@ -103,7 +46,9 @@ const AudioComics: React.FC = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               key={v4()}
-              onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
+              onClick={() =>
+                navigate(`/mentoons-comics/audio-comic?comic=${item.name}`)
+              }
               className="bg-white shadow-lg group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3"
             >
               <div className="overflow-hidden rounded-2xl">

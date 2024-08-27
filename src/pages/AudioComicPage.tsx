@@ -62,7 +62,7 @@ const AudioComicPage: React.FC = () => {
 
   const handleComic = (name: string) => {
     if (name === comicName) return;
-    navigate("/audio-comic?comic=" + name);
+    navigate("audio-comic?comic=" + name);
   };
 
   const handleRandomFact = () => {
