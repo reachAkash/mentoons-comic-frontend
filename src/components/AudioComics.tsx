@@ -47,7 +47,7 @@ const AudioComics: React.FC = () => {
               transition={{ duration: 0.5 }}
               key={v4()}
               onClick={() =>
-                navigate(`/mentoons-comics/audio-comic?comic=${item.name}`)
+                navigate(`/mentoons-comics/audio-comics/${item.name}`)
               }
               className="bg-white shadow-lg group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3"
             >

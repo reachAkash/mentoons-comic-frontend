@@ -7,7 +7,7 @@ import { RootState } from "@/redux/store";
 import React from "react";
 import { FaCartShopping, FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import FilterComics from "../components/FilterComics";
 
