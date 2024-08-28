@@ -8,7 +8,6 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { date } from "@/constant/websiteConstants";
 import { Link, useNavigate } from "react-router-dom";
 
 const DropdownMenu = () => {
@@ -17,13 +16,13 @@ const DropdownMenu = () => {
     <Menubar className="w-[31rem] flex items-center justify-between bg-primary border-none text-white text-base">
       <MenubarMenu>
         <Link to="/mentoons-comics">
-          <MenubarTrigger className="lg:hidden cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+          <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
             Comics
           </MenubarTrigger>
         </Link>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="lg:hidden cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
           Audio Comics
         </MenubarTrigger>
         <MenubarContent>
@@ -65,7 +64,7 @@ const DropdownMenu = () => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="lg:hidden cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
           Workshops
         </MenubarTrigger>
         <MenubarContent>
@@ -87,32 +86,22 @@ const DropdownMenu = () => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
+        <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
+          Contact Us
+        </MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>
+            <a href="tel:+919036033300">Call Us : +91 90360 33300</a>
+          </MenubarItem>
+          <MenubarItem>
+            <a href="mailto: mahesh@activelisteners.in">
+              Email Us : mahesh@activelisteners.in
+            </a>
+          </MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
         <div className="invisible">Akash</div>
-      </MenubarMenu>
-      <MenubarMenu>
-        <Link to="/mentoons-comics">
-          <MenubarTrigger className=" cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
-            <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
-              {date}
-            </span>
-          </MenubarTrigger>
-        </Link>
-      </MenubarMenu>
-      <MenubarMenu>
-        <a href="tel:+918886543210" className="no-underline">
-          <MenubarTrigger className=" cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
-            <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
-              Call us: +91 8886 543 210
-            </span>
-          </MenubarTrigger>
-        </a>
-      </MenubarMenu>
-      <MenubarMenu>
-        <Link to="/">
-          <MenubarTrigger className=" cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
-            Join Us
-          </MenubarTrigger>
-        </Link>
       </MenubarMenu>
     </Menubar>
   );

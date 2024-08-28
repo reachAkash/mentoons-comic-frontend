@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Heading from "../common/Heading";
 import { FaEye } from "react-icons/fa";
 import { Fade } from 'react-awesome-reveal';
 
@@ -8,7 +9,6 @@ type CardData = {
   title: string;
   description: string;
   link: string;
-  linkTitle:string;
 };
 
 const ExploreMentoons: React.FC = () => {
@@ -18,27 +18,23 @@ const ExploreMentoons: React.FC = () => {
     {
       imgUrl: '/Comics_.jpg',
       title: 'Comics',
-      linkTitle: 'View Comics',
       description: 'Dive into colorful worlds and exciting stories that teach valuable lessons while entertaining young readers. Our diverse range of comics covers various subjects, from history and science to social skills and personal growth.',
       link: '/mentoons-comics',
     },
     {
       imgUrl: '/Audio-comics.jpg',
       title: 'Audio Comics',
-       linkTitle: 'Listen Audio Comics',
       description: 'Experience the magic of storytelling like never before! Our audio comics bring illustrations to life with professional voice acting, sound effects, and music, creating an immersive experience that enhances listening skills and imagination.',
-      link: '/mentoons-comics/audio-comics',
+      link: '/mentoons-comics',
     },
     {
       imgUrl: '/Podcast_.jpg',
-       title: 'Podcasts',
-       linkTitle: 'Listen Podcasts',
+      title: 'Podcasts',
       description: 'Tune in to our educational and entertaining podcasts designed specifically for young listeners. From fascinating facts to thought-provoking discussions, our podcasts make learning fun and accessible.',
       link: '/mentoons-podcast',
     },
     {
       imgUrl: '/Workshops_.jpg',
-      linkTitle: 'Attend Workshops',
       title: 'Workshops',
       description: 'Join our interactive workshops led by industry professionals and educators. We offer both in-person and virtual sessions that encourage creativity, teamwork, and skill development in areas such as comic creation, storytelling, and character design.',
       link: '/mentoons-workshops',
@@ -53,6 +49,13 @@ const ExploreMentoons: React.FC = () => {
 
   return (
     <div className="h-full w-full py-16 bg-light-blue relative">
+      <Heading heading="Explore Mentoons" />
+      <div className="h-[6rem] w-[6rem] absolute top-[2rem] left-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:left-[15rem]">
+        <img src="/handprints.png" alt="icons" className="h-full w-full" />
+      </div>
+      <div className="h-[6rem] w-[6rem] absolute top-[2rem] right-[0rem] lg:h-[10rem] lg:w-[10rem] lg:top-[4rem] lg:right-[15rem]">
+        <img src="/handprints2.png" alt="icons" className="h-full w-full" />
+      </div>
       <div className="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {cardsData.map((item, index) => (
           <Fade key={index} duration={400} delay={index * 100} direction="up">
@@ -70,15 +73,15 @@ const ExploreMentoons: React.FC = () => {
                 onClick={() => handleImageClick(item.link)}
               >
                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 h-[4rem] flex items-center justify-center transition-all duration-300 ease-in-out">
-                  <span className="text-white text-sm font-bold flex items-center gap-3">
+                  <span className="text-white text-lg font-bold flex items-center gap-3">
                     <FaEye />
-                    {item.linkTitle}
+                    View {item.title}
                   </span>
                 </div>
               </div>
               <div className="flex flex-col justify-center p-4">
                 <h3 className="text-4xl font-semibold text-white mb-4 font-montserrat">{item.title}</h3>
-                <p className="text-white text-left text-xl font-light">{item.description}</p>
+                <p className="text-white">{item.description}</p>
               </div>
             </div>
           </Fade>
