@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { BsArrowsFullscreen } from 'react-icons/bs';
 import { FaPlay, FaArrowLeft } from 'react-icons/fa';
 import { MdOutlineWatchLater } from 'react-icons/md';
-import Sidebar from '../Sidebar';
+import Sidebar from '../comics/Sidebar'
 
 const HeroSection: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
