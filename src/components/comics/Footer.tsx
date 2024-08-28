@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Logo from "@/assets/imgs/logo mini.png";
 import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
@@ -17,7 +17,6 @@ import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 
 const Footer: React.FC = () => {
   const location = useLocation();
-  const insideMentoonsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
