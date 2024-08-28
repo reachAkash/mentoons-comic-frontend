@@ -120,15 +120,7 @@ const Navbar: React.FC = () => {
               </button>
             </li>
           </ul>
-<<<<<<< HEAD:src/components/Navbar.tsx
-
-          {/* <div className="hidden 2xl:flex items-center justify-between gap-3 bg-white rounded-full py-3 px-6">
-            <Link to="/wishlist">
-=======
-          <div className="hidden 2xl:flex items-center justify-between gap-3 bg-white rounded-full py-3 px-6">
-            <Link to="/mentoons-comics/wishlist">
->>>>>>> 06078b921a6b0ae7e727ed0f58d8ddc6721660d8:src/components/comics/Navbar.tsx
-              <FaBookmark className="text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out" />
+          {/*<FaBookmark className="text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out" />
             </Link>
             <Link to="/mentoons-comics/cart">
               <div className="relative group">
