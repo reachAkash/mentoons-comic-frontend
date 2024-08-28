@@ -1,7 +1,5 @@
 import Heading from "../common/Heading";
-import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 
@@ -54,19 +52,10 @@ const Workshops = () => {
   const [selectedCamp, setSelectedCamp] = useState<CampDetails | null>(
     campDetails[0]
   );
-  const [showDescription, setShowDescription] = useState(false);
-  const [showAgeGroup, setShowAgeGroup] = useState(false);
-  const [showTimetable, setShowTimetable] = useState(false);
-  const [readMore, setReadMore] = useState(false);
 
   const handleCampClick = (id: number) => {
     const camp = campDetails.find((camp) => camp.id === id);
     setSelectedCamp(camp || null);
-    setReadMore(false);
-  };
-
-  const toggleReadMore = () => {
-    setReadMore((prev) => !prev);
   };
 
   const handleImageClick = () => {
@@ -126,68 +115,9 @@ const Workshops = () => {
 
               <div className="mt-4 flex flex-col gap-5">
                 <div>
-                  <button
-                    onClick={() => setShowDescription((prev) => !prev)}
-                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
-                  >
-                    <span>Description&apos;s</span>
-                    <span>
-                      <IoIosArrowDown />
-                    </span>
-                  </button>
-                  {showDescription && (
-                    <Fade duration={300} delay={100}>
-                      <p className="text-lg mt-2 text-center lg:text-left px-5 py-2">
-                        {readMore
-                          ? selectedCamp.description
-                          : `${selectedCamp.description.slice(0, 100)}`}
-                        {selectedCamp.description.length > 100 && (
-                          <button
-                            onClick={toggleReadMore}
-                            className="text-men-blue ml-2"
-                          >
-                            {readMore ? "Read Less" : "Read More"}
-                          </button>
-                        )}
-                      </p>
-                    </Fade>
-                  )}
-                </div>
-                <div>
-                  <button
-                    onClick={() => setShowAgeGroup((prev) => !prev)}
-                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
-                  >
-                    <span>Age group</span>
-                    <span>
-                      <IoIosArrowDown />
-                    </span>
-                  </button>
-                  {showAgeGroup && (
-                    <Fade duration={300} delay={100}>
-                      <p className="text-lg mt-2 ml-3 text-left">
-                        {selectedCamp.ageGroup}
-                      </p>
-                    </Fade>
-                  )}
-                </div>
-                <div>
-                  <button
-                    onClick={() => setShowTimetable((prev) => !prev)}
-                    className="bg-men-blue text-white p-2 rounded mx-2 w-full font-bold flex items-center justify-between lg:px-5 transition-all duration-300 ease-in-out hover:bg-men-light-blue hover:shadow-lg"
-                  >
-                    <span>Time Table</span>
-                    <span>
-                      <IoIosArrowDown />
-                    </span>
-                  </button>
-                  {showTimetable && (
-                    <Fade duration={300} delay={100}>
-                      <p className="text-lg mt-2 ml-3 text-left">
-                        {selectedCamp.timetable}
-                      </p>
-                    </Fade>
-                  )}
+                  <p className="text-lg mt-2 text-center lg:text-left px-5 py-2">
+                    {selectedCamp.description}
+                  </p>
                 </div>
               </div>
             </div>

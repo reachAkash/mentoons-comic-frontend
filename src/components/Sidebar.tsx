@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Search from "./Search";
 import { date } from "@/constant/websiteConstants";
+import { RiSidebarUnfoldFill } from "react-icons/ri";
 
 interface SidebarProps {
   className: string;
@@ -23,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <Sheet>
       <SheetTrigger>
-        <RxHamburgerMenu className={`${className} text-white text-3xl`} />
+        <RiSidebarUnfoldFill  className={`${className} text-white text-3xl`} />
       </SheetTrigger>
       <SheetContent className="bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar">
         <Search />

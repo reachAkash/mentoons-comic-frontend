@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { BsArrowsFullscreen } from 'react-icons/bs';
 import { FaPlay, FaArrowLeft } from 'react-icons/fa';
 import { MdOutlineWatchLater } from 'react-icons/md';
+import Sidebar from '../Sidebar';
 
 const HeroSection: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -24,22 +25,37 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative bg-white dark:bg-gray-900 h-full">
-      <div className="relative w-full h-full lg:h-screen bg-[#e9dc78]">
+      <div className="absolute top-1/2 transform -translate-y-1/2 right-0 z-50 hidden lg:block">
+        <div className="relative group">
+          <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" />
+            </div>
+          </div>
+          <div className="absolute top-[10.2rem] right-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
+              View Sidebar
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full h-full lg:h-screen bg-[#fff]">
         {!isVideoPlaying ? (
           <div className="relative w-full h-full flex justify-center items-center">
             <figure className="w-full h-full relative">
               <img
-                src="/hero-thumb3.png"
+                src="/hero-img.jpg"
                 alt="Video Thumbnail"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
+              <div className="absolute inset-0 bg-black bg-opacity-5"></div>
               <button
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-10 border-4 rounded-full border-white py-3 lg:pl-5 px-3 shadow-xl transition-transform transform hover:scale-110"
                 onClick={handlePlayClick}
               >
-                <FaPlay className="text-white text-6xl" />
+                <FaPlay className="text-white text-3xl lg:text-6xl text-center" />
               </button>
-              <div className="absolute inset-0 bg-black bg-opacity-20 z-5  lg:block" />
             </figure>
           </div>
         ) : (
@@ -72,26 +88,26 @@ const HeroSection: React.FC = () => {
             <span className="text-white text-lg lg:text-2xl whitespace-nowrap font-semibold">Start today and see the difference.</span>
             <button
               type="button"
-              className="whitespace-nowrap text-white bg-primary hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900"
+              className="whitespace-nowrap text-white bg-primary hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900 transition-colors"
             >
               Join Now
             </button>
           </div>
         </div>
-        <div className={`flex items-center justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'} lg:absolute lg:bottom-32 right-0`}>
+        <div className={`flex items-center gap-4 justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'} lg:absolute lg:bottom-20 right-0`}>
           <button
-            className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+            className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1 transition-transform transform hover:scale-110"
             onClick={openModal}
           >
-            <BsArrowsFullscreen className="text-white text-3xl" />
-            <span className="text-white text-sm">Cinema Mode</span>
+            <BsArrowsFullscreen className="text-white lg:text-black text-2xl lg:text-6xl" />
+            <span className="text-white lg:text-black text-sm">Cinema Mode</span>
           </button>
           <button
-            className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1"
+            className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1 transition-transform transform hover:scale-110"
             onClick={(e) => e.stopPropagation()}
           >
-            <MdOutlineWatchLater className="text-white text-3xl" />
-            <span className="text-white text-sm">Watch Later</span>
+            <MdOutlineWatchLater className="text-white lg:text-black text-2xl lg:text-6xl" />
+            <span className="text-white lg:text-black text-sm">Watch Later</span>
           </button>
         </div>
       </div>
@@ -111,7 +127,7 @@ const HeroSection: React.FC = () => {
               Your browser does not support the video tag.
             </video>
             <button
-              className="absolute top-[2rem] lg:top-[6rem] left-4 text-white lg:text-black text-2xl z-50"
+              className="absolute top-[2rem] lg:top-[6rem] left-4 text-white lg:text-black text-2xl z-50 transition-transform transform hover:scale-110"
               onClick={closeModal}
             >
               <FaArrowLeft />
