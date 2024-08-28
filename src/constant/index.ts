@@ -12,7 +12,7 @@ export const CATEGORIES = [
 export const PODCAST_DETAILS = [
   {
     id: 1,
-    topic: "Coping with Loss",
+    topic: "Negative impact of Mobile phone",
     description:
       "Coping with Loss, is a podcast for teens, offering support and guidance on coping with grief and loss. Through real stories and expert advice, we help you heal and understand your emotions.",
     audioPodcastSampleSrc: "/assets/audios/coping-with-loss.mp3",
@@ -25,7 +25,7 @@ export const PODCAST_DETAILS = [
   },
   {
     id: 2,
-    topic: "Cell-Aid",
+    topic: "Negative impact of social media",
     description:
       "Cell-Aid dives into the evolving role of cell phones in our lives, comparing their impact to that of yesterday's television. Explore how these devices shape culture, communication, and daily life.",
     audioPodcastSampleSrc: "/assets/audios/Cell_Aid.mp3",
@@ -36,22 +36,22 @@ export const PODCAST_DETAILS = [
     author: "Mentor Mahesh",
     duration: "",
   },
-  {
-    id: 3,
-    topic: "How to overcome Depression",
-    description:
-      "How to Overcome Depression offers practical advice and support for managing and overcoming depression. Learn strategies, hear personal stories, and find hope in this encouraging podcast.",
-    audioPodcastSampleSrc: "/assets/audios/Overcome_Dipression.mp3",
-    audioPodcastSrc: "/assets/audios/Overcome_Dipression.mp3",
-    thumbnail: "/assets/images/overcome-dipression.jpg",
-    categroy: "",
-    age: "",
-    author: "Mentor Mahesh",
-    duration: "",
-  },
+  // {
+  //   id: 3,
+  //   topic: "Entertainment Addiction",
+  //   description:
+  //     "How to Overcome Depression offers practical advice and support for managing and overcoming depression. Learn strategies, hear personal stories, and find hope in this encouraging podcast.",
+  //   audioPodcastSampleSrc: "/assets/audios/Overcome_Dipression.mp3",
+  //   audioPodcastSrc: "/assets/audios/Overcome_Dipression.mp3",
+  //   thumbnail: "/assets/images/overcome-dipression.jpg",
+  //   categroy: "",
+  //   age: "",
+  //   author: "Mentor Mahesh",
+  //   duration: "",
+  // },
   {
     id: 4,
-    topic: "Relapse Parenting Plan",
+    topic: "Performance Addiction",
     description:
       "Relapse Parenting Plan offers parents practical strategies for supporting a child through relapse. Gain insights on effective communication and fostering a positive recovery environment.",
     audioPodcastSampleSrc: "/assets/audios/Relaps_Parenting.mp3",
@@ -76,19 +76,19 @@ export const PODCAST_DETAILS = [
     author: "Mentor Mahesh",
     duration: "",
   },
-  {
-    id: 6,
-    topic: "Overcome Staying Sober",
-    description:
-      "Overcoming Staying Sober offers practical tips and inspiration for maintaining sobriety. Discover strategies, personal stories, and support to help you stay on track and thrive.",
-    audioPodcastSampleSrc: "/assets/audios/overcoming-staying-sober.mp3",
-    audioPodcastSrc: "/assets/audios/overcoming-staying-sober.mp3",
-    thumbnail: "/assets/images/staying-sober.jpg",
-    categroy: "",
-    age: "",
-    author: "Mentor Mahesh",
-    duration: "",
-  },
+  // {
+  //   id: 6,
+  //   topic: "Overcome Staying Sober",
+  //   description:
+  //     "Overcoming Staying Sober offers practical tips and inspiration for maintaining sobriety. Discover strategies, personal stories, and support to help you stay on track and thrive.",
+  //   audioPodcastSampleSrc: "/assets/audios/overcoming-staying-sober.mp3",
+  //   audioPodcastSrc: "/assets/audios/overcoming-staying-sober.mp3",
+  //   thumbnail: "/assets/images/staying-sober.jpg",
+  //   categroy: "",
+  //   age: "",
+  //   author: "Mentor Mahesh",
+  //   duration: "",
+  // },
   {
     id: 7,
     topic: "Entertainment Addiction",
@@ -197,32 +197,32 @@ export const PODCAST_DETAILS = [
     author: "Mentor Mahesh",
     duration: "",
   },
-  {
-    id: 15,
-    topic: "Things parents do that annoy kids",
-    description:
-      "Parents, seeking connection, unintentionally embarrass kids with public displays of affection, slang misuse, and interrogating friends, hindering the very bonds they seek. Overprotectiveness stifles exploration, and sharing family struggles, though vital, becomes grating when theatrically dramatized.",
-    audioPodcastSampleSrc: "/assets/audios/thing-parents-do.mp3",
-    audioPodcastSrc: "/assets/audios/things-parents-do-orignal.mp3",
-    thumbnail: "/assets/images/Things_parents_do_that_annoy_kids 2.jpg",
-    categroy: "",
-    age: "2-6",
-    author: "Mentor Mahesh",
-    duration: "",
-  },
-  {
-    id: 15,
-    topic: "Electronic gadgets and kids.",
-    description:
-      "Technology has become an inseparable part of life, especially for kids. Even kids of five years of age, know how to operate a phone, play games, watch videos on Youtube.  Especially because of covid, where everything is online, kids are exposed to these gadgets at a very small age. Not only engaged, but they also become addicted to it.  Having online classes, not going to play, not interacting with other kids face-to-face has increased now.",
-    audioPodcastSampleSrc: "/assets/audios/electronic-gadgets.mp3",
-    audioPodcastSrc: "/assets/audios/electronic-gadgets-orignal.mp3",
-    thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
-    categroy: "",
-    age: "2-6",
-    author: "Mentor Mahesh",
-    duration: "",
-  },
+  // {
+  //   id: 15,
+  //   topic: "Things parents do that annoy kids",
+  //   description:
+  //     "Parents, seeking connection, unintentionally embarrass kids with public displays of affection, slang misuse, and interrogating friends, hindering the very bonds they seek. Overprotectiveness stifles exploration, and sharing family struggles, though vital, becomes grating when theatrically dramatized.",
+  //   audioPodcastSampleSrc: "/assets/audios/thing-parents-do.mp3",
+  //   audioPodcastSrc: "/assets/audios/things-parents-do-orignal.mp3",
+  //   thumbnail: "/assets/images/Things_parents_do_that_annoy_kids 2.jpg",
+  //   categroy: "",
+  //   age: "2-6",
+  //   author: "Mentor Mahesh",
+  //   duration: "",
+  // },
+  // {
+  //   id: 15,
+  //   topic: "Electronic gadgets and kids.",
+  //   description:
+  //     "Technology has become an inseparable part of life, especially for kids. Even kids of five years of age, know how to operate a phone, play games, watch videos on Youtube.  Especially because of covid, where everything is online, kids are exposed to these gadgets at a very small age. Not only engaged, but they also become addicted to it.  Having online classes, not going to play, not interacting with other kids face-to-face has increased now.",
+  //   audioPodcastSampleSrc: "/assets/audios/electronic-gadgets.mp3",
+  //   audioPodcastSrc: "/assets/audios/electronic-gadgets-orignal.mp3",
+  //   thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
+  //   categroy: "",
+  //   age: "2-6",
+  //   author: "Mentor Mahesh",
+  //   duration: "",
+  // },
 ];
 
 export const AGE_CATEGORY = [
@@ -330,5 +330,18 @@ export const SHEET_FILTER = [
   {
     id: 35,
     label: "Workshop",
+  },
+];
+
+export const OPEN_POSITION = [
+  {
+    id: 51,
+    jobId: "JOB001",
+    jobTitle: "",
+    jobDescription: "",
+    jobRequirement: [],
+    jobType: ["On-site", "Remote", "Hybrid"],
+    jobDuration: ["Full-time", "Part-time", "Contract", "Internship"],
+    salary: 500000,
   },
 ];
