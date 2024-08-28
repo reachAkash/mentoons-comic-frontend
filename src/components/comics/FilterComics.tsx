@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/popover";
 import { useDispatch } from "react-redux";
 import { updateSelectedFilterReducer } from "@/redux/comicSlice";
-import { useQuery } from "../pages/AudioComicPage";
+import { useQuery } from "../../pages/AudioComicPage";
 
 export interface AgeGroupPrototype {
   value: string;
