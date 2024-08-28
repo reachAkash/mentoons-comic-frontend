@@ -77,10 +77,10 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
           <div className="hidden 2xl:flex items-center justify-between gap-3 bg-white rounded-full py-3 px-6">
-            <Link to="/wishlist">
+            <Link to="/mentoons-comics/wishlist">
               <FaBookmark className="text-lg cursor-pointer text-gray-500 hover:text-black transition-all duration-300 ease-in-out" />
             </Link>
-            <Link to="/cart">
+            <Link to="/mentoons-comics/cart">
               <div className="relative group">
                 <IoCart className="text-2xl cursor-pointer text-gray-500 group-hover:text-black transition-all duration-300 ease-in-out" />
                 <span className="absolute top-[-0.5rem] left-[-4px] text-white text-sm bg-red-500 rounded-full px-[6px]">

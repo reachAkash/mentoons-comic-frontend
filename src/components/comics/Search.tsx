@@ -334,7 +334,7 @@ const Search: React.FC = () => {
                     <SheetClose className="w-full" asChild>
                       <div
                         className="border border-dashed rounded-xl bg-black "
-                        onClick={() => navigate("/workshops")}
+                        onClick={() => navigate(workshop?.pageUrl)}
                       >
                         <button className="border border-dashed  bg-[#f0ebe5] border-black px-4 py-2 bg- text-black rounded-xl hover:-translate-y-1 active:-translate-y-0 active:-translate-x-0 hover:-translate-x-1 origin-bottom-left transition-all duration-200 w-full">
                           View Details

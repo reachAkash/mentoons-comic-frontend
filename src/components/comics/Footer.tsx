@@ -10,10 +10,17 @@ import { ImLinkedin } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
-import { IoLogoYoutube } from "react-icons/io";
+import { IoLogoYoutube, IoMdClose } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
-import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
+import FreeDownloadForm from "../Home/FreeDownloadForm";
+
+interface ImagePopupProps {
+  isOpen: boolean;
+  imageSrc: string;
+  altText: string;
+  onClose: () => void;
+}
 
 const Footer: React.FC = () => {
   const location = useLocation();
@@ -21,6 +28,9 @@ const Footer: React.FC = () => {
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
   const [showShop, setShowShop] = useState<boolean>(false);
+  const [showFreeDownloadForm, setShowFreeDownloadForm] =
+    useState<boolean>(false);
+
   const comicData = [
     "Don't Fade Away",
     "Hungry For Likes not Life",
@@ -42,6 +52,13 @@ const Footer: React.FC = () => {
     { icon: IoLogoWhatsapp, color: "text-green-500" },
   ];
 
+  const images = [
+    { src: GroupImg1, alt: "Independence Day, 2023" },
+    { src: GroupImg2, alt: "Independence Day, 2023" },
+    { src: GroupImg3, alt: "Fun Moments, 2023" },
+    { src: GroupImg4, alt: "Fun Moments, 2023" },
+  ];
+
   const scrollToInsideMentoons = () => {
     console.log("here");
     if (location.pathname === "/") {
@@ -52,12 +69,19 @@ const Footer: React.FC = () => {
     }
   };
 
-  // useEffect(() => {
-  //   // Check if we need to scroll to InsideMentoons section after navigation
-  //   if (location.state?.scrollToInsideMentoons && insideMentoonsRef.current) {
-  //     insideMentoonsRef.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }, [location]);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
+
+  const openPopup = (image: { src: string; alt: string }) => {
+    setSelectedImage(image);
+  };
+
+  const closePopup = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="text-white text-center">
       <img className="hidden md:block" src="/FooterBg.png" alt="footer image" />
@@ -162,7 +186,10 @@ const Footer: React.FC = () => {
                 FAQ's
               </div>
             </div>
-            <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+            <div
+              onClick={() => setShowFreeDownloadForm(true)}
+              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+            >
               Free Download
             </div>
             <div
@@ -235,98 +262,28 @@ const Footer: React.FC = () => {
                 //   visibility: showInside ? "hidden" : "visible",
                 // }}
               >
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
+                <div className="flex flex-wrap gap-4">
+                  {images.map((image, index) => (
+                    <div
+                      key={index}
+                      onClick={() => openPopup(image)}
+                      className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 cursor-pointer"
+                    >
                       <img
                         className="w-12 rounded-full"
-                        src={GroupImg1}
-                        alt="group image 1"
+                        src={image.src}
+                        alt={image.alt}
                       />
                     </div>
-                  </DialogTrigger>
-                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
-                    <div className="flex flex-col items-center justify-center px-4 py-4">
-                      <img
-                        className="w-full rounded-md md:w-[80%]"
-                        src={GroupImg1}
-                        alt="group image 1"
-                      />
-                      <div className="font-semibold text-black text-2xl">
-                        Independence Day
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                      <img
-                        className="w-12 rounded-full"
-                        src={GroupImg2}
-                        alt="group image 1"
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
-                    <div className="flex flex-col items-center justify-center px-4 py-4">
-                      <img
-                        className="w-full rounded-md md:w-[80%]"
-                        src={GroupImg2}
-                        alt="group image 1"
-                      />
-                      <div className="font-semibold text-black text-2xl">
-                        Independence Day
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                      <img
-                        className="w-12 rounded-full"
-                        src={GroupImg3}
-                        alt="group image 1"
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
-                    <div className="flex flex-col items-center justify-center px-4 py-4">
-                      <img
-                        className="w-full rounded-md md:w-[80%]"
-                        src={GroupImg3}
-                        alt="group image 1"
-                      />
-                      <div className="font-semibold text-black text-2xl">
-                        Independence Day
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="w-fit rounded-full flex items-center border-4 border-white hover:border-green-300 gap-2">
-                      <img
-                        className="w-12 rounded-full"
-                        src={GroupImg4}
-                        alt="group image 1"
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] outline-none rounded-lg shadow-md bg-white shadow-white sm:max-w-[425px] md:max-w-[600px]">
-                    <div className="flex flex-col items-center justify-center px-4 py-4">
-                      <img
-                        className="w-full rounded-md md:w-[80%]"
-                        src={GroupImg4}
-                        alt="group image 1"
-                      />
-                      <div className="font-semibold text-black text-2xl">
-                        Independence Day
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                  ))}
+
+                  <ImagePopup
+                    isOpen={selectedImage !== null}
+                    imageSrc={selectedImage?.src || ""}
+                    altText={selectedImage?.alt || ""}
+                    onClose={closePopup}
+                  />
+                </div>
               </div>
             </div>
             <div
@@ -403,6 +360,33 @@ const Footer: React.FC = () => {
             })}
           </div>
         </div>
+      </div>
+      {showFreeDownloadForm && (
+        <FreeDownloadForm setShowFreeDownloadForm={setShowFreeDownloadForm} />
+      )}
+    </div>
+  );
+};
+
+export const ImagePopup: React.FC<ImagePopupProps> = ({
+  isOpen,
+  imageSrc,
+  altText,
+  onClose,
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="relative bg-white rounded-lg shadow-lg p-4 max-w-[425px]">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-black cursor-pointer text-xl hover:text-red-400 active:scale-50 transition-all ease-in-out duration-300"
+        >
+          <IoMdClose />
+        </button>
+        <img className="w-full mt-4 rounded-md" src={imageSrc} alt={altText} />
+        <div className="font-semibold text-black text-2xl mt-4">{altText}</div>
       </div>
     </div>
   );

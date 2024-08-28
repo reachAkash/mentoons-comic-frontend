@@ -31,9 +31,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<WebHome />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/mentoons-comics" element={<ComicsHome />} />
+        <Route path="/mentoons-comics/wishlist" element={<Wishlist />} />
+        <Route path="/mentoons-comics/cart" element={<Cart />} />
         <Route
           path="/mentoons-comics/audio-comics"
           element={<ComicsPage page="Audio Comics" />}
@@ -51,7 +51,7 @@ function App() {
           path="/mentoons-comics/audio-comics/:comic"
           element={<AudioComicPage />}
         />
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/mentoons-comics/search" element={<SearchPage />} />
         <Route path="/mentoons-podcast" element={<PodCast />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/website-plans" element={<Plans />} />
