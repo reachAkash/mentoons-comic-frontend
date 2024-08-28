@@ -1,5 +1,5 @@
 import React from "react";
-import Wordbreak from "@/components/Wordbreak";
+import Wordbreak from "@/components/comics/Wordbreak";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";

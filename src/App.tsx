@@ -4,22 +4,21 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
-import Workshops from "./components/WorkshopsPage";
-import ComicsHome from "./components/ComicsHome";
-import ComicCard from "./components/HoverCardComic";
-import Navbar from "./components/Navbar";
+import Workshops from "./components/comics/WorkshopsPage";
+import ComicsHome from "./components/comics/ComicsHome";
+import ComicCard from "./components/comics/HoverCardComic";
+import Navbar from "./components/comics/Navbar";
 import NotFound from "./pages/NotFound";
 import PodCast from "./pages/PodCast";
-import ProgressScroller from "./components/ProgressScroller";
-import ScrollToTop from "./components/ScrollToTop";
+import ProgressScroller from "./components/comics/ProgressScroller";
+import ScrollToTop from "./components/comics/ScrollToTop";
 import { SearchPage } from "./pages/SearchPage";
 import Wishlist from "./pages/Wishlist";
 import WebHome from "./pages/WebHome";
 import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
-import Footer from "./components/Footer";
+import Footer from "./components/comics/Footer";
 import AudioComicPage from "./pages/AudioComicPage";
-
 
 function App() {
   const hoverComicCard = useSelector(

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "@/assets/imgs/logo mini.png";
 import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
 import GroupImg4 from "@/assets/imgs/groupImg4.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { ImLinkedin } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -16,10 +16,11 @@ import MapComponent from "./MapComponent";
 import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+  const insideMentoonsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
-  const [showInside, setShowInside] = useState<boolean>(false);
   const [showShop, setShowShop] = useState<boolean>(false);
   const comicData = [
     "Don't Fade Away",
@@ -42,6 +43,22 @@ const Footer: React.FC = () => {
     { icon: IoLogoWhatsapp, color: "text-green-500" },
   ];
 
+  const scrollToInsideMentoons = () => {
+    console.log("here");
+    if (location.pathname === "/") {
+      const element = document.getElementById("inside-mentoons");
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollToInsideMentoons: true } });
+    }
+  };
+
+  // useEffect(() => {
+  //   // Check if we need to scroll to InsideMentoons section after navigation
+  //   if (location.state?.scrollToInsideMentoons && insideMentoonsRef.current) {
+  //     insideMentoonsRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [location]);
   return (
     <div className="text-white text-center">
       <img className="hidden md:block" src="/FooterBg.png" alt="footer image" />
@@ -130,7 +147,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
-              Upcoming Meet
+              Upcoming Meets
             </div>
             <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
               Upcoming Webinars
@@ -139,8 +156,10 @@ const Footer: React.FC = () => {
           {/* second div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="w-full">
-
-              <div onClick={()=>navigate('/faq')} className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
+              <div
+                onClick={() => navigate("/faq")}
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+              >
                 FAQ's
               </div>
             </div>
@@ -204,26 +223,18 @@ const Footer: React.FC = () => {
           {/* third div */}
           <div className="space-y-2 w-full md:w-fit">
             <div className="">
-              <Link to="#insideMentoons">
-                <div
-                  onClick={() => {
-                    setShowInside((prev) => !prev);
-                  }}
-                  className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-                >
-                  Inside Mentoons
-                </div>
-              </Link>
+              <div
+                onClick={scrollToInsideMentoons}
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+              >
+                Inside Mentoons
+              </div>
               {/* children div */}
               <div
-                className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
-                  showInside
-                    ? "max-h-0 opacity-0"
-                    : "max-h-[500px] opacity-100 mt-2"
-                }`}
-                style={{
-                  visibility: showInside ? "hidden" : "visible",
-                }}
+                className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden py-1`}
+                // style={{
+                //   visibility: showInside ? "hidden" : "visible",
+                // }}
               >
                 <Dialog>
                   <DialogTrigger asChild>

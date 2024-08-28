@@ -9,7 +9,7 @@ import { TbExchange } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Comic } from "@/redux/comicSlice";
-import PurchaseDialog from "../components/PurchaseDialog";
+import PurchaseDialog from "../components/comics/PurchaseDialog";
 import { toast } from "sonner";
 import { useParams } from "react-router-dom";
 
