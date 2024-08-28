@@ -1,6 +1,4 @@
-import React from "react";
-
-const Wordbreak: React.FC = () => {
+const Wordbreak= () => {
   return <br className="hidden md:block" />;
 };
 
