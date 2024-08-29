@@ -206,7 +206,6 @@ const WorkshopHOC: React.FC<{ item: WorkshopItems; idx: number }> = ({
           src={item.video}
           loop
           controls
-          autoPlay={idx == 0}
           controlsList="nodownload"
         ></video>
       </div>
