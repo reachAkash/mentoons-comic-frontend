@@ -15,34 +15,30 @@ const HeroBanner = () => {
         {
             url: "/Workshops_.jpg",
             boxUrl: "/assets/home/workshop-btn.png",
-            cardText: "Workshop",
+            cardText: "Workshops",
             linkUrl: "/mentoons-workshops",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+            dsecription: "Interactive sessions that encourage hands-on learning and creativity",
         },
         {
             url: "/Comics_.jpg",
             boxUrl: "/assets/home/comic-btn.png",
-            cardText: "Comic",
+            cardText: "Comics",
             linkUrl: "/mentoons-comics",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+            dsecription:"Beautifully illustrated stories that teach valuable lessons",
         },
         {
             url: "/Audio-comics.jpg",
             boxUrl: "/assets/home/acomic-btn.png",
-            cardText: "Audio comic",
+            cardText: "Audio comics",
             linkUrl: "/mentoons-comics/audio-comics",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+            dsecription: "A unique blend of visual storytelling and immersive audio"
         },
         {
             url: "/Podcast_.jpg",
             boxUrl: "/assets/home/pod-btn.png",
-            cardText: "Podcast",
-            linkUrl: "/mentoons-podcast",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+            cardText: "Podcasts",
+            linkUrl: "/mentoons-podcasts",
+            dsecription:" Educational series covering various topics in an entertaining format",
         },
         {
             url: "/slide1.jpg",
