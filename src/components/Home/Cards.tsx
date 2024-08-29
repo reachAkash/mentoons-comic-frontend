@@ -1,21 +1,26 @@
 import { Zoom } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
+
 
 type CardsProps = {
   items: {
     url: string;
     boxUrl: string;
     cardText: string;
+    linkUrl:string;
     dsecription: string;
   };
   indexValue: number;
 };
 
 const Cards: React.FC<CardsProps> = ({ items, indexValue }) => {
+  const naviagte = useNavigate()
   return (
     <Zoom triggerOnce>
       <div
         key={indexValue}
         className="flex flex-col items-center text-center transform transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+        onClick={()=>naviagte(items.linkUrl)}
       >
         <div className="w-40 h-40 relative rounded-full shadow-lg">
           <img
