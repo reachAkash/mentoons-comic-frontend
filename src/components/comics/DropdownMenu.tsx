@@ -108,7 +108,7 @@ const DropdownMenu = () => {
         </a>
       </MenubarMenu>
       <MenubarMenu>
-        <Link to="/">
+        <Link to="/hiring">
           <MenubarTrigger className=" cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
             Join Us
           </MenubarTrigger>

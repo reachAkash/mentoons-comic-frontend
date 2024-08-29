@@ -19,6 +19,7 @@ import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
 import NotFound from "./pages/NotFound";
 import PodCast from "./pages/PodCast";
+import Career from "./components/shared/CareerPage/Career";
 function App() {
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic
@@ -51,6 +52,7 @@ function App() {
           element={<AudioComicPage />}
         />
         <Route path='/search' element={<SearchPage />} />
+        <Route path='/hiring' element={<Career/>}/>
         <Route path='/mentoons-podcast' element={<PodCast />} />
         <Route path='/faq' element={<FAQ />} />
         <Route path='/website-plans' element={<Plans />} />

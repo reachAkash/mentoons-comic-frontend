@@ -46,7 +46,7 @@ const HeroBanner = () => {
             cardText: "Something",
             linkUrl: "/mentoons-workshops",
             dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
         {
             url: "/slide1.jpg",
@@ -54,7 +54,7 @@ const HeroBanner = () => {
             cardText: "Let's revive",
             linkUrl: "/",
             dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
         {
             url: "/slide1.jpg",
@@ -62,7 +62,7 @@ const HeroBanner = () => {
             cardText: "Let's revive",
             linkUrl: "/",
             dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
         {
             url: "/slide1.jpg",
@@ -70,7 +70,7 @@ const HeroBanner = () => {
             cardText: "Career corner",
             linkUrl: "/",
             dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
     ];
 
