@@ -1,11 +1,13 @@
 import { useState } from "react";
+import ExploreMentoons from "@/components/Home/ExploreMentoons";
+import Career from "@/components/shared/CareerPage/Career";
+
+import CallToAction from "../components/Home/CallToAction";
 import HeroSection from "../components/Home/HeroSection";
+import InsideMentoons from "../components/Home/InsideMentoons";
 import MentoonsBenifit from "../components/Home/MentoonsBenifit";
 import Workshops from "../components/Home/Workshops";
 import VideoModal from "../components/videoModal";
-import InsideMentoons from "../components/Home/InsideMentoons";
-import CallToAction from "../components/Home/CallToAction";
-import ExploreMentoons from "@/components/Home/ExploreMentoons";
 
 type videoData = {
   id: string;
@@ -53,32 +55,53 @@ const WebHome: React.FC = () => {
   ];
 
   const InsideMentoonsVideos: videoData[] = [
-    { id: '1', title: "Career Fraudstar's Trailer", thumbnail: '/career.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4" },
-    { id: '2', title: 'Stop Swiping video song', thumbnail: '/swiping.jpg', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4" },
-    { id: '3', title: 'Team Celebration', thumbnail: '/life-mentoons.png', url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4" },
+    {
+      id: "1",
+      title: "Career Fraudstar's Trailer",
+      thumbnail: "/career.jpg",
+      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/FRAUD'S_TRAILER_FINAL.mp4",
+    },
+    {
+      id: "2",
+      title: "Stop Swiping video song",
+      thumbnail: "/swiping.jpg",
+      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/STOP_SWIPING_LYRICS.mp4",
+    },
+    {
+      id: "3",
+      title: "Team Celebration",
+      thumbnail: "/life-mentoons.png",
+      url: "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Celebration+Video_01.mp4",
+    },
   ];
 
-
+  
   return (
-    <div className="h-full w-full overflow-hidden"> 
-      <VideoModal
-        videos={videoType === "HERO" ? videos : InsideMentoonsVideos}
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        type={videoType}
-      />
-      <HeroSection />
-      <ExploreMentoons />
-      <MentoonsBenifit setModalOpen={setModalOpen} setVideoType={setVideoType}/>
-      <Workshops />
-      <InsideMentoons setModalOpen={setModalOpen} setVideoType={setVideoType} />
-      <CallToAction />
-      <div className='fixed top-[6rem] left-2 flex flex-col items-center'>
-
-      
-      </div>
-      
-    </div>
+    <>
+      <div className='h-full w-full overflow-hidden'>
+        <VideoModal
+          videos={videoType === "HERO" ? videos : InsideMentoonsVideos}
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          type={videoType}
+        />
+        <HeroSection />
+        <ExploreMentoons />
+        <MentoonsBenifit
+          setModalOpen={setModalOpen}
+          setVideoType={setVideoType}
+        />
+        <Workshops />
+        <InsideMentoons
+          setModalOpen={setModalOpen}
+          setVideoType={setVideoType}
+        />
+        <CallToAction />
+   </div>
+      <section id='join' className=''>
+        <Career />
+      </section>
+    </>
   );
 };
 

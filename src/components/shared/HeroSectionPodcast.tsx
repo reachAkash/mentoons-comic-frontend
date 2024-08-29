@@ -15,7 +15,7 @@ const HeroSectionPodcast = () => {
   };
 
   return (
-    <section className=' relative  bg-orange-500 '>
+    <section className=' relative  bg-primary '>
       {/* <nav className='flex justify-between items-center px-4  pb-0'>
         <div className='w-28 sm:w-40 md:w-60 lg:w-40'>
           <img
