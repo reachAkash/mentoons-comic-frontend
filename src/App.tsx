@@ -14,6 +14,7 @@ import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
 import Footer from "./components/comics/Footer";
 import AudioComicPage from "./pages/AudioComicPage";
+import FreeDownload from "./pages/FreeDownload";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
@@ -34,8 +35,12 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/mentoons-comics" element={<ComicsHome />} />
         <Route
-          path='/mentoons-comics/audio-comics'
-          element={<ComicsPage page='Audio Comics' />}
+          path="/mentoons-comics/free-download"
+          element={<FreeDownload />}
+        />
+        <Route
+          path="/mentoons-comics/audio-comics"
+          element={<ComicsPage page="Audio Comics" />}
         />
         <Route
           path='/mentoons-comics/comics'

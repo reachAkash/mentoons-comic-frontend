@@ -68,7 +68,9 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
           <div className="text-3xl text-red-500 lineBefore uppercase">
             {page}{" "}
           </div>
-          <FilterComics />
+          <div className="hidden lg:block">
+            <FilterComics />
+          </div>
         </div>
         {page == "Audio Comics" ? (
           <div className="font-medium text-3xl space-y-3">
@@ -102,53 +104,62 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      <div>
         {comicsToShow.length > 0 ? (
-          comicsToShow?.map((item: Comic) => {
-            return (
-              <div
-                key={v4()}
-                className="bg-white shadow-lg group text-black rounded-2xl px-5 py-5 space-y-3"
-              >
-                <div className="overflow-hidden rounded-2xl">
-                  <img
-                    onClick={() =>
-                      navigate(`/mentoons-comics/audio-comics/${item.name}`)
-                    }
-                    className="w-full h-[23rem] lg:h-[16rem] rounded-2xl group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
-                    src={item?.thumbnail}
-                    alt="comic image"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <div className="text-xl font-semibold tracking-wide">
-                    {item?.name}
-                  </div>
-                  <div className="text-black text-sm tracking-wide">
-                    {item?.desc}
-                  </div>
-                </div>
-                <div className="flex items-center justify-between border-t border-gray-200 pt-2">
+          <>
+            <div className="w-full text-center block lg:hidden">
+              <FilterComics />
+            </div>
+            <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+              {comicsToShow?.map((item: Comic) => {
+                return (
                   <div
-                    onClick={() => navigate(`/audio-comic?comic=${item.name}`)}
-                    className="text-end flex items-center justify-end gap-2 group-hover:text-red-500 group-hover:underline text-xl cursor-pointer"
+                    key={v4()}
+                    className="bg-white shadow-lg group text-black rounded-2xl px-5 py-5 space-y-3"
                   >
-                    Play Sample{" "}
-                    <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" />
+                    <div className="overflow-hidden rounded-2xl">
+                      <img
+                        onClick={() =>
+                          navigate(`/mentoons-comics/audio-comics/${item.name}`)
+                        }
+                        className="w-full h-[23rem] lg:h-[16rem] rounded-2xl group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
+                        src={item?.thumbnail}
+                        alt="comic image"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-xl font-semibold tracking-wide">
+                        {item?.name}
+                      </div>
+                      <div className="text-black text-sm tracking-wide">
+                        {item?.desc}
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-gray-200 pt-2">
+                      <div
+                        onClick={() =>
+                          navigate(`/audio-comic?comic=${item.name}`)
+                        }
+                        className="text-end flex items-center justify-end gap-2 group-hover:text-red-500 group-hover:underline text-xl cursor-pointer"
+                      >
+                        Play Sample{" "}
+                        <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" />
+                      </div>
+                      <div
+                        onClick={(e) => {
+                          addToCart(item.thumbnail);
+                          e.stopPropagation();
+                        }}
+                        className="border-2 cursor-pointer hover:rotate-[360deg] transition-all ease-in-out duration-1000 bg-primary active:scale-95 border-primary p-3 rounded-full"
+                      >
+                        <FaCartShopping className="text-2xl text-white transition-all duration-300 ease-in-out" />
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    onClick={(e) => {
-                      addToCart(item.thumbnail);
-                      e.stopPropagation();
-                    }}
-                    className="border-2 cursor-pointer hover:rotate-[360deg] transition-all ease-in-out duration-1000 bg-primary active:scale-95 border-primary p-3 rounded-full"
-                  >
-                    <FaCartShopping className="text-2xl text-white transition-all duration-300 ease-in-out" />
-                  </div>
-                </div>
-              </div>
-            );
-          })
+                );
+              })}
+            </div>
+          </>
         ) : (
           <div className="lg:absolute lg:left-[50%] lg:top-[40%] lg:translate-x-[-50%] lg:translate-y-[0%] text-center space-y-4">
             <div className="text-4xl font-semibold">Comics Coming Soon! 🥺</div>

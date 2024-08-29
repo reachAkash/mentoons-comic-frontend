@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { IoMdClose } from "react-icons/io";
 import MiniLogo from "@/assets/imgs/logo mini.png";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 interface FormType {
   name: string;
@@ -33,6 +34,39 @@ const initialState: FormType = { name: "", email: "", phone: "" };
 const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
   setShowFreeDownloadForm,
 }) => {
+  const sendEmail = (values: FormType) => {
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID_FREE_DOWNLOAD,
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID_FREE_DOWNLOAD,
+        {
+          from_name: "Mentoons",
+          to_name: values.name,
+          to_email: values.email,
+          message: `Hello ${values.name}, thank you for choosing us. Claim your free comic 🥳`,
+          pdf_url:
+            "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Book+2+-+Electronic+gadgets+and+kids.pdf",
+          thumbnail_url:
+            "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
+        },
+        import.meta.env.VITE_EMAIL_JS_USER_ID
+      )
+      .then(
+        (response) => {
+          console.log(
+            "Email sent successfully!",
+            response.status,
+            response.text
+          );
+        },
+        (error) => {
+          console.error("Failed to send email.", error);
+        }
+      )
+      .finally(() => {
+        setShowFreeDownloadForm(false);
+      });
+  };
   return (
     <div className="flex items-center justify-center bg-black bg-opacity-50 fixed inset-0">
       <motion.div
@@ -53,7 +87,7 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
         <Formik<FormType>
           initialValues={initialState}
           validationSchema={validationSchema}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => sendEmail(values)}
         >
           <Form className="flex flex-col w-full space-y-3">
             <div className="w-full">
