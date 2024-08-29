@@ -1,7 +1,3 @@
-import LogoMini from "@/assets/imgs/logo mini.png";
-import Logo from "@/assets/imgs/logo.png";
-// import { date } from "@/constant/websiteConstants";
-// import { RootState } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
