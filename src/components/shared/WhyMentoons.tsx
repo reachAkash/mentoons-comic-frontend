@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 const WhyMentoons = () => {
   return (
-    <section className='relative'>
-      <div className='w-full rounded-t-full bg-white h-[900px] flex flex-col items-center justify-start relative  lg:h-[700px] '>
+    <section className='relative bg-primary '>
+      <div className='w-full rounded-t-full  bg-[#59B2DC] h-[900px] flex flex-col items-center justify-start relative  lg:h-[700px] '>
         {/* <h2 className='text-4xl text-dark-gray rubik-bubbles-regular pb-8 text-center pt-2 '></h2> */}
 
         <div className='absolute w-full flex flex-col  items-center   '>

@@ -1,4 +1,8 @@
-import React, { useEffect, useState } from "react";
+import LogoMini from "@/assets/imgs/logo mini.png";
+import Logo from "@/assets/imgs/logo.png";
+// import { date } from "@/constant/websiteConstants";
+// import { RootState } from "@/redux/store";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 import { MiniSidebar } from "./Sidebar";
@@ -66,11 +70,23 @@ const Navbar: React.FC = () => {
         } hidden lg:flex items-center justify-between text-black bg-primary transition-all duration-1000 ease-in-out z-[9999] px-5`}
       >
         <ul className="flex items-center justify-between">
+          {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Comics
+        </li>
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Latest
+        </li>
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Audio Comics
+        </li>
+        <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
+          Workshops
+        </li> */}
           <DropdownMenu />
         </ul>
         <Link
-          to="/"
-          className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary"
+          to='/'
+          className='absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary'
         >
           <img className="w-32 cursor-pointer" src={Logo} alt="Logo" />
         </Link>
@@ -195,8 +211,8 @@ const Navbar: React.FC = () => {
             </h2>
           </Link>
         </div>
-        <div className="w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8">
-          <MiniSidebar className="block" />
+        <div className='w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8'>
+          <MiniSidebar className='block' />
         </div>
       </div>
     </>
