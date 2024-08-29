@@ -8,8 +8,8 @@ const FrequentlyAskeQuestion = () => {
         Frequently Ask Question
       </h1> */}
       <div className='p-1 flex flex-col gap-4  md:w-[80%] lg:w-[65%]'>
-        {OPEN_POSITION.map((job) => (
-          <FAQCard key={job.id} />
+        {OPEN_POSITION.map((position) => (
+          <FAQCard key={position.id} position={position} />
         ))}
       </div>
     </section>
