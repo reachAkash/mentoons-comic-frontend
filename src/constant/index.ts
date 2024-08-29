@@ -302,19 +302,22 @@ export const RIGHT_NAVLINKS = [
 
 export const WORKSHOP = [
   {
-    id: 30,
-    label: "Teen Camp",
-    imageURL: "/assets/images/teen-camp.png",
-  },
-  {
     id: 31,
     label: "Buddy Camp",
     imageURL: "/assets/images/buddy-camp.png",
+    pageUrl: "/mentoons-workshops?workshop=buddy",
+  },
+  {
+    id: 30,
+    label: "Teen Camp",
+    imageURL: "/assets/images/teen-camp.png",
+    pageUrl: "/mentoons-workshops?workshop=teen",
   },
   {
     id: 32,
     label: "Family Camp",
     imageURL: "/assets/images/family-camp.png",
+    pageUrl: "/mentoons-workshops?workshop=family",
   },
 ];
 

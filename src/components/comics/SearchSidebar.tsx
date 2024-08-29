@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
-import PodcastSectionSheet from "./shared/PodcastSection/PodcastSectionSheet";
-import { Button } from "./ui/button";
-import { SheetClose } from "./ui/sheet";
-import SearchBar from "./common/SearchBar";
+import PodcastSectionSheet from "../shared/PodcastSection/PodcastSectionSheet";
+import { Button } from "../ui/button";
+import { SheetClose } from "../ui/sheet";
+import SearchBar from "../common/SearchBar";
 import { placeholders } from "@/constant/websiteConstants";
-import { ShowButtonInterface } from "../pages/SearchPage";
+import { ShowButtonInterface } from "../../pages/SearchPage";
 
 const SearchSidebar: React.FC = () => {
   const navigate = useNavigate();

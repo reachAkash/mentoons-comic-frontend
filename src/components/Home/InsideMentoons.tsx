@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
 import Heading from "../common/Heading";
 import "slick-carousel/slick/slick.css";
@@ -7,6 +7,7 @@ import "../../styles/insidementoons.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Fade } from "react-awesome-reveal";
 import { FaPlay } from "react-icons/fa6";
+import { useLocation } from "react-router-dom";
 
 interface SlideData {
   imageSrc: string;
@@ -22,6 +23,15 @@ const InsideMentoons: React.FC<HomeProps> = ({
   setModalOpen,
   setVideoType,
 }) => {
+  const insideMentoonsRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToInsideMentoons && insideMentoonsRef.current) {
+      insideMentoonsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -58,15 +68,14 @@ const InsideMentoons: React.FC<HomeProps> = ({
       subtitle: "Founder",
     },
     {
-      imageSrc: '/joice.jpg',
-      title: 'Joice Lincy',
-      subtitle: 'Digital Marketing',
+      imageSrc: "/joice.jpg",
+      title: "Joice Lincy",
+      subtitle: "Digital Marketing",
     },
     {
-      imageSrc: '/team-08.jpg',
-      title: 'Dhinesh Kumar.G',
-      subtitle: 'Graphic Designer',
-
+      imageSrc: "/team-08.jpg",
+      title: "Dhinesh Kumar.G",
+      subtitle: "Graphic Designer",
     },
     {
       imageSrc: "/team-05.jpg",
@@ -101,7 +110,11 @@ const InsideMentoons: React.FC<HomeProps> = ({
   ];
 
   return (
-    <div className="w-full h-full bg-[#fdfbe8] py-10">
+    <div
+      ref={insideMentoonsRef}
+      id="inside-mentoons"
+      className="w-full h-full bg-[#fdfbe8] py-10 md:py-20"
+    >
       <Heading heading="Inside Mentoons" />
       <div className="flex justify-center">
         <div className="flex flex-col lg:flex-row items-center lg:items-start px-10 max-w-screen-2xl w-full gap-10">

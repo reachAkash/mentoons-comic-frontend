@@ -127,7 +127,6 @@ interface FormError {
 }
 
 export function JobApplicationForm() {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = React.useState<FormData>({
     name: "",

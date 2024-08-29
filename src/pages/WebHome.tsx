@@ -1,6 +1,7 @@
+import { useState } from "react";
 import ExploreMentoons from "@/components/Home/ExploreMentoons";
 import Career from "@/components/shared/CareerPage/Career";
-import { useEffect, useState } from "react";
+
 import CallToAction from "../components/Home/CallToAction";
 import HeroSection from "../components/Home/HeroSection";
 import InsideMentoons from "../components/Home/InsideMentoons";
@@ -18,11 +19,7 @@ type videoData = {
 const WebHome: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [videoType, setVideoType] = useState<string>("");
-  const [isMuted, setIsMuted] = useState<boolean>(() => {
-    const storedMuteState = localStorage.getItem("isMuted");
-    return storedMuteState ? JSON.parse(storedMuteState) : false;
-  });
-  const [audio] = useState(new Audio("/audio.mp3"));
+
 
   const videos: videoData[] = [
     {
@@ -78,24 +75,7 @@ const WebHome: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    audio.volume = isMuted ? 0 : 1;
-  }, [isMuted, audio]);
-
-  const handleMuteToggle = () => {
-    if (audio.paused) {
-      audio
-        .play()
-        .catch((error) => console.error("Error playing audio:", error));
-    } else {
-      audio.pause();
-    }
-    setIsMuted((prev) => !prev);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("isMuted", JSON.stringify(isMuted));
-  }, [isMuted]);
+  
   return (
     <>
       <div className='h-full w-full overflow-hidden'>
@@ -117,30 +97,7 @@ const WebHome: React.FC = () => {
           setVideoType={setVideoType}
         />
         <CallToAction />
-        <div className='fixed top-[6rem] right-2 flex flex-col items-center'>
-          <button
-            onClick={handleMuteToggle}
-            className='bg-transparent border-2 p-2 rounded-full shadow-md border-black text-black'
-            aria-label='Toggle mute'
-          >
-            {isMuted ? (
-              <figure className='h-8 lg:h-16 w-8 lg:w-16'>
-                <img
-                  src='/assets/images/play.png'
-                  className='h-full w-full object-contain'
-                />
-              </figure>
-            ) : (
-              <figure className='h-8 lg:h-16 w-8 lg:w-16'>
-                <img
-                  src='/assets/images/pause.png'
-                  className='h-full w-full object-contain'
-                />
-              </figure>
-            )}
-          </button>
-        </div>
-      </div>
+   </div>
       <section id='join' className=''>
         <Career />
       </section>

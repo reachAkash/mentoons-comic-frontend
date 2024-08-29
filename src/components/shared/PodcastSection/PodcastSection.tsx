@@ -1,4 +1,4 @@
-import Wordbreak from "@/components/Wordbreak";
+import Wordbreak from "@/components/comics/Wordbreak";
 import { motion } from "framer-motion";
 import React from "react";
 import { PODCAST_DETAILS } from "../../../constant";

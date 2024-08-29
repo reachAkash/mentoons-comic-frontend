@@ -35,7 +35,7 @@ const MentoonsBenifit: React.FC<HomeProps> = ({ setModalOpen, setVideoType }) =>
   ];
 
   return (
-    <div className="h-full w-full lg:h-full pt-8 pb-28 bg-light-yellow relative">
+    <div className="h-full w-full lg:h-full py-8 bg-light-yellow relative">
       <Fade direction="up" triggerOnce>
         <Heading heading="Mentoons Benefits" />
       </Fade>

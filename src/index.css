@@ -344,6 +344,22 @@ body {
   background-color: #d12881;
   padding: 0.5rem 3rem;
 }
+
+.cta-button-footer {
+  font-family: "Alegreya sans", serif;
+  margin: 0 4rem;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.6px;
+  outline: none;
+  border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+  border: solid 7px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-weight: 700;
+  background-color: #d12881;
+  padding: 0.5rem 3rem;
+}
 @media (max-width: 768px) {
   .cta-button {
     margin: 0rem 1rem;
