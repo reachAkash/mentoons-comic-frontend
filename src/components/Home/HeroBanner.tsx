@@ -1,3 +1,4 @@
+import Sidebar from "../comics/Sidebar";
 import Cards from "./Cards";
 import { Fade, Slide } from "react-awesome-reveal";
 
@@ -5,15 +6,17 @@ type CardsData = {
     url: string;
     boxUrl: string;
     cardText: string;
+    linkUrl: string;
     dsecription: string;
 };
 
 const HeroBanner = () => {
     const cards: CardsData[] = [
         {
-            url: "/slide1.jpg",
+            url: "/Workshops_.jpg",
             boxUrl: "/assets/home/workshop-btn.png",
             cardText: "Workshop",
+            linkUrl: "/mentoons-workshops",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -21,6 +24,7 @@ const HeroBanner = () => {
             url: "/Comics_.jpg",
             boxUrl: "/assets/home/comic-btn.png",
             cardText: "Comic",
+            linkUrl: "/mentoons-comics",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -28,6 +32,7 @@ const HeroBanner = () => {
             url: "/Audio-comics.jpg",
             boxUrl: "/assets/home/acomic-btn.png",
             cardText: "Audio comic",
+            linkUrl: "/mentoons-comics/audio-comics",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -35,13 +40,15 @@ const HeroBanner = () => {
             url: "/Podcast_.jpg",
             boxUrl: "/assets/home/pod-btn.png",
             cardText: "Podcast",
+            linkUrl: "/mentoons-podcast",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
         {
-            url: "/Workshops_.jpg",
+            url: "/slide1.jpg",
             boxUrl: "/assets/home/revive-btn.png",
-            cardText: "Workshop",
+            cardText: "Something",
+            linkUrl: "/mentoons-workshops",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -49,6 +56,7 @@ const HeroBanner = () => {
             url: "/slide1.jpg",
             boxUrl: "/assets/home/un-btn.png",
             cardText: "Let's revive",
+            linkUrl: "/",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -56,6 +64,7 @@ const HeroBanner = () => {
             url: "/slide1.jpg",
             boxUrl: "/assets/home/un2-btn.png",
             cardText: "Let's revive",
+            linkUrl: "/",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -63,6 +72,7 @@ const HeroBanner = () => {
             url: "/slide1.jpg",
             boxUrl: "/assets/home/cc-btn.png",
             cardText: "Career corner",
+            linkUrl: "/",
             dsecription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos eligendi cumque vero consectetur, nulla nam aut porro quisquam. Quia molestias architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
         },
@@ -70,6 +80,20 @@ const HeroBanner = () => {
 
     return (
         <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">
+            <div className="absolute top-[20rem] right-0 z-50 hidden lg:block">
+                <div className="relative group">
+                    <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+                        <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+                            <Sidebar className="hidden md:block" />
+                        </div>
+                    </div>
+                    <div className="absolute top-[10.2rem] right-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
+                            View Sidebar
+                        </div>
+                    </div>
+                </div>
+            </div>
             <Fade duration={1000} triggerOnce>
                 <img
                     src="/assets/home/home-banner.png"
@@ -90,7 +114,7 @@ const HeroBanner = () => {
                 <div className="flex flex-col lg:flex-row z-30 items-center lg:text-left">
                     <Fade direction="up" duration={1000} triggerOnce>
                         <div className="">
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl text-white font-bold mb-4 text-center lg:text-left">
+                            <h1 className="text-4xl md:text-5xl lg:text-8xl text-white font-bold mb-4 text-center lg:text-left">
                                 What we offer?
                             </h1>
                             <h3 className="bg-men-blue text-white text-lg md:text-2xl lg:text-3xl px-4 sm:px-6 md:px-8 py-2 rounded-full max-w-fit">
@@ -108,14 +132,14 @@ const HeroBanner = () => {
                 </Slide>
             </div>
             <Slide direction="right" duration={1000} triggerOnce>
-                    <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
-                        <img
-                            src="/assets/home/football.png"
-                            alt="specs-asset"
-                            className="w-full h-full object-contain"
-                        />
-                    </figure>
-                </Slide>
+                <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
+                    <img
+                        src="/assets/home/football.png"
+                        alt="specs-asset"
+                        className="w-full h-full object-contain"
+                    />
+                </figure>
+            </Slide>
         </div>
     );
 };
