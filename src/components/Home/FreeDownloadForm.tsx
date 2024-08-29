@@ -5,6 +5,8 @@ import { IoMdClose } from "react-icons/io";
 import MiniLogo from "@/assets/imgs/logo mini.png";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import { toast } from "sonner";
+import { date } from "@/constant/websiteConstants";
 
 interface FormType {
   name: string;
@@ -58,8 +60,18 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
             response.status,
             response.text
           );
+          toast("Comic sent successfully 🥳", {
+            description: date,
+            action: {
+              label: <span className="text-white font-semibold">success</span>,
+              onClick: () => {},
+            },
+          });
         },
         (error) => {
+          toast("Please try again later! 🚫", {
+            description: date,
+          });
           console.error("Failed to send email.", error);
         }
       )
