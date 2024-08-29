@@ -19,7 +19,6 @@ import Cart from "./pages/Cart";
 import ComicsPage from "./pages/ComicsPage";
 import NotFound from "./pages/NotFound";
 import PodCast from "./pages/PodCast";
-import Wishlist from "./pages/Wishlist";
 function App() {
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic
@@ -56,7 +55,6 @@ function App() {
         <Route path='/faq' element={<FAQ />} />
         <Route path='/website-plans' element={<Plans />} />
         <Route path='*' element={<NotFound />} />
-        <Route path='/' element={<WebHome />} />
         <Route path='/mentoons-comics' element={<ComicsHome />} />
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/cart' element={<Cart />} />
