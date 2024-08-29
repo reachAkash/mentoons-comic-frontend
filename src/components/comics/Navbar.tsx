@@ -202,8 +202,9 @@ const Navbar: React.FC = () => {
       >
         <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
           <Link to="/">
-            <h2 className="text-xl font-extrabold cursor-pointer">
-              <img className="w-32 cursor-pointer" src={LogoMini} alt="Mini Logo" />
+            <h2 className="text-xl font-extrabold cursor-pointer flex flex-row-reverse items-center justify-center gap-4">
+              <img className="w-32 mt-2 cursor-pointer" src={LogoMini} alt="Mini Logo" />
+              <img className="w-8 cursor-pointer" src='/assets/home/home-icn.png' alt="home Logo" />
             </h2>
           </Link>
         </div>
