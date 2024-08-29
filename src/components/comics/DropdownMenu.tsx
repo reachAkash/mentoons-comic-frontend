@@ -24,7 +24,7 @@ const DropdownMenu = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="lg:hidden cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap">
-          Audio Comics
+          Audio Comics  
         </MenubarTrigger>
         <MenubarContent>
           <MenubarSub>
