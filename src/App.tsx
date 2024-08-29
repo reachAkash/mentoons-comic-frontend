@@ -14,11 +14,11 @@ import ProgressScroller from "./components/comics/ProgressScroller";
 import ScrollToTop from "./components/comics/ScrollToTop";
 import { SearchPage } from "./pages/SearchPage";
 import Wishlist from "./pages/Wishlist";
-import WebHome from "./pages/WebHome";
 import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
 import Footer from "./components/comics/Footer";
 import AudioComicPage from "./pages/AudioComicPage";
+import Home from "./pages/Home";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -30,7 +30,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/" element={<WebHome />} />
+        <Route path="/" element={<Home />} />
         <Route path="/mentoons-comics" element={<ComicsHome />} />
         <Route path="/mentoons-comics/wishlist" element={<Wishlist />} />
         <Route path="/mentoons-comics/cart" element={<Cart />} />
