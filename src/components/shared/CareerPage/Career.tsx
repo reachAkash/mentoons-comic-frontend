@@ -5,7 +5,7 @@ const Career = () => {
     <section className='relative  '>
       {/* Testimonial */}
 
-      <div className='w-full relative'>
+      <div className='w-full relative z-99999'>
         <img
           src='/assets/images/join_us.jpg'
           alt=''
@@ -13,8 +13,8 @@ const Career = () => {
         />
       </div>
 
-      <div className=' grid md:grid-cols-2  bg-[url(/assets/images/join_us.jpg)]  position-center '>
-        <div className=' background-blur '></div>
+      <div className=' grid md:grid-cols-2 '>
+        <div className='background-blur'></div>
         <div className='relative p-4 pt-0 pl-5 rounded-lg'>
           <video className='h-full w-full rounded-lg' controls>
             <source

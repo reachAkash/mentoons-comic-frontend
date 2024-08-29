@@ -8,7 +8,7 @@ const WhyMentoons = () => {
         <div className='absolute w-full flex flex-col  items-center   '>
           <div className=' w-full max-w-[640px] relative  p-6 pt-44 '>
             <p className='absolute w-[80%] left-1/2 -translate-x-1/2 top-20 text-4xl text-rose-600 font-bold text-center lg:text-5xl lg:top-[120%]'>
-              Why Our Podcast Matter?
+              Why Our Podcast Matters?
             </p>
             <div className='max-w-[800px] lg:absolute lg:-bottom-[140%] mb-4'>
               <p className='w-full text-sm md:text-lg text-black font-bold text-center mx-auto md:w-[85%] lg:w-[95%] '>
