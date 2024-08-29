@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Wordbreak from "@/components/comics/Wordbreak";
 import { v4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { MdCloudDownload } from "react-icons/md";
+import FreeDownloadForm from "@/components/Home/FreeDownloadForm";
 
 export interface GamesData {
   name: string;
@@ -47,6 +48,8 @@ const FreeDownload: React.FC = () => {
     },
   ];
 
+  const [showFreeDownloadForm, setShowFreeDownloadForm] =
+    useState<boolean>(false);
   return (
     <div className="container py-10 bg-[#00B0A5]">
       <motion.div
@@ -73,7 +76,7 @@ const FreeDownload: React.FC = () => {
           <span className="text-primary">Free!</span>{" "}
         </motion.div>
       </motion.div>
-      <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      <div className="flex flex-wrap justify-center gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
         {gamesData?.map((item) => {
           return (
             <motion.div
@@ -82,10 +85,10 @@ const FreeDownload: React.FC = () => {
               transition={{ duration: 0.5 }}
               key={v4()}
               // onClick={() => navigate(`/mentoons-comics/audio-comics/${item.name}`)}
-              onClick={() => navigate(`/mentoons-comics/audio-comics/`)}
               className={`${
                 item?.cardStyling && "bg-white"
               } shadow-2xl group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3`}
+              onClickCapture={() => setShowFreeDownloadForm(true)}
             >
               <div
                 className={`${item?.imgStyling} overflow-hidden rounded-2xl`}
@@ -110,6 +113,9 @@ const FreeDownload: React.FC = () => {
           );
         })}
       </div>
+      {showFreeDownloadForm && (
+        <FreeDownloadForm setShowFreeDownloadForm={setShowFreeDownloadForm} />
+      )}
     </div>
   );
 };

@@ -68,7 +68,7 @@ const FilterComics = () => {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-fit md:w-[200px] justify-between"
+          className="w-[90%] lg:w-[200px] justify-between"
         >
           {value
             ? AgeGroup.find((item) => item.value === value)?.label
@@ -76,7 +76,7 @@ const FilterComics = () => {
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[310px] md:w-[600px] lg:w-[200px] p-0">
         <Command>
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>

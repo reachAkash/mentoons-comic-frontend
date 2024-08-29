@@ -13,7 +13,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube, IoMdClose } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
-import FreeDownloadForm from "../Home/FreeDownloadForm";
 
 interface ImagePopupProps {
   isOpen: boolean;
@@ -28,8 +27,6 @@ const Footer: React.FC = () => {
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
   const [showShop, setShowShop] = useState<boolean>(false);
-  const [showFreeDownloadForm, setShowFreeDownloadForm] =
-    useState<boolean>(false);
 
   const comicData = [
     "Don't Fade Away",
@@ -187,7 +184,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div
-              onClick={() => setShowFreeDownloadForm(true)}
+              onClick={() => navigate("/mentoons-comics/free-download")}
               className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
             >
               Free Download
@@ -361,9 +358,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      {showFreeDownloadForm && (
-        <FreeDownloadForm setShowFreeDownloadForm={setShowFreeDownloadForm} />
-      )}
     </div>
   );
 };
