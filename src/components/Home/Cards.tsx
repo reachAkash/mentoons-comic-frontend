@@ -41,7 +41,7 @@ const Cards: React.FC<CardsProps> = ({ items, indexValue }) => {
             </h3>
           </div>
         </div>
-        <p className="mt-8 text-sm text-white">{items.dsecription}</p>
+        <p className="mt-8 text-lg text-white">{items.dsecription}</p>
       </div>
     </Zoom>
   );
