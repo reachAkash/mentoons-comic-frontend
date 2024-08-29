@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Wordbreak from "@/components/comics/Wordbreak";
 import { v4 } from "uuid";
-import { useNavigate } from "react-router-dom";
 import { MdCloudDownload } from "react-icons/md";
 import FreeDownloadForm from "@/components/Home/FreeDownloadForm";
 
@@ -15,8 +14,6 @@ export interface GamesData {
 }
 
 const FreeDownload: React.FC = () => {
-  const navigate = useNavigate();
-
   const gamesData: GamesData[] = [
     {
       name: "Hangman",
@@ -35,14 +32,14 @@ const FreeDownload: React.FC = () => {
     {
       name: "Insta Board",
       desc: "Instaboard is a game",
-      image: "/wordGame.png",
+      image: "/Instaboard.png",
       imgStyling: "bg-gradient-to-l from from-amber-200 to-white",
       cardStyling: "bg-rose-200",
     },
     {
       name: "Hangman",
       desc: "Hangman is a game",
-      image: "/hangman.png",
+      image: "/wordQuest.png",
       imgStyling: "bg-gradient-to-r from from-green-200 to-white",
       cardStyling: "bg-amber-200",
     },
