@@ -10,7 +10,7 @@ import {
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+
 
 const FAQCard = () => {
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
