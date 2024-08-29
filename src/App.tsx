@@ -19,6 +19,7 @@ import FAQ from "./components/common/FAQ";
 import Plans from "./components/common/Plans";
 import Footer from "./components/comics/Footer";
 import AudioComicPage from "./pages/AudioComicPage";
+import FreeDownload from "./pages/FreeDownload";
 
 function App() {
   const hoverComicCard = useSelector(
@@ -35,6 +36,10 @@ function App() {
         <Route path="/mentoons-comics/wishlist" element={<Wishlist />} />
         <Route path="/mentoons-comics/cart" element={<Cart />} />
         <Route
+          path="/mentoons-comics/free-download"
+          element={<FreeDownload />}
+        />
+        <Route
           path="/mentoons-comics/audio-comics"
           element={<ComicsPage page="Audio Comics" />}
         />
@@ -42,6 +47,7 @@ function App() {
           path="/mentoons-comics/comics"
           element={<ComicsPage page="Comics" />}
         />
+        <Route path="/mentoons-workshops" element={<Workshops />} />
         <Route path="/mentoons-workshops" element={<Workshops />} />
         <Route
           path="/mentoons-comics/comics-list"
