@@ -1,5 +1,8 @@
 import LogoMini from "@/assets/imgs/logo mini.png";
 import Logo from "@/assets/imgs/logo.png";
+// import { date } from "@/constant/websiteConstants";
+// import { RootState } from "@/redux/store";
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
@@ -55,7 +58,7 @@ const Navbar: React.FC = () => {
         className={`sticky top-0 ${showShadow && "shadow-xl"
           } hidden lg:flex items-center justify-between text-black bg-primary  transition-all duration-1000 ease-in-out z-[9999] px-5`}
       >
-        <ul className="flex items-center justify-between">
+        <ul className='flex items-center justify-between'>
           {/* <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer">
           Comics
         </li>
@@ -71,15 +74,15 @@ const Navbar: React.FC = () => {
           <DropdownMenu />
         </ul>
         <Link
-          to="/"
-          className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary"
+          to='/'
+          className='absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary'
         >
-          <img className="w-32 cursor-pointer" src={Logo} />
+          <img className='w-32 cursor-pointer' src={Logo} />
         </Link>
-        <div className="w-[40%] pl-4 flex items-center justify-between ">
-          <ul className="w-[60%] flex items-center justify-between">
-            <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm">
-              <Link to="/mentoons-podcast">Podcast</Link>
+        <div className='w-[40%] pl-4 flex items-center justify-between '>
+          <ul className='w-[60%] flex items-center justify-between'>
+            <li className='text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm'>
+              <Link to='/mentoons-podcast'>Podcast</Link>
             </li>
             <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm">
               <Link to="/mentoons-comics" className="whitespace-nowrap ">
@@ -141,15 +144,15 @@ const Navbar: React.FC = () => {
         className={`sticky top-0 ${showShadow && "shadow"
           } container flex lg:hidden items-center justify-between text-black bg-primary py-6 transition-all duration-1000 ease-in-out z-50`}
       >
-        <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
-          <Link to="/">
-            <h2 className="text-xl font-extrabold cursor-pointer">
-              <img className="w-32 cursor-pointer" src={LogoMini} />
+        <div className='w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8'>
+          <Link to='/'>
+            <h2 className='text-xl font-extrabold cursor-pointer'>
+              <img className='w-32 cursor-pointer' src={LogoMini} />
             </h2>
           </Link>
         </div>
-        <div className="w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8">
-          <MiniSidebar className="block" />
+        <div className='w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8'>
+          <MiniSidebar className='block' />
         </div>
       </div>
     </>

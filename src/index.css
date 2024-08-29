@@ -78,7 +78,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground relative;
   }
 }
 
@@ -162,7 +162,7 @@ body {
   height: 2px;
   margin-right: 0.7rem;
   margin-bottom: 0.6rem;
-  background-color: #d71515;
+  background-color: #7c2d12;
   display: inline-block;
 }
 
@@ -385,4 +385,17 @@ body {
     0 100%,
     0 0
   );
+}
+.background-blur {
+  background-image: url("/assets/images/join_us.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  /* Adjust as needed */
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Ensure it is behind other content */
 }

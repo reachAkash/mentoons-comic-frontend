@@ -1,7 +1,7 @@
 const Testimonial = () => {
   return (
-    <section className=' py-12 pb-14 bg-white '>
-      <h2 className='text-4xl text-dark-gray rubik-bubbles-regular pb-8 text-center '>
+    <section className=' py-12 pb-14 bg-[#59B2DC] '>
+      <h2 className='text-4xl text-dark-gray rubik-bubbles-regular pb-8 text-center font-bold'>
         What Parent and Children Say
       </h2>
 
