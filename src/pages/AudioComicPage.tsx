@@ -12,6 +12,7 @@ import { Comic } from "@/redux/comicSlice";
 import PurchaseDialog from "../components/comics/PurchaseDialog";
 import { toast } from "sonner";
 import { useParams } from "react-router-dom";
+import { funFacts } from "@/constant/comicsConstants";
 
 export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -28,23 +29,6 @@ const AudioComicPage: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const videoRef = useRef<any>();
   const [hasPurchased, setHasPurchased] = useState<boolean>(false);
-  const funFacts: string[] = [
-    "A group of flamingos is called a 'flamboyance.'",
-    "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
-    "Bananas are berries, but strawberries aren't.",
-    "Octopuses have three hearts and blue blood.",
-    "Wombat poop is cube-shaped. This helps it stack neatly, preventing it from rolling away.",
-    "A single strand of spaghetti is called a 'spaghetto.'",
-    "Sea otters hold hands while sleeping to keep from drifting apart.",
-    "A shrimp's heart is in its head.",
-    "There are more stars in the universe than grains of sand on all the Earth's beaches.",
-    "Sloths can take up to a month to digest their food.",
-    "Cows have best friends and can become stressed when they are separated.",
-    "Butterflies taste with their feet.",
-    "A group of porcupines is called a 'prickle.'",
-    "Some turtles can breathe through their butts!",
-    "Koalas sleep up to 22 hours a day.",
-  ];
 
   // handlers
 

@@ -1,8 +1,5 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-// import NewComic1 from "@/assets/imgs/comic1.jpg";
-// import NewComic2 from "@/assets/imgs/comic2.jpg";
-// import NewComic4 from "@/assets/imgs/comic4.jpg";
 import { FaRegEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
