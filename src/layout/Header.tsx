@@ -43,10 +43,10 @@ const Header = () => {
                         </NavLink>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <a href="tel:+918886543210" className="no-underline">
+                        <a href="tel:+919036033300" className="no-underline">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
                                 <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
-                                    Call us: +91 8886 543 210
+                                    Call us: +91 90360 33300
                                 </span>
                             </MenubarTrigger>
                         </a>

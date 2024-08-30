@@ -50,8 +50,8 @@ const Auth = () => {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-full max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg lg:flex-1 flex flex-col justify-center lg:max-w-none lg:rounded-none lg:shadow-none lg:bg-transparent">
-        <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="w-full flex items-center justify-center p-6 bg-white shadow-lg rounded-lg lg:flex-1 lg:bg-transparent">
+        <div className="bg-white py-8 px-20 rounded-lg shadow-md w-full max-w-lg">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
             {isLogin ? "Login" : "Register"}
           </h2>
@@ -81,7 +81,7 @@ const Auth = () => {
                     id="userName"
                     name="userName"
                     type="text"
-                    className="cta-input w-4/5 mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                   />
                   <ErrorMessage
                     name="userName"
@@ -102,7 +102,7 @@ const Auth = () => {
                   id="email"
                   name="email"
                   type="email"
-                  className="cta-input w-4/5 mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                 />
                 <ErrorMessage
                   name="email"
@@ -123,7 +123,7 @@ const Auth = () => {
                     id="age"
                     name="age"
                     type="number"
-                    className="cta-input w-4/5 mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                   />
                   <ErrorMessage
                     name="age"
@@ -144,7 +144,7 @@ const Auth = () => {
                   id="password"
                   name="password"
                   type="password"
-                  className="cta-input w-4/5 mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                 />
                 <ErrorMessage
                   name="password"
@@ -165,7 +165,7 @@ const Auth = () => {
                     id="confirmPassword"
                     name="confirmPassword"
                     type="password"
-                    className="cta-input w-4/5 mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                   />
                   <ErrorMessage
                     name="confirmPassword"
@@ -175,11 +175,8 @@ const Auth = () => {
                 </div>
               )}
 
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
+              <div style={{ textAlign: "center" }}>
+                <button type="submit" className="cta-button">
                   {isLogin ? "Login" : "Register"}
                 </button>
               </div>
