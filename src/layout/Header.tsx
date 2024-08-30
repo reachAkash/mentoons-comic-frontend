@@ -59,7 +59,7 @@ const Header = () => {
                     </MenubarMenu>
                     <MenubarMenu>
                         <NavLink to="/auth">
-                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold">
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold whitespace-nowrap">
                                 Sign up
                             </MenubarTrigger>
                         </NavLink>
@@ -88,10 +88,9 @@ const Header = () => {
                     )}
                 </div>
                 <Menubar
-                    className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0`}
+                    className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
                 >
-                    {/* Existing MenubarMenu items here */}
-                    <MenubarMenu>
+                  <MenubarMenu>
                         <NavLink to="/mentoons-comics">
                             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-6 text-base font-semibold">
                                 Comics
@@ -172,6 +171,13 @@ const Header = () => {
                                 Family Camp (Age 20+)
                             </MenubarItem>
                         </MenubarContent>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                        <NavLink to="/hiring">
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap text-white font-semibold lg:hidden">
+                                Join Us
+                            </MenubarTrigger>
+                        </NavLink>
                     </MenubarMenu>
 
                     {/* Profile Icon and Submenu */}
