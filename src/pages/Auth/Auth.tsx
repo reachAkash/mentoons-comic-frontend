@@ -51,7 +51,7 @@ const Auth = () => {
         />
       </div>
       <div className="w-full flex items-center justify-center p-6 bg-white shadow-lg rounded-lg lg:flex-1 lg:bg-transparent">
-        <div className="bg-white py-8 px-20 rounded-lg shadow-md w-full max-w-lg">
+        <div className="bg-white py-8 lg:px-20 px-4 rounded-lg shadow-md w-full lg:max-w-lg">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
             {isLogin ? "Login" : "Register"}
           </h2>

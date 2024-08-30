@@ -25,6 +25,7 @@ const Header = () => {
 
     const handleLogout = () => {
         console.log("User logged out");
+        setMenuOpen(false)
         navigate("/auth"); 
     };
 
@@ -33,7 +34,7 @@ const Header = () => {
             <div className="flex-1 flex justify-start">
                 <Menubar className="hidden lg:flex bg-transparent border-0">
                     <MenubarMenu>
-                        <NavLink to="/mentoons-comics">
+                        <NavLink to="/">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
                                 <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
                                     {date}
@@ -51,15 +52,15 @@ const Header = () => {
                         </a>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <NavLink to="/hiring">
+                        <NavLink to="/hiring" onClick={()=>setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap text-white font-semibold">
                                 Join Us
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <NavLink to="/auth">
-                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold whitespace-nowrap">
+                        <NavLink to="/auth" onClick={()=>setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold whitespace-nowrap ">
                                 Sign up
                             </MenubarTrigger>
                         </NavLink>
@@ -67,7 +68,7 @@ const Header = () => {
                 </Menubar>
             </div>
             <div className="relative flex-1">
-                <NavLink to='/'>
+                <NavLink to='/' onClick={()=>setMenuOpen(false)}>
                     <figure className="w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] absolute bg-primary rounded-full top-[-2.3rem] lg:top-[-6rem] left-1/2 transform -translate-x-1/2 z-40">
                         <img src="/assets/images/logo.png" alt="mentoonsLogo" className="h-full w-full object-contain lg:mt-4" />
                     </figure>
@@ -91,14 +92,14 @@ const Header = () => {
                     className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
                 >
                   <MenubarMenu>
-                        <NavLink to="/mentoons-comics">
+                        <NavLink to="/mentoons-comics" onClick={()=>setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-6 text-base font-semibold">
                                 Comics
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <NavLink to="/mentoons-podcast">
+                        <NavLink to="/mentoons-podcast" onClick={()=>setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-6 text-base font-semibold">
                                 Podcast
                             </MenubarTrigger>
@@ -113,26 +114,32 @@ const Header = () => {
                                 <MenubarSubTrigger>Age Groups</MenubarSubTrigger>
                                 <MenubarSubContent>
                                     <MenubarItem
-                                        onClick={() =>
+                                        onClick={() =>{
                                             navigate(
                                                 "/mentoons-comics/audio-comics?filter=groupSmall"
                                             )
+                                            setMenuOpen(false)
+                                        }
                                         }
                                     >
                                         Age 6 - 12
                                     </MenubarItem>
                                     <MenubarItem
-                                        onClick={() =>
+                                        onClick={() =>{
                                             navigate(
                                                 "/mentoons-comics/audio-comics?filter=groupMedium"
                                             )
+                                            setMenuOpen(false)
+                                        }
                                         }
                                     >
                                         Age 13 - 19
                                     </MenubarItem>
                                     <MenubarItem
-                                        onClick={() =>
+                                        onClick={() =>{
                                             navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+                                            setMenuOpen(false)
+                                        }
                                         }
                                     >
                                         Age 20+
@@ -141,8 +148,10 @@ const Header = () => {
                             </MenubarSub>
                             <MenubarSub>
                                 <MenubarItem
-                                    onClick={() =>
+                                    onClick={() =>{
                                         navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+                                        setMenuOpen(false)
+                                    }
                                     }
                                 >
                                     Family
@@ -156,25 +165,32 @@ const Header = () => {
                         </MenubarTrigger>
                         <MenubarContent>
                             <MenubarItem
-                                onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+                                onClick={() =>{ navigate("/mentoons-workshops?workshop=buddy") 
+                                      setMenuOpen(false)
+                                }}
                             >
                                 Buddy Camp (Age 6 - 12)
                             </MenubarItem>
                             <MenubarItem
-                                onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+                                onClick={() =>{ navigate("/mentoons-workshops?workshop=teen") 
+                                      setMenuOpen(false)
+                                }}
                             >
                                 Teen Camp (Age 13 - 15)
                             </MenubarItem>
                             <MenubarItem
-                                onClick={() => navigate("/mentoons-workshops?workshop=family")}
+                                onClick={() => {navigate("/mentoons-workshops?workshop=family")
+                                    setMenuOpen(false)
+                                }
+                                }
                             >
                                 Family Camp (Age 20+)
                             </MenubarItem>
                         </MenubarContent>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <NavLink to="/hiring">
-                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap text-white font-semibold lg:hidden">
+                        <NavLink to="/hiring" onClick={()=>setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
                                 Join Us
                             </MenubarTrigger>
                         </NavLink>
@@ -187,7 +203,9 @@ const Header = () => {
                             <span className="hidden lg:block">Profile</span>
                         </MenubarTrigger>
                         <MenubarContent>
-                            <MenubarItem onClick={() => navigate("/profile")}>
+                            <MenubarItem onClick={() =>{
+                            setMenuOpen(false)
+                            navigate("/profile")}}>
                                 My Profile
                             </MenubarItem>
                             <MenubarItem onClick={handleLogout}>
