@@ -8,7 +8,7 @@ import {
     MenubarSubContent,
     MenubarSubTrigger,
     MenubarTrigger,
-} from "@radix-ui/react-menubar";
+} from "@/components/ui/menubar";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
@@ -24,15 +24,14 @@ const Header = () => {
     };
 
     const handleLogout = () => {
-        // Add your logout logic here
         console.log("User logged out");
-        navigate("/auth"); // Redirect to login page after logout
+        navigate("/auth"); 
     };
 
     return (
-        <div className="w-full bg-primary flex items-center justify-around px-4 fixed z-[9999]" style={{boxShadow:' rgba(0, 0, 0, 0.2) 0px 20px 30px'}}>
+        <div className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999]" style={{boxShadow:' rgba(0, 0, 0, 0.2) 0px 20px 30px'}}>
             <div className="flex-1 flex justify-start">
-                <Menubar className="hidden lg:flex">
+                <Menubar className="hidden lg:flex bg-transparent border-0">
                     <MenubarMenu>
                         <NavLink to="/mentoons-comics">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
@@ -61,7 +60,7 @@ const Header = () => {
                     <MenubarMenu>
                         <NavLink to="/auth">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold">
-                                Login
+                                Sign up
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
@@ -70,7 +69,7 @@ const Header = () => {
             <div className="relative flex-1">
                 <NavLink to='/'>
                     <figure className="w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] absolute bg-primary rounded-full top-[-2.3rem] lg:top-[-6rem] left-1/2 transform -translate-x-1/2 z-40">
-                        <img src="/assets/images/logo.png" alt="mentoonsLogo" className="h-full w-full object-contain mt-4" />
+                        <img src="/assets/images/logo.png" alt="mentoonsLogo" className="h-full w-full object-contain lg:mt-4" />
                     </figure>
                 </NavLink>
             </div>
