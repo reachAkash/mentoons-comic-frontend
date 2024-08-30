@@ -1,5 +1,4 @@
 import { FaRegCirclePlay } from "react-icons/fa6";
-import Wordbreak from "./Wordbreak";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import User1 from "@/assets/imgs/user1.png";
@@ -17,7 +16,7 @@ const HeroSection: React.FC = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="home"
-      className="container relative bg-[#FD571D] flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
+      className="container relative bg-lime-400 flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
     >
       <motion.div
         initial={{ opacity: 0.5 }}
@@ -25,12 +24,11 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 2 }}
         className=" w-full lg:w-[50%] space-y-6"
       >
-        <h1 className="text-men-blue font-bold text-6xl lg:text-7xl ">
+        <h1 className="text-men-blue font-bold text-4xl lg:text-5xl ">
           Mentoons Comics
         </h1>
-        <div className=" text-white text-lg sm:text-2xl md:text-3xl tracking-wide leading-tight lg:leading-snug">
-          Welcome to a world of <Wordbreak /> meaningful stories and valuable{" "}
-          <Wordbreak /> life lessons.
+        <div className=" text-white text-2xl md:text-6xl font-semibold tracking-wider leading-tight">
+          Welcome to a world of meaningful stories and valuable life lessons.
         </div>
         <div className="mx-auto lg:mx-0 w-fit flex items-center justify-between gap-4">
           <button

@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
     "Choose Wisely",
   ];
   const companyImg = [
-    "/activeListeners.png",
-    "/toonland.png",
-    "/storyClub.png",
-    "/cxoBranding.png",
-    "propellingStories.png",
+    { image: "/activeListeners.png", url: "https://www.activelisteners.in/" },
+    { image: "/toonland.png", url: "https://toonland.in/" },
+    { image: "/storyClub.png", url: "" },
+    { image: "/cxoBranding.png", url: "" },
+    { image: "propellingStories.png", url: "" },
   ];
   const contactIcons = [
     { icon: ImLinkedin, color: "text-blue-700" },
@@ -354,10 +354,11 @@ const Footer: React.FC = () => {
               return (
                 <div className="overflow-hidden">
                   <img
+                    onClick={() => navigate(item?.url)}
                     className={`${
                       idx == 3 ? "w-16" : "w-20"
                     } cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out`}
-                    src={item}
+                    src={item?.image}
                     alt="company image"
                   />
                 </div>
