@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import Wordbreak from "@/components/comics/Wordbreak";
 import { v4 } from "uuid";
 import { MdCloudDownload } from "react-icons/md";
-import FreeDownloadForm from "@/components/Home/FreeDownloadForm";
+import FreeDownloadForm from "@/components/comics/FreeDownloadForm";
+import { gamesData } from "@/constant/comicsConstants";
 
 export interface GamesData {
   name: string;
@@ -11,39 +12,20 @@ export interface GamesData {
   image: string;
   imgStyling: string;
   cardStyling: string;
+  thumbnail_url: string;
+  pdf_url: string;
+}
+
+export interface SelectedComicType {
+  thumbnail_url: string;
+  pdf_url: string;
 }
 
 const FreeDownload: React.FC = () => {
-  const gamesData: GamesData[] = [
-    {
-      name: "Hangman",
-      desc: "Hangman is a game",
-      image: "/hangman.png",
-      imgStyling: "bg-gradient-to-t from from-rose-200 to-white",
-      cardStyling: "bg-purple-200",
-    },
-    {
-      name: "Word Game",
-      desc: "Word Game is a game",
-      image: "/wordGame.png",
-      imgStyling: "bg-gradient-to-b from from-purple-200 to-white",
-      cardStyling: "bg-lime-200",
-    },
-    {
-      name: "Insta Board",
-      desc: "Instaboard is a game",
-      image: "/Instaboard.png",
-      imgStyling: "bg-gradient-to-l from from-amber-200 to-white",
-      cardStyling: "bg-rose-200",
-    },
-    {
-      name: "Hangman",
-      desc: "Hangman is a game",
-      image: "/wordQuest.png",
-      imgStyling: "bg-gradient-to-r from from-green-200 to-white",
-      cardStyling: "bg-amber-200",
-    },
-  ];
+  const [selectedComic, setSelectedComic] = useState<SelectedComicType>({
+    thumbnail_url: "",
+    pdf_url: "",
+  });
 
   const [showFreeDownloadForm, setShowFreeDownloadForm] =
     useState<boolean>(false);
@@ -85,7 +67,13 @@ const FreeDownload: React.FC = () => {
               className={`${
                 item?.cardStyling && "bg-white"
               } shadow-2xl group cursor-pointer text-black rounded-2xl px-5 py-5 space-y-3`}
-              onClickCapture={() => setShowFreeDownloadForm(true)}
+              onClickCapture={() => {
+                setShowFreeDownloadForm(true);
+                setSelectedComic({
+                  thumbnail_url: item.thumbnail_url,
+                  pdf_url: item.pdf_url,
+                });
+              }}
             >
               <div
                 className={`${item?.imgStyling} overflow-hidden rounded-2xl`}
@@ -111,7 +99,10 @@ const FreeDownload: React.FC = () => {
         })}
       </div>
       {showFreeDownloadForm && (
-        <FreeDownloadForm setShowFreeDownloadForm={setShowFreeDownloadForm} />
+        <FreeDownloadForm
+          selectedComic={selectedComic}
+          setShowFreeDownloadForm={setShowFreeDownloadForm}
+        />
       )}
     </div>
   );

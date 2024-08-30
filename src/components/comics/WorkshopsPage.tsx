@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import WorkshopImg1 from "@/assets/imgs/Kids_camp 2.jpg";
-import WorkshopImg2 from "@/assets/imgs/Teen_camp 2.jpg";
-import WorkshopImg3 from "@/assets/imgs/Family_camp 2.jpg";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useQuery } from "@/pages/AudioComicPage";
+import { workshopData } from "@/constant/comicsConstants";
 
 export interface WorkshopItems {
   name: string;
@@ -26,94 +24,6 @@ const ComicWorkshop: React.FC = () => {
     "Age 6-12",
     "Age 13-19",
     "Above 20+ / Parents",
-  ];
-
-  const workshopData: WorkshopItems[] = [
-    {
-      name: "Buddy Camp",
-      img: WorkshopImg1,
-      desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
-      video:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
-      features: [
-        "Engaging activities that promote friendship and teamwork",
-        "Age-appropriate lessons on moral values and ethical decision-making",
-        "Practical exercises to improve conversation skills",
-        "Safe and supportive environment for children to practice social interactions",
-        "Experienced facilitators trained in child development",
-      ],
-      expectations: [
-        "Friendship-building games and exercises",
-        "Discussions on moral values and their importance in daily life",
-        "Role-playing scenarios to practice conversation starters",
-        "Group projects that encourage collaboration and communication",
-        "Reflection sessions to reinforce learned concepts",
-      ],
-      benefits: [
-        "Increased self-confidence in social situations",
-        "Better understanding of moral values and their application",
-        "Improved ability to initiate and maintain friendships",
-        "Enhanced communication skills for academic and personal success",
-        "Positive peer interactions in a structured setting",
-      ],
-    },
-    {
-      name: "Teen Camp",
-      img: WorkshopImg2,
-      desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-      video:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
-      features: [
-        "Identity Exploration: Guides teens in understanding and developing their personal identity",
-        "Hormonal Changes: Educates on physical and emotional changes during puberty",
-        "Substance De-Addiction: Provides information and strategies to avoid or overcome substance use",
-        "Scrolling De-Addiction: Teaches healthy digital habits and reducing screen time",
-        "Age-Appropriate Content: Tailored for teenagers between 13-19 years old",
-        "Expert-Led Sessions: Conducted by qualified professionals in adolescent development",
-      ],
-      expectations: [
-        "Interactive group discussions",
-        "Informative presentations",
-        "Practical exercises and activities",
-        "Safe and supportive environment",
-        "Take-home resources for continued learning",
-      ],
-      benefits: [
-        "Gain confidence in their changing bodies and emotions",
-        "Learn to make informed decisions about substance use",
-        "Develop healthier relationships with technology",
-        "Improve communication skills with peers and adults",
-        "Build a stronger sense of self",
-      ],
-    },
-    {
-      name: "Family Camp",
-      img: WorkshopImg3,
-      desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-      video:
-        "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
-      features: [
-        "Engaging activities that promote friendship and teamwork",
-        "Age-appropriate lessons on moral values and ethical decision-making",
-        "Practical exercises to improve conversation skills",
-        "Safe and supportive environment for children to practice social interactions",
-        "Experienced facilitators trained in child development",
-      ],
-      expectations: [
-        "Friendship-building games and exercises",
-        "Discussions on moral values and their importance in daily life",
-        "Role-playing scenarios to practice conversation starters",
-        "Group projects that encourage collaboration and communication",
-        "Reflection sessions to reinforce learned concepts",
-      ],
-      benefits: [
-        "Increased self-confidence in social situations",
-        "Better understanding of moral values and their application",
-        "Improved ability to initiate and maintain friendships",
-        "Enhanced communication skills for academic and personal success",
-        "Positive peer interactions in a structured setting",
-      ],
-    },
   ];
 
   useEffect(() => {

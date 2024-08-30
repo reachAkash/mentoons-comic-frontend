@@ -2,7 +2,7 @@ import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
 import GroupImg4 from "@/assets/imgs/groupImg4.jpg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { ImLinkedin } from "react-icons/im";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -12,6 +12,7 @@ import { IoLogoYoutube, IoMdClose } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
 import { useState } from "react";
+import Logo from "@/assets/imgs/logo mini.png";
 
 interface ImagePopupProps {
   isOpen: boolean;
@@ -21,10 +22,10 @@ interface ImagePopupProps {
 }
 
 const Footer: React.FC = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [showEvents, setShowEvents] = useState<boolean>(false);
   const [showWorkshop, setshowWorkshop] = useState<boolean>(false);
+  const [showInside, setShowInside] = useState<boolean>(false);
   const [showShop, setShowShop] = useState<boolean>(false);
 
   const comicData = [
@@ -33,11 +34,11 @@ const Footer: React.FC = () => {
     "Choose Wisely",
   ];
   const companyImg = [
-    "/activeListeners.png",
-    "/toonland.png",
-    "/storyClub.png",
-    "/cxoBranding.png",
-    "propellingStories.png",
+    { image: "/activeListeners.png", url: "https://www.activelisteners.in/" },
+    { image: "/toonland.png", url: "https://toonland.in/" },
+    { image: "/storyClub.png", url: "" },
+    { image: "/cxoBranding.png", url: "" },
+    { image: "propellingStories.png", url: "" },
   ];
   const contactIcons = [
     { icon: ImLinkedin, color: "text-blue-700" },
@@ -55,15 +56,15 @@ const Footer: React.FC = () => {
     { src: GroupImg4, alt: "Fun Moments, 2023" },
   ];
 
-  const scrollToInsideMentoons = () => {
-    console.log("here");
-    if (location.pathname === "/") {
-      const element = document.getElementById("inside-mentoons");
-      element?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/", { state: { scrollToInsideMentoons: true } });
-    }
-  };
+  // const scrollToInsideMentoons = () => {
+  // console.log("here");
+  // if (location.pathname === "/") {
+  //   const element = document.getElementById("inside-mentoons");
+  //   element?.scrollIntoView({ behavior: "smooth" });
+  // } else {
+  //   navigate("/", { state: { scrollToInsideMentoons: true } });
+  // }
+  // };
 
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -79,58 +80,58 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className='text-white text-center'>
+    <div className="text-white text-center">
       <img
-        className='hidden md:block '
-        src='/FooterBg.png'
-        alt='footer image'
+        className="hidden md:block "
+        src="/FooterBg.png"
+        alt="footer image"
       />
       <img
-        className='block md:hidden'
-        src='/footerMobileVersion.png'
-        alt='footer image'
+        className="block md:hidden"
+        src="/footerMobileVersion.png"
+        alt="footer image"
       />
-      <div className='container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5'>
+      <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
-        <div className='flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0'>
+        <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
           <div>
-            <Link to='/'>
-              <img className='w-60' src="/logo.png" alt='mentoons logo' />
+            <Link to="/">
+              <img className="w-60" src={Logo} alt="mentoons logo" />
             </Link>
           </div>
-          <div className='flex items-center justify-between'>
-            <Link to='/'>
-              <div className='px-4 cursor-pointer border-r-2 border-white font-semibold'>
+          <div className="flex items-center justify-between">
+            <Link to="/">
+              <div className="px-4 cursor-pointer border-r-2 border-white font-semibold">
                 Home
               </div>
             </Link>
-            <Link to='/mentoons-comics'>
-              <div className='px-4 cursor-pointer border-r-2 border-white font-semibold'>
+            <Link to="/mentoons-comics">
+              <div className="px-4 cursor-pointer border-r-2 border-white font-semibold">
                 Comics
               </div>
             </Link>
-            <Link to='/mentoons-podcast'>
+            <Link to="/mentoons-podcast">
               {" "}
-              <div className='px-4 cursor-pointer border-r-2 border-white font-semibold'>
+              <div className="px-4 cursor-pointer border-r-2 border-white font-semibold">
                 Podcast
               </div>
             </Link>
-            <Link to='/mentoons-workshops'>
-              <div className='px-4 cursor-pointer font-semibold'>Workshop</div>
+            <Link to="/mentoons-workshops">
+              <div className="px-4 cursor-pointer font-semibold">Workshop</div>
             </Link>
           </div>
-          <div className='w-full lg:w-fit bg-[#662d0a94] uppercase font-semibold hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full'>
+          <div className="w-full lg:w-fit bg-[#662d0a94] uppercase font-semibold hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
             Contact Us
           </div>
         </div>
         {/* middle section */}
-        <div className='flex flex-wrap justify-between space-y-2'>
+        <div className="flex flex-wrap justify-between space-y-2">
           {/* first div */}
-          <div className='space-y-2 w-full md:w-fit'>
-            <div className='w-full'>
+          <div className="hidden space-y-2 w-full md:w-fit">
+            <div className="w-full">
               <div
                 onClick={() => setShowEvents((prev) => !prev)}
-                className='w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full'
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
               >
                 Upcoming Events
               </div>
@@ -145,24 +146,24 @@ const Footer: React.FC = () => {
                   visibility: showEvents ? "hidden" : "visible",
                 }}
               >
-                <div className='flex items-center gap-2'>
-                  <div className='text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2'>
-                    <img className='w-16' src='/Family camp.png' alt='' />
+                <div className="flex items-center gap-2">
+                  <div className="text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
+                    <img className="w-16" src="/Family camp.png" alt="" />
                   </div>
                   <div>
-                    <div className=''>15 September, 2024</div>
-                    <div className='text-base md:text-lg font-semibold tracking-wide'>
+                    <div className="">15 September, 2024</div>
+                    <div className="text-base md:text-lg font-semibold tracking-wide">
                       Introducing Mentoons
                     </div>
                   </div>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <div className=' text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2'>
-                    <img className='w-16' src='/Family camp.png' alt='' />
+                <div className="flex items-center gap-2">
+                  <div className=" text-base md:text-lg font-semibold bg-white  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer py-2">
+                    <img className="w-16" src="/Family camp.png" alt="" />
                   </div>
                   <div>
                     <div>30 September, 2024</div>
-                    <div className='text-lg font-bold tracking-wide'>
+                    <div className="text-lg font-bold tracking-wide">
                       Introducing Active Listeners
                     </div>
                   </div>
@@ -172,7 +173,7 @@ const Footer: React.FC = () => {
             <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
               Upcoming Meets
             </div>
-            <div className='w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full'>
+            <div className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">
               Upcoming Webinars
             </div>
           </div>
@@ -194,7 +195,7 @@ const Footer: React.FC = () => {
             </div>
             <div
               onClick={() => setshowWorkshop((prev) => !prev)}
-              className='w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full'
+              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
             >
               Workshops
             </div>
@@ -209,38 +210,38 @@ const Footer: React.FC = () => {
                 visibility: showWorkshop ? "hidden" : "visible",
               }}
             >
-              <div className='group cursor-pointer'>
+              <div className="group cursor-pointer">
                 <img
                   onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
-                  className='w-20 rounded-full'
-                  src='/Buddy camp.png'
-                  alt='comic image'
+                  className="w-20 rounded-full"
+                  src="/Buddy camp.png"
+                  alt="comic image"
                 />
-                <div className='group-hover:text-green-300 transition-all ease-in-out duration-300'>
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
                   Buddy Camp
                 </div>
               </div>
-              <div className='group cursor-pointer'>
+              <div className="group cursor-pointer">
                 <img
                   onClick={() => navigate("/mentoons-workshops?workshop=teen")}
-                  className='w-20 rounded-full'
-                  src='/Teen camp .png'
-                  alt='comic image'
+                  className="w-20 rounded-full"
+                  src="/Teen camp .png"
+                  alt="comic image"
                 />
-                <div className='group-hover:text-green-300 transition-all ease-in-out duration-300'>
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
                   Teen Camp
                 </div>
               </div>
-              <div className='group cursor-pointer'>
+              <div className="group cursor-pointer">
                 <img
                   onClick={() =>
                     navigate("/mentoons-workshops?workshop=family")
                   }
-                  className='w-20 rounded-full'
-                  src='/Family camp.png'
-                  alt='comic image'
+                  className="w-20 rounded-full"
+                  src="/Family camp.png"
+                  alt="comic image"
                 />
-                <div className='group-hover:text-green-300 transition-all ease-in-out duration-300'>
+                <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
                   Family Camp
                 </div>
               </div>
@@ -250,17 +251,21 @@ const Footer: React.FC = () => {
           <div className="space-y-2 w-full md:w-fit">
             <div className="">
               <div
-                onClick={scrollToInsideMentoons}
+                onClick={() => setShowInside((prev) => !prev)}
                 className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white active:bg-gray-100 transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
               >
                 Inside Mentoons
               </div>
               {/* children div */}
               <div
-                className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden py-1`}
-                // style={{
-                //   visibility: showInside ? "hidden" : "visible",
-                // }}
+                className={`transition-all ease-in-out duration-500 flex items-center gap-1 overflow-hidden ${
+                  showInside
+                    ? "max-h-0 opacity-0"
+                    : "max-h-[500px] opacity-100 mt-2"
+                }`}
+                style={{
+                  visibility: showInside ? "hidden" : "visible",
+                }}
               >
                 <div className="flex flex-wrap gap-4">
                   {images.map((image, index) => (
@@ -288,7 +293,7 @@ const Footer: React.FC = () => {
             </div>
             <div
               onClick={() => setShowShop((prev) => !prev)}
-              className='w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full'
+              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
             >
               Shop
             </div>
@@ -308,7 +313,7 @@ const Footer: React.FC = () => {
                     onClick={() =>
                       navigate("/mentoons-comics/audio-comics/" + item)
                     }
-                    className='font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300'
+                    className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
                   >
                     - {item}
                   </div>
@@ -317,16 +322,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
           {/* fourth div */}
-          <div className='space-y-2 w-full md:w-fit'>
+          <div className="space-y-2 w-full md:w-fit">
             <MapComponent />
-            <div className='flex items-center justify-start tracking-wide font-medium text-lg'>
+            <div className="flex items-center justify-start tracking-wide font-medium text-lg">
               <MdLocationOn />
               Domlur, Bangalore
             </div>
-            <div className='flex items-center justify-center md:justify-between gap-4 md:gap-1'>
+            <div className="flex items-center justify-center md:justify-between gap-4 md:gap-1">
               {contactIcons?.map((item) => {
                 return (
-                  <div className='bg-white p-2 rounded-full'>
+                  <div className="bg-white p-2 rounded-full">
                     <item.icon className={`text-xl ${item.color}`} />
                   </div>
                 );
@@ -335,25 +340,26 @@ const Footer: React.FC = () => {
           </div>
         </div>
         {/* bottom section */}
-        <div className='flex flex-wrap items-center justify-between pb-10'>
-          <Link to='/privacy-policy'>
-            <div className='font-semibold text-base md:text-lg tracking-wide'>
+        <div className="flex flex-wrap items-center justify-between pb-10">
+          <Link to="/privacy-policy">
+            <div className="font-semibold text-base md:text-lg tracking-wide">
               Privacy policy , Terms & conditions
             </div>
           </Link>
           <div>
-            <img className='w-28' src='/flowers.png' alt='flower image' />
+            <img className="w-28" src="/flowers.png" alt="flower image" />
           </div>
-          <div className='flex items-center gap-2 bg-white rounded-full py-2 px-4'>
+          <div className="flex items-center gap-2 bg-white rounded-full py-2 px-4">
             {companyImg?.map((item, idx) => {
               return (
-                <div className='overflow-hidden'>
+                <div className="overflow-hidden">
                   <img
+                    onClick={() => navigate(item?.url)}
                     className={`${
                       idx == 3 ? "w-16" : "w-20"
                     } cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out`}
-                    src={item}
-                    alt='company image'
+                    src={item?.image}
+                    alt="company image"
                   />
                 </div>
               );

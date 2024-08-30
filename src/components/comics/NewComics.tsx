@@ -1,8 +1,5 @@
 import React from "react";
 import Wordbreak from "./Wordbreak";
-// import NewComic1 from "@/assets/imgs/comic1.jpg";
-// import NewComic2 from "@/assets/imgs/comic2.jpg";
-// import NewComic4 from "@/assets/imgs/comic4.jpg";
 import { FaRegEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
@@ -79,11 +76,11 @@ const NewComics: React.FC = () => {
                 key={uuidv4()}
                 className={`bg-white m-auto shadow-sm w-[20rem] md:w-[45%] lg:w-[30%] relative ${
                   idx != 1 ? "lg:top-[5rem]" : "lg:top-[1.5rem]"
-                } rounded-xl group px-4 py-3 space-y-3`}
+                } rounded-xl group px-4 py-6 space-y-3`}
               >
                 <div className="relative">
                   <img
-                    className="group-hover:grayscale transition-all duration-500 ease-in-out h-[20rem] md:h-[30rem] w-full"
+                    className="group-hover:grayscale transition-all duration-500 ease-in-out h-[20rem] md:h-[30rem] w-full rounded-2xl"
                     src={item?.thumbnail}
                     alt="new comics"
                   />

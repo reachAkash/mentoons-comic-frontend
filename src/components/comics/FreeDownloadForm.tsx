@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
 import { date } from "@/constant/websiteConstants";
+import { SelectedComicType } from "@/pages/FreeDownload";
 
 interface FormType {
   name: string;
@@ -16,6 +17,7 @@ interface FormType {
 
 interface FreeDownloadForm {
   setShowFreeDownloadForm: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedComic: SelectedComicType;
 }
 
 const validationSchema = Yup.object({
@@ -35,6 +37,7 @@ const initialState: FormType = { name: "", email: "", phone: "" };
 
 const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
   setShowFreeDownloadForm,
+  selectedComic,
 }) => {
   const sendEmail = (values: FormType) => {
     emailjs
@@ -45,11 +48,9 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
           from_name: "Mentoons",
           to_name: values.name,
           to_email: values.email,
-          message: `Hello ${values.name}, thank you for choosing us. Claim your free comic 🥳`,
-          pdf_url:
-            "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Book+2+-+Electronic+gadgets+and+kids.pdf",
-          thumbnail_url:
-            "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
+          message: `Hello ${values.name}, thank you for choosing us. Here's your free comic 🥳`,
+          pdf_url: selectedComic.pdf_url,
+          thumbnail_url: selectedComic.thumbnail_url,
         },
         import.meta.env.VITE_EMAIL_JS_USER_ID
       )
