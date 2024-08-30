@@ -59,7 +59,7 @@ const Header = () => {
                     </MenubarMenu>
                     <MenubarMenu>
                         <NavLink to="/auth">
-                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold">
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base text-white font-semibold whitespace-nowrap">
                                 Sign up
                             </MenubarTrigger>
                         </NavLink>
@@ -88,7 +88,7 @@ const Header = () => {
                     )}
                 </div>
                 <Menubar
-                    className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0 h-80`}
+                    className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
                 >
                   <MenubarMenu>
                         <NavLink to="/mentoons-comics">
