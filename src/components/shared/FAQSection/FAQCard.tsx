@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import emailjs from "emailjs-com";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
 
@@ -32,8 +33,8 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
   return (
     <div
       className={` ${
-        isExpanded ? "max-h-full" : "max-h-16"
-      } border border-amber-100 rounded-xl flex flex-col items-center justify-between overflow-hidden transition-all duration-300  bg-amber-600 `}
+        !isExpanded ? "max-h-full" : "max-h-16"
+      } border border-amber-100 rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-amber-600 `}
     >
       <div className=' w-full flex items-center justify-between p-4 text-white'>
         <span className='text-2xl font-bold'>{position.jobTitle}</span>
@@ -62,8 +63,11 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
         <h1 className='text-xl font-bold pt-4'>Skills</h1>
         <div>
           <ul className='flex items-center justify-start gap-2 flex-wrap '>
-            {position.skills.map((skill,index) => (
-              <li className='px-3 py-1 rounded-full bg-amber-500 text-sm' key={index}>
+            {position.skills.map((skill, index) => (
+              <li
+                className='px-3 py-1 rounded-full bg-amber-500 text-sm'
+                key={index}
+              >
                 {skill}
               </li>
             ))}
@@ -104,6 +108,7 @@ export function JobApplicationForm() {
     cv: null,
   });
   const [formError] = React.useState<FormError>({});
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
     if (name === "cv" && files) {
@@ -118,17 +123,52 @@ export function JobApplicationForm() {
       });
     }
   };
-  const handleSubmit = async (e: FormEvent) => {
-    console.log(e);
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (error) => reject(error);
+    });
   };
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
+  const sendEmail = async (values: FormData) => {
+    let base64CV = "";
+    if (values.cv) {
+      base64CV = await fileToBase64(values.cv);
+    }
+
+    const convertedValues: Record<string, unknown> = {
+      ...values,
+      cv: base64CV,
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        convertedValues,
+        import.meta.env.VITE_EMAIL_JS_USER_ID
+      )
+      .then((result) => {
+        console.log(result.text);
+        console.log("Message sent successfully!");
+      })
+      .catch((error) => {
+        console.error("Failed to send message:", error);
+      });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault(); // Prevent default form submission
+    await sendEmail(formData);
+  };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setSelectedFile(e.target.files[0]);
     }
   };
-
+  console.log(import.meta.env.VITE_EMAIL_JS_SERVICE_ID);
   return (
     <Dialog>
       <DialogTrigger asChild>
