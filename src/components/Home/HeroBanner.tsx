@@ -13,69 +13,69 @@ type CardsData = {
 const HeroBanner = () => {
     const cards: CardsData[] = [
         {
-            url: "/Workshops_.jpg",
+            url: "/assets/home/workshop-n.png",
             boxUrl: "/assets/home/workshop-btn.png",
             cardText: "Workshops",
             linkUrl: "/mentoons-workshops",
-            dsecription: "Interactive sessions that encourage hands-on learning and creativity",
+            dsecription: "Interactive sessions led by industry experts, designed to enhance mentoring skills and foster personal growth.",
         },
         {
-            url: "/Comics_.jpg",
+            url: "/assets/home/Comic-n.png",
             boxUrl: "/assets/home/comic-btn.png",
             cardText: "Comics",
             linkUrl: "/mentoons-comics",
-            dsecription:"Beautifully illustrated stories that teach valuable lessons",
+            dsecription:"Our flagship offering, featuring beautifully illustrated stories that tackle various mentoring themes.",
         },
         {
-            url: "/Audio-comics.jpg",
+            url: "/assets/home/audioComic.png",
             boxUrl: "/assets/home/acomic-btn.png",
             cardText: "Audio comics",
             linkUrl: "/mentoons-comics/audio-comics",
-            dsecription: "A unique blend of visual storytelling and immersive audio"
+            dsecription: "An innovative fusion of traditional comics and audio storytelling, perfect for on-the-go learning."
         },
         {
-            url: "/Podcast_.jpg",
+            url: "/assets/home/Podcast-n.png",
             boxUrl: "/assets/home/pod-btn.png",
             cardText: "Podcasts",
             linkUrl: "/mentoons-podcasts",
-            dsecription:" Educational series covering various topics in an entertaining format",
+            dsecription:'"Mentor Moments," our weekly podcast, featuring inspiring conversations with mentors from various fields.',
         },
-        {
-            url: "/slide1.jpg",
-            boxUrl: "/assets/home/revive-btn.png",
-            cardText: "Something",
-            linkUrl: "/mentoons-workshops",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        },
-        {
-            url: "/slide1.jpg",
-            boxUrl: "/assets/home/un-btn.png",
-            cardText: "Let's revive",
-            linkUrl: "/",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        },
-        {
-            url: "/slide1.jpg",
-            boxUrl: "/assets/home/un2-btn.png",
-            cardText: "Let's revive",
-            linkUrl: "/",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        },
-        {
-            url: "/slide1.jpg",
-            boxUrl: "/assets/home/cc-btn.png",
-            cardText: "Career corner",
-            linkUrl: "/",
-            dsecription:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        },
+        // {
+        //     url: "/slide1.jpg",
+        //     boxUrl: "/assets/home/revive-btn.png",
+        //     cardText: "Something",
+        //     linkUrl: "/mentoons-workshops",
+        //     dsecription:
+        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+        // },
+        // {
+        //     url: "/slide1.jpg",
+        //     boxUrl: "/assets/home/un-btn.png",
+        //     cardText: "Let's revive",
+        //     linkUrl: "/",
+        //     dsecription:
+        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+        // },
+        // {
+        //     url: "/slide1.jpg",
+        //     boxUrl: "/assets/home/un2-btn.png",
+        //     cardText: "Let's revive",
+        //     linkUrl: "/",
+        //     dsecription:
+        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+        // },
+        // {
+        //     url: "/slide1.jpg",
+        //     boxUrl: "/assets/home/cc-btn.png",
+        //     cardText: "Career corner",
+        //     linkUrl: "/",
+        //     dsecription:
+        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
+        // },
     ];
 
     return (
-        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">
+        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">        
             <div className="absolute top-[20rem] right-0 z-50 hidden lg:block">
                 <div className="relative group">
                     <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
@@ -92,6 +92,7 @@ const HeroBanner = () => {
             </div>
             <Fade duration={1000} triggerOnce>
                 <img
+                    loading="lazy"
                     src="/assets/home/home-banner.png"
                     alt="hero-banner"
                     className="w-full object-cover"
@@ -101,6 +102,7 @@ const HeroBanner = () => {
                 <Slide direction="right" duration={1000} triggerOnce>
                     <figure className="w-[26rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute top-[-10rem] right-[20rem] hidden lg:block">
                         <img
+                            loading="lazy"
                             src="/assets/home/specs.png"
                             alt="specs-asset"
                             className="w-full h-full object-contain"
@@ -130,8 +132,9 @@ const HeroBanner = () => {
             <Slide direction="right" duration={1000} triggerOnce>
                 <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
                     <img
+                        loading="lazy"
                         src="/assets/home/football.png"
-                        alt="specs-asset"
+                        alt="football-asset"
                         className="w-full h-full object-contain"
                     />
                 </figure>
@@ -139,4 +142,5 @@ const HeroBanner = () => {
         </div>
     );
 };
+
 export default HeroBanner;
