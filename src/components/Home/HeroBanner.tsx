@@ -37,7 +37,7 @@ const HeroBanner = () => {
             url: "/assets/home/Podcast-n.png",
             boxUrl: "/assets/home/pod-btn.png",
             cardText: "Podcasts",
-            linkUrl: "/mentoons-podcasts",
+            linkUrl: "/mentoons-podcast",
             dsecription:'"Mentor Moments," our weekly podcast, featuring inspiring conversations with mentors from various fields.',
         },
         // {
