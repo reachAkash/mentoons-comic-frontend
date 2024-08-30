@@ -15,7 +15,7 @@ export const gamesData: GamesData[] = [
     thumbnail_url:
       "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/thumbnail/hangman.png",
     pdf_url:
-      "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/Hangman+game.pdf",
+      "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/pdf/Hangman+game.pdf",
   },
   {
     name: "Word Game",
