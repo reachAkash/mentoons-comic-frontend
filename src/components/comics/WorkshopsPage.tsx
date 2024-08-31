@@ -40,6 +40,16 @@ const ComicWorkshop: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Second row: 2 centered images */}
+        <div className="flex justify-center w-full gap-4">
+          {workshopDetails.slice(3).map((item, index) => (
+            <div className="flex justify-center w-full lg:w-1/3" key={index}>
+              <img className="w-[80%]" src={item.img} alt={item.name} />
+            </div>
+          ))}
+        </div>
+        {/* <img src={WorkshopBg} alt="dark clouds" /> */}
       </div>
     </div>
   );
