@@ -1,5 +1,6 @@
 import React from "react";
 import WorkshopHero from "@/assets/imgs/workshop_home.png";
+import WorkshopAlarm from "@/assets/imgs/Workshops_Page_.png";
 import workshopImg1 from "/Buddy camp.png";
 import workshopImg2 from "/Teen camp .png";
 import workshopImg3 from "/Family camp.png";
@@ -20,9 +21,13 @@ const ComicWorkshop: React.FC = () => {
       {/* Hero Section */}
       <div className="relative">
         <div>
-          <img src={WorkshopHero} alt="Workshop background" />
+          <img
+            className="h-[50vh] md:h-full w-full"
+            src={WorkshopHero}
+            alt="Workshop background"
+          />
         </div>
-        <div className="absolute w-1/2 text-white left-[27%] top-1/2 -translate-y-1/2 -translate-x-1/2 font-bold text-2xl md:text-5xl lg:text-7xl">
+        <div className="absolute w-1/2 text-white left-[27%] top-1/2 -translate-y-1/2 md:-translate-y-[60%] -translate-x-1/2 font-bold text-2xl md:text-5xl lg:text-7xl">
           Making mentoring accessible, engaging, and impactful for all.
           <div className="relative left-32">
             .<span className="font-extrabold">.</span>.
@@ -31,7 +36,14 @@ const ComicWorkshop: React.FC = () => {
       </div>
 
       {/* Workshop Listing Section */}
-      <div className="flex flex-col items-center bg-darkClouds bg-cover bg-no-repeat  py-10 gap-4">
+      <div className="relative flex flex-col items-center bg-darkClouds bg-cover bg-no-repeat  py-20 gap-4">
+        <div className="absolute -top-14 left-4 md:-top-44 md:left-20">
+          <img
+            className="w-1/3 md:w-2/3"
+            src={WorkshopAlarm}
+            alt="alarm image"
+          />
+        </div>
         {/* First row: 3 images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4">
           {workshopDetails.slice(0, 3).map((item, index) => (
@@ -40,7 +52,6 @@ const ComicWorkshop: React.FC = () => {
             </div>
           ))}
         </div>
-
         {/* Second row: 2 centered images */}
         <div className="flex justify-center w-full gap-4">
           {workshopDetails.slice(3).map((item, index) => (
