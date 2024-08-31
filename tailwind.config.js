@@ -76,6 +76,7 @@ module.exports = {
       backgroundImage: {
         "hero-image": "url('/caro3.png')",
         "footer-image": "url('/FooterBg.png')",
+        darkClouds: "url('/src/assets/imgs/workshop_bg.png')",
       },
       boxShadow: {
         "custom-light":
