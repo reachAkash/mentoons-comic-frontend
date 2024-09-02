@@ -31,8 +31,8 @@ const Header = () => {
 
     return (
         <div className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]" style={{ boxShadow: ' rgba(0, 0, 0, 0.2) 0px 20px 30px' }}>
-            <div className="flex-1 flex justify-start">
-                <Menubar className="hidden lg:flex bg-transparent border-0 justify-between">
+            <div className="flex-1 flex justify-start ">
+                <Menubar className="hidden lg:flex bg-transparent border-0 justify-between gap-[0.5rem]">
                     <MenubarMenu>
                         <NavLink to="/">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full px-1 text-base">
@@ -89,8 +89,15 @@ const Header = () => {
                     )}
                 </div>
                 <Menubar
-                    className={`${menuOpen ? "flex" : "hidden"} z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
+                    className={`${menuOpen ? "flex" : "hidden"} gap-[0.5rem] z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
                 >
+                    <MenubarMenu>
+                        <NavLink to="/" onClick={() => setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
+                                Home
+                            </MenubarTrigger>
+                        </NavLink>
+                    </MenubarMenu>
                     <MenubarMenu>
                         <NavLink to="/mentoons-comics" onClick={() => setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold">
@@ -106,7 +113,21 @@ const Header = () => {
                         </NavLink>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base whitespace-nowrap font-semibold">
+                        <NavLink to="/mentoons-comics/audio-comics" onClick={() => setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
+                                Audio Comics
+                            </MenubarTrigger>
+                        </NavLink>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                        <NavLink to="/mentoons-workshops" onClick={() => setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
+                                Workshops
+                            </MenubarTrigger>
+                        </NavLink>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base whitespace-nowrap font-semibold hidden lg:block">
                             Audio Comics
                         </MenubarTrigger>
                         <MenubarContent>
@@ -160,7 +181,7 @@ const Header = () => {
                         </MenubarContent>
                     </MenubarMenu>
                     <MenubarMenu>
-                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold">
+                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold hidden lg:block">
                             Workshops
                         </MenubarTrigger>
                         <MenubarContent>
@@ -193,7 +214,7 @@ const Header = () => {
                     </MenubarMenu>
                     <MenubarMenu>
                         <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
-                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-1 text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
+                            <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full px-1 text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
                                 Join Us
                             </MenubarTrigger>
                         </NavLink>
