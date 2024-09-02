@@ -95,12 +95,18 @@ const HeroBanner = () => {
                     loading="lazy"
                     src="/assets/home/home-banner.png"
                     alt="hero-banner"
-                    className="w-full object-cover"
+                    className="w-full object-cover hidden lg:block"
+                />
+                   <img
+                    loading="lazy"
+                    src="/assets/home/mv.png"
+                    alt="hero-banner"
+                    className="w-full object-cover  lg:hidden"
                 />
             </Fade>
             <div className="w-full h-full pb-[10rem] lg:pb-[30rem] px-4 sm:px-10 lg:px-40 z-20 flex flex-col gap-20 relative">
                 <Slide direction="right" duration={1000} triggerOnce>
-                    <figure className="w-[26rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute top-[-10rem] right-[20rem] hidden lg:block">
+                    <figure className="w-[10rem] lg:w-[22rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 lg:-top-14 lg:right-20">
                         <img
                             loading="lazy"
                             src="/assets/home/specs.png"
@@ -110,6 +116,16 @@ const HeroBanner = () => {
                     </figure>
                 </Slide>
                 <div className="flex flex-col lg:flex-row z-30 items-center lg:text-left">
+                <Slide direction="left" duration={1000} triggerOnce>
+                <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
+                    <img
+                        loading="lazy"
+                        src="/assets/home/football.png"
+                        alt="football-asset"
+                        className="w-full h-full object-contain"
+                    />
+                </figure>
+            </Slide>
                     <Fade direction="up" duration={1000} triggerOnce>
                         <div className="">
                             <h1 className="text-4xl md:text-5xl lg:text-8xl text-white font-bold mb-4 text-center lg:text-left">
@@ -130,7 +146,7 @@ const HeroBanner = () => {
                 </Slide>
             </div>
             <Slide direction="right" duration={1000} triggerOnce>
-                <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
+                    <figure className="w-[5rem] lg:w-[10rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[2rem] lg:bottom-[7rem] right-[2rem] lg:right-[10rem]">
                     <img
                         loading="lazy"
                         src="/assets/home/football.png"
