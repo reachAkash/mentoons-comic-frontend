@@ -34,13 +34,16 @@ const ComicWorkshop: React.FC = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
     workshopDetails[activeWorkshop]
   );
-
-  const workshopRef = useRef<HTMLDivElement>(null);
+  const workshopRefLg = useRef<HTMLDivElement>(null);
+  const workshopRefSm = useRef<HTMLDivElement>(null);
 
   const handleCardClick = (item: WorkshopItems) => {
     setSelectedWorkshop(item);
-    if (workshopRef.current) {
-      workshopRef.current.scrollIntoView({ behavior: "smooth" });
+    if (workshopRefLg.current) {
+      workshopRefLg.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (workshopRefSm.current) {
+      workshopRefSm.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -128,7 +131,7 @@ const ComicWorkshop: React.FC = () => {
         </div>
         {/* <img src={WorkshopBg} alt="dark clouds" /> */}
         <div
-          ref={workshopRef}
+          ref={workshopRefLg}
           className="hidden lg:flex relative flex-col w-full h-full max-w-7xl pt-10 space-y-10"
         >
           {/* workshop seperate section */}
@@ -163,7 +166,7 @@ const ComicWorkshop: React.FC = () => {
           </div>
         </div>
         {/* mobile screen card section */}
-        <div ref={workshopRef} className="relative flex lg:hidden flex-col">
+        <div ref={workshopRefSm} className="relative flex lg:hidden flex-col">
           <img
             className="w-full h-full"
             src={WorkshopCardSmall}

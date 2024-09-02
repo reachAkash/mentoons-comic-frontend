@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <div
-      className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999]"
+      className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-50"
       style={{ boxShadow: " rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
     >
       <div className="flex-1 flex justify-start">
