@@ -33,13 +33,13 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
   return (
     <div
       className={` ${
-        !isExpanded ? "max-h-full" : "max-h-16"
-      } border border-amber-100 rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-amber-600 `}
+        isExpanded ? "max-h-full" : "max-h-16"
+      } rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-[#008cff] `}
     >
       <div className=' w-full flex items-center justify-between p-4 text-white'>
         <span className='text-2xl font-bold'>{position.jobTitle}</span>
         <span
-          className={`p-1 rounded-full border border-amber-100 flex items-center transition-all duration-300  ${
+          className={`p-1 rounded-full border  flex items-center transition-all duration-300  ${
             isExpanded && "rotate-180"
           }`}
           onClick={handleIsExpanded}
@@ -65,7 +65,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
           <ul className='flex items-center justify-start gap-2 flex-wrap '>
             {position.skills.map((skill, index) => (
               <li
-                className='px-3 py-1 rounded-full bg-amber-500 text-sm'
+                className='px-3 py-1 rounded-full bg-blue-400 text-sm'
                 key={index}
               >
                 {skill}
@@ -172,7 +172,7 @@ export function JobApplicationForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='text-white font-bold px-5 py-2 w-full border  bg-transparent border-amber-100 hover:bg-amber-500 mb-4 rounded-md  transition-all duration-300'>
+        <Button className='text-white font-bold px-5 py-2 w-full border  bg-transparent border-amber-100 hover:bg-blue-500 mb-4 rounded-md  transition-all duration-300'>
           Apply Now
         </Button>
       </DialogTrigger>
