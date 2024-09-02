@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import WorkshopHero from "@/assets/imgs/workshop_home.png";
+import WorkshopHeroSmall from "@/assets/imgs/workshop-home-small.png";
 import WorkshopAlarm from "@/assets/imgs/Workshops_Page_.png";
 import workshopStar from "@/assets/imgs/Workshops_Page_ 7.png";
 import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
@@ -51,19 +52,29 @@ const ComicWorkshop: React.FC = () => {
       <div className="relative">
         <div>
           <img
-            className="h-[50vh] md:h-full w-full"
+            className="hidden md:block h-full w-full"
             src={WorkshopHero}
             alt="Workshop background"
           />
+          <img
+            className="block md:hidden w-full"
+            src={WorkshopHeroSmall}
+            alt="Workshop background"
+          />
         </div>
-        <div className="absolute w-1/2 text-white left-[27%] top-1/2 -translate-y-1/2 md:-translate-y-[60%] -translate-x-1/2 font-bold text-2xl md:text-5xl lg:text-7xl">
+        <div className="absolute w-[70%] md:w-1/2 text-white md:left-[27%] top-10 pl-6 md:pl-0 text-start md:top-1/2 md:-translate-y-[60%] md:-translate-x-1/2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
           Making mentoring accessible, engaging, and impactful for all.
-          <div className="relative left-32">
+          <div className="relative right-14 md:left-32">
             .<span className="font-extrabold">.</span>.
           </div>
           <div>
             <img
-              className="w-14 absolute -bottom-14 left-2/3"
+              className="hidden md:block w-14 absolute -bottom-14 left-2/3"
+              src={workshopArrow}
+              alt="fun icon"
+            />
+            <img
+              className="block md:hidden w-14 absolute top-10 left-[110%]"
               src={workshopArrow}
               alt="fun icon"
             />
@@ -82,23 +93,23 @@ const ComicWorkshop: React.FC = () => {
           />
         </div>
         {/* First row: 3 images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-12 md:gap-4">
           {workshopDetails.slice(0, 3).map((item, index) => (
             <div
               onClick={() => handleCardClick(item)}
-              className="flex justify-center w-full "
+              className="flex justify-center w-full"
               key={index}
             >
               <img
-                className="w-[85%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+                className="w-[70%] md:w-[85%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
                 src={item.img}
                 alt={item.name}
               />
             </div>
           ))}
-        </div>
+        </div> */}
         {/* Second row: 2 centered images */}
-        <div className="flex flex-col md:flex-row justify-center w-full gap-4">
+        {/* <div className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 w-full gap-12 md:gap-4">
           {workshopDetails.slice(3).map((item, index) => (
             <div
               onClick={() => handleCardClick(item)}
@@ -106,13 +117,13 @@ const ComicWorkshop: React.FC = () => {
               key={index}
             >
               <img
-                className="w-[80%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+                className="w-[70%] md:w-[80%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
                 src={item.img}
                 alt={item.name}
               />
             </div>
           ))}
-        </div>
+        </div> */}
         {/* <img src={WorkshopBg} alt="dark clouds" /> */}
         <div
           ref={workshopRef}
