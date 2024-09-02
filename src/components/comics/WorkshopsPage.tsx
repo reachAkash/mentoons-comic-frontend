@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import WorkshopHero from "@/assets/imgs/workshop_home.png";
 import WorkshopHeroSmall from "@/assets/imgs/workshop-home-small.png";
+import WorkshopCardSmall from "@/assets/imgs/workshop-card-small2.png";
+// import WorkshopCardSmall from "@/assets/imgs/workshop-card-small.png";
 import WorkshopAlarm from "@/assets/imgs/Workshops_Page_.png";
 import workshopStar from "@/assets/imgs/Workshops_Page_ 7.png";
 import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
@@ -127,7 +129,7 @@ const ComicWorkshop: React.FC = () => {
         {/* <img src={WorkshopBg} alt="dark clouds" /> */}
         <div
           ref={workshopRef}
-          className="relative flex flex-col w-full h-full max-w-7xl pt-10 space-y-10"
+          className="hidden lg:flex relative flex-col w-full h-full max-w-7xl pt-10 space-y-10"
         >
           {/* workshop seperate section */}
           <img className="w-full h-full" src={workshopBlueBg} alt="blue bg" />
@@ -152,6 +154,42 @@ const ComicWorkshop: React.FC = () => {
                   {selectedWorkshop.desc}
                 </div>
                 <div className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
+                  <div className="w-full relative text-2xl text-white bg-cover pl-2">
+                    Talk to us!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* mobile screen card section */}
+        <div ref={workshopRef} className="relative flex lg:hidden flex-col">
+          <img
+            className="w-full h-full"
+            src={WorkshopCardSmall}
+            alt="blue bg"
+          />
+          <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] px-8 md:-translate-y-[66%] space-y-5">
+            <div className="font-base text-3xl md:text-5xl text-white flex items-center justify-center m-auto">
+              <img src={workshopStar} alt="star" /> {selectedWorkshop.name}{" "}
+              <img src={workshopStar} alt="star" />
+            </div>
+            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4">
+              <div className="w-full">
+                <video
+                  className="rounded-lg"
+                  src={selectedWorkshop.video}
+                  width="800"
+                  height="400"
+                  controls
+                  controlsList="nodownload"
+                ></video>
+              </div>
+              <div className="w-full space-y-4">
+                <div className="font-medium leading-tight tracking-wide text-2xl">
+                  {selectedWorkshop.desc}
+                </div>
+                <div className="bg-button bg-contain bg-no-repeat relative left-10 px-8 py-3 w-fit h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
                   <div className="w-full relative text-2xl text-white bg-cover pl-2">
                     Talk to us!
                   </div>
