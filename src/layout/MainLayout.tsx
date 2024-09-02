@@ -15,12 +15,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className="relative h-full w-full">
       <div className="absolute top-24 left-10 z-[9999] hidden lg:block">
-        <Breadcrumbs/>
+        <Breadcrumbs />
       </div>
       <Header />
-      <div className="py-12 lg:py-20">
-      {children}
-      </div>
+      <div className="py-12 lg:py-20">{children}</div>
       {!isAuthRoute && <Footer />}
     </div>
   );

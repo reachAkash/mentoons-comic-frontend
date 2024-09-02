@@ -1,325 +1,209 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import WorkshopHero from "@/assets/imgs/workshop_home.png";
+import WorkshopHeroSmall from "@/assets/imgs/workshop-home-small.png";
+import WorkshopCardSmall from "@/assets/imgs/workshop-card-small2.png";
+// import WorkshopCardSmall from "@/assets/imgs/workshop-card-small.png";
+import WorkshopAlarm from "@/assets/imgs/Workshops_Page_.png";
+import workshopStar from "@/assets/imgs/Workshops_Page_ 7.png";
+import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
+import workshopArrow from "@/assets/imgs/workshop-arrow.png";
+import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
-import { workshopData } from "@/constant/comicsConstants";
 
 export interface WorkshopItems {
   name: string;
-  img: string;
   desc: string;
+  img: string;
   video: string;
-  features: string[];
-  benefits: string[];
-  expectations: string[];
 }
 
 const ComicWorkshop: React.FC = () => {
-  const query = useQuery();
-  const workshop = query.get("workshop");
-  const buddyRef = useRef<HTMLDivElement>(null);
-  const teenRef = useRef<HTMLDivElement>(null);
-  const familyRef = useRef<HTMLDivElement>(null);
-  const workshopGenres: string[] = [
-    "Age 6-12",
-    "Age 13-19",
-    "Above 20+ / Parents",
-  ];
+  const currType = useQuery();
+  const workshop = currType.get("workshop");
+  const activeWorkshop =
+    workshop == "buddy"
+      ? 0
+      : workshop == "teen"
+      ? 1
+      : workshop == "family"
+      ? 2
+      : workshop == "comic"
+      ? 3
+      : 4;
+
+  const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
+    workshopDetails[activeWorkshop]
+  );
+  const workshopRefLg = useRef<HTMLDivElement>(null);
+  const workshopRefSm = useRef<HTMLDivElement>(null);
+
+  const handleCardClick = (item: WorkshopItems) => {
+    setSelectedWorkshop(item);
+    if (workshopRefLg.current) {
+      workshopRefLg.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (workshopRefSm.current) {
+      workshopRefSm.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
-    const scrollToWorkshop = (workshopType: string) => {
-      const targetElement = document.getElementById(workshopType);
-      if (targetElement) {
-        const offset = 100;
-        const elementPosition =
-          targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    };
-
-    if (workshop) {
-      scrollToWorkshop(workshop);
-    }
+    handleCardClick(workshopDetails[activeWorkshop]);
   }, [workshop]);
 
   return (
-    <div className="container bg-[#00B0A5] flex flex-col items-center justify-start py-20 pb-28 space-y-10">
-      <motion.div
-        initial={{ y: 50, opacity: 0.2 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="font-semibold text-5xl tracking-wide text-white text-center"
-      >
-        Workshops in Mentoons
-      </motion.div>
-      <div className="flex items-center justify-center gap-2 lg:gap-8  w-full">
-        {workshopGenres?.map((item: string) => {
-          return (
-            <motion.div
-              initial={{ y: 20, opacity: 0.2 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="bg-[#007770] text-white hover:text-[#007770] px-1 md:px-3 py-1 rounded-full font-semibold hover:bg-white transition-all ease-in-out duration-300"
-            >
-              {item}
-            </motion.div>
-          );
-        })}
+    <div>
+      {/* Hero Section */}
+      <div className="relative">
+        <div>
+          <img
+            className="hidden md:block h-full w-full"
+            src={WorkshopHero}
+            alt="Workshop background"
+          />
+          <img
+            className="block md:hidden w-full"
+            src={WorkshopHeroSmall}
+            alt="Workshop background"
+          />
+        </div>
+        <div className="absolute w-[70%] md:w-1/2 text-white md:left-[27%] top-10 pl-6 md:pl-0 text-start md:top-1/2 md:-translate-y-[60%] md:-translate-x-1/2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          Making mentoring accessible, engaging, and impactful for all.
+          <div className="relative right-14 md:left-32">
+            .<span className="font-extrabold">.</span>.
+          </div>
+          <div>
+            <img
+              className="hidden md:block w-14 absolute -bottom-14 left-2/3"
+              src={workshopArrow}
+              alt="fun icon"
+            />
+            <img
+              className="block md:hidden w-14 absolute top-10 left-[110%]"
+              src={workshopArrow}
+              alt="fun icon"
+            />
+          </div>
+        </div>
       </div>
-      <div className="w-full flex flex-col gap-10 space-y-10 md:space-y-16">
-        <div ref={buddyRef} id="buddy">
-          <WorkshopHOC item={workshopData[0]} idx={0} />
+
+      {/* Workshop Listing Section */}
+      <div className="relative flex flex-col items-center bg-darkClouds bg-cover bg-no-repeat pt-20  gap-4">
+        {/* styling images */}
+        <div className="absolute -top-14 left-4 md:-top-32 lg:-top-44 md:left-20">
+          <img
+            className="w-1/3 md:w-[50%] lg:w-2/3"
+            src={WorkshopAlarm}
+            alt="alarm image"
+          />
         </div>
-        <div ref={teenRef} id="teen">
-          <WorkshopHOC item={workshopData[1]} idx={1} />
+        {/* First row: 3 images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-12 md:gap-4">
+          {workshopDetails.slice(0, 3).map((item, index) => (
+            <div
+              onClick={() => handleCardClick(item)}
+              className="flex justify-center w-full"
+              key={index}
+            >
+              <img
+                className="w-[70%] md:w-[85%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+                src={item.img}
+                alt={item.name}
+              />
+            </div>
+          ))}
         </div>
-        <div ref={familyRef} id="family">
-          <WorkshopHOC item={workshopData[2]} idx={2} />
+        {/* Second row: 2 centered images */}
+        <div className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 w-full gap-12 md:gap-4">
+          {workshopDetails.slice(3).map((item, index) => (
+            <div
+              onClick={() => handleCardClick(item)}
+              className="flex justify-center w-full lg:w-1/3"
+              key={index}
+            >
+              <img
+                className="w-[70%] md:w-[80%] cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+                src={item.img}
+                alt={item.name}
+              />
+            </div>
+          ))}
+        </div>
+        {/* <img src={WorkshopBg} alt="dark clouds" /> */}
+        <div
+          ref={workshopRefLg}
+          className="hidden lg:flex relative flex-col w-full h-full max-w-7xl pt-10 space-y-10"
+        >
+          {/* workshop seperate section */}
+          <img className="w-full h-full" src={workshopBlueBg} alt="blue bg" />
+          <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[70%] space-y-5">
+            <div className="font-base text-4xl md:text-5xl text-white flex items-center justify-center m-auto">
+              <img src={workshopStar} alt="star" /> {selectedWorkshop.name}{" "}
+              <img src={workshopStar} alt="star" />
+            </div>
+            <div className="flex flex-col lg:flex-row items-center justify-between px-14 gap-8">
+              <div className="w-[60%]">
+                <video
+                  className="rounded-lg pl-4"
+                  src={selectedWorkshop.video}
+                  width="800"
+                  height="400"
+                  controls
+                  controlsList="nodownload"
+                ></video>
+              </div>
+              <div className="w-[60%] space-y-4">
+                <div className="font-medium leading-tight tracking-wide text-2xl">
+                  {selectedWorkshop.desc}
+                </div>
+                <div className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
+                  <div className="w-full relative text-2xl text-white bg-cover pl-2">
+                    Talk to us!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* mobile screen card section */}
+        <div ref={workshopRefSm} className="relative flex lg:hidden flex-col">
+          <img
+            className="w-full h-full"
+            src={WorkshopCardSmall}
+            alt="blue bg"
+          />
+          <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] px-8 md:-translate-y-[66%] space-y-5">
+            <div className="font-base text-3xl md:text-5xl text-white flex items-center justify-center m-auto">
+              <img src={workshopStar} alt="star" /> {selectedWorkshop.name}{" "}
+              <img src={workshopStar} alt="star" />
+            </div>
+            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4">
+              <div className="w-full">
+                <video
+                  className="rounded-lg"
+                  src={selectedWorkshop.video}
+                  width="800"
+                  height="400"
+                  controls
+                  controlsList="nodownload"
+                ></video>
+              </div>
+              <div className="w-full space-y-4">
+                <div className="font-medium leading-tight tracking-wide text-2xl">
+                  {selectedWorkshop.desc}
+                </div>
+                <div className="bg-button bg-contain bg-no-repeat relative left-10 px-8 py-3 w-fit h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
+                  <div className="w-full relative text-2xl text-white bg-cover pl-2">
+                    Talk to us!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-const WorkshopHOC: React.FC<{ item: WorkshopItems; idx: number }> = ({
-  item,
-  idx,
-}) => {
-  const [activeWorkshop, setActiveComic] = useState<string>("Key Features");
-  const dataToDisplay =
-    activeWorkshop === "Key Features"
-      ? "features"
-      : activeWorkshop === "What to Expect"
-      ? "expectations"
-      : "benefits";
-
-  const handleWorkshop = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.currentTarget.innerText == activeWorkshop) return;
-    setActiveComic(e.currentTarget.innerText);
-  };
-
-  return idx !== 1 ? (
-    // conditional rendering for Card layout
-    <div
-      className={`w-full flex ${
-        idx % 2 != 0 && "flex-row-reverse"
-      } flex-col md:flex-row items-center justify-start gap-10`}
-    >
-      <div className={`w-full md:w-[50%]`}>
-        <video
-          className="rounded-lg shadow-2xl border-8 border-white bg-transparent w-full"
-          src={item.video}
-          loop
-          controls
-          controlsList="nodownload"
-        ></video>
-      </div>
-      <div className="w-full md:w-[50%]">
-        <div className="w-full space-y-4">
-          <div className="font-semibold text-4xl leading-snug tracking-wide">
-            {item.name}
-          </div>
-          <div className="font-base text-lg text-green-800">{item.desc}</div>
-          <div className="w-full flex items-center justify-between gap-1 text-black py-2 px-2 bg-gray-100 shadow-sm rounded-md  ">
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] px-2 md:px-8 py-2 ${
-                  activeWorkshop === "Key Features" && "bg-primary text-white"
-                }  rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Key Features
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "What to Expect" && "bg-primary text-white"
-                } px-2 md:px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              What to Expect
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "Benefits" && "bg-primary text-white"
-                } px-2 md:px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Benefits
-            </div>
-          </div>
-          <ul className="bg-white shadow-lg p-4 rounded-md space-y-2">
-            {item[dataToDisplay]?.map((item, index) => {
-              return (
-                <li>
-                  <span className="font-bold text-lg">
-                    <span className="text-[darkred]">{index + 1}.</span>{" "}
-                    {item?.split(" ").slice(0, 2).join(" ")}{" "}
-                  </span>
-                  {item.split(" ").slice(2).join(" ")}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div
-      className={`w-full flex flex-col md:flex-row items-center justify-start gap-10`}
-    >
-      <div className="hidden md:flex flex-col w-full md:w-[50%] space-y-4">
-        <div className="w-full space-y-4">
-          <div className="font-semibold text-4xl leading-snug tracking-wide">
-            {item.name}
-          </div>
-          <div className="font-base text-lg text-green-800">{item.desc}</div>
-          <div className="w-full flex items-center justify-between gap-1 text-black py-2 px-2 bg-gray-100 shadow-sm rounded-md  ">
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] px-8 py-2 ${
-                  activeWorkshop === "Key Features" && "bg-primary text-white"
-                }  rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Key Features
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "What to Expect" && "bg-primary text-white"
-                } px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              What to Expect
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "Benefits" && "bg-primary text-white"
-                } px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Benefits
-            </div>
-          </div>
-          <ul className="bg-white shadow-lg p-4 rounded-md space-y-2">
-            {item[dataToDisplay]?.map((item, index) => {
-              return (
-                <li>
-                  <span className="font-bold text-lg">
-                    <span className="text-[darkred]">{index + 1}.</span>{" "}
-                    {item?.split(" ").slice(0, 2).join(" ")}{" "}
-                  </span>
-                  {item.split(" ").slice(2).join(" ")}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-      <div className={`hidden md:flex w-full md:w-[50%]`}>
-        <video
-          className="rounded-lg border-8 border-white shadow-2xl bg-transparent w-full"
-          src={item.video}
-          loop
-          controls
-          controlsList="nodownload"
-        ></video>
-      </div>
-      <div className={`block md:hidden w-full md:w-[40%]`}>
-        <video
-          className="rounded-lg bg-transparent w-full"
-          src={item.video}
-          loop
-          controls
-          controlsList="nodownload"
-        ></video>
-      </div>
-      <div className="block md:hidden flex-col w-full md:w-[50%] space-y-4">
-        <div className="w-full space-y-4">
-          <div className="font-semibold text-4xl leading-snug tracking-wide">
-            {item.name}
-          </div>
-          <div className="font-base text-lg text-green-800">{item.desc}</div>
-          <div className="w-full flex items-center justify-between gap-1 text-black py-2 px-2 bg-gray-100 shadow-sm rounded-md  ">
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] px-2 md:px-8 py-2 ${
-                  activeWorkshop === "Key Features" && "bg-primary text-white"
-                }  rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Key Features
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "What to Expect" && "bg-primary text-white"
-                } px-2 md:px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              What to Expect
-            </div>
-            <div
-              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                handleWorkshop(e)
-              }
-              className={cn(
-                ` cursor-pointer text-[#00B0A5] ${
-                  activeWorkshop === "Benefits" && "bg-primary text-white"
-                } px-2 md:px-8 py-2 rounded-md transition-all ease-in-out duration-300`
-              )}
-            >
-              Benefits
-            </div>
-          </div>
-          <ul className="bg-white shadow-lg p-4 rounded-md space-y-2">
-            {item[dataToDisplay]?.map((item, index) => {
-              return (
-                <li>
-                  <span className="font-bold text-lg">
-                    <span className="text-[darkred]">{index + 1}.</span>{" "}
-                    {item?.split(" ").slice(0, 2).join(" ")}{" "}
-                  </span>
-                  {item.split(" ").slice(2).join(" ")}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
 export default ComicWorkshop;

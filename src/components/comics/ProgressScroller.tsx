@@ -57,11 +57,11 @@ const ProgressScroller: React.FC = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <figure className="h-14 w-14 lg:h-24 lg:w-24">
-          <img
-            className="w-full h-full object-contain"
-            src={isScrollingDown ? PencilDown : PencilUp} // Switch between pencil down/up
-            alt={isScrollingDown ? "pencil down" : "pencil up"}
-          />
+            <img
+              className="w-full h-full object-contain"
+              src={isScrollingDown ? PencilDown : PencilUp} // Switch between pencil down/up
+              alt={isScrollingDown ? "pencil down" : "pencil up"}
+            />
           </figure>
         </div>
       )}
