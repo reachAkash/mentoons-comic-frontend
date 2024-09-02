@@ -14,8 +14,9 @@ export const PODCAST_DETAILS = [
     id: 1,
     topic: "Negative impact of Mobile phone",
     description:
-      "Exploring the hidden dangers of mobile phone overuse on mental health, social relationships, and cognitive development in children and adults alike.",
-    audioPodcastSampleSrc: "/assets/audios/negative_impact_of_mobile.mp3",
+      "Podcast Negative Impact of Mobile Phones takes a closer look at the consequences of our constant connection to the digital world. Through expert insights, real-life stories, and research-backed discussions, we explore how excessive mobile phone usage can affect mental health, disrupt relationships, and hinder personal growth. Each episode uncovers the hidden costs of living through a screen and offers strategies to reclaim balance, improve focus, and foster deeper connections with the world around us.",
+    audioPodcastSampleSrc:
+      "/assets/audios/negative-impact-of-mobile-phone-sample.mp3",
     audioPodcastSrc: "/assets/audios/negative_impact_of_mobile.mp3",
     thumbnail: "/assets/images/coping-with-loss.jpg", //todo Change it.
     categroy: "",
@@ -27,8 +28,9 @@ export const PODCAST_DETAILS = [
     id: 2,
     topic: "Negative impact of social media",
     description:
-      "Examining the harmful effects of social media on mental health, self-esteem, and the pressure to maintain a perfect online persona in today's digital age.",
-    audioPodcastSampleSrc: "/assets/audios/negative-impact-of-social-media.mp3",
+      "Podcast on Negative Impact of Social Media delves into the darker side of the digital landscape and its effects on mental health, self-esteem, and social relationships. Each episode uncovers how excessive use of social platforms can lead to anxiety, comparison, isolation, and addiction. Through expert interviews, personal stories, and actionable advice, we explore the psychological toll of social media and offer strategies to create healthier habits, foster genuine connections, and regain control over our digital lives.",
+    audioPodcastSampleSrc:
+      "/assets/audios/negative-impact-of-social-media-sample.mp3",
     audioPodcastSrc: "/assets/audios/negative-impact-of-social-media.mp3",
     thumbnail: "/assets/images/cell-aid.png", //todo Change it
     categroy: "",
@@ -40,9 +42,11 @@ export const PODCAST_DETAILS = [
     id: 3,
     topic: "How does it feel to be an teenager",
     description:
-      "Unpacking the emotional rollercoaster of adolescence—navigating identity, peer pressure, and the quest for independence during the turbulent teenage years.",
-    audioPodcastSampleSrc: "/assets/audios/Overcome_Dipression.mp3",
-    audioPodcastSrc: "/assets/audios/Overcome_Dipression.mp3",
+      "Podcast on How Does It Feel to Be a Teenager explores the unique challenges and experiences of adolescence in today’s fast-paced world. Each episode dives into topics like identity, peer pressure, mental health, and navigating relationships during this transformative phase of life. Featuring candid conversations with teens, experts, and influencers, we shed light on the emotions, struggles, and joys that come with being a teenager. Together, we’ll provide insights and advice to help teens feel understood, empowered, and confident in their journey to adulthood.",
+    audioPodcastSampleSrc:
+      "/assets/audios/how-does-it-feel-to-be-an-teenager-sample.mp3",
+    audioPodcastSrc:
+      "/assets/audios/how-does-it-feet-to-be-an-teenager-orignals.mp3",
     thumbnail: "/assets/images/overcome-dipression.jpg",
     categroy: "",
     age: "",
@@ -53,8 +57,8 @@ export const PODCAST_DETAILS = [
     id: 4,
     topic: "Performance Addiction",
     description:
-      "Delving into the relentless pursuit of success and perfection, performance addiction drives individuals to burnout, eroding their well-being and sense of self-worth.",
-    audioPodcastSampleSrc: "/assets/audios/perfomance-addiction.mp3",
+      "Podcast on Performance Addiction explores the relentless pursuit of achievement and perfection in today’s competitive culture. Each episode delves into how the pressure to constantly excel—whether in academics, career, or personal life—can lead to burnout, anxiety, and a diminished sense of self-worth. Through interviews with psychologists, performance coaches, and individuals who have struggled with this addiction, we unpack the harmful effects of an overemphasis on success and offer strategies to cultivate self-acceptance, balance, and fulfillment beyond mere performance.",
+    audioPodcastSampleSrc: "/assets/audios/performance-addiction-sample.mp3",
     audioPodcastSrc: "/assets/audios/perfomance-addiction.mp3",
     thumbnail: "/assets/images/relapse-parenting.jpg", //todo change this
     categroy: "",
@@ -80,8 +84,8 @@ export const PODCAST_DETAILS = [
     id: 6,
     topic: "Common Parenting Mistake",
     description:
-      "Highlighting everyday parenting missteps, from overprotectiveness to inconsistency, and offering insights on how to nurture a healthier parent-child relationship.",
-    audioPodcastSampleSrc: "/assets/audios/common-parenting-mistake",
+      "Podcast on Common Parenting Mistakes offers a compassionate and insightful look into the missteps many parents make in raising their children. Each episode explores topics like overprotection, inconsistency, unrealistic expectations, and miscommunication, revealing how these actions can impact a child’s emotional and behavioral development. Through expert interviews and real-life anecdotes, we provide practical advice to help parents recognize and correct these mistakes, fostering healthier relationships, stronger communication, and a nurturing environment for their children to thrive..",
+    audioPodcastSampleSrc: "/assets/audios/common-parenting-mistake-sample.mp3",
     audioPodcastSrc: "/assets/audios/common-parenting-mistake-orignals.mp3",
     thumbnail: "/assets/images/common-parenting-mistakes.jpg", //todo change this
     categroy: "",
@@ -93,8 +97,8 @@ export const PODCAST_DETAILS = [
     id: 7,
     topic: "Entertainment Addiction",
     description:
-      "Entertainment Addiction explores how excessive media consumption affects your life. Learn strategies to balance entertainment with healthy habits and regain control.",
-    audioPodcastSampleSrc: "/assets/audios/entertainment-addiction.mp3",
+      "Podcast on Entertainment Addiction delves into the growing dependency on entertainment and its impact on our daily lives. Each episode examines how excessive consumption of TV, video games, social media, and other forms of entertainment can lead to decreased productivity, social isolation, and mental health challenges. Through expert insights, personal stories, and practical tips, we explore ways to strike a healthier balance between entertainment and real-life responsibilities, fostering a more fulfilling and engaged lifestyle.",
+    audioPodcastSampleSrc: "/assets/audios/entertainment-addiction-sample.mp3",
     audioPodcastSrc: "/assets/audios/entertainment-addiction-orignals.mp3",
     thumbnail: "/assets/images/Entertainment_Addiction_ 2.jpg",
     categroy: "",
@@ -106,8 +110,8 @@ export const PODCAST_DETAILS = [
     id: 8,
     topic: "Toddler phone Addiction",
     description:
-      "Toddler Phone Addiction examines how excessive screen time affects young children. Discover practical tips for managing their phone use and encouraging healthier habits.",
-    audioPodcastSampleSrc: "/assets/audios/toddler-phone-addiction.mp3",
+      "Podcast on Toddler Phone Addiction investigates the effects of early exposure to screens on young children’s development and behavior. Each episode explores how excessive phone use can impact toddlers' cognitive, social, and emotional growth, and offers insights into the challenges faced by parents in managing screen time. Through expert interviews, case studies, and practical advice, we provide strategies for creating healthy screen habits, encouraging interactive play, and supporting a balanced approach to technology in early childhood.",
+    audioPodcastSampleSrc: "/assets/audios/toddler-phone-addiction-sample.mp3",
     audioPodcastSrc: "/assets/audios/toddler-phone-addiction.mp3",
     thumbnail: "/assets/images/toddler-phone-addiction.jpg",
     categroy: "",
@@ -119,8 +123,9 @@ export const PODCAST_DETAILS = [
     id: 9,
     topic: "Social media de-addiction",
     description:
-      "Social media de-addiction  is a podcast that helps young listeners break free from social media addiction by exploring fun, screen-free activities and the importance of real-life connections. Join us on a journey to discover a balanced, healthier way to enjoy the digital world.",
-    audioPodcastSampleSrc: "/assets/audios/social-media-de-addiction.mp3",
+      "Podcast on Social Media De-addiction explores the journey to breaking free from the grips of excessive social media use. Each episode delves into the effects of social media addiction on mental health, relationships, and productivity, and offers practical advice for reclaiming control. Featuring insights from experts, personal success stories, and actionable strategies, we guide listeners through the process of reducing screen time, fostering healthier online habits, and finding a more balanced, fulfilling life beyond the screen.",
+    audioPodcastSampleSrc:
+      "/assets/audios/social-media-de-addiction-sample.mp3",
     audioPodcastSrc: "/assets/audios/social-media-de-addiction-orignals.mp3",
     thumbnail: "/assets/images/social-media-de-addiction.jpg",
     categroy: "",
@@ -132,8 +137,9 @@ export const PODCAST_DETAILS = [
     id: 10,
     topic: "Teen Emotions and Behavioural Problems",
     description:
-      "Adolescence is a period when a lot of physical, hormonal, and cognitive changes take place. To cope with all these changes, a child sometimes gets irritated, aggressive, and restless. It is a tough phase as the child goes through a lot of changes in the body. To adjust to all these changes there are a lot of mood swings",
-    audioPodcastSampleSrc: "/assets/audios/teen-problem.mp3",
+      "Podcast on Teen Emotions and Behavioral Problems addresses the complex emotional and behavioral challenges faced by adolescents. Each episode explores issues such as mood swings, anxiety, defiance, and social pressures, providing a deep dive into the underlying causes and impacts. Through expert interviews, real-life stories, and practical advice, we aim to offer parents, educators, and teens themselves insights into managing and understanding these emotional and behavioral struggles, fostering a supportive environment for healthy growth and development.",
+    audioPodcastSampleSrc:
+      "/assets/audios/teen-emotional-and-behavioural-problem-sample.mp3",
     audioPodcastSrc:
       "/assets/audios/teen-emotional-and-behavioural-problems-orignals.mp3",
     thumbnail: "/assets/images/Teen_emotion_&_behaviour_problems_ 2.jpg",
@@ -146,8 +152,9 @@ export const PODCAST_DETAILS = [
     id: 11,
     topic: "The Magical Journey to self Discovery",
     description:
-      "In a world that often glorifies success and achievement, the pressure to perform can become overwhelming, leading to what experts call performance addiction. This phenomenon affects teens and parents alike, creating a cycle of constant striving for perfection. In this article, we'll explore what performance addiction is and provide guidance on breaking free from its grip.",
-    audioPodcastSampleSrc: "/assets/audios/magical-journey.mp3",
+      "Podcast on The Magical Journey to Self-Discovery invites listeners to embark on a transformative exploration of personal growth and self-awareness. Each episode delves into various paths and practices that lead to uncovering one's true self, including mindfulness, introspection, and personal development strategies. Through inspiring stories, expert advice, and practical tips, we guide you through the process of self-discovery, helping you to embrace your strengths, understand your values, and navigate your unique journey toward a more fulfilling and authentic life.",
+    audioPodcastSampleSrc:
+      "/assets/audios/magical-journey-to-self-dicovery-sample.mp3",
     audioPodcastSrc:
       "/assets/audios/magical-journey-to-self-dicovery-orignals.mp3",
     thumbnail: "/assets/images/magical-journey-to-self-discovery.jpg",
@@ -160,8 +167,9 @@ export const PODCAST_DETAILS = [
     id: 12,
     topic: "Maintaining relationship with teenager",
     description:
-      "Adolescence is a period when a teen's relationships changes. Relationship with parents, friends, caregivers, teachers, and romantic partners. It is important to teach teenagers how to maintain healthy relationships with everyone.",
-    audioPodcastSampleSrc: "/assets/audios/maintain-relationship.mp3",
+      "Podcast on Maintaining a Relationship with Your Teenager explores effective strategies for building and sustaining strong connections with adolescents. Each episode addresses common challenges in parent-teen relationships, such as communication barriers, conflicts, and evolving dynamics. Through expert advice, real-life experiences, and practical tips, we provide guidance on fostering trust, understanding, and open dialogue. Whether you're navigating tricky conversations or seeking ways to support and connect with your teenager, this podcast offers valuable insights for maintaining a healthy and positive relationship throughout the teenage years.",
+    audioPodcastSampleSrc:
+      "/assets/audios/maintaining-relationship-with-teenager-sample.mp3",
     audioPodcastSrc:
       "/assets/audios/maintaining-relationship-with-teenager-orignals.mp3",
     thumbnail: "/assets/images/maintain-relationship-with-teen.jpg",
@@ -175,8 +183,9 @@ export const PODCAST_DETAILS = [
     topic:
       "Phrases and sentences parents should not speak in front of children",
     description:
-      "Parents should avoid comparing siblings, belittling their children's abilities, or labeling them as accidents. Negative phrases like expressing disbelief, blaming, or discouraging independence can harm the parent-child relationship and hinder a child's emotional well-being. Encouraging open communication, promoting self-expression, and understanding the root cause of behavior are essential for fostering a healthy parent-child dynamic.",
-    audioPodcastSampleSrc: "/assets/audios/phrases-sentence.mp3",
+      "Podcast on Phrases and Sentences Parents Should Not Speak in Front of Children focuses on the impact of language on a child's emotional and psychological development. Each episode examines common phrases and statements that can negatively affect self-esteem, behavior, and family dynamics. Through expert insights, real-life examples, and practical advice, we guide parents on how to communicate more effectively and positively. We offer alternative approaches to help foster a supportive and nurturing environment for children to thrive emotionally and mentally.",
+    audioPodcastSampleSrc:
+      "/assets/audios/phrases-and-sentences-parent-should-not-use-in-front-of-children-sample.mp3",
     audioPodcastSrc: "/assets/audios/phrases-sentences-orignals.mp3",
     thumbnail: "/assets/images/Phrases_and_sentences_parents.jpg",
     categroy: "",
@@ -188,8 +197,8 @@ export const PODCAST_DETAILS = [
     id: 14,
     topic: "Role Model For Kids",
     description:
-      "Someone who we look up to, who is an inspiration is a role model. The person serves as an example for influencing others. A role model helps to shape our behaviour, how we make decisions in our life, how we manage our relationships.",
-    audioPodcastSampleSrc: "/assets/audios/role-model.mp3",
+      "Podcast on Role Model for Kids explores the vital role that positive role models play in a child’s development. Each episode highlights how behaviors, values, and attitudes demonstrated by parents, caregivers, and other influential figures can shape a child's character and aspirations. Through expert interviews, inspiring stories, and actionable advice, we discuss ways to model integrity, resilience, and kindness. This podcast provides practical tips for adults to embody the qualities they hope to instill in children, helping them become confident, responsible, and compassionate individuals.",
+    audioPodcastSampleSrc: "/assets/audios/role-model-for-kid-sample.mp3",
     audioPodcastSrc: "/assets/audios/role-models-for-kid-orignals.mp3",
     thumbnail: "/assets/images/Role_Model_For_Kids_.jpg",
     categroy: "",
@@ -201,8 +210,9 @@ export const PODCAST_DETAILS = [
     id: 15,
     topic: "Things parents do that annoy kids",
     description:
-      "Parents, seeking connection, unintentionally embarrass kids with public displays of affection, slang misuse, and interrogating friends, hindering the very bonds they seek. Overprotectiveness stifles exploration, and sharing family struggles, though vital, becomes grating when theatrically dramatized.",
-    audioPodcastSampleSrc: "/assets/audios/thing-parents-do.mp3",
+      "Podcast on Things Parents Do That Annoy Kids dives into the everyday behaviors and habits that can frustrate or alienate children and teens. Each episode explores common parental actions and comments—such as overbearing advice, inconsistent rules, or interruptions of personal space—that can lead to conflicts and misunderstandings. Through expert insights, real-life anecdotes, and practical tips, we offer strategies for parents to improve communication, foster mutual respect, and build stronger, more harmonious relationships with their children.",
+    audioPodcastSampleSrc:
+      "/assets/audios/things-parent-do-that-annoy-children-sample.mp3",
     audioPodcastSrc:
       "/assets/audios/things-parents-do-that-annoy-kids-orignals.mp3",
     thumbnail: "/assets/images/Things_parents_do_that_annoy_kids 2.jpg",
@@ -215,8 +225,9 @@ export const PODCAST_DETAILS = [
     id: 15,
     topic: "Electronic gadgets and kids.",
     description:
-      "Technology has become an inseparable part of life, especially for kids. Even kids of five years of age, know how to operate a phone, play games, watch videos on Youtube.  Especially because of covid, where everything is online, kids are exposed to these gadgets at a very small age. Not only engaged, but they also become addicted to it.  Having online classes, not going to play, not interacting with other kids face-to-face has increased now.",
-    audioPodcastSampleSrc: "/assets/audios/electronic-gadgets.mp3",
+      "Podcast on Electronic Gadgets and Kids examines the impact of digital devices on children’s development and daily lives. Each episode explores how smartphones, tablets, and other gadgets influence aspects such as cognitive development, social skills, and physical health. Through expert interviews, research findings, and practical advice, we address the benefits and potential drawbacks of technology use, offering strategies for setting healthy boundaries and encouraging balanced screen time. Our goal is to help parents and caregivers navigate the digital landscape to support their children’s overall well-being and growth.",
+    audioPodcastSampleSrc:
+      "/assets/audios/electronic-gadgets-and-kids-sample.mp3",
     audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
     thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
     categroy: "",
@@ -230,7 +241,8 @@ export const PODCAST_DETAILS = [
     topic: "Reconnecting Gen-Z with value beyond the screen.",
     description:
       "Helping Gen-Z rediscover meaningful connections and life experiences beyond digital screens, fostering deeper relationships and personal growth in a tech-driven world.",
-    audioPodcastSampleSrc: "/assets/audios/electronic-gadgets.mp3",
+    audioPodcastSampleSrc:
+      "/assets/audios/reconnecting-genz-with-the-value-beyond-the-screen-sample.mp3",
     audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
     thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
     categroy: "",

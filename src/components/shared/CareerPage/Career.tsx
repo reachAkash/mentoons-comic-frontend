@@ -38,9 +38,9 @@ const Career = () => {
           <img
             src='/assets/images/open-position-bg.svg'
             alt=''
-            className='w-full object-cover '
+            className='w-full object-cover'
           />
-          <h1 className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  text-[28px] font-bold whitespace-nowrap'>
+          <h1 className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  text-[28px] font-bold whitespace-nowrap text-white'>
             Open positions
           </h1>
         </div>
