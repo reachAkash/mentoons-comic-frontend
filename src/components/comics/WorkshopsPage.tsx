@@ -93,7 +93,7 @@ const ComicWorkshop: React.FC = () => {
           />
         </div>
         {/* First row: 3 images */}
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-12 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-12 md:gap-4">
           {workshopDetails.slice(0, 3).map((item, index) => (
             <div
               onClick={() => handleCardClick(item)}
@@ -107,9 +107,9 @@ const ComicWorkshop: React.FC = () => {
               />
             </div>
           ))}
-        </div> */}
+        </div>
         {/* Second row: 2 centered images */}
-        {/* <div className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 w-full gap-12 md:gap-4">
+        <div className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 w-full gap-12 md:gap-4">
           {workshopDetails.slice(3).map((item, index) => (
             <div
               onClick={() => handleCardClick(item)}
@@ -123,7 +123,7 @@ const ComicWorkshop: React.FC = () => {
               />
             </div>
           ))}
-        </div> */}
+        </div>
         {/* <img src={WorkshopBg} alt="dark clouds" /> */}
         <div
           ref={workshopRef}
