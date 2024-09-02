@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -23,16 +23,16 @@ const Header = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const handleLogout = () => {
-        console.log("User logged out");
-        setMenuOpen(false)
-        navigate("/auth");
-    };
+    // const handleLogout = () => {
+    //     console.log("User logged out");
+    //     setMenuOpen(false)
+    //     navigate("/auth");
+    // };
 
     return (
         <div className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]" style={{ boxShadow: ' rgba(0, 0, 0, 0.2) 0px 20px 30px' }}>
-            <div className="flex-1 flex justify-start ">
-                <Menubar className="hidden lg:flex bg-transparent border-0 justify-between gap-[0.5rem]">
+            <div className="flex-1 flex justify-end">
+                <Menubar className="hidden lg:flex bg-transparent border-0 justify-between w-full">
                     <MenubarMenu>
                         <NavLink to="/">
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full px-1 text-base">
@@ -67,7 +67,7 @@ const Header = () => {
                     </MenubarMenu>
                 </Menubar>
             </div>
-            <div className="relative flex-1">
+            <div className="relative flex-1 max-w-[20rem]">
                 <NavLink to='/' onClick={() => setMenuOpen(false)}>
                     <figure className="w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] absolute bg-primary rounded-full top-[-2.3rem] lg:top-[-6rem] left-1/2 transform -translate-x-1/2 z-40">
                         <img src="/assets/images/logo.png" alt="mentoonsLogo" className="h-full w-full object-contain lg:mt-4" />
@@ -89,7 +89,7 @@ const Header = () => {
                     )}
                 </div>
                 <Menubar
-                    className={`${menuOpen ? "flex" : "hidden"} gap-[0.5rem] z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-auto p-4 lg:p-0  h-80 lg:h-10`}
+                    className={`${menuOpen ? "flex" : "hidden"}  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-80 lg:h-10`}
                 >
                     <MenubarMenu>
                         <NavLink to="/" onClick={() => setMenuOpen(false)}>
@@ -112,20 +112,7 @@ const Header = () => {
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
-                    <MenubarMenu>
-                        <NavLink to="/mentoons-comics/audio-comics" onClick={() => setMenuOpen(false)}>
-                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
-                                Audio Comics
-                            </MenubarTrigger>
-                        </NavLink>
-                    </MenubarMenu>
-                    <MenubarMenu>
-                        <NavLink to="/mentoons-workshops" onClick={() => setMenuOpen(false)}>
-                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
-                                Workshops
-                            </MenubarTrigger>
-                        </NavLink>
-                    </MenubarMenu>
+                
                     <MenubarMenu>
                         <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base whitespace-nowrap font-semibold hidden lg:block">
                             Audio Comics
@@ -212,6 +199,21 @@ const Header = () => {
                             </MenubarItem>
                         </MenubarContent>
                     </MenubarMenu>
+                    
+                    <MenubarMenu>
+                        <NavLink to="/mentoons-comics/audio-comics" onClick={() => setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
+                                Audio Comics
+                            </MenubarTrigger>
+                        </NavLink>
+                    </MenubarMenu>
+                    <MenubarMenu>
+                        <NavLink to="/mentoons-workshops" onClick={() => setMenuOpen(false)}>
+                            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
+                                Workshops
+                            </MenubarTrigger>
+                        </NavLink>
+                    </MenubarMenu>
                     <MenubarMenu>
                         <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full px-1 text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
@@ -219,7 +221,7 @@ const Header = () => {
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
-                    <MenubarMenu>
+                    {/* <MenubarMenu>
                         <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold flex items-center">
                             <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
                             <span className="hidden lg:block">Profile</span>
@@ -235,7 +237,7 @@ const Header = () => {
                                 Logout
                             </MenubarItem>
                         </MenubarContent>
-                    </MenubarMenu>
+                    </MenubarMenu> */}
                 </Menubar>
             </div>
         </div>
