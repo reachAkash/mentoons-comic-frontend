@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 const HeroSectionPodcast = () => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
@@ -92,33 +93,86 @@ const HeroSectionPodcast = () => {
 
           {/* Radio */}
           <div className=" absolute w-20 sm:w-28 md:w-32 bottom-4 left-4  md:left-10 md:bottom-6 z-[40] lg:w-60  ">
+
+          <div className='absolute w-20 sm:w-28 md:w-32 bottom-4 left-4 md:left-10 md:bottom-6 z-50 lg:w-60'>
             <img
               src="/assets/images/radio.png"
               alt="Radio Illustration"
               className="w-full object-cover"
+              src='/assets/images/radio.png'
+              alt='Radio Illustration'
+              className='w-full object-cover'
             />
             <div className="absolute bottom-0 sm:bottom-6  left-2">
+            <div className='absolute bottom-0 sm:bottom-6 left-0'>
               {/* Music Note Div */}
               <div className="flex sm:gap-2 justify-end ">
                 <div className=" w-4 rotate-12 sm:w-6 md:w-12  ">
+              <div className='flex sm:gap-2 justify-end'>
+                <motion.div
+                  className='w-4 rotate-12 sm:w-6 md:w-12'
+                  initial={{ x: -300, opacity: 0, scale: 1, rotate: 0 }}
+                  animate={{
+                    x: [150, 0],
+                    opacity: [0, 1, 0],
+                    scale: [1, 1.5, 1.5],
+                    rotate: [0, 30, 30],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    delay: 0,
+                  }}
+                >
                   <img
                     src="/assets/images/music-note-3.png"
                     alt="Music Notes"
                   />
                 </div>
                 <div className=" w-4  md:w-9 flex items-center  ">
+                </motion.div>
+                <motion.div
+                  className='w-4 md:w-12 flex items-center'
+                  initial={{ x: -100, opacity: 0, scale: 1, rotate: 0 }}
+                  animate={{
+                    x: [100, 0],
+                    opacity: [0, 1, 0],
+                    scale: [1, 1.5, 1.5],
+                    rotate: [0, 30, 30],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    delay: 0.5,
+                  }}
+                >
                   <img
                     src="/assets/images/music-note-2.png"
                     alt="Music Notes"
                   />
                 </div>
                 <div className=" w-4 flex items-end  md:w-6 ">
+                </motion.div>
+                <motion.div
+                  className='w-4 flex items-end md:w-12'
+                  initial={{ x: -100, opacity: 0, scale: 1, rotate: 0 }}
+                  animate={{
+                    x: [100, 0],
+                    opacity: [0, 1, 0],
+                    scale: [1, 1.5, 1.5],
+                    rotate: [0, 30, 30],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 6,
+                    delay: 1,
+                  }}
+                >
                   <img
-                    src="/assets/images/music-note-1.png"
-                    alt="Music Notes"
-                    className="w-full object-cover"
+                    src='/assets/images/music-note-1.png'
+                    alt='Music Notes'
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

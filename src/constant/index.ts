@@ -18,7 +18,7 @@ export const PODCAST_DETAILS = [
     audioPodcastSampleSrc:
       "/assets/audios/negative-impact-of-mobile-phone-sample.mp3",
     audioPodcastSrc: "/assets/audios/negative_impact_of_mobile.mp3",
-    thumbnail: "/assets/images/coping-with-loss.jpg", //todo Change it.
+    thumbnail: "/assets/images/negative-impact-of-mobile-phone.jpg", //todo Change it.
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
@@ -32,7 +32,7 @@ export const PODCAST_DETAILS = [
     audioPodcastSampleSrc:
       "/assets/audios/negative-impact-of-social-media-sample.mp3",
     audioPodcastSrc: "/assets/audios/negative-impact-of-social-media.mp3",
-    thumbnail: "/assets/images/cell-aid.png", //todo Change it
+    thumbnail: "/assets/images/negative-impact-of-social-media.jpg", //todo Change it
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
@@ -60,26 +60,26 @@ export const PODCAST_DETAILS = [
       "Podcast on Performance Addiction explores the relentless pursuit of achievement and perfection in today’s competitive culture. Each episode delves into how the pressure to constantly excel—whether in academics, career, or personal life—can lead to burnout, anxiety, and a diminished sense of self-worth. Through interviews with psychologists, performance coaches, and individuals who have struggled with this addiction, we unpack the harmful effects of an overemphasis on success and offer strategies to cultivate self-acceptance, balance, and fulfillment beyond mere performance.",
     audioPodcastSampleSrc: "/assets/audios/performance-addiction-sample.mp3",
     audioPodcastSrc: "/assets/audios/perfomance-addiction.mp3",
-    thumbnail: "/assets/images/relapse-parenting.jpg", //todo change this
+    thumbnail: "/assets/images/perfomance-addiction.jpg",
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
     duration: "",
   },
-
-  // {
-  //   id: 5,
-  //   topic: "Social Media Reward System",
-  //   description:
-  //     "Social Media Reward System delves into how platforms use rewards to keep users hooked. Understand the psychology behind likes, shares, and notifications in this eye-opening podcast.",
-  //   audioPodcastSampleSrc: "/assets/audios/Social_Media_reward_system.mp3",
-  //   audioPodcastSrc: "/assets/audios/Social_Media_reward_system.mp3",
-  //   thumbnail: "/assets/images/social-media-reward-system.jpg", // todo change this
-  //   categroy: "",
-  //   age: "",
-  //   author: "Mentor Mahesh",
-  //   duration: "",
-  // },
+  // todo change the content
+  {
+    id: 5,
+    topic: "The Magic of play without phone",
+    description:
+      "Social Media Reward System delves into how platforms use rewards to keep users hooked. Understand the psychology behind likes, shares, and notifications in this eye-opening podcast.",
+    audioPodcastSampleSrc: "/assets/audios/Social_Media_reward_system.mp3",
+    audioPodcastSrc: "/assets/audios/Social_Media_reward_system.mp3",
+    thumbnail: "/assets/images/social-media-reward-system.jpg", // todo change this
+    categroy: "",
+    age: "",
+    author: "Mentor Mahesh",
+    duration: "",
+  },
   {
     id: 6,
     topic: "Common Parenting Mistake",
@@ -87,7 +87,7 @@ export const PODCAST_DETAILS = [
       "Podcast on Common Parenting Mistakes offers a compassionate and insightful look into the missteps many parents make in raising their children. Each episode explores topics like overprotection, inconsistency, unrealistic expectations, and miscommunication, revealing how these actions can impact a child’s emotional and behavioral development. Through expert interviews and real-life anecdotes, we provide practical advice to help parents recognize and correct these mistakes, fostering healthier relationships, stronger communication, and a nurturing environment for their children to thrive..",
     audioPodcastSampleSrc: "/assets/audios/common-parenting-mistake-sample.mp3",
     audioPodcastSrc: "/assets/audios/common-parenting-mistake-orignals.mp3",
-    thumbnail: "/assets/images/common-parenting-mistakes.jpg", //todo change this
+    thumbnail: "/assets/images/common-parenting-mistakes.jpg",
     categroy: "",
     age: "",
     author: "Mentor Mahesh",
@@ -244,7 +244,21 @@ export const PODCAST_DETAILS = [
     audioPodcastSampleSrc:
       "/assets/audios/reconnecting-genz-with-the-value-beyond-the-screen-sample.mp3",
     audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
-    thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
+    thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
+    categroy: "",
+    age: "2-6",
+    author: "Mentor Mahesh",
+    duration: "",
+  },
+  {
+    id: 62,
+    topic: "Fun beyond video games",
+    description:
+      "Helping Gen-Z rediscover meaningful connections and life experiences beyond digital screens, fostering deeper relationships and personal growth in a tech-driven world.",
+    audioPodcastSampleSrc:
+      "/assets/audios/reconnecting-genz-with-the-value-beyond-the-screen-sample.mp3",
+    audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
+    thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
     author: "Mentor Mahesh",
