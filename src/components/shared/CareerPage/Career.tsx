@@ -14,7 +14,6 @@ const Career = () => {
       </div>
 
       <div className=' grid md:grid-cols-2 '>
-        <div className='background-blur'></div>
         <div className='relative p-4 pt-0 pl-5 rounded-lg'>
           <video className='h-full w-full rounded-lg' controls>
             <source
@@ -34,7 +33,7 @@ const Career = () => {
       </div>
       {/* open position is acorrdian */}
       <div className='relative  '>
-        <div className='relative w-80 mx-auto'>
+        <div className='relative md:w-80 mx-auto'>
           <img
             src='/assets/images/open-position-bg.svg'
             alt=''
@@ -45,7 +44,6 @@ const Career = () => {
           </h1>
         </div>
       </div>
-
       <div className='relative'>
         <FrequentlyAskeQuestion />
       </div>

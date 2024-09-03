@@ -72,8 +72,8 @@ export const PODCAST_DETAILS = [
     topic: "The Magic of play without phone",
     description:
       "Social Media Reward System delves into how platforms use rewards to keep users hooked. Understand the psychology behind likes, shares, and notifications in this eye-opening podcast.",
-    audioPodcastSampleSrc: "/assets/audios/Social_Media_reward_system.mp3",
-    audioPodcastSrc: "/assets/audios/Social_Media_reward_system.mp3",
+    audioPodcastSampleSrc: "/assets/audios/the-magic-f-play-without-phone.mp3",
+    audioPodcastSrc: "/assets/audios/the-magic-f-play-without-phone.mp3",
     thumbnail: "/assets/images/social-media-reward-system.jpg", // todo change this
     categroy: "",
     age: "",
@@ -251,13 +251,12 @@ export const PODCAST_DETAILS = [
     duration: "",
   },
   {
-    id: 62,
+    id: 63,
     topic: "Fun beyond video games",
     description:
       "Helping Gen-Z rediscover meaningful connections and life experiences beyond digital screens, fostering deeper relationships and personal growth in a tech-driven world.",
-    audioPodcastSampleSrc:
-      "/assets/audios/reconnecting-genz-with-the-value-beyond-the-screen-sample.mp3",
-    audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
+    audioPodcastSampleSrc: "/assets/audios/fun-beyond-video-game.mp3",
+    audioPodcastSrc: "/assets/audios/fun-beyond-video-game.mp3",
     thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
@@ -410,6 +409,7 @@ export const OPEN_POSITION = [
       `  Detailed, hands-on knowledge of CI/CD pipelines to automate builds
             and quality checks – ideally using Azure DevOps`,
     ],
+
     skills: [
       "HTML",
       "CSS",
@@ -420,6 +420,7 @@ export const OPEN_POSITION = [
       "MONGODB",
       "TYPESCRIPT",
     ],
+    jobIllustration: "/assets/images/",
     jobType: "On-site",
     jobDuration: "Full-time",
     salary: 500000,
@@ -431,6 +432,7 @@ export const OPEN_POSITION = [
     jobDescription:
       "Join Mentoons as an Anchor, where you'll connect with our audience through YouTube videos and social media Your role includes introducing new products and conducting insightful interviews with experts. We seek excellent communication skills, video hosting experience, and a passion for our mission. Familiarity with LinkedIn, Facebook, Instagram, and Pinterest is a plus. We embrace diversity and are proud to be an equal opportunity employer. Ready to make learning fun and easy? Apply now and let's explore potential together",
     jobRequirement: [],
+    jobIllustration: "/assets/images/anchor.png",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",
@@ -443,6 +445,7 @@ export const OPEN_POSITION = [
     jobDescription:
       "We are currently seeking an Actor/Model to become the face of our creative projects.This versatileindividual will play a pivotal role in bringing our stories and concepts to life through performanceand visual representation. Your responsibilities will include embodying characters, conveyingemotions, and participating in photoshoots or video productions. The ideal candidate will possessexceptional acting or modeling skills, a strong stage or on-camera presence, and a passion forstorytelling through performance. Join us in showcasing our vision through your talent and charisma,creating a lasting impact on our audience.",
     jobRequirement: [],
+    jobIllustration: "/assets/images/",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",
@@ -455,6 +458,7 @@ export const OPEN_POSITION = [
     jobDescription:
       "We are currently seeking a Filmmaker to join our creative team. This individual will be responsiblefor bringing our stories to life through the art of film. Your role involves concept development,scriptwriting, directing, and overseeing the production process. The ideal candidate will have astrong passion for filmmaking, a keen eye for visual storytelling, and experience in creatingcompelling cinematic content. Join us in producing films that captivate, entertain, and inspire ouraudience",
     jobRequirement: [],
+    jobIllustration: "",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",
@@ -467,6 +471,7 @@ export const OPEN_POSITION = [
     jobDescription:
       " We are currently seeking a Storyteller to join our creative team. This individual will be the heart ofour narrative, weaving captivating stories to engage our audience. Your role involves craftingcompelling content for various platforms, evoking emotions, and conveying messages effectively.The ideal candidate will have a passion for storytelling, a vivid imagination, and the ability to bringstories to life. Experience in content creation, whether through writing, video, or other mediums, ishighly valued. Join us in creating and sharing stories that leave a lasting impact on our audience.",
     jobRequirement: [],
+    jobIllustration: "/assets/images/storyteller.png",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",

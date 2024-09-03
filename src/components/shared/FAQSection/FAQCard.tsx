@@ -18,6 +18,7 @@ type TPOSITION = {
   jobTitle: string;
   jobDescription: string;
   jobRequirement: string[];
+  jobIllustration: string;
   skills: string[];
   jobType: string;
   jobDuration: string;
@@ -28,6 +29,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
 
   const handleIsExpanded = () => {
+    event?.stopPropagation();
     setIsExpanded((prev) => !prev);
   };
   return (
@@ -35,44 +37,61 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
       className={` ${
         isExpanded ? "max-h-full" : "max-h-16"
       } rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-[#008cff] `}
+      onClick={handleIsExpanded}
     >
       <div className=' w-full flex items-center justify-between p-4 text-white'>
         <span className='text-2xl font-bold'>{position.jobTitle}</span>
+
         <span
           className={`p-1 rounded-full border  flex items-center transition-all duration-300  ${
             isExpanded && "rotate-180"
           }`}
           onClick={handleIsExpanded}
         >
-          <IoChevronDown color='white' />
+          <IoChevronDown color='white' onClick={handleIsExpanded} />
         </span>
       </div>
       <span className='p-4 text-white'>
         <h1 className='text-xl font-bold'>Job Description</h1>
         {position.jobDescription}
-        <h1 className='text-xl font-bold pt-4'>Requirement</h1>
-        <ol className='list-disc list-inside'>
-          {position.jobRequirement.map((requirement, index) => {
-            return (
-              <li className='pl-4' key={index}>
-                {requirement}
-              </li>
-            );
-          })}
-        </ol>
-        <h1 className='text-xl font-bold pt-4'>Skills</h1>
-        <div>
-          <ul className='flex items-center justify-start gap-2 flex-wrap '>
-            {position.skills.map((skill, index) => (
-              <li
-                className='px-3 py-1 rounded-full bg-blue-400 text-sm'
-                key={index}
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
+        <div className='w-96 mx-auto'>
+          <img
+            src={position.jobIllustration}
+            alt=''
+            className='w-full object-cover  '
+          />
         </div>
+        {position?.jobRequirement.length > 0 && (
+          <h1 className='text-xl font-bold pt-4'>Requirement</h1>
+        )}
+        {position?.jobRequirement.length > 0 && (
+          <ol className='list-disc list-inside'>
+            {position.jobRequirement.map((requirement, index) => {
+              return (
+                <li className='pl-4' key={index}>
+                  {requirement}
+                </li>
+              );
+            })}
+          </ol>
+        )}
+        {position.skills.length > 0 && (
+          <h1 className='text-xl font-bold pt-4'>Skills</h1>
+        )}
+        {position?.skills.length > 0 && (
+          <div>
+            <ul className='flex items-center justify-start gap-2 flex-wrap '>
+              {position.skills.map((skill, index) => (
+                <li
+                  className='px-3 py-1 rounded-full bg-blue-400 text-sm'
+                  key={index}
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </span>
       <div className=' w-full px-4 '>
         <JobApplicationForm />
