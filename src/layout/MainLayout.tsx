@@ -1,19 +1,27 @@
 import { ReactNode } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "@/components/comics/Footer";
 import Breadcrumbs from "@/components/common/BreadCrumbs";
+import { FaArrowLeft } from "react-icons/fa";
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  const navigate = useNavigate()
   const location = useLocation();
   const isAuthRoute = location.pathname === "/auth";
 
   return (
     <div className="relative h-full w-full">
+    
+      <div className="absolute top-[5rem] left-[0.5rem] z-[9999] lg:hidden">
+      <button onClick={() => navigate(-1)} className="flex items-center">
+        <FaArrowLeft className="text-xl mr-3" />
+      </button>
+      </div>
       <div className="absolute top-24 left-10 z-[9999] hidden lg:block">
         <Breadcrumbs />
       </div>
