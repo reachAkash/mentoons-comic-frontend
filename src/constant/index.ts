@@ -420,7 +420,7 @@ export const OPEN_POSITION = [
       "MONGODB",
       "TYPESCRIPT",
     ],
-    jobIllustration: "/assets/images/",
+    jobIllustration: "/assets/images/developer.png",
     jobType: "On-site",
     jobDuration: "Full-time",
     salary: 500000,
@@ -458,7 +458,7 @@ export const OPEN_POSITION = [
     jobDescription:
       "We are currently seeking a Filmmaker to join our creative team. This individual will be responsiblefor bringing our stories to life through the art of film. Your role involves concept development,scriptwriting, directing, and overseeing the production process. The ideal candidate will have astrong passion for filmmaking, a keen eye for visual storytelling, and experience in creatingcompelling cinematic content. Join us in producing films that captivate, entertain, and inspire ouraudience",
     jobRequirement: [],
-    jobIllustration: "",
+    jobIllustration: "/assets/images/filmmaker.png",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",
