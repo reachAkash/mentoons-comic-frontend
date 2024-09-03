@@ -33,7 +33,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
   };
 
   return (
-    <div className="container py-10 space-y-8">
+    <div className="container py-16 md:py-20 space-y-8">
       <div className="space-y-7">
         <div className="flex items-center justify-between">
           {/* <div className="flex items-center gap-1 text-black py-1 px-2 bg-gray-50 shadow-sm rounded-md  ">
@@ -73,30 +73,30 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
           </div>
         </div>
         {page == "Audio Comics" ? (
-          <div className="font-medium text-3xl space-y-3">
+          <div className="font-medium text-3xl space-y-8">
             <h1 className="font-extrabold text-3xl lg:text-7xl">
               Experience the magic of{" "}
-              <span className="text-primary block tracking-widest">
-                storytelling{" "}
+              <span className="text-primary md:block md:tracking-widest">
+                storytelling
               </span>{" "}
               like never before!
             </h1>
-            <p>
+            <p className="text-xl md:text-2xl">
               Our audio comics bring illustrations to life with professional
               voice acting, sound effects, and music, creating an immersive
               experience that enhances listening skills and imagination.
             </p>
           </div>
         ) : (
-          <div className="font-medium text-3xl">
+          <div className="font-medium text-3xl space-y-8">
             <h1 className="font-extrabold text-3xl lg:text-7xl">
               Dive into colorful worlds and{" "}
-              <span className="text-primary block tracking-widest">
+              <span className="text-primary md:block md:tracking-widest">
                 exciting stories{" "}
               </span>{" "}
               that teach valuable lessons
             </h1>
-            <p>
+            <p className="text-xl md:text-2xl">
               while entertaining young readers. Our diverse range of comics
               covers various subjects, from history and science to social skills
               and personal growth.
@@ -154,6 +154,9 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
                       >
                         <FaCartShopping className="text-2xl text-white transition-all duration-300 ease-in-out" />
                       </div>
+                    </div>
+                    <div className="text-sm text-rose-500 mt-[2px]">
+                      Credit : Ajay Makhan
                     </div>
                   </div>
                 );

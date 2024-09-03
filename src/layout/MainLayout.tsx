@@ -14,7 +14,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className="relative h-full w-full">
-      <div className="absolute top-24 left-10 z-[9999] hidden lg:block">
+      <div className="absolute top-24 left-10 z-50 hidden lg:block">
         <Breadcrumbs />
       </div>
       <Header />
