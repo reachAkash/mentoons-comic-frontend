@@ -24,7 +24,7 @@ const HeroBanner = () => {
             boxUrl: "/assets/home/comic-btn.png",
             cardText: "Comics",
             linkUrl: "/mentoons-comics",
-            dsecription:"Our flagship offering, featuring beautifully illustrated stories that tackle various mentoring themes.",
+            dsecription: "Our flagship offering, featuring beautifully illustrated stories that tackle various mentoring themes.",
         },
         {
             url: "/assets/home/audioComic.png",
@@ -38,44 +38,12 @@ const HeroBanner = () => {
             boxUrl: "/assets/home/pod-btn.png",
             cardText: "Podcasts",
             linkUrl: "/mentoons-podcast",
-            dsecription:'"Mentor Moments," our weekly podcast, featuring inspiring conversations with mentors from various fields.',
+            dsecription: '"Mentor Moments," our weekly podcast, featuring inspiring conversations with mentors from various fields.',
         },
-        // {
-        //     url: "/slide1.jpg",
-        //     boxUrl: "/assets/home/revive-btn.png",
-        //     cardText: "Something",
-        //     linkUrl: "/mentoons-workshops",
-        //     dsecription:
-        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        // },
-        // {
-        //     url: "/slide1.jpg",
-        //     boxUrl: "/assets/home/un-btn.png",
-        //     cardText: "Let's revive",
-        //     linkUrl: "/",
-        //     dsecription:
-        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        // },
-        // {
-        //     url: "/slide1.jpg",
-        //     boxUrl: "/assets/home/un2-btn.png",
-        //     cardText: "Let's revive",
-        //     linkUrl: "/",
-        //     dsecription:
-        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        // },
-        // {
-        //     url: "/slide1.jpg",
-        //     boxUrl: "/assets/home/cc-btn.png",
-        //     cardText: "Career corner",
-        //     linkUrl: "/",
-        //     dsecription:
-        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. architecto amet mollitia, vero maiores voluptates quisquam esse quis.",
-        // },
     ];
 
     return (
-        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">        
+        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">
             <div className="absolute top-[20rem] right-0 z-50 hidden lg:block">
                 <div className="relative group">
                     <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
@@ -90,22 +58,25 @@ const HeroBanner = () => {
                     </div>
                 </div>
             </div>
-            <Fade duration={1000} triggerOnce>
-                <img
-                    loading="lazy"
-                    src="/assets/home/home-banner.png"
-                    alt="hero-banner"
-                    className="w-full object-cover hidden lg:block"
-                />
-                   <img
-                    loading="lazy"
-                    src="/assets/home/mv.png"
-                    alt="hero-banner"
-                    className="w-full object-cover  lg:hidden"
-                />
-            </Fade>
+                <Fade>
+                    <img
+                        loading="lazy"
+                        src="/assets/home/home-banner.png"
+                        alt="hero-banner"
+                        className="w-full object-cover hidden lg:block"
+                    />
+                </Fade>
+
+                <Fade>
+                    <img
+                        loading="lazy"
+                        src="/assets/home/mv.png"
+                        alt="hero-banner"
+                        className="w-full object-cover lg:hidden"
+                    />
+                </Fade>
             <div className="w-full h-full pb-[10rem] lg:pb-[30rem] px-4 sm:px-10 lg:px-40 z-20 flex flex-col gap-20 relative">
-                <Slide direction="right" duration={1000} triggerOnce>
+                <Fade direction="down">
                     <figure className="w-[10rem] lg:w-[22rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 lg:-top-14 lg:right-20">
                         <img
                             loading="lazy"
@@ -114,39 +85,43 @@ const HeroBanner = () => {
                             className="w-full h-full object-contain"
                         />
                     </figure>
-                </Slide>
+                </Fade>
+
                 <div className="flex flex-col lg:flex-row z-30 items-center lg:text-left">
-                <Slide direction="left" duration={1000} triggerOnce>
-                <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
-                    <img
-                        loading="lazy"
-                        src="/assets/home/football.png"
-                        alt="football-asset"
-                        className="w-full h-full object-contain"
-                    />
-                </figure>
-            </Slide>
-                    <Fade direction="up" duration={1000} triggerOnce>
-                        <div className="">
+                    <Fade cascade>
+                        <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
+                            <img
+                                loading="lazy"
+                                src="/assets/home/football.png"
+                                alt="football-asset"
+                                className="w-full h-full object-contain"
+                            />
+                        </figure>
+                    </Fade>
+
+                    <div className="">
+                        <Slide direction="left">
                             <h1 className="text-4xl md:text-5xl lg:text-8xl text-white font-bold mb-4 text-center lg:text-left">
                                 What we offer?
                             </h1>
                             <h3 className="bg-men-blue text-white text-lg md:text-2xl lg:text-3xl px-4 sm:px-6 md:px-8 py-2 rounded-full max-w-fit">
                                 Why choose mentoons?
                             </h3>
-                        </div>
-                    </Fade>
-                </div>
-                <Slide cascade direction="up" duration={1000} triggerOnce>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 z-30 relative">
-                        {cards.map((item, index) => (
-                            <Cards key={index} indexValue={index} items={item} />
-                        ))}
+                        </Slide>
                     </div>
-                </Slide>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 z-30 relative">
+                    {cards.map((item, index) => (
+                        <Fade key={index} delay={index * 100}>
+                            <Cards indexValue={index} items={item} />
+                        </Fade>
+                    ))}
+                </div>
             </div>
-            <Slide direction="right" duration={1000} triggerOnce>
-                    <figure className="w-[5rem] lg:w-[10rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[2rem] lg:bottom-[7rem] right-[2rem] lg:right-[10rem]">
+
+            <Slide direction="up">
+                <figure className="w-[5rem] lg:w-[10rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[2rem] lg:bottom-[7rem] right-[2rem] lg:right-[10rem]">
                     <img
                         loading="lazy"
                         src="/assets/home/football.png"
