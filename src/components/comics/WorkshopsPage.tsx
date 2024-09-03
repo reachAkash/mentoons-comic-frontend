@@ -9,6 +9,7 @@ import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
 import workshopArrow from "@/assets/imgs/workshop-arrow.png";
 import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
+import FreeDownloadForm from "./FreeDownloadForm";
 
 export interface WorkshopItems {
   name: string;
@@ -34,6 +35,7 @@ const ComicWorkshop: React.FC = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
     workshopDetails[activeWorkshop]
   );
+  const [showForm, setShowForm] = useState<boolean>(false);
   const [imagesLoaded, setImagesLoaded] = useState<boolean>(false);
   const workshopRefLg = useRef<HTMLDivElement>(null);
   const workshopRefSm = useRef<HTMLDivElement>(null);
@@ -170,7 +172,10 @@ const ComicWorkshop: React.FC = () => {
                 <div className="font-medium leading-tight tracking-wide text-2xl">
                   {selectedWorkshop.desc}
                 </div>
-                <div className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
+                <div
+                  onClick={() => setShowForm(true)}
+                  className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out"
+                >
                   <div className="w-full relative text-2xl text-white bg-cover pl-2">
                     Talk to us!
                   </div>
@@ -207,7 +212,10 @@ const ComicWorkshop: React.FC = () => {
                 <div className="font-medium leading-tight tracking-wide text-2xl">
                   {selectedWorkshop.desc}
                 </div>
-                <div className="bg-button bg-contain bg-no-repeat relative left-10 px-8 py-3 w-fit h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out">
+                <div
+                  onClick={() => setShowForm(true)}
+                  className="bg-button bg-contain bg-no-repeat relative left-10 px-8 py-3 w-fit h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out"
+                >
                   <div className="w-full relative text-2xl text-white bg-cover pl-2">
                     Talk to us!
                   </div>
@@ -217,6 +225,7 @@ const ComicWorkshop: React.FC = () => {
           </div>
         </div>
       </div>
+      {showForm && <FreeDownloadForm setShowFreeDownloadForm={setShowForm} />}
     </div>
   );
 };

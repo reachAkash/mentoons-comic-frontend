@@ -17,7 +17,7 @@ interface FormType {
 
 interface FreeDownloadForm {
   setShowFreeDownloadForm: React.Dispatch<React.SetStateAction<boolean>>;
-  selectedComic: SelectedComicType;
+  selectedComic?: SelectedComicType;
 }
 
 const validationSchema = Yup.object({
