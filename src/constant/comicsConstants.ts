@@ -427,7 +427,7 @@ export const comicsData: Comic[] = [
   {
     name: "How to Handle Relationships",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
-    duration: "5:21",
+    duration: "5:11",
     mini_thumbnail:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-14.jpg",
     thumbnail:
