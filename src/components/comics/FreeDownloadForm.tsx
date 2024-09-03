@@ -49,8 +49,8 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
           to_name: values.name,
           to_email: values.email,
           message: `Hello ${values.name}, thank you for choosing us. Here's your free comic 🥳`,
-          pdf_url: selectedComic.pdf_url,
-          thumbnail_url: selectedComic.thumbnail_url,
+          pdf_url: selectedComic?.pdf_url,
+          thumbnail_url: selectedComic?.thumbnail_url,
         },
         import.meta.env.VITE_EMAIL_JS_USER_ID
       )
