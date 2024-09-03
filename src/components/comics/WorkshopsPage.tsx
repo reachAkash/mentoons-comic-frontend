@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import WorkshopHero from "@/assets/imgs/workshop_home.png";
 import WorkshopHeroSmall from "@/assets/imgs/workshop-home-small.png";
 import WorkshopCardSmall from "@/assets/imgs/workshop-card-small2.png";
@@ -34,22 +34,29 @@ const ComicWorkshop: React.FC = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
     workshopDetails[activeWorkshop]
   );
+  const [imagesLoaded, setImagesLoaded] = useState<boolean>(false);
   const workshopRefLg = useRef<HTMLDivElement>(null);
   const workshopRefSm = useRef<HTMLDivElement>(null);
 
   const handleCardClick = (item: WorkshopItems) => {
     setSelectedWorkshop(item);
-    if (workshopRefLg.current) {
-      workshopRefLg.current.scrollIntoView({ behavior: "smooth" });
-    }
-    if (workshopRefSm.current) {
-      workshopRefSm.current.scrollIntoView({ behavior: "smooth" });
+    if (imagesLoaded) {
+      if (workshopRefLg.current) {
+        workshopRefLg.current.scrollIntoView({ behavior: "smooth" });
+      }
+      if (workshopRefSm.current) {
+        workshopRefSm.current.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
+  const handleImageLoad = useCallback(() => {
+    setImagesLoaded(true);
+  }, []);
+
   useEffect(() => {
     handleCardClick(workshopDetails[activeWorkshop]);
-  }, [workshop]);
+  }, [workshop, imagesLoaded]);
 
   return (
     <div>
@@ -60,11 +67,13 @@ const ComicWorkshop: React.FC = () => {
             className="hidden md:block h-full w-full"
             src={WorkshopHero}
             alt="Workshop background"
+            onLoad={handleImageLoad}
           />
           <img
             className="block md:hidden w-full"
             src={WorkshopHeroSmall}
             alt="Workshop background"
+            onLoad={handleImageLoad}
           />
         </div>
         <div className="absolute w-[70%] md:w-1/2 text-white md:left-[27%] top-10 pl-6 md:pl-0 text-start md:top-1/2 md:-translate-y-[60%] md:-translate-x-1/2 font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
@@ -135,7 +144,12 @@ const ComicWorkshop: React.FC = () => {
           className="hidden lg:flex relative flex-col w-full h-full max-w-7xl pt-10 space-y-10"
         >
           {/* workshop seperate section */}
-          <img className="w-full h-full" src={workshopBlueBg} alt="blue bg" />
+          <img
+            className="w-full h-full"
+            src={workshopBlueBg}
+            alt="blue bg"
+            onLoad={handleImageLoad}
+          />
           <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[70%] space-y-5">
             <div className="font-base text-4xl md:text-5xl text-white flex items-center justify-center m-auto">
               <img src={workshopStar} alt="star" /> {selectedWorkshop.name}{" "}
@@ -171,6 +185,7 @@ const ComicWorkshop: React.FC = () => {
             className="w-full h-full"
             src={WorkshopCardSmall}
             alt="blue bg"
+            onLoad={handleImageLoad}
           />
           <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] px-8 md:-translate-y-[66%] space-y-5">
             <div className="font-base text-3xl md:text-5xl text-white flex items-center justify-center m-auto">

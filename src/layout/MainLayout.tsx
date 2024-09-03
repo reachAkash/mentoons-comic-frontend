@@ -15,9 +15,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const isAuthRoute = location.pathname === "/auth";
 
   return (
-    <div className="relative h-full w-full">
-    
-      <div className="absolute top-[5rem] left-[0.5rem] z-[9999] lg:hidden">
+    <div className="relative h-full w-full">    
+      <div className="absolute top-[5rem] left-[0.5rem] z-50 lg:hidden">
       <button onClick={() => navigate(-1)} className="flex items-center">
         <FaArrowLeft className="text-xl mr-3" />
       </button>

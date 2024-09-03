@@ -92,78 +92,66 @@ const HeroSectionPodcast = () => {
           />
 
           {/* Radio */}
-          <div className='absolute w-20 sm:w-28 md:w-32 bottom-4 left-4 md:left-10 md:bottom-6 z-[40] lg:w-60'>
+          <div className='   absolute w-28 sm:w-28 md:w-32 bottom-4 left-4 md:left-10 md:bottom-6 z-[40] lg:w-60'>
             <img
               src='/assets/images/radio.png'
               alt='Radio Illustration'
               className='w-full object-cover'
             />
-            <div className='absolute bottom-0 sm:bottom-6 left-2'>
-              {/* Music Note Div */}
-              <div className='flex sm:gap-2 justify-end'>
-                <motion.div
-                  className='w-4 rotate-12 sm:w-6 md:w-12'
-                  initial={{ x: -300, opacity: 0, scale: 1, rotate: 0 }}
-                  animate={{
-                    x: [150, 0],
-                    opacity: [0, 1, 0],
-                    scale: [1, 1.5, 1.5],
-                    rotate: [0, 30, 30],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 4,
-                    delay: 0,
-                  }}
-                >
-                  <img
-                    src='/assets/images/music-note-3.png'
-                    alt='Music Notes'
-                  />
-                </motion.div>
-                <motion.div className='w-4 md:w-9 flex items-center'></motion.div>
-                <motion.div
-                  className='w-4 md:w-12 flex items-center'
-                  initial={{ x: -100, opacity: 0, scale: 1, rotate: 0 }}
-                  animate={{
-                    x: [100, 0],
-                    opacity: [0, 1, 0],
-                    scale: [1, 1.5, 1.5],
-                    rotate: [0, 30, 30],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 4,
-                    delay: 0.5,
-                  }}
-                >
-                  <img
-                    src='/assets/images/music-note-2.png'
-                    alt='Music Notes'
-                  />
-                </motion.div>
-                <motion.div className='w-4 flex items-end md:w-6'></motion.div>
-                <motion.div
-                  className='w-4 flex items-end md:w-12'
-                  initial={{ x: -100, opacity: 0, scale: 1, rotate: 0 }}
-                  animate={{
-                    x: [100, 0],
-                    opacity: [0, 1, 0],
-                    scale: [1, 1.5, 1.5],
-                    rotate: [0, 30, 30],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 6,
-                    delay: 1,
-                  }}
-                >
-                  <img
-                    src='/assets/images/music-note-1.png'
-                    alt='Music Notes'
-                  />
-                </motion.div>
-              </div>
+
+            {/* Music Note Div */}
+            <div className='absolute bottom-0  flex sm:gap-2 justify-end  '>
+              <motion.div
+                className='w-4 absolute rotate-12 sm:w-6 md:w-12 '
+                initial={{ x: 0, opacity: 0, scale: 1, rotate: 0 }}
+                animate={{
+                  x: [100, 0],
+                  opacity: [0, 1, 0],
+                  scale: [1, 1.5, 1.5],
+                  rotate: [0, 30, 30],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  delay: 0,
+                }}
+              >
+                <img src='/assets/images/music-note-3.png' alt='Music Notes' />
+              </motion.div>
+              <motion.div
+                className=' absolute w-4 md:w-12 flex items-center '
+                initial={{ x: 0, opacity: 0, scale: 1, rotate: 0 }}
+                animate={{
+                  x: [100, 0],
+                  opacity: [0, 1, 0],
+                  scale: [1, 1.5, 1.5],
+                  rotate: [0, 30, 30],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  delay: 1,
+                }}
+              >
+                <img src='/assets/images/music-note-2.png' alt='Music Notes' />
+              </motion.div>
+              <motion.div
+                className='w-4 flex items-end md:w-12 '
+                initial={{ x: 0, opacity: 0, scale: 1, rotate: 0 }}
+                animate={{
+                  x: [100, 0],
+                  opacity: [0, 1, 0],
+                  scale: [1, 1.5, 1.5],
+                  rotate: [0, 30, 30],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  delay: 2,
+                }}
+              >
+                <img src='/assets/images/music-note-1.png' alt='Music Notes' />
+              </motion.div>
             </div>
           </div>
         </div>

@@ -36,9 +36,12 @@ const Footer: React.FC = () => {
   const companyImg = [
     { image: "/activeListeners.png", url: "https://www.activelisteners.in/" },
     { image: "/toonland.png", url: "https://toonland.in/" },
-    { image: "/storyClub.png", url: "" },
-    { image: "/cxoBranding.png", url: "" },
-    { image: "propellingStories.png", url: "" },
+    { image: "/storyClub.png", url: "https://storyclub.in/" },
+    { image: "/cxoBranding.png", url: "https://cxobranding.com/" },
+    {
+      image: "propellingStories.png",
+      url: "http://www.propellingstories.com/",
+    },
   ];
   const contactIcons = [
     { icon: ImLinkedin, color: "text-blue-700" },
@@ -352,16 +355,15 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-2 bg-white rounded-full py-2 px-4">
             {companyImg?.map((item, idx) => {
               return (
-                <div className="overflow-hidden">
+                <Link to={item?.url} className="overflow-hidden">
                   <img
-                    onClick={() => navigate(item?.url)}
                     className={`${
                       idx == 3 ? "w-16" : "w-20"
                     } cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out`}
                     src={item?.image}
                     alt="company image"
                   />
-                </div>
+                </Link>
               );
             })}
           </div>
