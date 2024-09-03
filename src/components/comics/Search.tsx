@@ -126,7 +126,11 @@ const Search: React.FC = () => {
               >
                 <SheetClose>
                   <img
-                    onClick={() => navigate("/audio-comic?comic=" + item.name)}
+                    onClick={() =>
+                      navigate(
+                        "/mentoons-comics/audio-comics/:comic" + item.name
+                      )
+                    }
                     className={`cursor-pointer ${
                       index === showButton?.index && "grayscale-[80%]"
                     } w-full md:w-[15rem] md:h-[14rem] duration-700 `}
@@ -139,7 +143,9 @@ const Search: React.FC = () => {
                     {" "}
                     <Button
                       onClick={() =>
-                        navigate("/audio-comic?comic=" + item.name)
+                        navigate(
+                          "/mentoons-comics/audio-comics/:comic" + item.name
+                        )
                       }
                       className="absolute left-0 font-semibold bottom-0 w-full bg-primary text-white hover:text-primary hover:bg-white duration-500 z-[50]"
                     >
