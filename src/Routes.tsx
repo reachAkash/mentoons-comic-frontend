@@ -1,27 +1,30 @@
+import{ lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import Home from "./pages/Home";
-import Auth from "./pages/Auth/Auth";
-import Wishlist from "./pages/Wishlist";
-import Cart from "./pages/Cart";
-import ComicsPage from "./pages/ComicsPage";
-import ComicsHome from "./components/comics/ComicsHome";
-import FreeDownload from "./pages/FreeDownload";
-import AudioComicPage from "./pages/AudioComicPage";
-import SearchPage from "./pages/SearchPage";
-import Career from "./components/shared/CareerPage/Career";
-import PodCast from "./pages/PodCast";
-import FAQ from "./components/common/FAQ";
-import Plans from "./components/common/Plans";
-import NotFound from "./pages/NotFound";
-import ProgressScroller from "./components/comics/ProgressScroller";
-import ComicCard from "./components/comics/HoverCardComic";
-import Workshops from './components/comics/WorkshopsPage'
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import ScrollToTop from "./components/comics/ScrollToTop";
 import { Toaster } from "sonner";
+import ProgressScroller from "./components/comics/ProgressScroller";
+import ComicCard from "./components/comics/HoverCardComic";
+import Loader from "./components/common/Loader";
 
+// Lazy load the pages
+const Home = lazy(() => import("./pages/Home"));
+const Auth = lazy(() => import("./pages/Auth/Auth"));
+const Wishlist = lazy(() => import("./pages/Wishlist"));
+const Cart = lazy(() => import("./pages/Cart"));
+const ComicsPage = lazy(() => import("./pages/ComicsPage"));
+const ComicsHome = lazy(() => import("./components/comics/ComicsHome"));
+const FreeDownload = lazy(() => import("./pages/FreeDownload"));
+const AudioComicPage = lazy(() => import("./pages/AudioComicPage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
+const Career = lazy(() => import("./components/shared/CareerPage/Career"));
+const PodCast = lazy(() => import("./pages/PodCast"));
+const FAQ = lazy(() => import("./components/common/FAQ"));
+const Plans = lazy(() => import("./components/common/Plans"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Workshops = lazy(() => import("./components/comics/WorkshopsPage"));
 
 const routes = [
   {
@@ -60,7 +63,7 @@ const routes = [
     path: "/mentoons-comics",
     element: (
       <MainLayout>
-        <ComicsHome/>
+        <ComicsHome />
       </MainLayout>
     ),
   },
@@ -76,7 +79,7 @@ const routes = [
     path: "/mentoons-comics/audio-comics",
     element: (
       <MainLayout>
-        <ComicsPage  page="Audio Comics"/>
+        <ComicsPage page="Audio Comics" />
       </MainLayout>
     ),
   },
@@ -84,7 +87,7 @@ const routes = [
     path: "/mentoons-comics/comics",
     element: (
       <MainLayout>
-        <ComicsPage page='Comics' />
+        <ComicsPage page="Comics" />
       </MainLayout>
     ),
   },
@@ -100,7 +103,7 @@ const routes = [
     path: "/mentoons-comics/comics-list",
     element: (
       <MainLayout>
-        <ComicsPage page='Our Comics Collection'/>
+        <ComicsPage page="Our Comics Collection" />
       </MainLayout>
     ),
   },
@@ -160,25 +163,27 @@ const routes = [
       </MainLayout>
     ),
   },
-  
 ];
 
 const Router = () => {
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic
   );
+
   return (
     <>
-       <ScrollToTop />
-    <Routes>
-      {routes.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
-      ))}
-    </Routes>
-    <Toaster />
-     {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-     <ProgressScroller />
-     </>
+      <ScrollToTop />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Suspense>
+      <Toaster />
+      {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
+      <ProgressScroller />
+    </>
   );
 };
 
