@@ -31,7 +31,16 @@ const Header = () => {
 
     return (
         <div className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]" style={{ boxShadow: ' rgba(0, 0, 0, 0.2) 0px 20px 30px' }}>
-            <div className="flex-1 flex justify-end">
+            <div className="flex-1 flex lg:justify-end">
+                <Menubar className="lg:hidden bg-transparent border-0">
+                    <MenubarMenu>
+                        <NavLink to='/'>
+                            <figure className="h-[1.5rem] w-[1.5rem]">
+                                <img src="/assets/home/home-icn.png" alt="home icon" className="h-full w-full object-cover" />
+                            </figure>
+                        </NavLink>
+                    </MenubarMenu>
+                </Menubar>
                 <Menubar className="hidden lg:flex bg-transparent border-0 justify-between w-full">
                     <MenubarMenu>
                         <NavLink to="/">
@@ -112,7 +121,7 @@ const Header = () => {
                             </MenubarTrigger>
                         </NavLink>
                     </MenubarMenu>
-                
+
                     <MenubarMenu>
                         <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base whitespace-nowrap font-semibold hidden lg:block">
                             Audio Comics
@@ -199,7 +208,7 @@ const Header = () => {
                             </MenubarItem>
                         </MenubarContent>
                     </MenubarMenu>
-                    
+
                     <MenubarMenu>
                         <NavLink to="/mentoons-comics/audio-comics" onClick={() => setMenuOpen(false)}>
                             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] px-1 text-base font-semibold lg:hidden">
