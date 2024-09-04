@@ -59,7 +59,7 @@ const NewComics: React.FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0.5 }}
-            whileInView={{ opacity: 0.5 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
             className="text-4xl lg:text-7xl w-full font-extrabold leading-[1.10]"
           >
