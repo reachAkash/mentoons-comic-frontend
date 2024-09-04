@@ -43,15 +43,15 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-white">
-      <div className="flex-1 hidden lg:block">
+      <div className="w-full lg:w-1/2 items-center justify-center hidden lg:flex">
         <img
-          src="/assets/images/blog2.png"
+          src="/team-men.png"
           alt="auth-cover"
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-full flex items-center justify-center p-6 bg-white shadow-lg rounded-lg lg:flex-1 lg:bg-transparent">
-        <div className="bg-white py-8 lg:px-20 px-4 rounded-lg shadow-md w-full lg:max-w-lg">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 bg-white shadow-lg rounded-lg lg:flex-1 lg:bg-transparent">
+        <div className="bg-white py-8 lg:px-20 px-4 rounded-lg shadow-md w-full lg:max-w-xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
             {isLogin ? "Login" : "Register"}
           </h2>
