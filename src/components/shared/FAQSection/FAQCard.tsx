@@ -36,22 +36,22 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
     <div
       className={` ${
         isExpanded ? "max-h-full" : "max-h-16"
-      } rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-[#008cff] `}
+      } rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-purple-300 `}
       onClick={handleIsExpanded}
     >
-      <div className=' w-full flex items-center justify-between p-4 text-white'>
+      <div className=' w-full flex items-center justify-between p-4 text-purple-700'>
         <span className='text-2xl font-bold'>{position.jobTitle}</span>
 
         <span
-          className={`p-1 rounded-full border  flex items-center transition-all duration-300  ${
+          className={`p-1 rounded-full border border-purple-600  flex items-center transition-all duration-300  ${
             isExpanded && "rotate-180"
           }`}
           onClick={handleIsExpanded}
         >
-          <IoChevronDown color='white' onClick={handleIsExpanded} />
+          <IoChevronDown color='purple' onClick={handleIsExpanded} />
         </span>
       </div>
-      <span className='p-4 text-white'>
+      {/* <span className='p-4 text-white'>
         <h1 className='text-xl font-bold'>Job Description</h1>
         {position.jobDescription}
         <div className='w-96 mx-auto'>
@@ -92,7 +92,39 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
             </ul>
           </div>
         )}
-      </span>
+      </span> */}
+      <div className='p-4'>
+        {/* description and illustration */}
+        <div className='flex-wrap flex md:flex-nowrap items-start justify-center gap-2'>
+          <div className='w-full'>
+            <img
+              src={position.jobIllustration}
+              alt=''
+              className='w-full object-cover'
+            />
+          </div>
+          <div className='text-purple-900 w-full  '>
+            {position.jobDescription}
+            <div className='flex flex-wrap  '>
+              {position.skills.map((item) => {
+                return (
+                  <div className='w-32 relative ' key={item}>
+                    <img
+                      src='/assets/images/stroke1.png'
+                      alt=''
+                      className=' object-cover'
+                    />
+                    <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full  text-purple-100'>
+                      {item}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        {/* skill */}
+      </div>
       <div className=' w-full px-4 '>
         <JobApplicationForm />
       </div>
@@ -191,7 +223,7 @@ export function JobApplicationForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='text-white font-bold px-5 py-2 w-full border  bg-transparent border-amber-100 hover:bg-blue-500 mb-4 rounded-md  transition-all duration-300'>
+        <Button className='text-purple-800 font-bold px-5 py-2 w-full border  bg-transparent border-purple-700 hover:bg-purple-400 mb-4 rounded-md  transition-all duration-300'>
           Apply Now
         </Button>
       </DialogTrigger>
@@ -204,7 +236,7 @@ export function JobApplicationForm() {
             Fill details below and we'll cantact you.
           </DialogDescription>
         </DialogHeader>
-        <div className=' rounded-2xl   '>
+        <div className=' rounded-2xl'>
           {/* <h1 className='text-4xl font-bold my-2 mb-4'>Sign Up</h1>
           <p className='text-lg font-normal  mb-4 '>Your Feedback Matters.</p> */}
           <form onSubmit={handleSubmit} className='flex flex-col '>
