@@ -77,7 +77,7 @@ const HeroBanner = () => {
                 </Fade>
             <div className="w-full h-full pb-[10rem] lg:pb-[30rem] px-4 sm:px-10 lg:px-40 z-20 flex flex-col gap-20 relative">
                 <Fade direction="down">
-                    <figure className="w-[10rem] lg:w-[22rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 lg:-top-14 lg:right-20">
+                    <figure className="w-[10rem] lg:w-[22rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 lg:-top-14 lg:right-[-21rem]">
                         <img
                             loading="lazy"
                             src="/assets/home/specs.png"
