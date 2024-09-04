@@ -381,18 +381,11 @@ export const OPEN_POSITION = [
     id: 51,
     jobId: "JOB001",
     jobTitle: "Fullstack Developer",
-    jobDescription: `
-     We have an amazing technology team (20+ and growing quickly) developing
-        our platform and we are looking for Senior Fullstack Engineers (MERN) to
-        help us in the next stage of our journey which includes mobile, scaling,
-        containerisation and feature innovation. The successful candidate will
-        join a growing UK and India Development team as reporting to the Project
-        Manager and VP of Engineering. The UK and India Development Team
-        consists of several competencies including UX, QA, Developers and BAs.
-        Our current technologies include Azure, Node.js, React, Redux, Firebase
-        & Typescript; we will build out our future stack from these (not
-        immutable) core foundations, so in-depth experience and knowledge of all
-        of these technologies is a pre-requisite.
+    jobDescription: `We are currently seeking a Backend Developer to join our
+     dynamic team. This individual will play a vital role 
+     enabling the development of e-commerce, managing databases, 
+     assisting in podcast creation and supporting YouTube channel
+      content. The ideal candidate will have an extensive experience of working with full Stack MERN and managing MongoDB databases.
     `,
     jobRequirement: [
       ` Experience working as a Full stack Engineer on product(s) with 1
@@ -469,7 +462,7 @@ export const OPEN_POSITION = [
     jobId: "JOB004",
     jobTitle: "Storyteller",
     jobDescription:
-      " We are currently seeking a Storyteller to join our creative team. This individual will be the heart ofour narrative, weaving captivating stories to engage our audience. Your role involves craftingcompelling content for various platforms, evoking emotions, and conveying messages effectively.The ideal candidate will have a passion for storytelling, a vivid imagination, and the ability to bringstories to life. Experience in content creation, whether through writing, video, or other mediums, ishighly valued. Join us in creating and sharing stories that leave a lasting impact on our audience.",
+      "We are currently seeking a Storyteller to join our creative team. This individual will be the heart ofour narrative, weaving captivating stories to engage our audience. Your role involves craftingcompelling content for various platforms, evoking emotions, and conveying messages effectively.The ideal candidate will have a passion for storytelling, a vivid imagination, and the ability to bringstories to life. Experience in content creation, whether through writing, video, or other mediums, ishighly valued. Join us in creating and sharing stories that leave a lasting impact on our audience.",
     jobRequirement: [],
     jobIllustration: "/assets/images/storyteller.png",
     skills: [],
