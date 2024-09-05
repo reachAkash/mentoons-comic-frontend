@@ -1,49 +1,32 @@
 import Sidebar from "../comics/Sidebar";
-import Cards from "./Cards";
-import { Fade, Slide } from "react-awesome-reveal";
-
-type CardsData = {
+import { Fade } from "react-awesome-reveal";
+type detailsData = {
     url: string;
-    boxUrl: string;
-    cardText: string;
-    linkUrl: string;
-    dsecription: string;
-};
-
+    title: string;
+    description: string;
+}
 const HeroBanner = () => {
-    const cards: CardsData[] = [
+
+    const details:detailsData[] = [
         {
-            url: "/assets/home/workshop-n.png",
-            boxUrl: "/assets/home/workshop-btn.png",
-            cardText: "Workshops",
-            linkUrl: "/mentoons-workshops",
-            dsecription: "Interactive sessions led by industry experts, designed to enhance mentoring skills and foster personal growth.",
+            url: '/assets/home/box 1.png',
+            title: 'Join Us',
+            description: 'Sign up and browse through our interactive sessions, books, games, and videos.'
         },
         {
-            url: "/assets/home/Comic-n.png",
-            boxUrl: "/assets/home/comic-btn.png",
-            cardText: "Comics",
-            linkUrl: "/mentoons-comics",
-            dsecription: "Our flagship offering, featuring beautifully illustrated stories that tackle various mentoring themes.",
+            url: '/assets/home/box 2.png',
+            title: 'Join Us',
+            description: 'Sign up and browse through our interactive sessions, books, games, and videos.'
         },
         {
-            url: "/assets/home/audioComic.png",
-            boxUrl: "/assets/home/acomic-btn.png",
-            cardText: "Audio comics",
-            linkUrl: "/mentoons-comics/audio-comics",
-            dsecription: "An innovative fusion of traditional comics and audio storytelling, perfect for on-the-go learning."
-        },
-        {
-            url: "/assets/home/Podcast-n.png",
-            boxUrl: "/assets/home/pod-btn.png",
-            cardText: "Podcasts",
-            linkUrl: "/mentoons-podcast",
-            dsecription: '"Mentor Moments," our weekly podcast, featuring inspiring conversations with mentors from various fields.',
+            url: '/assets/home/box 3.png',
+            title: 'Join Us',
+            description: 'Sign up and browse through our interactive sessions, books, games, and videos.'
         },
     ];
 
     return (
-        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-center bg-no-repeat bg-cover ">
+        <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/background.png')] bg-botttom bg-no-repeat bg-cover pb-[2.5rem] lg:pb-40">
             <div className="absolute top-[20rem] right-0 z-50 hidden lg:block">
                 <div className="relative group">
                     <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
@@ -58,80 +41,44 @@ const HeroBanner = () => {
                     </div>
                 </div>
             </div>
-                <Fade>
-                    <img
-                        loading="lazy"
-                        src="/assets/home/home-banner.png"
-                        alt="hero-banner"
-                        className="w-full object-cover hidden lg:block"
-                    />
-                </Fade>
+            <Fade>
+                <img
+                    loading="lazy"
+                    src="/assets/home/home-banner.png"
+                    alt="hero-banner"
+                    className="w-full object-cover hidden lg:block"
+                />
+            </Fade>
 
-                <Fade>
-                    <img
-                        loading="lazy"
-                        src="/assets/home/mv.png"
-                        alt="hero-banner"
-                        className="w-full object-cover lg:hidden"
-                    />
-                </Fade>
-            <div className="w-full h-full pb-[10rem] lg:pb-[30rem] px-4 sm:px-10 lg:px-40 z-20 flex flex-col gap-20 relative">
-                <Fade direction="down">
-                    <figure className="w-[10rem] lg:w-[22rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 lg:-top-14 lg:right-[-21rem]">
+            <Fade>
+                <img
+                    loading="lazy"
+                    src="/assets/home/mv.png"
+                    alt="hero-banner"
+                    className="w-full object-cover lg:hidden"
+                />
+            </Fade>
+            <div className="flex flex-row flex-nowrap w-full items-center justify-around  gap-4 sm:gap-6 px-3">
+                {details.map((item, index) => (
+                    <div
+                        key={index}
+                        className="h-[10rem] w-[10rem] sm:h-[12rem] sm:w-[12rem] md:h-[15rem] md:w-[15rem] relative top-[-3rem] flex flex-col items-center justify-center text-center"
+                    >
                         <img
-                            loading="lazy"
-                            src="/assets/home/specs.png"
-                            alt="specs-asset"
-                            className="w-full h-full object-contain"
+                            src={item.url}
+                            alt={item.title}
+                            className="absolute inset-0 h-full w-full object-contain"
                         />
-                    </figure>
-                </Fade>
-
-                <div className="flex flex-col lg:flex-row z-30 items-center lg:text-left">
-                    <Fade cascade>
-                        <figure className="w-[16rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[7rem] right-[10rem] hidden lg:block">
-                            <img
-                                loading="lazy"
-                                src="/assets/home/football.png"
-                                alt="football-asset"
-                                className="w-full h-full object-contain"
-                            />
-                        </figure>
-                    </Fade>
-
-                    <div className="">
-                        <Slide direction="left">
-                            <h1 className="text-4xl md:text-5xl lg:text-8xl text-white font-bold mb-4 text-center lg:text-left">
-                                What we offer?
-                            </h1>
-                            <h3 className="bg-men-blue text-white text-lg md:text-2xl lg:text-3xl px-4 sm:px-6 md:px-8 py-2 rounded-full max-w-fit">
-                                Why choose mentoons?
-                            </h3>
-                        </Slide>
+                        {/* <div className="relative z-10 px-4 sm:px-6">
+                            <h1 className="font-bold text-sm lg:text-2xl text-black">{item.title}</h1>
+                            <p className="text-xs lg:text-xl text-black mt-2">{item.description}</p>
+                        </div> */}
                     </div>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 z-30 relative">
-                    {cards.map((item, index) => (
-                        <Fade key={index} delay={index * 100}>
-                            <Cards indexValue={index} items={item} />
-                        </Fade>
-                    ))}
-                </div>
+                ))}
             </div>
-
-            <Slide direction="up">
-                <figure className="w-[5rem] lg:w-[10rem] max-w-xs sm:max-w-md lg:max-w-lg mx-auto absolute bottom-[2rem] lg:bottom-[7rem] right-[2rem] lg:right-[10rem]">
-                    <img
-                        loading="lazy"
-                        src="/assets/home/football.png"
-                        alt="football-asset"
-                        className="w-full h-full object-contain"
-                    />
-                </figure>
-            </Slide>
         </div>
     );
 };
 
 export default HeroBanner;
+
