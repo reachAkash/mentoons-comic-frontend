@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
     // </div>
 
     <div className="relative w-full h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
-      <div className="md:px-14 text-center md:text-start py-20 space-y-4">
+      <div className="relative md:px-14 text-center md:text-start py-20 space-y-4">
         <h1 className="font-extrabold text-4xl lg:text-8xl">
           Mentoons <Wordbreak /> Comics
         </h1>
@@ -97,6 +97,48 @@ const HeroSection: React.FC = () => {
           <Wordbreak />
           life lessons.
         </p>
+        {/*share image  */}
+        <img className="w-32 relative left-16" src="/assets/comics/4.png" />
+        {/* message image */}
+        <img
+          className="w-52 absolute top-0 left-[43%] transform scale-x-[-1]"
+          src="/assets/comics/1.png"
+        />
+        {/* Don't fade away comic */}
+        <img
+          className="w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-8 left-[65%] -rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-04.jpg"
+        />
+        {/* black jalebi image */}
+        <img
+          className="w-32 absolute top-0 right-40"
+          src="/assets/comics/3.png"
+        />
+        {/* one way trip comic */}
+        <img
+          className="w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-[28%] right-[10%] rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-22.jpg"
+        />
+        {/* power image */}
+        <img
+          className="w-36 absolute top-[33%] left-[67%]"
+          src="/assets/comics/2.png"
+        />
+        {/* bet your life comic */}
+        <img
+          className="w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute left-[56%] bottom-[30%] rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-09.jpg"
+        />
+        {/* come out of gaming comic */}
+        <img
+          className="w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute right-20 bottom-8 -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg"
+        />
+        {/* cell life of tanya comic */}
+        <img
+          className="w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute right-20 bottom-8 -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg"
+        />
       </div>
       <div className="flex w-full h-full items-center justify-center">
         <img
