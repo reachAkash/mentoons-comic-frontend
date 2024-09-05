@@ -172,6 +172,7 @@ export const funFacts: string[] = [
 ];
 
 export const comicsData: Comic[] = [
+  // groupSmall = 6 - 12, groupMedium = 13 - 19, groupLarge = 20+
   {
     name: "Bet Your Life",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
@@ -290,6 +291,18 @@ export const comicsData: Comic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+28.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/Rohan+and+the+Puppies_01.mp4",
+    category: "groupMedium",
+  },
+  {
+    name: "Think Before You Act",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    duration: "3:45",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Think_Before_You_Act!.jpg",
+    videoLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/Think+Before+You+Act.mp4",
     category: "groupMedium",
   },
   {
