@@ -87,12 +87,20 @@ const HeroSection: React.FC = () => {
     //   Akash
     // </div>
 
-    <div className="relative w-full h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
+    <div className="relative w-full text-[#864747] h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
       <div className="relative md:px-14 text-center md:text-start py-20 space-y-4">
-        <h1 className="font-extrabold text-4xl lg:text-8xl">
+        <h1
+          className="font-extrabold text-4xl lg:text-8xl"
+          // style={{ textShadow: "4px 4px 4px black" }}
+          style={{
+            WebkitTextStroke: "3px black",
+            color: "transparent", // Optional, makes only the stroke visible
+            textShadow: "4px 4px 4px #FBD33D",
+          }}
+        >
           Mentoons <Wordbreak /> Comics
         </h1>
-        <p className=" text-3xl md:text-5xl font-semibold tracking-wider md:leading-snug">
+        <p className="text-[#592828] text-3xl md:text-4xl font-semibold tracking-wider md:leading-snug">
           Welcome to a world of <Wordbreak /> meaningful stories and valuable{" "}
           <Wordbreak />
           life lessons.
@@ -161,7 +169,7 @@ const HeroSection: React.FC = () => {
         />
         {/* rohan and puppies comic */}
         <img
-          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[28%] -bottom-[65%] rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[25%] -bottom-[70%] rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
           src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg"
         />
         {/* rishi and rohan comic */}
@@ -171,8 +179,8 @@ const HeroSection: React.FC = () => {
         />
         {/* my daily routine comic */}
         <img
-          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[8%] -bottom-[62%] -rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
-          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-16.jpg"
+          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[8%] -bottom-[95%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg"
         />
       </div>
       {/* clement toonla image */}
