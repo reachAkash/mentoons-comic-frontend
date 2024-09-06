@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="home"
-      className="container relative bg-rose-500 flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14"
+      className="container relative bg-rose-500 flex flex-col lg:flex-row text-center lg:text-start items-center justify-between py-10 lg:pb-14 space-y-5"
     >
       <motion.div
         initial={{ opacity: 0.5 }}
