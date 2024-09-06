@@ -9,13 +9,15 @@ const WhyMentoons: React.FC = () => {
           <div>
             <FaRegCirclePlay className="text-red-500 text-6xl cursor-pointer" />
           </div>
-          <button className="text-red-500 text-3xl">Why Mentoons</button>
+          <button className="text-red-500 text-3xl">
+            Why Choose Mentoons Comics
+          </button>
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] md:max-w-[600px]">
+      <DialogContent className="bg-white sm:max-w-[425px] md:max-w-[600px]">
         <video
           className="rounded-lg"
-          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Others/What+is+Mentoons+(Buddy+Nubby)_01.mp4"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Others/Why+Choose+Mentoons+Comics.mp4"
           width="700"
           height="400"
           loop
