@@ -18,7 +18,9 @@ const Blogs: React.FC = () => {
         transition={{ duration: 1.5 }}
         className="space-y-3 border-b-[1px] pb-8 border-black"
       >
-        <div className=" text-3xl text-white lineBefore uppercase">Blogs </div>
+        <div className=" text-3xl text-white lineBefore uppercase">
+          Trending
+        </div>
         <div className="text-7xl text-white w-full font-extrabold leading-[1.10]">
           Our Top Trendy <Wordbreak /> Comic News.
         </div>
