@@ -36,6 +36,8 @@ const AudioComicPage: React.FC = () => {
     setShowPurchaseDialog(true);
   };
 
+  console.log(handleShowPurchase);
+
   const handleCheckPurchased = () => {
     if (hasPurchased) {
       videoRef.current.play();
