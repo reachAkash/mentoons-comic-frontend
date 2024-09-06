@@ -29,7 +29,6 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
 
   const handleIsExpanded = () => {
-    event?.stopPropagation();
     setIsExpanded((prev) => !prev);
   };
   return (
@@ -37,18 +36,19 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
       className={` ${
         isExpanded ? "max-h-full" : "max-h-16"
       } rounded-xl flex flex-col items-center justify-between overflow-hidden transition-transform duration-300   bg-purple-300 `}
-      onClick={handleIsExpanded}
     >
-      <div className=' w-full flex items-center justify-between p-4 text-purple-700'>
+      <div
+        className=' w-full flex items-center justify-between p-4 text-neutral-700'
+        onClick={handleIsExpanded}
+      >
         <span className='text-2xl font-bold'>{position.jobTitle}</span>
 
         <span
-          className={`p-1 rounded-full border border-purple-600  flex items-center transition-all duration-300  ${
+          className={`p-1 rounded-full border border-neutral-700  flex items-center transition-all duration-300  ${
             isExpanded && "rotate-180"
           }`}
-          onClick={handleIsExpanded}
         >
-          <IoChevronDown color='purple' onClick={handleIsExpanded} />
+          <IoChevronDown onClick={handleIsExpanded} />
         </span>
       </div>
       {/* <span className='p-4 text-white'>
@@ -103,7 +103,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
               className='w-full object-cover'
             />
           </div>
-          <div className='text-purple-900 w-full  '>
+          <div className=' text-neutral-700 w-full  '>
             {position.jobDescription}
             <div className='flex flex-wrap  '>
               {position.skills.map((item) => {
@@ -137,9 +137,9 @@ export default FAQCard;
 interface FormData {
   name: string;
   email: string;
-  address: string;
+
   mobileNumber: number;
-  country: string;
+  coverNote: string;
   gender: string;
   cv: File | null;
 }
@@ -152,20 +152,25 @@ export function JobApplicationForm() {
   const [formData, setFormData] = React.useState<FormData>({
     name: "",
     email: "",
-    address: "",
     mobileNumber: 0,
-    country: "",
+    coverNote: "",
     gender: "",
     cv: null,
   });
   const [formError] = React.useState<FormError>({});
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, files } = e.target;
-    if (name === "cv" && files) {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    if (
+      name === "cv" &&
+      e.target instanceof HTMLInputElement &&
+      e.target.files
+    ) {
       setFormData({
         ...formData,
-        [name]: files[0],
+        [name]: e.target.files[0],
       });
     } else {
       setFormData({
@@ -211,23 +216,30 @@ export function JobApplicationForm() {
   };
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
+    // Prevent default form submission
     await sendEmail(formData);
   };
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
+  const handleFileChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (
+      e.target instanceof HTMLInputElement &&
+      e.target.files &&
+      e.target.files.length > 0
+    ) {
       setSelectedFile(e.target.files[0]);
     }
   };
-  console.log(import.meta.env.VITE_EMAIL_JS_SERVICE_ID);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='text-purple-800 font-bold px-5 py-2 w-full border  bg-transparent border-purple-700 hover:bg-purple-400 mb-4 rounded-md  transition-all duration-300'>
+        <Button className='text-neutral-700 font-bold px-5 py-2 w-full border  bg-transparent border-neutral-700 hover:bg-purple-400 mb-4 rounded-md  transition-all duration-300'>
           Apply Now
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className='z-[999999]'>
         <DialogHeader>
           <DialogTitle className='text-center'>
             Job Application From
@@ -272,21 +284,6 @@ export function JobApplicationForm() {
             </div>
             <div className='w-[100%] flex flex-col'>
               <input
-                type='text'
-                name='address'
-                onChange={handleChange}
-                placeholder='Address'
-                autoComplete='off'
-                className='p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg'
-              />
-              {formError.address && (
-                <p className='text-red-500 text-sm font-normal mb-3'>
-                  {formError.address}
-                </p>
-              )}
-            </div>
-            <div className='w-[100%] flex flex-col'>
-              <input
                 type='tel'
                 name='mobileNumber'
                 onChange={handleChange}
@@ -297,21 +294,6 @@ export function JobApplicationForm() {
               {formError.mobileNumber && (
                 <p className='text-red-500 text-sm font-normal mb-3'>
                   {formError.mobileNumber}
-                </p>
-              )}
-            </div>
-            <div className='w-[100%] flex flex-col'>
-              <input
-                type='text'
-                name='country'
-                onChange={handleChange}
-                placeholder='Country'
-                autoComplete='off'
-                className='p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg'
-              />
-              {formError.country && (
-                <p className='text-red-500 text-sm font-normal mb-3'>
-                  {formError.country}
                 </p>
               )}
             </div>
@@ -330,6 +312,60 @@ export function JobApplicationForm() {
                 </p>
               )}
             </div>
+            <div className='w-[100%] flex flex-col'>
+              <input
+                name='portfolio'
+                onChange={handleChange}
+                placeholder='Portfolio Link'
+                autoComplete='off'
+                className='p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg'
+              />
+              {formError.portfolio && (
+                <p className='text-red-500 text-sm font-normal mb-3'>
+                  {formError.portfolio}
+                </p>
+              )}
+            </div>
+            <div className='w-[100%] flex flex-col'>
+              <textarea
+                name='coverNote'
+                onChange={handleChange}
+                placeholder='Cover note'
+                autoComplete='off'
+                className='p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg'
+              />
+              {formError.tellUsAboutYourself && (
+                <p className='text-red-500 text-sm font-normal mb-3'>
+                  {formError.tellUsAboutYourself}
+                </p>
+              )}
+            </div>
+
+            <div className='w-[100%] flex flex-col'>
+              <input
+                type='file'
+                id='cv'
+                name='cv'
+                accept='.pdf,.doc,.docx'
+                onChange={handleFileChange}
+                className='hidden'
+              />
+              <label htmlFor='cv'>
+                <button
+                  type='button'
+                  onClick={() => document.getElementById("cv")?.click()}
+                  className='p-3  w-full text-base  text-black mb-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition-all duration-300'
+                >
+                  {selectedFile ? selectedFile.name : "Upload Cover Letter"}
+                </button>
+              </label>
+              {formError.gender && (
+                <p className='text-red-500 text-sm font-normal mb-3'>
+                  {formError.gender}
+                </p>
+              )}
+            </div>
+
             <div className='w-[100%] flex flex-col'>
               <input
                 type='file'
@@ -354,7 +390,6 @@ export function JobApplicationForm() {
                 </p>
               )}
             </div>
-
             <button
               type='submit'
               className='p-3 text-base   bg-primary text-white mb-4 rounded-lg hover:bg-orange-500 transition-all duration-300'

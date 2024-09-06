@@ -31,75 +31,75 @@ const Header = () => {
 
   return (
     <div
-      className="w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]"
+      className='w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]'
       style={{ boxShadow: " rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
     >
-      <div className="flex-1 flex lg:justify-end">
-        <Menubar className="lg:hidden bg-transparent border-0">
+      <div className='flex-1 flex lg:justify-end'>
+        <Menubar className='lg:hidden bg-transparent border-0'>
           <MenubarMenu>
-            <NavLink to="/">
-              <figure className="h-[1.5rem] w-[1.5rem]">
+            <NavLink to='/'>
+              <figure className='h-[1.5rem] w-[1.5rem]'>
                 <img
-                  src="/assets/home/home-icn.png"
-                  alt="home icon"
-                  className="h-full w-full object-cover"
+                  src='/assets/home/home-icn.png'
+                  alt='home icon'
+                  className='h-full w-full object-cover'
                 />
               </figure>
             </NavLink>
           </MenubarMenu>
         </Menubar>
-        <Menubar className="hidden lg:flex bg-transparent border-0 justify-between w-full">
+        <Menubar className='hidden lg:flex bg-transparent border-0 justify-between w-full'>
           <MenubarMenu>
-            <NavLink to="/">
-              <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
+            <div>
+              <span className='bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap'>
                 {date}
               </span>
-            </NavLink>
+            </div>
           </MenubarMenu>
           <MenubarMenu>
-            <a href="tel:+919036033300" className="no-underline">
-              <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
+            <a href='tel:+919036033300' className='no-underline'>
+              <span className='bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap'>
                 Call us: +91 90360 33300
               </span>
             </a>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-white font-semibold">
+            <NavLink to='/hiring' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base whitespace-nowrap text-white font-semibold '>
                 Join Us
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/auth" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base text-white font-semibold whitespace-nowrap ">
+            <NavLink to='/auth' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap '>
                 Sign up
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
         </Menubar>
       </div>
-      <div className="relative flex-1 max-w-[7em]">
-        <NavLink to="/" onClick={() => setMenuOpen(false)}>
-          <figure className="w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] absolute bg-primary rounded-full top-[-2.3rem] lg:top-[-6rem] left-1/2 transform -translate-x-1/2 z-40">
+      <div className='relative flex-1 max-w-[7em]'>
+        <NavLink to='/' onClick={() => setMenuOpen(false)}>
+          <figure className='w-[5rem] h-[5rem] lg:h-[10rem] lg:w-[10rem] absolute bg-primary rounded-full top-[-2.3rem] lg:top-[-6rem] left-1/2 transform -translate-x-1/2 z-40'>
             <img
-              src="/assets/images/logo.png"
-              alt="mentoonsLogo"
-              className="h-full w-full object-contain lg:mt-4"
+              src='/assets/images/logo.png'
+              alt='mentoonsLogo'
+              className='h-full w-full object-contain lg:mt-4'
             />
           </figure>
         </NavLink>
       </div>
-      <div className="flex-1 flex justify-end lg:justify-between">
-        <div className="lg:hidden">
+      <div className='flex-1 flex justify-end lg:justify-between'>
+        <div className='lg:hidden'>
           {menuOpen ? (
             <MdOutlineClose
-              className="text-3xl text-white my-3"
+              className='text-3xl text-white my-3'
               onClick={handleMenuToggle}
             />
           ) : (
             <GiHamburgerMenu
-              className="text-3xl text-white my-3"
+              className='text-3xl text-white my-3'
               onClick={handleMenuToggle}
             />
           )}
@@ -110,29 +110,29 @@ const Header = () => {
           }  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-80 lg:h-10`}
         >
           <MenubarMenu>
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden">
+            <NavLink to='/' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden'>
                 Home
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/mentoons-comics" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold">
+            <NavLink to='/mentoons-comics' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold'>
                 Comics
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/mentoons-podcast" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold">
+            <NavLink to='/mentoons-podcast' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold'>
                 Podcast
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
 
           <MenubarMenu>
-            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base whitespace-nowrap font-semibold hidden lg:block">
+            <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base whitespace-nowrap font-semibold hidden lg:block'>
               Audio Comics
             </MenubarTrigger>
             <MenubarContent>
@@ -184,7 +184,7 @@ const Header = () => {
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
-            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold hidden lg:block">
+            <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold hidden lg:block'>
               Workshops
             </MenubarTrigger>
             <MenubarContent>
@@ -233,27 +233,27 @@ const Header = () => {
 
           <MenubarMenu>
             <NavLink
-              to="/mentoons-comics/audio-comics"
+              to='/mentoons-comics/audio-comics'
               onClick={() => setMenuOpen(false)}
             >
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden">
+              <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden'>
                 Audio Comics
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
             <NavLink
-              to="/mentoons-workshops"
+              to='/mentoons-workshops'
               onClick={() => setMenuOpen(false)}
             >
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden">
+              <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden'>
                 Workshops
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
+            <NavLink to='/hiring' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden'>
                 Join Us
               </MenubarTrigger>
             </NavLink>
