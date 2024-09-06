@@ -94,15 +94,15 @@ const AudioComicPage: React.FC = () => {
     handleFindComic();
   }, [comic]);
 
-  useEffect(() => {
-    const key = setTimeout(() => {
-      handleShowPurchase();
-      handleCheckPurchased();
-    }, 30000);
-    return () => {
-      clearTimeout(key);
-    };
-  }, [comic]);
+  // useEffect(() => {
+  //   const key = setTimeout(() => {
+  //     handleShowPurchase();
+  //     handleCheckPurchased();
+  //   }, 30000);
+  //   return () => {
+  //     clearTimeout(key);
+  //   };
+  // }, [comic]);
 
   useEffect(() => {
     handleCheckPurchased();
@@ -121,7 +121,7 @@ const AudioComicPage: React.FC = () => {
               height="400"
               loop
               autoPlay
-              controls={hasPurchased ? true : false}
+              controls
               controlsList="nodownload"
             ></video>
             <div className="space-y-2">
