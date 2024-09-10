@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import ProgressScroller from "./components/comics/ProgressScroller";
 import ComicCard from "./components/comics/HoverCardComic";
 import Loader from "./components/common/Loader";
+import Popup from "./layout/Popup";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -170,6 +171,13 @@ const Router = () => {
     (store: RootState) => store.comics.currentHoverComic
   );
 
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowPopup(true);
+    }, 5000);
+  }, []);
+
   return (
     <>
       <ScrollToTop />
@@ -183,6 +191,16 @@ const Router = () => {
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
       <ProgressScroller />
+      {showPopup && (
+        <Popup
+          item={{
+            name: "Electronic Gadgets And Kids",
+            image:
+              "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
+          }}
+          setShowPopup={setShowPopup}
+        />
+      )}
     </>
   );
 };
