@@ -10,16 +10,16 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const location = useLocation();
   const isAuthRoute = location.pathname === "/auth";
 
   return (
-    <div className="relative h-full w-full">    
+    <div className="relative h-full w-full">
       <div className="absolute top-[5rem] left-[0.5rem] z-50 lg:hidden">
-      <button onClick={() => navigate(-1)} className="flex items-center">
-        <FaArrowLeft className="text-xl mr-3" />
-      </button>
+        <button onClick={() => navigate(-1)} className="flex items-center">
+          <FaArrowLeft className="text-xl mr-3" />
+        </button>
       </div>
       <div className="absolute top-24 left-10 z-[9999] hidden lg:block">
         <Breadcrumbs />

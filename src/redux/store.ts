@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import comicsReducer from "./comicSlice";
+import userReducer from "./userSlice";
 export const store = configureStore({
-  reducer: { comics: comicsReducer },
+  reducer: { comics: comicsReducer, user: userReducer },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
