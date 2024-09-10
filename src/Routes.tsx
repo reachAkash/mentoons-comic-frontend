@@ -1,4 +1,4 @@
-import{ lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const Auth = lazy(() => import("./pages/Auth/Auth"));
 const Wishlist = lazy(() => import("./pages/Wishlist"));
 const Cart = lazy(() => import("./pages/Cart"));
 const ComicsPage = lazy(() => import("./pages/ComicsPage"));
-const ComicsHome = lazy(() => import("./components/comics/ComicsHome"));
+const ComicsHome = lazy(() => import("@/pages/ComicsHome"));
 const FreeDownload = lazy(() => import("./pages/FreeDownload"));
 const AudioComicPage = lazy(() => import("./pages/AudioComicPage"));
 const SearchPage = lazy(() => import("./pages/SearchPage"));
