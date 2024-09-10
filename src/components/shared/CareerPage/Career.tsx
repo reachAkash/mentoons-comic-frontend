@@ -6,12 +6,15 @@ const Career = () => {
     <section className='relative  '>
       {/* Testimonial */}
 
-      <div className=' p-4 aspect-video'>
+      <div className='w-[80%] mx-auto py-16'>
         <video
           src='https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4'
-          className='w-full object-cover  rounded-xl'
-          controls
-          poster='/team-men.png'
+          className='w-full rounded-xl'
+          autoPlay
+          muted
+          width='400px'
+          height='400px'
+          // poster='/team-men.png'
         />
       </div>
 
