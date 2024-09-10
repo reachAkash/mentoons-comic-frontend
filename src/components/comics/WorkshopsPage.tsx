@@ -225,7 +225,12 @@ const ComicWorkshop: React.FC = () => {
           </div>
         </div>
       </div>
-      {showForm && <FreeDownloadForm setShowFreeDownloadForm={setShowForm} />}
+      {showForm && (
+        <FreeDownloadForm
+          page="workshop"
+          setShowFreeDownloadForm={setShowForm}
+        />
+      )}
     </div>
   );
 };
