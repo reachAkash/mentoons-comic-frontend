@@ -9,7 +9,7 @@ import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
 import workshopArrow from "@/assets/imgs/workshop-arrow.png";
 import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
-import FreeDownloadForm from "./FreeDownloadForm";
+import FreeDownloadForm from "../components/comics/FreeDownloadForm";
 
 export interface WorkshopItems {
   name: string;
@@ -109,11 +109,11 @@ const ComicWorkshop: React.FC = () => {
           />
         </div>
         {/* First row: 3 images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-12 md:gap-4">
+        <div className="flex flex-col md:flex-row justify-center mt-8 md:mt-0 w-full gap-12 md:gap-4">
           {workshopDetails.slice(0, 3).map((item, index) => (
             <div
               onClick={() => handleCardClick(item)}
-              className="flex justify-center w-full"
+              className="flex justify-center w-full lg:w-1/3"
               key={index}
             >
               <img

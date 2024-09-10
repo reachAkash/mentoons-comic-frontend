@@ -5,7 +5,7 @@ import workshopImg2 from "/Teen camp .png";
 import workshopImg3 from "/Family camp.png";
 import workshopImg4 from "@/assets/imgs/Workshops_Page_ 8.png";
 import workshopImg5 from "@/assets/imgs/Workshops_Page_ 9.png";
-import { WorkshopItems } from "@/components/comics/WorkshopsPage";
+import { WorkshopItems } from "@/pages/WorkshopsPage";
 
 export const gamesData: GamesData[] = [
   {

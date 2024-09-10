@@ -15,7 +15,7 @@ const Popup: React.FC<PopupProps> = ({ setShowPopup, item }) => {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 0.5, ease: easeInOut }}
+        transition={{ delay: 1, duration: 0.5, ease: easeInOut }}
         className="max-w-[25rem] px-2 pt-2 pb-3 rounded-md bg-white backdrop-blur-sm z-[9999] transition-all ease-in-out space-y-2"
       >
         <div className="flex items-center justify-end">

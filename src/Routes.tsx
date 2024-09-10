@@ -25,7 +25,7 @@ const PodCast = lazy(() => import("./pages/PodCast"));
 const FAQ = lazy(() => import("./components/common/FAQ"));
 const Plans = lazy(() => import("./components/common/Plans"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Workshops = lazy(() => import("./components/comics/WorkshopsPage"));
+const Workshops = lazy(() => import("./pages/WorkshopsPage"));
 
 const routes = [
   {
@@ -167,16 +167,14 @@ const routes = [
 ];
 
 const Router = () => {
+  const [showPopup, setShowPopup] = useState<boolean>(true);
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic
   );
 
-  const [showPopup, setShowPopup] = useState<boolean>(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowPopup(true);
-    }, 5000);
-  }, []);
+  const userLoggedIn = useSelector(
+    (store: RootState) => store.user.userLoggedIn
+  );
 
   return (
     <>
@@ -191,7 +189,7 @@ const Router = () => {
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
       <ProgressScroller />
-      {showPopup && (
+      {showPopup && userLoggedIn && (
         <Popup
           item={{
             name: "Electronic Gadgets And Kids",
