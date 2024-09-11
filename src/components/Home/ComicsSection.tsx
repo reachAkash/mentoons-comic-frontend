@@ -6,11 +6,11 @@ import PortalImgHome from "@/assets/imgs/portalBgHome.svg";
 import WorkshopBgHome from "@/assets/imgs/workshopBgHome.svg";
 import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
 import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
-import KidsWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
-import TeenWorkshopHome from "@/assets/imgs/TeenWorkshopHome.svg";
-import ElderWorkshopHome from "@/assets/imgs/ElderWorkshopHome.svg";
-import ComicWorkshopHome from "@/assets/imgs/comicWorkshopHome.svg";
-import CharacterWorkshopHome from "@/assets/imgs/characterWorkshopHome.svg";
+// import KidsWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
+// import TeenWorkshopHome from "@/assets/imgs/TeenWorkshopHome.svg";
+// import ElderWorkshopHome from "@/assets/imgs/ElderWorkshopHome.svg";
+// import ComicWorkshopHome from "@/assets/imgs/comicWorkshopHome.svg";
+// import CharacterWorkshopHome from "@/assets/imgs/characterWorkshopHome.svg";
 import { easeInOut, motion } from "framer-motion";
 
 const ComicsSection: React.FC = () => {
