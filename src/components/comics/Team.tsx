@@ -8,7 +8,7 @@ const Team: React.FC = () => {
       id="team"
       className="container flex flex-col bg-primary text-white py-10 space-y-7"
     >
-      <div className="border-b-[1px] border-slate-300 py-8 space-y-7">
+      <div className="py-8 space-y-7">
         <div className="text-start space-y-4">
           <div className=" text-3xl lineBefore uppercase text-[#d71515]">
             Our Team{" "}
@@ -21,7 +21,7 @@ const Team: React.FC = () => {
           <TeamSlider />
         </div>
       </div>
-      <div className="flex gap-[2rem] lg:gap-[4rem] flex-col lg:flex-row items-center">
+      {/* <div className="flex gap-[2rem] lg:gap-[4rem] flex-col lg:flex-row items-center">
         <div className="w-full lg:w-[40%] flex items-center justify-between">
           <div className="space-y-2">
             <div className="text-5xl lg:text-8xl font-semibold">97%</div>
@@ -39,7 +39,7 @@ const Team: React.FC = () => {
           <Wordbreak />
           eius, ratione explicabo vitae, sunt aperiam a.
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

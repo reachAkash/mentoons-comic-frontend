@@ -116,11 +116,11 @@ const Footer: React.FC = () => {
             <Link to="/mentoons-podcast">
               {" "}
               <div className="px-4 cursor-pointer border-r-2 border-white font-semibold">
-                Podcast
+                Podcasts
               </div>
             </Link>
             <Link to="/mentoons-workshops">
-              <div className="px-4 cursor-pointer font-semibold">Workshop</div>
+              <div className="px-4 cursor-pointer font-semibold">Workshops</div>
             </Link>
           </div>
           <div className="w-full lg:w-fit bg-[#662d0a94] uppercase font-semibold hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full">

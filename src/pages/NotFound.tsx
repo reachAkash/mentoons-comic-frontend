@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 // import Logo from "@/assets/imgs/logo.png";
 import NotFoundImg from "/404page.png";
+import NotFoundCTA from "/404pageCTA.png";
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
@@ -17,17 +18,19 @@ const NotFound: React.FC = () => {
     //     Go to Home
     //   </button>
     // </div>
-    <div className="flex flex-col items-center justify-evenly h-[93vh] md:h-full space-y-5">
+    <div className="relative flex flex-col items-center justify-evenly h-[93vh] md:h-full">
       <img
-        className="w-full h-[40%] md:w-[70%] md:h-[70%]"
+        className="w-full h-[40%] md:w-[70%] md:h-[90%] lg:h-[70%]"
         src={NotFoundImg}
         alt="page not found!"
       />
-      <div
-        onClick={() => navigate("/")}
-        className="px-6 py-3 rounded-full font-medium cursor-pointer bg-rose-500 text-white hover:text-rose-500 hover:bg-white border active:scale-95 border-rose-500 transition-all duration-300 ease-in-out"
-      >
-        Return to Home
+      <div className="absolute bottom-[29%] md:-bottom-4 flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out">
+        <img
+          onClick={() => navigate("/")}
+          className="w-1/2 lg:w-[70%]"
+          src={NotFoundCTA}
+          alt="home cta button"
+        />
       </div>
     </div>
   );

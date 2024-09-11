@@ -15,7 +15,7 @@ const ContentSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 py-16 lg:h-screen">
+    <section className="py-16 lg:h-screen bg-[url('/assets/home/yellow-bg.png')] bg-contain bg-top lg:bg-right bg-no-repeat">
       <div className="flex flex-col lg:flex-row gap-16 items-center px-4 mx-auto max-w-screen-xl lg:px-6">
         <div className="w-full lg:w-1/2 font-light text-gray-600 sm:text-lg dark:text-gray-400">
           <Slider {...settings}>
@@ -53,12 +53,12 @@ const ContentSection = () => {
         <div className="lg:w-1/2 grid grid-cols-2 gap-6 mt-8 lg:mt-0">
           <img
             className="w-full rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+            src="/assets/home/char1.png"
             alt="office content 1"
           />
           <img
             className="mt-4 lg:mt-8 w-full rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+            src="/assets/home/char2.png"
             alt="office content 2"
           />
         </div>
