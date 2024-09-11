@@ -80,6 +80,9 @@ module.exports = {
         button: "url('/src/assets/imgs/Workshops_Page_ 5.png')",
         workshopBlueBg: "url('/src/assets/imgs/workshop-bg1.png')",
         comicsHome: "url('/comicHero.png')",
+        comicsGreenBg: "url('/src/assets/imgs/comicsBgHome.svg')",
+        comicsShelf: "url('/src/assets/imgs/comics_audioComicsBgHome.svg')",
+        workshopBgHome: "url('/src/assets/imgs/workshopBgHome.svg')",
       },
       boxShadow: {
         "custom-light":
