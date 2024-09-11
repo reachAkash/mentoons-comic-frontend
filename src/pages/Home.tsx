@@ -6,12 +6,11 @@ import WhatWeOffer from "@/components/Home/WhatWeOffer";
 
 const Home = () => {
   return (
-    <div className='h-full w-full overflow-x-hidden'>
+    <div className="h-full w-full overflow-x-hidden">
       <HeroBanner />
       <Struggles />
       <MdMultiverse />
       <WhatWeOffer />
-      {/* <ContentSection /> */}
       <FeelFree />
     </div>
   );

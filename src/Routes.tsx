@@ -1,4 +1,4 @@
-import{ lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import ProgressScroller from "./components/comics/ProgressScroller";
 import ComicCard from "./components/comics/HoverCardComic";
 import Loader from "./components/common/Loader";
+import Popup from "./layout/Popup";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -15,7 +16,7 @@ const Auth = lazy(() => import("./pages/Auth/Auth"));
 const Wishlist = lazy(() => import("./pages/Wishlist"));
 const Cart = lazy(() => import("./pages/Cart"));
 const ComicsPage = lazy(() => import("./pages/ComicsPage"));
-const ComicsHome = lazy(() => import("./components/comics/ComicsHome"));
+const ComicsHome = lazy(() => import("@/pages/ComicsHome"));
 const FreeDownload = lazy(() => import("./pages/FreeDownload"));
 const AudioComicPage = lazy(() => import("./pages/AudioComicPage"));
 const SearchPage = lazy(() => import("./pages/SearchPage"));
@@ -24,7 +25,7 @@ const PodCast = lazy(() => import("./pages/PodCast"));
 const FAQ = lazy(() => import("./components/common/FAQ"));
 const Plans = lazy(() => import("./components/common/Plans"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Workshops = lazy(() => import("./components/comics/WorkshopsPage"));
+const Workshops = lazy(() => import("./pages/WorkshopsPage"));
 
 const routes = [
   {
@@ -36,7 +37,7 @@ const routes = [
     ),
   },
   {
-    path: "/auth",
+    path: "/register",
     element: (
       <MainLayout>
         <Auth />
@@ -166,8 +167,13 @@ const routes = [
 ];
 
 const Router = () => {
+  const [showPopup, setShowPopup] = useState<boolean>(true);
   const hoverComicCard = useSelector(
     (store: RootState) => store.comics.currentHoverComic
+  );
+
+  const userLoggedIn = useSelector(
+    (store: RootState) => store.user.userLoggedIn
   );
 
   return (
@@ -183,6 +189,16 @@ const Router = () => {
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
       <ProgressScroller />
+      {showPopup && userLoggedIn && (
+        <Popup
+          item={{
+            name: "Electronic Gadgets And Kids",
+            image:
+              "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-13.jpg",
+          }}
+          setShowPopup={setShowPopup}
+        />
+      )}
     </>
   );
 };

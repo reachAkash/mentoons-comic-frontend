@@ -100,6 +100,7 @@ const FreeDownload: React.FC = () => {
       </div>
       {showFreeDownloadForm && (
         <FreeDownloadForm
+          page='freedownload'
           selectedComic={selectedComic}
           setShowFreeDownloadForm={setShowFreeDownloadForm}
         />
