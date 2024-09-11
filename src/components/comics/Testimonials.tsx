@@ -5,7 +5,7 @@ import Wordbreak from "./Wordbreak";
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="container flex flex-col lg:flex-row items-center justify-between bg-[#59B2DC] py-20">
+    <div className="container flex flex-col lg:flex-row items-center justify-between bg-[#59B2DC] py-20 space-y-5">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

@@ -21,7 +21,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/negative-impact-of-mobile-phone.jpg", //todo Change it.
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -35,7 +35,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/negative-impact-of-social-media.jpg", //todo Change it
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -47,10 +47,10 @@ export const PODCAST_DETAILS = [
       "/assets/audios/how-does-it-feel-to-be-an-teenager-sample.mp3",
     audioPodcastSrc:
       "/assets/audios/how-does-it-feet-to-be-an-teenager-orignals.mp3",
-    thumbnail: "/assets/images/overcome-dipression.jpg",
+    thumbnail: "/assets/images/how-does-it-feel-to-be-teenager.jpg",
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -63,7 +63,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/perfomance-addiction.jpg",
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   // todo change the content
@@ -72,12 +72,12 @@ export const PODCAST_DETAILS = [
     topic: "The Magic of play without phone",
     description:
       "Social Media Reward System delves into how platforms use rewards to keep users hooked. Understand the psychology behind likes, shares, and notifications in this eye-opening podcast.",
-    audioPodcastSampleSrc: "/assets/audios/the-magic-f-play-without-phone.mp3",
-    audioPodcastSrc: "/assets/audios/the-magic-f-play-without-phone.mp3",
+    audioPodcastSampleSrc: "/assets/audios/the-magic-of-play-without-phone.mp3",
+    audioPodcastSrc: "/assets/audios/the-magic-of-play-without-phone.mp3",
     thumbnail: "/assets/images/social-media-reward-system.jpg", // todo change this
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -90,7 +90,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/common-parenting-mistakes.jpg",
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -103,7 +103,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Entertainment_Addiction_ 2.jpg",
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -116,7 +116,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/toddler-phone-addiction.jpg",
     categroy: "",
     age: "",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -130,7 +130,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/social-media-de-addiction.jpg",
     categroy: "",
     age: "6-12",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -145,7 +145,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Teen_emotion_&_behaviour_problems_ 2.jpg",
     categroy: "",
     age: "6-12",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -160,7 +160,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/magical-journey-to-self-discovery.jpg",
     categroy: "",
     age: "6-12",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -175,7 +175,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/maintain-relationship-with-teen.jpg",
     categroy: "",
     age: "6-12",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -190,7 +190,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Phrases_and_sentences_parents.jpg",
     categroy: "",
     age: "6-12",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -203,7 +203,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Role_Model_For_Kids_.jpg",
     categroy: "",
     age: "2-6",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -218,7 +218,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Things_parents_do_that_annoy_kids 2.jpg",
     categroy: "",
     age: "2-6",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -232,7 +232,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
     categroy: "",
     age: "2-6",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
 
@@ -247,7 +247,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
   {
@@ -260,7 +260,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
-    author: "Mentor Mahesh",
+    author: "Kisha Kothari",
     duration: "",
   },
 ];
@@ -438,7 +438,7 @@ export const OPEN_POSITION = [
     jobDescription:
       "We are currently seeking an Actor/Model to become the face of our creative projects.This versatileindividual will play a pivotal role in bringing our stories and concepts to life through performanceand visual representation. Your responsibilities will include embodying characters, conveyingemotions, and participating in photoshoots or video productions. The ideal candidate will possessexceptional acting or modeling skills, a strong stage or on-camera presence, and a passion forstorytelling through performance. Join us in showcasing our vision through your talent and charisma,creating a lasting impact on our audience.",
     jobRequirement: [],
-    jobIllustration: "/assets/images/",
+    jobIllustration: "/assets/images/actor.png",
     skills: [],
     jobType: "On-site",
     jobDuration: "Full-time",

@@ -50,11 +50,11 @@ const Header = () => {
         </Menubar>
         <Menubar className="hidden lg:flex bg-transparent border-0 justify-between w-full">
           <MenubarMenu>
-            <NavLink to="/">
+            <div>
               <span className="bg-white text-primary rounded-full py-1 px-3 text-sm font-semibold shadow-md whitespace-nowrap">
                 {date}
               </span>
-            </NavLink>
+            </div>
           </MenubarMenu>
           <MenubarMenu>
             <a href="tel:+919036033300" className="no-underline">
@@ -65,14 +65,14 @@ const Header = () => {
           </MenubarMenu>
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-white font-semibold">
+              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base whitespace-nowrap text-white font-semibold ">
                 Join Us
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/auth" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base text-white font-semibold whitespace-nowrap ">
+            <NavLink to="/register" onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap ">
                 Sign up
               </MenubarTrigger>
             </NavLink>
@@ -126,7 +126,7 @@ const Header = () => {
           <MenubarMenu>
             <NavLink to="/mentoons-podcast" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold">
-                Podcast
+                Podcasts
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>

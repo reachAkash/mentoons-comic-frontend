@@ -18,6 +18,7 @@ interface FormType {
 interface FreeDownloadForm {
   setShowFreeDownloadForm: React.Dispatch<React.SetStateAction<boolean>>;
   selectedComic?: SelectedComicType;
+  page : string
 }
 
 const validationSchema = Yup.object({
@@ -38,6 +39,7 @@ const initialState: FormType = { name: "", email: "", phone: "" };
 const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
   setShowFreeDownloadForm,
   selectedComic,
+  page
 }) => {
   const sendEmail = (values: FormType) => {
     emailjs
@@ -94,13 +96,15 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
         >
           <IoMdClose className="text-2xl hover:text-red-400 active:scale-50 transition-all ease-in-out duration-300" />
         </button>
-        <h1 className="font-semibold text-xl flex justify-center gap-2">
+        {page=='freedownload' ? <h1 className="font-semibold text-xl flex justify-center gap-2">
           Free <img className="w-20" src={MiniLogo} alt="mentoons logo" /> Gifts
-        </h1>
+        </h1> : <h1 className="font-semibold text-xl flex justify-center gap-2">
+          Talk to us!
+        </h1> }
         <Formik<FormType>
           initialValues={initialState}
           validationSchema={validationSchema}
-          onSubmit={(values) => sendEmail(values)}
+          onSubmit={(values) => {page=='freedownload' && sendEmail(values)}}
         >
           <Form className="flex flex-col w-full space-y-3">
             <div className="w-full">

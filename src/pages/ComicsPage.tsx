@@ -156,7 +156,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
                       </div>
                     </div>
                     <div className="text-sm text-rose-500 mt-[2px]">
-                      Credit : Ajay Makhan
+                      Credit : Ajay
                     </div>
                   </div>
                 );

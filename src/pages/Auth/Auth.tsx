@@ -1,5 +1,9 @@
+import axiosInstance from "@/api/axios";
+import { userLoggedIn } from "@/redux/userSlice";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 type FormValues = {
@@ -11,6 +15,8 @@ type FormValues = {
 };
 
 const Auth = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const validationSchema = Yup.object({
@@ -41,6 +47,15 @@ const Auth = () => {
       .required("Confirm Password is required"),
   });
 
+  const handleSignIn = async (values: FormValues) => {
+    console.log(values);
+    const res = await axiosInstance.post("/signup", values);
+    if (res.status === 200) {
+      dispatch(userLoggedIn());
+      navigate("/");
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-white">
       <div className="w-full lg:w-1/2 items-center justify-center hidden lg:flex">
@@ -65,7 +80,7 @@ const Auth = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values) => {
-              console.log(values);
+              handleSignIn(values);
             }}
           >
             <Form>

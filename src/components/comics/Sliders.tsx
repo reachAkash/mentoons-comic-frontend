@@ -2,19 +2,12 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import User2 from "@/assets/imgs/user2.png";
 import User3 from "@/assets/imgs/user3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaFacebookSquare } from "react-icons/fa";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import {
-  FaLinkedin,
-  FaRegStarHalfStroke,
-  FaStar,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa6";
+import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import React from "react";
 import TestimonialImg2 from "@/assets/imgs/testimonials2.jpg";
 import TestimonialImg4 from "@/assets/imgs/testemonials4.jpg";
@@ -390,12 +383,6 @@ export const TeamSlider: React.FC = () => {
           <div>
             <div className="font-semibold text-xl">Ajay</div>
             <div className="text-base">Video Editor</div>
-            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
-              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
-              <FaTwitter className="cursor-pointer text-[#d71515]" />
-              <FaLinkedin className="cursor-pointer text-[#d71515]" />
-              <FaYoutube className="cursor-pointer text-[#d71515]" />
-            </div>
           </div>
         </motion.div>
       </SwiperSlide>
@@ -416,12 +403,6 @@ export const TeamSlider: React.FC = () => {
           <div>
             <div className="font-semibold text-xl">Dhinesh</div>
             <div className="text-base">Graphic Designer</div>
-            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
-              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
-              <FaTwitter className="cursor-pointer text-[#d71515]" />
-              <FaLinkedin className="cursor-pointer text-[#d71515]" />
-              <FaYoutube className="cursor-pointer text-[#d71515]" />
-            </div>
           </div>
         </motion.div>
       </SwiperSlide>
@@ -442,12 +423,6 @@ export const TeamSlider: React.FC = () => {
           <div>
             <div className="font-semibold text-xl">Dhanashekar</div>
             <div className="text-base">Sketch Artist</div>
-            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
-              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
-              <FaTwitter className="cursor-pointer text-[#d71515]" />
-              <FaLinkedin className="cursor-pointer text-[#d71515]" />
-              <FaYoutube className="cursor-pointer text-[#d71515]" />
-            </div>
           </div>
         </motion.div>
       </SwiperSlide>
@@ -468,12 +443,6 @@ export const TeamSlider: React.FC = () => {
           <div>
             <div className="font-semibold text-xl">Sankar</div>
             <div className="text-base">Illustrator</div>
-            <div className="invisible group-hover:visible flex items-center justify-center gap-4 pt-4">
-              <FaFacebookSquare className="cursor-pointer text-[#d71515]" />
-              <FaTwitter className="cursor-pointer text-[#d71515]" />
-              <FaLinkedin className="cursor-pointer text-[#d71515]" />
-              <FaYoutube className="cursor-pointer text-[#d71515]" />
-            </div>
           </div>
         </motion.div>
       </SwiperSlide>
