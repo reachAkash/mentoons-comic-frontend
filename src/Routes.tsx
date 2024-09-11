@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
@@ -37,7 +37,7 @@ const routes = [
     ),
   },
   {
-    path: "/auth",
+    path: "/register",
     element: (
       <MainLayout>
         <Auth />

@@ -71,7 +71,7 @@ const Header = () => {
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-            <NavLink to="/auth" onClick={() => setMenuOpen(false)}>
+            <NavLink to="/register" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap ">
                 Sign up
               </MenubarTrigger>
