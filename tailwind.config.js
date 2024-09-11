@@ -79,6 +79,7 @@ module.exports = {
         darkClouds: "url('/src/assets/imgs/workshop_bg.png')",
         button: "url('/src/assets/imgs/Workshops_Page_ 5.png')",
         workshopBlueBg: "url('/src/assets/imgs/workshop-bg1.png')",
+        comicsHome: "url('/comicHero.png')",
       },
       boxShadow: {
         "custom-light":
@@ -94,6 +95,9 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      scale: {
+        "-1": "-1",
       },
       keyframes: {
         "accordion-down": {
