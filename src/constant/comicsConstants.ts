@@ -470,6 +470,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg1,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=buddy",
   },
   {
     name: "Teen Camp",
@@ -477,6 +478,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg2,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=teen",
   },
   {
     name: "Family Camp",
@@ -484,6 +486,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg3,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=family",
   },
   {
     name: "How to make your own Comic",
@@ -491,6 +494,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg4,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/How+to+make+your+Own+Comic+Workshop+Trailer_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=comic",
   },
   {
     name: "How to make your own Character",
@@ -498,5 +502,6 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg5,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/how+to+make+your+own+character+workshop.mp4",
+    pageUrl: "/mentoons-workshops?workshop=character",
   },
 ];

@@ -29,16 +29,40 @@ const HeroBanner = () => {
 
   return (
     <div className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/b-bg.png')] bg-bottom bg-no-repeat bg-cover pb-[8rem] lg:pb-[20rem]">
-      <div className="absolute top-[20rem] right-0 z-50 hidden lg:block">
+      <div className="absolute top-[5rem] right-0 z-50 hidden lg:block">
         <div className="relative group">
           <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
             <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
-              <Sidebar className="hidden md:block" />
+              <Sidebar className="hidden md:block" content="comics" />
             </div>
           </div>
-          <div className="absolute top-[10.2rem] right-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute top-[4.2rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
-              View Sidebar
+              View Comics
+            </div>
+          </div>
+        </div>
+        <div className="relative group">
+          <div className="bg-red-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" content="podcasts" />
+            </div>
+          </div>
+          <div className="absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
+              View Podcasts
+            </div>
+          </div>
+        </div>
+        <div className="relative group">
+          <div className="bg-green-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" content="workshops" />
+            </div>
+          </div>
+          <div className="absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
+              View Workshops
             </div>
           </div>
         </div>
