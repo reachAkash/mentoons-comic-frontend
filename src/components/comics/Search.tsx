@@ -320,59 +320,54 @@ const Search: React.FC<{ content: string }> = ({ content }) => {
             </SheetClose>
           </>
         ) : content === "podcasts" ? (
-          <>
-            <div className="pb-0 space-y-6 px-6">
-              <div
-                className="bg-rose-600 flex items-center justify-center my-6 py-2"
-                id="Podcast"
-              >
-                <img
-                  src="/assets/images/podcast-logo.png"
-                  alt="Podcast logo"
-                  className="w-48"
-                />
-              </div>
-              <div className="grid w-full place-items-center md:grid-cols-1 gap-6">
-                <PodcastSectionSheet />
-              </div>
+          <div className="pb-0 space-y-6 px-6">
+            <div
+              className="bg-rose-600 flex items-center justify-center my-6 py-2"
+              id="Podcast"
+            >
+              <img
+                src="/assets/images/podcast-logo.png"
+                alt="Podcast logo"
+                className="w-48"
+              />
             </div>
-          </>
-        ) : (
-          <>
             <div className="grid w-full place-items-center md:grid-cols-1 gap-6">
-              <div className="flex flex-col gap-4 rounded-lg">
-                {workshopDetails.map((workshop) => {
-                  return (
-                    <div
-                      key={new Date().toString()}
-                      className="border-4 border-white border-dashed rounded-3xl"
-                    >
-                      <img
-                        src={workshop.img}
-                        alt="Workshop image"
-                        className="w-full object-cover"
-                      />
-                      <div className="p-2">
-                        <SheetClose className="w-full" asChild>
-                          <div
-                            className="border border-dashed rounded-xl bg-black"
-                            onClick={() => navigate(workshop.pageUrl)}
-                          >
-                            <button className="border border-dashed bg-[#f0ebe5] border-black px-4 py-2 text-black rounded-xl hover:-translate-y-1 active:-translate-y-0 active:-translate-x-0 hover:-translate-x-1 origin-bottom-left transition-all duration-200 w-full">
-                              View Details
-                            </button>
-                          </div>
-                        </SheetClose>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              <PodcastSectionSheet />
             </div>
-          </>
+          </div>
+        ) : (
+          <div className="grid w-full place-items-center md:grid-cols-1 gap-6">
+            <div className="flex flex-col gap-4 rounded-lg">
+              {workshopDetails.map((workshop) => {
+                return (
+                  <div
+                    key={new Date().toString()}
+                    className="border-4 border-white border-dashed rounded-3xl"
+                  >
+                    <img
+                      src={workshop.img}
+                      alt="Workshop image"
+                      className="w-full object-cover"
+                    />
+                    <div className="p-2">
+                      <SheetClose className="w-full" asChild>
+                        <div
+                          className="border border-dashed rounded-xl bg-black"
+                          onClick={() => navigate(workshop.pageUrl)}
+                        >
+                          <button className="border border-dashed bg-[#f0ebe5] border-black px-4 py-2 text-black rounded-xl hover:-translate-y-1 active:-translate-y-0 active:-translate-x-0 hover:-translate-x-1 origin-bottom-left transition-all duration-200 w-full">
+                            View Details
+                          </button>
+                        </div>
+                      </SheetClose>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         )}
       </div>
-
       {/* {content !== "workshops" && (
         <div className="pb-0 space-y-6 px-6">
           <div

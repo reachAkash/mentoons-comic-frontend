@@ -298,7 +298,7 @@ export const comicsData: Comic[] = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
     duration: "3:45",
     mini_thumbnail:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/Think_Before_You_Act!.png",
     thumbnail:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Think_Before_You_Act!.jpg",
     videoLink:
