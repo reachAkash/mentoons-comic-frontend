@@ -96,6 +96,41 @@ const HeroSection: React.FC = () => {
           className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[8%] -bottom-[95%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
           src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg"
         />
+        {/* stories on divorce comic */}
+        <img
+          className="w-40 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[18%] -bottom-[130%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-07.jpg"
+        />
+        {/* say sorry comic */}
+        <img
+          className="w-40 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[38%] -bottom-[130%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-10.jpg"
+        />
+        {/* say sorry comic */}
+        <img
+          className="w-40 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[38%] -bottom-[130%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-10.jpg"
+        />
+        {/* teenagers job 2 comic */}
+        <img
+          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[58%] -bottom-[110%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg"
+        />
+        {/* teenagers job 2 comic */}
+        <img
+          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[58%] -bottom-[160%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg"
+        />
+        {/* teenagers job 2 comic */}
+        <img
+          className="w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[80%] -bottom-[110%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+          src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg"
+        />
+        {/* teenagers job 2 comic */}
+        <img
+          className="w-40 z-50 rounded-md absolute left-[78%] -bottom-[150%] -rotate-[60deg] cursor-pointer"
+          src="/assets/images/flowerComics.png"
+        />
       </div>
       {/* clement toonla image */}
       <div className="flex w-full h-full items-center justify-center">
