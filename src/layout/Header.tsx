@@ -251,6 +251,24 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
+           <MenubarMenu>
+                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex">
+                            <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
+                            <span className="hidden lg:block">Profile</span>
+                        </MenubarTrigger>
+                        <MenubarContent>
+                            <MenubarItem onClick={() => {
+                                setMenuOpen(false)
+                                navigate("/profile")
+                            }}>
+                                My Profile
+                            </MenubarItem>
+                            <MenubarItem onClick={handleLogout}>
+                                Logout
+                            </MenubarItem>
+                        </MenubarContent>
+                    </MenubarMenu>
+        </Menubar>
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
@@ -259,7 +277,7 @@ const Header = () => {
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
-                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center">
+                        <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden">
                             <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
                             <span className="hidden lg:block">Profile</span>
                         </MenubarTrigger>
