@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
-// import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -23,11 +23,11 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // const handleLogout = () => {
-  //     console.log("User logged out");
-  //     setMenuOpen(false)
-  //     navigate("/auth");
-  // };
+  const handleLogout = () => {
+      console.log("User logged out");
+      setMenuOpen(false)
+      navigate("/auth");
+  };
 
   return (
     <div
@@ -258,7 +258,7 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          {/* <MenubarMenu>
+          <MenubarMenu>
                         <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center">
                             <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
                             <span className="hidden lg:block">Profile</span>
@@ -274,7 +274,7 @@ const Header = () => {
                                 Logout
                             </MenubarItem>
                         </MenubarContent>
-                    </MenubarMenu> */}
+                    </MenubarMenu>
         </Menubar>
       </div>
     </div>
