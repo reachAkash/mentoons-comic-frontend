@@ -254,7 +254,7 @@ const Search: React.FC<{ content: string }> = ({ content }) => {
 
   return (
     <>
-      <div className="py-[100px] pb-0 space-y-6 px-6">
+      <div className="py-[100px] pb-6 space-y-6 px-6">
         {content === "comics" ? (
           <>
             <div className="bg-primary flex items-center justify-center w-full opacity-1 py-1">
@@ -373,7 +373,7 @@ const Search: React.FC<{ content: string }> = ({ content }) => {
         )}
       </div>
 
-      {content !== "workshops" && (
+      {/* {content !== "workshops" && (
         <div className="pb-0 space-y-6 px-6">
           <div
             className="bg-green-600 flex items-center justify-center my-6 py-4"
@@ -386,7 +386,7 @@ const Search: React.FC<{ content: string }> = ({ content }) => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
