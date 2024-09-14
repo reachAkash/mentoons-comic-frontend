@@ -46,7 +46,9 @@ const Navbar: React.FC = () => {
 
   const handleMuteToggle = () => {
     if (audio.paused) {
-      audio.play().catch((error) => console.error("Error playing audio:", error));
+      audio
+        .play()
+        .catch((error) => console.error("Error playing audio:", error));
     } else {
       audio.pause();
     }
@@ -81,8 +83,8 @@ const Navbar: React.FC = () => {
           <DropdownMenu />
         </ul>
         <Link
-          to='/'
-          className='absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary'
+          to="/"
+          className="absolute hover:bg-red-500 rounded-b-full left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] pb-4 pt-8 px-10 bg-primary"
         >
           <img className="w-32 cursor-pointer" src={Logo} alt="Logo" />
         </Link>
@@ -109,21 +111,27 @@ const Navbar: React.FC = () => {
                     <MenubarSubContent>
                       <MenubarItem
                         onClick={() =>
-                          navigate("/mentoons-comics/audio-comics?filter=groupSmall")
+                          navigate(
+                            "/mentoons-comics/audio-comics?filter=groupSmall"
+                          )
                         }
                       >
                         Age 6 - 12
                       </MenubarItem>
                       <MenubarItem
                         onClick={() =>
-                          navigate("/mentoons-comics/audio-comics?filter=groupMedium")
+                          navigate(
+                            "/mentoons-comics/audio-comics?filter=groupMedium"
+                          )
                         }
                       >
                         Age 13 - 19
                       </MenubarItem>
                       <MenubarItem
                         onClick={() =>
-                          navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+                          navigate(
+                            "/mentoons-comics/audio-comics?filter=groupLarge"
+                          )
                         }
                       >
                         Age 20+
@@ -133,7 +141,9 @@ const Navbar: React.FC = () => {
                   <MenubarSub>
                     <MenubarItem
                       onClick={() =>
-                        navigate("/mentoons-comics/audio-comics?filter=groupLarge")
+                        navigate(
+                          "/mentoons-comics/audio-comics?filter=groupLarge"
+                        )
                       }
                     >
                       Family
@@ -147,17 +157,23 @@ const Navbar: React.FC = () => {
                 </MenubarTrigger>
                 <MenubarContent>
                   <MenubarItem
-                    onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+                    onClick={() =>
+                      navigate("/mentoons-workshops?workshop=buddy")
+                    }
                   >
                     Buddy Camp (Age 6 - 12)
                   </MenubarItem>
                   <MenubarItem
-                    onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+                    onClick={() =>
+                      navigate("/mentoons-workshops?workshop=teen")
+                    }
                   >
                     Teen Camp (Age 13 - 15)
                   </MenubarItem>
                   <MenubarItem
-                    onClick={() => navigate("/mentoons-workshops?workshop=family")}
+                    onClick={() =>
+                      navigate("/mentoons-workshops?workshop=family")
+                    }
                   >
                     Family Camp (Age 20+)
                   </MenubarItem>
@@ -190,7 +206,7 @@ const Navbar: React.FC = () => {
               </button>
             </li>
           </ul>
-          <MiniSidebar className="block md:hidden" />
+          <MiniSidebar content="" className="block md:hidden" />
         </div>
       </div>
 
@@ -203,13 +219,21 @@ const Navbar: React.FC = () => {
         <div className="w-[65%] lg:w-[60%] flex items-center justify-between gap-4 lg:gap-8">
           <Link to="/">
             <h2 className="text-xl font-extrabold cursor-pointer flex flex-row-reverse items-center justify-center gap-4">
-              <img className="w-32 mt-2 cursor-pointer" src={LogoMini} alt="Mini Logo" />
-              <img className="w-8 cursor-pointer" src='/assets/home/home-icn.png' alt="home Logo" />
+              <img
+                className="w-32 mt-2 cursor-pointer"
+                src={LogoMini}
+                alt="Mini Logo"
+              />
+              <img
+                className="w-8 cursor-pointer"
+                src="/assets/home/home-icn.png"
+                alt="home Logo"
+              />
             </h2>
           </Link>
         </div>
-        <div className='w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8'>
-          <MiniSidebar className='block' />
+        <div className="w-[35%] lg:w-[40%] flex items-center justify-end gap-2 lg:gap-8">
+          <MiniSidebar content="" className="block" />
         </div>
       </div>
     </>
