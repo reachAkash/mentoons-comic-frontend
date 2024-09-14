@@ -203,7 +203,7 @@ import Wordbreak from "./Wordbreak";
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative w-full text-[#864747] md:h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
+    <div className="relative w-full text-[#864747] h-[150vh] md:h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
       <div className="relative md:px-14 text-center md:text-start py-20 space-y-4">
         <h1
           className="font-extrabold text-4xl lg:text-8xl"
@@ -222,12 +222,12 @@ const HeroSection: React.FC = () => {
         </p>
         {/*share image  */}
         <img
-          className="hidden xl:block w-32 relative left-16"
+          className="w-32 relative left-4 lg:left-16"
           src="/assets/comics/4.png"
         />
         {/* message image */}
         <img
-          className="hidden xl:block w-52 absolute top-0 left-[43%] transform scale-x-[-1]"
+          className="w-52 absolute top-[-2rem] left-[40%] lg:top-0 lg:left-[43%] transform scale-x-[-1]"
           src="/assets/comics/1.png"
         />
         <>
@@ -237,12 +237,12 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Don't Fade Away")
             }
-            className="hidden xl:block w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-8 left-[65%] -rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="hidden md:block w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-[50%] left-[65%] lg:top-8 lg:left-[65%] -rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-04.jpg"
           />
           {/* black jalebi image */}
           <img
-            className="hidden xl:block w-32 absolute top-0 right-40"
+            className=" w-32 absolute top-[1rem] right-20 lg:top-0 lg:right-40"
             src="/assets/comics/3.png"
           />
           {/* one way trip comic */}
@@ -392,7 +392,7 @@ const HeroSection: React.FC = () => {
       {/* clement toonla image */}
       <div className="flex w-full h-full items-center justify-center">
         <img
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[90deg] lg:-rotate-[60deg] xl:-rotate-45 w-[70rem] h-[35rem]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[90deg] lg:-rotate-[60deg] xl:-rotate-45 w-[45rem] h-[15rem] md:w-[60rem] md:h-[24rem] lg:w-[70rem] lg:h-[35rem]"
           src="/klement_toonla.png"
           alt="klement toonla image"
         />
