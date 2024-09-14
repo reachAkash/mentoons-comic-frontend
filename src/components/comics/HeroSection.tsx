@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Come out of Gaming")
             }
-            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-10 bottom-0 md:right-24 md:-bottom-32 lg:right-20 lg:bottom-8 md:rotate-[20deg] lg:-rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-10 bottom-0 md:right-24 md:-bottom-36 lg:right-20 lg:bottom-8 md:rotate-[20deg] lg:-rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg"
           />
           {/* cell life of soniya comic */}
@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/The Cell Life of Soniya")
             }
-            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-6 -bottom-[25%] md:left-16 md:-bottom-[100%] lg:left-[40%] lg:bottom-12 -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-6 -bottom-[30%] md:left-16 md:-bottom-[100%] lg:left-[40%] lg:bottom-12 -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-12.jpg"
           />
           {/* tanya's downfall comic */}
@@ -96,7 +96,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Live and Let Live")
             }
-            className="hidden xl:block w-[10.5rem] border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[10%] -bottom-[30%] -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-20 md:w-32 lg:w-[10.5rem] border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[35%] -bottom-[80%] md:-bottom-[170%] lg:left-[10%] lg:-bottom-[30%] -rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-21.jpg"
           />
           {/* i can manage comic */}
@@ -106,7 +106,7 @@ const HeroSection: React.FC = () => {
                 "/mentoons-comics/audio-comics/I can Manage (Time Management)"
               )
             }
-            className="hidden xl:block w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[17%] -bottom-[65%] -rotate-[20deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-[4.5rem] md:w-24 lg:w-32 block md:hidden lg:block border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[40%] -bottom-[60%] lg:left-[17%] lg:-bottom-[65%] -rotate-[20deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-02.jpg"
           />
           {/* choose wisely comic */}
@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Choose Wisely")
             }
-            className="hidden xl:block w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[14%] -bottom-[30%] rotate-[20deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[8%] -bottom-[30%] md:-bottom-[65%] lg:right-[14%] lg:-bottom-[30%] -rotate-[30deg] lg:rotate-[20deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-08.jpg"
           />
           {/* rohan and puppies comic */}
@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Rohan and the Puppies")
             }
-            className="hidden xl:block w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[25%] -bottom-[70%] rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[10%] -bottom-[55%] md:-bottom-[110%] lg:right-[25%] lg:-bottom-[70%] rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg"
           />
           {/* rishi and rohit comic */}
@@ -130,7 +130,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Rishi and Rohit")
             }
-            className="hidden xl:block w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[8%] -bottom-[62%] -rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="hidden md:block w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute right-[12%] -bottom-[150%] lg:right-[8%] lg:-bottom-[62%] -rotate-[40deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-16.jpg"
           />
           {/* my daily routine comic */}
@@ -185,7 +185,7 @@ const HeroSection: React.FC = () => {
           />
           {/* flower image */}
           <img
-            className="hidden xl:block w-24 md:w-40 z-50 rounded-md absolute left-[65%] md:left-[50%] lg:left-[78%] -bottom-[120%] md:-bottom-[150%] -rotate-[60deg]"
+            className="w-24 md:w-40 z-50 rounded-md absolute left-[65%] -bottom-[80%] md:left-[60%] md:-bottom-[180%] lg:left-[78%] -rotate-[60deg]"
             src="/assets/images/flowerComics.png"
           />
         </>
