@@ -12,7 +12,7 @@ import { Comic } from "@/redux/comicSlice";
 import PurchaseDialog from "../components/comics/PurchaseDialog";
 import { toast } from "sonner";
 import { useParams } from "react-router-dom";
-import { funFacts } from "@/constant/comicsConstants";
+import { jokes } from "@/constant/comicsConstants";
 
 export const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -25,7 +25,7 @@ const AudioComicPage: React.FC = () => {
   const comicData = useSelector((store: RootState) => store.comics.comics);
   const [searchedComics, setSearchedComics] = useState<Comic[]>([]);
   const [currentComic, setCurrentComic] = useState<Comic>();
-  const [factNm, setFactNm] = useState<number>(0);
+  const [randomJoke, setRandomJoke] = useState<number>(0);
   const [input, setInput] = useState<string>("");
   const videoRef = useRef<any>();
   const [hasPurchased, setHasPurchased] = useState<boolean>(false);
@@ -52,9 +52,9 @@ const AudioComicPage: React.FC = () => {
   };
 
   const handleRandomFact = () => {
-    const val = Math.floor(Math.random() * funFacts.length);
+    const val = Math.floor(Math.random() * jokes.length);
     console.log(val);
-    setFactNm(val);
+    setRandomJoke(val);
   };
 
   const handleFilterComics = (value: string) => {
@@ -113,8 +113,8 @@ const AudioComicPage: React.FC = () => {
   return (
     <>
       <div className="container relative py-16 pb-20 space-y-10">
-        <div className="relative flex flex-col md:flex-row  items-start justify-between space-y-8 md:space-y-0">
-          <div className="w-full md:w-[60%] space-y-6">
+        <div className="relative flex flex-col lg:flex-row  items-start justify-between space-y-8 md:space-y-0">
+          <div className="w-full lg:w-[60%] space-y-6">
             <video
               ref={videoRef}
               className="rounded-lg"
@@ -122,7 +122,6 @@ const AudioComicPage: React.FC = () => {
               width="700"
               height="400"
               loop
-              autoPlay
               controls
               controlsList="nodownload"
             ></video>
@@ -141,7 +140,7 @@ const AudioComicPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-[40%]  group px-6 pt-4 pb-10 space-y-8 rounded-md bg-white text-black shadow-xl">
+          <div className="w-full lg:w-[40%] group px-6 pt-4 pb-10 space-y-8 rounded-md bg-white text-black shadow-xl">
             <div className="space-y-1">
               <div className="font-semibold text-lg">Other Comics</div>
               <div className="text-gray-400">{comicData.length} Comics</div>
@@ -168,7 +167,7 @@ const AudioComicPage: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="overflow-hidden group-hover:overflow-y-scroll pr-[1rem] h-[20rem] transition-all ease-in-out duration-300">
+            <div className="overflow-y-scroll lg:overflow-hidden group-hover:overflow-y-scroll pr-[1rem] h-[20rem] transition-all ease-in-out duration-300">
               {comicsToDisplay?.map((item: Comic) => {
                 return (
                   <div
@@ -190,16 +189,23 @@ const AudioComicPage: React.FC = () => {
         </div>
         <div className="bg-primary pb-6 rounded-md space-y-6">
           <div className="flex items-center gap-2 text-3xl text-black w-fit px-4 py-3 shadow-2xl font-semibold bg-white rounded-b-lg rounded-s-none">
-            Fun Fact
+            Fun Time
           </div>
           <div className="flex items-center justify-between px-12">
             <div className="text-white text-2xl space-y-5">
-              <div className="text-sm md:text-base">{funFacts[factNm]}</div>
+              <div className="text-sm md:text-base space-y-4">
+                <p className="font-semibold text-3xl">
+                  klement : {jokes[randomJoke].setup}
+                </p>
+                <p className="text-black font-bold text-2xl">
+                  toonla : {jokes[randomJoke].punchline}
+                </p>
+              </div>
               <div
                 onClick={handleRandomFact}
                 className="flex items-center gap-2 bg-white hover:bg-black hover:text-white cursor-pointer shadow-xl w-fit text-black text-sm px-4 py-2 rounded-md"
               >
-                New Fact
+                New Joke
                 <TbExchange className="text-2xl" />
               </div>
             </div>

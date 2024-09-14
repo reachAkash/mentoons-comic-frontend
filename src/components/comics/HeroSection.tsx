@@ -237,7 +237,7 @@ const HeroSection: React.FC = () => {
             onClick={() =>
               navigate("/mentoons-comics/audio-comics/Don't Fade Away")
             }
-            className="hidden md:block w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-[50%] left-[65%] lg:top-8 lg:left-[65%] -rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+            className="w-[4rem] md:w-24 lg:w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-[60%] right-[15%] lg:top-8 lg:left-[65%] -rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
             src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-04.jpg"
           />
           {/* black jalebi image */}
@@ -392,7 +392,7 @@ const HeroSection: React.FC = () => {
       {/* clement toonla image */}
       <div className="flex w-full h-full items-center justify-center">
         <img
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[90deg] lg:-rotate-[60deg] xl:-rotate-45 w-[45rem] h-[15rem] md:w-[60rem] md:h-[24rem] lg:w-[70rem] lg:h-[35rem]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[90deg] lg:-rotate-[60deg] xl:-rotate-45 w-[30rem] h-[15rem] md:w-[60rem] md:h-[24rem] lg:w-[70rem] lg:h-[35rem]"
           src="/klement_toonla.png"
           alt="klement toonla image"
         />
