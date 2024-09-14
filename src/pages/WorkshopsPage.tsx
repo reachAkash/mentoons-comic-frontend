@@ -16,6 +16,7 @@ export interface WorkshopItems {
   desc: string;
   img: string;
   video: string;
+  pageUrl: string;
 }
 
 const ComicWorkshop: React.FC = () => {

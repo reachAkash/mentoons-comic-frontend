@@ -18,16 +18,17 @@ import { RiSidebarUnfoldFill } from "react-icons/ri";
 
 interface SidebarProps {
   className: string;
+  content: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ className }) => {
+const Sidebar: React.FC<SidebarProps> = ({ className, content }) => {
   return (
     <Sheet>
       <SheetTrigger>
-        <RiSidebarUnfoldFill  className={`${className} text-white text-3xl`} />
+        <RiSidebarUnfoldFill className={`${className} text-white text-3xl`} />
       </SheetTrigger>
       <SheetContent className="bg-[#F0EBE5] z-[99999] overflow-y-scroll h-screen noScrollbar">
-        <Search />
+        <Search content={content} />
       </SheetContent>
     </Sheet>
   );

@@ -59,15 +59,14 @@ const Footer: React.FC = () => {
     { src: GroupImg4, alt: "Fun Moments, 2023" },
   ];
 
-  // const scrollToInsideMentoons = () => {
-  // console.log("here");
-  // if (location.pathname === "/") {
-  //   const element = document.getElementById("inside-mentoons");
-  //   element?.scrollIntoView({ behavior: "smooth" });
-  // } else {
-  //   navigate("/", { state: { scrollToInsideMentoons: true } });
-  // }
-  // };
+  const scrollToHomeSection = () => {
+    if (location.pathname === "/") {
+      const element = document.getElementById("home-heroSection");
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollToHomeSection: true } });
+    }
+  };
 
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -103,7 +102,7 @@ const Footer: React.FC = () => {
             </Link>
           </div>
           <div className="flex items-center justify-between">
-            <Link to="/">
+            <Link to="/" onClick={scrollToHomeSection}>
               <div className="px-4 cursor-pointer border-r-2 border-white font-semibold">
                 Home
               </div>

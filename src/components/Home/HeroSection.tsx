@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { BsArrowsFullscreen } from 'react-icons/bs';
-import { FaPlay, FaArrowLeft } from 'react-icons/fa';
-import { MdOutlineWatchLater } from 'react-icons/md';
-import Sidebar from '../comics/Sidebar'
+import React, { useState, useRef } from "react";
+import { BsArrowsFullscreen } from "react-icons/bs";
+import { FaPlay, FaArrowLeft } from "react-icons/fa";
+import { MdOutlineWatchLater } from "react-icons/md";
+// import Sidebar from "../comics/Sidebar";
 
 const HeroSection: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
         <div className="relative group">
           <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
             <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
-              <Sidebar className="hidden md:block" />
+              {/* <Sidebar className="hidden md:block" /> */}
             </div>
           </div>
           <div className="absolute top-[10.2rem] right-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -60,11 +60,7 @@ const HeroSection: React.FC = () => {
           </div>
         ) : (
           <div className="relative w-full h-full lg:h-screen">
-            <video
-              className="w-full h-full object-cover"
-              controls
-              autoPlay
-            >
+            <video className="w-full h-full object-cover" controls autoPlay>
               <source
                 src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Mentor+genie+animation.mp4"
                 type="video/mp4"
@@ -75,17 +71,34 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      <div className={`bg-[#000000] lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${isVideoPlaying ? 'flex-col-reverse' : 'flex-col-reverse lg:flex-row'} lg:bg-transparent justify-between lg:w-full lg:relative`}>
-        <div className={`lg:hidden text-left w-full lg:w-[40%] p-8 flex flex-col gap-4 font-montserrat ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'}`}>
-          <p className="text-[#fff] text-md lg:text-lg lg:font-bold">Carefully crafted by Psychologists</p>
+      <div
+        className={`bg-[#000000] lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 left-3 flex ${
+          isVideoPlaying ? "flex-col-reverse" : "flex-col-reverse lg:flex-row"
+        } lg:bg-transparent justify-between lg:w-full lg:relative`}
+      >
+        <div
+          className={`lg:hidden text-left w-full lg:w-[40%] p-8 flex flex-col gap-4 font-montserrat ${
+            !isVideoPlaying ? "lg:opacity-100" : "lg:opacity-0"
+          }`}
+        >
+          <p className="text-[#fff] text-md lg:text-lg lg:font-bold">
+            Carefully crafted by Psychologists
+          </p>
           <p className="text-[#fff] text-2xl lg:text-3xl lg:font-bold">
-            <span className="text-primary animate-glow">Comics</span> &#9679; <span className="text-primary animate-glow">Podcasts</span> &#9679; <span className="text-primary animate-glow">Workshops</span>
+            <span className="text-primary animate-glow">Comics</span> &#9679;{" "}
+            <span className="text-primary animate-glow">Podcasts</span> &#9679;{" "}
+            <span className="text-primary animate-glow">Workshops</span>
           </p>
           <h2 className="text-white text-md lg:text-xl lg:font-bold">
-            Engaging Mentoring for Your Child, Made Fun and Effective. Give your child the gift of growth with Mentoons. A unique platform that combines enriching mentorship with the captivating power of cartoons.
+            Engaging Mentoring for Your Child, Made Fun and Effective. Give your
+            child the gift of growth with Mentoons. A unique platform that
+            combines enriching mentorship with the captivating power of
+            cartoons.
           </h2>
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <span className="text-white text-lg lg:text-2xl whitespace-nowrap font-semibold">Start today and see the difference.</span>
+            <span className="text-white text-lg lg:text-2xl whitespace-nowrap font-semibold">
+              Start today and see the difference.
+            </span>
             <button
               type="button"
               className="whitespace-nowrap text-white bg-primary hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900 transition-colors"
@@ -94,20 +107,28 @@ const HeroSection: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className={`flex items-center gap-4 justify-around px-10 lg:flex-col-reverse ${!isVideoPlaying ? 'lg:opacity-100' : 'lg:opacity-0'} lg:absolute lg:bottom-20 right-0`}>
+        <div
+          className={`flex items-center gap-4 justify-around px-10 lg:flex-col-reverse ${
+            !isVideoPlaying ? "lg:opacity-100" : "lg:opacity-0"
+          } lg:absolute lg:bottom-20 right-0`}
+        >
           <button
             className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1 transition-transform transform hover:scale-110"
             onClick={openModal}
           >
             <BsArrowsFullscreen className="text-white lg:text-black text-2xl lg:text-6xl" />
-            <span className="text-white lg:text-black text-sm">Cinema Mode</span>
+            <span className="text-white lg:text-black text-sm">
+              Cinema Mode
+            </span>
           </button>
           <button
             className="bg-transparent p-2 rounded-full flex flex-col items-center gap-1 transition-transform transform hover:scale-110"
             onClick={(e) => e.stopPropagation()}
           >
             <MdOutlineWatchLater className="text-white lg:text-black text-2xl lg:text-6xl" />
-            <span className="text-white lg:text-black text-sm">Watch Later</span>
+            <span className="text-white lg:text-black text-sm">
+              Watch Later
+            </span>
           </button>
         </div>
       </div>

@@ -153,22 +153,167 @@ export const gamesData: GamesData[] = [
 //   },
 // ];
 
-export const funFacts: string[] = [
-  "A group of flamingos is called a 'flamboyance.'",
-  "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
-  "Bananas are berries, but strawberries aren't.",
-  "Octopuses have three hearts and blue blood.",
-  "Wombat poop is cube-shaped. This helps it stack neatly, preventing it from rolling away.",
-  "A single strand of spaghetti is called a 'spaghetto.'",
-  "Sea otters hold hands while sleeping to keep from drifting apart.",
-  "A shrimp's heart is in its head.",
-  "There are more stars in the universe than grains of sand on all the Earth's beaches.",
-  "Sloths can take up to a month to digest their food.",
-  "Cows have best friends and can become stressed when they are separated.",
-  "Butterflies taste with their feet.",
-  "A group of porcupines is called a 'prickle.'",
-  "Some turtles can breathe through their butts!",
-  "Koalas sleep up to 22 hours a day.",
+export const jokes: { setup: string; punchline: string }[] = [
+  {
+    setup: "Why don't skeletons fight each other?",
+    punchline: "Because they don't have the guts!",
+  },
+  {
+    setup: "What do you call cheese that isn't yours?",
+    punchline: "Nacho cheese!",
+  },
+  {
+    setup: "Why did the math book look sad?",
+    punchline: "It had too many problems.",
+  },
+  {
+    setup: "What do you get when you cross a snowman and a dog?",
+    punchline: "Frostbite!",
+  },
+  {
+    setup: "Why can't Elsa have a balloon?",
+    punchline: "Because she'll let it go!",
+  },
+  { setup: "What kind of tree fits in your hand?", punchline: "A palm tree!" },
+  {
+    setup: "Why don't eggs tell jokes?",
+    punchline: "Because they might crack up.",
+  },
+  { setup: "Why did the bicycle fall over?", punchline: "It was two-tired!" },
+  {
+    setup: "What does a cloud wear under its raincoat?",
+    punchline: "Thunderwear!",
+  },
+  {
+    setup: "How do you make a tissue dance?",
+    punchline: "You put a little boogie in it!",
+  },
+  {
+    setup: "Why did the golfer bring two pairs of pants?",
+    punchline: "In case he got a hole in one!",
+  },
+  {
+    setup: "Why did the student eat his homework?",
+    punchline: "Because the teacher said it was a piece of cake!",
+  },
+  {
+    setup: "How does a cucumber become a pickle?",
+    punchline: "It goes through a jarring experience!",
+  },
+  {
+    setup: "What did one plate say to the other?",
+    punchline: "Lunch is on me!",
+  },
+  {
+    setup: "Why did the teddy bear say no to dessert?",
+    punchline: "Because it was stuffed!",
+  },
+  {
+    setup: "What do you call a bear with no teeth?",
+    punchline: "A gummy bear!",
+  },
+  {
+    setup: "What is a pirate's favorite letter?",
+    punchline: "You'd think it's 'R,' but it's the 'C'!",
+  },
+  {
+    setup: "What time is it when the clock strikes 13?",
+    punchline: "Time to get a new clock!",
+  },
+  {
+    setup: "How do you catch a squirrel?",
+    punchline: "Climb a tree and act like a nut!",
+  },
+  { setup: "What do you call a cow with no legs?", punchline: "Ground beef!" },
+  {
+    setup: "Why did the scarecrow win an award?",
+    punchline: "Because he was outstanding in his field!",
+  },
+  { setup: "What has ears but cannot hear?", punchline: "A cornfield!" },
+  {
+    setup: "Why did the tomato turn red?",
+    punchline: "Because it saw the salad dressing!",
+  },
+  { setup: "What do you call fake spaghetti?", punchline: "An impasta!" },
+  {
+    setup: "Why did the computer go to the doctor?",
+    punchline: "Because it had a virus!",
+  },
+  { setup: "What do elves learn in school?", punchline: "The elf-abet!" },
+  { setup: "What is brown and sticky?", punchline: "A stick!" },
+  {
+    setup: "Why can't you give Elsa a balloon?",
+    punchline: "Because she'll let it go!",
+  },
+  { setup: "What animal is always at a baseball game?", punchline: "A bat!" },
+  { setup: "What's orange and sounds like a parrot?", punchline: "A carrot!" },
+  {
+    setup: "Why do fish live in saltwater?",
+    punchline: "Because pepper makes them sneeze!",
+  },
+  {
+    setup: "Why are ghosts bad at lying?",
+    punchline: "Because you can see right through them!",
+  },
+  {
+    setup: "What do you call an alligator in a vest?",
+    punchline: "An investigator!",
+  },
+  { setup: "What do you call a sleeping bull?", punchline: "A bulldozer!" },
+  {
+    setup: "How do you make an octopus laugh?",
+    punchline: "With ten-tickles!",
+  },
+  {
+    setup: "What did one eye say to the other?",
+    punchline: "Between us, something smells!",
+  },
+  {
+    setup: "Why did the cookie go to the hospital?",
+    punchline: "Because it felt crummy!",
+  },
+  {
+    setup: "Why did the frog take the bus to work?",
+    punchline: "His car got toad away!",
+  },
+  {
+    setup: "Why did the banana go to the doctor?",
+    punchline: "Because it wasn't peeling well!",
+  },
+  {
+    setup: "Why did the chicken go to the seance?",
+    punchline: "To talk to the other side!",
+  },
+  {
+    setup: "What do you call a pig that knows karate?",
+    punchline: "A pork chop!",
+  },
+  {
+    setup: "Why are frogs so happy?",
+    punchline: "They eat whatever bugs them!",
+  },
+  {
+    setup: "Why don't oysters share their pearls?",
+    punchline: "Because they're shellfish!",
+  },
+  {
+    setup: "What did the big flower say to the little flower?",
+    punchline: "Hey, bud!",
+  },
+  {
+    setup: "Why did the fish blush?",
+    punchline: "Because it saw the ocean's bottom!",
+  },
+  { setup: "How do you talk to a giant?", punchline: "Use big words!" },
+  {
+    setup: "What do you call an elephant that doesn't matter?",
+    punchline: "Irrelephant!",
+  },
+  {
+    setup: "What's brown, hairy, and wears sunglasses?",
+    punchline: "A coconut on vacation!",
+  },
+  { setup: "What did the zero say to the eight?", punchline: "Nice belt!" },
 ];
 
 export const comicsData: Comic[] = [
@@ -298,7 +443,7 @@ export const comicsData: Comic[] = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
     duration: "3:45",
     mini_thumbnail:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/Think_Before_You_Act!.png",
     thumbnail:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Think_Before_You_Act!.jpg",
     videoLink:
@@ -470,6 +615,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg1,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=buddy",
   },
   {
     name: "Teen Camp",
@@ -477,6 +623,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg2,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=teen",
   },
   {
     name: "Family Camp",
@@ -484,6 +631,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg3,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=family",
   },
   {
     name: "How to make your own Comic",
@@ -491,6 +639,7 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg4,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/How+to+make+your+Own+Comic+Workshop+Trailer_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=comic",
   },
   {
     name: "How to make your own Character",
@@ -498,5 +647,6 @@ export const workshopDetails: WorkshopItems[] = [
     img: workshopImg5,
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/how+to+make+your+own+character+workshop.mp4",
+    pageUrl: "/mentoons-workshops?workshop=character",
   },
 ];
