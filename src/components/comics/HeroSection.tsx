@@ -185,7 +185,7 @@ const HeroSection: React.FC = () => {
           />
           {/* flower image */}
           <img
-            className="w-24 md:w-40 z-50 rounded-md absolute left-[65%] -bottom-[80%] md:left-[60%] md:-bottom-[180%] lg:left-[78%] -rotate-[60deg]"
+            className="w-24 md:w-40 z-50 rounded-md absolute left-[65%] -bottom-[80%] md:left-[60%] md:-bottom-[180%] lg:left-[78%] lg:-bottom-[155%] -rotate-[60deg]"
             src="/assets/images/flowerComics.png"
           />
         </>
