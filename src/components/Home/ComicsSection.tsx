@@ -3,7 +3,7 @@ import AirplaneBg from "@/assets/imgs/airplaneBgHome.svg";
 import FlyingBook from "@/assets/imgs/bookBgHome.svg";
 import ComicsBgShelf from "@/assets/imgs/comics_audioComicsBgHome.svg";
 import PortalImgHome from "@/assets/imgs/portalBgHome.svg";
-import WorkshopBgHome from "@/assets/imgs/workshopBgHome.svg";
+import WorkshopBgHome from "@/assets/imgs/workshopBgHome.png";
 import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
 import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
 import BuddyWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
@@ -17,8 +17,8 @@ import { useNavigate } from "react-router-dom";
 const ComicsSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="space-y-10">
-      <div className="relative h-full w-full">
+    <div className="space-y-10 mt-20">
+      {/* <div className="relative h-full w-full">
         <img src={ComicsBgHome} alt="comics background" />
         <div className="absolute top-[40%] flex items-center justify-center">
           <motion.img
@@ -104,23 +104,23 @@ const ComicsSection: React.FC = () => {
         <div className="w-full absolute flex items-center justify-center -bottom-12">
           <img className="w-1/3" src={PortalImgHome} alt="portal" />
         </div>
-      </div>
+      </div> */}
       <div className="relative">
         <img src={WorkshopBgHome} alt="workshop" />
         <div>
           <img
-            className="absolute w-[45%] -left-[4%] top-[25%]"
+            className="absolute w-[45%] -left-[4%] top-[12%]"
             src={workshopTextHome}
             alt="workshop"
           />
         </div>
-        <div className="w-full absolute rotate-180 flex items-center justify-center right-4 top-[14rem] ">
+        <div className="w-full absolute rotate-180 flex items-center justify-center right-4 top-0 ">
           <img className="w-1/3" src={PortalImgHome} alt="portal" />
         </div>
         <div className="">
           <img
             onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
-            className="absolute right-[38%] top-[36%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+            className="absolute right-[38%] top-[26%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
             src={BuddyWorkshopHome}
             alt="workshop poster"
           />
@@ -128,23 +128,23 @@ const ComicsSection: React.FC = () => {
         <div>
           <img
             onClick={() => navigate("/mentoons-workshops?workshop=teen")}
-            className="absolute right-[10%] top-[40%] w-[15%] hover:scale-105 cursor-pointer rotate-2 transition-all ease-in-out duration-300"
+            className="absolute right-[13%] top-[30%] w-[15%] hover:scale-105 cursor-pointer rotate-2 transition-all ease-in-out duration-300"
             src={TeenWorkshopHome}
             alt="workshop poster"
           />
         </div>
         <div>
           <img
-            onClick={() => navigate("/mentoons-workshops?workshop=comics")}
-            className="absolute right-[33%] top-[58%] w-[15%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+            onClick={() => navigate("/mentoons-workshops?workshop=family")}
+            className="absolute right-[33%] top-[50%] w-[15%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
             src={ElderWorkshopHome}
             alt="workshop poster"
           />
         </div>
         <div>
           <img
-            onClick={() => navigate("/mentoons-workshops?workshop=character")}
-            className="absolute right-[14%] top-[58%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+            onClick={() => navigate("/mentoons-workshops?workshop=family")}
+            className="absolute right-[14%] top-[50%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
             src={ParentWorkshopHome}
             alt="workshop poster"
           />
