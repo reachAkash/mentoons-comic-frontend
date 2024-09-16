@@ -13,6 +13,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import MapComponent from "./MapComponent";
 import { useState } from "react";
 import Logo from "@/assets/imgs/logo mini.png";
+import FooterImg from "@/assets/imgs/footerImg.png";
 
 interface ImagePopupProps {
   isOpen: boolean;
@@ -82,7 +83,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="text-white text-center">
+    <div className="relative w-full pt-12 md:pt-0 text-white text-center">
       <img
         className="hidden md:block "
         src="/FooterBg.png"
@@ -93,6 +94,9 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
+      <div className="w-3/4 md:w-2/4 lg:w-[50%] xl:w-[40%] absolute top-[-3rem] right-[15%] md:top-0 md:right-8 lg:top-24">
+        <img className="w-full" src={FooterImg} alt="footer text" />
+      </div>
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
