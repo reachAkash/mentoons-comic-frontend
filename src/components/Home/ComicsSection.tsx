@@ -1,17 +1,17 @@
 import React from "react";
-import AirplaneBg from "@/assets/imgs/airplaneBgHome.svg";
-import FlyingBook from "@/assets/imgs/bookBgHome.svg";
-import ComicsBgShelf from "@/assets/imgs/comics_audioComicsBgHome.svg";
+// import AirplaneBg from "@/assets/imgs/airplaneBgHome.svg";
+// import FlyingBook from "@/assets/imgs/bookBgHome.svg";
+// import ComicsBgShelf from "@/assets/imgs/comics_audioComicsBgHome.svg";
 import PortalImgHome from "@/assets/imgs/portalBgHome.svg";
 import WorkshopBgHome from "@/assets/imgs/workshopBgHome.png";
-import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
-import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
+// import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
+// import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
 import BuddyWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
 import TeenWorkshopHome from "@/assets/imgs/teenWorkshopHome.svg";
 import ElderWorkshopHome from "@/assets/imgs/elderWorkshopHome.svg";
 import ParentWorkshopHome from "@/assets/imgs/parentsWorkshopHome.png";
 import workshopTextHome from "@/assets/imgs/workshopTextHome.svg";
-import { easeInOut, motion } from "framer-motion";
+// import { easeInOut, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const ComicsSection: React.FC = () => {
