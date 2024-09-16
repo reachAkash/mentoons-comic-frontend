@@ -9,8 +9,7 @@ import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
 import BuddyWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
 import TeenWorkshopHome from "@/assets/imgs/teenWorkshopHome.svg";
 import ElderWorkshopHome from "@/assets/imgs/elderWorkshopHome.svg";
-import ComicWorkshopHome from "@/assets/imgs/comicWorkshopHome.svg";
-import CharacterWorkshopHome from "@/assets/imgs/characterWorkshopHome.svg";
+import ParentWorkshopHome from "@/assets/imgs/parentsWorkshopHome.png";
 import workshopTextHome from "@/assets/imgs/workshopTextHome.svg";
 import { easeInOut, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -136,17 +135,9 @@ const ComicsSection: React.FC = () => {
         </div>
         <div>
           <img
-            onClick={() => navigate("/mentoons-workshops?workshop=family")}
-            className="absolute right-[25%] top-[50%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
-            src={ElderWorkshopHome}
-            alt="workshop poster"
-          />
-        </div>
-        <div>
-          <img
             onClick={() => navigate("/mentoons-workshops?workshop=comics")}
-            className="absolute right-[36%] top-[58%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
-            src={ComicWorkshopHome}
+            className="absolute right-[33%] top-[58%] w-[15%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+            src={ElderWorkshopHome}
             alt="workshop poster"
           />
         </div>
@@ -154,7 +145,7 @@ const ComicsSection: React.FC = () => {
           <img
             onClick={() => navigate("/mentoons-workshops?workshop=character")}
             className="absolute right-[14%] top-[58%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
-            src={CharacterWorkshopHome}
+            src={ParentWorkshopHome}
             alt="workshop poster"
           />
         </div>
