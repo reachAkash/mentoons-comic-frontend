@@ -2,14 +2,14 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import WorkshopHero from "@/assets/imgs/workshop_home.png";
 import WorkshopHeroSmall from "@/assets/imgs/workshop-home-small.png";
 import WorkshopCardSmall from "@/assets/imgs/workshop-card-small2.png";
-// import WorkshopCardSmall from "@/assets/imgs/workshop-card-small.png";
 import WorkshopAlarm from "@/assets/imgs/Workshops_Page_.png";
 import workshopStar from "@/assets/imgs/Workshops_Page_ 7.png";
 import workshopBlueBg from "@/assets/imgs/workshop-bg1.png";
 import workshopArrow from "@/assets/imgs/workshop-arrow.png";
 import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
-import FreeDownloadForm from "../components/comics/FreeDownloadForm";
+import WorkshopForm from "@/components/common/WorkshopForm";
+import { DialogDescription, Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 
 export interface WorkshopItems {
   name: string;
@@ -26,12 +26,12 @@ const ComicWorkshop: React.FC = () => {
     workshop == "buddy"
       ? 0
       : workshop == "teen"
-      ? 1
-      : workshop == "family"
-      ? 2
-      : workshop == "comic"
-      ? 3
-      : 4;
+        ? 1
+        : workshop == "family"
+          ? 2
+          : workshop == "comic"
+            ? 3
+            : 4;
 
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
     workshopDetails[activeWorkshop]
@@ -100,8 +100,7 @@ const ComicWorkshop: React.FC = () => {
       </div>
 
       {/* Workshop Listing Section */}
-      <div className="relative flex flex-col items-center bg-darkClouds bg-cover bg-no-repeat pt-20  gap-4">
-        {/* styling images */}
+      <div className="relative flex flex-col items-center bg-darkClouds bg-cover bg-no-repeat pt-20 gap-4">
         <div className="absolute -top-14 left-4 md:-top-32 lg:-top-44 md:left-20">
           <img
             className="w-1/3 md:w-[50%] lg:w-2/3"
@@ -141,12 +140,12 @@ const ComicWorkshop: React.FC = () => {
             </div>
           ))}
         </div>
-        {/* <img src={WorkshopBg} alt="dark clouds" /> */}
+
+        {/* Workshop Section */}
         <div
           ref={workshopRefLg}
           className="hidden lg:flex relative flex-col w-full h-full max-w-7xl pt-10 space-y-10"
         >
-          {/* workshop seperate section */}
           <img
             className="w-full h-full"
             src={workshopBlueBg}
@@ -185,7 +184,8 @@ const ComicWorkshop: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* mobile screen card section */}
+
+        {/* Mobile card section */}
         <div ref={workshopRefSm} className="relative flex lg:hidden flex-col">
           <img
             className="w-full h-full"
@@ -210,12 +210,12 @@ const ComicWorkshop: React.FC = () => {
                 ></video>
               </div>
               <div className="w-full space-y-4">
-                <div className="font-medium leading-tight tracking-wide text-2xl">
+                <div className="font-medium leading-tight tracking-wide text-xl md:text-2xl">
                   {selectedWorkshop.desc}
                 </div>
                 <div
                   onClick={() => setShowForm(true)}
-                  className="bg-button bg-contain bg-no-repeat relative left-10 px-8 py-3 w-fit h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out"
+                  className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105 hover:scale-110 transition-all duration-300 ease-in-out"
                 >
                   <div className="w-full relative text-2xl text-white bg-cover pl-2">
                     Talk to us!
@@ -227,10 +227,20 @@ const ComicWorkshop: React.FC = () => {
         </div>
       </div>
       {showForm && (
-        <FreeDownloadForm
-          page="workshop"
-          setShowFreeDownloadForm={setShowForm}
-        />
+        <Dialog open={showForm} onOpenChange={() => setShowForm(false)}>
+          <DialogContent className="z-[999999]">
+            <DialogHeader>
+              <DialogClose asChild>
+                <button className="absolute top-5 right-5 lg:right-2 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl">
+                  &times;
+                </button>
+              </DialogClose>
+            </DialogHeader>
+            <DialogDescription>
+              <WorkshopForm selectedWorkshop = {selectedWorkshop.name}/>
+            </DialogDescription>
+          </DialogContent>
+        </Dialog>
       )}
     </div>
   );
