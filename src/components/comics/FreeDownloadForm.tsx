@@ -8,6 +8,7 @@ import emailjs from "emailjs-com";
 import { toast } from "sonner";
 import { date } from "@/constant/websiteConstants";
 import { SelectedComicType } from "@/pages/FreeDownload";
+import WorkshopForm from "../common/WorkshopForm";
 
 interface FormType {
   name: string;
@@ -15,10 +16,10 @@ interface FormType {
   phone: string;
 }
 
-interface FreeDownloadForm {
+interface FreeDownloadFormProps {
   setShowFreeDownloadForm: React.Dispatch<React.SetStateAction<boolean>>;
   selectedComic?: SelectedComicType;
-  page : string
+  page: string;
 }
 
 const validationSchema = Yup.object({
@@ -36,7 +37,7 @@ const validationSchema = Yup.object({
 
 const initialState: FormType = { name: "", email: "", phone: "" };
 
-const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
+const FreeDownloadForm: React.FC<FreeDownloadFormProps> = ({
   setShowFreeDownloadForm,
   selectedComic,
   page
@@ -82,6 +83,7 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
         setShowFreeDownloadForm(false);
       });
   };
+
   return (
     <div className="flex items-center justify-center bg-black bg-opacity-50 fixed inset-0">
       <motion.div
@@ -96,61 +98,66 @@ const FreeDownloadForm: React.FC<FreeDownloadForm> = ({
         >
           <IoMdClose className="text-2xl hover:text-red-400 active:scale-50 transition-all ease-in-out duration-300" />
         </button>
-        {page=='freedownload' ? <h1 className="font-semibold text-xl flex justify-center gap-2">
-          Free <img className="w-20" src={MiniLogo} alt="mentoons logo" /> Gifts
-        </h1> : <h1 className="font-semibold text-xl flex justify-center gap-2">
-          Talk to us!
-        </h1> }
-        <Formik<FormType>
-          initialValues={initialState}
-          validationSchema={validationSchema}
-          onSubmit={(values) => {page=='freedownload' && sendEmail(values)}}
-        >
-          <Form className="flex flex-col w-full space-y-3">
-            <div className="w-full">
-              <Field
-                type="text"
-                placeholder="Your Name"
-                name="name"
-                className="cta-input w-full "
-              />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className="text-red-500 text-sm mt-3 ml-4"
-              />
-            </div>
-            <div className="w-full">
-              <Field
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                className="cta-input w-full"
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="text-red-500 text-sm mt-3 ml-4"
-              />
-            </div>
-            <div className="w-full">
-              <Field
-                type="tel"
-                placeholder="Your Phone"
-                name="phone"
-                className="cta-input w-full"
-              />
-              <ErrorMessage
-                name="phone"
-                component="div"
-                className="text-red-500 text-sm mt-3 ml-4"
-              />
-            </div>
-            <button type="submit" className="cta-button-footer">
-              Submit
-            </button>
-          </Form>
-        </Formik>
+
+        {page === 'freedownload' ? (
+          <>
+            <h1 className="font-semibold text-xl flex justify-center gap-2">
+              Free <img className="w-20" src={MiniLogo} alt="mentoons logo" /> Gifts
+            </h1>
+            <Formik<FormType>
+              initialValues={initialState}
+              validationSchema={validationSchema}
+              onSubmit={(values) => sendEmail(values)}
+            >
+              <Form className="flex flex-col w-full space-y-3">
+                <div className="w-full">
+                  <Field
+                    type="text"
+                    placeholder="Your Name"
+                    name="name"
+                    className="cta-input w-full "
+                  />
+                  <ErrorMessage
+                    name="name"
+                    component="div"
+                    className="text-red-500 text-sm mt-3 ml-4"
+                  />
+                </div>
+                <div className="w-full">
+                  <Field
+                    type="email"
+                    placeholder="Your Email"
+                    name="email"
+                    className="cta-input w-full"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-sm mt-3 ml-4"
+                  />
+                </div>
+                <div className="w-full">
+                  <Field
+                    type="tel"
+                    placeholder="Your Phone"
+                    name="phone"
+                    className="cta-input w-full"
+                  />
+                  <ErrorMessage
+                    name="phone"
+                    component="div"
+                    className="text-red-500 text-sm mt-3 ml-4"
+                  />
+                </div>
+                <button type="submit" className="cta-button-footer">
+                  Submit
+                </button>
+              </Form>
+            </Formik>
+          </>
+        ) : (
+          <WorkshopForm/>
+        )}
       </motion.div>
     </div>
   );

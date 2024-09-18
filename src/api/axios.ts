@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://mentoons-backend-production.onrender.com/",
+  // baseURL: "https://mentoons-backend-production.onrender.com/",
+  baseURL: "http://localhost:4000/api/v1/",
   timeout: 10000, // 10 seconds timeout
   headers: {
     "Content-Type": "application/json",

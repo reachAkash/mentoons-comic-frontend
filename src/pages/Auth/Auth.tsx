@@ -5,54 +5,81 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css'; // Import the styles
 
-type FormValues = {
-  userName: string;
-  email: string;
-  age: string;
-  password: string;
-  confirmPassword: string;
+type SignUpFormValues = {
+  phone: string;
+};
+
+type OTPFormValues = {
+  otp0: string;
+  otp1: string;
+  otp2: string;
+  otp3: string;
 };
 
 const Auth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [step, setStep] = useState<"signup" | "otp">("signup");
 
-  const validationSchema = Yup.object({
-    userName: Yup.string()
-      .min(2, "Name must be at least 2 characters long")
-      .max(50, "Name can't be longer than 50 characters")
-      .required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .matches(
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        "Email format is not valid"
-      )
-      .required("Email is required"),
-    age: Yup.number()
-      .max(100, "Age must be less than 100 years")
-      .required("Age is required")
-      .typeError("Age must be a number"),
-    password: Yup.string()
-      .min(8, "Password must be at least 8 characters long")
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/,
-        "Password must contain at least one uppercase letter, one lowercase letter, and one number"
-      )
-      .required("Password is required"),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref("password")], "Passwords must match")
-      .required("Confirm Password is required"),
+  const signUpValidationSchema = Yup.object({
+    phone: Yup.string()
+      .required("Phone number is required")
+      .matches(/^\+[1-9]\d{1,14}$/, "Phone number is not valid"),
   });
 
-  const handleSignIn = async (values: FormValues) => {
-    console.log(values);
-    const res = await axiosInstance.post("/signup", values);
-    if (res.status === 200) {
-      dispatch(userLoggedIn());
-      navigate("/");
+  // const otpValidationSchema = Yup.object({
+  //   otp0: Yup.string().required("OTP digit is required"),
+  //   otp1: Yup.string().required("OTP digit is required"),
+  //   otp2: Yup.string().required("OTP digit is required"),
+  //   otp3: Yup.string().required("OTP digit is required"),
+  // });
+
+  const handleSignUp = async (values: SignUpFormValues) => {
+    try {
+      console.log("SignUp form values: ", values);
+      const res = await axiosInstance.post("/signup", values);
+      if (res.status === 200) {
+        setStep("otp");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleOTPVerification = async (values: OTPFormValues) => {
+    const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
+    console.log("OTP entered:", otp);
+    try {
+      const res = await axiosInstance.post("/verify-otp", { otp });
+      if (res.status === 200) {
+        dispatch(userLoggedIn());
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleOtpChange = (e: React.ChangeEvent<HTMLInputElement>, nextFieldId: string | null) => {
+    const value = e.target.value;
+    if (value.length === 1 && nextFieldId) {
+      const nextField = document.getElementById(nextFieldId) as HTMLInputElement;
+      if (nextField) {
+        nextField.focus();
+      }
+    }
+  };
+
+  const handleBackspace = (e: React.KeyboardEvent<HTMLInputElement>, prevFieldId: string | null) => {
+    if (e.key === 'Backspace' && prevFieldId) {
+      const prevField = document.getElementById(prevFieldId) as HTMLInputElement;
+      if (prevField) {
+        prevField.focus();
+      }
     }
   };
 
@@ -68,151 +95,123 @@ const Auth = () => {
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 bg-white shadow-lg rounded-lg lg:flex-1 lg:bg-transparent">
         <div className="bg-white py-8 lg:px-20 px-4 rounded-lg shadow-md w-full lg:max-w-xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
-            {isLogin ? "Login" : "Register"}
+            {step === "signup" ? (isLogin ? "Login" : "Register") : "Verify OTP"}
           </h2>
-          <Formik<FormValues>
-            initialValues={{
-              userName: "",
-              email: "",
-              age: "",
-              password: "",
-              confirmPassword: "",
-            }}
-            validationSchema={validationSchema}
-            onSubmit={(values) => {
-              handleSignIn(values);
-            }}
-          >
-            <Form>
-              {!isLogin && (
-                <div className="mb-4">
-                  <label
-                    htmlFor="userName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Name
-                  </label>
-                  <Field
-                    id="userName"
-                    name="userName"
-                    type="text"
-                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                  <ErrorMessage
-                    name="userName"
-                    component="div"
-                    className="text-red-500 text-sm mt-1"
-                  />
-                </div>
-              )}
 
-              <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email
-                </label>
-                <Field
-                  id="email"
-                  name="email"
-                  type="email"
-                  className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
-
-              {!isLogin && (
-                <div className="mb-4">
-                  <label
-                    htmlFor="age"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Age
-                  </label>
-                  <Field
-                    id="age"
-                    name="age"
-                    type="number"
-                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                  <ErrorMessage
-                    name="age"
-                    component="div"
-                    className="text-red-500 text-sm mt-1"
-                  />
-                </div>
-              )}
-
-              <div className="mb-4">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Password
-                </label>
-                <Field
-                  id="password"
-                  name="password"
-                  type="password"
-                  className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
-
-              {!isLogin && (
-                <div className="mb-4">
-                  <label
-                    htmlFor="confirmPassword"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Confirm Password
-                  </label>
-                  <Field
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    type="password"
-                    className="cta-input w-full mt-1 block p-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                  <ErrorMessage
-                    name="confirmPassword"
-                    component="div"
-                    className="text-red-500 text-sm mt-1"
-                  />
-                </div>
-              )}
-
-              <div style={{ textAlign: "center" }}>
-                <button type="submit" className="cta-button">
-                  {isLogin ? "Login" : "Register"}
-                </button>
-              </div>
-            </Form>
-          </Formik>
-          <p className="mt-4 text-center">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
-            <span
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-indigo-600 cursor-pointer font-semibold"
+          {step === "signup" ? (
+            <Formik<SignUpFormValues>
+              initialValues={{ phone: '' }}
+              validationSchema={signUpValidationSchema}
+              onSubmit={handleSignUp}
             >
-              {isLogin ? "Register Here!" : "Login Here!"}
-            </span>
-          </p>
-          {isLogin && (
-            <p className="mt-2 text-center">
-              <span className="text-indigo-600 cursor-pointer font-semibold">
-                Forgot Password?
-              </span>
-            </p>
+              {({ values, setFieldValue }) => (
+                <Form className="space-y-4">
+                  <div className="relative">
+                    <img src="/assets/home/mobile.png" alt="mobile"/>
+                    <div className="flex flex-col">
+                      <PhoneInput
+                        international
+                        defaultCountry="IN"
+                        value={values.phone}
+                        onChange={value => setFieldValue("phone", value || '')}
+                        className="mt-1 p-2 rounded-md focus:ring-indigo-500 focus:border-indigo-500 w-[12rem] lg:w-[18rem] absolute top-[35%] left-1/2 transform -translate-x-1/2 -rotate-[2deg] border-4 border-black font-bold"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="text-center mt-6">
+                    <ErrorMessage name="phone" component="div" className="text-red-500 text-sm mt-1" />
+                    <button type="submit" className="bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                      Register
+                    </button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+          ) : (
+            <Formik<OTPFormValues>
+              initialValues={{ otp0: '', otp1: '', otp2: '', otp3: '' }}
+              // validationSchema={otpValidationSchema}
+              onSubmit={handleOTPVerification}
+            >
+              {() => (
+                <Form className="space-y-4">
+                  <div className="relative">
+                    <img src="/assets/home/OTP.png" alt="OTP"/>
+                    <div className="flex flex-col">
+                      <div className="flex flex-col z-10 w-[12rem] lg:w-[18rem] absolute top-[35%] left-1/2 transform -translate-x-1/2">
+                        <div className="flex justify-center gap-2 lg:gap-6 lg:pr-7 pr-5">
+                          <Field
+                            id="otp0"
+                            name="otp0"
+                            type="text"
+                            maxLength={1}
+                            className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp1')}
+                            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, null)}
+                          />
+                          <Field
+                            id="otp1"
+                            name="otp1"
+                            type="text"
+                            maxLength={1}W
+                            className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp2')}
+                            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp0')}
+                          />
+                          <Field
+                            id="otp2"
+                            name="otp2"
+                            type="text"
+                            maxLength={1}
+                            className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp3')}
+                            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp1')}
+                          />
+                          <Field
+                            id="otp3"
+                            name="otp3"
+                            type="text"
+                            maxLength={1}
+                            className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp2')}
+                          />
+                        </div>
+                        <ErrorMessage name="otp0" component="div" className="text-red-500 text-sm mt-1" />
+                        <ErrorMessage name="otp1" component="div" className="text-red-500 text-sm mt-1" />
+                        <ErrorMessage name="otp2" component="div" className="text-red-500 text-sm mt-1" />
+                        <ErrorMessage name="otp3" component="div" className="text-red-500 text-sm mt-1" />
+                      </div>
+                      <button type="submit" className="bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        Verify OTP
+                      </button>
+                    </div>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           )}
+
+          <p className="mt-4 text-center">
+            {step === "signup" ? (
+              <>
+                {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
+                <span
+                  onClick={() => setIsLogin(!isLogin)}
+                  className="text-indigo-600 cursor-pointer hover:underline"
+                >
+                  {isLogin ? "Register" : "Login"}
+                </span>
+              </>
+            ) : (
+              <span
+                onClick={() => setStep("signup")}
+                className="text-indigo-600 cursor-pointer hover:underline"
+              >
+                Go back
+              </span>
+            )}
+          </p>
         </div>
       </div>
     </div>
