@@ -9,7 +9,7 @@ import workshopArrow from "@/assets/imgs/workshop-arrow.png";
 import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
 import WorkshopForm from "@/components/common/WorkshopForm";
-import { DialogDescription, Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
+import { DialogDescription, Dialog, DialogContent, DialogHeader, DialogClose } from "@/components/ui/dialog";
 
 export interface WorkshopItems {
   name: string;
