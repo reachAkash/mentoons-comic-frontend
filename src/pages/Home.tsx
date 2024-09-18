@@ -7,7 +7,7 @@ import Struggles from "@/components/Home/Struggles";
 
 const Home = () => {
   return (
-    <div className="h-full w-full overflow-x-hidden">
+    <div className="h-full w-full">
       <HeroBanner />
       <Struggles />
       {/* <MdMultiverse /> */}

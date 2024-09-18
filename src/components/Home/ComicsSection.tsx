@@ -1,24 +1,31 @@
 import React from "react";
-// import AirplaneBg from "@/assets/imgs/airplaneBgHome.svg";
-// import FlyingBook from "@/assets/imgs/bookBgHome.svg";
-// import ComicsBgShelf from "@/assets/imgs/comics_audioComicsBgHome.svg";
+import AirplaneBg from "@/assets/imgs/airplaneBgHome.svg";
+import FlyingBook from "@/assets/imgs/bookBgHome.svg";
+import ComicPodcastHome from "@/assets/imgs/comic-podcastHome.png";
 import PortalImgHome from "@/assets/imgs/portalBgHome.svg";
 import WorkshopBgHome from "@/assets/imgs/workshopBgHome.png";
-// import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
-// import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
+import ComicsBgHome from "@/assets/imgs/comicsBgHome.svg";
+import StoreBgHome from "@/assets/imgs/storeHome.png";
+import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
 import BuddyWorkshopHome from "@/assets/imgs/kidsWorkshopHome.svg";
 import TeenWorkshopHome from "@/assets/imgs/teenWorkshopHome.svg";
 import ElderWorkshopHome from "@/assets/imgs/elderWorkshopHome.svg";
 import ParentWorkshopHome from "@/assets/imgs/parentsWorkshopHome.png";
 import workshopTextHome from "@/assets/imgs/workshopTextHome.svg";
-// import { easeInOut, motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import ComicButton from "@/assets/imgs/comicButton.png";
+import AudioComicButton from "@/assets/imgs/audioComicButton.png";
+import PodcastButton from "@/assets/imgs/podcastButton.png";
+import ReadButton from "@/assets/imgs/readButton.png";
+import ListenButton from "@/assets/imgs/listenButton.png";
+import TransformButton from "@/assets/imgs/transformButton.png";
 
 const ComicsSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="space-y-10 mt-20">
-      {/* <div className="relative h-full w-full">
+    <div className="relative space-y-10 mt-20 mb-[275rem]">
+      <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
         <div className="absolute top-[40%] flex items-center justify-center">
           <motion.img
@@ -98,20 +105,65 @@ const ComicsSection: React.FC = () => {
             alt="books image"
           />
         </div>
-        <div className="absolute -bottom-12">
-          <img src={ComicsBgShelf} alt="comics shelf" />
+        <div className="absolute -bottom-[98%]">
+          <img src={ComicPodcastHome} alt="comics shelf" />
         </div>
-        <div className="w-full absolute flex items-center justify-center -bottom-12">
-          <img className="w-1/3" src={PortalImgHome} alt="portal" />
+        <div className="absolute left-0 -bottom-[15%]">
+          <img
+            // onClick={() => navigate("/mentoons-comics/comics")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={ReadButton}
+            alt="comic button"
+          />
         </div>
-      </div> */}
-      <div className="relative">
+        <div className="absolute left-1/3 -bottom-[45%]">
+          <img
+            onClick={() => navigate("/mentoons-comics/comics")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={ComicButton}
+            alt="comic button"
+          />
+        </div>
+        <div className="absolute left-1/2 -bottom-[45%]">
+          <img
+            onClick={() => navigate("/mentoons-comics/audio-comics")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={AudioComicButton}
+            alt="comic button"
+          />
+        </div>
+        <div className="absolute left-2/3 -bottom-[86%]">
+          <img
+            onClick={() => navigate("/mentoons-podcast")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={PodcastButton}
+            alt="comic button"
+          />
+        </div>
+        <div className="absolute left-0 -bottom-[75%]">
+          <img
+            // onClick={() => navigate("/mentoons-comics/comics")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={ListenButton}
+            alt="comic button"
+          />
+        </div>
+      </div>
+      <div className="absolute bottom-[-144%]">
         <img src={WorkshopBgHome} alt="workshop" />
         <div>
           <img
-            className="absolute w-[45%] -left-[4%] top-[12%]"
+            className="absolute w-[45%] -left-[1%] top-[12%]"
             src={workshopTextHome}
             alt="workshop"
+          />
+        </div>
+        <div className="absolute left-0 bottom-[42%]">
+          <img
+            // onClick={() => navigate("/mentoons-comics/comics")}
+            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            src={TransformButton}
+            alt="comic button"
           />
         </div>
         <div className="w-full absolute rotate-180 flex items-center justify-center right-4 top-0 ">
@@ -149,6 +201,14 @@ const ComicsSection: React.FC = () => {
             alt="workshop poster"
           />
         </div>
+      </div>
+      <div className="absolute bottom-[-215%]">
+        <img
+          onClick={() => navigate("/mentoons-workshops?workshop=family")}
+          className=""
+          src={StoreBgHome}
+          alt="workshop poster"
+        />
       </div>
     </div>
   );
