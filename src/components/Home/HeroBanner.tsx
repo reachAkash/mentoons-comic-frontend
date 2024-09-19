@@ -91,7 +91,7 @@ const HeroBanner = () => {
         {details.map((item, index) => (
           <div
             key={index}
-            className="w-[10rem] md:w-[15rem] lg:w-[20rem] h-auto relative md:top-[-3rem] lg:top-[-5rem] flex flex-col items-center justify-center text-center"
+            className="w-[10rem] md:w-[15rem] lg:w-[20rem] h-auto relative -top-2 md:top-[-3rem] lg:top-[-5rem] flex flex-col items-center justify-center text-center"
           >
             <img
               src={item.url}

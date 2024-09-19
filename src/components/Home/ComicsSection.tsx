@@ -24,30 +24,48 @@ import TransformButton from "@/assets/imgs/transformButton.png";
 const ComicsSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative space-y-10 mt-20 mb-[280rem]">
+    <div className="relative space-y-10 mt-20 mb-[145rem] lg:mb-[280rem]">
       <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
-        <div className="absolute top-[40%] flex items-center justify-center">
+        <div className="absolute top-[45%] lg:top-[40%] flex items-center justify-center">
           <motion.img
             initial={{ x: -400 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 3.5 }}
-            className="w-[80%]"
+            className="hidden md:block md:w-[70%] lg:w-[80%]"
+            src={AirplaneBg}
+            alt="airplane image"
+          />
+          <motion.img
+            initial={{ x: -300 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 3.5 }}
+            className="block md:hidden w-[80%]"
             src={AirplaneBg}
             alt="airplane image"
           />
         </div>
-        <div className="absolute top-[50%]">
+        <div className="hidden lg:block absolute top-[30%] lg:top-[50%]">
           <motion.img
             initial={{ rotateX: 10, y: -200, scale: 0 }}
-            whileInView={{ rotateX: 0, y: 300, scale: 6 }}
-            transition={{ delay: 0.6, duration: 2, ease: easeInOut }}
-            className="w-[10%] z-[100] relative top-8 left-[85%]"
+            whileInView={{ rotateX: 0, y: 300, scale: 1.2 }}
+            transition={{ delay: 0.5, duration: 2, ease: easeInOut }}
+            className="w-[50%] z-[50] relative -top-14 lg:left-[65%]"
             src={Klement_Toonla_Home}
             alt="klement and toonla"
           />
         </div>
-        <div className="absolute top-[30%] left-[10%]">
+        <div className="hidden md:block lg:hidden absolute top-[60%]">
+          <motion.img
+            initial={{ rotateX: 10, y: -200, scale: 0 }}
+            whileInView={{ rotateX: 0, y: 100, scale: 1.2 }}
+            transition={{ delay: 0.8, duration: 2, ease: easeInOut }}
+            className="w-[30%] z-[50] relative -top-14 left-[35%]"
+            src={Klement_Toonla_Home}
+            alt="klement and toonla"
+          />
+        </div>
+        <div className="absolute top-[35%] lg:top-[30%] left-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -57,11 +75,12 @@ const ComicsSection: React.FC = () => {
               repeat: Infinity,
               repeatType: "mirror", // Ensures a seamless back-and-forth motion
             }}
+            className="w-1/3 md:w-1/2 lg:w-full"
             src={FlyingBook}
             alt="books image"
           />
         </div>
-        <div className="absolute top-[30%] right-[10%]">
+        <div className="absolute top-[35%] lg:top-[30%] right-0 lg:right-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -71,11 +90,12 @@ const ComicsSection: React.FC = () => {
               repeat: Infinity,
               repeatType: "mirror", // Ensures a seamless back-and-forth motion
             }}
+            className="w-1/3 md:w-1/2 lg:w-full"
             src={FlyingBook}
             alt="books image"
           />
         </div>
-        <div className="absolute top-[60%] left-[10%]">
+        <div className="absolute top-[65%] lg:top-[60%] left-[10%]">
           <motion.img
             initial={{ y: -20, rotate: -25 }}
             animate={{ y: [-20, -10, -20], rotate: -25 }} // Smooth movement between values
@@ -85,12 +105,12 @@ const ComicsSection: React.FC = () => {
               repeat: Infinity,
               repeatType: "mirror", // Ensures a seamless back-and-forth motion
             }}
-            className="rotate-[-25deg]"
+            className="rotate-[-25deg] w-1/3 md:w-1/2 lg:w-full"
             src={FlyingBook}
             alt="books image"
           />
         </div>
-        <div className="absolute top-[60%] right-[10%]">
+        <div className="absolute top-[65%] lg:top-[60%] right-0 lg:right-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -100,7 +120,7 @@ const ComicsSection: React.FC = () => {
               repeat: Infinity,
               repeatType: "mirror", // Ensures a seamless back-and-forth motion
             }}
-            className="-rotate-[25deg]"
+            className="-rotate-[25deg] w-1/3 md:w-1/2 lg:w-full"
             src={FlyingBook}
             alt="books image"
           />
@@ -111,7 +131,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-0 -bottom-[15%]">
           <img
             // onClick={() => navigate("/mentoons-comics/comics")}
-            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={ReadButton}
             alt="comic button"
           />
@@ -119,7 +139,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-1/3 -bottom-[45%]">
           <img
             onClick={() => navigate("/mentoons-comics/comics")}
-            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 md:w-[40%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={ComicButton}
             alt="comic button"
           />
@@ -127,7 +147,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-1/2 -bottom-[45%]">
           <img
             onClick={() => navigate("/mentoons-comics/audio-comics")}
-            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 md:w-[40%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={AudioComicButton}
             alt="comic button"
           />
@@ -143,7 +163,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-0 -bottom-[75%]">
           <img
             // onClick={() => navigate("/mentoons-comics/comics")}
-            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={ListenButton}
             alt="comic button"
           />
@@ -161,7 +181,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-0 bottom-[42%]">
           <img
             // onClick={() => navigate("/mentoons-comics/comics")}
-            className="z-50 w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={TransformButton}
             alt="comic button"
           />

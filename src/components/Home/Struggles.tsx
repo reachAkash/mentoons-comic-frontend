@@ -51,12 +51,12 @@ const Struggles = () => {
             />
           </div>
         </div>
-        <div className="w-full flex bg-[url('/assets/images/blue-wave.png')] bg-top bg-no-repeat bg-cover pt-[5rem] md:pt-[8rem] lg:pt-40">
+        <div className="w-full flex bg-[url('/assets/images/blue-wave.png')] bg-top bg-no-repeat bg-cover pt-[5rem] lg:pt-40">
           <div className="w-ful  flex flex-1 justify-center">
             <img
               src="/assets/images/here-how-we-help.png"
               alt="negative effects of mobile"
-              className=" w-[90%] lg:w-[70%]  object-cover py-4"
+              className=" w-[90%] lg:w-[70%]  object-cover pt-14 lg:pt-6"
             />
           </div>
           <div className="flex flex-1  items-center">

@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
               onClick={() => navigate("/mentoons-comics/free-download")}
               className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
             >
-              Free Download
+              Free Downloads
             </div>
             <div
               onClick={() => setshowWorkshop((prev) => !prev)}
