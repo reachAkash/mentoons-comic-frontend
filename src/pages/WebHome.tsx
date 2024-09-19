@@ -2,7 +2,7 @@ import ExploreMentoons from "@/components/Home/ExploreMentoons";
 import Career from "@/components/shared/CareerPage/Career";
 import { useState } from "react";
 
-import PricingPlan from "@/components/shared/Pricing-Plan";
+
 import CallToAction from "../components/Home/CallToAction";
 import HeroSection from "../components/Home/HeroSection";
 import InsideMentoons from "../components/Home/InsideMentoons";
