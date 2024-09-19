@@ -13,7 +13,7 @@ interface FormValues {
   message: string;
 }
 type WorkshopProps = {
-  selectedWorkshop?: any
+  selectedWorkshop?: string
 }
 const WorkshopForm: React.FC<WorkshopProps> = ({selectedWorkshop}) => {
   const dispatch = useDispatch<AppDispatch>();

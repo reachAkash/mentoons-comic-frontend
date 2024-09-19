@@ -53,8 +53,10 @@ const Header = () => {
 
   return (
     <div
-      className='w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[9999] gap-[6rem]'
-      style={{ boxShadow: " rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
+      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[90] gap-[6rem] transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+      style={{ boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
     >
       <div className='flex-1 flex lg:justify-end'>
         <Menubar className='lg:hidden bg-transparent border-0'>
@@ -275,6 +277,37 @@ const Header = () => {
           </MenubarMenu>
           <MenubarMenu>
             <MenubarTrigger className='cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex'>
+              <FaUserCircle className='text-2xl lg:text-3xl mr-2' />
+              <span className='hidden lg:block'>Profile</span>
+            </MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem
+                onClick={() => {
+                  setMenuOpen(false);
+                  navigate("/profile");
+                }}
+              >
+                My Profile
+              </MenubarItem>
+              <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <NavLink to='/hiring' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden'>
+                Join Us
+              </MenubarTrigger>
+            </NavLink>
+          </MenubarMenu>
+          <MenubarMenu>
+            <NavLink to='/register' onClick={() => setMenuOpen(false)}>
+              <MenubarTrigger className='cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden'>
+                Sign up
+              </MenubarTrigger>
+            </NavLink>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger className='cursor-pointer lg:hover:text-white h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden'>
               <FaUserCircle className='text-2xl lg:text-3xl mr-2' />
               <span className='hidden lg:block'>Profile</span>
             </MenubarTrigger>
