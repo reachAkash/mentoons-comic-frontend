@@ -1,10 +1,11 @@
-import React from "react";
 import {
-  FaAlignCenter,
-  FaBell,
-  FaCirclePause,
-  FaCirclePlay,
-} from "react-icons/fa6";
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import React from "react";
+import { FaAlignCenter, FaCirclePause, FaCirclePlay } from "react-icons/fa6";
 interface IPODCAST {
   id: number;
   topic: string;
@@ -23,8 +24,8 @@ const PodcastCardExp = ({
   currentlyPlaying,
   setCurrentlyPlaying,
   isSubscribed,
-  setIsSubscribed,
-}: {
+}: // setIsSubscribed,
+{
   podcast: IPODCAST;
   currentlyPlaying: HTMLAudioElement | null;
   setCurrentlyPlaying: React.Dispatch<
@@ -59,9 +60,9 @@ const PodcastCardExp = ({
     }
   };
 
-  const handleIsSubscribed = () => {
-    setIsSubscribed(!isSubscribed);
-  };
+  // const handleIsSubscribed = () => {
+  //   setIsSubscribed(!isSubscribed);
+  // };
   React.useEffect(() => {
     const audioElement = audioRef.current;
 
@@ -94,9 +95,9 @@ const PodcastCardExp = ({
     };
   }, [setCurrentlyPlaying]);
   return (
-    <div className='relative  bg-white w-full border border-zinc-100/20 rounded-3xl  overflow-hidden p-4 transition-all text-black  hover:scale-105  duration-300'>
-      <div className=' absolute h-full w-full top-0 left-0 bg-[#ffffff76] opacity-0  transition-all duration-300 hover:opacity-100 hover:backdrop-blur-sm '>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   text-sm font-semibold text-center flex gap-4 items-center justify-center '>
+    <div className='relative  bg-white w-full border border-zinc-100/20 rounded-3xl   p-4 transition-all text-black  hover:scale-105  duration-300'>
+      {/* <div className=' absolute h-full w-full top-0 left-0 bg-[#ffffff76] opacity-0  transition-all duration-300 hover:opacity-100 hover:backdrop-blur-sm '> */}
+      {/* <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   text-sm font-semibold text-center flex gap-4 items-center justify-center '>
           <button
             onClick={handleSamplePlay}
             className=' bg-rose-600  rounded-full px-4 py-2 text-white  flex gap-2 items-center justify-center whitespace-nowrap'
@@ -125,8 +126,8 @@ const PodcastCardExp = ({
               <FaBell />
             </button>
           )}
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       <div className='text-2xl font-bold text-black mb-1 line-clamp-1 flex items-center justify-between '>
         <span className='truncate pb-2 '>{podcast.topic}</span>
         {currentlyPlaying === audioRef.current && isPlaying && (
@@ -148,18 +149,68 @@ const PodcastCardExp = ({
         />
       </div>
 
-      <p className='text-sm text-black m line-clamp-3'>{podcast.description}</p>
-      <div className=' flex gap-3 items-center  text-xs my-2 mb-0'>
-        <div className='w-6 rounded-full bg-red-600 border-2 border-primary'>
-          <img
-            src='/assets/images/kisha.jpg'
-            alt='Author image'
-            className=' rounded-full'
-          />
+      <p className='text-sm text-black line-clamp-3'>{podcast.description}</p>
+      <div className=' flex gap-3 items-center  justify-between text-xs my-2 mb-0'>
+        <div className='flex items-center gap-2 '>
+          <div className='w-6 rounded-full bg-red-600 border-2 border-primary '>
+            <img
+              src={
+                podcast.author === "Kisha Kothari"
+                  ? "/assets/images/kisha.jpg"
+                  : "/assets/images/harris illustration.jpg"
+              }
+              alt='Author image'
+              className=' rounded-full'
+            />
+          </div>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className='text-primary font-bold  text-base'>
+                  {podcast.author}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent className='overflow-visible flex items-start gap-2 border border-black '>
+                <div className='w-12 rounded-full bg-red-600 border-2 border-primary '>
+                  <img
+                    src='/assets/images/kisha.jpg'
+                    alt='Author image'
+                    className='w-full object-cover rounded-full'
+                  />
+                </div>
+                <div className='flex flex-col gap-0 '>
+                  <span className='text-primary text-base tracking-tighter leading-none'>
+                    {podcast.author}
+                  </span>
+                  <span className='text-primary text-sm '>
+                    (Psychology Intern)
+                  </span>
+                </div>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
-        <span className='text-primary font-bold  text-base'>
-          {podcast.author}
-        </span>
+        <div className='flex items-center justify-between '>
+          <button
+            onClick={handleSamplePlay}
+            className=' bg-rose-600  rounded-full px-4 py-2 text-white  flex gap-2 items-center justify-center whitespace-nowrap hover:bg-rose-700 transition-all duration-300'
+          >
+            {isPlaying ? "Pause" : "Play Now"}
+            {currentlyPlaying === audioRef.current && isPlaying ? (
+              <FaCirclePause />
+            ) : (
+              <FaCirclePlay />
+            )}
+            <audio
+              ref={audioRef}
+              src={
+                isSubscribed
+                  ? podcast?.audioPodcastSrc
+                  : podcast?.audioPodcastSampleSrc
+              }
+            ></audio>
+          </button>
+        </div>
       </div>
     </div>
   );

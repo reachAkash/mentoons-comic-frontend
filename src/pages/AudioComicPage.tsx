@@ -27,7 +27,7 @@ const AudioComicPage: React.FC = () => {
   const [currentComic, setCurrentComic] = useState<Comic>();
   const [randomJoke, setRandomJoke] = useState<number>(0);
   const [input, setInput] = useState<string>("");
-  const videoRef = useRef<any>();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [hasPurchased, setHasPurchased] = useState<boolean>(false);
 
   // handlers
@@ -38,11 +38,15 @@ const AudioComicPage: React.FC = () => {
 
   console.log(handleShowPurchase);
 
-  const handleCheckPurchased = () => {
+  const handleCheckPurchased = (): void => {
     if (hasPurchased) {
-      videoRef.current.play();
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
     } else {
-      videoRef.current.pause();
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
     }
   };
 

@@ -21,7 +21,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/negative-impact-of-mobile-phone.jpg", //todo Change it.
     categroy: "",
     age: "",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   {
@@ -35,7 +35,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/negative-impact-of-social-media.jpg", //todo Change it
     categroy: "",
     age: "",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   {
@@ -50,7 +50,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/how-does-it-feel-to-be-teenager.jpg",
     categroy: "",
     age: "",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   {
@@ -63,7 +63,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/perfomance-addiction.jpg",
     categroy: "",
     age: "",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   // todo change the content
@@ -86,7 +86,7 @@ export const PODCAST_DETAILS = [
     description:
       "Podcast on Common Parenting Mistakes offers a compassionate and insightful look into the missteps many parents make in raising their children. Each episode explores topics like overprotection, inconsistency, unrealistic expectations, and miscommunication, revealing how these actions can impact a child’s emotional and behavioral development. Through expert interviews and real-life anecdotes, we provide practical advice to help parents recognize and correct these mistakes, fostering healthier relationships, stronger communication, and a nurturing environment for their children to thrive..",
     audioPodcastSampleSrc: "/assets/audios/common-parenting-mistake-sample.mp3",
-    audioPodcastSrc: "/assets/audios/common-parenting-mistake-orignals.mp3",
+    audioPodcastSrc: "/assets/audios/common-parrenting-mistake-orignals.mp3",
     thumbnail: "/assets/images/common-parenting-mistakes.jpg",
     categroy: "",
     age: "",
@@ -103,7 +103,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Entertainment_Addiction_ 2.jpg",
     categroy: "",
     age: "",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   {
@@ -222,7 +222,7 @@ export const PODCAST_DETAILS = [
     duration: "",
   },
   {
-    id: 15,
+    id: 16,
     topic: "Electronic gadgets and kids.",
     description:
       "Podcast on Electronic Gadgets and Kids examines the impact of digital devices on children’s development and daily lives. Each episode explores how smartphones, tablets, and other gadgets influence aspects such as cognitive development, social skills, and physical health. Through expert interviews, research findings, and practical advice, we address the benefits and potential drawbacks of technology use, offering strategies for setting healthy boundaries and encouraging balanced screen time. Our goal is to help parents and caregivers navigate the digital landscape to support their children’s overall well-being and growth.",
@@ -232,7 +232,7 @@ export const PODCAST_DETAILS = [
     thumbnail: "/assets/images/Electronic_Gadgets_.jpg",
     categroy: "",
     age: "2-6",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
 
@@ -243,11 +243,12 @@ export const PODCAST_DETAILS = [
       "Helping Gen-Z rediscover meaningful connections and life experiences beyond digital screens, fostering deeper relationships and personal growth in a tech-driven world.",
     audioPodcastSampleSrc:
       "/assets/audios/reconnecting-genz-with-the-value-beyond-the-screen-sample.mp3",
-    audioPodcastSrc: "/assets/audios/electronic-gadgets-and-kids-orignals.mp3",
+    audioPodcastSrc:
+      "/assets/audios/reconnecting-genz-with-value-beyond-the-screen.mp3",
     thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
-    author: "Kisha Kothari",
+    author: "Haaris Rueben",
     duration: "",
   },
   {
@@ -257,6 +258,20 @@ export const PODCAST_DETAILS = [
       "Helping Gen-Z rediscover meaningful connections and life experiences beyond digital screens, fostering deeper relationships and personal growth in a tech-driven world.",
     audioPodcastSampleSrc: "/assets/audios/fun-beyond-video-game.mp3",
     audioPodcastSrc: "/assets/audios/fun-beyond-video-game.mp3",
+    thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
+    categroy: "",
+    age: "2-6",
+    author: "Kisha Kothari",
+    duration: "",
+  },
+  {
+    id: 64,
+    topic: "How to Maintain Healthy Relations",
+    description:
+      "Podcast on maintaining healthy relationship .A healty realtionship is where you feel the comfort trusted support each other and wellcome",
+    audioPodcastSampleSrc:
+      "/assets/audios/how-to-maintain-healthy-relations.mp3",
+    audioPodcastSrc: "/assets/audios/how-to-maintain-healthy-relations.mp3",
     thumbnail: "/assets/images/reconnecting-genz-with-value-beyond-screen.jpg",
     categroy: "",
     age: "2-6",
