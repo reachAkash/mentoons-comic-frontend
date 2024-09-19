@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import Wordbreak from "@/components/comics/Wordbreak";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const cartData = useSelector((store: RootState) => store.comics.cart);
   const totalPrice = cartData.reduce((acc, curr) => curr.price + acc, 0);
-  const updateQuantity = (e: any, img: string) => {
+  const updateQuantity = (e: ChangeEvent<HTMLInputElement>, img: string) => {
     const val = Number(e.target.value);
     dispatch(updateComicQuantityReducer({ image: img, quantity: val }));
   };
