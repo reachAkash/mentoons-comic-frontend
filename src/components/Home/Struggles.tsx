@@ -59,11 +59,11 @@ const Struggles = () => {
               className=" w-[90%] lg:w-[70%]  object-cover pt-14 lg:pt-6"
             />
           </div>
-          <div className="flex flex-1  items-center">
+          <div className="flex flex-1 items-center">
             <img
               src="/assets/home/Assets-2.png"
               alt="negative effects of mobile"
-              className=" w-full object-contain  p-12 pt-24"
+              className=" w-full object-contain lg:p-12 lg:pt-24"
             />
           </div>
         </div>

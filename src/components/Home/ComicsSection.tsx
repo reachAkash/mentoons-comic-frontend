@@ -24,7 +24,7 @@ import TransformButton from "@/assets/imgs/transformButton.png";
 const ComicsSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative space-y-10 mt-20 mb-[145rem] lg:mb-[280rem]">
+    <div className="relative space-y-10 mt-20 mb-[75rem] md:mb-[145rem] lg:mb-[280rem]">
       <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
         <div className="absolute top-[45%] lg:top-[40%] flex items-center justify-center">
@@ -40,7 +40,7 @@ const ComicsSection: React.FC = () => {
             initial={{ x: -300 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 3.5 }}
-            className="block md:hidden w-[80%]"
+            className="block md:hidden w-[100%]"
             src={AirplaneBg}
             alt="airplane image"
           />
@@ -65,7 +65,17 @@ const ComicsSection: React.FC = () => {
             alt="klement and toonla"
           />
         </div>
-        <div className="absolute top-[35%] lg:top-[30%] left-[10%]">
+        <div className="block md:hidden absolute top-[60%]">
+          <motion.img
+            initial={{ rotateX: 10, y: -70, scale: 0 }}
+            whileInView={{ rotateX: 0, y: 100, scale: 1.2 }}
+            transition={{ delay: 0.8, duration: 2, ease: easeInOut }}
+            className="w-[30%] z-[50] relative -top-14 left-[35%]"
+            src={Klement_Toonla_Home}
+            alt="klement and toonla"
+          />
+        </div>
+        <div className="absolute flex items-center justify-start top-[35%] lg:top-[30%] left-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -80,7 +90,7 @@ const ComicsSection: React.FC = () => {
             alt="books image"
           />
         </div>
-        <div className="absolute top-[35%] lg:top-[30%] right-0 lg:right-[10%]">
+        <div className="absolute flex items-center justify-around top-[35%] lg:top-[30%] right-0 lg:right-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -95,7 +105,7 @@ const ComicsSection: React.FC = () => {
             alt="books image"
           />
         </div>
-        <div className="absolute top-[65%] lg:top-[60%] left-[10%]">
+        <div className="absolute top-[70%] lg:top-[60%] left-[10%]">
           <motion.img
             initial={{ y: -20, rotate: -25 }}
             animate={{ y: [-20, -10, -20], rotate: -25 }} // Smooth movement between values
@@ -110,7 +120,7 @@ const ComicsSection: React.FC = () => {
             alt="books image"
           />
         </div>
-        <div className="absolute top-[65%] lg:top-[60%] right-0 lg:right-[10%]">
+        <div className="absolute flex items-center justify-around top-[70%] lg:top-[60%] right-0 lg:right-[10%]">
           <motion.img
             initial={{ y: -20 }}
             animate={{ y: [-20, -10, -20] }} // Smooth movement between values
@@ -181,7 +191,7 @@ const ComicsSection: React.FC = () => {
         <div className="absolute left-0 bottom-[42%]">
           <img
             // onClick={() => navigate("/mentoons-comics/comics")}
-            className="z-50 w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
+            className="z-50 w-[15%] md:w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300"
             src={TransformButton}
             alt="comic button"
           />
