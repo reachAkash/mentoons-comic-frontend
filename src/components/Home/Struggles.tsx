@@ -1,9 +1,30 @@
+import { useEffect, useState } from "react";
+
 const Struggles = () => {
+  const [videoSize, setVideoSize] = useState<number>(600); // Initial size
+
+  const updateScreenSize = () => {
+    const width = window.innerWidth;
+    if (width >= 1200) {
+      setVideoSize(600); // Set video size to 600px if screen width is 1200px or more
+    } else {
+      setVideoSize(400); // Set video size to 400px if screen width is smaller than 1200px
+    }
+  };
+
+  useEffect(() => {
+    updateScreenSize(); // Update video size on component mount
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize); // Cleanup the event listener on unmount
+    };
+  }, []);
   return (
     <>
       <div className="w-full h-full bg-red">
         <div className="bg-[url('/assets/home/Group 2.png')] lg:bg-cover bg-bottom bg-no-repeat  h-full w-full px-2 ">
-          <div className="relative flex items-center justify-around">
+          <div className="relative flex flex-col md:flex-row items-center justify-around space-y-4">
             <h1 className="text-3xl lg:text-7xl text-start px-4">
               We know
               <br />
@@ -18,8 +39,7 @@ const Struggles = () => {
                 autoPlay
                 muted
                 loop
-                // width="600px"
-                // height="600px"
+                width={videoSize}
               />
             </div>
           </div>
