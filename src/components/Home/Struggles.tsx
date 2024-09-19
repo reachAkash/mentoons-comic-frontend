@@ -18,8 +18,8 @@ const Struggles = () => {
                 autoPlay
                 muted
                 loop
-                width="600px"
-                height="600px"
+                // width="600px"
+                // height="600px"
               />
             </div>
           </div>

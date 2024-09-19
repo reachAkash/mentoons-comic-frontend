@@ -30,7 +30,7 @@ const HeroBanner = () => {
   return (
     <div
       id="home-heroSection"
-      className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/b-bg.png')] bg-bottom bg-no-repeat bg-cover pb-[8rem] lg:pb-[20rem]"
+      className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/b-bg.png')] bg-bottom bg-no-repeat bg-cover pb-[8rem] md:pb-[14rem] lg:pb-[20rem]"
     >
       <div className="absolute top-[5rem] right-0 z-50 hidden lg:block">
         <div className="relative group">
@@ -91,7 +91,7 @@ const HeroBanner = () => {
         {details.map((item, index) => (
           <div
             key={index}
-            className="w-[10rem] md:w-[15rem] lg:w-[20rem] h-auto relative lg:top-[-5rem] flex flex-col items-center justify-center text-center"
+            className="w-[10rem] md:w-[15rem] lg:w-[20rem] h-auto relative md:top-[-3rem] lg:top-[-5rem] flex flex-col items-center justify-center text-center"
           >
             <img
               src={item.url}
