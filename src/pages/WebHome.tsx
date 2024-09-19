@@ -1,7 +1,8 @@
-import { useState } from "react";
 import ExploreMentoons from "@/components/Home/ExploreMentoons";
 import Career from "@/components/shared/CareerPage/Career";
+import { useState } from "react";
 
+import PricingPlan from "@/components/shared/Pricing-Plan";
 import CallToAction from "../components/Home/CallToAction";
 import HeroSection from "../components/Home/HeroSection";
 import InsideMentoons from "../components/Home/InsideMentoons";
@@ -19,7 +20,6 @@ type videoData = {
 const WebHome: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [videoType, setVideoType] = useState<string>("");
-
 
   const videos: videoData[] = [
     {
@@ -75,7 +75,6 @@ const WebHome: React.FC = () => {
     },
   ];
 
-  
   return (
     <>
       <div className='h-full w-full overflow-hidden'>
@@ -97,10 +96,12 @@ const WebHome: React.FC = () => {
           setVideoType={setVideoType}
         />
         <CallToAction />
-   </div>
+      </div>
       <section id='join' className=''>
         <Career />
       </section>
+
+      
     </>
   );
 };

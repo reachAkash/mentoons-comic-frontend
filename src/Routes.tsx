@@ -1,13 +1,14 @@
 import { lazy, Suspense, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
-import { RootState } from "./redux/store";
-import ScrollToTop from "./components/comics/ScrollToTop";
+
+import { Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
-import ProgressScroller from "./components/comics/ProgressScroller";
 import ComicCard from "./components/comics/HoverCardComic";
+import ProgressScroller from "./components/comics/ProgressScroller";
+import ScrollToTop from "./components/comics/ScrollToTop";
 import Loader from "./components/common/Loader";
+import MainLayout from "./layout/MainLayout";
+import { RootState } from "./redux/store";
 import Popup from "./layout/Popup";
 
 // Lazy load the pages
@@ -38,6 +39,7 @@ const routes = [
   },
   {
     path: "/register",
+
     element: (
       <MainLayout>
         <Auth />
@@ -80,7 +82,7 @@ const routes = [
     path: "/mentoons-comics/audio-comics",
     element: (
       <MainLayout>
-        <ComicsPage page="Audio Comics" />
+        <ComicsPage page='Audio Comics' />
       </MainLayout>
     ),
   },
@@ -88,7 +90,7 @@ const routes = [
     path: "/mentoons-comics/comics",
     element: (
       <MainLayout>
-        <ComicsPage page="Comics" />
+        <ComicsPage page='Comics' />
       </MainLayout>
     ),
   },
@@ -104,7 +106,7 @@ const routes = [
     path: "/mentoons-comics/comics-list",
     element: (
       <MainLayout>
-        <ComicsPage page="Our Comics Collection" />
+        <ComicsPage page='Our Comics Collection' />
       </MainLayout>
     ),
   },

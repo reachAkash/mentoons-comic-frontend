@@ -20,7 +20,7 @@ const MdMultiverse = () => {
           <br /> GROWTH WITH
           <br /> <span className='text-[#3d7719]'>MENTOONS</span>
         </h1>
-        <h1 className='absolute top-[65%]   sm:right-[10%] text-left text-xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight'>
+        <h1 className='absolute top-[60%]   sm:right-[10%] text-left text-xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight pl-6'>
           A <span className='text-red-500'>U</span>
           <span className='text-orange-500'>N</span>
           <span className='text-yellow-500'>I</span>
