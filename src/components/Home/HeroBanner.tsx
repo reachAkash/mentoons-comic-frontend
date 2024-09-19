@@ -8,7 +8,7 @@ type detailsData = {
 const HeroBanner = () => {
   const details: detailsData[] = [
     {
-      url: "/assets/home/box 1.png",
+      url: "/assets/home/box 3.png",
       title: "Join Us",
       description:
         "Sign up and browse through our interactive sessions, books, games, and videos.",
@@ -20,7 +20,7 @@ const HeroBanner = () => {
         "Sign up and browse through our interactive sessions, books, games, and videos.",
     },
     {
-      url: "/assets/home/box 3.png",
+      url: "/assets/home/box 1.png",
       title: "Join Us",
       description:
         "Sign up and browse through our interactive sessions, books, games, and videos.",

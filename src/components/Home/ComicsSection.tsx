@@ -24,7 +24,7 @@ import TransformButton from "@/assets/imgs/transformButton.png";
 const ComicsSection: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative space-y-10 mt-20 mb-[275rem]">
+    <div className="relative space-y-10 mt-20 mb-[280rem]">
       <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
         <div className="absolute top-[40%] flex items-center justify-center">
