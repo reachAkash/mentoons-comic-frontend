@@ -48,7 +48,7 @@ const Header = () => {
     let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(controlHeaderVisibility, 100);
+      timeoutId = setTimeout(controlHeaderVisibility, 0);
     };
 
     window.addEventListener("scroll", handleScroll);
