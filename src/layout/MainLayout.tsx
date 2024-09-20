@@ -25,7 +25,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <Breadcrumbs />
       </div>
       <Header />
-      <div className={isAuthRoute ? "" : "py-12 lg:py-20"}>{children}</div>
+      <div className="pt-12 lg:pt-14">{children}</div>
       {!isAuthRoute && <Footer />}
     </div>
   );

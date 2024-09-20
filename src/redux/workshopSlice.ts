@@ -22,6 +22,8 @@ interface FormValues {
   guardianContact: string;
   age: string;
   message: string;
+  city: string;
+  appliedWorkshop:string;
 }
 const initialState: WorkshopState = {
   loading: false,

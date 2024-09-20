@@ -43,17 +43,24 @@ const Header = () => {
     setLastScrollY(window.scrollY);
   };
 
-  // Adding scroll event listener
+  // Adding scroll event listener with debouncing
   useEffect(() => {
-    window.addEventListener("scroll", controlHeaderVisibility);
+    let timeoutId: NodeJS.Timeout;
+    const handleScroll = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(controlHeaderVisibility, 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", controlHeaderVisibility);
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
     };
   }, [lastScrollY]);
 
   return (
     <div
-      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 fixed z-[90] gap-[6rem] transition-transform duration-300 ${
+      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 top-0 fixed z-[90] gap-[6rem] transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{ boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
@@ -89,14 +96,14 @@ const Header = () => {
           </MenubarMenu>
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base whitespace-nowrap text-white font-semibold ">
+              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base whitespace-nowrap text-white font-semibold">
                 Join Us
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
           <MenubarMenu>
             <NavLink to="/register" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap ">
+              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap">
                 Sign up
               </MenubarTrigger>
             </NavLink>
