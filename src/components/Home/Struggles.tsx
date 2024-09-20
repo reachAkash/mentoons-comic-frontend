@@ -31,6 +31,14 @@ const Struggles = () => {
               <span className="font-extrabold">THE STRUGGLES</span>
               <br />
               our youth is facing
+              <h2 className="w-full md:w-[70%] lg:w-[90%] text-sm lg:text-lg text-start mt-4 text-[#ADA6A6] space-x-1">
+                <span>Mobile Addiction,</span>
+                <span>Scrolling Addiction,</span>
+                <span>Porn Addiction,</span>
+                <span>Sex Addiction,</span>
+                <span>Performance Addiction,</span>
+                <span>Entertainment Addiction.</span>
+              </h2>
             </h1>
             <div>
               <video
