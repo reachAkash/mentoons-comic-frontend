@@ -3,6 +3,7 @@ import ComicsSection from "@/components/Home/ComicsSection";
 import HeroBanner from "@/components/Home/HeroBanner";
 // import MdMultiverse from "@/components/Home/MdMultiverse";
 import Struggles from "@/components/Home/Struggles";
+// import PricingPlan from "@/components/shared/Pricing-Plan";
 // import WhatWeOffer from "@/components/Home/WhatWeOffer";
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
       {/* <WhatWeOffer /> */}
       {/* <FeelFree /> */}
       <ComicsSection />
+      {/* <section id='pricing'>
+        <PricingPlan />
+      </section> */}
     </div>
   );
 };

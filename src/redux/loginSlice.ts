@@ -28,24 +28,20 @@ const initialState: AuthState = {
   success: false,
 };
 
-// Define a type for the signup payload
 interface SignupPayload {
-  mobileNumber: string;
-  countryCode: string;
+  phoneNumber: string;
 }
 
-// Thunk for signup
 export const signup = createAsyncThunk<
   SignupResponse, 
   SignupPayload, 
   { rejectValue: AuthError }
 >(
   'auth/signup',
-  async ({ mobileNumber, countryCode }, { rejectWithValue }) => {
+  async ({ phoneNumber }, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.post<SignupResponse>(Endpoints.SIGNUP, {
-        mobileNumber,
-        countryCode
+        phoneNumber,
       });
 
       if (response.data.success) {
@@ -54,7 +50,6 @@ export const signup = createAsyncThunk<
         return rejectWithValue({ message: response.data.message || 'Signup failed!' });
       }
     } catch (error: any) {
-      console.error("Error in signup:", error);
       if (error.response && error.response.data.message) {
         return rejectWithValue({ message: error.response.data.message });
       }
@@ -63,16 +58,23 @@ export const signup = createAsyncThunk<
   }
 );
 
-// Thunk for OTP verification
+interface OTPVerificationPayload {
+  otp: string;
+  phoneNumber: string;
+}
+
 export const verifyOTP = createAsyncThunk<
   OTPVerificationResponse, 
-  string, 
+  OTPVerificationPayload, 
   { rejectValue: AuthError }
 >(
   'auth/verifyOTP',
-  async (otp: string, { rejectWithValue }) => {
+  async ({ otp, phoneNumber }, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_OTP, { otp:"693737" });
+      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_OTP, { 
+        otp,
+        phoneNumber
+      });
 
       if (response.data.success) {
         return response.data;
@@ -80,7 +82,6 @@ export const verifyOTP = createAsyncThunk<
         return rejectWithValue({ message: response.data.message || 'OTP verification failed!' });
       }
     } catch (error: any) {
-      console.error("Error in verifyOTP:", error);
       if (error.response && error.response.data.message) {
         return rejectWithValue({ message: error.response.data.message });
       }

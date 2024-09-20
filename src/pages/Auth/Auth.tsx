@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store'; 
+import { RootState } from '@/redux/store';
 import { signup, verifyOTP } from '@/redux/loginSlice';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
-import 'react-phone-number-input/style.css'; 
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import { useNavigate } from 'react-router-dom';
 import type { AppDispatch } from '@/redux/store';
+import { userLoggedIn } from '@/redux/userSlice';
 
 type SignUpFormValues = {
   phone: string;
@@ -25,91 +26,83 @@ const Auth: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState<'signup' | 'otp'>('signup');
   const { loading } = useSelector((state: RootState) => state.auth);
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
 
-  // SignUp validation schema for phone number
   const signUpValidationSchema = Yup.object({
     phone: Yup.string()
       .required('Phone number is required')
       .matches(/^\+[1-9]\d{1,14}$/, 'Phone number is not valid'),
   });
 
-  // OTP validation schema for 4-digit OTP
-  // const otpValidationSchema = Yup.object({
-  //   otp0: Yup.string().required('Required'),
-  //   otp1: Yup.string().required('Required'),
-  //   otp2: Yup.string().required('Required'),
-  //   otp3: Yup.string().required('Required'),
-  // });
+  const otpValidationSchema = Yup.object({
+    otp0: Yup.string().required('Required').length(1, 'Must be 1 digit'),
+    otp1: Yup.string().required('Required').length(1, 'Must be 1 digit'),
+    otp2: Yup.string().required('Required').length(1, 'Must be 1 digit'),
+    otp3: Yup.string().required('Required').length(1, 'Must be 1 digit'),
+  });
 
-  // Handles sign-up submission
   const handleSignUp = async (values: SignUpFormValues) => {
+    const { phone } = values;
+    setPhoneNumber(phone);
     try {
-      const parsedNumber = parsePhoneNumber(values.phone || '');
-      if (parsedNumber) {
-        const mobileNumber = parsedNumber.nationalNumber;
-        const countryCode = `+${parsedNumber.countryCallingCode}`;
-
-        const res = await dispatch(signup({ mobileNumber, countryCode })).unwrap();
-        if (res) {
-          setStep('otp');
-        }
-      } else {
-        throw new Error('Invalid phone number format.');
+      const res = await dispatch(signup({ phoneNumber: phone })).unwrap();
+      if (res) {
+        setStep('otp');
       }
     } catch (error) {
       console.error('Sign-up failed:', error);
     }
   };
 
-  // Handles OTP verification
   const handleOTPVerification = async (values: OTPFormValues) => {
     const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
     try {
-      await dispatch(verifyOTP(otp)).unwrap();
+      const res = await dispatch(verifyOTP({ phoneNumber, otp })).unwrap();
+      if (res?.success) {
+        dispatch(userLoggedIn());
+      }
       navigate('/');
     } catch (error) {
       console.error('OTP verification failed:', error);
     }
   };
 
-  // Handles automatic field focus for OTP input
   const handleOtpChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    nextField: keyof OTPFormValues | null
+    nextField: keyof OTPFormValues | null,
+    setFieldValue: (field: string, value: any) => void
   ) => {
     const { value } = e.target;
+    setFieldValue(e.target.name, value);
     if (value.length === 1 && nextField) {
       document.getElementById(nextField)?.focus();
     }
   };
 
-  // Handles backspace behavior in OTP input
   const handleBackspace = (
     e: React.KeyboardEvent<HTMLInputElement>,
     previousField: keyof OTPFormValues | null
   ) => {
-    if (e.key === 'Backspace' && previousField) {
+    const input = e.target as HTMLInputElement;
+    if (e.key === 'Backspace' && input.value === '' && previousField) {
       document.getElementById(previousField)?.focus();
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-white">
-      {/* Left side image */}
+    <div className="max-h-screen flex flex-col lg:flex-row bg-white">
       <div className="w-full lg:w-1/2 hidden lg:flex items-center justify-center">
-        <img src="/team-men.png" alt="auth-cover" className="h-full w-full object-cover" />
+        <img src="/assets/images/team-Illustration.png" alt="auth-cover" className="h-full w-full object-cover" />
       </div>
-
-      {/* Right side form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-12 bg-white shadow-lg rounded-lg lg:bg-transparent">
-        <div className="bg-white py-8 lg:px-20 px-4 rounded-lg shadow-md w-full lg:max-w-xl">
+        <div className="bg-white py-8 lg:px-20 px-4 rounded-lg w-full lg:max-w-xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
             {step === 'signup' ? 'Register' : 'Verify OTP'}
           </h2>
 
           {step === 'signup' ? (
             <Formik<SignUpFormValues>
-              initialValues={{ phone: '' }}
+              initialValues={{ phone: "" }}
               validationSchema={signUpValidationSchema}
               onSubmit={handleSignUp}
             >
@@ -120,10 +113,10 @@ const Auth: React.FC = () => {
                     <div className="flex flex-col items-center">
                       <PhoneInput
                         international
-                        defaultCountry="IN"
+                        defaultCountry='IN'
                         value={values.phone}
                         onChange={(value) => setFieldValue('phone', value || '')}
-                        className="mt-1 p-2 rounded-md focus:ring-indigo-500 focus:border-indigo-500 w-[12rem] lg:w-[18rem] absolute top-[35%] left-1/2 transform -translate-x-1/2 -rotate-[2deg] border-4 border-black font-bold"
+                        className="mt-1 p-2 rounded-md focus:ring-indigo-500 focus:border-indigo-500 w-[70%] absolute top-[35%] lg:top-[38%] left-1/2 transform -translate-x-1/2 -rotate-[2deg] border-4 border-black font-bold"
                       />
                     </div>
                   </div>
@@ -143,11 +136,11 @@ const Auth: React.FC = () => {
             </Formik>
           ) : (
             <Formik<OTPFormValues>
-              initialValues={{ otp0: '', otp1: '', otp2: '', otp3: '' }}
-              // validationSchema={otpValidationSchema}
+              initialValues={{ otp0: "", otp1: "", otp2: "", otp3: "" }}
+              validationSchema={otpValidationSchema}
               onSubmit={handleOTPVerification}
             >
-              {() => (
+              {({ setFieldValue }) => (
                 <Form className="space-y-4">
                   <div className="relative">
                     <img src="/assets/home/OTP.png" alt="OTP" />
@@ -159,7 +152,7 @@ const Auth: React.FC = () => {
                           type="text"
                           maxLength={1}
                           className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp1')}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp1', setFieldValue)}
                           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, null)}
                         />
                         <Field
@@ -168,7 +161,7 @@ const Auth: React.FC = () => {
                           type="text"
                           maxLength={1}
                           className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp2')}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp2', setFieldValue)}
                           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp0')}
                         />
                         <Field
@@ -177,7 +170,7 @@ const Auth: React.FC = () => {
                           type="text"
                           maxLength={1}
                           className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp3')}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, 'otp3', setFieldValue)}
                           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp1')}
                         />
                         <Field
@@ -186,6 +179,7 @@ const Auth: React.FC = () => {
                           type="text"
                           maxLength={1}
                           className="w-10 h-10 lg:w-12 lg:h-12 border-4 border-black rounded-md text-center text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleOtpChange(e, null, setFieldValue)}
                           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleBackspace(e, 'otp2')}
                         />
                       </div>
@@ -193,7 +187,7 @@ const Auth: React.FC = () => {
                   </div>
 
                   <div className="text-center mt-6">
-                    <ErrorMessage name="otp0" component="div" className="text-red-500 text-sm mt-1" />
+                    <ErrorMessage name="otp" component="div" className="text-red-500 text-sm mt-1" />
                     <button
                       type="submit"
                       className="bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"

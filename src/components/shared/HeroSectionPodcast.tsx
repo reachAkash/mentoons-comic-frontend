@@ -47,12 +47,16 @@ const HeroSectionPodcast = () => {
   </audio> */}
       {/* Hero Section */}
       <div className='relative'>
-        <div className='absolute left-1/2 -translate-x-1/2 top-8 w-28 min-w-[180px] md:w-[400px] lg:w-[600px]'>
-          <img src='/assets/images/podcast-logo.png' alt='Podcast logo' />
+        <div className='absolute left-1/2 -translate-x-1/2 xxs:top-4 sm:top-8 md:top-4 lg:top-8 2xl:top-24 md:w-[400px] lg:w-[600px] '>
+          <img
+            src='/assets/images/podcast-logo.png'
+            alt='Podcast logo'
+            className='w-full object-cover'
+          />
         </div>
 
         {/* Play button */}
-        <div className='absolute bottom-4 left-1/2 -translate-x-1/2 w-20 flex gap-2 md:w-24 md:bottom-8 z-[40] lg:w-48 lg:bottom-10'>
+        <div className='absolute  xxs:bottom-2  sm:bottom-4 left-1/2 -translate-x-1/2 xxs:w-14 flex gap-2 md:w-24 md:bottom-8 z-[40] lg:w-48 lg:bottom-10 '>
           <div
             className='hover:scale-110 transition-all duration-300'
             onClick={handleIntroPlay}
@@ -92,7 +96,7 @@ const HeroSectionPodcast = () => {
           />
 
           {/* Radio */}
-          <div className='   absolute w-28 sm:w-28 md:w-32 bottom-4 left-4 md:left-10 md:bottom-6 z-[40] lg:w-60'>
+          <div className='   absolute w-14 sm:w-28 md:w-32 bottom-4 left-4 md:left-10 md:bottom-6 z-[40] lg:w-60'>
             <img
               src='/assets/images/radio.png'
               alt='Radio Illustration'
