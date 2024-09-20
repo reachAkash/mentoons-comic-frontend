@@ -185,7 +185,8 @@ const ComicsSection: React.FC = () => {
         </div>
       </div>
       <div className="absolute bottom-[-144%]">
-        <img src={WorkshopBgHome} alt="workshop" />
+        <img className="hidden md:block" src={WorkshopBgHome} alt="workshop" />
+        <img className="block md:hidden" src={WorkshopBgHome} alt="workshop" />
         <div>
           <img
             className="absolute w-[45%] -left-[1%] top-[12%]"

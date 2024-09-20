@@ -9,7 +9,13 @@ import workshopArrow from "@/assets/imgs/workshop-arrow.png";
 import { workshopDetails } from "@/constant/comicsConstants";
 import { useQuery } from "@/pages/AudioComicPage";
 import WorkshopForm from "@/components/common/WorkshopForm";
-import { DialogDescription, Dialog, DialogContent, DialogHeader, DialogClose } from "@/components/ui/dialog";
+import {
+  DialogDescription,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 export interface WorkshopItems {
   name: string;
@@ -26,12 +32,12 @@ const ComicWorkshop: React.FC = () => {
     workshop == "buddy"
       ? 0
       : workshop == "teen"
-        ? 1
-        : workshop == "family"
-          ? 2
-          : workshop == "comic"
-            ? 3
-            : 4;
+      ? 1
+      : workshop == "family"
+      ? 2
+      : workshop == "comic"
+      ? 3
+      : 4;
 
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopItems>(
     workshopDetails[activeWorkshop]
@@ -172,13 +178,12 @@ const ComicWorkshop: React.FC = () => {
                 <div className="font-medium leading-tight tracking-wide text-2xl">
                   {selectedWorkshop.desc}
                 </div>
-                <div
-                  onClick={() => setShowForm(true)}
-                  className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105  hover:scale-110 transition-all duration-300 ease-in-out"
-                >
-                  <div className="w-full relative text-2xl text-white bg-cover pl-2">
-                    Talk to us!
-                  </div>
+                <div className="relative left-16 px-8 py-3 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
+                  <img
+                    onClick={() => setShowForm(true)}
+                    className="w-1/2"
+                    src="/assets/home/talktous.png"
+                  />
                 </div>
               </div>
             </div>
@@ -213,13 +218,12 @@ const ComicWorkshop: React.FC = () => {
                 <div className="font-medium leading-tight tracking-wide text-xl md:text-2xl">
                   {selectedWorkshop.desc}
                 </div>
-                <div
-                  onClick={() => setShowForm(true)}
-                  className="bg-button bg-contain bg-no-repeat relative left-32 px-8 py-3 w-full h-full cursor-pointer scale-105 hover:scale-110 transition-all duration-300 ease-in-out"
-                >
-                  <div className="w-full relative text-2xl text-white bg-cover pl-2">
-                    Talk to us!
-                  </div>
+                <div className="relative flex items-center justify-center left-0 px-8 py-3 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
+                  <img
+                    onClick={() => setShowForm(true)}
+                    className="w-[30%]"
+                    src="/assets/home/talktous.png"
+                  />
                 </div>
               </div>
             </div>
@@ -237,7 +241,7 @@ const ComicWorkshop: React.FC = () => {
               </DialogClose>
             </DialogHeader>
             <DialogDescription>
-              <WorkshopForm selectedWorkshop = {selectedWorkshop.name}/>
+              <WorkshopForm selectedWorkshop={selectedWorkshop.name} />
             </DialogDescription>
           </DialogContent>
         </Dialog>
