@@ -9,6 +9,8 @@ import 'react-phone-number-input/style.css';
 import { useNavigate } from 'react-router-dom';
 import type { AppDispatch } from '@/redux/store';
 import { userLoggedIn } from '@/redux/userSlice';
+import { toast } from 'sonner';
+import Loader from '@/components/common/Loader';
 
 type SignUpFormValues = {
   phone: string;
@@ -48,8 +50,10 @@ const Auth: React.FC = () => {
       const res = await dispatch(signup({ phoneNumber: phone })).unwrap();
       if (res) {
         setStep('otp');
+        toast.success('Registration successful! Please enter the OTP sent to your phone.');
       }
     } catch (error) {
+      toast.error('Sign-up failed. Please try again.')
       console.error('Sign-up failed:', error);
     }
   };
@@ -60,9 +64,11 @@ const Auth: React.FC = () => {
       const res = await dispatch(verifyOTP({ phoneNumber, otp })).unwrap();
       if (res?.success) {
         dispatch(userLoggedIn());
+        toast.success('OTP verified successfully!');
       }
       navigate('/');
     } catch (error) {
+      toast.error('OTP verification failed. Please try again.');
       console.error('OTP verification failed:', error);
     }
   };
@@ -90,6 +96,8 @@ const Auth: React.FC = () => {
   };
 
   return (
+    <>
+    {loading && <Loader />}
     <div className="max-h-screen flex flex-col lg:flex-row bg-white">
       <div className="w-full lg:w-1/2 hidden lg:flex items-center justify-center">
         <img src="/assets/images/team-Illustration.png" alt="auth-cover" className="h-full w-full object-cover" />
@@ -203,6 +211,7 @@ const Auth: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
