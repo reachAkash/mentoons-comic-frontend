@@ -228,10 +228,10 @@ const ComicWorkshop: React.FC = () => {
       </div>
       {showForm && (
         <Dialog open={showForm} onOpenChange={() => setShowForm(false)}>
-          <DialogContent className="z-[999999]">
+          <DialogContent className="z-[999999] bg-transparent border-0">
             <DialogHeader>
               <DialogClose asChild>
-                <button className="absolute top-5 right-5 lg:right-2 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl">
+                <button className="absolute top-16 right-[2rem] lg:right-[2.5rem] text-gray-600 hover:text-gray-800 text-2xl font-bold sm:text-2xl z-[99999] shadow-2xl">
                   &times;
                 </button>
               </DialogClose>
