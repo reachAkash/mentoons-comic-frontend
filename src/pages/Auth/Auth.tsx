@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
-import { signup, verifyOTP } from '@/redux/loginSlice';
-import { Formik, Form, ErrorMessage, Field } from 'formik';
-import * as Yup from 'yup';
-import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
-import { useNavigate } from 'react-router-dom';
-import type { AppDispatch } from '@/redux/store';
-import { userLoggedIn } from '@/redux/userSlice';
-import { toast } from 'sonner';
-import Loader from '@/components/common/Loader';
+
+import { userLoggedIn } from "@/redux/userSlice";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css"; // Import the styles
+
+import { toast } from "sonner";
+import { AppDispatch, RootState } from "@/redux/store";
+import { signup, verifyOTP } from "@/redux/loginSlice";
+import Loader from "@/components/common/Loader";
 
 type SignUpFormValues = {
   phone: string;
@@ -53,8 +54,12 @@ const Auth: React.FC = () => {
         toast.success('Registration successful! Please enter the OTP sent to your phone.');
       }
     } catch (error) {
-      toast.error('Sign-up failed. Please try again.')
-      console.error('Sign-up failed:', error);
+      console.error(error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
     }
   };
 
@@ -68,15 +73,19 @@ const Auth: React.FC = () => {
       }
       navigate('/');
     } catch (error) {
-      toast.error('OTP verification failed. Please try again.');
-      console.error('OTP verification failed:', error);
+      console.error(error);
+      if (error instanceof Error) {
+        toast.error(error.message)
+      } else {
+        toast.error("An unknown error occurred")
+      }
     }
   };
 
   const handleOtpChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     nextField: keyof OTPFormValues | null,
-    setFieldValue: (field: string, value: any) => void
+    setFieldValue: (field: string, value: string) => void
   ) => {
     const { value } = e.target;
     setFieldValue(e.target.name, value);
