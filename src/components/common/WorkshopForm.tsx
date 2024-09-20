@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { submitWorkshopForm } from '@/redux/workshopSlice';
-import type { AppDispatch } from '@/redux/store';
+import type { AppDispatch, RootState } from '@/redux/store';
+import Loader from './Loader';
+import { toast } from 'sonner';
 
 interface FormValues {
   name: string;
@@ -24,6 +26,7 @@ const WorkshopForm: React.FC<WorkshopProps> = ({ selectedWorkshop }) => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { loading } = useSelector((state: RootState) => state.workshop);
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -48,13 +51,17 @@ const WorkshopForm: React.FC<WorkshopProps> = ({ selectedWorkshop }) => {
       const actionResult = await dispatch(submitWorkshopForm(values));
       if (submitWorkshopForm.fulfilled.match(actionResult)) {
         setIsSubmitted(true);
+        toast.success('Form submitted sucessfully');
       }
     } catch (error) {
+      toast.error("something went wrong.")
       console.error(error);
     }
   };
 
   return (
+    <>
+    {loading && <Loader />}
     <div className={`relative ${!isSubmitted ? 'bg-white' : 'bg-transparent'} p-6 rounded-lg max-w-lg mx-auto`}>
       {!isSubmitted ? (
         <>
@@ -186,6 +193,7 @@ const WorkshopForm: React.FC<WorkshopProps> = ({ selectedWorkshop }) => {
       </div>
       )}
     </div>
+    </>
   );
 };
 
