@@ -28,7 +28,7 @@ const Header = () => {
   const handleLogout = () => {
     console.log("User logged out");
     setMenuOpen(false);
-    navigate("/auth");
+    navigate("/register");
   };
 
   // Function to control the visibility of the header based on scroll direction

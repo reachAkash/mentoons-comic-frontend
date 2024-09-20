@@ -27,6 +27,11 @@ const ComicsSection: React.FC = () => {
     <div className="relative space-y-10 mt-20 mb-[75rem] md:mb-[145rem] lg:mb-[280rem]">
       <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
+        <img
+          className="absolute top-0 left-[5%]"
+          src="/assets/home/box 3.png"
+          alt="comics background"
+        />
         <div className="absolute top-[45%] lg:top-[40%] flex items-center justify-center">
           <motion.img
             initial={{ x: -400 }}
