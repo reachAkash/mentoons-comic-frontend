@@ -28,7 +28,7 @@ const ComicsSection: React.FC = () => {
       <div className="relative">
         <img src={ComicsBgHome} alt="comics background" />
         <img
-          className="absolute top-0 left-[5%]"
+          className="absolute w-[40%] lg:w-[30%] top-[-2rem] lg:top-0 left-[20%]"
           src="/assets/home/box 3.png"
           alt="comics background"
         />
