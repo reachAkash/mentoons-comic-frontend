@@ -10,6 +10,9 @@ interface SignupResponse {
 interface OTPVerificationResponse {
   success: boolean;
   message?: string;
+  data?: {
+    accessToken?: string;
+  };
 }
 
 interface AuthError {
@@ -90,6 +93,63 @@ export const verifyOTP = createAsyncThunk<
   }
 );
 
+interface LoginPayload {
+  phoneNumber: string;
+}
+
+export const login = createAsyncThunk<
+  SignupResponse, 
+  LoginPayload, 
+  { rejectValue: AuthError }
+>(
+  'auth/login',
+  async ({ phoneNumber }, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post<SignupResponse>(Endpoints.LOGIN, {
+        phoneNumber,
+      });
+console.log(response,'popopopoppoooo')
+      if (response.data.success) {
+        return response.data;
+      } else {
+        return rejectWithValue({ message: response.data.message || 'Login failed!' });
+      }
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue({ message: error.response.data.message });
+      }
+      return rejectWithValue({ message: 'Something went wrong!' });
+    }
+  }
+);
+
+export const verifyLoginOTP = createAsyncThunk<
+  OTPVerificationResponse, 
+  OTPVerificationPayload, 
+  { rejectValue: AuthError }
+>(
+  'auth/verifyLoginOTP',
+  async ({ otp, phoneNumber }, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_LOGIN_OTP, { 
+        otp,
+        phoneNumber
+      });
+
+      if (response.data.success) {
+        return response.data;
+      } else {
+        return rejectWithValue({ message: response.data.message || 'OTP verification failed!' });
+      }
+    } catch (error: any) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue({ message: error.response.data.message });
+      }
+      return rejectWithValue({ message: 'Something went wrong!' });
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -122,6 +182,33 @@ const authSlice = createSlice({
         state.success = true;
       })
       .addCase(verifyOTP.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload?.message || 'Something went wrong!';
+      })
+      .addCase(login.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(login.fulfilled, (state) => {
+        state.loading = false;
+        state.success = true;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload?.message || 'Something went wrong!';
+      })
+      .addCase(verifyLoginOTP.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(verifyLoginOTP.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        if (action.payload.data?.accessToken) {
+          localStorage.setItem('token', action.payload.data.accessToken);
+        }
+      })
+      .addCase(verifyLoginOTP.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload?.message || 'Something went wrong!';
       });

@@ -9,6 +9,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { date } from "@/constant/websiteConstants";
+import { useAuth } from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -17,6 +18,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -27,23 +29,21 @@ const Header = () => {
 
   const handleLogout = () => {
     console.log("User logged out");
+    localStorage.removeItem("token");
     setMenuOpen(false);
-    navigate("/register");
+    navigate("/");
+    window.location.reload();
   };
 
-  // Function to control the visibility of the header based on scroll direction
   const controlHeaderVisibility = () => {
     if (window.scrollY > lastScrollY) {
-      // Scrolling down
       setIsVisible(false);
     } else {
-      // Scrolling up
       setIsVisible(true);
     }
     setLastScrollY(window.scrollY);
   };
 
-  // Adding scroll event listener with debouncing
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {
@@ -60,9 +60,8 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 top-0 fixed z-[90] gap-[6rem] transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 top-0 fixed z-[90] gap-[6rem] transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
       style={{ boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
     >
       <div className="flex-1 flex lg:justify-end">
@@ -136,9 +135,8 @@ const Header = () => {
           )}
         </div>
         <Menubar
-          className={`${
-            menuOpen ? "flex" : "hidden"
-          }  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-90 lg:h-10`}
+          className={`${menuOpen ? "flex" : "hidden"
+            }  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-90 lg:h-10`}
         >
           <MenubarMenu>
             <NavLink to="/" onClick={() => setMenuOpen(false)}>
@@ -282,23 +280,25 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex">
-              <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
-              <span className="hidden lg:block">Profile</span>
-            </MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem
-                onClick={() => {
-                  setMenuOpen(false);
-                  navigate("/profile");
-                }}
-              >
-                My Profile
-              </MenubarItem>
-              <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
+          {isLoggedIn && (
+            <MenubarMenu>
+              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex">
+                <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
+                <span className="hidden lg:block">Profile</span>
+              </MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem
+                  onClick={() => {
+                    setMenuOpen(false);
+                    navigate("/profile");
+                  }}
+                >
+                  My Profile
+                </MenubarItem>
+                <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          )}
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
@@ -313,23 +313,26 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger className="cursor-pointer lg:hover:text-white h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden">
-              <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
-              <span className="hidden lg:block">Profile</span>
-            </MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem
-                onClick={() => {
-                  setMenuOpen(false);
-                  navigate("/profile");
-                }}
-              >
-                My Profile
-              </MenubarItem>
-              <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
+          {
+            !isLoggedIn && (
+            <MenubarMenu>
+              <MenubarTrigger className="cursor-pointer lg:hover:text-white h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden">
+                <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
+                <span className="hidden lg:block">Profile</span>
+              </MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem
+                  onClick={() => {
+                    setMenuOpen(false);
+                    navigate("/profile");
+                  }}
+                >
+                  My Profile
+                </MenubarItem>
+                <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            )}
         </Menubar>
       </div>
     </div>
