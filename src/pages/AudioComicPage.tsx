@@ -8,7 +8,7 @@ import { IoShareSocial } from "react-icons/io5";
 import { TbExchange } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import { Comic } from "@/redux/comicSlice";
+import { AudioComic } from "@/redux/comicSlice";
 import PurchaseDialog from "../components/comics/PurchaseDialog";
 import { toast } from "sonner";
 import { useParams } from "react-router-dom";
@@ -23,14 +23,12 @@ const AudioComicPage: React.FC = () => {
   const [showPurchaseDialog, setShowPurchaseDialog] = useState<boolean>(false);
   const navigate = useNavigate();
   const comicData = useSelector((store: RootState) => store.comics.comics);
-  const [searchedComics, setSearchedComics] = useState<Comic[]>([]);
-  const [currentComic, setCurrentComic] = useState<Comic>();
+  const [searchedComics, setSearchedComics] = useState<AudioComic[]>([]);
+  const [currentComic, setCurrentComic] = useState<AudioComic>();
   const [randomJoke, setRandomJoke] = useState<number>(0);
   const [input, setInput] = useState<string>("");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasPurchased, setHasPurchased] = useState<boolean>(false);
-
-  // handlers
 
   const handleShowPurchase = () => {
     setShowPurchaseDialog(true);
@@ -69,7 +67,7 @@ const AudioComicPage: React.FC = () => {
   };
 
   const handleFindComic = () => {
-    const data = comicData?.find((item: Comic) => {
+    const data = comicData?.find((item: AudioComic) => {
       return item.name == comic;
     });
     setCurrentComic(data);
@@ -172,7 +170,7 @@ const AudioComicPage: React.FC = () => {
               )}
             </div>
             <div className="overflow-y-scroll lg:overflow-hidden group-hover:overflow-y-scroll pr-[1rem] h-[20rem] transition-all ease-in-out duration-300">
-              {comicsToDisplay?.map((item: Comic) => {
+              {comicsToDisplay?.map((item: AudioComic) => {
                 return (
                   <div
                     onClick={() => handleComic(item.name)}

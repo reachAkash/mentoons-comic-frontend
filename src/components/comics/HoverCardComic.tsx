@@ -1,4 +1,4 @@
-import { Comic } from "@/redux/comicSlice";
+import { AudioComic } from "@/redux/comicSlice";
 import React from "react";
 import { motion } from "framer-motion";
 // export interface HoverCardComicProps {
@@ -43,7 +43,7 @@ import { motion } from "framer-motion";
 //   }
 // );
 
-const ComicCard: React.FC<{ item: Comic | null }> = ({ item }) => {
+const ComicCard: React.FC<{ item: AudioComic | null }> = ({ item }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

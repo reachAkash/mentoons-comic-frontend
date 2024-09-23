@@ -1,7 +1,17 @@
 import { comicsData } from "@/constant/comicsConstants";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface Comic {
+// export interface AudioComic {
+//   name: string;
+//   desc: string;
+//   duration: string;
+//   mini_thumbnail: string;
+//   thumbnail: string;
+//   videoLink: string;
+//   category: string;
+// }
+
+export interface AudioComic {
   name: string;
   desc: string;
   duration: string;
@@ -19,10 +29,10 @@ interface CartItemsPrototype {
 
 export interface InitialStatePrototype {
   cart: CartItemsPrototype[];
-  wishlist: Comic[];
-  comics: Comic[];
+  wishlist: AudioComic[];
+  comics: AudioComic[];
   selectedFilter: string;
-  currentHoverComic: Comic | null;
+  currentHoverComic: AudioComic | null;
 }
 
 const initialState: InitialStatePrototype = {
@@ -98,7 +108,7 @@ export const comicsSlice = createSlice({
     },
     updateCurrentHoverComicReducer: (
       state,
-      action: PayloadAction<Comic | null>
+      action: PayloadAction<AudioComic | null>
     ) => {
       state.currentHoverComic = action.payload;
     },

@@ -1,4 +1,4 @@
-import { Comic, updateCurrentHoverComicReducer } from "@/redux/comicSlice";
+import { AudioComic, updateCurrentHoverComicReducer } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -395,7 +395,7 @@ export const SearchPage: React.FC = () => {
     index: null,
     show: false,
   });
-  const [searchedComics, setSearchedComics] = useState<Comic[]>([]);
+  const [searchedComics, setSearchedComics] = useState<AudioComic[]>([]);
   const handleFilterComics = (value: string) => {
     const items = comicsData?.filter((item) => {
       return item.name.toLowerCase().includes(value.toLowerCase());

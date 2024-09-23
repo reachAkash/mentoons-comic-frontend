@@ -42,7 +42,7 @@ const Struggles = () => {
             </h1>
             <div>
               <video
-                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/We+know+THE+STRUGGLES+our+youth+is+facing.mp4"
+                src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/We+know+THE+STRUGGLES+our+youth+is+facing_01.mp4"
                 className="rounded-xl"
                 autoPlay
                 muted

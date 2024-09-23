@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import { Comic } from "@/redux/comicSlice";
+import { AudioComic } from "@/redux/comicSlice";
 import { motion } from "framer-motion";
 
 const AudioComics: React.FC = () => {
@@ -39,7 +39,7 @@ const AudioComics: React.FC = () => {
         </motion.div>
       </motion.div>
       <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-        {comics?.map((item: Comic) => {
+        {comics?.map((item: AudioComic) => {
           return (
             <motion.div
               initial={{ opacity: 0.5 }}
