@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { AiOutlineClose } from 'react-icons/ai';
+import MiniLogo from "@/assets/imgs/logo mini.png";
 
 type ProtectedRouteProps = {
   children: React.ReactNode;
@@ -21,13 +22,16 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 
   const handleLoginRedirect = () => {
     setOpen(false);
-    navigate('/register'); 
+    navigate('/register');
   };
 
   if (!isLoggedIn) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className='bg-gray-100 rounded-lg shadow-lg p-20 lg:p-28 text-center z-[9999]'>
+        <DialogContent className='bg-gray-100 rounded-lg shadow-lg p-12 lg:p-16 text-center z-[9999]'>
+          <h1 className="font-semibold text-xl flex justify-center gap-2">
+            <img className="w-20" src={MiniLogo} alt="mentoons logo" />
+          </h1>
           <p className='text-lg text-gray-800 mb-4'>You need to be logged in to access this page.</p>
           <button className='absolute top-4 right-4' onClick={() => {
             setOpen(false);
@@ -35,7 +39,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
           }}>
             <AiOutlineClose />
           </button>
-          <button 
+          <button
             className='bg-men-blue text-white rounded-md px-4 py-2 text-base transition duration-300 ease-in-out hover:bg-red-600'
             onClick={handleLoginRedirect}
           >
