@@ -1,6 +1,6 @@
 import {
   addToCartReducer,
-  Comic,
+  AudioComic,
   updateSelectedFilterReducer,
 } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
@@ -17,7 +17,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
   const comicState = useSelector((store: RootState) => store.comics);
   const comicsData = comicState.comics;
   const selectedFilter = comicState.selectedFilter;
-  const filteredComics = comicsData?.filter((item: Comic) => {
+  const filteredComics = comicsData?.filter((item: AudioComic) => {
     return item.category == selectedFilter;
   });
   const comicsToShow = selectedFilter ? filteredComics : comicsData;
@@ -25,7 +25,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
   console.log(page);
 
   const addToCart = (image: string) => {
-    const item = comicsData?.find((comic: Comic) => {
+    const item = comicsData?.find((comic: AudioComic) => {
       return comic.thumbnail == image;
     });
     console.log(item);
@@ -111,7 +111,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
               <FilterComics />
             </div>
             <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-              {comicsToShow?.map((item: Comic) => {
+              {comicsToShow?.map((item: AudioComic) => {
                 return (
                   <div
                     key={v4()}

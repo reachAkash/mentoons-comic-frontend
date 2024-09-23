@@ -12,12 +12,12 @@ import {
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useRef } from "react";
 import Wordbreak from "./Wordbreak";
-import { addToWishlistReducer, Comic } from "@/redux/comicSlice";
+import { addToWishlistReducer, AudioComic } from "@/redux/comicSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 export interface currentComicProps {
-  currData: Comic | undefined;
+  currData: AudioComic | undefined;
   setHasPurchased: Function;
 }
 const PurchaseDialog: React.FC<currentComicProps> = ({

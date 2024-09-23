@@ -1,5 +1,5 @@
 import { GamesData } from "@/pages/FreeDownload";
-import { Comic } from "@/redux/comicSlice";
+import { AudioComic } from "@/redux/comicSlice";
 import workshopImg1 from "/Buddy camp.png";
 import workshopImg2 from "/Teen camp .png";
 import workshopImg3 from "/Family camp.png";
@@ -316,7 +316,7 @@ export const jokes: { setup: string; punchline: string }[] = [
   { setup: "What did the zero say to the eight?", punchline: "Nice belt!" },
 ];
 
-export const comicsData: Comic[] = [
+export const comicsData: AudioComic[] = [
   // groupSmall = 6 - 12, groupMedium = 13 - 19, groupLarge = 20+
   {
     name: "Bet Your Life",
