@@ -10,7 +10,7 @@ import "react-phone-number-input/style.css"; // Import the styles
 
 import { toast } from "sonner";
 import { AppDispatch, RootState } from "@/redux/store";
-import { signup, verifyOTP } from "@/redux/loginSlice";
+import { signup, verifyOTP, login, verifyLoginOTP } from "@/redux/loginSlice";
 import Loader from "@/components/common/Loader";
 
 type SignUpFormValues = {
@@ -27,7 +27,7 @@ type OTPFormValues = {
 const Auth: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const [step, setStep] = useState<'signup' | 'otp'>('signup');
+  const [step, setStep] = useState<'signup' | 'otp' | 'login' | 'loginOtp'>('signup');
   const { loading } = useSelector((state: RootState) => state.auth);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
@@ -82,6 +82,45 @@ const Auth: React.FC = () => {
     }
   };
 
+  const handleLogin = async (values: SignUpFormValues) => {
+    const { phone } = values;
+    setPhoneNumber(phone);
+    try {
+      const res = await dispatch(login({ phoneNumber: phone })).unwrap();
+      if (res) {
+        setStep('loginOtp');
+        toast.success('Login successful! Please enter the OTP sent to your phone.');
+      }
+    } catch (error) {
+      console.error(error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    }
+  };
+
+  const handleLoginOTPVerification = async (values: OTPFormValues) => {
+    const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
+    try {
+      const res = await dispatch(verifyLoginOTP({ phoneNumber, otp })).unwrap();
+      if (res?.success) {
+        navigate('/')
+        window.location.reload()
+        toast.success('OTP verified successfully!');
+      }
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      if (error instanceof Error) {
+        toast.error(error.message)
+      } else {
+        toast.error("An unknown error occurred")
+      }
+    }
+  };
+
   const handleOtpChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     nextField: keyof OTPFormValues | null,
@@ -107,21 +146,32 @@ const Auth: React.FC = () => {
   return (
     <>
     {loading && <Loader />}
-    <div className="max-h-screen flex flex-col lg:flex-row bg-white">
+    <div className="h-screen pb-6 flex flex-col lg:flex-row bg-white overflow-clip">
       <div className="w-full lg:w-1/2 hidden lg:flex items-center justify-center">
         <img src="/assets/images/team-Illustration.png" alt="auth-cover" className="h-full w-full object-cover" />
       </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-12 bg-white shadow-lg rounded-lg lg:bg-transparent">
         <div className="bg-white py-8 lg:px-20 px-4 rounded-lg w-full lg:max-w-xl">
-          <h2 className="text-3xl font-bold mb-6 text-center text-indigo-600">
-            {step === 'signup' ? 'Register' : 'Verify OTP'}
-          </h2>
+          <div className="flex justify-center mb-6">
+            <button
+              className={`px-4 py-2 rounded-l-lg ${step === 'signup' ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+              onClick={() => setStep('signup')}
+            >
+              Sign Up
+            </button>
+            <button
+              className={`px-4 py-2 rounded-r-lg ${step === 'login' ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+              onClick={() => setStep('login')}
+            >
+              Login
+            </button>
+          </div>
 
-          {step === 'signup' ? (
+          {step === 'signup' || step === 'login' ? (
             <Formik<SignUpFormValues>
               initialValues={{ phone: "" }}
               validationSchema={signUpValidationSchema}
-              onSubmit={handleSignUp}
+              onSubmit={step === 'signup' ? handleSignUp : handleLogin}
             >
               {({ values, setFieldValue }) => (
                 <Form className="space-y-4">
@@ -145,7 +195,7 @@ const Auth: React.FC = () => {
                       className="bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       disabled={loading}
                     >
-                      Register
+                      {step === 'signup' ? 'Register' : 'Login'}
                     </button>
                   </div>
                 </Form>
@@ -155,7 +205,7 @@ const Auth: React.FC = () => {
             <Formik<OTPFormValues>
               initialValues={{ otp0: "", otp1: "", otp2: "", otp3: "" }}
               validationSchema={otpValidationSchema}
-              onSubmit={handleOTPVerification}
+              onSubmit={step === 'otp' ? handleOTPVerification : handleLoginOTPVerification}
             >
               {({ setFieldValue }) => (
                 <Form className="space-y-4">
