@@ -3,7 +3,7 @@ import Wordbreak from "./Wordbreak";
 import { FaRegEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCartReducer, addToWishlistReducer } from "@/redux/comicSlice";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -13,29 +13,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
+import { RootState } from "@/redux/store";
 
 const NewComics: React.FC = () => {
   const dispatch = useDispatch();
-  const comicData = [
-    {
-      thumbnail: "https://i.postimg.cc/CxyN5F56/comic1.jpg",
-      name: "Electronic Gadgets and Kids",
-    },
-    {
-      thumbnail: "https://i.postimg.cc/W4TwmXMG/comic2.jpg",
-      name: "How to handle relationships",
-    },
-    {
-      thumbnail: "https://i.postimg.cc/Nj1xrWrG/comic4.jpg",
-      name: "Choose Wisely",
-    },
-  ];
+  const comicData = useSelector((store: RootState) => store.comics.comics);
 
-  const addToWishlist = (image: string) => {
-    const item = comicData?.find((comic) => {
-      return comic.thumbnail == image;
-    });
-    dispatch(addToWishlistReducer(item));
+  const addToWishlist = (image: string, type: string) => {
+    dispatch(addToWishlistReducer({ image, type }));
   };
 
   const addToCart = (image: string) => {
@@ -81,7 +66,7 @@ const NewComics: React.FC = () => {
                 <div className="relative">
                   <img
                     className="group-hover:grayscale transition-all duration-500 ease-in-out h-[20rem] md:h-[30rem] w-full rounded-2xl"
-                    src={item?.thumbnail}
+                    src={item?.mini_thumbnail}
                     alt="new comics"
                   />
                   <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
@@ -89,7 +74,9 @@ const NewComics: React.FC = () => {
                       <Tooltip>
                         <TooltipTrigger>
                           <div
-                            onClick={() => addToWishlist(item.thumbnail)}
+                            onClick={() =>
+                              addToWishlist(item.thumbnail, item.type)
+                            }
                             className=" hidden group-hover:block cursor-pointer p-4 bg-primary rounded-full"
                           >
                             <FaHeart className="text-2xl text-white active:text-red-500" />

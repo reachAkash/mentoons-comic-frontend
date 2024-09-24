@@ -9,7 +9,7 @@ import { TbExchange } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { AudioComic } from "@/redux/comicSlice";
-import PurchaseDialog from "../components/comics/PurchaseDialog";
+// import PurchaseDialog from "../components/comics/PurchaseDialog";
 import { toast } from "sonner";
 import { useParams } from "react-router-dom";
 import { jokes } from "@/constant/comicsConstants";
@@ -20,33 +20,32 @@ export const useQuery = () => {
 
 const AudioComicPage: React.FC = () => {
   const { comic } = useParams();
-  const [showPurchaseDialog, setShowPurchaseDialog] = useState<boolean>(false);
+  // const [showPurchaseDialog, setShowPurchaseDialog] = useState<boolean>(false);
   const navigate = useNavigate();
-  const comicData = useSelector((store: RootState) => store.comics.comics);
+  const comicData = useSelector((store: RootState) => store.comics.audioComics);
   const [searchedComics, setSearchedComics] = useState<AudioComic[]>([]);
   const [currentComic, setCurrentComic] = useState<AudioComic>();
   const [randomJoke, setRandomJoke] = useState<number>(0);
   const [input, setInput] = useState<string>("");
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasPurchased, setHasPurchased] = useState<boolean>(false);
 
-  const handleShowPurchase = () => {
-    setShowPurchaseDialog(true);
-  };
+  // const [hasPurchased, setHasPurchased] = useState<boolean>(false);
 
-  console.log(handleShowPurchase);
+  // const handleShowPurchase = () => {
+  //   setShowPurchaseDialog(true);
+  // };
 
-  const handleCheckPurchased = (): void => {
-    if (hasPurchased) {
-      if (videoRef.current) {
-        videoRef.current.play();
-      }
-    } else {
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
-    }
-  };
+  // const handleCheckPurchased = (): void => {
+  // if (hasPurchased) {
+  //   if (videoRef.current) {
+  //     videoRef.current.play();
+  //   }
+  // } else {
+  //   if (videoRef.current) {
+  //     videoRef.current.pause();
+  //   }
+  // }
+  // };
 
   const handleComic = (name: string) => {
     if (name === comic) return;
@@ -55,7 +54,6 @@ const AudioComicPage: React.FC = () => {
 
   const handleRandomFact = () => {
     const val = Math.floor(Math.random() * jokes.length);
-    console.log(val);
     setRandomJoke(val);
   };
 
@@ -108,9 +106,9 @@ const AudioComicPage: React.FC = () => {
   //   };
   // }, [comic]);
 
-  useEffect(() => {
-    handleCheckPurchased();
-  }, [hasPurchased]);
+  // useEffect(() => {
+  //   handleCheckPurchased();
+  // }, [hasPurchased]);
   // const comic = useSelector((store:RootState)=>store.comics.cart)
   return (
     <>
@@ -218,12 +216,12 @@ const AudioComicPage: React.FC = () => {
           </div>
         </div>
       </div>
-      {showPurchaseDialog && (
+      {/* {showPurchaseDialog && (
         <PurchaseDialog
           setHasPurchased={setHasPurchased}
           currData={currentComic}
         />
-      )}
+      )} */}
     </>
   );
 };

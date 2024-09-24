@@ -10,7 +10,9 @@ import { motion } from "framer-motion";
 
 const AudioComics: React.FC = () => {
   const navigate = useNavigate();
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const comicsData = useSelector(
+    (store: RootState) => store.comics.audioComics
+  );
   const comics = comicsData.slice(0, 6);
 
   return (
