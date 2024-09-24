@@ -1,5 +1,5 @@
 import { GamesData } from "@/pages/FreeDownload";
-import { AudioComic } from "@/redux/comicSlice";
+import { AudioComic, Comic } from "@/redux/comicSlice";
 import workshopImg1 from "/Buddy camp.png";
 import workshopImg2 from "/Teen camp .png";
 import workshopImg3 from "/Family camp.png";
@@ -316,7 +316,18 @@ export const jokes: { setup: string; punchline: string }[] = [
   { setup: "What did the zero say to the eight?", punchline: "Nice belt!" },
 ];
 
-export const comicsData: AudioComic[] = [
+export enum Category {
+  sm = "groupSmall",
+  md = "groupMedium",
+  lg = "groupLarge",
+}
+
+export enum ComicType {
+  comic = "comic",
+  audioComic = "audioComic",
+}
+
+export const audioComicsData: AudioComic[] = [
   // groupSmall = 6 - 12, groupMedium = 13 - 19, groupLarge = 20+
   {
     name: "Bet Your Life",
@@ -328,7 +339,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+37.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/BET_YOUR_LIFE.mp4",
-    category: "groupMedium",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "The Cell Life of Soniya",
@@ -340,7 +352,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+27.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CELL_LIFE_OF_SONIYA_02.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Choose Wisely",
@@ -352,7 +365,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+33.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/CHOOSE_WISELY.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Come out of Gaming",
@@ -364,7 +378,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+36.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/COME_OUT_OF_GAMING_02.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Comic on Divorce",
@@ -376,7 +391,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+1+4.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/COMIC_ON_DIVORCE_01.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Don't Fade Away",
@@ -388,7 +404,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+35.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/DONT_FADE_AWAY_02.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Hungry for Likes Not Life",
@@ -400,7 +417,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+34.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/HUNGRY_FOR_LIKES_NOT_LIFE_01.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "One Way Trip",
@@ -412,7 +430,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+38.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/ONE-WAY-TRIP_1.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Rishi and Rohit",
@@ -424,7 +443,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+29.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/RISHI+AND+ROHIT.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Rohan and the Puppies",
@@ -436,7 +456,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+28.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/Rohan+and+the+Puppies_01.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Think Before You Act",
@@ -448,7 +469,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Think_Before_You_Act!.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/Think+Before+You+Act.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Tanya's Downfall",
@@ -460,7 +482,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+26.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/TANYA_DOWN-FALL_02.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "How Teenagers Lose Their Jobs Part-1",
@@ -472,7 +495,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+1+3.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/SANKAR_INTERVIEW.mp4",
-    category: "groupLarge",
+    category: Category.lg,
+    type: ComicType.audioComic,
   },
   {
     name: "How Teenagers Lose Their Jobs Part-2",
@@ -484,7 +508,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+19.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+20%2B/Sana+Comic+Interview.mp4",
-    category: "groupLarge",
+    category: Category.lg,
+    type: ComicType.audioComic,
   },
   {
     name: "I can Manage (Time Management)",
@@ -496,7 +521,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+24.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Asha+%26+Simran-+Time+management+(6-12)_1.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "Comic on Honesty",
@@ -508,7 +534,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+40.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/COMIC_ON_HONESTY.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "Greeting Comic",
@@ -520,7 +547,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+39.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/GREETING_COMIC.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "Live and Let Live",
@@ -532,7 +560,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+23.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SAY+SORRY+COMIC.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "Say Sorry",
@@ -544,7 +573,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+20.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SAY+SORRY+COMIC.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "My Daily Routine",
@@ -556,7 +586,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+25.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/SUPRIYA_TIME_MANAGEMENT_1.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
   {
     name: "Do You Know",
@@ -568,7 +599,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+31.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/BOOK+3+DO+YOU+KNOW_FINAL.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Electronic Gadgets And Kids",
@@ -580,7 +612,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+32.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/BOOK_02_GADGETS_AND_KIDS_01.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "How to Handle Relationships",
@@ -592,7 +625,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+30.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/BOOKS/HOW+TO+HANDLE+RELATIONSHIP.mp4",
-    category: "groupMedium",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "Listen To Me",
@@ -604,7 +638,8 @@ export const comicsData: AudioComic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+22.jpg",
     videoLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Comic+on+Listen+to+me_01.mp4",
-    category: "groupSmall",
+    category: Category.sm,
+    type: ComicType.audioComic,
   },
 ];
 
@@ -648,5 +683,44 @@ export const workshopDetails: WorkshopItems[] = [
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/how+to+make+your+own+character+workshop.mp4",
     pageUrl: "/mentoons-workshops?workshop=character",
+  },
+];
+
+export const comicsData: Comic[] = [
+  {
+    name: "Tanya's Downfall",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+26.jpg",
+    category: Category.md,
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf",
+    type: ComicType.comic,
+  },
+  {
+    name: "My Daily Routine",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+25.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/supriya-time+management+copy.pdf",
+    category: Category.sm,
+    type: ComicType.comic,
+  },
+  {
+    name: "Say Sorry",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-10.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+20.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Say+Sorry.pdf",
+    category: Category.sm,
+    type: ComicType.comic,
   },
 ];

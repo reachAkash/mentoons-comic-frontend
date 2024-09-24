@@ -1,4 +1,8 @@
-import { AudioComic, updateCurrentHoverComicReducer } from "@/redux/comicSlice";
+import {
+  AudioComic,
+  Comic,
+  updateCurrentHoverComicReducer,
+} from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -237,7 +241,9 @@ export interface ShowButtonInterface {
 const Search: React.FC<{ content: string }> = ({ content }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const comicsData = useSelector(
+    (store: RootState) => store.comics.audioComics
+  );
   const popularComics = comicsData.slice(0, 12);
   const [showButton, setShowButton] = useState<ShowButtonInterface>({
     index: null,
@@ -388,14 +394,21 @@ const Search: React.FC<{ content: string }> = ({ content }) => {
 
 export const SearchPage: React.FC = () => {
   const navigate = useNavigate();
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const audioComics = useSelector(
+    (store: RootState) => store.comics.audioComics
+  );
+  const comics = useSelector((store: RootState) => store.comics.comics);
+  const comicsData = [...audioComics, ...comics];
   const [input, setInput] = useState<string>("");
   const popularComics = comicsData.slice(0, 12);
   const [showButton, setShowButton] = useState<ShowButtonInterface>({
     index: null,
     show: false,
   });
-  const [searchedComics, setSearchedComics] = useState<AudioComic[]>([]);
+  const [searchedComics, setSearchedComics] = useState<(AudioComic | Comic)[]>(
+    []
+  );
+
   const handleFilterComics = (value: string) => {
     const items = comicsData?.filter((item) => {
       return item.name.toLowerCase().includes(value.toLowerCase());

@@ -1,15 +1,15 @@
-import { comicsData } from "@/constant/comicsConstants";
+import { audioComicsData, comicsData } from "@/constant/comicsConstants";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// export interface AudioComic {
-//   name: string;
-//   desc: string;
-//   duration: string;
-//   mini_thumbnail: string;
-//   thumbnail: string;
-//   videoLink: string;
-//   category: string;
-// }
+export interface Comic {
+  name: string;
+  desc: string;
+  mini_thumbnail: string;
+  thumbnail: string;
+  comicLink: string;
+  category: string;
+  type: string;
+}
 
 export interface AudioComic {
   name: string;
@@ -19,6 +19,7 @@ export interface AudioComic {
   thumbnail: string;
   videoLink: string;
   category: string;
+  type: string;
 }
 interface CartItemsPrototype {
   thumbnail: string;
@@ -29,15 +30,17 @@ interface CartItemsPrototype {
 
 export interface InitialStatePrototype {
   cart: CartItemsPrototype[];
-  wishlist: AudioComic[];
-  comics: AudioComic[];
+  wishlist: (AudioComic | Comic)[];
+  audioComics: AudioComic[];
+  comics: Comic[];
   selectedFilter: string;
-  currentHoverComic: AudioComic | null;
+  currentHoverComic: AudioComic | Comic | null;
 }
 
 const initialState: InitialStatePrototype = {
   cart: [],
   wishlist: [],
+  audioComics: audioComicsData,
   comics: comicsData,
   selectedFilter: "",
   currentHoverComic: null,
@@ -68,27 +71,22 @@ export const comicsSlice = createSlice({
       });
     },
     addToWishlistReducer: (state, action) => {
-      console.log(action.payload);
       const isPresent = state.wishlist.find((item) => {
-        return item.thumbnail == action.payload.thumbnail;
+        return item.thumbnail == action.payload.image;
       });
+      console.log(isPresent);
       if (!isPresent) {
-        console.log("in if");
         const comic = state.comics.find((item) => {
-          return item.thumbnail == action.payload;
+          return item.thumbnail == action.payload.thumbnail;
         });
-        console.log(comic);
-        if (comic) {
-          state.wishlist.push(comic);
-        }
-      } else {
-        console.log("in else");
+        if (comic) state.wishlist.push(comic);
       }
     },
     removeFromWishlistReducer: (state, action) => {
-      state.wishlist = state.wishlist.filter((item) => {
-        return item.thumbnail != action.payload;
-      });
+      // state.wishlist = state.wishlist.filter((item) => {
+      //   return item.thumbnail != action.payload;
+      // });
+      console.log(state + " " + action);
     },
     updateComicQuantityReducer: (
       state,
@@ -108,7 +106,7 @@ export const comicsSlice = createSlice({
     },
     updateCurrentHoverComicReducer: (
       state,
-      action: PayloadAction<AudioComic | null>
+      action: PayloadAction<AudioComic | Comic | null>
     ) => {
       state.currentHoverComic = action.payload;
     },

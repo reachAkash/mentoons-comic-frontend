@@ -1,6 +1,7 @@
 import {
   addToCartReducer,
   AudioComic,
+  Comic,
   updateSelectedFilterReducer,
 } from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
@@ -14,18 +15,20 @@ import FilterComics from "../components/comics/FilterComics";
 const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const comicState = useSelector((store: RootState) => store.comics);
-  const comicsData = comicState.comics;
-  const selectedFilter = comicState.selectedFilter;
-  const filteredComics = comicsData?.filter((item: AudioComic) => {
-    return item.category == selectedFilter;
+  const { comics, audioComics, selectedFilter } = useSelector(
+    (store: RootState) => store.comics
+  );
+  const comicsData = [...comics, ...audioComics];
+  const selectedFilterVariable = selectedFilter;
+  const filteredComics = comicsData?.filter((item: AudioComic | Comic) => {
+    return item.category == selectedFilterVariable;
   });
   const comicsToShow = selectedFilter ? filteredComics : comicsData;
 
   console.log(page);
 
   const addToCart = (image: string) => {
-    const item = comicsData?.find((comic: AudioComic) => {
+    const item = comicsData?.find((comic: AudioComic | Comic) => {
       return comic.thumbnail == image;
     });
     console.log(item);
@@ -111,7 +114,7 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
               <FilterComics />
             </div>
             <div className="flex flex-wrap gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-              {comicsToShow?.map((item: AudioComic) => {
+              {comicsToShow?.map((item: AudioComic | Comic) => {
                 return (
                   <div
                     key={v4()}

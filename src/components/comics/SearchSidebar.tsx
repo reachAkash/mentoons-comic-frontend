@@ -1,4 +1,8 @@
-import { AudioComic, updateCurrentHoverComicReducer } from "@/redux/comicSlice";
+import {
+  AudioComic,
+  Comic,
+  updateCurrentHoverComicReducer,
+} from "@/redux/comicSlice";
 import { RootState } from "@/redux/store";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -15,14 +19,17 @@ import { ShowButtonInterface } from "../../pages/SearchPage";
 const SearchSidebar: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const comicsData = useSelector((store: RootState) => store.comics.comics);
+  const comicsState = useSelector((store: RootState) => store.comics);
+  const comicsData = [...comicsState.comics, ...comicsState.audioComics];
   const [input, setInput] = useState<string>("");
   const popularComics = comicsData.slice(0, 12);
   const [showButton, setShowButton] = useState<ShowButtonInterface>({
     index: null,
     show: false,
   });
-  const [searchedComics, setSearchedComics] = useState<AudioComic[]>([]);
+  const [searchedComics, setSearchedComics] = useState<(AudioComic | Comic)[]>(
+    []
+  );
   const handleFilterComics = () => {
     const items = comicsData?.filter((item) => {
       return item.name.toLowerCase().includes(input.toLowerCase());
