@@ -195,7 +195,7 @@ const PodcastCardExp = ({
             onClick={handleSamplePlay}
             className=' bg-rose-600  rounded-full px-4 py-2 text-white  flex gap-2 items-center justify-center whitespace-nowrap hover:bg-rose-700 transition-all duration-300'
           >
-            {isPlaying ? "Pause" : "Play Now"}
+            {isPlaying ? "Pause" : "Listen Now"}
             {currentlyPlaying === audioRef.current && isPlaying ? (
               <FaCirclePause />
             ) : (

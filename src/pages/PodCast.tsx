@@ -1,3 +1,4 @@
+import FrequentlyAskeQuestion from "@/components/shared/FAQSection/FrequentlyAskeQuestion";
 import HeroSectionPodcast from "@/components/shared/HeroSectionPodcast";
 import HomeSection from "@/components/shared/hompage/HomeSection";
 import PodcastSection from "@/components/shared/PodcastSection/PodcastSection";
