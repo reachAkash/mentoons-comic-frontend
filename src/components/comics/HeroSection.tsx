@@ -49,7 +49,10 @@ const HeroSection: React.FC = () => {
             src="/assets/comics/3.png"
           />
           {/* one way trip comic */}
-          <Link target="_blank" to="">
+          <Link
+            target="_blank"
+            to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/one+way+trip.pdf"
+          >
             <img
               className=" w-[4rem] md:w-24 lg:w-32 border-[3px] shadow-md shadow-black rounded-md border-black absolute top-[55%] right-[42%] md:top-[52%] md:right-[43%] lg:top-[28%] lg:right-[10%] rotate-[40deg] lg:rotate-[25deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
               src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-22.jpg"
@@ -151,7 +154,10 @@ const HeroSection: React.FC = () => {
             />
           </Link>
           {/* my daily routine comic */}
-          <Link target="_blank" to="">
+          <Link
+            target="_blank"
+            to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Supriya-+Time+management+(6-+12)+.pdf"
+          >
             <img
               className="hidden xl:block w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[8%] -bottom-[95%] -rotate-[60deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
               src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-01.jpg"
