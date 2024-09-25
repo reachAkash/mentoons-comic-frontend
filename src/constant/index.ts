@@ -486,3 +486,14 @@ export const OPEN_POSITION = [
     salary: 500000,
   },
 ];
+
+export const PODCAST_SLIDER = [
+  "emotion.png",
+  "creative.png",
+  "independent.png",
+  "making-memories.png",
+  "mindfull.png",
+  "to-apply-knowledge.png",
+  // "to-think-creatively.png",
+  "to-understand-feelings.png",
+];

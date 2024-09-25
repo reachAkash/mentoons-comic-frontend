@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 const WhyMentoons = () => {
   return (
-    <section className='relative bg-primary '>
-      <div className='w-full rounded-t-full  bg-[#59B2DC] h-[900px] flex flex-col items-center justify-start relative  lg:h-[700px] '>
+    <section className='relative bg-[#dbdbdb] '>
+      <div className='w-full rounded-t-full   h-[900px] flex flex-col items-center justify-start relative  lg:h-[700px] bg-white'>
         {/* <h2 className='text-4xl text-dark-gray rubik-bubbles-regular pb-8 text-center pt-2 '></h2> */}
 
         <div className='absolute w-full flex flex-col  items-center   '>
           <div className=' w-full max-w-[640px] relative  p-6 pt-44 '>
-            <p className='absolute w-[80%] left-1/2 -translate-x-1/2 top-20 text-4xl text-rose-600 font-bold text-center lg:text-5xl lg:top-[120%]'>
+            <p className='absolute w-[80%] left-1/2 -translate-x-1/2 top-20 text-4xl font-bold text-center lg:text-5xl lg:top-[120%]'>
               Why Our Podcast Matters?
             </p>
             <div className='max-w-[800px] lg:absolute lg:-bottom-[140%] mb-4'>
@@ -117,19 +117,34 @@ const WhyMentoons = () => {
           </div>
         </div>
       </div>
-      <div className='h-full  absolute top-0 w-full flex justify-between  p-4'>
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, -40, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 md:w-32 self-start pt-36'
-        >
-          <img
-            src='/assets/images/podcast-bubble.png'
-            alt='Podcast bubble'
-            className='w-full object-cover '
-          />
-        </motion.div>
+      <div className='h-full absolute top-0 w-full flex justify-between  p-4 '>
+        <div className='h-full'>
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: [0, -40, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className='w-16 h-full  md:w-32 self-start  ml-12'
+          >
+            <img
+              src='/assets/images/podcast-bubble.png'
+              alt='Podcast bubble'
+              className='w-full object-cover '
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: [0, -80, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className='w-24 md:w-40 self-end  ml-12'
+          >
+            <img
+              src='/assets/images/radio.png'
+              alt=''
+              className='w-full object-cover '
+            />
+          </motion.div>
+        </div>
         {/* <div className='w-16 absolute top-60'>
           <img
             src='/assets/images/shines.png'
@@ -137,18 +152,18 @@ const WhyMentoons = () => {
             className='w-full object-cover border border-black'
           />
         </div> */}
-        <motion.div
+        {/* <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-end'
+          className='w-16 self-end border border-black'
         >
           <img
             src='/assets/images/headphones.png'
             alt=''
             className='w-full object-cover '
           />
-        </motion.div>
+        </motion.div> */}
         {/* <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
@@ -165,26 +180,42 @@ const WhyMentoons = () => {
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-center'
+          className='w-20 self-center '
         >
           <img
             src='/assets/images/small-mic.png'
             alt=''
-            className='w-full object-cover '
+            className='w-full object-cover rotate-12 '
           />
         </motion.div>
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, -40, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-end pb-40'
-        >
-          <img
-            src='/assets/images/specs.png'
-            alt=''
-            className='w-full object-cover '
-          />
-        </motion.div>
+        <div>
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: [0, -40, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className=' h-[500px] self-start  '
+          >
+            <img
+              src='/assets/images/music-note-black-2.png'
+              alt=''
+              className='w-full object-cover '
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: [0, -40, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className='w-24   '
+          >
+            <img
+              src='/assets/images/specs.png'
+              alt=''
+              className='w-full object-cover '
+            />
+          </motion.div>
+        </div>
+
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
@@ -201,7 +232,7 @@ const WhyMentoons = () => {
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-end pb-10'
+          className='w-24 self-center mr-12  '
         >
           <img
             src='/assets/images/paper-plan.png'
@@ -216,30 +247,18 @@ const WhyMentoons = () => {
             className='w-full object-cover border border-black'
           />
         </div> */}
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, -40, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-start pt-32 '
-        >
-          <img
-            src='/assets/images/music-note-black-2.png'
-            alt=''
-            className='w-full object-cover '
-          />
-        </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-end pb-48'
+          className='w-16 self-end pb-48 border border-black'
         >
           <img
             src='/assets/images/play.png'
             alt=''
             className='w-full object-cover '
           />
-        </motion.div>{" "}
+        </motion.div>{" "} */}
         {/* <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -40, 0] }}
@@ -252,18 +271,6 @@ const WhyMentoons = () => {
             className='w-full object-cover '
           />
         </motion.div> */}
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, -40, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className='w-16 self-center '
-        >
-          <img
-            src='/assets/images/radio.png'
-            alt=''
-            className='w-full object-cover '
-          />
-        </motion.div>
       </div>
     </section>
   );

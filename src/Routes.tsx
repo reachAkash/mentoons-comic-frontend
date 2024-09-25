@@ -8,9 +8,8 @@ import ProgressScroller from "./components/comics/ProgressScroller";
 import ScrollToTop from "./components/comics/ScrollToTop";
 import Loader from "./components/common/Loader";
 import MainLayout from "./layout/MainLayout";
-import { RootState } from "./redux/store";
 import Popup from "./layout/Popup";
-import ProtectedRoute from "./utils/ProtectedRoute";
+import { RootState } from "./redux/store";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -130,11 +129,9 @@ const routes = [
   {
     path: "/hiring",
     element: (
-      <ProtectedRoute>
-        <MainLayout>
-          <Career />
-        </MainLayout>
-      </ProtectedRoute>
+      <MainLayout>
+        <Career />
+      </MainLayout>
     ),
   },
   {
