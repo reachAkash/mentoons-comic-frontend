@@ -39,7 +39,7 @@ export const gamesData: GamesData[] = [
     thumbnail_url:
       "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/thumbnail/Instaboard.png",
     pdf_url:
-      "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/pdf/Insta+board+game.pdf",
+      "https://mentoons-website.s3.ap-northeast-1.amazonaws.com/board-games/pdf/Insta+Board.pdf",
   },
   {
     name: "Word Quest",
