@@ -488,12 +488,73 @@ export const OPEN_POSITION = [
 ];
 
 export const PODCAST_SLIDER = [
-  "emotion.png",
+  "emotions.png",
   "creative.png",
   "independent.png",
-  "making-memories.png",
+  "memories.png",
   "mindfull.png",
-  "to-apply-knowledge.png",
-  // "to-think-creatively.png",
-  "to-understand-feelings.png",
+  "knowledge.png",
+  "creative.png",
+  "understand-feelings.png",
+];
+
+export const PODCAST_CATEGORY = [
+  {
+    categroy: "6-12",
+    podcastCategoryTopics: [
+      {
+        title: "Where It All Began?",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/where-it-all-begin.mp4",
+      },
+      {
+        title: "Parents Want To Buy Peace",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/parent-want-to-buy-peace.mp4",
+      },
+      {
+        title: "How To Use Gadgets Effectively",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/how-to-use-gadgets.mp4",
+      },
+    ],
+  },
+  {
+    categroy: "13-19",
+    podcastCategoryTopics: [
+      {
+        title:
+          "Statistic of (Teenage suicide rate Teen pregnancy Gaming Addiction Social media addiction)",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/teenage-statistics.mp4",
+      },
+      {
+        title: "How AI Impacts Our Learning and Focus",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/how-ai-impact-our-learning.mp4",
+      },
+    ],
+  },
+  {
+    categroy: "20+ & Parent's",
+    podcastCategoryTopics: [
+      {
+        title: "Why work from home is preferred",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/work-from-home.mp4",
+      },
+      {
+        title: "Pornography De-Addiction",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/pornography-de-addiction.mp4",
+      },
+    ],
+  },
 ];
