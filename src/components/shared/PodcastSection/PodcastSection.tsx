@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import VoiceSampleUpload from "./VoiceUploadModal";
+// import VoiceSampleUpload from "./VoiceUploadModal";
 
 const PodcastSection = () => {
   const [currentlyPlaying, setCurrentlyPlaying] =
@@ -44,8 +44,8 @@ const PodcastSection = () => {
         </motion.div>
       </motion.div>
 
-      <div className=' grid grid-cols-1 md:grid-cols-3 '>
-        <div className='grid grid-cols-1 md:grid-cols-2 col-span-2 gap-8 px-8'>
+      <div className=' '>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-8 '>
           {PODCAST_DETAILS.map((podcast) => (
             // <PodcastCard
             //   key={podcast.id}
@@ -63,13 +63,13 @@ const PodcastSection = () => {
             />
           ))}
         </div>
-        <div className='md:border-l border-stone-400 pt-8 md:pt-0'>
+        {/* <div className='md:border-l border-stone-400 pt-8 md:pt-0 '>
           <div className='flex gap-4 items-start justify-center   h-fit '>
             <h1 className='text-2xl font-bold'>Passionate</h1>
             <h1 className='text-2xl font-bold'>Podcast</h1>
             <h1 className='text-2xl font-bold'>Enthusiast!</h1>
           </div>
-          <div className='px-8 py-6  '>
+          <div className='w-[60%]  mx-auto  '>
             <CarouselPodcast />
           </div>
           <div className='border border-stone-400 text-center text-2xl font-bold p-4 m-4 hover:scale-105 transition duration-300'>
@@ -78,13 +78,13 @@ const PodcastSection = () => {
           <div className=' text-center text-2xl font-bold p-4 ml-4'>
             <button>Hiring Voice Artist</button>
           </div>
-          <div className='px-8 py-6  '>
+          <div className='w-[60%]  mx-auto   '>
             <CarouselPodcast />
           </div>
           <div className='border  border-stone-400 text-center text-2xl font-bold p-4 m-4 hover:scale-105 transition duration-300'>
             <VoiceSampleUpload />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
