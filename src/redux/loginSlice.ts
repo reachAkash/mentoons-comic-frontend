@@ -36,8 +36,8 @@ interface SignupPayload {
 }
 
 export const signup = createAsyncThunk<
-  SignupResponse, 
-  SignupPayload, 
+  SignupResponse,
+  SignupPayload,
   { rejectValue: AuthError }
 >(
   'auth/signup',
@@ -46,15 +46,14 @@ export const signup = createAsyncThunk<
       const response = await axiosInstance.post<SignupResponse>(Endpoints.SIGNUP, {
         phoneNumber,
       });
-
       if (response.data.success) {
         return response.data;
       } else {
         return rejectWithValue({ message: response.data.message || 'Signup failed!' });
       }
     } catch (error: any) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue({ message: error.response.data.message });
+      if (error.response && error.response.data.error) {
+        return rejectWithValue({ message: error.response.data.error });
       }
       return rejectWithValue({ message: 'Something went wrong!' });
     }
@@ -67,26 +66,25 @@ interface OTPVerificationPayload {
 }
 
 export const verifyOTP = createAsyncThunk<
-  OTPVerificationResponse, 
-  OTPVerificationPayload, 
+  OTPVerificationResponse,
+  OTPVerificationPayload,
   { rejectValue: AuthError }
 >(
   'auth/verifyOTP',
   async ({ otp, phoneNumber }, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_OTP, { 
+      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_OTP, {
         otp,
         phoneNumber
       });
-
       if (response.data.success) {
         return response.data;
       } else {
         return rejectWithValue({ message: response.data.message || 'OTP verification failed!' });
       }
     } catch (error: any) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue({ message: error.response.data.message });
+      if (error.response && error.response.data.error) {
+        return rejectWithValue({ message: error.response.data.error });
       }
       return rejectWithValue({ message: 'Something went wrong!' });
     }
@@ -98,8 +96,8 @@ interface LoginPayload {
 }
 
 export const login = createAsyncThunk<
-  SignupResponse, 
-  LoginPayload, 
+  SignupResponse,
+  LoginPayload,
   { rejectValue: AuthError }
 >(
   'auth/login',
@@ -108,15 +106,14 @@ export const login = createAsyncThunk<
       const response = await axiosInstance.post<SignupResponse>(Endpoints.LOGIN, {
         phoneNumber,
       });
-console.log(response,'popopopoppoooo')
       if (response.data.success) {
         return response.data;
       } else {
         return rejectWithValue({ message: response.data.message || 'Login failed!' });
       }
     } catch (error: any) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue({ message: error.response.data.message });
+      if (error.response && error.response.data.error) {
+        return rejectWithValue({ message: error.response.data.error });
       }
       return rejectWithValue({ message: 'Something went wrong!' });
     }
@@ -124,26 +121,25 @@ console.log(response,'popopopoppoooo')
 );
 
 export const verifyLoginOTP = createAsyncThunk<
-  OTPVerificationResponse, 
-  OTPVerificationPayload, 
+  OTPVerificationResponse,
+  OTPVerificationPayload,
   { rejectValue: AuthError }
 >(
   'auth/verifyLoginOTP',
   async ({ otp, phoneNumber }, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_LOGIN_OTP, { 
+      const response = await axiosInstance.post<OTPVerificationResponse>(Endpoints.VERIFY_LOGIN_OTP, {
         otp,
         phoneNumber
       });
-
       if (response.data.success) {
         return response.data;
       } else {
         return rejectWithValue({ message: response.data.message || 'OTP verification failed!' });
       }
     } catch (error: any) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue({ message: error.response.data.message });
+      if (error.response && error.response.data.error) {
+        return rejectWithValue({ message: error.response.data.error });
       }
       return rejectWithValue({ message: 'Something went wrong!' });
     }

@@ -1,4 +1,3 @@
-
 import { userLoggedIn } from "@/redux/userSlice";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useState } from "react";
@@ -28,7 +27,7 @@ const Auth: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const [step, setStep] = useState<'signup' | 'otp' | 'login' | 'loginOtp'>('signup');
-  const { loading } = useSelector((state: RootState) => state.auth);
+  const { loading ,error} = useSelector((state: RootState) => state.auth);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const signUpValidationSchema = Yup.object({
@@ -49,17 +48,12 @@ const Auth: React.FC = () => {
     setPhoneNumber(phone);
     try {
       const res = await dispatch(signup({ phoneNumber: phone })).unwrap();
-      if (res) {
+      if (res.success) {
         setStep('otp');
-        toast.success('Registration successful! Please enter the OTP sent to your phone.');
+        toast.success(res.message || 'Signup successful. Please enter OTP.');
       }
-    } catch (error) {
-      console.error(error);
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("An unknown error occurred");
-      }
+    } catch (error: any) {
+      toast.error(error.message || 'Signup failed. Please try again.');
     }
   };
 
@@ -67,18 +61,13 @@ const Auth: React.FC = () => {
     const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
     try {
       const res = await dispatch(verifyOTP({ phoneNumber, otp })).unwrap();
-      if (res?.success) {
+      if (res.success) {
         dispatch(userLoggedIn());
-        toast.success('OTP verified successfully!');
+        toast.success(res.message || 'OTP verified successfully!');
+        navigate('/');
       }
-      navigate('/');
-    } catch (error) {
-      console.error(error);
-      if (error instanceof Error) {
-        toast.error(error.message)
-      } else {
-        toast.error("An unknown error occurred")
-      }
+    } catch (error: any) {
+      toast.error(error.message || 'OTP verification failed. Please try again.');
     }
   };
 
@@ -87,17 +76,12 @@ const Auth: React.FC = () => {
     setPhoneNumber(phone);
     try {
       const res = await dispatch(login({ phoneNumber: phone })).unwrap();
-      if (res) {
+      if (res.success) {
         setStep('loginOtp');
-        toast.success('Login successful! Please enter the OTP sent to your phone.');
+        toast.success(res.message || 'Login successful. Please enter the OTP sent to your phone.');
       }
-    } catch (error) {
-      console.error(error);
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("An unknown error occurred");
-      }
+    } catch (error: any) {
+      toast.error(error.message || 'Login failed. Please try again.');
     }
   };
 
@@ -105,19 +89,13 @@ const Auth: React.FC = () => {
     const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
     try {
       const res = await dispatch(verifyLoginOTP({ phoneNumber, otp })).unwrap();
-      if (res?.success) {
-        navigate('/')
-        window.location.reload()
-        toast.success('OTP verified successfully!');
+      if (res.success) {
+        toast.success(res.message || 'OTP verified successfully!');
+        navigate('/');
+        window.location.reload();
       }
-      navigate('/');
-    } catch (error) {
-      console.error(error);
-      if (error instanceof Error) {
-        toast.error(error.message)
-      } else {
-        toast.error("An unknown error occurred")
-      }
+    } catch (error: any) {
+      toast.error(error.message || 'Login OTP verification failed. Please try again.');
     }
   };
 
