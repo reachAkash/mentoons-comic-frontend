@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css"; // Import the styles
+import "react-phone-number-input/style.css";
 
 import { toast } from "sonner";
 import { AppDispatch, RootState } from "@/redux/store";
@@ -27,7 +27,7 @@ const Auth: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const [step, setStep] = useState<'signup' | 'otp' | 'login' | 'loginOtp'>('signup');
-  const { loading ,error} = useSelector((state: RootState) => state.auth);
+  const { loading } = useSelector((state: RootState) => state.auth);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const signUpValidationSchema = Yup.object({
