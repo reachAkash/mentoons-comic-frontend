@@ -94,15 +94,16 @@ const HeroSection: React.FC = () => {
             />
           </Link>
           {/* tanya's downfall comic */}
-          <Link
-            target="_blank"
-            to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
+          <div
+            // target="_blank"
+            // to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
+            onClick={() => navigate("comics/Tanya's Downfall")}
           >
             <img
               className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[10%] -bottom-[60%] md:-bottom-[140%] lg:left-[20%] lg:bottom-0 rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
               src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg"
             />
-          </Link>
+          </div>
           {/* live and let live comic */}
           <Link
             target="_blank"
