@@ -10,6 +10,7 @@ import Loader from "./components/common/Loader";
 import MainLayout from "./layout/MainLayout";
 import Popup from "./layout/Popup";
 import { RootState } from "./redux/store";
+import ComicPdfPage from "./pages/ComicPdfPage";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -82,18 +83,18 @@ const routes = [
     path: "/mentoons-comics/audio-comics",
     element: (
       <MainLayout>
-        <ComicsPage page='Audio Comics' />
+        <ComicsPage />
       </MainLayout>
     ),
   },
-  {
-    path: "/mentoons-comics/comics",
-    element: (
-      <MainLayout>
-        <ComicsPage page='Comics' />
-      </MainLayout>
-    ),
-  },
+  // {
+  //   path: "/mentoons-comics/comics",
+  //   element: (
+  //     <MainLayout>
+  //       <ComicsPage page='Comics' />
+  //     </MainLayout>
+  //   ),
+  // },
   {
     path: "/mentoons-workshops",
     element: (
@@ -106,7 +107,7 @@ const routes = [
     path: "/mentoons-comics/comics-list",
     element: (
       <MainLayout>
-        <ComicsPage page='Our Comics Collection' />
+        <ComicsPage />
       </MainLayout>
     ),
   },
@@ -155,6 +156,14 @@ const routes = [
     element: (
       <MainLayout>
         <Plans />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/mentoons-comics/comics/:comic",
+    element: (
+      <MainLayout>
+        <ComicPdfPage />
       </MainLayout>
     ),
   },
