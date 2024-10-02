@@ -227,14 +227,14 @@ const ComicsSection: React.FC = () => {
           <div className='absolute -bottom-[40%]'>
             <img src='/assets/home/comicSection.png' alt='comics shelf' />
           </div>
-          <div className='absolute left-0 -bottom-[15%]'>
+          {/* <div className='absolute left-0 -bottom-[15%]'>
             <img
               // onClick={() => navigate("/mentoons-comics/comics")}
               className='z-50 w-[30%] lg:w-2/3 cursor-pointer hover:scale-110 active:scale-105 transition-all ease-in-out duration-300'
               src={ReadButton}
               alt='comic button'
             />
-          </div>
+          </div> */}
           <div className='hidden md:block absolute -right-[45%] md:right-[8%] -bottom-[18%] md:-bottom-[16%] rotate-6'>
             <img
               onClick={() => navigate("/mentoons-comics")}

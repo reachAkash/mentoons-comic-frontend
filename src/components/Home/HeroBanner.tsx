@@ -30,7 +30,7 @@ const HeroBanner = () => {
   return (
     <div
       id='home-heroSection'
-      className="h-full w-full relative mb-[2rem] bg-[url('/assets/home/b-bg.png')] bg-bottom bg-no-repeat bg-cover pb-[8rem] md:pb-[14rem] lg:pb-[20rem]"
+      className='h-full w-full relative  bg-bottom bg-no-repeat bg-cover  '
     >
       <div className='absolute top-[5rem] right-0 z-50 hidden lg:block'>
         <div className='relative group'>
@@ -75,7 +75,7 @@ const HeroBanner = () => {
           loading='lazy'
           src='/assets/home/home-banner.png'
           alt='hero-banner'
-          className='w-full object-cover hidden lg:block'
+          className='w-full object-cover hidden lg:block border'
         />
       </Fade>
 
@@ -87,7 +87,7 @@ const HeroBanner = () => {
           className='w-full object-cover lg:hidden'
         />
       </Fade>
-      <div className='flex flex-row flex-nowrap w-full items-center justify-around  gap-4 sm:gap-6 px-3'>
+      {/* <div className='flex flex-row flex-nowrap w-full items-center justify-around  gap-4 sm:gap-6 px-3'>
         {details.map((item, index) => (
           <div
             key={index}
@@ -100,7 +100,7 @@ const HeroBanner = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
