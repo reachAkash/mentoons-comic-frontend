@@ -19,7 +19,7 @@ import { easeInOut, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 // import AudioComicButton from "@/assets/imgs/audioComicButton.png";
 // import PodcastButton from "@/assets/imgs/podcastButton.png";
-import ReadButton from "@/assets/imgs/readButton.png";
+// import ReadButton from "@/assets/imgs/readButton.png";
 // import ListenButton from "@/assets/imgs/listenButton.png";
 import { PODCAST_CATEGORY, PODCAST_SLIDER } from "@/constant";
 import Autoplay from "embla-carousel-autoplay";
