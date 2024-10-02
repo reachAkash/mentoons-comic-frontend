@@ -1,10 +1,10 @@
 import { Fade } from "react-awesome-reveal";
 import Sidebar from "../comics/Sidebar";
-type detailsData = {
-  url: string;
-  title: string;
-  description: string;
-};
+// type detailsData = {
+//   url: string;
+//   title: string;
+//   description: string;
+// };
 const HeroBanner = () => {
   // const details: detailsData[] = [
   //   {
