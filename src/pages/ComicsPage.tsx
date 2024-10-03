@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import FilterComics from "../components/comics/FilterComics";
 
-const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
+const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { comics, audioComics, selectedFilter } = useSelector(
@@ -24,8 +24,6 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
     return item.category == selectedFilterVariable;
   });
   const comicsToShow = selectedFilter ? filteredComics : comicsData;
-
-  console.log(page);
 
   const addToCart = (image: string) => {
     const item = comicsData?.find((comic: AudioComic | Comic) => {
@@ -69,43 +67,26 @@ const ComicsPage: React.FC<{ page: string }> = ({ page }) => {
           Audio Comics
         </div> */}
           <div className="text-3xl text-red-500 lineBefore uppercase">
-            {page}{" "}
+            Audio Comics
           </div>
           <div className="hidden lg:block">
             <FilterComics />
           </div>
         </div>
-        {page == "Audio Comics" ? (
-          <div className="font-medium text-3xl space-y-8">
-            <h1 className="font-extrabold text-3xl lg:text-7xl">
-              Experience the magic of{" "}
-              <span className="text-primary md:block md:tracking-widest">
-                storytelling
-              </span>{" "}
-              like never before!
-            </h1>
-            <p className="text-xl md:text-2xl">
-              Our audio comics bring illustrations to life with professional
-              voice acting, sound effects, and music, creating an immersive
-              experience that enhances listening skills and imagination.
-            </p>
-          </div>
-        ) : (
-          <div className="font-medium text-3xl space-y-8">
-            <h1 className="font-extrabold text-3xl lg:text-7xl">
-              Dive into colorful worlds and{" "}
-              <span className="text-primary md:block md:tracking-widest">
-                exciting stories{" "}
-              </span>{" "}
-              that teach valuable lessons
-            </h1>
-            <p className="text-xl md:text-2xl">
-              while entertaining young readers. Our diverse range of comics
-              covers various subjects, from history and science to social skills
-              and personal growth.
-            </p>
-          </div>
-        )}
+        <div className="font-medium text-3xl space-y-8">
+          <h1 className="font-extrabold text-3xl lg:text-7xl">
+            Experience the magic of{" "}
+            <span className="text-primary md:block md:tracking-widest">
+              storytelling
+            </span>{" "}
+            like never before!
+          </h1>
+          <p className="text-xl md:text-2xl">
+            Our audio comics bring illustrations to life with professional voice
+            acting, sound effects, and music, creating an immersive experience
+            that enhances listening skills and imagination.
+          </p>
+        </div>
       </div>
       <div>
         {comicsToShow.length > 0 ? (

@@ -1,8 +1,34 @@
 import { Link, useNavigate } from "react-router-dom";
 import Wordbreak from "./Wordbreak";
+import React, { useState } from "react";
+import { MdClose } from "react-icons/md";
+import { motion } from "framer-motion";
+import { useAuth } from "@/hooks/useAuth";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const { isLoggedIn } = useAuth();
+
+  const currComic = {
+    name: "Tanya's Downfall",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+26.jpg",
+    category: "Category",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf",
+    type: "ComicType.comic",
+  };
+
+  console.log(isLoggedIn);
+
+  const handleOpenComic = (comicLink: string) => {
+    isLoggedIn ? (window.location.href = comicLink) : navigate("/register");
+  };
+
   return (
     <div className="relative w-full text-[#864747] h-[150vh] md:h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
       <div className="relative md:px-14 text-center md:text-start py-44 md:py-20 space-y-4">
@@ -94,15 +120,16 @@ const HeroSection: React.FC = () => {
             />
           </Link>
           {/* tanya's downfall comic */}
-          <Link
-            target="_blank"
-            to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
+          <div
+            // target="_blank"
+            // to="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
+            onClick={() => setShowModal(true)}
           >
             <img
               className="w-16 md:w-24 lg:w-32 border-[3px] z-50 shadow-md shadow-black rounded-md border-black absolute left-[10%] -bottom-[60%] md:-bottom-[140%] lg:left-[20%] lg:bottom-0 rotate-[35deg] cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
               src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-06.jpg"
             />
-          </Link>
+          </div>
           {/* live and let live comic */}
           <Link
             target="_blank"
@@ -230,8 +257,61 @@ const HeroSection: React.FC = () => {
           alt="klement toonla image"
         />
       </div>
+      {/* popup modal */}
+      {showModal && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="fixed bg-black/50 z-[99999] top-0 w-screen h-screen"
+        >
+          <div className="bg-rose-50 flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[30rem] rounded-md ">
+            <div
+              onClick={() => setShowModal(false)}
+              className="absolute cursor-pointer top-6 right-4"
+            >
+              <MdClose className="text-2xl" />
+            </div>
+            <div className="w-full md:w-[45%] flex items-center justify-center">
+              <img
+                className="w-[60%] rounded-lg  shadow-2xl shadow-rose-400"
+                src={currComic?.mini_thumbnail}
+                alt="comic image"
+              />
+            </div>
+            <div className="w-full text-center md:w-[65%] space-y-10">
+              <h1 className="text-7xl font-extrabold text-center">
+                {currComic?.name}
+              </h1>
+              <p className="text-2xl font-semibold text-center">
+                {currComic?.desc}
+              </p>
+              <div>
+                <span
+                  onClick={() =>
+                    handleOpenComic(
+                      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
+                    )
+                  }
+                  className="bg-primary uppercase text-lg font-medium hover:bg-white hover:text-primary transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
+                >
+                  Read Now!
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };
+
+// const ComicModal: React.FC = () => {
+//   return (
+//     <div className="  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-md border-2 ">
+//       <div>Akash</div>
+//     </div>
+//   );
+// };
 
 export default HeroSection;
