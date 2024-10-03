@@ -13,7 +13,7 @@ const ComicPdfPage: React.FC = () => {
     <div className="container h-screen bg-rose-50 flex items-center justify-center">
       <div className="w-full md:w-[45%] flex items-center justify-center">
         <img
-          className="w-[60%] rounded-lg"
+          className="w-[60%] rounded-lg shadow-2xl shadow-rose-400"
           src={currComic?.mini_thumbnail}
           alt="comic image"
         />
