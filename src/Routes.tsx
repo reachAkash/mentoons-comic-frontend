@@ -11,6 +11,7 @@ import MainLayout from "./layout/MainLayout";
 import Popup from "./layout/Popup";
 import { RootState } from "./redux/store";
 import ComicPdfPage from "./pages/ComicPdfPage";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -114,9 +115,11 @@ const routes = [
   {
     path: "/mentoons-comics/audio-comics/:comic",
     element: (
+      <ProtectedRoute>
       <MainLayout>
         <AudioComicPage />
       </MainLayout>
+      </ProtectedRoute>
     ),
   },
   {
