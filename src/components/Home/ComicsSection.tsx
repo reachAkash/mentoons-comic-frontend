@@ -47,7 +47,7 @@ const ComicsSection: React.FC = () => {
   };
   return (
     <>
-      <div className="relative  space-y-10 mt-20 mb-[140%] sm:mb-[124%] md:mb-[122%] lg:mb-[126%]">
+      <div className="relative  space-y-10 mt-20 mb-[160%] sm:mb-[124%] md:mb-[122%] lg:mb-[136%]">
         {/* WorkShop Section */}
 
         {/* Comic Section */}
@@ -271,7 +271,7 @@ const ComicsSection: React.FC = () => {
         </div> */}
         </div>
         {/* Podcast Section*/}
-        <div className="absolute -bottom-[136%] ">
+        <div className="absolute -bottom-[136%] border">
           {/* <img className='block' src={podcastSection} alt='workshop' /> */}
           <div className="relative ">
             <img src="/assets/images/new-podcast-page.png" alt="" />
@@ -314,7 +314,7 @@ const ComicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute top-[32%] right-0  w-[45%]  px-2 md:pr-8">
+            <div className="absolute top-[32%] right-0  w-[45%]  px-2 md:pr-8 ">
               <div className="relative">
                 <img src="/assets/images/blue-box.png" alt="" />
 
