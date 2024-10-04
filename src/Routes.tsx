@@ -114,9 +114,9 @@ const routes = [
     path: "/mentoons-comics/audio-comics/:comic",
     element: (
       <ProtectedRoute>
-      <MainLayout>
-        <AudioComicPage />
-      </MainLayout>
+        <MainLayout>
+          <AudioComicPage />
+        </MainLayout>
       </ProtectedRoute>
     ),
   },
@@ -188,6 +188,8 @@ const Router = () => {
     (store: RootState) => store.user.userLoggedIn
   );
 
+  console.log(showPopup + " " + userLoggedIn);
+
   return (
     <>
       <ScrollToTop />
@@ -200,8 +202,8 @@ const Router = () => {
       </Suspense>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-      {/* <ProgressScroller />ss */}
-      {showPopup && userLoggedIn && (
+      {/* <ProgressScroller /> */}
+      {showPopup && localStorage.getItem("phoneNumber") && (
         <Popup
           item={{
             name: "Electronic Gadgets And Kids",

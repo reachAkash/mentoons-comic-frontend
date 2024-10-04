@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
+import axiosInstance from "@/api/axios";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState<boolean>(false);
   const { isLoggedIn } = useAuth();
+  const [email, setEmail] = useState<string>();
 
   const currComic = {
     name: "Tanya's Downfall",
@@ -23,9 +25,13 @@ const HeroSection: React.FC = () => {
     type: "ComicType.comic",
   };
 
-  console.log(isLoggedIn);
-
-  const handleOpenComic = (comicLink: string) => {
+  const handleOpenComic = async (comicLink: string) => {
+    try {
+      const data = await axiosInstance.post("/email/freeDownloadClaim", {
+        email,
+      });
+      console.log(data);
+    } catch (err) {}
     isLoggedIn ? (window.location.href = comicLink) : navigate("/register");
   };
 
@@ -265,7 +271,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="fixed bg-black/50 z-[99999] top-0 w-screen h-screen"
         >
-          <div className="bg-rose-50 flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[30rem] rounded-md ">
+          <div className="bg-rose-50 flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] md:w-[40rem] lg:w-[50rem] h-[20rem] md:h-[25rem] lg:h-[30rem] rounded-md ">
             <div
               onClick={() => setShowModal(false)}
               className="absolute cursor-pointer top-6 right-4"
@@ -274,18 +280,26 @@ const HeroSection: React.FC = () => {
             </div>
             <div className="w-full md:w-[45%] flex items-center justify-center">
               <img
-                className="w-[60%] rounded-lg  shadow-2xl shadow-rose-400"
+                className="w-[60%] rounded-lg shadow-2xl shadow-rose-400 "
                 src={currComic?.mini_thumbnail}
                 alt="comic image"
               />
             </div>
             <div className="w-full text-center md:w-[65%] space-y-10">
-              <h1 className="text-7xl font-extrabold text-center">
-                {currComic?.name}
+              <h1 className="text-6xl font-extrabold text-center">
+                Tanya's Downfall
               </h1>
-              <p className="text-2xl font-semibold text-center">
-                {currComic?.desc}
-              </p>
+              <div className="space-y-2">
+                <label className="text-rose-400">
+                  Enter Email to Claim your free comic
+                </label>
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="px-4 py-2 rounded-md outline-none w-2/3"
+                  placeholder="Your Email"
+                />
+              </div>
               <div>
                 <span
                   onClick={() =>
@@ -293,7 +307,7 @@ const HeroSection: React.FC = () => {
                       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf"
                     )
                   }
-                  className="bg-primary uppercase text-lg font-medium hover:bg-white hover:text-primary transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
+                  className="bg-rose-400 uppercase text-lg font-medium hover:bg-white hover:text-rose-400 transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
                 >
                   Read Now!
                 </span>
