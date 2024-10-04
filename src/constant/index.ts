@@ -520,6 +520,12 @@ export const PODCAST_CATEGORY = [
         videoSrc:
           "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+13+-+19/how-to-use-gadgets.mp4",
       },
+      {
+        title: "How to build Confidence",
+        description: "",
+        videoSrc:
+          "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Build+Confidence.mp4",
+      },
     ],
   },
   {
@@ -559,7 +565,6 @@ export const PODCAST_CATEGORY = [
   },
 ];
 
-
 // export const WORKSHOP_CATEGORY = [
-  
+
 // ]
