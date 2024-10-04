@@ -29,42 +29,42 @@ const HeroBanner = () => {
 
   return (
     <div
-      id='home-heroSection'
-      className='h-full w-full relative  bg-bottom bg-no-repeat bg-cover  '
+      id="home-heroSection"
+      className="h-full w-full relative   border z-10 "
     >
-      <div className='absolute top-[5rem] right-0 z-50 hidden lg:block'>
-        <div className='relative group'>
-          <div className='bg-red-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg'>
-            <div className='flex flex-col items-center group-hover:items-start transition-all duration-300 '>
-              <Sidebar className='hidden md:block' content='comics' />
+      <div className="absolute top-[5rem] right-0 z-50 hidden lg:block">
+        <div className="relative group">
+          <div className="bg-red-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" content="comics" />
             </div>
           </div>
-          <div className='absolute top-[4.2rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-            <div className='bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap'>
+          <div className="absolute top-[4.2rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
               View Comics
             </div>
           </div>
         </div>
-        <div className='relative group'>
-          <div className='bg-green-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg'>
-            <div className='flex flex-col items-center group-hover:items-start transition-all duration-300 '>
-              <Sidebar className='hidden md:block' content='podcasts' />
+        <div className="relative group">
+          <div className="bg-green-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" content="podcasts" />
             </div>
           </div>
-          <div className='absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-            <div className='bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap'>
+          <div className="absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
               View Podcasts
             </div>
           </div>
         </div>
-        <div className='relative group'>
-          <div className='bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg'>
-            <div className='flex flex-col items-center group-hover:items-start transition-all duration-300 '>
-              <Sidebar className='hidden md:block' content='workshops' />
+        <div className="relative group">
+          <div className="bg-primary text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
+            <div className="flex flex-col items-center group-hover:items-start transition-all duration-300 ">
+              <Sidebar className="hidden md:block" content="workshops" />
             </div>
           </div>
-          <div className='absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-            <div className='bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap'>
+          <div className="absolute top-[4rem] right-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-black text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg whitespace-nowrap">
               View Workshops
             </div>
           </div>
@@ -72,19 +72,19 @@ const HeroBanner = () => {
       </div>
       <Fade>
         <img
-          loading='lazy'
-          src='/assets/home/home-banner.png'
-          alt='hero-banner'
-          className='w-full object-cover hidden lg:block border'
+          loading="lazy"
+          src="/assets/home/home-banner.png"
+          alt="hero-banner"
+          className="w-full object-cover hidden lg:block "
         />
       </Fade>
 
       <Fade>
         <img
-          loading='lazy'
-          src='/assets/home/mv.png'
-          alt='hero-banner'
-          className='w-full object-cover lg:hidden'
+          loading="lazy"
+          src="/assets/home/mv.png"
+          alt="hero-banner"
+          className="w-full object-cover lg:hidden"
         />
       </Fade>
       {/* <div className='flex flex-row flex-nowrap w-full items-center justify-around  gap-4 sm:gap-6 px-3'>
@@ -101,6 +101,11 @@ const HeroBanner = () => {
           </div>
         ))}
       </div> */}
+      <img
+        src="/assets/images/blue-bg.png"
+        alt=""
+        className="absolute -bottom-[18%] sm:-bottom-[20%] lg:-bottom-[33%]  -z-[1]"
+      />
     </div>
   );
 };

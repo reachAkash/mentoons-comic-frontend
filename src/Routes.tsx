@@ -1,10 +1,8 @@
 import { lazy, Suspense, useState } from "react";
 import { useSelector } from "react-redux";
-
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
 import ComicCard from "./components/comics/HoverCardComic";
-import ProgressScroller from "./components/comics/ProgressScroller";
 import ScrollToTop from "./components/comics/ScrollToTop";
 import Loader from "./components/common/Loader";
 import MainLayout from "./layout/MainLayout";
@@ -202,7 +200,7 @@ const Router = () => {
       </Suspense>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-      <ProgressScroller />
+      {/* <ProgressScroller />ss */}
       {showPopup && userLoggedIn && (
         <Popup
           item={{

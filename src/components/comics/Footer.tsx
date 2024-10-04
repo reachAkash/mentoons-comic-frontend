@@ -1,19 +1,18 @@
+import FooterImg from "@/assets/imgs/footerImg.png";
 import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
 import GroupImg4 from "@/assets/imgs/groupImg4.jpg";
-import { Link, useNavigate } from "react-router-dom";
-import { MdLocationOn } from "react-icons/md";
-import { ImLinkedin } from "react-icons/im";
-import { FaFacebookSquare } from "react-icons/fa";
-import { RiTwitterXLine } from "react-icons/ri";
-import { AiFillInstagram } from "react-icons/ai";
-import { IoLogoYoutube, IoMdClose } from "react-icons/io";
-import { IoLogoWhatsapp } from "react-icons/io";
-import MapComponent from "./MapComponent";
-import { useState } from "react";
 import Logo from "@/assets/imgs/logo mini.png";
-import FooterImg from "@/assets/imgs/footerImg.png";
+import { useState } from "react";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebookSquare } from "react-icons/fa";
+import { ImLinkedin } from "react-icons/im";
+import { IoLogoWhatsapp, IoLogoYoutube, IoMdClose } from "react-icons/io";
+import { MdLocationOn } from "react-icons/md";
+import { RiTwitterXLine } from "react-icons/ri";
+import { Link, useNavigate } from "react-router-dom";
+import MapComponent from "./MapComponent";
 
 interface ImagePopupProps {
   isOpen: boolean;
@@ -94,8 +93,8 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
-      <div className="w-3/4 md:w-2/4 lg:w-[50%] xl:w-[40%] absolute top-[-3rem] right-[15%] md:top-0 md:right-8 lg:top-24">
-        <img className="w-full" src={FooterImg} alt="footer text" />
+      <div className="w-3/4 md:w-2/4 lg:w-[50%] xl:w-[40%] absolute top-[2%] right-[15%] md:top-0 md:right-8 lg:top-24">
+        <img className="w-[60%] mx-auto" src={FooterImg} alt="footer text" />
       </div>
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
