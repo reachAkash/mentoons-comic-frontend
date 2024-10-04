@@ -18,13 +18,13 @@ import React from "react";
 // import { useQuery } from "@/pages/AudioComicPage";
 // import React, { useCallback, useEffect, useRef, useState } from "react";
 
-// export interface WorkshopItems {
-//   name: string;
-//   desc: string;
-//   img: string;
-//   video: string;
-//   pageUrl: string;
-// }
+export interface WorkshopItems {
+  name: string;
+  desc: string;
+  img: string;
+  video: string;
+  pageUrl: string;
+}
 
 // const ComicWorkshop: React.FC = () => {
 //   const currType = useQuery();

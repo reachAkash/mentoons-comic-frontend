@@ -6,26 +6,26 @@ import Sidebar from "../comics/Sidebar";
 //   description: string;
 // };
 const HeroBanner = () => {
-  const details: detailsData[] = [
-    {
-      url: "/assets/home/box 3.png",
-      title: "Join Us",
-      description:
-        "Sign up and browse through our interactive sessions, books, games, and videos.",
-    },
-    {
-      url: "/assets/home/box 2.png",
-      title: "Join Us",
-      description:
-        "Sign up and browse through our interactive sessions, books, games, and videos.",
-    },
-    {
-      url: "/assets/home/box 1.png",
-      title: "Join Us",
-      description:
-        "Sign up and browse through our interactive sessions, books, games, and videos.",
-    },
-  ];
+  // const details: detailsData[] = [
+  //   {
+  //     url: "/assets/home/box 3.png",
+  //     title: "Join Us",
+  //     description:
+  //       "Sign up and browse through our interactive sessions, books, games, and videos.",
+  //   },
+  //   {
+  //     url: "/assets/home/box 2.png",
+  //     title: "Join Us",
+  //     description:
+  //       "Sign up and browse through our interactive sessions, books, games, and videos.",
+  //   },
+  //   {
+  //     url: "/assets/home/box 1.png",
+  //     title: "Join Us",
+  //     description:
+  //       "Sign up and browse through our interactive sessions, books, games, and videos.",
+  //   },
+  // ];
 
   return (
     <div
