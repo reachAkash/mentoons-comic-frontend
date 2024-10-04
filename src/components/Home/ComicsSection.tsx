@@ -12,7 +12,6 @@ import Klement_Toonla_Home from "@/assets/imgs/klement_toonlaBgHome.svg";
 import ParentWorkshopHome from "@/assets/imgs/parentsWorkshopHome.png";
 import TeenWorkshopHome from "@/assets/imgs/teenWorkshopHome.svg";
 // import workshopTextHome from "@/assets/imgs/workshopTextHome.svg";
-import ComicButton from "@/assets/imgs/comicButton.png";
 import { easeInOut, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 // import AudioComicButton from "@/assets/imgs/audioComicButton.png";
@@ -48,7 +47,7 @@ const ComicsSection: React.FC = () => {
   };
   return (
     <>
-      <div className="relative  space-y-10 mt-20 mb-[130%] sm:mb-[174%] md:mb-[162%] lg:mb-[156%]">
+      <div className="relative  space-y-10 mt-20 mb-[130%] sm:mb-[124%] md:mb-[122%] lg:mb-[120%]">
         {/* WorkShop Section */}
 
         {/* Comic Section */}
@@ -237,14 +236,14 @@ const ComicsSection: React.FC = () => {
               alt='comic button'
             />
           </div> */}
-          <div className="hidden md:block absolute -right-[45%] md:right-[8%] -bottom-[18%] md:-bottom-[16%] rotate-6">
+          {/* <div className="hidden md:block absolute -right-[45%] md:right-[8%] -bottom-[18%] md:-bottom-[16%] rotate-6">
             <img
               onClick={() => navigate("/mentoons-comics")}
               className="z-50 w-[25%] md:w-[40%] lg:w-2/3 cursor-pointer hover:scale-105 active:scale-95 transition-all ease-in-out duration-300"
               src={ComicButton}
               alt="comic button"
             />
-          </div>
+          </div> */}
           {/*
         <div className="absolute left-1/2 -bottom-[45%]">
           <img
