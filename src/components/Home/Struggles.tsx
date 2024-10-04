@@ -22,7 +22,7 @@ const Struggles = () => {
   }, []);
   return (
     <>
-      <div className='w-full h-full bg-red'>
+      <div className='w-full h-full pt-[26%]'>
         <div className="bg-[url('/assets/home/Group 2.png')] lg:bg-cover bg-bottom bg-no-repeat  h-full w-full px-2 ">
           <div className='relative flex flex-col md:flex-row items-center justify-around space-y-4'>
             <h1 className='text-3xl lg:text-7xl text-start px-4'>
