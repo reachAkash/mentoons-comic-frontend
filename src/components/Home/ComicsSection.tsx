@@ -47,7 +47,7 @@ const ComicsSection: React.FC = () => {
   };
   return (
     <>
-      <div className="relative  space-y-10 mt-20 mb-[130%] sm:mb-[124%] md:mb-[122%] lg:mb-[120%]">
+      <div className="relative  space-y-10 mt-20 mb-[140%] sm:mb-[124%] md:mb-[122%] lg:mb-[126%]">
         {/* WorkShop Section */}
 
         {/* Comic Section */}
