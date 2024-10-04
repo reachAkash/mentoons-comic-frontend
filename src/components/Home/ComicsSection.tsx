@@ -271,7 +271,7 @@ const ComicsSection: React.FC = () => {
         </div> */}
         </div>
         {/* Podcast Section*/}
-        <div className="absolute -bottom-[136%] border">
+        <div className="absolute -bottom-[136%] ">
           {/* <img className='block' src={podcastSection} alt='workshop' /> */}
           <div className="relative ">
             <img src="/assets/images/new-podcast-page.png" alt="" />
