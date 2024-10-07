@@ -96,11 +96,12 @@ const Auth: React.FC = () => {
     const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
     try {
       const res = await dispatch(verifyLoginOTP({ phoneNumber, otp })).unwrap();
+      console.log(res);
       if (res.success) {
         dispatch(userLoggedIn());
         toast.success(res.message || "OTP verified successfully!");
         navigate("/");
-        window.location.reload();
+        // window.location.reload();
       }
     } catch (error: any) {
       toast.error(
@@ -137,7 +138,7 @@ const Auth: React.FC = () => {
       <div className="h-screen pb-6 flex flex-col lg:flex-row bg-white overflow-clip">
         <div className="w-full lg:w-1/2 hidden lg:flex items-center justify-center">
           <img
-            src="/assets/images/team-Illustration.png"
+            src="/assets/images/team Illustration.jpg"
             alt="auth-cover"
             className="h-full w-full object-cover"
           />
