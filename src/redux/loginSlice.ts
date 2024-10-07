@@ -7,33 +7,16 @@ interface SignupResponse {
   message?: string;
 }
 
-// data
-// : 
-// accessToken
-// : 
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg3NzczMjg0NTEiLCJpYXQiOjE3MjgyNzc0MDAsImV4cCI6MTcyODI3ODMwMH0.st43ZX7pDpsOr9K1Ld31KrvPY0ihK5djjrPQTIDCkuI"
-// refreshToken
-// : 
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg3NzczMjg0NTEiLCJpYXQiOjE3MjgyNzc0MDAsImV4cCI6MTcyODg4MjIwMH0.9agU66eX4czD9WuDJLT-gCIhkvKa3H-IDxDVgLIWPI4"
-// result
-// : 
-// accessToken
-// : 
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg3NzczMjg0NTEiLCJpYXQiOjE3MjgyNzc0MDAsImV4cCI6MTcyODI3ODMwMH0.st43ZX7pDpsOr9K1Ld31KrvPY0ihK5djjrPQTIDCkuI"
-// phoneNumber
-// : 
-// "+918777328451"
-
 interface OTPVerificationResponse {
   success: boolean;
   message?: string;
   data?: {
     accessToken?: string;
-    refreshToken?:string;
+    refreshToken?: string;
     result?: {
       accessToken?: string;
       phoneNumber?: string;
-    }
+    };
   };
 }
 
@@ -234,7 +217,10 @@ const authSlice = createSlice({
           action.payload.data?.result?.phoneNumber
         ) {
           localStorage.setItem("token", action.payload.data.accessToken);
-          localStorage.setItem("phoneNumber", action.payload.data.result.phoneNumber);
+          localStorage.setItem(
+            "phoneNumber",
+            action.payload.data.result.phoneNumber
+          );
         }
       })
       .addCase(verifyLoginOTP.rejected, (state, action) => {
