@@ -29,11 +29,12 @@ const HeroSection: React.FC = () => {
   const handleOpenComic = async (comicLink: string) => {
     try {
       if (isLoggedIn) {
-        const response = await axiosInstance.post("/email/freeDownloadClaim", {
+        await axiosInstance.post("/email/freeDownloadClaim", {
           email,comicLink
         });
         // if(response.success){
           toast("Comic sent successfully!");
+          (window.location.href = comicLink)
         // }
       } else {
         navigate('/register');
@@ -41,8 +42,10 @@ const HeroSection: React.FC = () => {
     } catch (err) {
       console.error(err);
       toast("An error occurred. Please try again.");
+    }finally{
+      setShowModal(false)
     }
-  };
+  };  
   
 
   return (
