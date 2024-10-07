@@ -96,11 +96,12 @@ const Auth: React.FC = () => {
     const otp = `${values.otp0}${values.otp1}${values.otp2}${values.otp3}`;
     try {
       const res = await dispatch(verifyLoginOTP({ phoneNumber, otp })).unwrap();
+      console.log(res);
       if (res.success) {
         dispatch(userLoggedIn());
         toast.success(res.message || "OTP verified successfully!");
         navigate("/");
-        window.location.reload();
+        // window.location.reload();
       }
     } catch (error: any) {
       toast.error(

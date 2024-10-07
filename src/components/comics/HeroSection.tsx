@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
 import axiosInstance from "@/api/axios";
+import { toast } from "sonner";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -27,13 +28,22 @@ const HeroSection: React.FC = () => {
 
   const handleOpenComic = async (comicLink: string) => {
     try {
-      const data = await axiosInstance.post("/email/freeDownloadClaim", {
-        email,
-      });
-      console.log(data);
-    } catch (err) {}
-    isLoggedIn ? (window.location.href = comicLink) : navigate("/register");
+      if (isLoggedIn) {
+        const response = await axiosInstance.post("/email/freeDownloadClaim", {
+          email,comicLink
+        });
+        // if(response.success){
+          toast("Comic sent successfully!");
+        // }
+      } else {
+        navigate('/register');
+      }
+    } catch (err) {
+      console.error(err);
+      toast("An error occurred. Please try again.");
+    }
   };
+  
 
   return (
     <div className="relative w-full text-[#864747] h-[150vh] md:h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
@@ -271,7 +281,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="fixed bg-black/50 z-[99999] top-0 w-screen h-screen"
         >
-          <div className="bg-rose-50 flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] md:w-[40rem] lg:w-[50rem] h-[20rem] md:h-[25rem] lg:h-[30rem] rounded-md ">
+          <div className="bg-rose-50 flex flex-col md:flex-row items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] md:w-[40rem] lg:w-[50rem] h-fit md:h-[25rem] lg:h-[30rem] rounded-md py-6 md:py-0 space-y-4">
             <div
               onClick={() => setShowModal(false)}
               className="absolute cursor-pointer top-6 right-4"
@@ -285,8 +295,8 @@ const HeroSection: React.FC = () => {
                 alt="comic image"
               />
             </div>
-            <div className="w-full text-center md:w-[65%] space-y-10">
-              <h1 className="text-6xl font-extrabold text-center">
+            <div className="w-full text-center md:w-[65%] space-y-8 md:space-y-10">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-center">
                 Tanya's Downfall
               </h1>
               <div className="space-y-2">
