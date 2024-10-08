@@ -1,6 +1,8 @@
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { easeInOut, motion } from "framer-motion";
+import axiosInstance from "@/api/axios";
+import { toast } from "sonner";
 
 export interface PopupProps {
   setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,6 +12,20 @@ export interface PopupProps {
   };
 }
 const Popup: React.FC<PopupProps> = ({ setShowPopup, item }) => {
+  const sendComic = async () => {
+    try {
+      const data = await axiosInstance.post("whatsapp/sendComic", {
+        number: localStorage.getItem("phoneNumber") || "+918777328451",
+      });
+      console.log(data);
+      setShowPopup(false);
+      toast("Comic sent successfully on whatsapp!");
+    } catch (err) {
+      setShowPopup(false);
+      console.log(err);
+    }
+  };
+
   return (
     <div className="w-screen h-screen bg-black/60 fixed top-0 left-0 flex items-center justify-center z-[999999]">
       <motion.div
@@ -40,7 +56,7 @@ const Popup: React.FC<PopupProps> = ({ setShowPopup, item }) => {
             <p className="text-sm">Kindly check your mail</p>
           </div>
           <div
-            // onClick={() => navigate("/auth")}
+            onClick={() => sendComic()}
             className="bg-primary text-white rounded-full border border-primary text-center cursor-pointer px-4 py-2 duration-300 hover:bg-white hover:text-primary"
           >
             Claim Your Comic

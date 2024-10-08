@@ -327,6 +327,49 @@ export enum ComicType {
   audioComic = "audioComic",
 }
 
+export const workshopDetails: WorkshopItems[] = [
+  {
+    name: "Buddy Camp",
+    desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
+    img: workshopImg1,
+    video:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=buddy",
+  },
+  {
+    name: "Teen Camp",
+    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
+    img: workshopImg2,
+    video:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=teen",
+  },
+  {
+    name: "Family Camp",
+    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
+    img: workshopImg3,
+    video:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=family",
+  },
+  {
+    name: "How to make your own Comic",
+    desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
+    img: workshopImg4,
+    video:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/How+to+make+your+Own+Comic+Workshop+Trailer_01.mp4",
+    pageUrl: "/mentoons-workshops?workshop=comic",
+  },
+  {
+    name: "How to make your own Character",
+    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
+    img: workshopImg5,
+    video:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/how+to+make+your+own+character+workshop.mp4",
+    pageUrl: "/mentoons-workshops?workshop=character",
+  },
+];
+
 export const audioComicsData: AudioComic[] = [
   // groupSmall = 6 - 12, groupMedium = 13 - 19, groupLarge = 20+
   {
@@ -643,50 +686,67 @@ export const audioComicsData: AudioComic[] = [
   },
 ];
 
-export const workshopDetails: WorkshopItems[] = [
-  {
-    name: "Buddy Camp",
-    desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
-    img: workshopImg1,
-    video:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=buddy",
-  },
-  {
-    name: "Teen Camp",
-    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-    img: workshopImg2,
-    video:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=teen",
-  },
-  {
-    name: "Family Camp",
-    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-    img: workshopImg3,
-    video:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=family",
-  },
-  {
-    name: "How to make your own Comic",
-    desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
-    img: workshopImg4,
-    video:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/How+to+make+your+Own+Comic+Workshop+Trailer_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=comic",
-  },
-  {
-    name: "How to make your own Character",
-    desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-    img: workshopImg5,
-    video:
-      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/how+to+make+your+own+character+workshop.mp4",
-    pageUrl: "/mentoons-workshops?workshop=character",
-  },
-];
-
 export const comicsData: Comic[] = [
+  {
+    name: "Don't Fade Away",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-04.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+35.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/dont+fade+away.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "One Way Trip",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-22.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+38.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/one+way+trip.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Bet Your Life",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-09.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+37.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/bet+your+life.pdf",
+    category: Category.sm,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Come out of Gaming",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-05.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+36.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Come+Out+Of+Game.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "The Cell Life of Soniya",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-12.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+27.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Cell+Life+of+Soniya.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
   {
     name: "Tanya's Downfall",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
@@ -698,6 +758,66 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/tanya_s+downfall.pdf",
     type: ComicType.comic,
+  },
+  {
+    name: "Live and Let Live",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-21.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+23.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/live+or+let+live.pdf",
+    category: Category.sm,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "I can Manage (Time Management)",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-02.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+24.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Asha+_+Simran-+Time+management+(6-9)+.pdf",
+    category: Category.sm,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Choose Wisely",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-08.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+33.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/choose+wisely.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Rohan and the Puppies",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-17.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+28.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/rohan+and+the+puppies.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Rishi and Rohit",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-16.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+29.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/rohit+and+rishi.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
   {
     name: "My Daily Routine",
@@ -712,6 +832,18 @@ export const comicsData: Comic[] = [
     type: ComicType.comic,
   },
   {
+    name: "Comic on Divorce",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-07.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+1+4.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Divorce.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
     name: "Say Sorry",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
     mini_thumbnail:
@@ -722,5 +854,41 @@ export const comicsData: Comic[] = [
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Say+Sorry.pdf",
     category: Category.sm,
     type: ComicType.comic,
+  },
+  {
+    name: "How Teenagers Lose Their Jobs Part-2",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-24.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+19.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/20%2B+script+2+story.pdf",
+    category: Category.lg,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Hungry for Likes Not Life",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/1-15.jpg",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Untitled_Artwork+34.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Hungry+for+likes+not+life.pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
+  },
+  {
+    name: "Think Before You Act",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sapiente maiores eius libero a commodi.",
+    mini_thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/mini_images/Think_Before_You_Act!.png",
+    thumbnail:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/thumbnail/Audio+comics+thumbnails/Think_Before_You_Act!.jpg",
+    comicLink:
+      "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Preppers+Story+(Think+Before+You+Act)+(1).pdf",
+    category: Category.md,
+    type: ComicType.audioComic,
   },
 ];
