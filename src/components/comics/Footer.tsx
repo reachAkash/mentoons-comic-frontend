@@ -1,4 +1,3 @@
-import FooterImg from "@/assets/imgs/footerImg.png";
 import GroupImg1 from "@/assets/imgs/groupImg1.jpg";
 import GroupImg2 from "@/assets/imgs/groupImg2.jpg";
 import GroupImg3 from "@/assets/imgs/groupImg3.jpg";
@@ -93,9 +92,7 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
-      <div className="w-3/4 md:w-2/4 lg:w-[50%] xl:w-[40%] absolute top-[2%] right-[15%] md:top-0 md:right-8 lg:top-24">
-        <img className="w-[60%] mx-auto" src={FooterImg} alt="footer text" />
-      </div>
+
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
