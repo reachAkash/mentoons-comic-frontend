@@ -178,8 +178,8 @@ const Navbar: React.FC = () => {
                     Family Camp (Age 20+)
                   </MenubarItem>
                 </MenubarContent>
-              </MenubarMenu>
-            </Menubar> */}
+              </MenubarMenu>*/}
+            </Menubar>
             <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm">
               <button
                 onClick={handleMuteToggle}
