@@ -60,8 +60,9 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 top-0 fixed z-[90] gap-[6rem] transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+      className={`w-full min-h-fit bg-primary flex items-center justify-around px-4 lg:py-5 top-0 fixed z-[90] gap-[6rem] transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
       style={{ boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
     >
       <div className="flex-1 flex lg:justify-end">
@@ -135,8 +136,9 @@ const Header = () => {
           )}
         </div>
         <Menubar
-          className={`${menuOpen ? "flex" : "hidden"
-            }  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-90 lg:h-10`}
+          className={`${
+            menuOpen ? "flex" : "hidden"
+          }  z-10 lg:flex flex-col lg:flex-row items-center justify-between bg-[#f0ebe5] lg:bg-transparent border-none text-[#989ba2] lg:text-white text-base lg:static absolute top-12 right-0 w-full lg:w-full p-4 lg:p-0  h-90 lg:h-10`}
         >
           <MenubarMenu>
             <NavLink to="/" onClick={() => setMenuOpen(false)}>
@@ -213,8 +215,18 @@ const Header = () => {
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
+            <NavLink
+              to="/mentoons-workshops"
+              onClick={() => setMenuOpen(false)}
+            >
+              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold">
+                Workshops
+              </MenubarTrigger>
+            </NavLink>
+          </MenubarMenu>
+          {/* <MenubarMenu>
             <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold hidden lg:block">
-              Workshops
+             
             </MenubarTrigger>
             <MenubarContent>
               <MenubarItem
@@ -258,7 +270,7 @@ const Header = () => {
                 How to make your own Character
               </MenubarItem>
             </MenubarContent>
-          </MenubarMenu>
+          </MenubarMenu> */}
 
           <MenubarMenu>
             <NavLink
@@ -313,8 +325,7 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          {
-            !isLoggedIn && (
+          {!isLoggedIn && (
             <MenubarMenu>
               <MenubarTrigger className="cursor-pointer lg:hover:text-white h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden">
                 <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
@@ -332,7 +343,7 @@ const Header = () => {
                 <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
               </MenubarContent>
             </MenubarMenu>
-            )}
+          )}
         </Menubar>
       </div>
     </div>

@@ -7,8 +7,9 @@ import ScrollToTop from "./components/comics/ScrollToTop";
 import Loader from "./components/common/Loader";
 import MainLayout from "./layout/MainLayout";
 import Popup from "./layout/Popup";
-import { RootState } from "./redux/store";
+
 import ComicPdfPage from "./pages/ComicPdfPage";
+import { RootState } from "./redux/store";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
 // Lazy load the pages
@@ -26,7 +27,7 @@ const PodCast = lazy(() => import("./pages/PodCast"));
 const FAQ = lazy(() => import("./components/common/FAQ"));
 const Plans = lazy(() => import("./components/common/Plans"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Workshops = lazy(() => import("./pages/WorkshopsPage"));
+const WorkshopsPage = lazy(() => import("./pages/WorkshopsPage"));
 
 const routes = [
   {
@@ -86,6 +87,16 @@ const routes = [
       </MainLayout>
     ),
   },
+  {
+    path: "/mentoons-comics/comics",
+    element: (
+      <MainLayout>
+        <ComicsPage />
+
+        <ComicsPage />
+      </MainLayout>
+    ),
+  },
   // {
   //   path: "/mentoons-comics/comics",
   //   element: (
@@ -98,7 +109,7 @@ const routes = [
     path: "/mentoons-workshops",
     element: (
       <MainLayout>
-        <Workshops />
+        <WorkshopsPage />
       </MainLayout>
     ),
   },
@@ -106,6 +117,8 @@ const routes = [
     path: "/mentoons-comics/comics-list",
     element: (
       <MainLayout>
+        <ComicsPage />
+
         <ComicsPage />
       </MainLayout>
     ),

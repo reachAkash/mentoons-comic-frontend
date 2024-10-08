@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import DropdownMenu from "./DropdownMenu";
-import { MiniSidebar } from "./Sidebar";
 import LogoMini from "@/assets/imgs/logo mini.png";
 import Logo from "@/assets/imgs/logo.png";
 import {
@@ -14,6 +10,10 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@radix-ui/react-menubar";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import DropdownMenu from "./DropdownMenu";
+import { MiniSidebar } from "./Sidebar";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
                   </MenubarSub>
                 </MenubarContent>
               </MenubarMenu>
-              <MenubarMenu>
+              {/* <MenubarMenu>
                 <MenubarTrigger className=" cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] px-6 text-base">
                   Workshops
                 </MenubarTrigger>
@@ -178,7 +178,7 @@ const Navbar: React.FC = () => {
                     Family Camp (Age 20+)
                   </MenubarItem>
                 </MenubarContent>
-              </MenubarMenu>
+              </MenubarMenu>*/}
             </Menubar>
             <li className="text-white hover:bg-red-500 hover:text-white h-full py-6 px-3 transition-all ease-in-out duration-300 cursor-pointer rounded-sm">
               <button

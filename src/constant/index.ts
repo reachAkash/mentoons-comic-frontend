@@ -395,7 +395,7 @@ export const OPEN_POSITION = [
   {
     id: 51,
     jobId: "JOB001",
-    jobTitle: "Fullstack Developer",
+    jobTitle: "MERN Developer",
     jobDescription: `We are currently seeking a Backend Developer to join our
      dynamic team. This individual will play a vital role 
      enabling the development of e-commerce, managing databases, 
