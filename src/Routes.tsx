@@ -9,6 +9,8 @@ import MainLayout from "./layout/MainLayout";
 import Popup from "./layout/Popup";
 
 import { RootState } from "./redux/store";
+import ComicPdfPage from "./pages/ComicPdfPage";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
@@ -81,6 +83,7 @@ const routes = [
     path: "/mentoons-comics/audio-comics",
     element: (
       <MainLayout>
+
         <ComicsPage page="Audio Comics" />
       </MainLayout>
     ),
@@ -90,9 +93,19 @@ const routes = [
     element: (
       <MainLayout>
         <ComicsPage page="Comics" />
+
+        <ComicsPage />
       </MainLayout>
     ),
   },
+  // {
+  //   path: "/mentoons-comics/comics",
+  //   element: (
+  //     <MainLayout>
+  //       <ComicsPage page='Comics' />
+  //     </MainLayout>
+  //   ),
+  // },
   {
     path: "/mentoons-workshops",
     element: (
@@ -105,16 +118,22 @@ const routes = [
     path: "/mentoons-comics/comics-list",
     element: (
       <MainLayout>
+
         <ComicsPage page="Our Comics Collection" />
+
+        <ComicsPage />
+
       </MainLayout>
     ),
   },
   {
     path: "/mentoons-comics/audio-comics/:comic",
     element: (
-      <MainLayout>
-        <AudioComicPage />
-      </MainLayout>
+      <ProtectedRoute>
+        <MainLayout>
+          <AudioComicPage />
+        </MainLayout>
+      </ProtectedRoute>
     ),
   },
   {
@@ -158,6 +177,14 @@ const routes = [
     ),
   },
   {
+    path: "/mentoons-comics/comics/:comic",
+    element: (
+      <MainLayout>
+        <ComicPdfPage />
+      </MainLayout>
+    ),
+  },
+  {
     path: "*",
     element: (
       <MainLayout>
@@ -177,6 +204,8 @@ const Router = () => {
     (store: RootState) => store.user.userLoggedIn
   );
 
+  console.log(showPopup + " " + userLoggedIn);
+
   return (
     <>
       <ScrollToTop />
@@ -189,8 +218,8 @@ const Router = () => {
       </Suspense>
       <Toaster />
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
-      {/* <ProgressScroller />ss */}
-      {showPopup && userLoggedIn && (
+      {/* <ProgressScroller /> */}
+      {showPopup && localStorage.getItem("phoneNumber") && (
         <Popup
           item={{
             name: "Electronic Gadgets And Kids",

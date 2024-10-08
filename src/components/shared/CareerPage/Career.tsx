@@ -38,8 +38,12 @@ const Career = () => {
           transition={{ duration: 1.5 }}
           className="text-5xl lg:text-7xl text-black w-full font-extrabold leading-[1.10]"
         >
+
           What our previous employees
           <Wordbreak /> have to say.
+
+          What our previous employees <Wordbreak /> have to say.
+
         </motion.div>
       </motion.div>
 
