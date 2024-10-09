@@ -282,16 +282,7 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          <MenubarMenu>
-            <NavLink
-              to="/mentoons-workshops"
-              onClick={() => setMenuOpen(false)}
-            >
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden">
-                Workshops
-              </MenubarTrigger>
-            </NavLink>
-          </MenubarMenu>
+
           {isLoggedIn && (
             <MenubarMenu>
               <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex">

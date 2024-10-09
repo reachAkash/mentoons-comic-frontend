@@ -28,10 +28,7 @@ const HeroBanner = () => {
   // ];
 
   return (
-    <div
-      id="home-heroSection"
-      className="h-full w-full relative   border z-10 "
-    >
+    <div id="home-heroSection" className="h-full w-full relative z-10 ">
       <div className="absolute top-[5rem] right-0 z-50 hidden lg:block">
         <div className="relative group">
           <div className="bg-red-500 text-white w-8 h-40 rounded-l-lg flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:w-14 group-hover:rounded-lg">
