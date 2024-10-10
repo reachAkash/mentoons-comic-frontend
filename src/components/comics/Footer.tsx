@@ -92,7 +92,24 @@ const Footer: React.FC = () => {
         src="/footerMobileVersion.png"
         alt="footer image"
       />
-
+      {/* subscribe to newsletter form */}
+      <form className="space-y-4 py-4">
+        <h3 className="text-black text-4xl font-medium">
+          Subscribe to our Newsletter
+        </h3>
+        <div className="space-x-4">
+          <input
+            className="text-black bg-gray-100 placeholder:text-gray-300 rounded-md outline-none px-6 py-2"
+            placeholder="Enter your email"
+          />
+          <button
+            className="text-white bg-primary hover:bg-primary/95 rounded-full px-6 py-2"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
