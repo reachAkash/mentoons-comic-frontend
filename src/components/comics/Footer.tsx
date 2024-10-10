@@ -12,12 +12,26 @@ import { MdLocationOn } from "react-icons/md";
 import { RiTwitterXLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import MapComponent from "./MapComponent";
+import * as Yup from "yup";
+import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
+import axiosInstance from "@/api/axios";
+import { toast } from "sonner";
 
 interface ImagePopupProps {
   isOpen: boolean;
   imageSrc: string;
   altText: string;
   onClose: () => void;
+}
+
+interface ApiResponse {
+  success: boolean;
+  data?: any; // You can replace 'any' with the actual data type you expect
+  message?: string; // Optional error or success message
+}
+
+interface FormValues {
+  email: string;
 }
 
 const Footer: React.FC = () => {
@@ -51,6 +65,12 @@ const Footer: React.FC = () => {
     { icon: IoLogoWhatsapp, color: "text-green-500" },
   ];
 
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+  });
+
   const images = [
     { src: GroupImg1, alt: "Independence Day, 2023" },
     { src: GroupImg2, alt: "Independence Day, 2023" },
@@ -80,6 +100,33 @@ const Footer: React.FC = () => {
     setSelectedImage(null);
   };
 
+  const handleSubmit = async (
+    values: FormValues,
+    { setSubmitting, resetForm }: FormikHelpers<FormValues>
+  ) => {
+    try {
+      const response = await axiosInstance.post<ApiResponse>(
+        "email/subscribeToNewsletter",
+        {
+          email: values.email,
+        }
+      );
+
+      // The data from the response is in response.data
+      const res: ApiResponse = response.data;
+      if (res.success) {
+        toast(`✅ ${res.message}`);
+      } else {
+        throw new Error("Something went wrong");
+      }
+    } catch (err) {
+      toast(`❌ ${err}`);
+    } finally {
+      resetForm();
+      setSubmitting(false); // Stops the loading state after form submission
+    }
+  };
+
   return (
     <div className="relative w-full pt-12 md:pt-0 text-white text-center">
       <img
@@ -93,23 +140,43 @@ const Footer: React.FC = () => {
         alt="footer image"
       />
       {/* subscribe to newsletter form */}
-      <form className="space-y-4 py-4">
-        <h3 className="text-black text-4xl font-medium">
-          Subscribe to our Newsletter
-        </h3>
-        <div className="space-x-4">
-          <input
-            className="text-black bg-gray-100 placeholder:text-gray-300 rounded-md outline-none px-6 py-2"
-            placeholder="Enter your email"
-          />
-          <button
-            className="text-white bg-primary hover:bg-primary/95 rounded-full px-6 py-2"
-            type="submit"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+      <Formik
+        initialValues={{ email: "" }} // Must match FormValues type
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit} // Correctly passing the handleSubmit
+      >
+        {(
+          { isSubmitting, isValid, dirty } // Added isValid and dirty
+        ) => (
+          <Form className="h-[12rem] flex flex-col justify-evenly border-[3px] border-black bg-[#A4CC13] rounded-3xl shadow-sm absolute top-[10%] right-[10%] space-y-6 py-6 px-10">
+            <h3 className="text-4xl font-semibold">
+              Subscribe to our Newsletter
+            </h3>
+            <div className="flex items-start justify-center space-x-4">
+              <div>
+                <Field
+                  name="email"
+                  type="email"
+                  className="w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-md outline-none px-6 py-2"
+                  placeholder="Enter your email"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-800 text-[18px]"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting || !isValid || !dirty} // Enable only if valid and dirty
+                className="text-white border-2 border-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
+              >
+                Submit
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
