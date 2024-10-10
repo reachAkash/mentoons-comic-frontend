@@ -697,7 +697,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/dont+fade+away.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "One Way Trip",
@@ -709,7 +709,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/one+way+trip.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Bet Your Life",
@@ -721,7 +721,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/bet+your+life.pdf",
     category: Category.sm,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Come out of Gaming",
@@ -733,7 +733,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Come+Out+Of+Game.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "The Cell Life of Soniya",
@@ -745,7 +745,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Cell+Life+of+Soniya.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Tanya's Downfall",
@@ -769,7 +769,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/live+or+let+live.pdf",
     category: Category.sm,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "I can Manage (Time Management)",
@@ -781,7 +781,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Asha+_+Simran-+Time+management+(6-9)+.pdf",
     category: Category.sm,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Choose Wisely",
@@ -793,7 +793,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/choose+wisely.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Rohan and the Puppies",
@@ -805,7 +805,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/rohan+and+the+puppies.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Rishi and Rohit",
@@ -817,7 +817,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/rohit+and+rishi.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "My Daily Routine",
@@ -841,7 +841,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Divorce.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Say Sorry",
@@ -865,7 +865,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/20%2B+script+2+story.pdf",
     category: Category.lg,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Hungry for Likes Not Life",
@@ -877,7 +877,7 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Hungry+for+likes+not+life.pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
   {
     name: "Think Before You Act",
@@ -889,6 +889,6 @@ export const comicsData: Comic[] = [
     comicLink:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Comics-Pdf/Preppers+Story+(Think+Before+You+Act)+(1).pdf",
     category: Category.md,
-    type: ComicType.audioComic,
+    type: ComicType.comic,
   },
 ];
