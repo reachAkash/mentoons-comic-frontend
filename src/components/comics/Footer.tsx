@@ -148,16 +148,16 @@ const Footer: React.FC = () => {
         {(
           { isSubmitting, isValid, dirty } // Added isValid and dirty
         ) => (
-          <Form className="h-[12rem] flex flex-col justify-evenly border-[3px] border-black bg-[#A4CC13] rounded-3xl shadow-sm absolute top-[10%] right-[10%] space-y-6 py-6 px-10">
-            <h3 className="text-4xl font-semibold">
+          <Form className="h-[9rem] w-full md:w-fit lg:h-[12rem] flex flex-col justify-evenly border-[3px] border-black bg-[#A4CC13] rounded-3xl shadow-sm absolute top-[-1.5rem] right-0 md:top-[2%] lg:top-[10%] lg:right-[10%] space-y-4 lg:space-y-6 py-6 md:px-10">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
               Subscribe to our Newsletter
             </h3>
-            <div className="flex items-start justify-center space-x-4">
+            <div className="flex items-start justify-center space-x-1 md:space-x-4">
               <div>
                 <Field
                   name="email"
                   type="email"
-                  className="w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-md outline-none px-6 py-2"
+                  className="w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-md outline-none px-4 py-2"
                   placeholder="Enter your email"
                 />
                 <ErrorMessage
@@ -169,7 +169,7 @@ const Footer: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting || !isValid || !dirty} // Enable only if valid and dirty
-                className="text-white border-2 border-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
+                className="cursor-pointer text-white border-2 border-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
               >
                 Submit
               </button>
