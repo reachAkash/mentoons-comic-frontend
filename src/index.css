@@ -360,9 +360,13 @@ body {
   background-color: #d12881;
   padding: 0.5rem 3rem;
 }
+
 @media (max-width: 768px) {
   .cta-button {
     margin: 0rem 1rem;
+  }
+  .cta-button-footer {
+    padding: 0.5rem 0rem;
   }
 }
 .search-input::placeholder {
