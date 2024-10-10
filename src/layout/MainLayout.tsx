@@ -15,17 +15,17 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const isAuthRoute = location.pathname === "/register";
 
   return (
-    <div className='relative h-full w-full'>
-      <div className='absolute top-[5rem] left-[0.5rem] z-50 lg:hidden'>
-        <button onClick={() => navigate(-1)} className='flex items-center'>
-          <FaArrowLeft className='text-xl mr-3' />
+    <div className="relative h-full w-full">
+      <div className="absolute top-[5rem] left-[0.5rem] z-50 lg:hidden">
+        <button onClick={() => navigate(-1)} className="flex items-center">
+          <FaArrowLeft className="text-xl mr-3" />
         </button>
       </div>
-      <div className='absolute top-24 left-10 z-[9999] hidden lg:block'>
+      <div className="absolute top-24 left-10 z-[9999] hidden lg:block">
         <Breadcrumbs />
       </div>
       <Header />
-      <div className='pt-12 lg:pt-20'>{children}</div>
+      <div className="pt-[54px] lg:pt-20  ">{children}</div>
       {!isAuthRoute && <Footer />}
     </div>
   );

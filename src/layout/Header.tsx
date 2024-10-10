@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/menubar";
 import { date } from "@/constant/websiteConstants";
 import { useAuth } from "@/hooks/useAuth";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -98,13 +99,6 @@ const Header = () => {
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base whitespace-nowrap text-white font-semibold">
                 Join Us
-              </MenubarTrigger>
-            </NavLink>
-          </MenubarMenu>
-          <MenubarMenu>
-            <NavLink to="/register" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-[4.5rem] text-base text-white font-semibold whitespace-nowrap">
-                Sign up
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
@@ -309,32 +303,22 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          <MenubarMenu>
-            <NavLink to="/register" onClick={() => setMenuOpen(false)}>
-              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">
-                Sign up
-              </MenubarTrigger>
-            </NavLink>
-          </MenubarMenu>
-          {!isLoggedIn && (
+          <SignedOut>
             <MenubarMenu>
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white h-[2.5rem] lg:h-[4.5rem] text-base font-semibold flex items-center lg:hidden">
-                <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
-                <span className="hidden lg:block">Profile</span>
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem
-                  onClick={() => {
-                    setMenuOpen(false);
-                    navigate("/profile");
-                  }}
-                >
-                  My Profile
-                </MenubarItem>
-                <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
-              </MenubarContent>
+              <NavLink to="/register" onClick={() => setMenuOpen(false)}>
+                <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold ">
+                  Sign up
+                </MenubarTrigger>
+              </NavLink>
             </MenubarMenu>
-          )}
+          </SignedOut>
+          <SignedIn>
+            <MenubarMenu>
+              <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold ">
+                <UserButton />
+              </MenubarTrigger>
+            </MenubarMenu>
+          </SignedIn>
         </Menubar>
       </div>
     </div>
