@@ -318,7 +318,7 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex border border-red-600 h-screen">
+    <div className="flex  h-screen">
       <div className="w-[53.45%] hidden lg:block border">
         <img
           src="/assets/images/team Illustration.jpg"
