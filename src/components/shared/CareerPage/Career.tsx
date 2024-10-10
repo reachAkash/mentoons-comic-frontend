@@ -8,7 +8,7 @@ const Career = () => {
 
       <div className="w-[80%] mx-auto py-16">
         <video
-          src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/Team+Video_02.mp4"
+          src="https://mentoons-website.s3.ap-northeast-1.amazonaws.com/miscellaneous/team-intro-video.mp4"
           className="w-full rounded-xl"
           autoPlay
           muted
@@ -38,12 +38,8 @@ const Career = () => {
           transition={{ duration: 1.5 }}
           className="text-5xl lg:text-7xl text-black w-full font-extrabold leading-[1.10]"
         >
-
           What our previous employees
           <Wordbreak /> have to say.
-
-          What our previous employees <Wordbreak /> have to say.
-
         </motion.div>
       </motion.div>
 
