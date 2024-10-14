@@ -8,13 +8,15 @@ import Loader from "./components/common/Loader";
 import MainLayout from "./layout/MainLayout";
 import Popup from "./layout/Popup";
 
+import LogIn from "./pages/Auth/LogIn";
+import Register from "./pages/Auth/Register";
 import ComicPdfPage from "./pages/ComicPdfPage";
 import { RootState } from "./redux/store";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home"));
-const Auth = lazy(() => import("./pages/Auth/Auth"));
+
 const Wishlist = lazy(() => import("./pages/Wishlist"));
 const Cart = lazy(() => import("./pages/Cart"));
 const ComicsPage = lazy(() => import("./pages/ComicsPage"));
@@ -39,14 +41,24 @@ const routes = [
     ),
   },
   {
-    path: "/register",
+    path: "/sign-up",
 
     element: (
       <MainLayout>
-        <Auth />
+        <Register />
       </MainLayout>
     ),
   },
+  {
+    path: "/sign-in",
+
+    element: (
+      <MainLayout>
+        <LogIn />
+      </MainLayout>
+    ),
+  },
+
   {
     path: "/wishlist",
     element: (

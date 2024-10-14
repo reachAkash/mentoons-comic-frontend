@@ -1,7 +1,7 @@
 export const Endpoints = {
   WORKSHOP_FORM: "workshop/submit-form",
-  SIGNUP: "user/register",
-  VERIFY_OTP: "user/register/verify",
-  VERIFY_LOGIN_OTP: "user/login/verify",
-  LOGIN: "user/login",
+  SIGNUP: "user/sign-up",
+  VERIFY_OTP: "user/sign-up/verify",
+  VERIFY_LOGIN_OTP: "user/sign-in/verify",
+  LOGIN: "user/sign-in",
 };
