@@ -305,7 +305,7 @@ const Header = () => {
           </MenubarMenu>
           <SignedOut>
             <MenubarMenu>
-              <NavLink to="/register" onClick={() => setMenuOpen(false)}>
+              <NavLink to="/sign-up" onClick={() => setMenuOpen(false)}>
                 <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold ">
                   Sign up
                 </MenubarTrigger>

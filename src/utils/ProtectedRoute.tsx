@@ -22,7 +22,8 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 
   const handleLoginRedirect = () => {
     setOpen(false);
-    navigate('/register');
+    navigate('/sign-up');
+
   };
 
   if (!isLoggedIn) {
