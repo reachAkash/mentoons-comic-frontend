@@ -90,11 +90,11 @@ const FreeDownloadForm: React.FC<FreeDownloadFormProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="relative text-black w-[90%] md:max-w-md py-8 px-10 space-y-4 rounded-md bg-white shadow shadow-white"
+        className={`relative text-black ${page === 'freedownload' ? 'w-[90%] md:max-w-md py-8 px-10' : 'w-full h-full'} space-y-4 rounded-md bg-white shadow shadow-white`}
       >
         <button
           onClick={() => setShowFreeDownloadForm(false)}
-          className="absolute top-2 right-2"
+          className="absolute top-2 right-2 z-10"
         >
           <IoMdClose className="text-2xl hover:text-red-400 active:scale-50 transition-all ease-in-out duration-300" />
         </button>
@@ -156,7 +156,9 @@ const FreeDownloadForm: React.FC<FreeDownloadFormProps> = ({
             </Formik>
           </>
         ) : (
-          <WorkshopForm/>
+          <div className="w-full h-full">
+            <WorkshopForm setShowForm={setShowFreeDownloadForm} />
+          </div>
         )}
       </motion.div>
     </div>
