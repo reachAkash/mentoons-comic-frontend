@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
         // (window.location.href = comicLink)
         // }
       } else {
-        navigate("/register");
+        navigate("/sign-up");
       }
     } catch (err) {
       console.error(err);

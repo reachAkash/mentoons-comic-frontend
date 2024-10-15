@@ -12,7 +12,8 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isAuthRoute = location.pathname === "/register";
+  const isAuthRoute =
+    location.pathname === "/sign-up" || location.pathname === "/sign-in";
 
   return (
     <div className="relative h-full w-full">

@@ -8,10 +8,8 @@
 import WorkshopForm from "@/components/common/WorkshopForm";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogHeader,
 } from "@/components/ui/dialog";
 import React from "react";
 // import { workshopDetails } from "@/constant/comicsConstants";
@@ -347,15 +345,10 @@ const WorkshopsPage = () => {
         {showForm && (
           <Dialog open={showForm} onOpenChange={() => setShowForm(false)}>
             <DialogContent className="z-[999999] bg-transparent border-0">
-              <DialogHeader>
-                <DialogClose asChild>
-                  <button className="absolute top-16 right-[2rem] lg:right-[2.5rem] text-gray-600 hover:text-gray-800 text-2xl font-bold sm:text-2xl z-[99999] shadow-2xl">
-                    &times;
-                  </button>
-                </DialogClose>
-              </DialogHeader>
               <DialogDescription>
-                <WorkshopForm selectedWorkshop={activeCategory} />
+                <div className="relative">
+                  <WorkshopForm selectedWorkshop={activeCategory} setShowForm={setShowForm}/>
+                </div>
               </DialogDescription>
             </DialogContent>
           </Dialog>
