@@ -7,25 +7,29 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { applyForJob } from "@/redux/careerSlice";
+import { uploadFile } from "@/redux/fileUploadSlice";
+import { AppDispatch, RootState } from "@/redux/store";
+import { Loader } from "lucide-react";
 
-import emailjs from "emailjs-com";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+// import emailjs from "emailjs-com";
+import React, {FormEvent, useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "sonner";
 
-type TPOSITION = {
-  id: number;
-  jobId: string;
+export type TPOSITION = {
+  _id: string;
   jobTitle: string;
   jobDescription: string;
-  jobRequirement: string[];
-  jobIllustration: string;
-  skills: string[];
+  thumbnail: string;
+  skillsRequired: string[];
   jobType: string;
-  jobDuration: string;
-  salary: number;
+  location: string;
+
 };
 // JOB ACCORDIAN COMPONENT
-const FAQCard = ({ position }: { position: TPOSITION }) => {
+const FAQCard = ({ position ,id}: { position: TPOSITION ,id:string}) => {
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
 
   const handleIsExpanded = () => {
@@ -100,7 +104,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
         <div className="flex-wrap flex md:flex-nowrap items-start justify-center gap-2">
           <div className="w-full">
             <img
-              src={position.jobIllustration}
+              src={position.thumbnail}
               alt=""
               className="w-full object-cover"
             />
@@ -108,7 +112,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
           <div className=" text-neutral-700 w-full  ">
             {position.jobDescription}
             <div className="flex flex-wrap  ">
-              {position.skills.map((item) => {
+              {position.skillsRequired.map((item) => {
                 return (
                   <div className="w-32 relative " key={item}>
                     <img
@@ -128,7 +132,7 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
         {/* skill */}
       </div>
       <div className=" w-full px-4 ">
-        <JobApplicationForm />
+        <JobApplicationForm id={id} />
       </div>
     </div>
   );
@@ -136,283 +140,257 @@ const FAQCard = ({ position }: { position: TPOSITION }) => {
 
 export default FAQCard;
 
-interface FormData {
+export interface HiringFormData {
   name: string;
   email: string;
-
-  mobileNumber: number;
-  coverNote: string;
+  phone: string;
   gender: string;
-  cv: File | null;
+  portfolioLink: string;
+  coverNote: string;
+  resume: File | null;
 }
 
 interface FormError {
   [key: string]: string;
 }
 
-export function JobApplicationForm() {
-  const [formData, setFormData] = React.useState<FormData>({
+export function JobApplicationForm({id}:{id:string}) {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const {loading} = useSelector((state:RootState)=>state.career)
+  const [formData, setFormData] = useState<HiringFormData>({
     name: "",
     email: "",
-    mobileNumber: 0,
-    coverNote: "",
+    phone: "",
     gender: "",
-    cv: null,
+    portfolioLink: "",
+    coverNote: "",
+    resume: null,
   });
-  const [formError] = React.useState<FormError>({});
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+
+  const [formErrors, setFormErrors] = useState<FormError>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    if (
-      name === "cv" &&
-      e.target instanceof HTMLInputElement &&
-      e.target.files
-    ) {
-      setFormData({
-        ...formData,
-        [name]: e.target.files[0],
-      });
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFormData(prevData => ({
+        ...prevData,
+        resume: e.target.files![0],
+      }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const errors: FormError = {};
+
+    if (!formData.name.trim()) {
+      errors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters";
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Invalid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      errors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      errors.phone = "Phone number must be 10 digits";
+    }
+
+    if (!formData.gender) {
+      errors.gender = "Please select a gender";
+    }
+
+    if (!formData.portfolioLink.trim()) {
+      errors.portfolioLink = "Portfolio link is required";
+    } else if (!/^https?:\/\/.+\..+/.test(formData.portfolioLink)) {
+      errors.portfolioLink = "Invalid URL";
+    }
+
+    if (formData.coverNote.length > 500) {
+      errors.coverNote = "Cover note must be 500 characters or less";
+    }
+
+    if (!formData.resume) {
+      errors.resume = "Resume is required";
     } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
-  };
-  const fileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = (error) => reject(error);
-    });
-  };
-
-  const sendEmail = async (values: FormData) => {
-    let base64CV = "";
-    if (values.cv) {
-      base64CV = await fileToBase64(values.cv);
+      const fileType = formData.resume.type;
+      const validTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+      if (!validTypes.includes(fileType)) {
+        errors.resume = "File must be PDF, DOC, or DOCX";
+      } else if (formData.resume.size > 5000000) {
+        errors.resume = "File size must be less than 5MB";
+      }
     }
 
-    const convertedValues: Record<string, unknown> = {
-      ...values,
-      cv: base64CV,
-    };
-
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-        convertedValues,
-        import.meta.env.VITE_EMAIL_JS_USER_ID
-      )
-      .then((result) => {
-        console.log(result.text);
-        console.log("Message sent successfully!");
-      })
-      .catch((error) => {
-        console.error("Failed to send message:", error);
-      });
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Prevent default form submission
-    await sendEmail(formData);
-  };
-  const handleFileChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    if (
-      e.target instanceof HTMLInputElement &&
-      e.target.files &&
-      e.target.files.length > 0
-    ) {
-      setSelectedFile(e.target.files[0]);
+    if (validateForm()) {
+      if (formData.resume) {
+        const fileAction = await dispatch(uploadFile(formData.resume));
+        console.log(fileAction,'fileAction')
+        const fileData = fileAction.payload?.data?.imageUrl;
+        console.log(fileData,'fileData')
+        await dispatch(applyForJob({jobId:id, formData:{...formData, resume:fileData}}));
+        toast.success("Application submitted successfully");
+      } else {
+        toast.error("Resume is required");
+      }
+      console.log("Form data:", formData);
+    } else {      
+      toast.error("Please fill all the required fields");
+      console.log("Form has errors");
     }
   };
-
+if(loading) return <Loader/>
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="text-neutral-700 font-bold px-5 py-2 w-full border  bg-transparent border-neutral-700 hover:bg-orange-400/40 hover:border-orange-400 mb-4 rounded-md  transition-all duration-300">
+        <Button className="text-neutral-700 font-bold px-5 py-2 w-full border bg-transparent border-neutral-700 hover:bg-orange-400/40 hover:border-orange-400 mb-4 rounded-md transition-all duration-300">
           Apply Now
         </Button>
       </DialogTrigger>
       <DialogContent className="z-[999999]">
         <DialogHeader>
-          <DialogTitle className="text-center">
-            Job Application From
-          </DialogTitle>
+          <DialogTitle className="text-center">Job Application Form</DialogTitle>
           <DialogDescription className="text-center">
-            Fill details below and we'll cantact you.
+            Fill in the details below and we'll contact you.
           </DialogDescription>
         </DialogHeader>
-        <div className=" rounded-2xl">
-          {/* <h1 className='text-4xl font-bold my-2 mb-4'>Sign Up</h1>
-          <p className='text-lg font-normal  mb-4 '>Your Feedback Matters.</p> */}
-          <form onSubmit={handleSubmit} className="flex flex-col ">
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                placeholder="Name"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError?.name && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError?.name}
-                </p>
-              )}
-            </div>
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                placeholder="Email"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError.email && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.email}
-                </p>
-              )}
-            </div>
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="tel"
-                name="mobileNumber"
-                onChange={handleChange}
-                placeholder="Mobile Number"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError.mobileNumber && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.mobileNumber}
-                </p>
-              )}
-            </div>
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="text"
-                name="gender"
-                onChange={handleChange}
-                placeholder="Gender"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError.gender && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.gender}
-                </p>
-              )}
-            </div>
-            <div className="w-[100%] flex flex-col">
-              <input
-                name="portfolio"
-                onChange={handleChange}
-                placeholder="Portfolio Link"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError.portfolio && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.portfolio}
-                </p>
-              )}
-            </div>
-            <div className="w-[100%] flex flex-col">
-              <textarea
-                name="coverNote"
-                onChange={handleChange}
-                placeholder="Cover note"
-                autoComplete="off"
-                className="p-3 text-base outline-black border  bg-white text-black mb-4 rounded-lg"
-              />
-              {formError.tellUsAboutYourself && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.tellUsAboutYourself}
-                </p>
-              )}
-            </div>
+        <form onSubmit={handleSubmit} className="flex flex-col">
+          <div className="w-full flex flex-col mb-4">
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Name"
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
+            />
+            {formErrors.name && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
+            )}
+          </div>
 
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="file"
-                id="cv"
-                name="cv"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              <label htmlFor="cv">
-                <button
-                  type="button"
-                  onClick={() => document.getElementById("cv")?.click()}
-                  className="p-3  w-full text-base  text-black mb-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition-all duration-300"
-                >
-                  {selectedFile ? selectedFile.name : "Upload Cover Letter"}
-                </button>
-              </label>
-              {formError.gender && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.gender}
-                </p>
-              )}
-            </div>
+          <div className="w-full flex flex-col mb-4">
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
+            />
+            {formErrors.email && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
+            )}
+          </div>
 
-            <div className="w-[100%] flex flex-col">
-              <input
-                type="file"
-                id="cv"
-                name="cv"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              <label htmlFor="cv">
-                <button
-                  type="button"
-                  onClick={() => document.getElementById("cv")?.click()}
-                  className="p-3  w-full text-base  text-black mb-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition-all duration-300"
-                >
-                  {selectedFile ? selectedFile.name : "Upload Resume"}
-                </button>
-              </label>
-              {formError.gender && (
-                <p className="text-red-500 text-sm font-normal mb-3">
-                  {formError.gender}
-                </p>
-              )}
-            </div>
-            <button
-              type="submit"
-              className="p-3 text-base   bg-primary text-white mb-4 rounded-lg hover:bg-orange-500 transition-all duration-300"
+          <div className="w-full flex flex-col mb-4">
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone Number"
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
+            />
+            {formErrors.phone && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>
+            )}
+          </div>
+
+          <div className="w-full flex flex-col mb-4">
+            <select
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
             >
-              {" "}
-              Submit
-            </button>
-            {/* <p className='text-base font-normal'>
-              Already have an accout?{" "}
-              <span
-                onClick={() => navigate("/sign-in")}
-                className='text-base underline cursor-pointer text-amber-500'
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+            {formErrors.gender && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.gender}</p>
+            )}
+          </div>
+
+          <div className="w-full flex flex-col mb-4">
+            <input
+              type="url"
+              name="portfolioLink"
+              value={formData.portfolioLink}
+              onChange={handleChange}
+              placeholder="Portfolio Link"
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
+            />
+            {formErrors.portfolioLink && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.portfolioLink}</p>
+            )}
+          </div>
+
+          <div className="w-full flex flex-col mb-4">
+            <textarea
+              name="coverNote"
+              value={formData.coverNote}
+              onChange={handleChange}
+              placeholder="Cover Note"
+              className="p-3 text-base outline-black border bg-white text-black rounded-lg"
+            />
+            {formErrors.coverNote && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.coverNote}</p>
+            )}
+          </div>
+
+          <div className="w-full flex flex-col mb-4">
+            <input
+              type="file"
+              id="resume"
+              name="resume"
+              onChange={handleFileChange}
+              accept=".pdf,.doc,.docx"
+              className="hidden"
+            />
+            <label htmlFor="resume">
+              <Button
+                type="button"
+                onClick={() => document.getElementById("resume")?.click()}
+                className="p-3 w-full text-base text-black mb-4 rounded-lg bg-slate-200 hover:bg-slate-300 transition-all duration-300"
               >
-                Sign in
-              </span>
-            </p> */}
-          </form>
-        </div>
-        {/* <DialogFooter>
-          <Button type='submit'>Save changes</Button>
-        </DialogFooter> */}
+                {formData.resume ? formData.resume.name : "Upload Resume"}
+              </Button>
+            </label>
+            {formErrors.resume && (
+              <p className="text-red-500 text-sm mt-1">{formErrors.resume}</p>
+            )}
+          </div>
+
+          <Button
+            type="submit"
+            className="p-3 text-base bg-primary text-white mb-4 rounded-lg hover:bg-orange-500 transition-all duration-300"
+          >
+            Submit
+          </Button>
+        </form>
       </DialogContent>
     </Dialog>
   );
