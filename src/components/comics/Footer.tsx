@@ -298,7 +298,7 @@ const Footer: React.FC = () => {
             >
               <div className="group cursor-pointer">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+                  onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
                   className="w-20 rounded-full"
                   src="/Buddy camp.png"
                   alt="comic image"
@@ -309,7 +309,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="group cursor-pointer">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+                  onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
                   className="w-20 rounded-full"
                   src="/Teen camp .png"
                   alt="comic image"
@@ -321,7 +321,7 @@ const Footer: React.FC = () => {
               <div className="group cursor-pointer">
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=family")
+                    navigate("/mentoons-workshops?workshop=20+")
                   }
                   className="w-20 rounded-full"
                   src="/Family camp.png"
