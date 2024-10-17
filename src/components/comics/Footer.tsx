@@ -436,8 +436,8 @@ const Footer: React.FC = () => {
                       <Field
                         name="email"
                         type="email"
-                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-full outline-none px-4 py-2"
-                        placeholder="Enter your email"
+                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-400 rounded-full outline-none px-4 py-2"
+                        placeholder="Enter email for newsletter"
                       />
                       <ErrorMessage
                         name="email"
