@@ -9,7 +9,6 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { ImLinkedin } from "react-icons/im";
 import { IoLogoWhatsapp, IoLogoYoutube, IoMdClose } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
-import { RiTwitterXLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import MapComponent from "./MapComponent";
 import * as Yup from "yup";
@@ -57,12 +56,27 @@ const Footer: React.FC = () => {
     },
   ];
   const contactIcons = [
-    { icon: ImLinkedin, color: "text-blue-700" },
-    { icon: FaFacebookSquare, color: "text-blue-500" },
-    { icon: RiTwitterXLine, color: "text-black" },
-    { icon: AiFillInstagram, color: "text-rose-500" },
-    { icon: IoLogoYoutube, color: "text-red-600" },
-    { icon: IoLogoWhatsapp, color: "text-green-500" },
+    {
+      icon: ImLinkedin,
+      color: "text-blue-700",
+      link: "https://www.linkedin.com/company/mentoons",
+    },
+    {
+      icon: FaFacebookSquare,
+      color: "text-blue-500",
+      link: "https://google.com",
+    },
+    {
+      icon: AiFillInstagram,
+      color: "text-rose-500",
+      link: "https://google.com",
+    },
+    { icon: IoLogoYoutube, color: "text-red-600", link: "https://google.com" },
+    {
+      icon: IoLogoWhatsapp,
+      color: "text-green-500",
+      link: "https://wa.me/+919036033300",
+    },
   ];
 
   const validationSchema = Yup.object({
@@ -140,7 +154,7 @@ const Footer: React.FC = () => {
         alt="footer image"
       />
       {/* subscribe to newsletter form */}
-      <Formik
+      {/* <Formik
         initialValues={{ email: "" }} // Must match FormValues type
         validationSchema={validationSchema}
         onSubmit={handleSubmit} // Correctly passing the handleSubmit
@@ -176,7 +190,7 @@ const Footer: React.FC = () => {
             </div>
           </Form>
         )}
-      </Formik>
+      </Formik> */}
       <div className="container bg-[#FF7D00] w-full h-fit space-y-2 lg:space-y-5">
         {/* top section */}
         <div className="flex flex-wrap items-center justify-between pt-4 lg:pt-0 space-y-4 lg:space-y-0">
@@ -296,8 +310,9 @@ const Footer: React.FC = () => {
                 visibility: showWorkshop ? "hidden" : "visible",
               }}
             >
-              <div className="group cursor-pointer">
+              <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
+
                   onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
                   className="w-20 rounded-full"
                   src="/Buddy camp.png"
@@ -307,7 +322,7 @@ const Footer: React.FC = () => {
                   Buddy Camp
                 </div>
               </div>
-              <div className="group cursor-pointer">
+              <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
                   onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
                   className="w-20 rounded-full"
@@ -323,7 +338,7 @@ const Footer: React.FC = () => {
                   onClick={() =>
                     navigate("/mentoons-workshops?workshop=20+")
                   }
-                  className="w-20 rounded-full"
+                  className="w-24 rounded-full"
                   src="/Family camp.png"
                   alt="comic image"
                 />
@@ -377,35 +392,71 @@ const Footer: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div
-              onClick={() => setShowShop((prev) => !prev)}
-              className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
-            >
-              Shop
+            <div className="">
+              <div
+                onClick={() => setShowShop((prev) => !prev)}
+                className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
+              >
+                Shop
+              </div>
+              <div
+                className={`transition-all ease-in-out duration-500 overflow-hidden ${
+                  showShop
+                    ? "max-h-0 opacity-0"
+                    : "max-h-[500px] opacity-100 mt-2"
+                }`}
+                style={{
+                  visibility: showShop ? "hidden" : "visible",
+                }}
+              >
+                {comicData?.map((item: string) => {
+                  return (
+                    <div
+                      onClick={() =>
+                        navigate("/mentoons-comics/audio-comics/" + item)
+                      }
+                      className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
+                    >
+                      - {item}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div
-              className={`transition-all ease-in-out duration-500 overflow-hidden ${
-                showShop
-                  ? "max-h-0 opacity-0"
-                  : "max-h-[500px] opacity-100 mt-2"
-              }`}
-              style={{
-                visibility: showShop ? "hidden" : "visible",
-              }}
+            <Formik
+              initialValues={{ email: "" }} // Must match FormValues type
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit} // Correctly passing the handleSubmit
             >
-              {comicData?.map((item: string) => {
-                return (
-                  <div
-                    onClick={() =>
-                      navigate("/mentoons-comics/audio-comics/" + item)
-                    }
-                    className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
-                  >
-                    - {item}
+              {(
+                { isSubmitting, isValid, dirty } // Added isValid and dirty
+              ) => (
+                <Form className="w-full md:w-fit flex flex-col justify-evenly rounded-3xl">
+                  <div className="flex items-start justify-center space-x-1 md:space-x-4">
+                    <div className="w-full md:w-fit space-y-2">
+                      <Field
+                        name="email"
+                        type="email"
+                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-full outline-none px-4 py-2"
+                        placeholder="Enter your email"
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="text-red-800 text-[18px]"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || !isValid || !dirty} // Enable only if valid and dirty
+                      className="cursor-pointer text-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
+                    >
+                      Submit
+                    </button>
                   </div>
-                );
-              })}
-            </div>
+                </Form>
+              )}
+            </Formik>
           </div>
           {/* fourth div */}
           <div className="space-y-2 w-full md:w-fit">
@@ -417,9 +468,13 @@ const Footer: React.FC = () => {
             <div className="flex items-center justify-center md:justify-between gap-4 md:gap-1">
               {contactIcons?.map((item) => {
                 return (
-                  <div className="bg-white p-2 rounded-full">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    className="bg-white p-2 rounded-full cursor-pointer"
+                  >
                     <item.icon className={`text-xl ${item.color}`} />
-                  </div>
+                  </a>
                 );
               })}
             </div>
