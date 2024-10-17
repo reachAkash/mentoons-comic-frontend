@@ -312,8 +312,9 @@ const Footer: React.FC = () => {
             >
               <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
-                  className="w-16 rounded-full"
+
+                  onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
+                  className="w-20 rounded-full"
                   src="/Buddy camp.png"
                   alt="comic image"
                 />
@@ -323,9 +324,9 @@ const Footer: React.FC = () => {
               </div>
               <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=teen")}
-                  className="w-16 rounded-full"
-                  src="/Teen camp.png"
+                  onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
+                  className="w-20 rounded-full"
+                  src="/Teen camp .png"
                   alt="comic image"
                 />
                 <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
@@ -335,7 +336,7 @@ const Footer: React.FC = () => {
               <div className="group cursor-pointer">
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=family")
+                    navigate("/mentoons-workshops?workshop=20+")
                   }
                   className="w-24 rounded-full"
                   src="/Family camp.png"
