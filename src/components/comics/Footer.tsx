@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full pt-12 md:pt-0 text-white text-center">
+    <div className="relative w-full text-white text-center">
       <img
         className="hidden md:block "
         src="/FooterBg.png"

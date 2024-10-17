@@ -376,7 +376,7 @@ export default WorkshopsPage;
 
 export const WorkshopsPage1 = () => {
   return (
-    <section className="bg-gray-200 md:bg-white">
+    <section className="bg-gray-100 md:bg-white">
       <div className="w-full relative">
         <img
           src="/assets/images/buddy-camp-cloud.png"
@@ -462,23 +462,36 @@ export const WorkshopsPage1 = () => {
               />
             </div>
           </div>
-          <div className="w-full md:w-[50%] h-full">
+          <div className="hidden md:block w-[50%] h-full  relative">
             <img
               src="/assets/images/mentoons-tv.png"
               alt=""
-              className="block md:hidden absolute top-12 w-full object-cover p-2 pt-4 pr-3 md:p-12"
-            />
-            <img
-              src="/assets/images/mentoons-tv.png"
-              alt=""
-              className="hidden md:block w-full object-cover p-2 pt-4 pr-3 md:p-12"
+              className="w-full object-cover  p-2 pt-4  pr-3 md:p-12"
             />
             <div>
               <video
                 playsInline
                 webkit-playsinline
                 src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Children+Common+Issues.mp4"
-                className="w-[50%] md:w-[25%] absolute top-[20%] right-[26%] md:top-[31%] md:right-[12.6%]"
+                className=" w-[47%] absolute top-[33%] left-[25%]  md:top-[31%] md:left-[26%]"
+                autoPlay
+                controls
+                muted
+              ></video>
+            </div>
+          </div>
+          <div className="block md:hidden md:w-[50%] h-full p-4 absolute top-[4rem]">
+            <img
+              src="/assets/images/mentoons-tv.png"
+              alt=""
+              className="w-full object-cover p-2 pt-4 pr-3"
+            />
+            <div>
+              <video
+                playsInline
+                webkit-playsinline
+                src="https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/AGES+6+-+12/Children+Common+Issues.mp4"
+                className=" w-[47%] absolute top-[13%] left-[25%]"
                 autoPlay
                 controls
                 muted
@@ -493,26 +506,26 @@ export const WorkshopsPage1 = () => {
             <img
               src="/assets/images/buddy-camp-info.png"
               alt=""
-              className="w-full object-cover "
+              className="w-full object-cover"
             />
           </div>
         </div>
-        <div className="w-[50%] h-full ">
+        <div className="w-[50%] h-full">
           <img
             src="/assets/images/buddy-camp-illustration.png"
             alt=""
-            className="w-full object-cover "
+            className="w-full object-cover"
           />
         </div>
       </div>
-      <div className="relative">
+      <div className="block md:hidden relative">
         <img
           src="/assets/images/buddy-camp-info-sm.svg"
           alt=""
           className="w-full object-cover"
         />
       </div>
-      <div className="relative">
+      <div className="block md:hidden relative">
         <div>
           <img
             src="/assets/images/buddy-camp-creamCover-sm.svg"
@@ -527,20 +540,36 @@ export const WorkshopsPage1 = () => {
             className="w-full object-cover p-4"
           />
         </div>
-        <div className="absolute bottom-0 flex items-center justify-center">
+        <div className="absolute bottom-8 flex items-center justify-center">
           <img
-            src="/assets/images/issue-illustration-sm.svg"
+            src="/assets/images/solution-illustration-sm.svg"
             alt=""
             className="w-[80%]"
           />
         </div>
       </div>
-      <div>
-        <div>
+      <div className="block md:hidden">
+        <div className="px-8 py-2">
           <img src="/assets/images/buddy-camp-childParent-header.svg" alt="" />
         </div>
         <div>
           <img src="/assets/images/buddy-camp-childParent-sm.svg" alt="" />
+        </div>
+      </div>
+      <div className="relative block md:hidden">
+        <div className="">
+          <img
+            src="/assets/images/buddy-contactform-bg-sm.svg"
+            className=""
+            alt="z-[10]"
+          />
+        </div>
+        <div className="absolute -bottom-4">
+          <img
+            src="/assets/images/buddy-contactform-sm.svg"
+            className=""
+            alt=""
+          />
         </div>
       </div>
     </section>
