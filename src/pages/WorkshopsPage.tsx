@@ -376,7 +376,7 @@ export default WorkshopsPage;
 
 export const WorkshopsPage1 = () => {
   return (
-    <section className="bg-gray-100 md:bg-white">
+    <section className="">
       <div className="w-full relative">
         <img
           src="/assets/images/buddy-camp-cloud.png"
@@ -557,20 +557,11 @@ export const WorkshopsPage1 = () => {
         </div>
       </div>
       <div className="relative block md:hidden">
-        <div className="">
-          <img
-            src="/assets/images/buddy-contactform-bg-sm.svg"
-            className=""
-            alt="z-[10]"
-          />
-        </div>
-        <div className="absolute -bottom-4">
-          <img
-            src="/assets/images/buddy-contactform-sm.svg"
-            className=""
-            alt=""
-          />
-        </div>
+        <img
+          src="/assets/images/buddy-contactform-sm.svg"
+          className=""
+          alt=""
+        />
       </div>
     </section>
   );
