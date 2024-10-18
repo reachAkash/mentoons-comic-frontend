@@ -10,10 +10,12 @@ import {
 import { applyForJob } from "@/redux/careerSlice";
 import { uploadFile } from "@/redux/fileUploadSlice";
 import { AppDispatch, RootState } from "@/redux/store";
+import { DialogClose } from "@radix-ui/react-dialog";
 import { Loader } from "lucide-react";
 
 // import emailjs from "emailjs-com";
 import React, { FormEvent, useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import { IoChevronDown } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
@@ -95,6 +97,9 @@ const FAQCard = ({ position, id }: { position: TPOSITION, id: string }) => {
             </Button>
           </DialogTrigger>
           <DialogContent className="z-[999999]">
+            <DialogClose asChild>
+              <Button className="absolute top-2 right-2"> <FaTimes/></Button>
+            </DialogClose>
             <DialogHeader>
               <DialogTitle className="text-center">Job Application Form</DialogTitle>
               <DialogDescription className="text-center">

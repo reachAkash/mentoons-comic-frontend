@@ -219,7 +219,7 @@ const ComicsSection: React.FC = () => {
               <div>
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=parents")
+                    navigate("/mentoons-workshops?workshop=Parents")
                   }
                   className="absolute right-[14%] top-[50%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                   src={ParentWorkshopHome}
