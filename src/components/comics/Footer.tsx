@@ -104,7 +104,6 @@ const Footer: React.FC = () => {
   const scrollToWorkshopPage = () => {
     console.log("scrolled");
     if (location.pathname === "/mentoons-workshops") {
-      const element = document.getElementById("workshop-hero");
       window.scrollTo({
         top: 0,
         behavior: "smooth",
