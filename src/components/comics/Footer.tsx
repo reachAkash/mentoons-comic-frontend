@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full pt-12 md:pt-0 text-white text-center">
+    <div className="relative w-full text-white text-center">
       <img
         className="hidden md:block "
         src="/FooterBg.png"
@@ -437,8 +437,8 @@ const Footer: React.FC = () => {
                       <Field
                         name="email"
                         type="email"
-                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-300 rounded-full outline-none px-4 py-2"
-                        placeholder="Enter your email"
+                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-400 rounded-full outline-none px-4 py-2"
+                        placeholder="Enter email for newsletter"
                       />
                       <ErrorMessage
                         name="email"
