@@ -19,7 +19,7 @@ export interface WorkshopItems {
 const WorkshopsPage = () => {
   const location = useLocation();
   const searchParams = location.search.split("=")[1];
-  console.log(searchParams,"searchParams")
+  console.log(searchParams, "searchParams");
   useEffect(() => {
     setActiveCategory(searchParams || WorkshopType.buddyCamp);
   }, [searchParams]);
@@ -37,7 +37,7 @@ const WorkshopsPage = () => {
   };
 
   return (
-    <section>
+    <section id="workshop-hero">
       <div className="w-full relative">
         {/* <img
           src="/assets/images/workshop-cloud.png"
