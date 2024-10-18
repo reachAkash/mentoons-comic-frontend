@@ -101,6 +101,21 @@ const Footer: React.FC = () => {
     }
   };
 
+  const scrollToWorkshopPage = () => {
+    console.log("scrolled");
+    if (location.pathname === "/mentoons-workshops") {
+      const element = document.getElementById("workshop-hero");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/mentoons-workshops", {
+        state: { scrollToWorkshopPage: true },
+      });
+    }
+  };
+
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
@@ -312,8 +327,10 @@ const Footer: React.FC = () => {
             >
               <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
-
-                  onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
+                  onClick={() => {
+                    scrollToWorkshopPage();
+                    navigate("/mentoons-workshops?workshop=6-12");
+                  }}
                   className="w-20 rounded-full"
                   src="/assets/camps/Buddy.png"
                   alt="comic image"
@@ -324,7 +341,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="group flex flex-col items-center justify-center cursor-pointer">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
+                  onClick={() => {
+                    scrollToWorkshopPage();
+                    navigate("/mentoons-workshops?workshop=13-19");
+                  }}
                   className="w-20 rounded-full"
                   src="/assets/camps/Teen.png"
                   alt="comic image"
@@ -335,9 +355,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="group cursor-pointer">
                 <img
-                  onClick={() =>
-                    navigate("/mentoons-workshops?workshop=Parents")
-                  }
+                  onClick={() => {
+                    scrollToWorkshopPage();
+                    navigate("/mentoons-workshops?workshop=Parents");
+                  }}
                   className="w-20 rounded-full"
                   src="/assets/camps/Family.png"
                   alt="comic image"
@@ -399,7 +420,7 @@ const Footer: React.FC = () => {
               >
                 Subscribe to NewsLetter
               </div>
-               <div
+              <div
                 className={`transition-all ease-in-out duration-500 overflow-hidden ${
                   showShop
                     ? "max-h-0 opacity-0"
@@ -410,41 +431,41 @@ const Footer: React.FC = () => {
                 }}
               >
                 <Formik
-              initialValues={{ email: "" }} // Must match FormValues type
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit} // Correctly passing the handleSubmit
-            >
-              {(
-                { isSubmitting, isValid, dirty } // Added isValid and dirty
-              ) => (
-                <Form className="w-full md:w-fit flex flex-col justify-evenly rounded-3xl">
-                  <div className="flex items-start justify-center space-x-1 md:space-x-4">
-                    <div className="w-full md:w-fit space-y-2">
-                      <Field
-                        name="email"
-                        type="email"
-                        className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-400 rounded-full outline-none px-4 py-2"
-                        placeholder="Enter email for newsletter"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        component="div"
-                        className="text-red-800 text-[18px]"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting || !isValid || !dirty} // Enable only if valid and dirty
-                      className="cursor-pointer text-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </Form>
-              )}
-            </Formik>
-          </div>
-                {/* {comicData?.map((item: string) => {
+                  initialValues={{ email: "" }} // Must match FormValues type
+                  validationSchema={validationSchema}
+                  onSubmit={handleSubmit} // Correctly passing the handleSubmit
+                >
+                  {(
+                    { isSubmitting, isValid, dirty } // Added isValid and dirty
+                  ) => (
+                    <Form className="w-full md:w-fit flex flex-col justify-evenly rounded-3xl">
+                      <div className="flex items-start justify-center space-x-1 md:space-x-4">
+                        <div className="w-full md:w-fit space-y-2">
+                          <Field
+                            name="email"
+                            type="email"
+                            className="w-full md:w-[16rem] text-black bg-gray-100 placeholder:text-gray-400 rounded-full outline-none px-4 py-2"
+                            placeholder="Enter email for newsletter"
+                          />
+                          <ErrorMessage
+                            name="email"
+                            component="div"
+                            className="text-red-800 text-[18px]"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={isSubmitting || !isValid || !dirty} // Enable only if valid and dirty
+                          className="cursor-pointer text-white hover:text-green-800 hover:bg-white hover:border-green-800 bg-green-800 rounded-full px-6 py-2 transition-all ease-in-out duration-300"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </Form>
+                  )}
+                </Formik>
+              </div>
+              {/* {comicData?.map((item: string) => {
                   return (
                     <div
                       onClick={() =>
@@ -456,9 +477,9 @@ const Footer: React.FC = () => {
                     </div>
                   );
                 })} */}
-              </div>
             </div>
-            
+          </div>
+
           {/* fourth div */}
           <div className="space-y-2 w-full md:w-fit">
             <MapComponent />
