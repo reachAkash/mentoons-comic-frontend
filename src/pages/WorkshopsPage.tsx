@@ -29,9 +29,7 @@ const WorkshopsPage = () => {
     "20+Camp" = "20+",
     familyCamp = "Parents",
   }
-  const [activeCategory, setActiveCategory] = React.useState<string>(
-   '' || WorkshopType.buddyCamp
-  );
+  const [activeCategory, setActiveCategory] = React.useState<string>("6-12");
   const [showForm, setShowForm] = React.useState<boolean>(false);
 
   const handleCategoryChange = (category: string) => {
