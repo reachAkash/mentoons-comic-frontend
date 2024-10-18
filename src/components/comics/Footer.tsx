@@ -40,11 +40,11 @@ const Footer: React.FC = () => {
   const [showInside, setShowInside] = useState<boolean>(false);
   const [showShop, setShowShop] = useState<boolean>(false);
 
-  const comicData = [
-    "Don't Fade Away",
-    "Hungry For Likes not Life",
-    "Choose Wisely",
-  ];
+  // const comicData = [
+  //   "Don't Fade Away",
+  //   "Hungry For Likes not Life",
+  //   "Choose Wisely",
+  // ];
   const companyImg = [
     { image: "/activeListeners.png", url: "https://www.activelisteners.in/" },
     { image: "/toonland.png", url: "https://toonland.in/" },
@@ -315,7 +315,7 @@ const Footer: React.FC = () => {
 
                   onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
                   className="w-20 rounded-full"
-                  src="/Buddy camp.png"
+                  src="/assets/camps/Buddy.png"
                   alt="comic image"
                 />
                 <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
@@ -326,7 +326,7 @@ const Footer: React.FC = () => {
                 <img
                   onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
                   className="w-20 rounded-full"
-                  src="/Teen camp .png"
+                  src="/assets/camps/Teen.png"
                   alt="comic image"
                 />
                 <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
@@ -336,10 +336,10 @@ const Footer: React.FC = () => {
               <div className="group cursor-pointer">
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=20+")
+                    navigate("/mentoons-workshops?workshop=Parents")
                   }
-                  className="w-24 rounded-full"
-                  src="/Family camp.png"
+                  className="w-20 rounded-full"
+                  src="/assets/camps/Family.png"
                   alt="comic image"
                 />
                 <div className="group-hover:text-green-300 transition-all ease-in-out duration-300">
@@ -397,9 +397,9 @@ const Footer: React.FC = () => {
                 onClick={() => setShowShop((prev) => !prev)}
                 className="w-full uppercase text-base md:text-lg font-semibold bg-[#662d0a94]  hover:text-[#f87218ea] hover:bg-white transition-all ease-in-out duration-300 cursor-pointer px-4 py-2 rounded-full"
               >
-                Shop
+                Subscribe to NewsLetter
               </div>
-              <div
+               <div
                 className={`transition-all ease-in-out duration-500 overflow-hidden ${
                   showShop
                     ? "max-h-0 opacity-0"
@@ -409,21 +409,7 @@ const Footer: React.FC = () => {
                   visibility: showShop ? "hidden" : "visible",
                 }}
               >
-                {comicData?.map((item: string) => {
-                  return (
-                    <div
-                      onClick={() =>
-                        navigate("/mentoons-comics/audio-comics/" + item)
-                      }
-                      className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
-                    >
-                      - {item}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <Formik
+                <Formik
               initialValues={{ email: "" }} // Must match FormValues type
               validationSchema={validationSchema}
               onSubmit={handleSubmit} // Correctly passing the handleSubmit
@@ -458,6 +444,21 @@ const Footer: React.FC = () => {
               )}
             </Formik>
           </div>
+                {/* {comicData?.map((item: string) => {
+                  return (
+                    <div
+                      onClick={() =>
+                        navigate("/mentoons-comics/audio-comics/" + item)
+                      }
+                      className="font-semibold cursor-pointer text-lg hover:text-green-300 transition-all ease-in-out duration-300"
+                    >
+                      - {item}
+                    </div>
+                  );
+                })} */}
+              </div>
+            </div>
+            
           {/* fourth div */}
           <div className="space-y-2 w-full md:w-fit">
             <MapComponent />

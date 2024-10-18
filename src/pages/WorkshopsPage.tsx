@@ -4,7 +4,9 @@ import {
   DialogContent,
   DialogDescription,
 } from "@/components/ui/dialog";
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import CareerCorner from "./CareerCorner";
 
 export interface WorkshopItems {
   name: string;
@@ -15,6 +17,12 @@ export interface WorkshopItems {
 }
 
 const WorkshopsPage = () => {
+  const location = useLocation();
+  const searchParams = location.search.split("=")[1];
+  console.log(searchParams,"searchParams")
+  useEffect(() => {
+    setActiveCategory(searchParams || WorkshopType.buddyCamp);
+  }, [searchParams]);
   enum WorkshopType {
     buddyCamp = "6-12",
     teenCamp = "13-19",
@@ -22,7 +30,7 @@ const WorkshopsPage = () => {
     familyCamp = "Parents",
   }
   const [activeCategory, setActiveCategory] = React.useState<string>(
-    WorkshopType.buddyCamp
+   '' || WorkshopType.buddyCamp
   );
   const [showForm, setShowForm] = React.useState<boolean>(false);
 
@@ -107,6 +115,7 @@ const WorkshopsPage = () => {
         <div>
           {activeCategory === "6-12" && <WorkshopsPage1 />}
           {activeCategory === "13-19" && <WorkshopsPage2 />}
+          {activeCategory === "20+" && <CareerCorner />}
           {activeCategory === "Parents" && <WorkshopsPage3 />}
         </div>
         <div className="relative flex items-center justify-center left-0 px-8 py-3 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
