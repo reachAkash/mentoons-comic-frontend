@@ -281,6 +281,8 @@ const ComicsSection: React.FC = () => {
                   <img src="/assets/images/mentoons-tv.png" alt="" />
 
                   <video
+                    playsInline
+                    webkit-playsinline
                     src={selectedTopic}
                     className=" w-[55%] absolute top-[33%] left-[22%]"
                     autoPlay

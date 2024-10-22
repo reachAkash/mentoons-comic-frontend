@@ -124,6 +124,8 @@ const AudioComicPage: React.FC = () => {
               loop
               controls
               controlsList="nodownload"
+              playsInline
+              webkit-playsinline
             ></video>
             <div className="space-y-2">
               <div className="border w-fit px-2 py-1 rounded-md text-sm border-green-300 text-green-400 bg-green-100 font-semibold">
