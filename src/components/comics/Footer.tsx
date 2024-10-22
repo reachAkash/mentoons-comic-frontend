@@ -487,9 +487,10 @@ const Footer: React.FC = () => {
               Domlur, Bangalore
             </div>
             <div className="flex items-center justify-center md:justify-between gap-4 md:gap-1">
-              {contactIcons?.map((item) => {
+              {contactIcons?.map((item,index) => {
                 return (
                   <a
+                    key={index}
                     href={item.link}
                     target="_blank"
                     className="bg-white p-2 rounded-full cursor-pointer"
@@ -514,7 +515,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-2 bg-white rounded-full py-2 px-4">
             {companyImg?.map((item, idx) => {
               return (
-                <Link to={item?.url} className="overflow-hidden">
+                <Link to={item?.url} className="overflow-hidden" key={idx}>
                   <img
                     className={`${
                       idx == 3 ? "w-16" : "w-20"

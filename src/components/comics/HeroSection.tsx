@@ -1,18 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import Wordbreak from "./Wordbreak";
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
-import { useAuth } from "@/hooks/useAuth";
-import axiosInstance from "@/api/axios";
+import { useAuthHook } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import { comicsData } from "@/constant/comicsConstants";
 import { Comic } from "@/redux/comicSlice";
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
-  const [email, setEmail] = useState<string>();
+  const { isLoggedIn } = useAuthHook();
+  // const [email, setEmail] = useState<string>();
   const [currComic, setCurrComic] = useState<Comic | null>();
 
   const selectedComic = (name: string) => {
@@ -23,21 +22,13 @@ const HeroSection: React.FC = () => {
   };
 
   const handleSendComic = async () => {
-    if (!email?.trim()) {
-      toast("❌ please enter your email!");
-      setCurrComic(null);
-    }
+    // if (!email?.trim()) {
+    //   toast("❌ please enter your email!");
+    //   setCurrComic(null);
+    // }
     try {
       if (isLoggedIn) {
-        await axiosInstance.post("/email/freeDownloadClaim", {
-          email,
-          thumbnail: currComic?.mini_thumbnail,
-          pdf: currComic?.comicLink,
-        });
-        // if(response.success){
-        toast("✅ Comic sent successfully!");
-        // (window.location.href = comicLink)
-        // }
+        window.open(currComic?.comicLink, '_blank');
       } else {
         navigate("/sign-up");
       }
@@ -48,6 +39,43 @@ const HeroSection: React.FC = () => {
       setCurrComic(null);
     }
   };
+  const handlePrint = async () => {
+    if (!currComic?.comicLink) {
+      toast.error('Comic link is not available');
+      return;
+    }
+
+    try {
+      const response = await fetch(currComic.comicLink);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const newWindow = window.open(blobUrl, '_blank');
+
+      if (!newWindow) {
+        toast.error('Please allow pop-ups to print the comic.');
+        return;
+      }
+
+      newWindow.onload = () => {
+        newWindow.print();
+      };
+
+      window.addEventListener('beforeunload', () => {
+        URL.revokeObjectURL(blobUrl);
+      });
+
+    } catch (error) {
+      console.error('Error downloading or printing the PDF:', error);
+      toast.error('Failed to download or print the comic. Please try again later.');
+    }
+  };
+  
 
   return (
     <div className="relative w-full text-[#864747] h-[150vh] md:h-[250vh] bg-comicsHome bg-no-repeat bg-cover bg-bottom bg-[#59B2DC]">
@@ -56,7 +84,7 @@ const HeroSection: React.FC = () => {
           className="font-extrabold text-4xl lg:text-8xl"
           style={{
             WebkitTextStroke: "3px black",
-            color: "transparent", // Optional, makes only the stroke visible
+            color: "transparent",
             textShadow: "4px 4px 4px #FBD33D",
           }}
         >
@@ -253,7 +281,7 @@ const HeroSection: React.FC = () => {
               <h1 className="text-4xl md:text-6xl font-extrabold text-center">
                 {currComic.name}
               </h1>
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <label className="text-rose-400">
                   Enter Email to Claim your free comic
                 </label>
@@ -263,13 +291,19 @@ const HeroSection: React.FC = () => {
                   className="px-4 py-2 rounded-md outline-none w-2/3"
                   placeholder="Your Email"
                 />
-              </div>
+              </div> */}
               <div>
                 <span
                   onClick={handleSendComic}
-                  className="bg-rose-400 uppercase text-lg font-medium hover:bg-white hover:text-rose-400 transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
+                  className="bg-rose-400 mr-3 uppercase text-lg font-medium hover:bg-white hover:text-rose-400 transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
                 >
                   Read Now!
+                </span>
+                <span
+                  onClick={handlePrint}
+                  className="bg-rose-400 uppercase text-lg font-medium hover:bg-white hover:text-rose-400 transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
+                >
+                  Print Now!
                 </span>
               </div>
             </div>
@@ -279,13 +313,5 @@ const HeroSection: React.FC = () => {
     </div>
   );
 };
-
-// const ComicModal: React.FC = () => {
-//   return (
-//     <div className="  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-md border-2 ">
-//       <div>Akash</div>
-//     </div>
-//   );
-// };
 
 export default HeroSection;

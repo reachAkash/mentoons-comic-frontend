@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuthHook } from '@/hooks/useAuth';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { AiOutlineClose } from 'react-icons/ai';
 import MiniLogo from "@/assets/imgs/logo mini.png";
@@ -10,7 +10,7 @@ type ProtectedRouteProps = {
 };
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuthHook();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
