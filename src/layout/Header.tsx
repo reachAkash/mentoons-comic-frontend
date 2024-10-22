@@ -9,17 +9,14 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { date } from "@/constant/websiteConstants";
-import { useAuthHook } from "@/hooks/useAuth";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuthHook();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -28,13 +25,6 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLogout = () => {
-    console.log("User logged out");
-    localStorage.removeItem("token");
-    setMenuOpen(false);
-    navigate("/");
-    window.location.reload();
-  };
 
   const controlHeaderVisibility = () => {
     if (window.scrollY > lastScrollY) {
@@ -226,7 +216,7 @@ const Header = () => {
               <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold lg:hidden">
                 Audio Comics
               </MenubarTrigger>
-            </NavLink>
+            </NavLink>  
           </MenubarMenu>
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
