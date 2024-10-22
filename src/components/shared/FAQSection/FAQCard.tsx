@@ -12,6 +12,7 @@ import { uploadFile } from "@/redux/fileUploadSlice";
 import { AppDispatch, RootState } from "@/redux/store";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Loader } from "lucide-react";
+import { useAuth } from "@clerk/clerk-react";
 
 // import emailjs from "emailjs-com";
 import React, { FormEvent, useState } from "react";
@@ -131,10 +132,10 @@ interface FormError {
 }
 
 export function JobApplicationForm({ id }: { id: string }) {
-
   const dispatch = useDispatch<AppDispatch>();
+  const { getToken } = useAuth();
+  const { loading } = useSelector((state: RootState) => state.career);
 
-  const { loading } = useSelector((state: RootState) => state.career)
   const [formData, setFormData] = useState<HiringFormData>({
     name: "",
     email: "",
@@ -220,7 +221,11 @@ export function JobApplicationForm({ id }: { id: string }) {
     if (validateForm()) {
       if (formData.resume) {
         try {
-          const fileAction = await dispatch(uploadFile(formData.resume));
+          const fileAction = await dispatch(uploadFile({ 
+            file: formData.resume, 
+            getToken: async () => await getToken()
+          }));
+          
           if (fileAction.payload?.data?.imageUrl) {
             const fileData = fileAction.payload.data.imageUrl;
             const res = await dispatch(applyForJob({ jobId: id, formData: { ...formData, resume: fileData } }));

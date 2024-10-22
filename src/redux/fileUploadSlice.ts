@@ -15,23 +15,30 @@ const initialState:FileUploadState = {
     file:null
 }
 
-
-export const uploadFile = createAsyncThunk('career/uploadFile', async (file: File) => {
+export const uploadFile = createAsyncThunk(
+  'career/uploadFile',
+  async (payload: { file: File; getToken: () => Promise<string | null> }, { rejectWithValue }) => {
+    const { file, getToken } = payload;
     console.log(file, 'File to be uploaded');
     try {
-        const formData = new FormData();
-        formData.append('file', file);
-
-        const response = await axiosInstance.post('/upload/file', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-        return response.data;
+      const formData = new FormData();
+      formData.append('file', file);
+      const token = await getToken();
+      if (!token) {
+        throw new Error('No authentication token available');
+      }
+      const response = await axiosInstance.post('/upload/file', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${token}`
+        },
+      });
+      return response.data;
     } catch (error) {
-        throw new Error('Failed to upload file');
+      return rejectWithValue('Failed to upload file');
     }
-});
+  }
+);
 
 
 export const fileUploadSlice = createSlice({
@@ -52,7 +59,7 @@ export const fileUploadSlice = createSlice({
         })
         builder.addCase(uploadFile.rejected,(state,action)=>{
             state.loading = false;
-            state.error = action.error.message || "Something went wrong!";
+            state.error = action.payload as string || "Something went wrong!";
         })
     },  
 })
