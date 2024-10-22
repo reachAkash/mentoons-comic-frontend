@@ -192,7 +192,7 @@ const ComicsSection: React.FC = () => {
         </div> */}
               <div className="">
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=buddy")}
+                  onClick={() => navigate("/mentoons-workshops?workshop=6-12")}
                   className="absolute right-[38%] top-[26%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                   src={BuddyWorkshopHome}
                   alt="workshop poster"
@@ -200,7 +200,7 @@ const ComicsSection: React.FC = () => {
               </div>
               <div>
                 <img
-                  onClick={() => navigate("/mentoons-workshops?workshop=teen")}
+                  onClick={() => navigate("/mentoons-workshops?workshop=13-19")}
                   className="absolute right-[13%] top-[30%] w-[15%] hover:scale-105 cursor-pointer rotate-2 transition-all ease-in-out duration-300"
                   src={TeenWorkshopHome}
                   alt="workshop poster"
@@ -209,7 +209,7 @@ const ComicsSection: React.FC = () => {
               <div>
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=family")
+                    navigate("/mentoons-workshops?workshop=20+")
                   }
                   className="absolute right-[33%] top-[50%] w-[15%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                   src={ElderWorkshopHome}
@@ -219,7 +219,7 @@ const ComicsSection: React.FC = () => {
               <div>
                 <img
                   onClick={() =>
-                    navigate("/mentoons-workshops?workshop=family")
+                    navigate("/mentoons-workshops?workshop=Parents")
                   }
                   className="absolute right-[14%] top-[50%] w-[13%] hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                   src={ParentWorkshopHome}

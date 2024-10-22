@@ -225,7 +225,7 @@ const Router = () => {
           ))}
         </Routes>
       </Suspense>
-      <Toaster />
+      <Toaster position="top-right"/>
       {hoverComicCard !== null && <ComicCard item={hoverComicCard} />}
       {/* <ProgressScroller /> */}
       {showPopup && localStorage.getItem("phoneNumber") && (
