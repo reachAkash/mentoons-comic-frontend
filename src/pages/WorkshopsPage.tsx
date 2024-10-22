@@ -1,4 +1,8 @@
 import WorkshopForm from "@/components/common/WorkshopForm";
+import BuddyCamp from "@/components/shared/Workshop/BuddyCamp";
+import CareerCorner from "@/components/shared/Workshop/CareerCorner";
+import FamilyCamp from "@/components/shared/Workshop/FamilyCamp";
+import TeenCamp from "@/components/shared/Workshop/TeenCamp";
 import {
   Dialog,
   DialogContent,
@@ -6,7 +10,6 @@ import {
 } from "@/components/ui/dialog";
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import CareerCorner from "./CareerCorner";
 
 export interface WorkshopItems {
   name: string;
@@ -111,10 +114,10 @@ const WorkshopsPage = () => {
           </div>
         </div>
         <div>
-          {activeCategory === "6-12" && <WorkshopsPage1 />}
-          {activeCategory === "13-19" && <WorkshopsPage2 />}
+          {activeCategory === "6-12" && <BuddyCamp />}
+          {activeCategory === "13-19" && <TeenCamp />}
+          {activeCategory === "Parents" && <FamilyCamp />}
           {activeCategory === "20+" && <CareerCorner />}
-          {activeCategory === "Parents" && <WorkshopsPage3 />}
         </div>
         <div className="relative flex items-center justify-center left-0 px-8 py-3 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
           <img
@@ -128,6 +131,10 @@ const WorkshopsPage = () => {
             <DialogContent className="z-[999999] bg-transparent border-0">
               <DialogDescription>
                 <div className="relative">
+                  <WorkshopForm
+                    selectedWorkshop={activeCategory}
+                    setShowForm={setShowForm}
+                  />
                   <WorkshopForm
                     selectedWorkshop={activeCategory}
                     setShowForm={setShowForm}
