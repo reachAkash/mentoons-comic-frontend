@@ -9,7 +9,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { date } from "@/constant/websiteConstants";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuthHook } from "@/hooks/useAuth";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
@@ -19,7 +19,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuthHook();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -218,54 +218,6 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-          {/* <MenubarMenu>
-            <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold hidden lg:block">
-             
-            </MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem
-                onClick={() => {
-                  navigate("/mentoons-workshops?workshop=buddy");
-                  setMenuOpen(false);
-                }}
-              >
-                Buddy Camp (Age 6 - 12)
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => {
-                  navigate("/mentoons-workshops?workshop=teen");
-                  setMenuOpen(false);
-                }}
-              >
-                Teen Camp (Age 13 - 15)
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => {
-                  navigate("/mentoons-workshops?workshop=family");
-                  setMenuOpen(false);
-                }}
-              >
-                Family Camp (Age 20+)
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => {
-                  navigate("/mentoons-workshops?workshop=comic");
-                  setMenuOpen(false);
-                }}
-              >
-                How to make your own Comics
-              </MenubarItem>
-              <MenubarItem
-                onClick={() => {
-                  navigate("/mentoons-workshops?workshop=character");
-                  setMenuOpen(false);
-                }}
-              >
-                How to make your own Character
-              </MenubarItem>
-            </MenubarContent>
-          </MenubarMenu> */}
-
           <MenubarMenu>
             <NavLink
               to="/mentoons-comics/audio-comics"
@@ -276,26 +228,6 @@ const Header = () => {
               </MenubarTrigger>
             </NavLink>
           </MenubarMenu>
-
-          {isLoggedIn && (
-            <MenubarMenu>
-              <MenubarTrigger className="cursor-pointer lg:hover:text-white lg:hover:bg-red-500 h-[2.5rem] lg:h-[4.5rem] text-base font-semibold items-center hidden lg:flex">
-                <FaUserCircle className="text-2xl lg:text-3xl mr-2" />
-                <span className="hidden lg:block">Profile</span>
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem
-                  onClick={() => {
-                    setMenuOpen(false);
-                    navigate("/profile");
-                  }}
-                >
-                  My Profile
-                </MenubarItem>
-                <MenubarItem onClick={handleLogout}>Logout</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          )}
           <MenubarMenu>
             <NavLink to="/hiring" onClick={() => setMenuOpen(false)}>
               <MenubarTrigger className="cursor-pointer hover:text-white hover:bg-red-500 h-full text-base whitespace-nowrap text-[#989ba2] lg:text-white font-semibold lg:hidden">

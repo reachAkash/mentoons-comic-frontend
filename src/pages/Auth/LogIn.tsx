@@ -1,5 +1,7 @@
 import { SignIn } from "@clerk/clerk-react";
+
 const LogIn = () => {
+
   return (
     <div className="h-screen flex ">
       <div className="hidden flex-1 lg:block ">
