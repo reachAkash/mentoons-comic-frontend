@@ -20,6 +20,7 @@ import { FaTimes } from "react-icons/fa";
 import { IoChevronDown } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 export type TPOSITION = {
   _id: string;
@@ -132,6 +133,7 @@ interface FormError {
 }
 
 export function JobApplicationForm({ id }: { id: string }) {
+  const navigate = useNavigate()
   const dispatch = useDispatch<AppDispatch>();
   const { getToken } = useAuth();
   const { loading } = useSelector((state: RootState) => state.career);
@@ -218,35 +220,45 @@ export function JobApplicationForm({ id }: { id: string }) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      if (formData.resume) {
-        try {
-          const fileAction = await dispatch(uploadFile({ 
-            file: formData.resume, 
-            getToken: async () => await getToken()
-          }));
-          
-          if (fileAction.payload?.data?.imageUrl) {
-            const fileData = fileAction.payload.data.imageUrl;
-            const res = await dispatch(applyForJob({ jobId: id, formData: { ...formData, resume: fileData } }));
 
-            if (res.payload?.success) {
-              toast.success("Application submitted successfully");
-            } else {
-              toast.error(res.payload?.message || "Failed to submit application");
-            }
-          } else {
-            toast.error("Failed to upload resume");
-          }
-        } catch (error) {
-          console.error("Error during job application:", error);
-          toast.error("An error occurred while submitting your application");
-        }
-      } else {
-        toast.error("Resume is required");
+    if (!validateForm()) {
+      return toast.error("Please fill all the required fields correctly");
+    }
+
+    if (!formData.resume) {
+      return toast.error("Resume is required");
+    }
+
+    try {
+      const token = await getToken();
+      if (!token) {
+        navigate('/sign-in')
+        return toast.error('Login first to apply');
       }
-    } else {
-      toast.error("Please fill all the required fields correctly");
+
+      const fileAction = await dispatch(uploadFile({ 
+        file: formData.resume, 
+        getToken: async () => token
+      }));
+
+      const fileUrl = fileAction.payload?.data?.imageUrl;
+      if (!fileUrl) {
+        return toast.error("Failed to upload resume");
+      }
+
+      const res = await dispatch(applyForJob({ 
+        jobId: id, 
+        formData: { ...formData, resume: fileUrl } 
+      }));
+
+      if (res.payload?.success) {
+        toast.success("Application submitted successfully");
+      } else {
+        toast.error(res.payload?.message || "Failed to submit application");
+      }
+    } catch (error) {
+      console.error("Error during job application:", error);
+      toast.error("An error occurred while submitting your application");
     }
   };
   if (loading) return <Loader />
