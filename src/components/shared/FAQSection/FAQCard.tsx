@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -10,7 +11,6 @@ import {
 import { applyForJob } from "@/redux/careerSlice";
 import { uploadFile } from "@/redux/fileUploadSlice";
 import { AppDispatch, RootState } from "@/redux/store";
-import { DialogClose } from "@radix-ui/react-dialog";
 import { Loader } from "lucide-react";
 import { useAuth } from "@clerk/clerk-react";
 
@@ -34,6 +34,8 @@ export type TPOSITION = {
 };
 // JOB ACCORDIAN COMPONENT
 const FAQCard = ({ position, id }: { position: TPOSITION, id: string }) => {
+  const navigate = useNavigate()
+  const { getToken } = useAuth();
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
 
   const handleIsExpanded = () => {
@@ -94,8 +96,11 @@ const FAQCard = ({ position, id }: { position: TPOSITION, id: string }) => {
       <div className=" w-full px-4 ">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="text-neutral-700 font-bold px-5 py-2 w-full border bg-transparent border-neutral-700 hover:bg-orange-400/40 hover:border-orange-400 mb-4 rounded-md transition-all duration-300">
-              Apply Now
+            <Button className="text-neutral-700 font-bold px-5 py-2 w-full border bg-transparent border-neutral-700 hover:bg-orange-400/40 hover:border-orange-400 mb-4 rounded-md transition-all duration-300" onClick={async ()=>{
+              const token = await getToken()
+              if(!token) navigate('/sign-in')
+            }}>
+              Apply Now 
             </Button>
           </DialogTrigger>
           <DialogContent className="z-[999999]">

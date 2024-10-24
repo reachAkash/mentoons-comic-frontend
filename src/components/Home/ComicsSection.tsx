@@ -293,7 +293,7 @@ const ComicsSection: React.FC = () => {
                   {PODCAST_CATEGORY.filter(
                     (item) => item.categroy === isActiveCategory
                   ).map((item) => (
-                    <div key={item.categroy} className="pl-2  ">
+                    <div key={item.categroy} className="pl-2 cursor-pointer">
                       {item.podcastCategoryTopics.map((topic, index) => (
                         <div
                           key={index}

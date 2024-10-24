@@ -44,20 +44,30 @@ const AgeGroup = [
   },
 ];
 
-const FilterComics = () => {
+const FilterComics: React.FC = () => {
   const data = useQuery();
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const dispatch = useDispatch();
   const queryParams = data.get("filter");
+
   const updateFilters = () => {
     dispatch(updateSelectedFilterReducer(queryParams));
+  };
+
+  const handleUpdate = (param: string) => {
+    const selectedGroup = AgeGroup.find(group => group.value === param);
+    if (selectedGroup) {
+      setValue(selectedGroup.value);
+    } else {
+      setValue("groupSmall");
+    }
   };
 
   React.useEffect(() => {
     if (queryParams) {
       updateFilters();
-      setValue("");
+      handleUpdate(queryParams);
     }
   }, [queryParams]);
 

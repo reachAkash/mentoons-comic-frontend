@@ -25,6 +25,7 @@ const axiosInstance = axios.create({
 //   (error) => {
 //     if (error.response.status === 401) {
 //       // Handle unauthorized access (e.g., redirect to login)
+//       console.log('unauthorized')
 //     }
 //     return Promise.reject(error);
 //   }

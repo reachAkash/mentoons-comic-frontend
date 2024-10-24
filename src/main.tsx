@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     appearance={{
       layout: {
         unsafe_disableDevelopmentModeWarnings: true,
-        
       },
 
       variables: {
