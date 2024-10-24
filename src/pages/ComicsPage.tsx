@@ -11,10 +11,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import FilterComics from "../components/comics/FilterComics";
+import { useAuthHook } from "@/hooks/useAuth";
 
 const ComicsPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {isLoggedIn} = useAuthHook()
   const { comics, audioComics, selectedFilter } = useSelector(
     (store: RootState) => store.comics
   );
@@ -29,7 +31,6 @@ const ComicsPage: React.FC = () => {
     const item = comicsData?.find((comic: AudioComic | Comic) => {
       return comic.thumbnail == image;
     });
-    console.log(item);
     dispatch(addToCartReducer(item));
   };
 
@@ -103,9 +104,9 @@ const ComicsPage: React.FC = () => {
                   >
                     <div className="overflow-hidden rounded-2xl">
                       <img
-                        onClick={() =>
-                          navigate(`/mentoons-comics/audio-comics/${item.name}`)
-                        }
+                        // onClick={() =>
+                        //   navigate(`/mentoons-comics/audio-comics/${item.name}`)
+                        // }
                         className="w-full h-[23rem] lg:h-[16rem] rounded-2xl group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
                         src={item?.thumbnail}
                         alt="comic image"
@@ -121,13 +122,15 @@ const ComicsPage: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between border-t border-gray-200 pt-2">
                       <div
-                        onClick={() =>
-                          navigate(`/audio-comic?comic=${item.name}`)
-                        }
+                        // onClick={() =>
+                        //   navigate(`/audio-comic?comic=${item.name}`)
+                        // }
                         className="text-end flex items-center justify-end gap-2 group-hover:text-red-500 group-hover:underline text-xl cursor-pointer"
                       >
                         Play Sample{" "}
-                        <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" />
+                        <FaCirclePlay className="text-2xl text-red-700 group-hover:text-500" onClick={() =>
+                          isLoggedIn ? navigate(`/mentoons-comics/audio-comics/${item.name}`) : navigate('/sign-in')
+                        }/>
                       </div>
                       <div
                         onClick={(e) => {

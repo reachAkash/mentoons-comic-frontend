@@ -1,8 +1,5 @@
 import { GamesData } from "@/pages/FreeDownload";
 import { AudioComic, Comic } from "@/redux/comicSlice";
-import workshopImg1 from "/Buddy camp.png";
-import workshopImg2 from "/Teen camp .png";
-import workshopImg3 from "/Family camp.png";
 import workshopImg4 from "@/assets/imgs/Workshops_Page_ 8.png";
 import workshopImg5 from "@/assets/imgs/Workshops_Page_ 9.png";
 import { WorkshopItems } from "@/pages/WorkshopsPage";
@@ -331,26 +328,26 @@ export const workshopDetails: WorkshopItems[] = [
   {
     name: "Buddy Camp",
     desc: "Buddy Camp is a fun and educational workshop designed to help children ages 6-12 build lasting friendships and develop important social skills.",
-    img: workshopImg1,
+    img: "/assets/camps/Buddy.png",
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Kids+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=buddy",
+    pageUrl: "/mentoons-workshops?workshop=6-12",
   },
   {
     name: "Teen Camp",
     desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-    img: workshopImg2,
+    img: "/assets/camps/Teen.png",
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Teen+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=teen",
+    pageUrl: "/mentoons-workshops?workshop=13-19",
   },
   {
     name: "Family Camp",
     desc: "Help your teenager navigate the challenges of adolescence De-Addiction, Scrolling De-Addiction & Hormonal Changes with our comprehensive Teen Camp workshop.",
-    img: workshopImg3,
+    img: "/assets/camps/Family.png",
     video:
       "https://mentoons-comics.s3.ap-northeast-1.amazonaws.com/Workshops/videos/Family+Camp_01.mp4",
-    pageUrl: "/mentoons-workshops?workshop=family",
+    pageUrl: "/mentoons-workshops?workshop=Parents",
   },
   {
     name: "How to make your own Comic",

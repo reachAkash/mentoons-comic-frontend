@@ -292,7 +292,7 @@ const HeroSection: React.FC = () => {
                   placeholder="Your Email"
                 />
               </div> */}
-              <div>
+              <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
                 <span
                   onClick={handleSendComic}
                   className="bg-rose-400 mr-3 uppercase text-lg font-medium hover:bg-white hover:text-rose-400 transition-all duration-300 ease-in-out text-white py-3 px-7 rounded-full cursor-pointer"
